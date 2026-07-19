@@ -2,16 +2,30 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Robi } from "@/components/mascot/Robi";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { BilingualText } from "@/components/curriculum/BilingualText";
-import { TrainTheRobotEngine } from "@/components/engines/TrainTheRobotEngine";
-import { OrderingEngine } from "@/components/engines/OrderingEngine";
-import { MinimalPairsEngine } from "@/components/engines/MinimalPairsEngine";
 import { MarkPanel } from "./MarkPanel";
 import { BIG_IDEA_LABELS, type Lesson } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
+
+// These three pick their tile/round order with Math.random() on first
+// render, so server-rendered HTML and the client's initial render would
+// legitimately differ (a real hydration mismatch, not a false positive) —
+// ssr: false skips the server render entirely instead of racing it.
+const TrainTheRobotEngine = dynamic(
+  () => import("@/components/engines/TrainTheRobotEngine").then((m) => m.TrainTheRobotEngine),
+  { ssr: false }
+);
+const OrderingEngine = dynamic(() => import("@/components/engines/OrderingEngine").then((m) => m.OrderingEngine), {
+  ssr: false,
+});
+const MinimalPairsEngine = dynamic(
+  () => import("@/components/engines/MinimalPairsEngine").then((m) => m.MinimalPairsEngine),
+  { ssr: false }
+);
 
 interface RosterStudent {
   id: string;

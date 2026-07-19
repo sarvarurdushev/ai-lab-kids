@@ -167,10 +167,8 @@ export function OrderingEngine({
                   "?"
                 )}
               </div>
-              {(tile?.label || !tile) && (
-                <span className="text-[10px] font-bold tracking-wide text-ink/50 uppercase">
-                  {tile ? tile.label : connectorFor(i, tiles.length)}
-                </span>
+              {tiles[i].label && (
+                <span className="text-[10px] font-bold tracking-wide text-ink/50 uppercase">{tiles[i].label}</span>
               )}
             </div>
           );
