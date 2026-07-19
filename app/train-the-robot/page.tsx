@@ -1,5 +1,5 @@
 import { Shell } from "@/components/layout/Shell";
-import { isAgeTrack } from "@/lib/curriculum";
+import { isAgeTrack } from "@/lib/soloCurriculum";
 import { TrainTheRobot } from "@/components/games/TrainTheRobot";
 
 export default async function TrainTheRobotPage({

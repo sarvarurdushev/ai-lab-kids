@@ -8,10 +8,11 @@ export function isSpeechSupported(): boolean {
   return typeof window !== "undefined" && "speechSynthesis" in window;
 }
 
-export function speak(text: string): void {
+export function speak(text: string, lang: "en-US" | "ko-KR" = "en-US"): void {
   if (!isSpeechSupported()) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = lang;
   utterance.rate = 0.9;
   utterance.pitch = 1.1;
   window.speechSynthesis.speak(utterance);

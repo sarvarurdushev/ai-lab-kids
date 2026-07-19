@@ -5,7 +5,7 @@
 // progress synced across devices should treat that as a future, explicitly
 // scoped decision (see docs/AI_CURRICULUM.md), not something bolted on here.
 
-import type { GameSlug } from "./curriculum";
+import type { GameSlug } from "./soloCurriculum";
 
 const STORAGE_KEY = "al_progress_v1";
 const PROGRESS_EVENT = "al-progress-change";

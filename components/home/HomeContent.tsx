@@ -6,7 +6,7 @@ import { Robi } from "@/components/mascot/Robi";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SpeakButton } from "@/components/ui/SpeakButton";
-import { AGE_TRACKS, AI_LAB_UNITS, AI_SAFETY_CARDS, BIG_IDEA_LABELS, type AgeTrack } from "@/lib/curriculum";
+import { AGE_TRACKS, AI_LAB_UNITS, AI_SAFETY_CARDS, BIG_IDEA_LABELS, type AgeTrack } from "@/lib/soloCurriculum";
 import { getStoredTrack, onTrackChange, setStoredTrack } from "@/lib/trackPreference";
 import { getPlaysRemainingToday, getStars, getStreak, onProgressChange } from "@/lib/progress";
 

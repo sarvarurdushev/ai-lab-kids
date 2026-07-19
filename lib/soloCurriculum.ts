@@ -278,13 +278,7 @@ export function sequenceRoutinesForTrack(track: AgeTrack): SequenceRoutine[] {
   return SEQUENCE_ROUTINES.filter((routine) => routine.tracks.includes(track));
 }
 
-/** Sequencing connector word for a step at `index` out of `total` steps (first/next/then/last). */
-export function connectorFor(index: number, total: number): string {
-  if (index === 0) return "First";
-  if (index === total - 1) return "Last";
-  if (index === total - 2) return "Then";
-  return "Next";
-}
+export { connectorFor } from "./ordering";
 
 export function isAgeTrack(value: string | undefined): value is AgeTrack {
   return value === "little_sparks" || value === "explorers";

@@ -14,7 +14,7 @@ import {
   type AgeTrack,
   type SortCategoryPair,
   type SortItem,
-} from "@/lib/curriculum";
+} from "@/lib/soloCurriculum";
 
 const ROUNDS_BY_TRACK: Record<AgeTrack, { total: number; teach: number }> = {
   little_sparks: { total: 8, teach: 5 },

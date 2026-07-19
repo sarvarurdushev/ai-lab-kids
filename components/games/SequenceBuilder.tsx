@@ -14,7 +14,7 @@ import {
   shuffle,
   type AgeTrack,
   type SequenceRoutine,
-} from "@/lib/curriculum";
+} from "@/lib/soloCurriculum";
 import { speak } from "@/lib/speech";
 
 const TOTAL_ROUNDS = 5;

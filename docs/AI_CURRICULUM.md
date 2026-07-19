@@ -1,183 +1,181 @@
 # AI Lab for Kids: an AI-literacy + English curriculum for ages 4–8
 
-This document specifies the curriculum behind this app: two age-banded
-tracks that teach foundational AI literacy concepts *through* English-language
-practice, instead of as two separate subjects. It's built the same way
-`littlelit.ai` and Code.org's `AI for Oceans` pitch themselves — "learn AI by
-doing," not by lecture — but scoped down to what 4–8 year-olds can actually do
-inside a 5–10 minute session, and without any live chatbot/LLM in the loop
-(see [Safety](#safety-why-theres-no-live-chatbot) below).
+This document specifies the curriculum and product behind this app: a
+**teacher-led classroom platform** that teaches foundational AI-literacy
+concepts *through* English-language practice for Korean elementary
+beginners, instead of as two separate subjects. It's built the same way
+`littlelit.ai` and Code.org's `AI for Oceans` pitch themselves — "learn AI
+by doing," not by lecture — but scoped to a real classroom: one teacher,
+one screen, a room full of kids who don't yet read or speak much English,
+and without any live chatbot/LLM in the loop (see
+[Safety](#safety-why-theres-no-live-chatbot) below).
+
+For the full 24-lesson curriculum map, see
+[`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md). For the Korean
+learner-specific research behind what each lesson targets, see
+[`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md).
+
+## Who this is for, and how it's actually used
+
+Built around one explicit choice: **teacher-led, one screen.** A teacher
+runs the lesson from their own laptop connected to a projector or
+smartboard, pacing the class verbally — not a room of kids each on their
+own device working alone. This matches how Korean hagwons and public
+classrooms actually run, and is a deliberate alternative to Korea's
+national AI digital textbook (AIDT) rollout, which was scaled back in 2025
+partly over digital-overuse concerns
+([Korea Times](https://www.koreatimes.co.kr/southkorea/society/20241129/korea-to-introduce-ai-textbooks-in-2025-despite-concerns-over-effectiveness-digital-overuse),
+[ZME Science](https://www.zmescience.com/science/south-korea-is-quietly-pulling-the-plug-on-its-ai-textbooks/)).
+This product puts the screen in the teacher's hands, not each kid's.
 
 ## Research summary
 
 **AI literacy framework.** We anchor concepts to MIT/Harvard's
 [AI4K12 "Five Big Ideas in AI"](https://ai4k12.org/) — perception,
 representation & reasoning, learning, natural interaction, and societal
-impact — the framework most K-12 AI curricula (including analyses of
-children's AI books) use to sequence what's age-appropriate. [Machine
-Learning and the Five Big Ideas in
+impact. [Machine Learning and the Five Big Ideas in
 AI](https://par.nsf.gov/servlets/purl/10415002) (Touretzky et al.) is the
-canonical source; early-childhood adaptations of the framework confirm
-perception, learning, and simple algorithms are the ideas 4–8 year-olds
-can actually grasp — reasoning about bias/fairness and natural interaction
-stay shallow until later grades.
+canonical source; early-childhood adaptations confirm perception,
+learning, and simple algorithms are the ideas 4–8 year-olds can actually
+grasp — bias/fairness and natural interaction stay shallow until later
+grades.
 
-**Activity design.** [Code.org's AI for
-Oceans](https://code.org/oceans) and MIT RAISE's [Day of
-AI](https://dayofai.org/) both teach "AI learns from labeled examples, and
-can get it wrong" through a sort-and-guess game rather than
-explanation — kids train a classifier by hand-labeling items, then watch
-it guess and correct it. That mechanic (not a lecture, not a quiz) is what
-`Train the Robot` in this curriculum is modeled on. Day of AI's unplugged
-activities also use ordered-step ("algorithm") building for younger grades
-instead of real code, which is what `Sequence Builder` is modeled on.
+**Activity design.** [Code.org's AI for Oceans](https://code.org/oceans)
+and MIT RAISE's [Day of AI](https://dayofai.org/) both teach "AI learns
+from labeled examples, and can get it wrong" through a sort-and-guess game
+rather than explanation. That mechanic is what `Train the Robot` is
+modeled on. Day of AI's unplugged ordered-step ("algorithm") activities
+for younger grades are what `Sequence Builder` is modeled on — and the
+same tile-ordering mechanic is reused a second time for English
+subject-verb-object sentence building (`Sentence Builder`), because
+"arrange things in the one correct order" is the same interaction whether
+the thing being ordered is a morning routine or a sentence.
 
-**English pedagogy for this age band.** Two things repeatedly showed up:
-(1) phonics/vocabulary instruction works best in short (10–15 min),
-frequent, high-repetition sessions, and (2) [Total Physical Response /
+**Korean learner needs.** See
+[`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md) for the full breakdown,
+but in short: Korean has no /f/, /v/, /θ/, /ð/, or /l/-/r/ distinction, is
+syllable-timed, and is SOV with no articles. Four lessons in the pilot
+unit are built specifically to drill the four highest-frequency gaps
+(`minimal_pairs` listening-discrimination activities), and the SVO
+word-order shift gets its own recurring activity type
+(`sentence_builder`) rather than a single grammar lecture.
+
+**English pedagogy for this age band.** [Total Physical Response /
 comprehensible
 input](https://www.colorincolorado.org/teaching-ells/ell-classroom-strategy-library/total-physical-response) —
 letting kids demonstrate understanding through action (tapping, sorting,
 ordering) before requiring spoken/written production — measurably lowers
 anxiety and speeds acquisition versus requiring speech up front. That's
-why both games are point-and-tap, not type-or-speak, and why every round
-has a 🔊 read-aloud button, not just printed text a 4-year-old can't yet
-decode.
+why every activity is point-and-tap, not type-or-speak, and why
+instructions and vocabulary carry a 🔊 read-aloud button in both languages.
 
-**Session/retention design.** EdTech gamification research (Duolingo-style
-apps) converges on 5–10 minute sessions with immediate feedback, daily
-replay, and difficulty that quietly scales with mastery — a
-spaced-repetition engine disguised as a game — rather than explicit
-flashcard review, which loses younger kids. That's why rewarded rounds are
-capped per game per day (see [Progress](#progress--no-login) below):
-it nudges a kid back tomorrow instead of grinding the same game for an
-hour today.
+**Bilingual scaffolding, fading with level.** Standard L1-scaffolding
+practice: a class's `koreanSupportLevel` (`full` / `light` / `minimal`,
+set per class by the teacher) controls how much Korean auto-displays —
+see [`lib/i18n.ts`](../lib/i18n.ts). Korean is always available via manual
+toggle regardless of level; what fades is what shows automatically.
 
-**Screen time.** The AAP's current guidance has moved away from hard time
-limits toward quality + co-viewing + conversation. This app leans into
-that: every unit ends with a parent-facing "talk about it" prompt, and
-sessions are capped by the daily-rewarded-rounds mechanic rather than a
-clock.
+**Chatbot safety.** COPPA (and Korea's PIPA, which is stricter for
+under-14s) both require verifiable guardian consent before any service
+targeting children collects personal data. General-purpose chat products
+also aren't calibrated for kids. This app has **no** LLM integration
+anywhere — see [Safety](#safety-why-theres-no-live-chatbot).
 
-**Chatbot safety.** COPPA requires verifiable parental consent before any
-service targeting under-13s collects data, and general-purpose chat
-products aren't calibrated for kids — logs get used for training,
-responses aren't age-filtered, and chat's validating-by-design tone is a
-bad model for how real relationships work. This app has **no** LLM
-integration at all — see below.
+## Architecture
 
-## The two tracks
+**Multi-tenant, teacher-led, real backend.** Organization → School →
+Class → Student, with real teacher/org-admin authentication (email +
+password, session cookies) and a Postgres database — see
+[`lib/db/schema/`](../lib/db/schema/). Students don't log in individually;
+the teacher's account is the only credential in the room.
 
-| | **Little Sparks** (ages 4–5) | **AI Explorers** (ages 6+) |
-|---|---|---|
-| Reading level | Pre-reader — every line has a 🔊 read-aloud button, emoji-first | Early reader — full sentences, read-aloud still available |
-| Session | Untimed, 2 categories per round, 3-step sequences | Light timer on sequences, 2–4 categories, 3–5 step sequences |
-| New vocabulary/unit | 4–6 words | 6–10 words |
-| AI framing | Concrete + personified ("Robi is learning") | Names the ideas explicitly ("this is called *training data*") |
+- **Content vs. progress split.** Curriculum *content* (lessons,
+  vocabulary, activity configs) lives as versioned TypeScript in
+  [`lib/curriculum/`](../lib/curriculum/) — authored and reviewed like a
+  textbook, not edited at runtime. Curriculum *progress* (which lesson a
+  class is on, participation marks) lives in Postgres
+  ([`lib/db/schema/progress.ts`](../lib/db/schema/progress.ts)) — that's
+  the transactional, per-classroom state a reporting dashboard needs.
+- **Teacher Console** (`/dashboard`, `/classes/[classId]`) — roster
+  management and a scope-and-sequence browser showing which lessons are
+  ready to run.
+- **Presentation Player** (`/classes/[classId]/lesson/[lessonKey]`) — a
+  projector-safe view that steps through a lesson's segments (warmup →
+  vocabulary → concept → activity → formative check → wrap-up), teacher
+  controls pacing manually (no auto-advance, no timers on non-activity
+  segments), and resumes where it left off if the teacher closes the
+  laptop mid-lesson (`lessonSessions.currentSegmentIndex`).
+- **Activity engines** (`components/engines/`) — `TrainTheRobotEngine`
+  (classification), `OrderingEngine` (routine sequencing *and* SVO
+  sentence building, same component), and `MinimalPairsEngine` (listening
+  discrimination). Each is fully content-driven: authoring a new lesson
+  means writing data against `lib/curriculum/types.ts`, not new code.
+- **Participation marks & reporting** — at each formative-check segment,
+  the teacher marks the whole class or an individual student
+  (👍 got it / 🤔 needs practice / ⭐ excelling). `/reporting`
+  (org-admin only) rolls these up across every class in the organization —
+  see [`lib/console/reporting.ts`](../lib/console/reporting.ts).
 
-Track is picked on the home page and passed through as a `?track=` query
-param to both games, which scales round count, timer, and category-pair
-pool accordingly (`lib/curriculum.ts`).
+**What's demo-simple on purpose, for now:** a class has exactly one
+primary teacher (no co-teaching); a lesson session lives on one device
+(no live sync between a teacher's laptop and a second "student screen" —
+see [Roadmap](#roadmap)); there's no self-service password reset or
+org-admin UI for creating schools/teachers (`scripts/seed.ts` does that).
 
-## Units
+## The solo practice pages
 
-Every unit pairs one **AI4K12 big idea** with one **English learning
-objective**, and is delivered by one of the two games.
-
-### Unit 1 — "Teach Robi to Sort" → `Train the Robot`
-
-- **Big ideas:** Perception (recognizing what something is) · Learning
-  (AI improves from labeled examples) · Societal impact, lightly (AI
-  guesses can be wrong; that's normal, not scary)
-- **English objective:** category nouns (*animal / vehicle*, *fruit /
-  vegetable*, *land / water*, *living / not living*) and the sentence
-  frame "A ___ is a/an ___."
-- **Mechanic:** kid sorts a run of items into two labeled buckets
-  (teaching rounds), then Robi starts guessing and the kid has to judge
-  whether Robi got it right (quiz rounds) — same trained-classifier loop
-  as AI for Oceans, mediated by tapping instead of code.
-- **Talk about it:** "Where else have you seen something try to guess
-  what a picture is — a photo app that finds people, a game that
-  recognizes your voice?"
-
-### Unit 2 — "Give Robi the Steps" → `Sequence Builder`
-
-- **Big idea:** Representation & reasoning — an algorithm is just an
-  exact, ordered list of steps, and a computer will follow it exactly
-  even if the order is wrong.
-- **English objective:** sequencing connectives — *first, next, then,
-  last* — narrating a routine (morning routine, making a sandwich,
-  planting a seed, bedtime) start to finish.
-- **Mechanic:** kid taps shuffled step cards into the right order; wrong
-  order gets called out and re-tried, right order plays the routine back
-  narrated with the connective words.
-- **Talk about it:** "What would happen if you told Robi to 'eat
-  breakfast, then wake up'? Robots do exactly what you tell them, in
-  order — that's why the order matters!"
-
-### Unit 3 — "Talking to AI Safely" (reading, no game)
-
-- **Big ideas:** Natural interaction + societal impact — how talking to
-  an AI is different from talking to a person, and the ground rules for
-  it.
-- **English objective:** reading four short safety statements aloud
-  (with 🔊 support); AI Explorers track only — Little Sparks isn't old
-  enough for this content to be actionable yet.
-- **Format:** four static illustrated cards on the home page (not a
-  chatbot — see below): AI only knows what it's shown/told; never share
-  your real name, address, or photos with an AI without a grown-up; if an
-  AI says something confusing or scary, tell a grown-up; AI can be wrong,
-  same as Robi was in Unit 1, so it's fine to double-check it.
+Alongside the teacher console, three no-login pages still exist —
+`/`, `/train-the-robot`, `/sequence-builder` — a self-paced, single-track,
+English-only mode with `localStorage` progress (stars, streak, daily play
+caps), built before the teacher-console pivot. See
+[`lib/soloCurriculum.ts`](../lib/soloCurriculum.ts) and
+[`lib/progress.ts`](../lib/progress.ts). These are useful as a quick demo
+of the two original activity engines without needing a teacher account,
+and could become a "homework practice" companion mode later (see
+Roadmap), but are not the primary product surface.
 
 ## Safety: why there's no live chatbot
 
-`littlelit.ai` and similar products put an actual LLM in front of kids.
-This app doesn't, on purpose:
+1. **COPPA / PIPA.** A live chat surface for children is a
+   data-collection product requiring verifiable guardian consent,
+   logging/retention policy, and content moderation — a different
+   compliance surface entirely from a teacher-mediated app that stores
+   only lesson progress and participation marks.
+2. **Pedagogically unnecessary.** At this level, "how AI understands
+   language" is better taught as a concept (the Talking to AI Safely
+   unit) than as a live conversation the child has to parse and produce
+   English in.
+3. **It's simulable.** "AI learns from examples and can be wrong" and "AI
+   follows exact instructions in order" are fully demonstrable with
+   scripted, deterministic content — which is also guaranteed
+   age-appropriate every time, unlike live model output.
 
-1. **COPPA.** A live chat surface for under-13s is a data-collection
-   product requiring verifiable parental consent, logging/retention
-   policy, and content moderation — a different compliance surface
-   entirely from a static, no-login app that stores nothing but a
-   progress counter in the child's own browser.
-2. **Pedagogically unnecessary.** At 4–8, "how AI understands language" is
-   better taught as a *concept* (Unit 3's cards) than as a live
-   conversation the child has to parse and produce English in — that's a
-   harder skill than the curriculum is targeting yet.
-3. **It's simulable.** The two mechanics kids actually need — "AI learns
-   from examples and can be wrong" and "AI follows exact instructions in
-   order" — are fully demonstrable with scripted, deterministic content,
-   which is also easier to guarantee is age-appropriate every single time
-   it's shown.
+## Roadmap
 
-If a future version wants real conversational practice, it should be a
-separate, explicitly-scoped decision (server-mediated, age-filtered,
-logged, parent-visible) — not a default add-on to this curriculum.
+Honest gap list — what a company evaluating this for a real deployment
+should know is *not* built yet:
 
-## Progress & no login
-
-There's no login, no account, and no server-side database. "Progress"
-(stars, daily streak, and the daily-rewarded-rounds cap per game) lives in
-`localStorage` on the device via `lib/progress.ts` — see that file's
-top-of-file note for why cross-device sync is deliberately out of scope
-rather than silently missing.
-
-## Where this lives in the codebase
-
-- `lib/curriculum.ts` — tracks, units, category pairs, and sequence
-  routines (content only, no game logic).
-- `lib/progress.ts` — client-side stars/streak/daily-cap tracking
-  (`localStorage`), replacing what would otherwise be a server reward
-  engine.
-- `lib/speech.ts` — `speak()` wrapper around the browser's
-  `SpeechSynthesis` API for the 🔊 read-aloud buttons (client-side only,
-  nothing sent to a server).
-- `lib/sound.ts` — tiny synthesized sound-effect engine (Web Audio API,
-  no audio files).
-- `components/mascot/Robi.tsx` — the app's mascot, a simple mood-driven
-  SVG (no 3D engine needed for a two-game app).
-- `components/games/TrainTheRobot.tsx`, `components/games/SequenceBuilder.tsx`
-  — the two games.
-- `components/home/HomeContent.tsx` — the track picker + unit list + Unit
-  3 safety cards.
-- `app/*` — three routes: `/` (home), `/train-the-robot`,
-  `/sequence-builder`.
+1. **16 of 24 lessons still need full segment-level content authored.**
+   The engines and the content model exist; this is now content-authoring
+   work, not engineering work (see
+   [`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md)).
+2. **No live sync between a teacher device and a separate student-facing
+   screen.** Today the Presentation Player is one device driving one
+   display. A two-screen mode (teacher notes on one device, clean
+   projector view on another, kept in sync) would need a small realtime
+   layer (SSE/WebSocket) on top of the existing `lessonSessions` state.
+3. **No org-admin self-service UI** for creating schools, teachers, or
+   inviting staff — `scripts/seed.ts` does this today. Needed before a
+   real customer onboards themselves.
+4. **No production pronunciation grading** — `minimal_pairs` is
+   listening-discrimination only, by design (see
+   [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md)); real speech-production
+   feedback would need a speech-recognition integration and its own
+   safety/privacy review.
+5. **No homework/independent-practice mode** connecting a student's home
+   device back to their class's progress — the solo pages are unconnected
+   to a class today.
+6. **No automated test suite.** Correctness so far has been verified by
+   hand (typecheck, lint, production build, and full manual browser
+   walkthroughs of every flow) — worth adding before this scales past a
+   pilot.

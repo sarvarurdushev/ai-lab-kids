@@ -4,7 +4,7 @@
 // + custom event, so a change re-renders every subscriber, not just the
 // component that made it — same pattern as lib/sound.ts).
 
-import { isAgeTrack, type AgeTrack } from "./curriculum";
+import { isAgeTrack, type AgeTrack } from "./soloCurriculum";
 
 const TRACK_KEY = "al_track";
 const TRACK_EVENT = "al-track-change";
