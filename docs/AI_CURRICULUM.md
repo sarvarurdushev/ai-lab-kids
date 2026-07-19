@@ -153,29 +153,31 @@ Roadmap), but are not the primary product surface.
 ## Roadmap
 
 Honest gap list — what a company evaluating this for a real deployment
-should know is *not* built yet:
+should know is *not* built yet. All 24 pilot-unit lessons are now fully
+authored (see [`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md)), so
+what's left is platform work, not content work:
 
-1. **16 of 24 lessons still need full segment-level content authored.**
-   The engines and the content model exist; this is now content-authoring
-   work, not engineering work (see
-   [`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md)).
-2. **No live sync between a teacher device and a separate student-facing
+1. **No live sync between a teacher device and a separate student-facing
    screen.** Today the Presentation Player is one device driving one
    display. A two-screen mode (teacher notes on one device, clean
    projector view on another, kept in sync) would need a small realtime
    layer (SSE/WebSocket) on top of the existing `lessonSessions` state.
-3. **No org-admin self-service UI** for creating schools, teachers, or
+2. **No org-admin self-service UI** for creating schools, teachers, or
    inviting staff — `scripts/seed.ts` does this today. Needed before a
    real customer onboards themselves.
-4. **No production pronunciation grading** — `minimal_pairs` is
+3. **No production pronunciation grading** — `minimal_pairs` is
    listening-discrimination only, by design (see
    [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md)); real speech-production
    feedback would need a speech-recognition integration and its own
    safety/privacy review.
-5. **No homework/independent-practice mode** connecting a student's home
+4. **No homework/independent-practice mode** connecting a student's home
    device back to their class's progress — the solo pages are unconnected
    to a class today.
+5. **No second pilot unit.** "Robi's Classroom" covers one 8-week arc for
+   one level; a real semester/year license would need at least one more
+   unit at a higher level, reusing the same engines and content model.
 6. **No automated test suite.** Correctness so far has been verified by
    hand (typecheck, lint, production build, and full manual browser
-   walkthroughs of every flow) — worth adding before this scales past a
-   pilot.
+   walkthroughs of every flow, including catching and fixing a real crash
+   bug in two of the activity engines) — worth adding before this scales
+   past a pilot.
