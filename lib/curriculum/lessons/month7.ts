@@ -73,6 +73,9 @@ export const m7_week1: Lesson = {
       ...AI_OR_NOT_SETS[0],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[0],
+    },
+    {
       type: "check",
       prompt: {
         en: "\"It's ___ today.\" — point to a weather picture (or look outside) and have a student complete the sentence.",
@@ -83,8 +86,8 @@ export const m7_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned seven weather words, saw how Vora finds a pattern in past weather, the same way a real forecast is made, and practiced spotting real AI in everyday life.",
-        ko: "오늘은 날씨 단어 일곱 개를 배우고, 진짜 일기예보처럼 보라가 지난 날씨에서 패턴을 찾는 모습을 봤어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we learned seven weather words, saw how Vora finds a pattern in past weather, the same way a real forecast is made, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 날씨 단어 일곱 개를 배우고, 진짜 일기예보처럼 보라가 지난 날씨에서 패턴을 찾는 모습을 봤어요. 일상 속 진짜 AI를 알아보는 연습도 하고, 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Ask a family member \"What's the weather?\" in Korean tonight, then answer them in English: \"It's ___ today.\"",
@@ -319,6 +322,9 @@ export const m7_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[1],
     },
     {
+      ...AI_OR_NOT_SETS[1],
+    },
+    {
       type: "check",
       prompt: {
         en: "Go around and have every child say \"It's ___ today\" using today's real weather.",
@@ -329,8 +335,8 @@ export const m7_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built \"It's ___ today,\" checked it against the real sky outside our window, and helped Vora follow clear step-by-step instructions.",
-        ko: "오늘은 \"It's ___ today\" 문장을 만들고 창밖의 진짜 하늘과 비교했어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
+        en: "Today we built \"It's ___ today,\" checked it against the real sky outside our window, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 \"It's ___ today\" 문장을 만들고 창밖의 진짜 하늘과 비교했어요. 보라가 분명한 단계별 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
       homework: {
         en: "Check the weather every day this week and greet a family member with \"It's ___ today!\" in English.",

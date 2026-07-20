@@ -74,6 +74,9 @@ export const m2_week1: Lesson = {
       ...AI_OR_NOT_SETS[1],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
       type: "check",
       prompt: { en: "\"I'm from ___.\" — ask one student to say this about themselves.", ko: "\"I'm from ___.\" — 한 학생에게 자신에 대해 말해보게 하세요." },
       method: "cold_call",
@@ -81,8 +84,8 @@ export const m2_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six world words, practiced saying \"I'm from Korea,\" learned that translator apps use AI to help people understand each other, and practiced spotting real AI in everyday life.",
-        ko: "오늘은 세계 단어 여섯 개를 배우고 \"I'm from Korea\"라고 말하는 연습을 했어요. 번역 앱이 AI로 서로 다른 언어를 쓰는 사람들이 이해하도록 돕는다는 것도 배우고, 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we learned six world words, practiced saying \"I'm from Korea,\" learned that translator apps use AI to help people understand each other, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 세계 단어 여섯 개를 배우고 \"I'm from Korea\"라고 말하는 연습을 했어요. 번역 앱이 AI로 서로 다른 언어를 쓰는 사람들이 이해하도록 돕는다는 것도 배우고, 일상 속 진짜 AI를 알아보는 연습도 했어요. 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Tell a family member \"I'm from Korea\" in English tonight.",
@@ -297,6 +300,9 @@ export const m2_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[2],
     },
     {
+      ...AI_OR_NOT_SETS[2],
+    },
+    {
       type: "check",
       prompt: { en: "\"I'm from ___.\" — each kid says this with confidence, standing tall.", ko: "\"I'm from ___.\" — 각자 당당하게 서서 말해보세요." },
       method: "whole_class_thumbs",
@@ -304,8 +310,8 @@ export const m2_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today every kid stood up and proudly said \"I'm from Korea!\" — a sentence that's true for all of us — and helped Vora follow clear instructions.",
-        ko: "오늘은 모두가 일어나 자랑스럽게 \"I'm from Korea!\"라고 말했어요 — 우리 모두에게 진짜인 문장이에요 — 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
+        en: "Today every kid stood up and proudly said \"I'm from Korea!\" — a sentence that's true for all of us — helped Vora follow clear instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 모두가 일어나 자랑스럽게 \"I'm from Korea!\"라고 말했어요 — 우리 모두에게 진짜인 문장이에요 — 보라가 분명한 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
       homework: {
         en: "Say \"I'm from Korea\" to a family member tonight, standing tall and proud.",

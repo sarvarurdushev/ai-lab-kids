@@ -65,6 +65,9 @@ export const m8_week1: Lesson = {
       ...AI_OR_NOT_SETS[1],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
       type: "check",
       prompt: {
         en: "\"Let's go by ___.\" — ask a student to finish the sentence with their favorite way to travel.",
@@ -75,8 +78,8 @@ export const m8_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six travel words, saw how a map app reasons its way to the fastest route, one step at a time, and practiced spotting real AI in everyday life.",
-        ko: "오늘은 여행 단어 여섯 개를 배우고, 지도 앱이 한 단계씩 추론하여 가장 빠른 길을 찾는 방법을 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we learned six travel words, saw how a map app reasons its way to the fastest route, one step at a time, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 여행 단어 여섯 개를 배우고, 지도 앱이 한 단계씩 추론하여 가장 빠른 길을 찾는 방법을 배웠어요. 일상 속 진짜 AI를 알아보는 연습도 하고, 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Plan a pretend trip with a family member tonight — take turns saying \"Let's go by ___.\"",
@@ -315,6 +318,9 @@ export const m8_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[2],
     },
     {
+      ...AI_OR_NOT_SETS[2],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a few kids \"Let's go by ___?\" and let them answer with their own favorite way to travel.",
@@ -325,8 +331,8 @@ export const m8_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built \"Let's go by airplane,\" practiced suggesting our own favorite way to travel, and helped Vora follow clear step-by-step instructions.",
-        ko: "오늘은 \"Let's go by airplane\" 문장을 만들고, 가장 좋아하는 이동 방법을 직접 제안해봤어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
+        en: "Today we built \"Let's go by airplane,\" practiced suggesting our own favorite way to travel, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 \"Let's go by airplane\" 문장을 만들고, 가장 좋아하는 이동 방법을 직접 제안해봤어요. 보라가 분명한 단계별 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
       homework: {
         en: "Ask a family member \"Let's go by ___?\" tonight and let them pick their favorite way to travel too.",

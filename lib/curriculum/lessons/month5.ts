@@ -73,6 +73,9 @@ export const m5_week1: Lesson = {
       ...AI_OR_NOT_SETS[4],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Show your own family photo (or draw one) and tell a partner: \"This is my ___.\"",
@@ -83,8 +86,8 @@ export const m5_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned family words and the sentence \"This is my ___\" — and how even the smartest AI can mix up faces that you'd never confuse — and practiced spotting real AI in everyday life.",
-        ko: "오늘은 가족 단어와 \"This is my ___\" 문장을 배웠어요 — 그리고 아무리 똑똑한 AI라도 너희는 절대 헷갈리지 않을 얼굴을 헷갈릴 수 있다는 것도 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we learned family words and the sentence \"This is my ___\" — and how even the smartest AI can mix up faces that you'd never confuse — practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 가족 단어와 \"This is my ___\" 문장을 배웠어요 — 그리고 아무리 똑똑한 AI라도 너희는 절대 헷갈리지 않을 얼굴을 헷갈릴 수 있다는 것도 배웠어요. 일상 속 진짜 AI를 알아보는 연습도 하고, 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Introduce one family member to someone at home using \"This is my ___.\"",
@@ -312,6 +315,9 @@ export const m5_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[5],
     },
     {
+      ...AI_OR_NOT_SETS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Every kid says \"This is my ___\" out loud, naming one real family member.",
@@ -322,8 +328,8 @@ export const m5_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today every child proudly introduced one real family member in English — the whole point of the sentence — and helped Vora follow clear instructions.",
-        ko: "오늘은 모든 학생이 영어로 진짜 가족 중 한 명을 자신 있게 소개했어요 — 이 문장의 진짜 목적이에요. 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
+        en: "Today every child proudly introduced one real family member in English — the whole point of the sentence — helped Vora follow clear instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 모든 학생이 영어로 진짜 가족 중 한 명을 자신 있게 소개했어요 — 이 문장의 진짜 목적이에요. 보라가 분명한 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
       homework: {
         en: "Say \"This is my ___\" about a family member to someone at home tonight.",

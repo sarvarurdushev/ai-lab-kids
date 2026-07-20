@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { BilingualText } from "@/components/curriculum/BilingualText";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
-import { UndoIcon, RobotHeadIcon } from "@/components/icons";
+import { UndoIcon, RobotHeadIcon, SparkleIcon } from "@/components/icons";
 import type { InstructVoraConfig } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
 
@@ -90,97 +90,134 @@ export function InstructVoraEngine({
         </span>
       </div>
 
-      <div className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-5 shadow-sm">
-        <Vora size={64} mood={voraMood} bob={phase === "success"} />
-        <div className="text-3xl">{phase === "vague" ? config.vagueResultEmoji : config.goalEmoji}</div>
-        <BilingualText text={config.goalLabel} level={level} keyContent size="base" />
+      <div className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm">
+        <motion.div animate={phase === "vague" ? { rotate: [0, -6, 6, -4, 4, 0] } : {}} transition={{ duration: 0.6 }}>
+          <Vora size={64} mood={voraMood} bob={phase === "success"} />
+        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={phase === "vague" ? "vague-emoji" : "goal-emoji"}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 350, damping: 14 }}
+            className="text-5xl"
+          >
+            {phase === "vague" ? config.vagueResultEmoji : config.goalEmoji}
+          </motion.div>
+        </AnimatePresence>
+        <BilingualText text={config.goalLabel} level={level} keyContent size="lg" />
       </div>
 
-      {phase === "vague" && (
-        <div className="flex flex-col items-center gap-3">
-          <div className="rounded-2xl bg-coral/10 px-4 py-3 text-center">
-            <p className="text-xs font-bold uppercase tracking-wide text-coral">The instruction was:</p>
-            <BilingualText text={config.vagueInstruction} level={level} keyContent size="base" />
-          </div>
-          <div className="max-w-xs text-center text-sm text-ink/70">
-            <BilingualText text={config.vagueResultText} level={level} size="sm" />
-          </div>
-          <Button onClick={startBuilding} variant="secondary" className="!px-6 !py-2 !text-base">
-            Give clear steps instead →
-          </Button>
-        </div>
-      )}
-
-      {phase === "build" && (
-        <>
+      <AnimatePresence mode="wait">
+        {phase === "vague" && (
           <motion.div
-            animate={shake ? { x: [0, -8, 8, -8, 8, 0] } : { x: 0 }}
-            transition={{ duration: 0.35 }}
-            className="grid gap-2"
-            style={{ gridTemplateColumns: `repeat(${Math.min(config.steps.length, 4)}, minmax(0, 1fr))` }}
+            key="vague"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            className="flex flex-col items-center gap-3"
           >
-            {Array.from({ length: config.steps.length }).map((_, i) => {
-              const id = placedIds[i];
-              const tile = id ? pool.find((t) => t.id === id) : undefined;
-              return (
-                <div
-                  key={i}
-                  className={`flex h-16 flex-col items-center justify-center rounded-xl border-2 px-1 text-center ${
-                    tile ? "border-mint bg-mint/10" : "border-dashed border-ink/20 text-ink/20"
-                  }`}
-                >
-                  {tile ? (
-                    <>
-                      <span className="text-xl">{tile.emoji}</span>
-                      <span className="text-xs font-bold leading-tight">{tile.text.en}</span>
-                    </>
-                  ) : (
-                    i + 1
-                  )}
-                </div>
-              );
-            })}
+            <div className="rounded-2xl bg-coral/10 px-4 py-3 text-center">
+              <p className="text-xs font-bold uppercase tracking-wide text-coral">Vora heard:</p>
+              <BilingualText text={config.vagueInstruction} level={level} keyContent size="lg" />
+            </div>
+            <div className="max-w-xs text-center text-sm text-ink/70">
+              <BilingualText text={config.vagueResultText} level={level} size="sm" />
+            </div>
+            <Button onClick={startBuilding} variant="secondary" className="!px-6 !py-2 !text-base">
+              Let&apos;s fix it →
+            </Button>
           </motion.div>
+        )}
 
-          <div className="grid grid-cols-1 gap-2">
-            {pool
-              .filter((t) => !placedIds.includes(t.id))
-              .map((tile) => (
-                <button
-                  key={tile.id}
-                  type="button"
-                  disabled={shake}
-                  onClick={() => tap(tile.id)}
-                  className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-left shadow-sm transition-transform active:scale-95 disabled:opacity-50"
-                >
-                  <span className="text-2xl">{tile.emoji}</span>
-                  <span className="flex-1">
-                    <span className="block text-sm font-semibold text-ink">{tile.text.en}</span>
-                    {level !== "minimal" && <span className="block text-xs text-ink/50">{tile.text.ko}</span>}
-                  </span>
-                </button>
-              ))}
-          </div>
-
-          <div className="flex justify-center">
-            <button
-              type="button"
-              onClick={backspace}
-              disabled={placedIds.length === 0}
-              className="flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink/60 shadow-sm disabled:opacity-40"
+        {phase === "build" && (
+          <motion.div key="build" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-3">
+            <motion.div
+              animate={shake ? { x: [0, -8, 8, -8, 8, 0] } : { x: 0 }}
+              transition={{ duration: 0.35 }}
+              className="grid gap-2"
+              style={{ gridTemplateColumns: `repeat(${Math.min(config.steps.length, 4)}, minmax(0, 1fr))` }}
             >
-              <UndoIcon size={14} /> Undo
-            </button>
-          </div>
-        </>
-      )}
+              {Array.from({ length: config.steps.length }).map((_, i) => {
+                const id = placedIds[i];
+                const tile = id ? pool.find((t) => t.id === id) : undefined;
+                return (
+                  <div
+                    key={i}
+                    className={`flex h-16 flex-col items-center justify-center rounded-xl border-2 px-1 text-center ${
+                      tile ? "border-mint bg-mint/10" : "border-dashed border-ink/20 text-ink/20"
+                    }`}
+                  >
+                    <AnimatePresence>
+                      {tile ? (
+                        <motion.div
+                          key={tile.id}
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                        >
+                          <span className="text-2xl">{tile.emoji}</span>
+                          <span className="block text-xs font-bold leading-tight">{tile.text.en}</span>
+                        </motion.div>
+                      ) : (
+                        <span className="text-lg font-bold">{i + 1}</span>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </motion.div>
 
-      {phase === "success" && (
-        <div className="flex flex-col items-center gap-2 rounded-2xl bg-mint/10 px-4 py-3 text-center">
-          <p className="text-sm font-bold text-mint">Vora got it right!</p>
-          <BilingualText text={config.successText} level={level} size="sm" />
-        </div>
-      )}
+            <div className="grid grid-cols-1 gap-2">
+              {pool
+                .filter((t) => !placedIds.includes(t.id))
+                .map((tile) => (
+                  <motion.button
+                    key={tile.id}
+                    layout
+                    whileTap={{ scale: 0.95 }}
+                    type="button"
+                    disabled={shake}
+                    onClick={() => tap(tile.id)}
+                    className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-left shadow-sm disabled:opacity-50"
+                  >
+                    <span className="text-3xl">{tile.emoji}</span>
+                    <span className="flex-1">
+                      <span className="block text-base font-semibold text-ink">{tile.text.en}</span>
+                      {level !== "minimal" && <span className="block text-xs text-ink/50">{tile.text.ko}</span>}
+                    </span>
+                  </motion.button>
+                ))}
+            </div>
+
+            <div className="flex justify-center">
+              <button
+                type="button"
+                onClick={backspace}
+                disabled={placedIds.length === 0}
+                className="flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink/60 shadow-sm disabled:opacity-40"
+              >
+                <UndoIcon size={14} /> Undo
+              </button>
+            </div>
+          </motion.div>
+        )}
+
+        {phase === "success" && (
+          <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="flex flex-col items-center gap-2 rounded-2xl bg-mint/10 px-4 py-4 text-center"
+          >
+            <p className="flex items-center gap-1.5 text-lg font-bold text-mint">
+              <SparkleIcon size={18} className="text-amber" /> Vora did it!
+            </p>
+            <BilingualText text={config.successText} level={level} size="sm" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

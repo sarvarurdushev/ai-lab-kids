@@ -83,6 +83,9 @@ export const m6_week1: Lesson = {
       ...AI_OR_NOT_SETS[5],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"It's a big ___\" or \"It's a small ___\" about an animal picture or toy.",
@@ -93,8 +96,8 @@ export const m6_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned wild animal words and \"It's a big / small ___\" — and how wildlife cameras use AI to recognize which animal walked by — and practiced spotting real AI in everyday life.",
-        ko: "오늘은 야생 동물 단어와 \"It's a big / small ___\" 문장을 배웠어요 — 그리고 야생동물 카메라가 AI로 지나간 동물을 알아내는 방법도 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we learned wild animal words and \"It's a big / small ___\" — and how wildlife cameras use AI to recognize which animal walked by — practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 야생 동물 단어와 \"It's a big / small ___\" 문장을 배웠어요 — 그리고 야생동물 카메라가 AI로 지나간 동물을 알아내는 방법도 배웠어요. 일상 속 진짜 AI를 알아보는 연습도 하고, 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Find a picture of an animal at home and say \"It's a big ___\" or \"It's a small ___.\"",
@@ -335,6 +338,9 @@ export const m6_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[0],
     },
     {
+      ...AI_OR_NOT_SETS[0],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"fan\" and \"pan\" one more time — thumbs up if you can hear the difference now.",
@@ -345,8 +351,8 @@ export const m6_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we reviewed the f sound from Week 3 — a great checkpoint before we meet two more tricky sounds later this year — and helped Vora follow clear step-by-step instructions.",
-        ko: "오늘은 3주차에서 배운 f 소리를 복습했어요 — 올해 남은 두 가지 어려운 소리를 만나기 전 좋은 점검이었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
+        en: "Today we reviewed the f sound from Week 3 — a great checkpoint before we meet two more tricky sounds later this year — helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 3주차에서 배운 f 소리를 복습했어요 — 올해 남은 두 가지 어려운 소리를 만나기 전 좋은 점검이었어요. 보라가 분명한 단계별 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
     },
   ],

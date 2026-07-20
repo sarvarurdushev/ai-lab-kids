@@ -75,6 +75,9 @@ export const m1_week1: Lesson = {
       ...AI_OR_NOT_SETS[0],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[0],
+    },
+    {
       type: "check",
       prompt: { en: "\"It's a ___.\" — point to a space picture and have a student name it.", ko: "\"It's a ___.\" — 우주 그림을 가리키며 한 학생이 이름을 말해보게 하세요." },
       method: "cold_call",
@@ -82,8 +85,8 @@ export const m1_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six space words, saw how Vora finds a pattern in star pictures, and practiced spotting real AI in everyday life.",
-        ko: "오늘은 우주 단어 여섯 개를 배우고, 보라가 별 사진에서 패턴을 찾는 모습을 봤어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we learned six space words, saw how Vora finds a pattern in star pictures, spotted real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 우주 단어 여섯 개를 배우고, 보라가 별 사진에서 패턴을 찾는 모습을 봤어요. 일상 속 진짜 AI를 알아보고, 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Look up at the sky tonight (or a picture of it) and say \"It's a star!\" or \"It's the moon!\" in English.",
@@ -310,6 +313,9 @@ export const m1_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[1],
     },
     {
+      ...AI_OR_NOT_SETS[1],
+    },
+    {
       type: "check",
       prompt: { en: "\"I see a ___.\" — each kid points to a space picture and finishes the sentence out loud.", ko: "\"I see a ___.\" — 각자 우주 그림을 가리키며 문장을 완성해 소리 내어 말해보세요." },
       method: "whole_class_thumbs",
@@ -317,8 +323,8 @@ export const m1_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today every kid built and said \"I see a ___\" about a space picture — our first full sentence about space — and helped Vora follow clear instructions.",
-        ko: "오늘은 모두가 우주 그림에 대해 \"I see a ___\" 문장을 만들고 말했어요 — 우주에 대한 첫 완전한 문장이었어요 — 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
+        en: "Today every kid built and said \"I see a ___\" about a space picture, helped Vora follow clear instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 모두가 우주 그림에 대해 \"I see a ___\" 문장을 만들고 말했어요. 보라가 분명한 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
       homework: {
         en: "Point to something at home and say \"I see a ___\" in English.",

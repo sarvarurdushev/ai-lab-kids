@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { BilingualText } from "@/components/curriculum/BilingualText";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
-import { RobotHeadIcon, GlobeIcon } from "@/components/icons";
+import { RobotHeadIcon, GlobeIcon, CheckCircleIcon, XCircleIcon, SparkleIcon } from "@/components/icons";
 import type { AIOrNotConfig } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
 
@@ -15,9 +16,10 @@ import type { KoreanSupportLevel } from "@/lib/i18n";
 // AI4K12 Big Idea 5 (Societal Impact). Content lives in
 // lib/curriculum/aiLabBank.ts as a reusable bank of real-life scenarios —
 // deliberately NOT month-vocabulary, because the point is recognizing AI
-// out in the world, not drilling a word list. Every answer is followed
-// immediately by a plain-language explanation, since recognition, not
-// score, is the actual learning goal here.
+// out in the world, not drilling a word list. The verdict (AI / not AI)
+// is shown big and first — the explanation sentence is secondary support
+// text, not the primary thing a pre-reader or early English learner has
+// to parse to know whether they got it right.
 
 function shuffle<T>(items: T[]): T[] {
   const arr = [...items];
@@ -45,20 +47,29 @@ export function AIOrNotEngine({
 
   if (index >= items.length) {
     return (
-      <div className="flex flex-col items-center gap-3 text-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="flex flex-col items-center gap-3 text-center"
+      >
         <Vora size={100} mood="happy" bob />
-        <p className="font-display text-lg font-bold text-indigo-dark">You spotted AI in the real world!</p>
+        <motion.p
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.15 }}
+          className="font-display text-xl font-bold text-indigo-dark"
+        >
+          <SparkleIcon size={20} className="mr-1 inline text-amber" /> You spotted AI!
+        </motion.p>
         <div className="flex flex-col items-center gap-1 rounded-2xl bg-indigo/10 px-4 py-3">
           <p className="flex items-center gap-1.5 text-sm font-bold text-ink">
-            <GlobeIcon size={16} className="text-indigo" /> Why this matters
+            <GlobeIcon size={16} className="text-indigo" /> {correctCount}/{outcomes.length} right
           </p>
           <p className="max-w-xs text-xs text-ink/70">
-            You got <strong>{correctCount}/{outcomes.length}</strong> right. AI is already part of everyday life —
-            in speakers, apps, and cameras — and knowing which things are AI (and which are just simple machines)
-            is a real skill, not a guess.
+            AI is already all around us — in speakers, apps, and cameras. Spotting it is a real skill!
           </p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
@@ -90,49 +101,85 @@ export function AIOrNotEngine({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between text-sm font-bold text-ink/50">
         <span>{config.title.en}</span>
-        <span>
-          {index + 1}/{items.length}
+        <span className="flex items-center gap-1">
+          {items.map((_, i) => (
+            <span
+              key={i}
+              className={`h-1.5 w-1.5 rounded-full ${i < index ? "bg-indigo" : i === index ? "bg-indigo/60" : "bg-ink/15"}`}
+            />
+          ))}
         </span>
       </div>
 
-      <div className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-5 shadow-sm">
-        <Vora size={52} mood={voraMood} />
-        <div className="text-5xl">{item.emoji}</div>
-        <BilingualText text={item.scenario} level={level} keyContent size="base" />
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.25 }}
+          className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm"
+        >
+          <Vora size={52} mood={voraMood} />
+          <motion.div
+            animate={answered ? { scale: [1, 1.25, 1] } : {}}
+            transition={{ duration: 0.4 }}
+            className="text-7xl"
+          >
+            {item.emoji}
+          </motion.div>
+          <BilingualText text={item.scenario} level={level} keyContent size="lg" />
+        </motion.div>
+      </AnimatePresence>
 
       <div className="grid grid-cols-2 gap-3">
-        <button
+        <motion.button
+          whileTap={{ scale: 0.93 }}
           type="button"
           disabled={!!answered}
           onClick={() => choose(true)}
-          className="flex flex-col items-center gap-1 rounded-2xl bg-indigo/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
+          className="flex flex-col items-center gap-1 rounded-2xl bg-indigo/15 py-5 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
         >
-          <RobotHeadIcon size={26} className="text-indigo" />
-          It&apos;s AI
-        </button>
-        <button
+          <RobotHeadIcon size={32} className="text-indigo" />
+          AI 🤖
+        </motion.button>
+        <motion.button
+          whileTap={{ scale: 0.93 }}
           type="button"
           disabled={!!answered}
           onClick={() => choose(false)}
-          className="flex flex-col items-center gap-1 rounded-2xl bg-amber/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
+          className="flex flex-col items-center gap-1 rounded-2xl bg-amber/15 py-5 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
         >
-          <span className="text-2xl">🙅</span>
+          <span className="text-3xl">🙅</span>
           Not AI
-        </button>
+        </motion.button>
       </div>
 
-      {answered && (
-        <div className="flex flex-col items-center gap-2">
-          <p className={`text-center text-sm font-bold ${answered.correct ? "text-mint" : "text-coral"}`}>
-            {answered.correct ? "That's right!" : item.isAI ? "It actually IS AI!" : "It's actually NOT AI!"}
-          </p>
-          <BilingualText text={item.explanation} level={level} size="sm" />
-          <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
-            {index + 1 >= items.length ? "Finish" : "Next →"}
-          </Button>
-        </div>
-      )}
+      <AnimatePresence>
+        {answered && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 12 }}
+              className={`flex items-center gap-1.5 rounded-full px-4 py-1.5 text-lg font-bold ${
+                answered.correct ? "bg-mint/20 text-mint" : "bg-coral/20 text-coral"
+              }`}
+            >
+              {answered.correct ? <CheckCircleIcon size={22} /> : <XCircleIcon size={22} />}
+              {answered.correct ? "Yes!" : item.isAI ? "It IS AI!" : "Not AI!"}
+            </motion.div>
+            <BilingualText text={item.explanation} level={level} size="sm" />
+            <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
+              {index + 1 >= items.length ? "Finish" : "Next →"}
+            </Button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

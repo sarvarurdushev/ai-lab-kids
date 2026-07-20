@@ -74,6 +74,9 @@ export const m9_week1: Lesson = {
       ...AI_OR_NOT_SETS[2],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
       type: "check",
       prompt: {
         en: "Everyone point to your ears, then your feet — no talking, just pointing!",
@@ -84,8 +87,8 @@ export const m9_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we named six body parts in English, learned that sensors, not just eyes, can notice how our bodies move, and practiced spotting real AI in everyday life.",
-        ko: "오늘은 영어로 신체 부위 여섯 가지의 이름을 배우고, 눈이 아니라 센서도 우리 몸의 움직임을 알아챌 수 있다는 걸 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we named six body parts in English, learned that sensors, not just eyes, can notice how our bodies move, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 영어로 신체 부위 여섯 가지의 이름을 배우고, 눈이 아니라 센서도 우리 몸의 움직임을 알아챌 수 있다는 걸 배웠어요. 일상 속 진짜 AI를 알아보는 연습도 하고, 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Touch and name three body parts in English before bedtime tonight.",
@@ -312,6 +315,9 @@ export const m9_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[3],
     },
     {
+      ...AI_OR_NOT_SETS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"think\" and \"sink\" one more time — thumbs up if it's easier to hear the difference than it was in Week 4.",
@@ -322,8 +328,8 @@ export const m9_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we reviewed the th/s sound from Week 4 — one more sound-gap check-in before the year's last one in Month 12 — and helped Vora follow clear step-by-step instructions.",
-        ko: "오늘은 4주차에 배운 th/s 소리를 복습했어요 — 12월의 마지막 복습 전, 한 번 더 확인해봤어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
+        en: "Today we reviewed the th/s sound from Week 4 — one more sound-gap check-in before the year's last one in Month 12 — helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 4주차에 배운 th/s 소리를 복습했어요 — 12월의 마지막 복습 전, 한 번 더 확인해봤어요. 보라가 분명한 단계별 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
     },
   ],

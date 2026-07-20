@@ -1,10 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
-import { PatternGridIcon } from "@/components/icons";
+import { PatternGridIcon, CheckCircleIcon, XCircleIcon } from "@/components/icons";
 import type { PatternPredictorConfig } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
 
@@ -49,19 +50,27 @@ export function PatternPredictorEngine({
 
   if (roundIndex >= rounds.length) {
     return (
-      <div className="flex flex-col items-center gap-3 text-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="flex flex-col items-center gap-3 text-center"
+      >
         <Vora size={100} mood="happy" bob />
-        <p className="font-display text-lg font-bold text-indigo-dark">You found every pattern!</p>
+        <motion.p
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.15 }}
+          className="font-display text-xl font-bold text-indigo-dark"
+        >
+          You found every pattern! 🎉
+        </motion.p>
         <div className="flex flex-col items-center gap-1 rounded-2xl bg-indigo/10 px-4 py-3">
           <p className="flex items-center gap-1.5 text-sm font-bold text-ink">
-            <PatternGridIcon size={16} className="text-indigo" /> Why this is AI reasoning
+            <PatternGridIcon size={16} className="text-indigo" /> {correctCount}/{outcomes.length} right
           </p>
-          <p className="max-w-xs text-xs text-ink/70">
-            You found the rule in {correctCount}/{outcomes.length} patterns by looking at examples — that&apos;s
-            exactly how Vora predicts things too: no magic, just spotting what repeats.
-          </p>
+          <p className="max-w-xs text-xs text-ink/70">That&apos;s how Vora predicts too — no magic, just spotting what repeats.</p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
@@ -99,44 +108,68 @@ export function PatternPredictorEngine({
         </span>
       </div>
 
-      <div className="flex flex-col items-center gap-3 rounded-3xl bg-white/80 py-5 shadow-sm">
-        <Vora size={52} mood={voraMood} />
-        <div className="flex items-center gap-2 text-4xl">
-          {data.sequence.map((item, i) => (
-            <span key={i}>{item}</span>
-          ))}
-          <span className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-dashed border-indigo/40 text-2xl font-bold text-indigo">
-            ?
-          </span>
-        </div>
-        <p className="text-sm font-semibold text-ink/60">What comes next?</p>
-        {level !== "minimal" && <p className="text-xs text-ink/40">다음에 무엇이 올까요?</p>}
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={roundIndex}
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.25 }}
+          className="flex flex-col items-center gap-3 rounded-3xl bg-white/80 py-6 shadow-sm"
+        >
+          <Vora size={52} mood={voraMood} />
+          <div className="flex items-center gap-2 text-5xl">
+            {data.sequence.map((item, i) => (
+              <span key={i}>{item}</span>
+            ))}
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-dashed border-indigo/40 text-3xl font-bold text-indigo">
+              ?
+            </span>
+          </div>
+          <p className="text-base font-bold text-ink/70">What comes next?</p>
+          {level !== "minimal" && <p className="text-xs text-ink/40">다음에 무엇이 올까요?</p>}
+        </motion.div>
+      </AnimatePresence>
 
       <div className="grid grid-cols-3 gap-3">
         {round.options.map((option) => (
-          <button
+          <motion.button
             key={option}
+            whileTap={{ scale: 0.9 }}
             type="button"
             disabled={!!answered}
             onClick={() => choose(option)}
-            className="flex items-center justify-center rounded-2xl bg-indigo/10 py-5 text-4xl shadow-sm transition-transform active:scale-95 disabled:opacity-50"
+            className="flex items-center justify-center rounded-2xl bg-indigo/10 py-5 text-4xl shadow-sm disabled:opacity-50"
           >
             {option}
-          </button>
+          </motion.button>
         ))}
       </div>
 
-      {answered && (
-        <div className="flex flex-col items-center gap-2">
-          <p className={`text-center text-sm font-bold ${answered.good ? "text-mint" : "text-coral"}`}>
-            {answered.good ? "That's the pattern!" : `The answer was ${data.answer}.`}
-          </p>
-          <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
-            {roundIndex + 1 >= rounds.length ? "Finish" : "Next →"}
-          </Button>
-        </div>
-      )}
+      <AnimatePresence>
+        {answered && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 12 }}
+              className={`flex items-center gap-1.5 rounded-full px-4 py-1.5 text-lg font-bold ${
+                answered.good ? "bg-mint/20 text-mint" : "bg-coral/20 text-coral"
+              }`}
+            >
+              {answered.good ? <CheckCircleIcon size={22} /> : <XCircleIcon size={22} />}
+              {answered.good ? "Yes!" : `It was ${data.answer}`}
+            </motion.div>
+            <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
+              {roundIndex + 1 >= rounds.length ? "Finish" : "Next →"}
+            </Button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

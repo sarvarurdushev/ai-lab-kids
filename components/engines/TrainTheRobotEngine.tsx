@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { BilingualText } from "@/components/curriculum/BilingualText";
@@ -75,28 +76,38 @@ export function TrainTheRobotEngine({
   if (roundIndex >= rounds.length) {
     const allCorrect = guessCorrectCount === guessTotal;
     return (
-      <div className="flex flex-col items-center gap-3 text-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="flex flex-col items-center gap-3 text-center"
+      >
         <Vora size={100} mood="happy" bob />
-        <p className="font-display text-lg font-bold text-indigo-dark">All items sorted!</p>
+        <motion.p
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.15 }}
+          className="font-display text-xl font-bold text-indigo-dark"
+        >
+          All sorted! 🎉
+        </motion.p>
         <div className="flex flex-col items-center gap-1 rounded-2xl bg-mint/10 px-4 py-3">
           <p className="flex items-center gap-1.5 text-sm font-bold text-ink">
-            <SproutIcon size={16} className="text-mint" /> What Vora learned
-          </p>
-          <p className="max-w-xs text-xs text-ink/70">
-            Vora trained on <strong>{teachTotal}</strong> examples you labeled, then was tested on{" "}
-            <strong>{guessTotal}</strong> brand-new ones it had never seen before — and got{" "}
+            <SproutIcon size={16} className="text-mint" /> Vora got{" "}
             <strong>
               {guessCorrectCount}/{guessTotal}
             </strong>{" "}
-            right.
+            new ones right
+          </p>
+          <p className="max-w-xs text-xs text-ink/70">
+            You taught Vora with {teachTotal} examples. Then it guessed {guessTotal} new ones by itself!
           </p>
           <p className="max-w-xs text-xs text-ink/70">
             {allCorrect
-              ? "A perfect score! That's exactly how real AI is trained — labeled examples in, correct guesses on new data out."
-              : "Real AI makes mistakes too, especially on tricky or unusual examples — the fix is always the same: more, better-labeled examples to learn from."}
+              ? "That's how real AI learns — good examples in, good guesses out."
+              : "AI makes mistakes on tricky ones too — more examples help it learn better."}
           </p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
@@ -184,70 +195,93 @@ export function TrainTheRobotEngine({
         )
       )}
 
-      <div className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-5 shadow-sm">
-        <Vora size={60} mood={voraMood} />
-        <div className="text-6xl">{item.emoji}</div>
-        <BilingualText text={item.word} level={level} keyContent size="lg" />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={roundIndex}
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.25 }}
+          className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm"
+        >
+          <Vora size={60} mood={voraMood} />
+          <motion.div animate={answered ? { scale: [1, 1.25, 1] } : {}} transition={{ duration: 0.4 }} className="text-7xl">
+            {item.emoji}
+          </motion.div>
+          <BilingualText text={item.word} level={level} keyContent size="lg" />
 
-        {round.mode === "guess" && round.voraGuess && (
-          <div className="mt-1 rounded-2xl bg-indigo/10 px-4 py-2 text-center text-sm font-semibold text-indigo-dark">
-            Vora thinks: {round.voraGuess === "a" ? config.emojiA : config.emojiB}{" "}
-            {bucketLabel(round.voraGuess).en}
-          </div>
-        )}
-      </div>
+          {round.mode === "guess" && round.voraGuess && (
+            <div className="mt-1 rounded-2xl bg-indigo/10 px-4 py-2 text-center text-sm font-semibold text-indigo-dark">
+              Vora thinks: {round.voraGuess === "a" ? config.emojiA : config.emojiB}{" "}
+              {bucketLabel(round.voraGuess).en}
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
 
       {round.mode === "teach" ? (
         <div className="grid grid-cols-2 gap-3">
-          <button
+          <motion.button
+            whileTap={{ scale: 0.93 }}
             type="button"
             disabled={!!answered}
             onClick={() => answerTeach("a")}
-            className="flex flex-col items-center gap-1 rounded-2xl bg-amber/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
+            className="flex flex-col items-center gap-1 rounded-2xl bg-amber/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
             <span className="text-3xl">{config.emojiA}</span>
             {config.labelA.en}
             <span className="text-xs font-normal text-ink/50">{config.labelA.ko}</span>
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.93 }}
             type="button"
             disabled={!!answered}
             onClick={() => answerTeach("b")}
-            className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
+            className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
             <span className="text-3xl">{config.emojiB}</span>
             {config.labelB.en}
             <span className="text-xs font-normal text-ink/50">{config.labelB.ko}</span>
-          </button>
+          </motion.button>
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-3">
-          <button
+          <motion.button
+            whileTap={{ scale: 0.93 }}
             type="button"
             disabled={!!answered}
             onClick={() => answerGuess("right")}
-            className="flex flex-col items-center gap-1 rounded-2xl bg-mint/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
+            className="flex flex-col items-center gap-1 rounded-2xl bg-mint/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
             <CheckCircleIcon size={28} className="text-mint" />
-            Vora is right
-          </button>
-          <button
+            Right
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.93 }}
             type="button"
             disabled={!!answered}
             onClick={() => answerGuess("wrong")}
-            className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
+            className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
             <XCircleIcon size={28} className="text-coral" />
-            Vora is wrong
-          </button>
+            Wrong
+          </motion.button>
         </div>
       )}
 
       {answered && (
         <div className="flex flex-col items-center gap-2">
-          <p className={`text-center text-sm font-bold ${answered.good ? "text-mint" : "text-coral"}`}>
-            {answered.good ? "Great!" : `It's ${bucketLabel(item.bucket).en} (${bucketLabel(item.bucket).ko}).`}
-          </p>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 12 }}
+            className={`flex items-center gap-1.5 rounded-full px-4 py-1.5 text-lg font-bold ${
+              answered.good ? "bg-mint/20 text-mint" : "bg-coral/20 text-coral"
+            }`}
+          >
+            {answered.good ? <CheckCircleIcon size={20} /> : <XCircleIcon size={20} />}
+            {answered.good ? "Great!" : `It's ${bucketLabel(item.bucket).en}`}
+          </motion.div>
           <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
             {roundIndex + 1 >= rounds.length ? "Finish" : "Next →"}
           </Button>

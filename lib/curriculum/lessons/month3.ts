@@ -72,6 +72,9 @@ export const m3_week1: Lesson = {
       ...AI_OR_NOT_SETS[2],
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
       type: "check",
       prompt: {
         en: "Turn to a partner. One kid asks \"Can I play?\" and the other answers \"Yes! Let's share.\"",
@@ -82,8 +85,8 @@ export const m3_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned to ask \"Can I play?\" and offer \"Let's share,\" saw that a good voice assistant listens and takes turns like a good friend, and practiced spotting real AI in everyday life.",
-        ko: "오늘은 \"Can I play?\"라고 묻고 \"Let's share\"라고 제안하는 법을 배웠어요. 좋은 음성 비서도 좋은 친구처럼 듣고 차례를 지킨다는 것을 알았고, 일상 속 진짜 AI를 알아보는 연습도 했어요.",
+        en: "Today we learned to ask \"Can I play?\" and offer \"Let's share,\" saw that a good voice assistant listens and takes turns like a good friend, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+        ko: "오늘은 \"Can I play?\"라고 묻고 \"Let's share\"라고 제안하는 법을 배웠어요. 좋은 음성 비서도 좋은 친구처럼 듣고 차례를 지킨다는 것을 알았고, 일상 속 진짜 AI를 알아보는 연습도 했어요. 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Ask someone at home \"Can I play?\" before you join their game tonight.",
@@ -298,6 +301,9 @@ export const m3_week4: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[3],
     },
     {
+      ...AI_OR_NOT_SETS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"light\" and \"right\" one more time — thumbs up if your ears caught the difference today.",
@@ -308,8 +314,8 @@ export const m3_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we listened closely for the difference between l and r again, a little easier every time we practice, and helped Vora follow clear step-by-step instructions.",
-        ko: "오늘은 l과 r 소리의 차이를 다시 한번 귀 기울여 들어봤어요 — 연습할수록 조금씩 쉬워져요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
+        en: "Today we listened closely for the difference between l and r again, a little easier every time we practice, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+        ko: "오늘은 l과 r 소리의 차이를 다시 한번 귀 기울여 들어봤어요 — 연습할수록 조금씩 쉬워져요. 보라가 분명한 단계별 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
       },
     },
   ],
