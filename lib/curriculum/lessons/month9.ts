@@ -119,8 +119,8 @@ export const m9_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "As each step is placed, have the whole class stand up and actually perform it together before moving to the next — this routine is meant to be moved, not just read aloud.",
-        ko: "각 단계를 놓을 때마다 반 전체가 일어나서 실제로 함께 동작을 해보고 나서 다음으로 넘어가세요 — 이 루틴은 그냥 읽는 게 아니라 몸으로 직접 해보는 거예요.",
+        en: "As each step is placed, have the whole class stand up and actually perform it together before moving to the next — this routine is meant to be moved, not just read aloud. Then play a second game to reinforce it.",
+        ko: "각 단계를 놓을 때마다 반 전체가 일어나서 실제로 함께 동작을 해보고 나서 다음으로 넘어가세요 — 이 루틴은 그냥 읽는 게 아니라 몸으로 직접 해보는 거예요. 그다음 두 번째 게임으로 한 번 더 연습해보세요.",
       },
       config: {
         engine: "sequence_builder",
@@ -131,6 +131,22 @@ export const m9_week2: Lesson = {
           { text: { en: "Clap your hands", ko: "손뼉 치기" }, emoji: "👏", minTrack: "explorers" },
           { text: { en: "Sit down", ko: "앉기" }, emoji: "🪑" },
         ],
+      },
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "Build the sentence one tile at a time, then have the whole class physically touch their nose as they say it out loud together.",
+        ko: "한 번에 한 타일씩 문장을 만들고, 다 함께 소리 내어 말하면서 실제로 코를 만져보세요.",
+      },
+      config: {
+        engine: "sentence_builder",
+        title: { en: "Touch your nose.", ko: "코를 만지세요." },
+        words: [
+          { text: "Touch", role: "verb", ko: "만지다" },
+          { text: "your nose", role: "object", ko: "너의 코" },
+        ],
+        translation: { en: "Touch your nose.", ko: "코를 만지세요." },
       },
     },
     {
@@ -180,8 +196,8 @@ export const m9_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Build the sentence one tile at a time, then have the whole class physically touch their nose as they say it out loud together.",
-        ko: "한 번에 한 타일씩 문장을 만들고, 다 함께 소리 내어 말하면서 실제로 코를 만져보세요.",
+        en: "Build the sentence one tile at a time, then have the whole class physically touch their nose as they say it out loud together. Then play a second game to reinforce it.",
+        ko: "한 번에 한 타일씩 문장을 만들고, 다 함께 소리 내어 말하면서 실제로 코를 만져보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "sentence_builder",
@@ -191,6 +207,23 @@ export const m9_week3: Lesson = {
           { text: "your nose", role: "object", ko: "너의 코" },
         ],
         translation: { en: "Touch your nose.", ko: "코를 만지세요." },
+      },
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "As each step is placed, have the whole class stand up and actually perform it together before moving to the next — this routine is meant to be moved, not just read aloud.",
+        ko: "각 단계를 놓을 때마다 반 전체가 일어나서 실제로 함께 동작을 해보고 나서 다음으로 넘어가세요 — 이 루틴은 그냥 읽는 게 아니라 몸으로 직접 해보는 거예요.",
+      },
+      config: {
+        engine: "sequence_builder",
+        title: { en: "Vora Says: Move Your Body!", ko: "보라 가라사대: 몸을 움직여요!" },
+        steps: [
+          { text: { en: "Stand up", ko: "일어서기" }, emoji: "🧍" },
+          { text: { en: "Touch your nose", ko: "코 만지기" }, emoji: "👃" },
+          { text: { en: "Clap your hands", ko: "손뼉 치기" }, emoji: "👏", minTrack: "explorers" },
+          { text: { en: "Sit down", ko: "앉기" }, emoji: "🪑" },
+        ],
       },
     },
     {
@@ -204,8 +237,8 @@ export const m9_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built the sentence \"Touch your nose\" tile by tile and practiced it together as a real command.",
-        ko: "오늘은 \"Touch your nose\" 문장을 한 조각씩 만들고, 진짜 명령처럼 다 함께 연습했어요.",
+        en: "Today we played two games — building the sentence \"Touch your nose\" tile by tile, and moving through the four-step \"Vora Says\" routine.",
+        ko: "오늘은 두 가지 게임을 했어요 — \"Touch your nose\" 문장을 한 조각씩 만들고, 네 단계짜리 \"보라 가라사대\" 루틴을 몸으로 움직여봤어요.",
       },
       homework: {
         en: "Tell a family member \"Touch your nose!\" in English and see if they follow your command.",

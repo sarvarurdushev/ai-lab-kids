@@ -114,8 +114,8 @@ export const m3_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Build the question one tile at a time, left to right. Then have a few kids ask the whole question out loud to a partner across the room.",
-        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 질문을 만들어요. 그런 다음 몇 명의 학생이 교실 반대편 짝에게 소리 내어 전체 질문을 해보게 하세요.",
+        en: "Build the question one tile at a time, left to right. Then have a few kids ask the whole question out loud to a partner across the room. Then play a second game to reinforce it.",
+        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 질문을 만들어요. 그런 다음 몇 명의 학생이 교실 반대편 짝에게 소리 내어 전체 질문을 해보게 하세요. 그런 다음 두 번째 게임을 하며 복습해보세요.",
       },
       config: {
         engine: "sentence_builder",
@@ -129,6 +129,23 @@ export const m3_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Kids flip two cards at a time, trying to find the matching feeling word and face. Say the feeling word aloud together every time there's a match.",
+        ko: "학생들이 카드 두 장을 뒤집어 짝이 맞는 감정 단어와 표정을 찾아요. 짝이 맞을 때마다 함께 감정 단어를 소리 내어 말해주세요.",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "Feelings Match", ko: "감정 짝 맞추기" },
+        pairs: [
+          { word: { en: "happy", ko: "행복한" }, emoji: "😊" },
+          { word: { en: "sad", ko: "슬픈" }, emoji: "😢" },
+          { word: { en: "kind", ko: "다정한" }, emoji: "❤️" },
+          { word: { en: "excited", ko: "신난" }, emoji: "🤩", minTrack: "explorers" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask one kid to say the whole question out loud, in order: \"Can I play?\"",
@@ -139,8 +156,8 @@ export const m3_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built the question \"Can I play?\" tile by tile, one word at a time.",
-        ko: "오늘은 \"Can I play?\" 질문을 한 단어씩, 조각조각 만들어봤어요.",
+        en: "Today we played two games — building the question \"Can I play?\" tile by tile, one word at a time, and matching feeling words like happy, sad, and kind to faces.",
+        ko: "오늘은 두 가지 게임을 했어요 — \"Can I play?\" 질문을 한 단어씩 만들어보고, happy, sad, kind 같은 감정 단어를 표정과 짝지어봤어요.",
       },
     },
   ],
@@ -171,8 +188,8 @@ export const m3_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Kids flip two cards at a time, trying to find the matching feeling word and face. Say the feeling word aloud together every time there's a match.",
-        ko: "학생들이 카드 두 장을 뒤집어 짝이 맞는 감정 단어와 표정을 찾아요. 짝이 맞을 때마다 함께 감정 단어를 소리 내어 말해주세요.",
+        en: "Kids flip two cards at a time, trying to find the matching feeling word and face. Say the feeling word aloud together every time there's a match. Then play a second game to reinforce it.",
+        ko: "학생들이 카드 두 장을 뒤집어 짝이 맞는 감정 단어와 표정을 찾아요. 짝이 맞을 때마다 함께 감정 단어를 소리 내어 말해주세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "memory_match",
@@ -186,6 +203,23 @@ export const m3_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Build the question one tile at a time, left to right. Then have a few kids ask the whole question out loud to a partner across the room.",
+        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 질문을 만들어요. 그런 다음 몇 명의 학생이 교실 반대편 짝에게 소리 내어 전체 질문을 해보게 하세요.",
+      },
+      config: {
+        engine: "sentence_builder",
+        title: { en: "Can I play?", ko: "같이 놀아도 될까요?" },
+        words: [
+          { text: "Can", role: "other", ko: "~해도 될까요" },
+          { text: "I", role: "subject", ko: "제가" },
+          { text: "play", role: "verb", ko: "놀다" },
+        ],
+        translation: { en: "Can I play?", ko: "같이 놀아도 될까요?" },
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask one kid to name one feeling word from the matching game and make that face.",
@@ -196,8 +230,8 @@ export const m3_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we matched feeling words like happy, sad, and kind to faces.",
-        ko: "오늘은 happy, sad, kind 같은 감정 단어를 표정과 짝지어봤어요.",
+        en: "Today we played two games — matching feeling words like happy, sad, and kind to faces, and building the question \"Can I play?\" one word at a time.",
+        ko: "오늘은 두 가지 게임을 했어요 — happy, sad, kind 같은 감정 단어를 표정과 짝짓고, \"Can I play?\" 질문을 한 단어씩 만들어봤어요.",
       },
     },
   ],

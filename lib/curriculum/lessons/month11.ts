@@ -124,8 +124,8 @@ export const m11_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "First, act out \"happy\" with your face and body — no words! Then build the sentence tile by tile and say it together.",
-        ko: "먼저 말없이 표정과 몸으로 'happy'를 표현해보세요! 그런 다음 한 타일씩 문장을 만들고 함께 말해보세요.",
+        en: "First, act out \"happy\" with your face and body — no words! Then build the sentence tile by tile and say it together. Afterward, play a second game to reinforce it.",
+        ko: "먼저 말없이 표정과 몸으로 'happy'를 표현해보세요! 그런 다음 한 타일씩 문장을 만들고 함께 말해보세요. 이어서 두 번째 게임도 해보며 복습해보세요.",
       },
       config: {
         engine: "sentence_builder",
@@ -139,6 +139,25 @@ export const m11_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Flip two cards at a time. When you find a feeling word, act it out with your face and body before saying it in English!",
+        ko: "카드 두 장을 뒤집어보세요. 감정 단어를 찾으면, 영어로 말하기 전에 표정과 몸으로 먼저 표현해보세요!",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "Feelings Match", ko: "감정 짝 맞추기" },
+        pairs: [
+          { word: { en: "happy", ko: "행복한" }, emoji: "😊" },
+          { word: { en: "sad", ko: "슬픈" }, emoji: "😢" },
+          { word: { en: "angry", ko: "화난" }, emoji: "😠" },
+          { word: { en: "scared", ko: "무서운" }, emoji: "😨" },
+          { word: { en: "surprised", ko: "놀란" }, emoji: "😲", minTrack: "explorers" },
+          { word: { en: "tired", ko: "피곤한" }, emoji: "😴" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"How do you feel?\" — can they answer with \"I feel ___\"?",
@@ -149,8 +168,8 @@ export const m11_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built the sentence \"I feel happy\" one tile at a time and practiced saying how we really feel.",
-        ko: "오늘은 \"I feel happy\" 문장을 한 타일씩 만들고, 진짜 기분을 말하는 연습을 했어요.",
+        en: "Today we played two games — building the sentence \"I feel happy\" one tile at a time and matching feeling words to faces — and practiced saying how we really feel.",
+        ko: "오늘은 두 가지 게임을 했어요 — \"I feel happy\" 문장을 한 타일씩 만들고, 감정 단어와 표정을 짝짓는 게임까지 하며 진짜 기분을 말하는 연습을 했어요.",
       },
       homework: {
         en: "Act out a feeling for your family tonight and see if they can guess it in English.",
@@ -188,8 +207,8 @@ export const m11_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Flip two cards at a time. When you find a feeling word, act it out with your face and body before saying it in English!",
-        ko: "카드 두 장을 뒤집어보세요. 감정 단어를 찾으면, 영어로 말하기 전에 표정과 몸으로 먼저 표현해보세요!",
+        en: "Flip two cards at a time. When you find a feeling word, act it out with your face and body before saying it in English! Then play a second game to reinforce it.",
+        ko: "카드 두 장을 뒤집어보세요. 감정 단어를 찾으면, 영어로 말하기 전에 표정과 몸으로 먼저 표현해보세요! 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "memory_match",
@@ -205,6 +224,23 @@ export const m11_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "First, act out \"happy\" with your face and body — no words! Then build the sentence tile by tile and say it together.",
+        ko: "먼저 말없이 표정과 몸으로 'happy'를 표현해보세요! 그런 다음 한 타일씩 문장을 만들고 함께 말해보세요.",
+      },
+      config: {
+        engine: "sentence_builder",
+        title: { en: "I feel happy.", ko: "저는 행복해요." },
+        words: [
+          { text: "I", role: "subject", ko: "저는" },
+          { text: "feel", role: "verb", ko: "느끼다" },
+          { text: "happy", role: "other", ko: "행복한" },
+        ],
+        translation: { en: "I feel happy.", ko: "저는 행복해요." },
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"Which feeling did you match?\" — can they say the English word?",
@@ -215,8 +251,8 @@ export const m11_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we matched feeling words to faces and practiced saying each one out loud.",
-        ko: "오늘은 감정 단어를 표정과 짝짓고, 각 단어를 소리 내어 말하는 연습을 했어요.",
+        en: "Today we played two games — matching feeling words to faces, and building the sentence \"I feel happy\" one tile at a time.",
+        ko: "오늘은 두 가지 게임을 했어요 — 감정 단어를 표정과 짝짓고, \"I feel happy\" 문장을 한 타일씩 만들어봤어요.",
       },
       homework: {
         en: "Play a quick feelings guessing game with your family tonight.",

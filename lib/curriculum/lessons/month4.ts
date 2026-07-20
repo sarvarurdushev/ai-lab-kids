@@ -122,8 +122,8 @@ export const m4_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Kids take turns tapping the next step of recycling a bottle. Read each step aloud together as it's placed.",
-        ko: "학생들이 돌아가며 병을 재활용하는 다음 단계를 탭해요. 배치할 때마다 함께 소리 내어 읽어주세요.",
+        en: "Kids take turns tapping the next step of recycling a bottle. Read each step aloud together as it's placed. Then play a second game to reinforce it.",
+        ko: "학생들이 돌아가며 병을 재활용하는 다음 단계를 탭해요. 배치할 때마다 함께 소리 내어 읽어주세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "sequence_builder",
@@ -133,6 +133,23 @@ export const m4_week2: Lesson = {
           { text: { en: "Sort it", ko: "분류하기" }, emoji: "♻️" },
           { text: { en: "Put it in the bin", ko: "통에 넣기" }, emoji: "🗑️" },
           { text: { en: "The truck takes it away", ko: "트럭이 가져가기" }, emoji: "🚛", minTrack: "explorers" },
+        ],
+      },
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "Show the sequence one item at a time and ask kids to guess what comes next before revealing the answer. Encourage them to explain the pattern in their own words.",
+        ko: "순서를 한 번에 하나씩 보여주고, 정답을 알려주기 전에 학생들이 다음에 올 것을 추측하게 하세요. 자기 말로 패턴을 설명하도록 격려해주세요.",
+      },
+      config: {
+        engine: "pattern_predictor",
+        title: { en: "What Comes Next?", ko: "다음은 무엇일까요?" },
+        teacherNote:
+          "Concretely demonstrates the \"learning\" big idea: AI (and people) predict what comes next by finding a pattern in examples — the same idea behind how scientists use patterns in climate data.",
+        rounds: [
+          { sequence: ["🌱", "🌿", "🌱", "🌿"], answer: "🌱", options: ["🌱", "🌿", "🌳"] },
+          { sequence: ["♻️", "🗑️", "♻️", "🗑️"], answer: "♻️", options: ["♻️", "🗑️", "🌎"] },
         ],
       },
     },
@@ -147,8 +164,8 @@ export const m4_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we put the steps of recycling in order — rinse it, sort it, and put it in the bin.",
-        ko: "오늘은 재활용 순서를 배열해봤어요 — 헹구고, 분류하고, 통에 넣어요.",
+        en: "Today we played two games — putting the steps of recycling in order, and guessing what comes next in a pattern.",
+        ko: "오늘은 두 가지 게임을 했어요 — 재활용 순서를 배열하고, 패턴에서 다음에 올 것을 추측해봤어요.",
       },
     },
   ],
@@ -179,8 +196,8 @@ export const m4_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Show the sequence one item at a time and ask kids to guess what comes next before revealing the answer. Encourage them to explain the pattern in their own words.",
-        ko: "순서를 한 번에 하나씩 보여주고, 정답을 알려주기 전에 학생들이 다음에 올 것을 추측하게 하세요. 자기 말로 패턴을 설명하도록 격려해주세요.",
+        en: "Show the sequence one item at a time and ask kids to guess what comes next before revealing the answer. Encourage them to explain the pattern in their own words. Then play a second game to reinforce it.",
+        ko: "순서를 한 번에 하나씩 보여주고, 정답을 알려주기 전에 학생들이 다음에 올 것을 추측하게 하세요. 자기 말로 패턴을 설명하도록 격려해주세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "pattern_predictor",
@@ -190,6 +207,23 @@ export const m4_week3: Lesson = {
         rounds: [
           { sequence: ["🌱", "🌿", "🌱", "🌿"], answer: "🌱", options: ["🌱", "🌿", "🌳"] },
           { sequence: ["♻️", "🗑️", "♻️", "🗑️"], answer: "♻️", options: ["♻️", "🗑️", "🌎"] },
+        ],
+      },
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "Kids take turns tapping the next step of recycling a bottle. Read each step aloud together as it's placed.",
+        ko: "학생들이 돌아가며 병을 재활용하는 다음 단계를 탭해요. 배치할 때마다 함께 소리 내어 읽어주세요.",
+      },
+      config: {
+        engine: "sequence_builder",
+        title: { en: "Recycling Steps", ko: "재활용 순서" },
+        steps: [
+          { text: { en: "Rinse it", ko: "헹구기" }, emoji: "🚿" },
+          { text: { en: "Sort it", ko: "분류하기" }, emoji: "♻️" },
+          { text: { en: "Put it in the bin", ko: "통에 넣기" }, emoji: "🗑️" },
+          { text: { en: "The truck takes it away", ko: "트럭이 가져가기" }, emoji: "🚛", minTrack: "explorers" },
         ],
       },
     },
@@ -204,8 +238,8 @@ export const m4_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we looked at patterns like 🌱🌿🌱🌿 and guessed what comes next.",
-        ko: "오늘은 🌱🌿🌱🌿 같은 패턴을 보고 다음에 올 것을 추측해봤어요.",
+        en: "Today we played two games — guessing what comes next in a pattern, and putting the steps of recycling in order.",
+        ko: "오늘은 두 가지 게임을 했어요 — 패턴에서 다음에 올 것을 추측하고, 재활용 순서를 배열해봤어요.",
       },
     },
   ],

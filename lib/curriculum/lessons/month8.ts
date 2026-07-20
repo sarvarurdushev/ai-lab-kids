@@ -107,8 +107,8 @@ export const m8_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "As a class, decide together whether each item goes in the suitcase or stays home before anyone taps.",
-        ko: "탭하기 전에 반 전체가 함께 각 물건이 여행 가방에 들어갈지 집에 남을지 정해보세요.",
+        en: "As a class, decide together whether each item goes in the suitcase or stays home before anyone taps. Then play a second game to reinforce it.",
+        ko: "탭하기 전에 반 전체가 함께 각 물건이 여행 가방에 들어갈지 집에 남을지 정해보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "train_the_robot",
@@ -129,6 +129,25 @@ export const m8_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Kids take turns flipping two cards at a time, saying the transportation word out loud if they find a match.",
+        ko: "학생들이 돌아가며 카드를 두 장씩 뒤집고, 짝을 찾으면 탈것 단어를 소리 내어 말해보세요.",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "Transportation Match", ko: "탈것 짝 맞추기" },
+        pairs: [
+          { word: { en: "airplane", ko: "비행기" }, emoji: "✈️" },
+          { word: { en: "train", ko: "기차" }, emoji: "🚂" },
+          { word: { en: "ship", ko: "배" }, emoji: "🚢" },
+          { word: { en: "suitcase", ko: "여행 가방" }, emoji: "🧳" },
+          { word: { en: "map", ko: "지도" }, emoji: "🗺️", minTrack: "explorers" },
+          { word: { en: "ticket", ko: "표" }, emoji: "🎫" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: name one thing you'd pack for a trip.",
@@ -139,8 +158,8 @@ export const m8_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we sorted things into pack it and leave it.",
-        ko: "오늘은 물건을 챙길 것과 두고 갈 것으로 분류했어요.",
+        en: "Today we played two games — sorting things into pack it and leave it, and matching transportation words to pictures.",
+        ko: "오늘은 두 가지 게임을 했어요 — 물건을 챙길 것과 두고 갈 것으로 분류하고, 탈것 단어를 그림과 짝지었어요.",
       },
       homework: {
         en: "Pack a pretend suitcase with a family member tonight, naming each item in English.",
@@ -175,8 +194,8 @@ export const m8_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Kids take turns flipping two cards at a time, saying the transportation word out loud if they find a match.",
-        ko: "학생들이 돌아가며 카드를 두 장씩 뒤집고, 짝을 찾으면 탈것 단어를 소리 내어 말해보세요.",
+        en: "Kids take turns flipping two cards at a time, saying the transportation word out loud if they find a match. Then play a second game to reinforce it.",
+        ko: "학생들이 돌아가며 카드를 두 장씩 뒤집고, 짝을 찾으면 탈것 단어를 소리 내어 말해보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "memory_match",
@@ -192,6 +211,30 @@ export const m8_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "As a class, decide together whether each item goes in the suitcase or stays home before anyone taps.",
+        ko: "탭하기 전에 반 전체가 함께 각 물건이 여행 가방에 들어갈지 집에 남을지 정해보세요.",
+      },
+      config: {
+        engine: "train_the_robot",
+        title: { en: "Pack It or Leave It?", ko: "챙길까요, 두고 갈까요?" },
+        labelA: { en: "Pack It", ko: "챙기기" },
+        labelB: { en: "Leave It", ko: "두고 가기" },
+        emojiA: "🧳",
+        emojiB: "🚫",
+        items: [
+          { word: { en: "t-shirt", ko: "티셔츠" }, emoji: "👕", bucket: "a" },
+          { word: { en: "toothbrush", ko: "칫솔" }, emoji: "🪥", bucket: "a" },
+          { word: { en: "passport", ko: "여권" }, emoji: "🛂", bucket: "a", minTrack: "explorers" },
+          { word: { en: "socks", ko: "양말" }, emoji: "🧦", bucket: "a" },
+          { word: { en: "sofa", ko: "소파" }, emoji: "🛋️", bucket: "b" },
+          { word: { en: "TV", ko: "텔레비전" }, emoji: "📺", bucket: "b" },
+          { word: { en: "bed", ko: "침대" }, emoji: "🛏️", bucket: "b" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: name one way to travel on land and one way to travel by air or sea.",
@@ -202,8 +245,8 @@ export const m8_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we matched transportation words to pictures.",
-        ko: "오늘은 탈것 단어를 그림과 짝지었어요.",
+        en: "Today we played two games — matching transportation words to pictures, and sorting things into pack it and leave it.",
+        ko: "오늘은 두 가지 게임을 했어요 — 탈것 단어를 그림과 짝짓고, 물건을 챙길 것과 두고 갈 것으로 분류했어요.",
       },
       homework: {
         en: "Name three ways to travel in English before bed tonight.",

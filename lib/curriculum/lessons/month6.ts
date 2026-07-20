@@ -125,8 +125,8 @@ export const m6_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Look at the animal pattern and pick the picture that comes next.",
-        ko: "동물 패턴을 보고 다음에 올 그림을 골라보세요.",
+        en: "Look at the animal pattern and pick the picture that comes next. Then play a second game to reinforce it.",
+        ko: "동물 패턴을 보고 다음에 올 그림을 골라보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "pattern_predictor",
@@ -146,6 +146,26 @@ export const m6_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Flip two cards at a time to find a matching animal word and picture. If they match, they stay face up!",
+        ko: "카드 두 장을 뒤집어 동물 단어와 그림의 짝이 맞는지 찾아보세요. 짝이 맞으면 그대로 뒤집힌 채로 남아요!",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "Animal Words", ko: "동물 단어" },
+        pairs: [
+          { word: { en: "lion", ko: "사자" }, emoji: "🦁" },
+          { word: { en: "elephant", ko: "코끼리" }, emoji: "🐘" },
+          { word: { en: "monkey", ko: "원숭이" }, emoji: "🐵" },
+          { word: { en: "zebra", ko: "얼룩말" }, emoji: "🦓" },
+          { word: { en: "penguin", ko: "펭귄" }, emoji: "🐧" },
+          { word: { en: "giraffe", ko: "기린" }, emoji: "🦒", minTrack: "explorers" },
+          { word: { en: "tiger", ko: "호랑이" }, emoji: "🐯" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"What comes next?\" about the pattern lion, elephant, lion, elephant.",
@@ -156,8 +176,8 @@ export const m6_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we guessed what comes next in an animal pattern — finding patterns is something both you and AI are good at.",
-        ko: "오늘은 동물 패턴에서 다음에 올 것을 추측했어요 — 패턴을 찾는 건 너희와 AI 둘 다 잘하는 일이에요.",
+        en: "Today we played two games — guessing what comes next in an animal pattern, and matching animal words to pictures.",
+        ko: "오늘은 두 가지 게임을 했어요 — 동물 패턴에서 다음에 올 것을 추측하고, 동물 단어를 그림과 짝지었어요.",
       },
     },
   ],
@@ -188,8 +208,8 @@ export const m6_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Flip two cards at a time to find a matching animal word and picture. If they match, they stay face up!",
-        ko: "카드 두 장을 뒤집어 동물 단어와 그림의 짝이 맞는지 찾아보세요. 짝이 맞으면 그대로 뒤집힌 채로 남아요!",
+        en: "Flip two cards at a time to find a matching animal word and picture. If they match, they stay face up! Then play a second game to reinforce it.",
+        ko: "카드 두 장을 뒤집어 동물 단어와 그림의 짝이 맞는지 찾아보세요. 짝이 맞으면 그대로 뒤집힌 채로 남아요! 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "memory_match",
@@ -206,6 +226,29 @@ export const m6_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Look at the animal pattern and pick the picture that comes next.",
+        ko: "동물 패턴을 보고 다음에 올 그림을 골라보세요.",
+      },
+      config: {
+        engine: "pattern_predictor",
+        title: { en: "What Comes Next?", ko: "다음은 무엇일까요?" },
+        teacherNote:
+          "First appearance of the pattern-prediction game this year — it reuses the \"same/different\" vocabulary from the foundations unit's Week 3 colors-and-shapes lesson. Read each sequence aloud with the animal names, not just the emoji, so kids connect the visual pattern to the English words.",
+        rounds: [
+          { sequence: ["🦁", "🐘", "🦁", "🐘"], answer: "🦁", options: ["🦁", "🐘", "🐧"] },
+          { sequence: ["🐧", "🦒", "🐧", "🦒"], answer: "🐧", options: ["🐧", "🦒", "🐯"] },
+          {
+            sequence: ["🐯", "🐯", "🦓", "🦓", "🐯", "🐯"],
+            answer: "🦓",
+            options: ["🐯", "🦓", "🐧"],
+            minTrack: "explorers",
+          },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"What's this animal?\" and point to one of the matched cards.",
@@ -216,8 +259,8 @@ export const m6_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we matched animal words to pictures — the more we practice, the better we remember, just like Vora.",
-        ko: "오늘은 동물 단어를 그림과 짝지었어요 — 연습할수록 더 잘 기억하게 돼요, 보라처럼요.",
+        en: "Today we played two games — matching animal words to pictures, and guessing what comes next in an animal pattern.",
+        ko: "오늘은 두 가지 게임을 했어요 — 동물 단어를 그림과 짝짓고, 동물 패턴에서 다음에 올 것을 추측했어요.",
       },
     },
   ],

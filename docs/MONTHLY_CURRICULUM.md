@@ -31,12 +31,13 @@ formative check → wrap-up), not a fragment of a larger unit:
 1. **📖 Week 1** — the story/concept lesson. New vocabulary, the month's
    English sentence pattern, and the month's AI big idea explained through
    Vora, with one activity game to practice it.
-2. **🎮 Week 2** — a full lesson built around the month's first game. A
-   short warmup and AI-idea reinforcement, then the game, then a formative
-   check — playing is still teaching, not a break from it.
-3. **🎮 Week 3** — the same treatment, built around the month's second
-   game, so every month still has two distinct games (a genuine answer to
-   "just one game"), each with its own complete lesson plan.
+2. **🎮 Week 2** — a full lesson built around both of the month's games,
+   back to back. A short warmup and AI-idea reinforcement, then game one,
+   then game two, then a formative check — playing is still teaching, not
+   a break from it.
+3. **🎮 Week 3** — the same two games again, in reverse order, with its
+   own warmup/concept framing — a second full pass at both, not a repeat
+   of Week 2 (a genuine answer to "just one game per week").
 4. **🎤 Week 4** — a short, low-stakes speaking-confidence lesson. One
    sentence pattern or chant, built and said out loud by every child.
    Every third month (3, 6, 9, 12), Week 4 is a listening-discrimination

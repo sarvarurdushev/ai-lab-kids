@@ -118,8 +118,8 @@ export const m5_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Build the sentence one tile at a time, left to right. Say each word aloud as a tile is placed, then read the full sentence together.",
-        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 문장을 만들어요. 타일을 놓을 때마다 단어를 소리 내어 말하고, 완성되면 전체 문장을 함께 읽어보세요.",
+        en: "Build the sentence one tile at a time, left to right. Say each word aloud as a tile is placed, then read the full sentence together. Then play a second game to reinforce it.",
+        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 문장을 만들어요. 타일을 놓을 때마다 단어를 소리 내어 말하고, 완성되면 전체 문장을 함께 읽어보세요. 그런 다음 두 번째 게임을 하며 복습해요.",
       },
       config: {
         engine: "sentence_builder",
@@ -133,6 +133,30 @@ export const m5_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Sort each word: does it belong to family, or to school?",
+        ko: "각 단어를 분류해보세요: 가족에 속할까요, 학교에 속할까요?",
+      },
+      config: {
+        engine: "train_the_robot",
+        title: { en: "Family Word or School Word?", ko: "가족 단어일까요, 학교 단어일까요?" },
+        labelA: { en: "Family", ko: "가족" },
+        labelB: { en: "School", ko: "학교" },
+        emojiA: "👪",
+        emojiB: "🏫",
+        items: [
+          { word: { en: "mom", ko: "엄마" }, emoji: "👩", bucket: "a" },
+          { word: { en: "dad", ko: "아빠" }, emoji: "👨", bucket: "a" },
+          { word: { en: "sister", ko: "언니/누나/여동생" }, emoji: "👧", bucket: "a" },
+          { word: { en: "brother", ko: "형/오빠/남동생" }, emoji: "👦", bucket: "a" },
+          { word: { en: "teacher", ko: "선생님" }, emoji: "🧑‍🏫", bucket: "b" },
+          { word: { en: "classmate", ko: "반 친구" }, emoji: "🧑‍🤝‍🧑", bucket: "b", minTrack: "explorers" },
+          { word: { en: "desk", ko: "책상" }, emoji: "🗄️", bucket: "b" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Point to a family member in a photo or drawing and say: \"This is my ___.\"",
@@ -143,8 +167,8 @@ export const m5_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built the sentence \"This is my brother\" tile by tile and practiced saying it about our own families.",
-        ko: "오늘은 \"This is my brother\" 문장을 한 조각씩 만들고, 우리 가족에 대해 말하는 연습을 했어요.",
+        en: "Today we built the sentence \"This is my brother\" tile by tile, then practiced it with a second game — sorting family and school words.",
+        ko: "오늘은 \"This is my brother\" 문장을 한 조각씩 만들고, 가족과 학교 단어를 분류하는 두 번째 게임으로 연습했어요.",
       },
     },
   ],
@@ -175,8 +199,8 @@ export const m5_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Sort each word: does it belong to family, or to school?",
-        ko: "각 단어를 분류해보세요: 가족에 속할까요, 학교에 속할까요?",
+        en: "Sort each word: does it belong to family, or to school? Then play a second game to reinforce it.",
+        ko: "각 단어를 분류해보세요: 가족에 속할까요, 학교에 속할까요? 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "train_the_robot",
@@ -197,6 +221,23 @@ export const m5_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Build the sentence one tile at a time, left to right. Say each word aloud as a tile is placed, then read the full sentence together.",
+        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 문장을 만들어요. 타일을 놓을 때마다 단어를 소리 내어 말하고, 완성되면 전체 문장을 함께 읽어보세요.",
+      },
+      config: {
+        engine: "sentence_builder",
+        title: { en: "This is my brother.", ko: "제 형/오빠/남동생이에요." },
+        words: [
+          { text: "This is", role: "subject", ko: "이건 ~예요" },
+          { text: "my", role: "other", ko: "나의" },
+          { text: "brother", role: "object", ko: "형/오빠/남동생" },
+        ],
+        translation: { en: "This is my brother.", ko: "제 형/오빠/남동생이에요." },
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"Is 'teacher' a family word or a school word?\"",
@@ -207,8 +248,8 @@ export const m5_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we sorted family words from school words, just like Vora sorts pictures into groups.",
-        ko: "오늘은 가족 단어와 학교 단어를 분류했어요, 보라가 사진을 그룹으로 나누는 것처럼요.",
+        en: "Today we played two games — sorting family words from school words, and building the sentence \"This is my brother\" tile by tile.",
+        ko: "오늘은 두 가지 게임을 했어요 — 가족 단어와 학교 단어를 분류하고, \"This is my brother\" 문장을 한 조각씩 만들어봤어요.",
       },
     },
   ],

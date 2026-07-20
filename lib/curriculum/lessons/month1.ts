@@ -114,8 +114,8 @@ export const m1_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "As a class, decide together where each picture goes before anyone taps — this is a shared sort, not an individual quiz.",
-        ko: "탭하기 전에 반 전체가 함께 각 그림이 어디로 가야 할지 정해보세요 — 개인 퀴즈가 아니라 함께하는 분류 활동이에요.",
+        en: "As a class, decide together where each picture goes before anyone taps — this is a shared sort, not an individual quiz. Then play a second game to reinforce it.",
+        ko: "탭하기 전에 반 전체가 함께 각 그림이 어디로 가야 할지 정해보세요 — 개인 퀴즈가 아니라 함께하는 분류 활동이에요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "train_the_robot",
@@ -136,6 +136,25 @@ export const m1_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips.",
+        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요.",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "Space Word Match", ko: "우주 단어 짝 맞추기" },
+        pairs: [
+          { word: { en: "star", ko: "별" }, emoji: "⭐" },
+          { word: { en: "moon", ko: "달" }, emoji: "🌙" },
+          { word: { en: "planet", ko: "행성" }, emoji: "🪐", minTrack: "explorers" },
+          { word: { en: "rocket", ko: "로켓" }, emoji: "🚀" },
+          { word: { en: "sun", ko: "태양" }, emoji: "☀️" },
+          { word: { en: "astronaut", ko: "우주비행사" }, emoji: "👨‍🚀" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Point to one picture from today's sort and ask a student: \"Space thing, or earth thing?\"",
@@ -146,8 +165,8 @@ export const m1_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we sorted space things from earth things and watched Vora guess right along with us.",
-        ko: "오늘은 우주 물건과 지구 물건을 분류하고, 보라도 우리와 함께 추측하는 모습을 봤어요.",
+        en: "Today we played two games — sorting space things from earth things, and matching space word pairs — with Vora guessing right along with us.",
+        ko: "오늘은 두 가지 게임을 했어요 — 우주 물건과 지구 물건을 분류하는 게임과 우주 단어 짝 맞추기 게임이에요 — 보라도 우리와 함께 추측하는 모습을 봤어요.",
       },
     },
   ],
@@ -178,8 +197,8 @@ export const m1_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips.",
-        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요.",
+        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips. Then play a second game to reinforce it.",
+        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "memory_match",
@@ -195,6 +214,30 @@ export const m1_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "As a class, decide together where each picture goes before anyone taps — this is a shared sort, not an individual quiz.",
+        ko: "탭하기 전에 반 전체가 함께 각 그림이 어디로 가야 할지 정해보세요 — 개인 퀴즈가 아니라 함께하는 분류 활동이에요.",
+      },
+      config: {
+        engine: "train_the_robot",
+        title: { en: "Space Thing or Earth Thing?", ko: "우주 물건일까요, 지구 물건일까요?" },
+        labelA: { en: "Space Thing", ko: "우주 물건" },
+        labelB: { en: "Earth Thing", ko: "지구 물건" },
+        emojiA: "🚀",
+        emojiB: "🌍",
+        items: [
+          { word: { en: "star", ko: "별" }, emoji: "⭐", bucket: "a" },
+          { word: { en: "rocket", ko: "로켓" }, emoji: "🚀", bucket: "a" },
+          { word: { en: "moon", ko: "달" }, emoji: "🌙", bucket: "a" },
+          { word: { en: "astronaut", ko: "우주비행사" }, emoji: "👨‍🚀", bucket: "a" },
+          { word: { en: "tree", ko: "나무" }, emoji: "🌳", bucket: "b" },
+          { word: { en: "dog", ko: "강아지" }, emoji: "🐶", bucket: "b" },
+          { word: { en: "book", ko: "책" }, emoji: "📖", bucket: "b" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: { en: "Ask a pair: \"Which one did you match?\" and have them answer with the English word.", ko: "짝에게 물어보세요: \"어떤 것을 짝지었나요?\" 영어 단어로 답하게 하세요." },
       method: "cold_call",
@@ -202,8 +245,8 @@ export const m1_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played a matching game with space words and practiced remembering each word-picture pair.",
-        ko: "오늘은 우주 단어로 짝 맞추기 게임을 하며 단어-그림 짝을 기억하는 연습을 했어요.",
+        en: "Today we played two games — a matching game with space words, and sorting space things from earth things — and practiced remembering each word-picture pair.",
+        ko: "오늘은 두 가지 게임을 했어요 — 우주 단어 짝 맞추기 게임과 우주 물건·지구 물건을 분류하는 게임이에요 — 단어-그림 짝을 기억하는 연습을 했어요.",
       },
     },
   ],

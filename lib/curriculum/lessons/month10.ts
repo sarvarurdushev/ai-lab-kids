@@ -116,8 +116,8 @@ export const m10_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Kids take turns flipping two cards at a time, saying the Halloween word out loud if they find a match.",
-        ko: "학생들이 돌아가며 카드를 두 장씩 뒤집고, 짝을 찾으면 할로윈 단어를 소리 내어 말해보세요.",
+        en: "Kids take turns flipping two cards at a time, saying the Halloween word out loud if they find a match. Then play a second game to reinforce it.",
+        ko: "학생들이 돌아가며 카드를 두 장씩 뒤집고, 짝을 찾으면 할로윈 단어를 소리 내어 말해보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "memory_match",
@@ -133,6 +133,23 @@ export const m10_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Read the sequence out loud together (\"pumpkin, ghost, pumpkin, ghost...\") before asking what comes next — the pattern should feel obvious once it's spoken aloud.",
+        ko: "다음에 올 것을 묻기 전에 순서를 다 함께 소리 내어 읽어보세요(\"pumpkin, ghost, pumpkin, ghost...\") — 소리 내어 말하면 패턴이 자연스럽게 느껴질 거예요.",
+      },
+      config: {
+        engine: "pattern_predictor",
+        title: { en: "What Comes Next?", ko: "다음엔 뭐가 올까요?" },
+        teacherNote:
+          "Same 'find the pattern' skill as Vora's classification games — predicting what comes next from examples is part of the reasoning big idea, paired this month with learning.",
+        rounds: [
+          { sequence: ["🎃", "👻", "🎃", "👻"], answer: "🎃", options: ["🎃", "👻", "🦇"] },
+          { sequence: ["👻", "🦇", "👻", "🦇"], answer: "👻", options: ["🎃", "👻", "🦇"] },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Show one Halloween word card and see if everyone can say it out loud.",
@@ -143,8 +160,8 @@ export const m10_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we matched Halloween words to pictures, finding pairs just like Vora finds matches in examples.",
-        ko: "오늘은 할로윈 단어를 그림과 짝지었어요 — 보라가 예시에서 짝을 찾는 것과 같은 방식이에요.",
+        en: "Today we played two games — matching Halloween words to pictures, and guessing what comes next in a spooky pattern.",
+        ko: "오늘은 두 가지 게임을 했어요 — 할로윈 단어를 그림과 짝짓고, 무서운 패턴에서 다음에 올 것을 추측했어요.",
       },
       homework: {
         en: "Draw two Halloween pictures at home and ask a family member to match them to the English words.",
@@ -179,8 +196,8 @@ export const m10_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Read the sequence out loud together (\"pumpkin, ghost, pumpkin, ghost...\") before asking what comes next — the pattern should feel obvious once it's spoken aloud.",
-        ko: "다음에 올 것을 묻기 전에 순서를 다 함께 소리 내어 읽어보세요(\"pumpkin, ghost, pumpkin, ghost...\") — 소리 내어 말하면 패턴이 자연스럽게 느껴질 거예요.",
+        en: "Read the sequence out loud together (\"pumpkin, ghost, pumpkin, ghost...\") before asking what comes next — the pattern should feel obvious once it's spoken aloud. Then play a second game to reinforce it.",
+        ko: "다음에 올 것을 묻기 전에 순서를 다 함께 소리 내어 읽어보세요(\"pumpkin, ghost, pumpkin, ghost...\") — 소리 내어 말하면 패턴이 자연스럽게 느껴질 거예요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "pattern_predictor",
@@ -190,6 +207,25 @@ export const m10_week3: Lesson = {
         rounds: [
           { sequence: ["🎃", "👻", "🎃", "👻"], answer: "🎃", options: ["🎃", "👻", "🦇"] },
           { sequence: ["👻", "🦇", "👻", "🦇"], answer: "👻", options: ["🎃", "👻", "🦇"] },
+        ],
+      },
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "Kids take turns flipping two cards at a time, saying the Halloween word out loud if they find a match.",
+        ko: "학생들이 돌아가며 카드를 두 장씩 뒤집고, 짝을 찾으면 할로윈 단어를 소리 내어 말해보세요.",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "Halloween Match-Up", ko: "할로윈 짝 맞추기" },
+        pairs: [
+          { word: { en: "pumpkin", ko: "호박" }, emoji: "🎃" },
+          { word: { en: "ghost", ko: "유령" }, emoji: "👻" },
+          { word: { en: "witch", ko: "마녀" }, emoji: "🧙", minTrack: "explorers" },
+          { word: { en: "bat", ko: "박쥐" }, emoji: "🦇" },
+          { word: { en: "candy", ko: "사탕" }, emoji: "🍬" },
+          { word: { en: "costume", ko: "코스튬" }, emoji: "🎭" },
         ],
       },
     },
@@ -204,8 +240,8 @@ export const m10_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we guessed what comes next in spooky patterns, just like Vora predicting from examples.",
-        ko: "오늘은 무서운 패턴에서 다음에 올 것을 추측했어요 — 보라가 예시로 예측하는 것과 같은 방식이에요.",
+        en: "Today we played two games — guessing what comes next in spooky patterns, and matching Halloween words to pictures.",
+        ko: "오늘은 두 가지 게임을 했어요 — 무서운 패턴에서 다음에 올 것을 추측하고, 할로윈 단어를 그림과 짝지었어요.",
       },
       homework: {
         en: "Draw your own spooky pattern (like 🎃👻🎃👻) and ask a family member what comes next.",

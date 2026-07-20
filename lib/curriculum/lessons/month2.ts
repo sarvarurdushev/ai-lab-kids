@@ -113,8 +113,8 @@ export const m2_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Kids take turns tapping the next step. Read each step aloud with its sequencing word (\"First, pack your bag...\") as it's placed.",
-        ko: "학생들이 돌아가며 다음 단계를 탭해요. 배치할 때마다 순서 표현과 함께 소리 내어 읽어주세요(\"First, pack your bag...\").",
+        en: "Kids take turns tapping the next step. Read each step aloud with its sequencing word (\"First, pack your bag...\") as it's placed. Then play a second game to reinforce it.",
+        ko: "학생들이 돌아가며 다음 단계를 탭해요. 배치할 때마다 순서 표현과 함께 소리 내어 읽어주세요(\"First, pack your bag...\"). 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "sequence_builder",
@@ -129,6 +129,25 @@ export const m2_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips.",
+        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요.",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "World Word Match", ko: "세계 단어 짝 맞추기" },
+        pairs: [
+          { word: { en: "world", ko: "세계" }, emoji: "🌍" },
+          { word: { en: "flag", ko: "국기" }, emoji: "🚩" },
+          { word: { en: "food", ko: "음식" }, emoji: "🍲" },
+          { word: { en: "dance", ko: "춤" }, emoji: "💃" },
+          { word: { en: "music", ko: "음악" }, emoji: "🎵" },
+          { word: { en: "clothes", ko: "옷" }, emoji: "👘", minTrack: "explorers" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "\"First we pack your bag, next we...\" — have a student finish the whole sequence out loud.",
@@ -139,8 +158,8 @@ export const m2_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we ordered the steps of a pretend trip, from packing our bags to trying new food.",
-        ko: "오늘은 가방 싸기부터 새로운 음식 먹어보기까지 가상 여행의 순서를 정했어요.",
+        en: "Today we played two games — ordering the steps of a pretend trip, and matching world words to pictures.",
+        ko: "오늘은 두 가지 게임을 했어요 — 가상 여행의 순서를 정하고, 세계 단어와 그림을 짝지어봤어요.",
       },
     },
   ],
@@ -171,8 +190,8 @@ export const m2_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips.",
-        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요.",
+        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips. Then play a second game to reinforce it.",
+        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "memory_match",
@@ -188,6 +207,24 @@ export const m2_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Kids take turns tapping the next step. Read each step aloud with its sequencing word (\"First, pack your bag...\") as it's placed.",
+        ko: "학생들이 돌아가며 다음 단계를 탭해요. 배치할 때마다 순서 표현과 함께 소리 내어 읽어주세요(\"First, pack your bag...\").",
+      },
+      config: {
+        engine: "sequence_builder",
+        title: { en: "A Pretend Trip", ko: "가상 여행" },
+        steps: [
+          { text: { en: "Pack your bag", ko: "가방 싸기" }, emoji: "🧳" },
+          { text: { en: "Go to the airport", ko: "공항 가기" }, emoji: "🛫" },
+          { text: { en: "Fly on a plane", ko: "비행기 타기" }, emoji: "✈️" },
+          { text: { en: "Say hello!", ko: "인사하기" }, emoji: "👋" },
+          { text: { en: "Try new food", ko: "새로운 음식 먹어보기" }, emoji: "🍜", minTrack: "explorers" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: { en: "Ask a pair: \"Which one did you match?\" and have them answer with the English word.", ko: "짝에게 물어보세요: \"어떤 것을 짝지었나요?\" 영어 단어로 답하게 하세요." },
       method: "cold_call",
@@ -195,8 +232,8 @@ export const m2_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played a matching game with world words and practiced remembering each word-picture pair.",
-        ko: "오늘은 세계 단어로 짝 맞추기 게임을 하며 단어-그림 짝을 기억하는 연습을 했어요.",
+        en: "Today we played two games — matching world words to pictures, and ordering the steps of a pretend trip.",
+        ko: "오늘은 두 가지 게임을 했어요 — 세계 단어와 그림을 짝짓고, 가상 여행의 순서를 정해봤어요.",
       },
     },
   ],

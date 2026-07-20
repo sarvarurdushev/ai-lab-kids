@@ -120,8 +120,8 @@ export const m12_week2: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Round 1: Sort review words from all through the year — is it something you'd see in the sky, or on the ground?",
-        ko: "1라운드: 1년 동안 배운 단어를 복습해요 — 하늘에서 볼 수 있는 것일까요, 땅 위에서 볼 수 있는 것일까요?",
+        en: "Round 1: Sort review words from all through the year — is it something you'd see in the sky, or on the ground? Then play a second game to reinforce it.",
+        ko: "1라운드: 1년 동안 배운 단어를 복습해요 — 하늘에서 볼 수 있는 것일까요, 땅 위에서 볼 수 있는 것일까요? 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "train_the_robot",
@@ -143,6 +143,29 @@ export const m12_week2: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Round 2: Look at the pattern — emoji from all through the year — and guess what comes next!",
+        ko: "2라운드: 패턴을 보세요 — 1년 동안 배운 이모지들이에요 — 다음에 올 것을 맞혀보세요!",
+      },
+      config: {
+        engine: "pattern_predictor",
+        title: { en: "A Year of Patterns", ko: "1년의 패턴" },
+        teacherNote:
+          "Last appearance of the pattern-prediction engine this year (also used in Months 1, 6, 7, and 10) — mixes emoji from across several months as a light, celebratory formative check rather than a hard drill. Read each sequence aloud, naming the picture in English, before revealing the choices.",
+        rounds: [
+          { sequence: ["⭐", "🎃", "⭐", "🎃"], answer: "⭐", options: ["⭐", "🎃", "❄️"] },
+          { sequence: ["🦁", "🎁", "🦁", "🎁"], answer: "🦁", options: ["🦁", "🎁", "☀️"] },
+          {
+            sequence: ["☀️", "☀️", "🌙", "🌙", "☀️", "☀️"],
+            answer: "🌙",
+            options: ["☀️", "🌙", "🎃"],
+            minTrack: "explorers",
+          },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a few kids: \"Which word was easy to remember, and which was tricky?\"",
@@ -153,8 +176,8 @@ export const m12_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we celebrated a whole year of words with one big review sort — look how much you remember!",
-        ko: "오늘은 1년 동안 배운 단어로 큰 복습 분류 게임을 하며 축하했어요 — 얼마나 많이 기억하는지 봐요!",
+        en: "Today we played two carnival rounds — a big review sort of words from all through the year, and a first round of year-long patterns.",
+        ko: "오늘은 두 가지 카니발 라운드를 했어요 — 1년 동안 배운 단어로 하는 큰 복습 분류 게임과, 1년의 패턴을 맛보는 첫 라운드예요.",
       },
       homework: {
         en: "Tell your family one word you remembered from earlier this year.",
@@ -192,8 +215,8 @@ export const m12_week3: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Round 2: Look at the pattern — emoji from all through the year — and guess what comes next!",
-        ko: "2라운드: 패턴을 보세요 — 1년 동안 배운 이모지들이에요 — 다음에 올 것을 맞혀보세요!",
+        en: "Round 2: Look at the pattern — emoji from all through the year — and guess what comes next! Then play a second game to reinforce it.",
+        ko: "2라운드: 패턴을 보세요 — 1년 동안 배운 이모지들이에요 — 다음에 올 것을 맞혀보세요! 그런 다음 두 번째 게임으로 복습해 보세요.",
       },
       config: {
         engine: "pattern_predictor",
@@ -213,6 +236,31 @@ export const m12_week3: Lesson = {
       },
     },
     {
+      type: "activity",
+      instructions: {
+        en: "Round 1: Sort review words from all through the year — is it something you'd see in the sky, or on the ground?",
+        ko: "1라운드: 1년 동안 배운 단어를 복습해요 — 하늘에서 볼 수 있는 것일까요, 땅 위에서 볼 수 있는 것일까요?",
+      },
+      config: {
+        engine: "train_the_robot",
+        title: { en: "Review Sort", ko: "복습 분류" },
+        labelA: { en: "In the Sky", ko: "하늘에" },
+        labelB: { en: "On the Ground", ko: "땅 위에" },
+        emojiA: "🌤️",
+        emojiB: "🌍",
+        items: [
+          { word: { en: "rocket", ko: "로켓" }, emoji: "🚀", bucket: "a" },
+          { word: { en: "airplane", ko: "비행기" }, emoji: "✈️", bucket: "a" },
+          { word: { en: "sun", ko: "태양" }, emoji: "☀️", bucket: "a" },
+          { word: { en: "cloud", ko: "구름" }, emoji: "☁️", bucket: "a", minTrack: "explorers" },
+          { word: { en: "lion", ko: "사자" }, emoji: "🦁", bucket: "b" },
+          { word: { en: "elephant", ko: "코끼리" }, emoji: "🐘", bucket: "b" },
+          { word: { en: "train", ko: "기차" }, emoji: "🚂", bucket: "b" },
+          { word: { en: "car", ko: "자동차" }, emoji: "🚗", bucket: "b" },
+        ],
+      },
+    },
+    {
       type: "check",
       prompt: {
         en: "Whole-class thumbs up if you can guess what comes next in the pattern: star, pumpkin, star, pumpkin, ___?",
@@ -223,8 +271,8 @@ export const m12_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we celebrated a whole year of patterns, mixing pictures from every month into one big prediction game.",
-        ko: "오늘은 매달 배운 그림을 섞어 하나의 큰 예측 게임으로 1년의 패턴을 축하했어요.",
+        en: "Today we played two carnival rounds — a whole year of patterns, and one big review sort of words from every month.",
+        ko: "오늘은 두 가지 카니발 라운드를 했어요 — 1년의 패턴 게임과, 매달 배운 단어로 하는 큰 복습 분류 게임이에요.",
       },
       homework: {
         en: "Make up your own pattern at home and ask your family what comes next.",
