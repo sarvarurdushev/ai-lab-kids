@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { BilingualText } from "@/components/curriculum/BilingualText";
 import { BigIdeaBanner } from "@/components/curriculum/BigIdeaBanner";
 import { MarkPanel } from "./MarkPanel";
-import { BIG_IDEA_LABELS, resolveBigIdea, type Lesson } from "@/lib/curriculum";
+import { BIG_IDEA_LABELS, resolveBigIdea, ENGINE_PRESENTATION, isAiLabEngine, type Lesson, type LessonSegment } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
 import { SunIcon, BookIcon, RobotHeadIcon, GamepadIcon, CheckCircleIcon, GiftIcon, SparkleIcon } from "@/components/icons";
 
@@ -24,6 +24,20 @@ const SEGMENT_LABEL: Record<
   check: { icon: CheckCircleIcon, text: "Formative Check", className: "text-mint" },
   wrapup: { icon: GiftIcon, text: "Wrap-up", className: "text-amber-dark" },
 };
+
+/** Icon + title + "is this a real AI-literacy activity" for the segment strip and agenda chips. */
+function stripInfo(segment: LessonSegment): {
+  icon: (props: { size?: number; className?: string }) => React.JSX.Element;
+  title: string;
+  isAiLab: boolean;
+} {
+  if (segment.type === "activity") {
+    const ep = ENGINE_PRESENTATION[segment.config.engine];
+    return { icon: ep.icon, title: ep.label.en, isAiLab: isAiLabEngine(segment.config.engine) };
+  }
+  const label = SEGMENT_LABEL[segment.type];
+  return { icon: label.icon, title: label.text, isAiLab: false };
+}
 
 // These three pick their tile/round order with Math.random() on first
 // render, so server-rendered HTML and the client's initial render would
@@ -130,11 +144,25 @@ export function PresentationPlayer({
       </div>
 
       {!finished && (
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-          <div
-            className="h-full rounded-full bg-gradient-to-r from-indigo to-coral transition-all"
-            style={{ width: `${((index + 1) / lesson.segments.length) * 100}%` }}
-          />
+        <div className="flex items-center gap-1 overflow-x-auto rounded-full bg-white/70 px-2 py-2 shadow-sm">
+          {lesson.segments.map((seg, i) => {
+            const info = stripInfo(seg);
+            return (
+              <button
+                key={i}
+                type="button"
+                title={info.title}
+                onClick={() => void persistIndex(i)}
+                className={[
+                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all",
+                  info.isAiLab ? "bg-indigo text-white" : i === index ? "bg-coral/15 text-coral" : "bg-cream text-ink/40",
+                  i === index ? "scale-110 ring-2 ring-indigo" : i < index ? "opacity-50" : "",
+                ].join(" ")}
+              >
+                <info.icon size={14} />
+              </button>
+            );
+          })}
         </div>
       )}
 
@@ -147,6 +175,34 @@ export function PresentationPlayer({
       </Card>
 
       {!finished && bigIdea && <BigIdeaBanner bigIdea={bigIdea} level={level} />}
+
+      {!finished && index === 0 && (
+        <Card className="!py-3">
+          <p className="text-xs font-bold uppercase tracking-wide text-ink/50">
+            Today&apos;s class — {lesson.segments.length} steps
+          </p>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {lesson.segments.map((seg, i) => {
+              const info = stripInfo(seg);
+              return (
+                <span
+                  key={i}
+                  className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                    info.isAiLab ? "bg-indigo text-white" : "bg-cream text-ink/60"
+                  }`}
+                >
+                  <info.icon size={10} /> {info.title}
+                </span>
+              );
+            })}
+          </div>
+          {lesson.segments.some((seg) => seg.type === "activity" && isAiLabEngine(seg.config.engine)) && (
+            <p className="mt-2 flex items-center gap-1 text-[11px] text-ink/50">
+              <RobotHeadIcon size={11} /> This lesson includes real AI-literacy practice, not just vocabulary.
+            </p>
+          )}
+        </Card>
+      )}
 
       {finished ? (
         <Card className="flex flex-col items-center gap-3 text-center">

@@ -11,13 +11,17 @@ import {
   lessonsForMonth,
   resolveBigIdea,
   BIG_IDEA_PRESENTATION,
+  ENGINE_PRESENTATION,
+  lessonActivitySummaries,
+  isAiLabEngine,
   type LessonMeta,
 } from "@/lib/curriculum";
 import { Card } from "@/components/ui/Card";
 import { Vora } from "@/components/mascot/Vora";
 import { AddStudentForm } from "@/components/console/AddStudentForm";
+import { AICurriculumPanel } from "@/components/curriculum/AICurriculumPanel";
 import { BigIdeaIcon } from "@/components/curriculum/BigIdeaIcon";
-import { BookIcon, GamepadIcon, ChatIcon } from "@/components/icons";
+import { BookIcon, GamepadIcon, ChatIcon, RobotHeadIcon } from "@/components/icons";
 
 const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks — ages 4-5", explorers: "AI Explorers — ages 6+" };
 const SLOT_ICON: Record<string, (props: { size?: number; className?: string }) => React.JSX.Element> = {
@@ -33,34 +37,56 @@ function LessonRow({ lesson, classId, dayLabel }: { lesson: LessonMeta; classId:
   const bigIdea = resolveBigIdea(lesson);
   const p = bigIdea ? BIG_IDEA_PRESENTATION[bigIdea] : null;
   const SlotIcon = SLOT_ICON[lesson.slot ?? "week1"];
+  const activities = authored ? lessonActivitySummaries(lesson.key) : undefined;
   return (
-    <div className="flex items-center justify-between gap-2 rounded-xl bg-cream px-3 py-2">
-      <div className="flex items-start gap-2">
-        {p && (
-          <span
-            title={`AI idea: ${p.label.en}`}
-            className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${p.badgeClass}`}
-          >
-            <BigIdeaIcon bigIdea={bigIdea!} size={15} />
-          </span>
-        )}
-        <div>
-          <p className="flex items-center gap-1.5 text-sm font-semibold text-ink">
-            <SlotIcon size={13} className="text-ink/40" />
-            {dayLabel}: {lesson.title.en}
-          </p>
-          <p className="text-xs text-ink/50">{lesson.englishFocus.en}</p>
+    <div className="flex flex-col gap-2 rounded-xl bg-cream px-3 py-2">
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-start gap-2">
+          {p && (
+            <span
+              title={`AI idea: ${p.label.en}`}
+              className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${p.badgeClass}`}
+            >
+              <BigIdeaIcon bigIdea={bigIdea!} size={15} />
+            </span>
+          )}
+          <div>
+            <p className="flex items-center gap-1.5 text-sm font-semibold text-ink">
+              <SlotIcon size={13} className="text-ink/40" />
+              {dayLabel}: {lesson.title.en}
+            </p>
+            <p className="text-xs text-ink/50">{lesson.englishFocus.en}</p>
+          </div>
         </div>
+        {authored ? (
+          <Link
+            href={`/classes/${classId}/lesson/${lesson.key}`}
+            className="shrink-0 rounded-full bg-indigo px-3 py-1.5 text-xs font-bold text-white transition-transform hover:scale-105"
+          >
+            Start →
+          </Link>
+        ) : (
+          <span className="shrink-0 rounded-full bg-ink/10 px-3 py-1.5 text-xs font-bold text-ink/40">Planned</span>
+        )}
       </div>
-      {authored ? (
-        <Link
-          href={`/classes/${classId}/lesson/${lesson.key}`}
-          className="shrink-0 rounded-full bg-indigo px-3 py-1.5 text-xs font-bold text-white transition-transform hover:scale-105"
-        >
-          Start →
-        </Link>
-      ) : (
-        <span className="shrink-0 rounded-full bg-ink/10 px-3 py-1.5 text-xs font-bold text-ink/40">Planned</span>
+      {activities && activities.length > 0 && (
+        <div className="flex flex-wrap items-center gap-1 pl-9">
+          <span className="text-[10px] font-bold uppercase tracking-wide text-ink/35">
+            {activities.length} {activities.length === 1 ? "activity" : "activities"}
+          </span>
+          {activities.map(({ engine, title }, i) => {
+            const ep = ENGINE_PRESENTATION[engine];
+            return (
+              <span
+                key={`${engine}-${i}`}
+                title={`${ep.skillLine.en} — "${title.en}"`}
+                className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${ep.chipClass}`}
+              >
+                <ep.icon size={10} /> {ep.label.en}
+              </span>
+            );
+          })}
+        </div>
       )}
     </div>
   );
@@ -95,6 +121,8 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
         </div>
       </Card>
 
+      <AICurriculumPanel />
+
       <Card className="flex flex-col gap-3">
         <p className="text-xs font-bold tracking-wide text-ink/50 uppercase">Roster ({roster.length})</p>
         <div className="flex flex-wrap gap-2">
@@ -121,6 +149,10 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
         {MONTHS.map((month) => {
           const lessons = lessonsForMonth(month.monthIndex);
           const p = BIG_IDEA_PRESENTATION[month.bigIdeaFocus];
+          const aiLabCount = lessons.reduce((sum, lesson) => {
+            const activities = isLessonAuthored(lesson.key) ? lessonActivitySummaries(lesson.key) : undefined;
+            return sum + (activities?.filter((a) => isAiLabEngine(a.engine)).length ?? 0);
+          }, 0);
           return (
             <Card key={month.key} className={`flex flex-col gap-2 border-l-4 ${p.accentClass}`}>
               <div className="flex items-start justify-between gap-2">
@@ -141,6 +173,11 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
               >
                 <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={14} className="mt-0.5 shrink-0" /> {month.summary.en}
               </p>
+              {aiLabCount > 0 && (
+                <p className="flex items-center gap-1 text-[11px] font-bold text-indigo-dark">
+                  <RobotHeadIcon size={11} /> {aiLabCount} AI Lab activities this month
+                </p>
+              )}
               <div className="mt-1 flex flex-col gap-1.5">
                 {lessons.map((lesson) => (
                   <LessonRow key={lesson.key} lesson={lesson} classId={classId} dayLabel={SLOT_TEXT[lesson.slot ?? "week1"]} />

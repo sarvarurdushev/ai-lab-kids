@@ -5,4 +5,5 @@ export * from "./months";
 export * from "./monthlyScopeAndSequence";
 export * from "./bigIdeaPresentation";
 export * from "./aiLabBank";
+export * from "./enginePresentation";
 export * from "./lessons/index";
