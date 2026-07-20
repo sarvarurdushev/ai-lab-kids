@@ -12,6 +12,7 @@
   --color-al-coral: #ff6b6b;
   --color-al-cream: #fbf8ff;
   --color-al-ink: #241f33;
+  --color-al-sky: #2b9fe8;
 }
 
 @theme inline {
@@ -28,6 +29,7 @@
   --color-coral: var(--color-al-coral);
   --color-cream: var(--color-al-cream);
   --color-ink: var(--color-al-ink);
+  --color-sky: var(--color-al-sky);
 }
 
 @media (prefers-color-scheme: dark) {

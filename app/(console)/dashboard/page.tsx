@@ -3,10 +3,13 @@ import Link from "next/link";
 import { requireTeacher } from "@/lib/auth/requireTeacher";
 import { classesVisibleToTeacher, schoolsForOrg } from "@/lib/console/queries";
 import { Card } from "@/components/ui/Card";
+import { Robi } from "@/components/mascot/Robi";
 import { CreateClassForm } from "@/components/console/CreateClassForm";
 
 const LEVEL_LABEL: Record<string, string> = { full: "Full bilingual", light: "Light Korean", minimal: "Immersion" };
 const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks 4-5", explorers: "AI Explorers 6+" };
+const TRACK_ACCENT: Record<string, string> = { little_sparks: "border-coral", explorers: "border-indigo" };
+const TRACK_EMOJI: Record<string, string> = { little_sparks: "🌱", explorers: "🚀" };
 
 export default async function DashboardPage() {
   const teacher = await requireTeacher();
@@ -19,16 +22,19 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-5">
-      <div>
-        <h1 className="font-display text-2xl font-bold text-indigo-dark">
-          {teacher.role === "org_admin" ? "All Classes" : "My Classes"}
-        </h1>
-        <p className="text-sm text-ink/60">
-          {teacher.role === "org_admin"
-            ? "Every class across your organization."
-            : "Pick a class to open its roster and start a lesson."}
-        </p>
-      </div>
+      <Card className="flex items-center gap-4 bg-gradient-to-r from-indigo/15 via-coral/5 to-transparent">
+        <Robi size={56} mood="happy" bob />
+        <div>
+          <h1 className="font-display text-2xl font-bold text-indigo-dark">
+            {teacher.role === "org_admin" ? "All Classes" : "My Classes"}
+          </h1>
+          <p className="text-sm text-ink/60">
+            {teacher.role === "org_admin"
+              ? "Every class across your organization."
+              : "Pick a class to open its roster and start a lesson."}
+          </p>
+        </div>
+      </Card>
 
       {teacher.role === "org_admin" && (
         <Link href="/reporting" className="font-semibold text-indigo underline-offset-2 hover:underline">
@@ -39,13 +45,18 @@ export default async function DashboardPage() {
       <div className="flex flex-col gap-3">
         {myClasses.map((c) => (
           <Link key={c.id} href={`/classes/${c.id}`}>
-            <Card className="flex items-center justify-between transition-transform hover:scale-[1.01]">
-              <div>
-                <p className="font-display font-bold text-ink">{c.name}</p>
-                <p className="text-xs text-ink/50">
-                  {c.gradeLabel} · {c.schoolName}
-                  {teacher.role === "org_admin" && ` · ${c.teacherName}`}
-                </p>
+            <Card
+              className={`flex items-center justify-between gap-3 border-l-4 transition-transform hover:scale-[1.01] ${TRACK_ACCENT[c.ageTrack]}`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">{TRACK_EMOJI[c.ageTrack]}</span>
+                <div>
+                  <p className="font-display font-bold text-ink">{c.name}</p>
+                  <p className="text-xs text-ink/50">
+                    {c.gradeLabel} · {c.schoolName}
+                    {teacher.role === "org_admin" && ` · ${c.teacherName}`}
+                  </p>
+                </div>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">
                 <span className="rounded-full bg-mint/20 px-2 py-0.5 text-[10px] font-bold uppercase text-ink">
