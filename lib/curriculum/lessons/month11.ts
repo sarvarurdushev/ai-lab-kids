@@ -1,0 +1,236 @@
+import type { Lesson } from "../types";
+import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+
+function meta(key: string) {
+  const m = getMonthlyLessonMeta(key);
+  if (!m) throw new Error(`No monthly scope-and-sequence entry for lesson ${key}`);
+  return m;
+}
+
+export const m11_class: Lesson = {
+  ...meta("m11_class"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Make a big happy face, then a sad face, then a surprised face — ask the class each time: \"How do I feel?\" Let them answer in Korean or English before teaching today's sentence pattern.",
+        ko: "신나는 표정, 슬픈 표정, 놀란 표정을 차례로 지어 보이며 매번 물어보세요: \"How do I feel?\" 오늘의 문장 패턴을 가르치기 전에 한국어나 영어로 자유롭게 답하게 해주세요.",
+      },
+      prompt: { en: "How do I feel?", ko: "저는 기분이 어떨까요?" },
+    },
+    {
+      type: "vocab",
+      title: { en: "Feelings", ko: "감정" },
+      words: [
+        { word: { en: "happy", ko: "행복한" }, emoji: "😊" },
+        { word: { en: "sad", ko: "슬픈" }, emoji: "😢" },
+        { word: { en: "angry", ko: "화난" }, emoji: "😠" },
+        { word: { en: "scared", ko: "무서운" }, emoji: "😨" },
+        { word: { en: "surprised", ko: "놀란" }, emoji: "😲", minTrack: "explorers" },
+        { word: { en: "tired", ko: "피곤한" }, emoji: "😴" },
+      ],
+    },
+    {
+      type: "concept",
+      title: { en: "Robi Sees a Smile", ko: "로비가 웃는 얼굴을 봐요" },
+      bigIdeas: ["natural_interaction", "perception"],
+      lines: [
+        { en: "Look at my face! Can you guess how I feel?", ko: "내 얼굴을 봐! 내가 어떤 기분인지 맞혀볼래?" },
+        {
+          en: "I see a big smile, so I might guess: happy! But seeing a smile isn't the same as really knowing how you feel inside.",
+          ko: "나는 활짝 웃는 얼굴을 보고 '행복하겠다'라고 추측할 수 있어. 하지만 웃는 얼굴을 보는 것과 네 마음속 진짜 기분을 아는 건 달라.",
+        },
+        { en: "Only you really know how you feel. Let's practice saying it together: I feel ___.", ko: "네가 어떤 기분인지는 오직 너만 진짜로 알아. 함께 연습해보자: I feel ___." },
+        {
+          en: "Even the smartest AI can only guess from a picture — it can't feel a warm hug or a hard day, the way you can.",
+          ko: "아무리 똑똑한 AI라도 사진만 보고 추측할 수 있을 뿐이야 — 너처럼 따뜻한 포옹이나 힘든 하루를 느낄 수는 없어.",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This month's honest AI boundary: recognizing a facial expression (a shape a camera can detect) isn't the same as understanding a feeling. Also flag the grammar shift explicitly: \"I feel ___\" uses a real verb (feel), unlike the \"It's ___\" copula pattern used all year (Months 1, 6, and 7) — a quick side-by-side (\"It's sunny\" vs. \"I feel happy\") helps prevent kids from saying \"I'm feel happy\" or overusing \"it's\" for their own feelings.",
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "As a class, decide together where each feeling goes before anyone taps — happy feelings on one side, not-happy feelings on the other.",
+        ko: "탭하기 전에 반 전체가 함께 각 감정이 어디로 가야 할지 정해보세요 — 행복한 감정은 한쪽으로, 행복하지 않은 감정은 다른 쪽으로요.",
+      },
+      config: {
+        engine: "train_the_robot",
+        title: { en: "Happy Feeling or Not Happy Feeling?", ko: "행복한 기분일까요, 행복하지 않은 기분일까요?" },
+        labelA: { en: "Happy", ko: "행복해요" },
+        labelB: { en: "Not Happy", ko: "행복하지 않아요" },
+        emojiA: "😊",
+        emojiB: "😢",
+        items: [
+          { word: { en: "happy", ko: "행복한" }, emoji: "😊", bucket: "a" },
+          { word: { en: "excited", ko: "신난" }, emoji: "🤩", bucket: "a" },
+          { word: { en: "laughing", ko: "웃는" }, emoji: "😆", bucket: "a" },
+          { word: { en: "sad", ko: "슬픈" }, emoji: "😢", bucket: "b" },
+          { word: { en: "angry", ko: "화난" }, emoji: "😠", bucket: "b" },
+          { word: { en: "scared", ko: "무서운" }, emoji: "😨", bucket: "b" },
+          { word: { en: "tired", ko: "피곤한" }, emoji: "😴", bucket: "b" },
+        ],
+      },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Make a feeling face without talking — can a partner guess and say \"You feel ___\"?",
+        ko: "말하지 않고 감정 표정을 지어보세요 — 짝이 \"You feel ___\"라고 맞출 수 있을까요?",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we named six feelings and learned \"I feel ___\" — and how an AI can spot a smile, but can't truly know how someone feels inside.",
+        ko: "오늘은 감정 여섯 가지의 이름을 배우고 \"I feel ___\" 문장을 배웠어요 — 그리고 AI가 웃는 얼굴을 알아챌 수는 있어도, 마음속 진짜 기분까지 알 수는 없다는 것도 배웠어요.",
+      },
+      homework: {
+        en: "Ask a family member \"How do you feel?\" tonight and really listen to their answer.",
+        ko: "오늘 저녁 가족에게 \"How do you feel?\"이라고 물어보고, 대답을 잘 들어보세요.",
+      },
+    },
+  ],
+};
+
+export const m11_play: Lesson = {
+  ...meta("m11_play"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Act out \"sad\" silently — droop your shoulders, pretend to sniffle — and ask \"How do I feel?\" Let kids guess before explaining today's charades game.",
+        ko: "말없이 어깨를 축 늘어뜨리고 훌쩍이는 시늉을 하며 \"How do I feel?\"이라고 물어보세요. 오늘의 몸으로 말해요 게임을 설명하기 전에 학생들이 먼저 추측하게 해주세요.",
+      },
+      prompt: { en: "Guess my feeling! 🎭", ko: "제 기분을 맞혀보세요! 🎭" },
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "First, act out \"happy\" with your face and body — no words! Then build the sentence tile by tile and say it together.",
+        ko: "먼저 말없이 표정과 몸으로 'happy'를 표현해보세요! 그런 다음 한 타일씩 문장을 만들고 함께 말해보세요.",
+      },
+      config: {
+        engine: "sentence_builder",
+        title: { en: "I feel happy.", ko: "저는 행복해요." },
+        words: [
+          { text: "I", role: "subject", ko: "저는" },
+          { text: "feel", role: "verb", ko: "느끼다" },
+          { text: "happy", role: "other", ko: "행복한" },
+        ],
+        translation: { en: "I feel happy.", ko: "저는 행복해요." },
+      },
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "Flip two cards at a time. When you find a feeling word, act it out with your face and body before saying it in English!",
+        ko: "카드 두 장을 뒤집어보세요. 감정 단어를 찾으면, 영어로 말하기 전에 표정과 몸으로 먼저 표현해보세요!",
+      },
+      config: {
+        engine: "memory_match",
+        title: { en: "Feelings Match", ko: "감정 짝 맞추기" },
+        pairs: [
+          { word: { en: "happy", ko: "행복한" }, emoji: "😊" },
+          { word: { en: "sad", ko: "슬픈" }, emoji: "😢" },
+          { word: { en: "angry", ko: "화난" }, emoji: "😠" },
+          { word: { en: "scared", ko: "무서운" }, emoji: "😨" },
+          { word: { en: "surprised", ko: "놀란" }, emoji: "😲", minTrack: "explorers" },
+          { word: { en: "tired", ko: "피곤한" }, emoji: "😴" },
+        ],
+      },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Ask a partner to act out a feeling — can you guess it and say \"You feel ___\"?",
+        ko: "짝에게 감정을 몸으로 표현해달라고 하세요 — 맞히고 \"You feel ___\"라고 말할 수 있나요?",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we acted out feelings, built \"I feel happy\" tile by tile, and matched feeling words to faces.",
+        ko: "오늘은 감정을 몸으로 표현하고, \"I feel happy\"를 한 타일씩 만들고, 감정 단어를 표정과 짝지었어요.",
+      },
+      homework: {
+        en: "Act out a feeling for your family tonight and see if they can guess it in English.",
+        ko: "오늘 밤 가족 앞에서 감정을 몸으로 표현해보고, 가족이 영어로 맞힐 수 있는지 확인해보세요.",
+      },
+    },
+  ],
+};
+
+export const m11_spotlight: Lesson = {
+  ...meta("m11_spotlight"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Ask a few kids: \"How do you feel right now — really?\" Quick, honest answers in any language before today's sentence.",
+        ko: "몇몇 학생에게 물어보세요: \"지금 진짜 기분이 어때요?\" 오늘의 문장을 배우기 전에 어떤 언어로든 솔직하게 짧게 답해보세요.",
+      },
+      prompt: { en: "How do you feel today?", ko: "오늘 기분이 어때요?" },
+    },
+    {
+      type: "concept",
+      title: { en: "I Feel Happy!", ko: "저는 행복해요!" },
+      bigIdeas: [],
+      lines: [
+        { en: "I feel happy today, because I get to see you!", ko: "나는 오늘 행복해, 너희를 만날 수 있으니까!" },
+        {
+          en: "How do YOU feel right now? Happy? Tired? Something else — any true answer is a great answer.",
+          ko: "너희는 지금 기분이 어때? 행복해? 피곤해? 다른 기분이어도 괜찮아 — 진짜 기분이라면 무엇이든 좋은 대답이야.",
+        },
+        {
+          en: "Your feelings are yours. Not even the smartest AI can tell you how you really feel inside — only you know that.",
+          ko: "네 기분은 오직 너의 것이야. 아무리 똑똑한 AI라도 네가 마음속으로 진짜 어떻게 느끼는지는 말해줄 수 없어 — 그건 너만 알아.",
+          minTrack: "explorers",
+        },
+        { en: "Ready? Let's build the sentence together, one word at a time.", ko: "준비됐나요? 함께 한 단어씩 문장을 만들어봐요." },
+      ],
+      teacherNote:
+        "Unlike Month 5's \"This is my sister,\" this sentence frame asks for a genuine, in-the-moment answer — encourage kids to swap in their real feeling, not just \"happy.\" Ties back to this month's AI honesty theme: this is one sentence Robi truly can't answer for them.",
+    },
+    {
+      type: "activity",
+      instructions: {
+        en: "Build the sentence one tile at a time, left to right. Then invite several kids to swap in their own true feeling and say it out loud.",
+        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 문장을 만들어요. 그런 다음 여러 학생이 자신의 진짜 기분으로 바꿔서 소리 내어 말해보게 하세요.",
+      },
+      config: {
+        engine: "sentence_builder",
+        title: { en: "I feel happy.", ko: "저는 행복해요." },
+        words: [
+          { text: "I", role: "subject", ko: "저는" },
+          { text: "feel", role: "verb", ko: "느끼다" },
+          { text: "happy", role: "other", ko: "행복한" },
+        ],
+        translation: { en: "I feel happy.", ko: "저는 행복해요." },
+      },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Every kid says \"I feel ___\" out loud, naming their real feeling right now.",
+        ko: "모든 학생이 \"I feel ___\"라고 소리 내어 말하며 지금의 진짜 기분을 말해보세요.",
+      },
+      method: "whole_class_thumbs",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today every child said how they truly feel in English — one of the most personal sentences in the whole year.",
+        ko: "오늘은 모든 학생이 영어로 진짜 기분을 말했어요 — 올 한 해 중 가장 개인적인 문장이었어요.",
+      },
+      homework: {
+        en: "Say \"I feel ___\" about your real feeling to someone at home tonight.",
+        ko: "오늘 밤 집에서 누군가에게 \"I feel ___\"라고 진짜 기분을 말해보세요.",
+      },
+    },
+  ],
+};

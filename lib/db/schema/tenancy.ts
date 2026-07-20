@@ -17,6 +17,11 @@ export const koreanSupportLevelEnum = pgEnum("korean_support_level", [
   "minimal", // English immersion; Korean available only via manual toggle
 ]);
 
+// "Little Sparks" (4-5, pre-reader) vs "AI Explorers" (6+, early reader) —
+// same two tracks as lib/soloCurriculum.ts. Controls which minTrack-tagged
+// vocab/lines/activity items a class sees — see lib/trackContent.ts.
+export const ageTrackEnum = pgEnum("age_track", ["little_sparks", "explorers"]);
+
 // The licensee — the "education company" deploying this curriculum across
 // its schools/branches. Everything else is scoped underneath one.
 export const organizations = pgTable("organizations", {
@@ -66,6 +71,7 @@ export const classes = pgTable("classes", {
   name: text("name").notNull(),
   gradeLabel: text("grade_label").notNull(),
   koreanSupportLevel: koreanSupportLevelEnum("korean_support_level").notNull().default("full"),
+  ageTrack: ageTrackEnum("age_track").notNull().default("explorers"),
   // Points at a lesson in the static curriculum content (lib/curriculum/*),
   // not a DB row — see docs/AI_CURRICULUM.md "Content vs. progress" split.
   currentUnitKey: text("current_unit_key"),

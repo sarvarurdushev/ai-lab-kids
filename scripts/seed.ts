@@ -20,6 +20,15 @@ const STUDENTS = [
   { koreanName: "다은", englishName: "Diana", avatarEmoji: "🦊" },
 ];
 
+const SPARKS_STUDENTS = [
+  { koreanName: "민준", englishName: "Min", avatarEmoji: "🐨" },
+  { koreanName: "서아", englishName: "Sia", avatarEmoji: "🐥" },
+  { koreanName: "하준", englishName: "Ha", avatarEmoji: "🐢" },
+  { koreanName: "지우", englishName: "Jiu", avatarEmoji: "🐸" },
+  { koreanName: "채원", englishName: "Chloe", avatarEmoji: "🐷" },
+  { koreanName: "유준", englishName: "Yu", avatarEmoji: "🐵" },
+];
+
 async function main() {
   console.log("Seeding AI Lab for Kids (Teacher Console)...\n");
 
@@ -65,6 +74,7 @@ async function main() {
       name: "Robi 3-A",
       gradeLabel: "Grade 3",
       koreanSupportLevel: "full",
+      ageTrack: "explorers",
     })
     .returning();
 
@@ -73,9 +83,30 @@ async function main() {
     .values(STUDENTS.map((s, i) => ({ classId: demoClass.id, ...s, sortOrder: i })))
     .returning();
 
+  // Second demo class on the "Little Sparks" (4-5) track, same teacher, so
+  // the age-track content filtering (see lib/trackContent.ts) is visible
+  // side-by-side with the "AI Explorers" (6+) class above.
+  const [sparksClass] = await db
+    .insert(classes)
+    .values({
+      schoolId: school.id,
+      teacherAccountId: teacher.id,
+      name: "Little Sparks K",
+      gradeLabel: "Kindergarten",
+      koreanSupportLevel: "full",
+      ageTrack: "little_sparks",
+    })
+    .returning();
+
+  const insertedSparksStudents = await db
+    .insert(students)
+    .values(SPARKS_STUDENTS.map((s, i) => ({ classId: sparksClass.id, ...s, sortOrder: i })))
+    .returning();
+
   console.log("Organization:", org.name);
   console.log("School:", school.name);
-  console.log("Class:", demoClass.name, `(${insertedStudents.length} students)`);
+  console.log("Class:", demoClass.name, `(${insertedStudents.length} students, AI Explorers 6+)`);
+  console.log("Class:", sparksClass.name, `(${insertedSparksStudents.length} students, Little Sparks 4-5)`);
   console.log("\nDemo logins (password for both):", DEMO_PASSWORD);
   console.log("  Org admin:", admin.email);
   console.log("  Teacher:  ", teacher.email);

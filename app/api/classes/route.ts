@@ -27,6 +27,7 @@ export async function POST(request: NextRequest) {
       name: parsed.data.name,
       gradeLabel: parsed.data.gradeLabel,
       koreanSupportLevel: parsed.data.koreanSupportLevel,
+      ageTrack: parsed.data.ageTrack,
     })
     .returning();
   return NextResponse.json(created);

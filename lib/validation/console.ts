@@ -22,6 +22,7 @@ export const createClassSchema = z.object({
   name: z.string().trim().min(1).max(120),
   gradeLabel: z.string().trim().min(1).max(60),
   koreanSupportLevel: z.enum(["full", "light", "minimal"]).default("full"),
+  ageTrack: z.enum(["little_sparks", "explorers"]).default("explorers"),
 });
 
 export const addStudentSchema = z.object({

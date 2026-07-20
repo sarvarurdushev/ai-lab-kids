@@ -346,5 +346,5 @@ export function getLessonMeta(key: string): LessonMeta | undefined {
 }
 
 export function lessonsForWeek(week: number): LessonMeta[] {
-  return SCOPE_AND_SEQUENCE.filter((l) => l.week === week).sort((a, b) => a.day - b.day);
+  return SCOPE_AND_SEQUENCE.filter((l) => l.week === week).sort((a, b) => (a.day ?? 0) - (b.day ?? 0));
 }

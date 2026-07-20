@@ -10,8 +10,10 @@ one screen, a room full of kids who don't yet read or speak much English,
 and without any live chatbot/LLM in the loop (see
 [Safety](#safety-why-theres-no-live-chatbot) below).
 
-For the full 24-lesson curriculum map, see
-[`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md). For the Korean
+For the 24-lesson foundations unit, see
+[`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md). For the 12-month,
+36-lesson year curriculum that follows it, see
+[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md). For the Korean
 learner-specific research behind what each lesson targets, see
 [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md).
 
@@ -49,7 +51,23 @@ for younger grades are what `Sequence Builder` is modeled on — and the
 same tile-ordering mechanic is reused a second time for English
 subject-verb-object sentence building (`Sentence Builder`), because
 "arrange things in the one correct order" is the same interaction whether
-the thing being ordered is a morning routine or a sentence.
+the thing being ordered is a morning routine or a sentence. The year
+curriculum adds two more engines built the same way: `Memory Match` (a
+flip-card pairs game reinforcing vocabulary recognition) and
+`Pattern Predictor` (a "what comes next?" game that's a direct, concrete
+demonstration of pattern-based prediction — the same underlying idea
+behind weather forecasts, route-finding, and next-word suggestion). See
+[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md) for the full
+six-engine breakdown.
+
+**Topic-based curriculum design.** The 12-month year curriculum (see
+[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)) adapts a
+topic-based annual English-curriculum structure widely used in Korean
+English-education businesses — a proven, seasonally sensible theme
+sequence familiar to Korean parents and teachers — but pairs every
+month's topic with one concrete AI4K12 big idea, so AI literacy and
+English are taught through the same monthly theme instead of as two
+separate subjects.
 
 **Korean learner needs.** See
 [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md) for the full breakdown,
@@ -74,6 +92,15 @@ practice: a class's `koreanSupportLevel` (`full` / `light` / `minimal`,
 set per class by the teacher) controls how much Korean auto-displays —
 see [`lib/i18n.ts`](../lib/i18n.ts). Korean is always available via manual
 toggle regardless of level; what fades is what shows automatically.
+
+**Age-track differentiation.** A class is also set to one of two age
+tracks (`little_sparks`, ages 4-5, vs. `explorers`, ages 6+) — the same
+two tracks the solo pages already used, now extended into the teacher
+console. Rather than authoring two full copies of every lesson,
+individual pieces of content are tagged `minTrack: "explorers"` where
+they're authored and stripped server-side for Little Sparks classes
+before a lesson reaches the Presentation Player — see
+[`lib/trackContent.ts`](../lib/trackContent.ts).
 
 **Chatbot safety.** COPPA (and Korea's PIPA, which is stricter for
 under-14s) both require verifiable guardian consent before any service
@@ -105,11 +132,13 @@ the teacher's account is the only credential in the room.
   controls pacing manually (no auto-advance, no timers on non-activity
   segments), and resumes where it left off if the teacher closes the
   laptop mid-lesson (`lessonSessions.currentSegmentIndex`).
-- **Activity engines** (`components/engines/`) — `TrainTheRobotEngine`
-  (classification), `OrderingEngine` (routine sequencing *and* SVO
-  sentence building, same component), and `MinimalPairsEngine` (listening
-  discrimination). Each is fully content-driven: authoring a new lesson
-  means writing data against `lib/curriculum/types.ts`, not new code.
+- **Activity engines** (`components/engines/`) — six engines:
+  `TrainTheRobotEngine` (classification), `OrderingEngine` (routine
+  sequencing *and* SVO sentence building, same component),
+  `MinimalPairsEngine` (listening discrimination), `MemoryMatchEngine`
+  (flip-card pairs), and `PatternPredictorEngine` ("what comes next?").
+  Each is fully content-driven: authoring a new lesson means writing data
+  against `lib/curriculum/types.ts`, not new code.
 - **Participation marks & reporting** — at each formative-check segment,
   the teacher marks the whole class or an individual student
   (👍 got it / 🤔 needs practice / ⭐ excelling). `/reporting`
@@ -153,9 +182,12 @@ Roadmap), but are not the primary product surface.
 ## Roadmap
 
 Honest gap list — what a company evaluating this for a real deployment
-should know is *not* built yet. All 24 pilot-unit lessons are now fully
-authored (see [`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md)), so
-what's left is platform work, not content work:
+should know is *not* built yet. The 24-lesson foundations unit and the
+36-lesson, 12-month year curriculum are now both fully authored (see
+[`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md) and
+[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)) — 60 lessons and
+six activity engines total — so what's left is platform work, not content
+work:
 
 1. **No live sync between a teacher device and a separate student-facing
    screen.** Today the Presentation Player is one device driving one
@@ -173,9 +205,10 @@ what's left is platform work, not content work:
 4. **No homework/independent-practice mode** connecting a student's home
    device back to their class's progress — the solo pages are unconnected
    to a class today.
-5. **No second pilot unit.** "Robi's Classroom" covers one 8-week arc for
-   one level; a real semester/year license would need at least one more
-   unit at a higher level, reusing the same engines and content model.
+5. **No second full-year curriculum for an older/higher level.** The year
+   curriculum's age-track filtering (`minTrack`) covers a 4-5 vs. 6+ split
+   within one curriculum; a true intermediate/advanced follow-on year
+   (past what 6+ Explorers content covers) isn't authored yet.
 6. **No automated test suite.** Correctness so far has been verified by
    hand (typecheck, lint, production build, and full manual browser
    walkthroughs of every flow, including catching and fixing a real crash

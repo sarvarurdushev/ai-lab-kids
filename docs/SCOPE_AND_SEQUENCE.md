@@ -1,10 +1,13 @@
-# Scope & Sequence — Robi's Classroom
+# Scope & Sequence — Robi's Classroom (Foundations Unit)
 
-An 8-week, 24-lesson pilot unit (3 lessons/week) for Korean elementary
-beginners (CEFR pre-A1/A1), teaching English *through* AI-literacy
-concepts. See [`docs/AI_CURRICULUM.md`](./AI_CURRICULUM.md) for the
-research this is built on and [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md)
-for the phonology/grammar targeting rationale.
+An 8-week, 24-lesson pilot/foundations unit (3 lessons/week) for Korean
+elementary beginners (CEFR pre-A1/A1), teaching English *through*
+AI-literacy concepts. A class typically completes this unit first, then
+moves into the year-long 12-month themed curriculum — see
+[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md). See
+[`docs/AI_CURRICULUM.md`](./AI_CURRICULUM.md) for the research this is
+built on and [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md) for the
+phonology/grammar targeting rationale.
 
 This is the same data as
 [`lib/curriculum/scopeAndSequence.ts`](../lib/curriculum/scopeAndSequence.ts)

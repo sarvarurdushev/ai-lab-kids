@@ -26,6 +26,14 @@ const MinimalPairsEngine = dynamic(
   () => import("@/components/engines/MinimalPairsEngine").then((m) => m.MinimalPairsEngine),
   { ssr: false }
 );
+const MemoryMatchEngine = dynamic(
+  () => import("@/components/engines/MemoryMatchEngine").then((m) => m.MemoryMatchEngine),
+  { ssr: false }
+);
+const PatternPredictorEngine = dynamic(
+  () => import("@/components/engines/PatternPredictorEngine").then((m) => m.PatternPredictorEngine),
+  { ssr: false }
+);
 
 interface RosterStudent {
   id: string;
@@ -178,6 +186,10 @@ export function PresentationPlayer({
                 <OrderingEngine config={segment.config} level={level} />
               )}
               {segment.config.engine === "minimal_pairs" && <MinimalPairsEngine config={segment.config} level={level} />}
+              {segment.config.engine === "memory_match" && <MemoryMatchEngine config={segment.config} level={level} />}
+              {segment.config.engine === "pattern_predictor" && (
+                <PatternPredictorEngine config={segment.config} level={level} />
+              )}
             </div>
           )}
 

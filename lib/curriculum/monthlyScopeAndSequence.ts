@@ -1,0 +1,525 @@
+import type { LessonMeta } from "./types";
+
+/**
+ * The lesson-level map for the 12-month themed curriculum (see
+ * lib/curriculum/months.ts). Every month has exactly three lessons,
+ * mirroring the "Class / Action Play / Today's English Spotlight" pillars
+ * of the reference curriculum this adapts:
+ *
+ * - `class` — story + concept lesson: new vocabulary, the month's AI big
+ *   idea explained through Robi, one activity game.
+ * - `action_play` — game-first, higher-energy lesson built for a kids-cafe
+ *   -style classroom: two back-to-back activity games and less lecture.
+ * - `spotlight` — short speaking-confidence lesson: a chant or sentence
+ *   pattern the whole class produces out loud together.
+ *
+ * See lib/curriculum/lessons/month1.ts..month12.ts for the full authored
+ * segment content, and docs/MONTHLY_CURRICULUM.md for the teacher-facing
+ * map this mirrors.
+ */
+export const MONTHLY_SCOPE_AND_SEQUENCE: LessonMeta[] = [
+  // Month 1 — Space
+  {
+    key: "m1_class",
+    unitKey: "m1_space",
+    monthIndex: 1,
+    slot: "class",
+    title: { en: "It's a Star!", ko: "별이에요!" },
+    bigIdeas: ["reasoning", "learning"],
+    englishFocus: { en: "Space nouns + \"It's a ___.\"", ko: "우주 명사와 \"It's a ___.\" 문장" },
+    koreanL1Note:
+      "\"It's a ___\" reuses the copula pattern from the foundations unit (Week 1) — a good check for whether that structure stuck, now with brand-new vocabulary.",
+    objectives: [
+      { en: "I can name five things in space.", ko: "나는 우주에 있는 것 다섯 가지를 말할 수 있어요." },
+      { en: "I can explain that Robi finds patterns in pictures of stars, the same way it sorts other pictures.", ko: "나는 로비가 다른 그림을 분류하듯 별 사진에서도 패턴을 찾는다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 2 (Representation & Reasoning) — pattern-finding in images, introduced with space as the concrete example.",
+  },
+  {
+    key: "m1_play",
+    unitKey: "m1_space",
+    monthIndex: 1,
+    slot: "action_play",
+    title: { en: "Space Thing or Earth Thing?", ko: "우주 물건일까요, 지구 물건일까요?" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "Space vocab review inside a sort-and-match pair of games.", ko: "분류와 짝 맞추기 게임으로 우주 어휘 복습" },
+    koreanL1Note: "Two games back-to-back, same vocabulary set — repetition across different game mechanics is the goal, not new grammar.",
+    objectives: [{ en: "I can sort pictures into 'space thing' and 'earth thing,' and find matching word-picture pairs.", ko: "나는 그림을 '우주 물건'과 '지구 물건'으로 분류하고, 단어와 그림 짝을 찾을 수 있어요." }],
+    standardsNote: "High-energy, game-first lesson — the \"Action Play\" pillar of the monthly curriculum, designed for movement and pairs/small-group play.",
+  },
+  {
+    key: "m1_spotlight",
+    unitKey: "m1_space",
+    monthIndex: 1,
+    slot: "spotlight",
+    title: { en: "I See a Rocket!", ko: "로켓이 보여요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"I see a ___.\" sentence production.", ko: "\"I see a ___.\" 문장 만들기" },
+    koreanL1Note: "First production (not just recognition) of a full 3-word sentence with this month's nouns — build it tile-by-tile before asking for free speech.",
+    objectives: [{ en: "I can say \"I see a ___\" about a space picture.", ko: "나는 우주 그림을 보고 \"I see a ___\"라고 말할 수 있어요." }],
+    standardsNote: "The \"Today's English Spotlight\" pillar — short, confidence-building, one sentence pattern produced out loud by every child.",
+  },
+
+  // Month 2 — Culture & Countries
+  {
+    key: "m2_class",
+    unitKey: "m2_culture",
+    monthIndex: 2,
+    slot: "class",
+    title: { en: "Hello, World!", ko: "안녕, 세계!" },
+    bigIdeas: ["societal_impact"],
+    englishFocus: { en: "Country/food/dance nouns + \"I'm from ___.\"", ko: "나라·음식·춤 명사와 \"I'm from ___.\" 문장" },
+    koreanL1Note: "\"I'm from Korea\" gives kids a sentence about themselves that's true and easy to be proud of — start here before other countries.",
+    objectives: [
+      { en: "I can name three countries and say \"I'm from ___.\"", ko: "나는 나라 세 곳의 이름을 말하고 \"I'm from ___.\"라고 말할 수 있어요." },
+      { en: "I can explain that translator apps use AI to help people who speak different languages understand each other.", ko: "나는 번역 앱이 AI를 이용해 서로 다른 언어를 쓰는 사람들이 이해하도록 돕는다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 5 (Societal Impact) — machine translation as a concrete, kid-relatable example of AI's real-world reach.",
+  },
+  {
+    key: "m2_play",
+    unitKey: "m2_culture",
+    monthIndex: 2,
+    slot: "action_play",
+    title: { en: "Around the World", ko: "세계 한 바퀴" },
+    bigIdeas: ["reasoning"],
+    englishFocus: { en: "Ordering a travel routine + matching world vocabulary.", ko: "여행 루틴 순서 배열과 세계 어휘 짝 맞추기" },
+    koreanL1Note: "Sequencing words (first/next/then/last) get reused from the foundations unit inside a brand-new routine — a good transfer check.",
+    objectives: [{ en: "I can order the steps of a pretend trip, and match world vocabulary to pictures.", ko: "나는 가상 여행의 순서를 배열하고, 세계 어휘를 그림과 짝지을 수 있어요." }],
+    standardsNote: "Action Play pillar — two games, one reasoning-focused (ordering) and one perception-focused (matching).",
+  },
+  {
+    key: "m2_spotlight",
+    unitKey: "m2_culture",
+    monthIndex: 2,
+    slot: "spotlight",
+    title: { en: "I'm from Korea!", ko: "저는 한국에서 왔어요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"I'm from ___.\" sentence production.", ko: "\"I'm from ___.\" 문장 만들기" },
+    koreanL1Note: "Contraction practice (\"I'm\" = \"I am\") — Korean has no equivalent contraction, model it as one chunk, not two words squeezed together.",
+    objectives: [{ en: "I can say \"I'm from Korea\" with confidence.", ko: "나는 자신 있게 \"I'm from Korea\"라고 말할 수 있어요." }],
+    standardsNote: "Spotlight pillar — a sentence every child can say truthfully about themselves.",
+  },
+
+  // Month 3 — Friends
+  {
+    key: "m3_class",
+    unitKey: "m3_friends",
+    monthIndex: 3,
+    slot: "class",
+    title: { en: "Making a Friend", ko: "친구 사귀기" },
+    bigIdeas: ["natural_interaction"],
+    englishFocus: { en: "Friendship phrases + \"Can I play?\" / \"Let's share.\"", ko: "우정 표현과 \"Can I play?\" / \"Let's share.\"" },
+    koreanL1Note: "\"Can I ___?\" fronts an auxiliary the same way \"Do you ___?\" did in the foundations unit — call out the pattern explicitly so it transfers.",
+    objectives: [
+      { en: "I can ask \"Can I play?\" and offer to share.", ko: "나는 \"Can I play?\"라고 묻고 나눠 쓰자고 제안할 수 있어요." },
+      { en: "I can explain that a voice assistant listens for me to stop talking before it answers, like a good friend takes turns.", ko: "나는 음성 비서가 좋은 친구처럼 내가 말을 멈출 때까지 기다렸다가 대답한다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 4 (Natural Interaction) — turn-taking in conversation, framed through friendship rather than technology first.",
+  },
+  {
+    key: "m3_play",
+    unitKey: "m3_friends",
+    monthIndex: 3,
+    slot: "action_play",
+    title: { en: "Friendly Words", ko: "다정한 말" },
+    bigIdeas: [],
+    englishFocus: { en: "Building friendship sentences + matching feeling words.", ko: "우정 문장 만들기와 감정 단어 짝 맞추기" },
+    koreanL1Note: "Reinforces \"Can I play?\" and \"Let's share\" as fixed chunks kids can produce quickly under game pressure.",
+    objectives: [{ en: "I can build a friendship sentence and match feeling words to faces.", ko: "나는 우정 문장을 만들고 감정 단어를 표정과 짝지을 수 있어요." }],
+    standardsNote: "Action Play pillar — pairs well as a partner activity since the theme itself is about playing with a friend.",
+  },
+  {
+    key: "m3_spotlight",
+    unitKey: "m3_friends",
+    monthIndex: 3,
+    slot: "spotlight",
+    title: { en: "Listen Closely: light or right?", ko: "잘 들어보세요: light일까요, right일까요?" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "/r/ vs /l/ minimal-pair listening review.", ko: "/r/와 /l/ 최소 대립쌍 듣기 복습" },
+    koreanL1Note: "Quarter-checkpoint review of the single highest-frequency Korean-learner sound gap (see docs/KOREAN_L1_NOTES.md) — spaced repetition from the foundations unit.",
+    objectives: [{ en: "I can listen and pick the word I hear: light or right.", ko: "나는 듣고 들은 단어를 고를 수 있어요: light 또는 right." }],
+    standardsNote: "Spotlight pillar, listening-discrimination variant — every third month reviews one of the four core Korean L1 sound gaps.",
+  },
+
+  // Month 4 — Environment
+  {
+    key: "m4_class",
+    unitKey: "m4_environment",
+    monthIndex: 4,
+    slot: "class",
+    title: { en: "Take Care of Earth", ko: "지구를 돌봐요" },
+    bigIdeas: ["learning", "societal_impact"],
+    englishFocus: { en: "Nature nouns + \"We should / shouldn't ___.\"", ko: "자연 명사와 \"We should / shouldn't ___.\" 표현" },
+    koreanL1Note: "Modal \"should\" has no verb-final counterpart to lean on, same challenge as \"can\" in the foundations unit — model as a fixed chunk first.",
+    objectives: [
+      { en: "I can say one thing we should do and one thing we shouldn't do for the earth.", ko: "나는 지구를 위해 해야 할 일과 하지 말아야 할 일을 각각 한 가지씩 말할 수 있어요." },
+      { en: "I can explain that AI helps scientists learn about our climate by studying huge amounts of weather data.", ko: "나는 AI가 방대한 날씨 데이터를 연구해 과학자들이 기후를 이해하도록 돕는다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 3 (Learning) — learning from large datasets, introduced through climate science.",
+  },
+  {
+    key: "m4_play",
+    unitKey: "m4_environment",
+    monthIndex: 4,
+    slot: "action_play",
+    title: { en: "Recycle It!", ko: "재활용해요!" },
+    bigIdeas: ["learning", "reasoning"],
+    englishFocus: { en: "Sorting recyclables + ordering the steps of recycling.", ko: "재활용품 분류와 재활용 순서 배열" },
+    koreanL1Note: "Two games, same theme: sorting reinforces the vocabulary, ordering reinforces first/next/then/last from the foundations unit.",
+    objectives: [{ en: "I can sort trash from recyclables, and put the steps of recycling in order.", ko: "나는 쓰레기와 재활용품을 분류하고, 재활용 순서를 배열할 수 있어요." }],
+    standardsNote: "Action Play pillar — physical sorting mimics a real classroom recycling bin activity.",
+  },
+  {
+    key: "m4_spotlight",
+    unitKey: "m4_environment",
+    monthIndex: 4,
+    slot: "spotlight",
+    title: { en: "We Should Recycle!", ko: "우리는 재활용해야 해요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"We should ___.\" sentence production.", ko: "\"We should ___.\" 문장 만들기" },
+    koreanL1Note: "First group-subject sentence (\"we,\" not \"I\") — a small but genuine shift kids should hear called out.",
+    objectives: [{ en: "I can say one thing \"we should\" do for the earth.", ko: "나는 지구를 위해 \"we should\" 해야 할 일을 한 가지 말할 수 있어요." }],
+    standardsNote: "Spotlight pillar — closes the environment theme on a sentence kids can repeat at home.",
+  },
+
+  // Month 5 — Family
+  {
+    key: "m5_class",
+    unitKey: "m5_family",
+    monthIndex: 5,
+    slot: "class",
+    title: { en: "This Is My Family", ko: "우리 가족이에요" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "Family nouns + \"This is my ___.\"", ko: "가족 명사와 \"This is my ___.\" 문장" },
+    koreanL1Note: "Korean family terms encode relative age/side of family with no single English equivalent — validate kids who want more precision than 'brother/sister' gives them, don't correct it away.",
+    objectives: [
+      { en: "I can introduce four family members in English.", ko: "나는 영어로 가족 네 명을 소개할 수 있어요." },
+      { en: "I can explain that face-recognition apps sometimes mix up people who look alike, unlike how I always know my own family.", ko: "나는 얼굴 인식 앱이 닮은 사람을 가끔 헷갈려 하지만, 나는 우리 가족을 항상 알아본다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 1 (Perception) — the limits of computer vision, made concrete and reassuring rather than scary.",
+  },
+  {
+    key: "m5_play",
+    unitKey: "m5_family",
+    monthIndex: 5,
+    slot: "action_play",
+    title: { en: "Family Match-Up", ko: "가족 짝 맞추기" },
+    bigIdeas: [],
+    englishFocus: { en: "Matching family words + building \"This is my ___\" sentences.", ko: "가족 단어 짝 맞추기와 \"This is my ___\" 문장 만들기" },
+    koreanL1Note: "Repeats the possessive \"my\" from the foundations unit's classroom-objects lesson, now with people instead of things.",
+    objectives: [{ en: "I can find matching family word-picture pairs and build a sentence about my family.", ko: "나는 가족 단어와 그림 짝을 찾고, 우리 가족에 대한 문장을 만들 수 있어요." }],
+    standardsNote: "Action Play pillar — pairs a calm matching game with a sentence-building game for pacing variety.",
+  },
+  {
+    key: "m5_spotlight",
+    unitKey: "m5_family",
+    monthIndex: 5,
+    slot: "spotlight",
+    title: { en: "This Is My Sister!", ko: "제 여동생이에요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"This is my ___.\" sentence production.", ko: "\"This is my ___.\" 문장 만들기" },
+    koreanL1Note: "Kids may want to name a cousin, grandparent, or pet — welcome any real family member, the sentence frame is what matters.",
+    objectives: [{ en: "I can proudly introduce one real family member in English.", ko: "나는 진짜 가족 중 한 명을 영어로 자신 있게 소개할 수 있어요." }],
+    standardsNote: "Spotlight pillar — personal, low-stakes production about something every child has an honest answer for.",
+  },
+
+  // Month 6 — Animals
+  {
+    key: "m6_class",
+    unitKey: "m6_animals",
+    monthIndex: 6,
+    slot: "class",
+    title: { en: "Wild Animals", ko: "야생 동물" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "Wild animal nouns + \"It's a big / small ___.\"", ko: "야생 동물 명사와 \"It's a big / small ___.\" 문장" },
+    koreanL1Note: "Adjective-before-noun order (\"a big lion\") matches Korean word order — call this out as an easy win, not everything is a hard shift.",
+    objectives: [
+      { en: "I can name five wild animals and describe them as big or small.", ko: "나는 야생 동물 다섯 가지의 이름을 말하고 크기를 설명할 수 있어요." },
+      { en: "I can explain that wildlife cameras use AI to recognize which animal walked by, the same sorting idea as Robi's games.", ko: "나는 야생동물 카메라가 AI로 지나간 동물을 알아낸다는 것을, 로비의 분류 게임과 같은 원리로 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 1 (Perception) — a real deployed use of image classification kids can picture concretely (a camera trap in a forest).",
+  },
+  {
+    key: "m6_play",
+    unitKey: "m6_animals",
+    monthIndex: 6,
+    slot: "action_play",
+    title: { en: "What Comes Next?", ko: "다음은 무엇일까요?" },
+    bigIdeas: ["reasoning", "perception"],
+    englishFocus: { en: "Predicting an animal pattern + matching animal words.", ko: "동물 패턴 예측과 동물 단어 짝 맞추기" },
+    koreanL1Note: "First appearance of the pattern-prediction game (also used in Month 1 and 7/10/12) — pattern words like \"same/different\" carry over from the foundations unit's colors-and-patterns week.",
+    objectives: [{ en: "I can guess what comes next in an animal pattern, and match animal words to pictures.", ko: "나는 동물 패턴에서 다음에 올 것을 추측하고, 동물 단어를 그림과 짝지을 수 있어요." }],
+    standardsNote: "Action Play pillar — the pattern game doubles as a light, playful reintroduction of AI4K12 Big Idea 2 (Representation & Reasoning).",
+  },
+  {
+    key: "m6_spotlight",
+    unitKey: "m6_animals",
+    monthIndex: 6,
+    slot: "spotlight",
+    title: { en: "Listen Closely: fan or pan?", ko: "잘 들어보세요: fan일까요, pan일까요?" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "/f/ vs /p/ minimal-pair listening review.", ko: "/f/와 /p/ 최소 대립쌍 듣기 복습" },
+    koreanL1Note: "Second quarter-checkpoint review — Korean has no /f/ phoneme, so this contrast is genuinely new, not just underused, and benefits from repeated exposure across the year.",
+    objectives: [{ en: "I can listen and pick the word I hear: fan or pan.", ko: "나는 듣고 들은 단어를 고를 수 있어요: fan 또는 pan." }],
+    standardsNote: "Spotlight pillar, listening-discrimination variant.",
+  },
+
+  // Month 7 — Weather
+  {
+    key: "m7_class",
+    unitKey: "m7_weather",
+    monthIndex: 7,
+    slot: "class",
+    title: { en: "What's the Weather?", ko: "오늘 날씨는 어때요?" },
+    bigIdeas: ["reasoning"],
+    englishFocus: { en: "Weather adjectives + \"It's ___ today.\"", ko: "날씨 형용사와 \"It's ___ today.\" 문장" },
+    koreanL1Note: "\"It's ___\" reuses the copula pattern a third time this year (Month 1 objects, Month 6 animals) — by now expect faster, more confident production.",
+    objectives: [
+      { en: "I can name four kinds of weather and say \"It's ___ today.\"", ko: "나는 날씨 네 가지의 이름을 말하고 \"It's ___ today.\"라고 말할 수 있어요." },
+      { en: "I can explain that a weather forecast is really a careful guess, made by finding patterns in a lot of past weather.", ko: "나는 일기예보가 사실은 과거 날씨의 패턴을 바탕으로 한 신중한 추측이라는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 2 (Representation & Reasoning) — forecasting as pattern-based prediction, a second concrete example after Month 1's stars.",
+  },
+  {
+    key: "m7_play",
+    unitKey: "m7_weather",
+    monthIndex: 7,
+    slot: "action_play",
+    title: { en: "Weather Dress-Up", ko: "날씨에 맞는 옷" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "Sorting clothes by weather + a \"today's weather\" sentence.", ko: "날씨에 맞는 옷 분류와 \"오늘 날씨\" 문장 만들기" },
+    koreanL1Note: "Concrete, TPR-friendly theme — pair the sorting game with actual pointing/miming of putting on the clothing sorted.",
+    objectives: [{ en: "I can sort clothes into 'hot weather' and 'cold weather,' and say what today's weather is.", ko: "나는 옷을 '더운 날씨'와 '추운 날씨'로 분류하고, 오늘 날씨를 말할 수 있어요." }],
+    standardsNote: "Action Play pillar — designed to double as a movement break (kids can mime putting on the clothing).",
+  },
+  {
+    key: "m7_spotlight",
+    unitKey: "m7_weather",
+    monthIndex: 7,
+    slot: "spotlight",
+    title: { en: "It's Sunny Today!", ko: "오늘은 맑아요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"It's ___ today.\" sentence production.", ko: "\"It's ___ today.\" 문장 만들기" },
+    koreanL1Note: "A sentence kids can genuinely check against the real sky outside the classroom window — encourage exactly that.",
+    objectives: [{ en: "I can say what the weather is like today, in English.", ko: "나는 오늘 날씨가 어떤지 영어로 말할 수 있어요." }],
+    standardsNote: "Spotlight pillar — the most immediately real-world-checkable sentence pattern in the curriculum.",
+  },
+
+  // Month 8 — Travel
+  {
+    key: "m8_class",
+    unitKey: "m8_travel",
+    monthIndex: 8,
+    slot: "class",
+    title: { en: "Let's Go!", ko: "출발해요!" },
+    bigIdeas: ["reasoning"],
+    englishFocus: { en: "Transportation nouns + \"Let's go by ___.\"", ko: "탈것 명사와 \"Let's go by ___.\" 문장" },
+    koreanL1Note: "\"Let's ___\" is a fixed suggestion chunk with no word-by-word Korean equivalent to build from — teach it whole, the same approach as \"Can I ___?\" in Month 3.",
+    objectives: [
+      { en: "I can name four ways to travel and say \"Let's go by ___.\"", ko: "나는 이동 수단 네 가지의 이름을 말하고 \"Let's go by ___.\"라고 말할 수 있어요." },
+      { en: "I can explain that a map app finds the fastest route by trying out many paths and reasoning about which is best.", ko: "나는 지도 앱이 여러 경로를 시도해 보고 가장 좋은 길을 추론해 찾는다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 2 (Representation & Reasoning) — route-finding as step-by-step reasoning, extending the algorithms thread from the foundations unit.",
+  },
+  {
+    key: "m8_play",
+    unitKey: "m8_travel",
+    monthIndex: 8,
+    slot: "action_play",
+    title: { en: "Pack Your Suitcase", ko: "짐을 싸요" },
+    bigIdeas: [],
+    englishFocus: { en: "Sorting travel items + matching transportation words.", ko: "여행 물건 분류와 탈것 단어 짝 맞추기" },
+    koreanL1Note: "Two games, same theme — sorting (what to pack) and matching (transportation words) reinforce the same vocabulary from different angles.",
+    objectives: [{ en: "I can sort items into 'pack it' and 'leave it,' and match transportation words to pictures.", ko: "나는 물건을 '챙길 것'과 '두고 갈 것'으로 분류하고, 탈것 단어를 그림과 짝지을 수 있어요." }],
+    standardsNote: "Action Play pillar.",
+  },
+  {
+    key: "m8_spotlight",
+    unitKey: "m8_travel",
+    monthIndex: 8,
+    slot: "spotlight",
+    title: { en: "Let's Go by Airplane!", ko: "비행기를 타고 가요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"Let's go by ___.\" sentence production.", ko: "\"Let's go by ___.\" 문장 만들기" },
+    koreanL1Note: "Encourage kids to pick their favorite, not just the first option — a small but real choice makes the sentence feel truer.",
+    objectives: [{ en: "I can suggest a way to travel using \"Let's go by ___.\"", ko: "나는 \"Let's go by ___.\"를 사용해 이동 방법을 제안할 수 있어요." }],
+    standardsNote: "Spotlight pillar.",
+  },
+
+  // Month 9 — My Body
+  {
+    key: "m9_class",
+    unitKey: "m9_body",
+    monthIndex: 9,
+    slot: "class",
+    title: { en: "My Body", ko: "내 몸" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "Body-part nouns.", ko: "신체 부위 명사" },
+    koreanL1Note: "Pure noun-learning lesson, no new sentence frame — this month's grammar load is deliberately light so the physical/TPR side can carry the lesson.",
+    objectives: [
+      { en: "I can name six body parts in English.", ko: "나는 영어로 신체 부위 여섯 가지를 말할 수 있어요." },
+      { en: "I can explain that motion-sensor games and fitness trackers use sensors, not eyes, to notice how my body moves.", ko: "나는 동작 인식 게임과 활동량 측정기가 눈이 아니라 센서로 내 몸의 움직임을 감지한다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 1 (Perception) — sensing isn't only \"seeing\"; motion and touch sensors are perception too.",
+  },
+  {
+    key: "m9_play",
+    unitKey: "m9_body",
+    monthIndex: 9,
+    slot: "action_play",
+    title: { en: "Simon Says, Robi Says", ko: "로비가 말해요" },
+    bigIdeas: ["reasoning"],
+    englishFocus: { en: "Ordering a body-movement routine + a \"touch your ___\" sentence game.", ko: "몸동작 순서 배열과 \"touch your ___\" 문장 게임" },
+    koreanL1Note: "Physical, TPR-heavy pairing — the ordering game becomes a literal Simon-Says-style routine the class performs together.",
+    objectives: [{ en: "I can order a simple movement routine, and build a \"touch your ___\" sentence.", ko: "나는 간단한 동작 순서를 배열하고, \"touch your ___\" 문장을 만들 수 있어요." }],
+    standardsNote: "Action Play pillar — the most kinesthetic lesson in the curriculum, matching the \"kids-cafe space\" energy of the reference model.",
+  },
+  {
+    key: "m9_spotlight",
+    unitKey: "m9_body",
+    monthIndex: 9,
+    slot: "spotlight",
+    title: { en: "Listen Closely: think or sink?", ko: "잘 들어보세요: think일까요, sink일까요?" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "/θ/ (\"th\") vs /s/ minimal-pair listening review.", ko: "/θ/(th)와 /s/ 최소 대립쌍 듣기 복습" },
+    koreanL1Note: "Third quarter-checkpoint review — Korean has no dental fricative /θ/, regularly substituted with /s/ or /t/.",
+    objectives: [{ en: "I can listen and pick the word I hear: think or sink.", ko: "나는 듣고 들은 단어를 고를 수 있어요: think 또는 sink." }],
+    standardsNote: "Spotlight pillar, listening-discrimination variant.",
+  },
+
+  // Month 10 — Halloween
+  {
+    key: "m10_class",
+    unitKey: "m10_halloween",
+    monthIndex: 10,
+    slot: "class",
+    title: { en: "Trick or Treat!", ko: "트릭 오어 트릿!" },
+    bigIdeas: ["learning"],
+    englishFocus: { en: "Halloween nouns + \"Trick or treat!\" / \"I'm a ___.\"", ko: "할로윈 명사와 \"Trick or treat!\" / \"I'm a ___.\" 표현" },
+    koreanL1Note: "\"I'm a ___\" (costume) reuses the copula + article pattern from the very first foundations lesson — a nice full-circle callback.",
+    objectives: [
+      { en: "I can name four Halloween things and say what costume I'm wearing.", ko: "나는 할로윈 관련 사물 네 가지를 말하고 내가 입은 코스튬을 말할 수 있어요." },
+      { en: "I can sort pictures into 'spooky' and 'not spooky,' the same learn-from-examples idea Robi's used all year.", ko: "나는 그림을 '무서운 것'과 '무섭지 않은 것'으로 분류할 수 있어요 — 로비가 1년 내내 사용한 '예시로 배우기'와 같은 방식이에요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 3 (Learning) — a lighter, seasonal repetition of the classification loop from the foundations unit.",
+  },
+  {
+    key: "m10_play",
+    unitKey: "m10_halloween",
+    monthIndex: 10,
+    slot: "action_play",
+    title: { en: "Spooky or Not?", ko: "무서울까요, 아닐까요?" },
+    bigIdeas: ["learning", "reasoning"],
+    englishFocus: { en: "Matching Halloween words + predicting a spooky pattern.", ko: "할로윈 단어 짝 맞추기와 무서운 패턴 예측하기" },
+    koreanL1Note: "High-novelty vocabulary set (ghost, witch, bat) makes this a strong month for the matching game specifically — new words benefit most from repeated flip-and-find exposure.",
+    objectives: [{ en: "I can match Halloween words to pictures and guess what comes next in a spooky pattern.", ko: "나는 할로윈 단어를 그림과 짝짓고, 무서운 패턴에서 다음에 올 것을 추측할 수 있어요." }],
+    standardsNote: "Action Play pillar.",
+  },
+  {
+    key: "m10_spotlight",
+    unitKey: "m10_halloween",
+    monthIndex: 10,
+    slot: "spotlight",
+    title: { en: "I'm a Ghost!", ko: "저는 유령이에요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"I'm a ___.\" sentence production (costume).", ko: "\"I'm a ___.\" 문장 만들기 (코스튬)" },
+    koreanL1Note: "Highest-fun, lowest-stakes spotlight of the year — any silly costume answer is correct as long as the sentence frame is right.",
+    objectives: [{ en: "I can say \"I'm a ___\" about a costume, real or pretend.", ko: "나는 진짜든 상상이든 코스튬에 대해 \"I'm a ___\"라고 말할 수 있어요." }],
+    standardsNote: "Spotlight pillar.",
+  },
+
+  // Month 11 — Emotions
+  {
+    key: "m11_class",
+    unitKey: "m11_emotions",
+    monthIndex: 11,
+    slot: "class",
+    title: { en: "How Do You Feel?", ko: "기분이 어때요?" },
+    bigIdeas: ["natural_interaction", "perception"],
+    englishFocus: { en: "Feeling words + \"I feel ___.\"", ko: "감정 단어와 \"I feel ___.\" 문장" },
+    koreanL1Note: "\"I feel ___\" is a new verb pattern (not \"I am ___\") — worth contrasting briefly with the \"It's ___\" pattern used all year so kids don't overgeneralize the copula.",
+    objectives: [
+      { en: "I can name five feelings and say \"I feel ___.\"", ko: "나는 감정 다섯 가지의 이름을 말하고 \"I feel ___.\"라고 말할 수 있어요." },
+      { en: "I can explain that an AI can recognize a smiling face, but that's different from truly understanding how someone feels.", ko: "나는 AI가 웃는 얼굴을 인식할 수는 있지만, 그것이 누군가의 진짜 기분을 이해하는 것과는 다르다는 것을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 4 (Natural Interaction) — an honest, age-appropriate boundary: recognition vs. understanding, revisited from the foundations unit's \"AI has limits\" thread.",
+  },
+  {
+    key: "m11_play",
+    unitKey: "m11_emotions",
+    monthIndex: 11,
+    slot: "action_play",
+    title: { en: "Feelings Charades", ko: "감정 몸으로 말해요" },
+    bigIdeas: [],
+    englishFocus: { en: "Building \"I feel ___\" sentences + matching feeling faces to words.", ko: "\"I feel ___\" 문장 만들기와 감정 표정-단어 짝 맞추기" },
+    koreanL1Note: "Pairs well with a real acting-out moment — have kids show the feeling with their face/body before naming it in English.",
+    objectives: [{ en: "I can build an \"I feel ___\" sentence and match a feeling word to a face.", ko: "나는 \"I feel ___\" 문장을 만들고 감정 단어를 표정과 짝지을 수 있어요." }],
+    standardsNote: "Action Play pillar.",
+  },
+  {
+    key: "m11_spotlight",
+    unitKey: "m11_emotions",
+    monthIndex: 11,
+    slot: "spotlight",
+    title: { en: "I Feel Happy!", ko: "저는 행복해요!" },
+    bigIdeas: [],
+    englishFocus: { en: "\"I feel ___.\" sentence production.", ko: "\"I feel ___.\" 문장 만들기" },
+    koreanL1Note: "Invite an honest answer, not just \"happy\" — this sentence frame is one of the few in the curriculum built for genuine self-expression.",
+    objectives: [{ en: "I can say how I really feel today, in English.", ko: "나는 오늘 진짜 기분이 어떤지 영어로 말할 수 있어요." }],
+    standardsNote: "Spotlight pillar.",
+  },
+
+  // Month 12 — Winter Holidays
+  {
+    key: "m12_class",
+    unitKey: "m12_winter",
+    monthIndex: 12,
+    slot: "class",
+    title: { en: "Winter Wonderland", ko: "겨울 나라" },
+    bigIdeas: ["societal_impact"],
+    englishFocus: { en: "Winter/holiday nouns + \"I want ___ for Christmas.\"", ko: "겨울·크리스마스 명사와 \"I want ___ for Christmas.\" 문장" },
+    koreanL1Note: "\"I want ___\" is a fixed high-frequency chunk kids will hear constantly this season — a natural, motivating place to end the year's grammar work.",
+    objectives: [
+      { en: "I can name five winter/holiday things and say what I want.", ko: "나는 겨울·크리스마스 관련 사물 다섯 가지를 말하고 원하는 것을 말할 수 있어요." },
+      { en: "I can name one AI helper from this year and explain what it does.", ko: "나는 올해 배운 AI 도우미를 한 가지 말하고 그것이 하는 일을 설명할 수 있어요." },
+    ],
+    standardsNote: "AI4K12 Big Idea 5 (Societal Impact) — a light capstone question that has kids recall any AI example from the whole year, not just this month's.",
+  },
+  {
+    key: "m12_play",
+    unitKey: "m12_winter",
+    monthIndex: 12,
+    slot: "action_play",
+    title: { en: "Year-End Robi Carnival", ko: "연말 로비 카니발" },
+    bigIdeas: ["perception", "learning", "reasoning"],
+    englishFocus: { en: "Cumulative review across all 12 months' vocabulary, inside a sort game and a pattern game.", ko: "12개월간 배운 어휘를 분류 게임과 패턴 게임으로 종합 복습" },
+    koreanL1Note: "One round each of two different engines, using review vocabulary pulled from across the year — the closest thing to a formative assessment in the monthly curriculum.",
+    objectives: [{ en: "I can play a sorting game and a pattern game using words from across the whole year.", ko: "나는 1년 동안 배운 단어로 분류 게임과 패턴 게임을 할 수 있어요." }],
+    standardsNote: "Action Play pillar — functions as the year's cumulative review, mirroring the foundations unit's Week 8 Review Carnival.",
+  },
+  {
+    key: "m12_spotlight",
+    unitKey: "m12_winter",
+    monthIndex: 12,
+    slot: "spotlight",
+    title: { en: "Listen Closely: van or ban?", ko: "잘 들어보세요: van일까요, ban일까요?" },
+    bigIdeas: ["perception"],
+    englishFocus: { en: "/v/ vs /b/ minimal-pair listening review (bonus fifth Korean L1 gap).", ko: "/v/와 /b/ 최소 대립쌍 듣기 (다섯 번째 발음 격차)" },
+    koreanL1Note: "Korean has no /v/ phoneme; it's regularly approximated with /b/ (ㅂ) — a fifth high-value listening contrast to close out the year alongside r/l, f/p, and th/s. See docs/KOREAN_L1_NOTES.md.",
+    objectives: [{ en: "I can listen and pick the word I hear: van or ban.", ko: "나는 듣고 들은 단어를 고를 수 있어요: van 또는 ban." }],
+    standardsNote: "Spotlight pillar, listening-discrimination variant — the year's final checkpoint, capstone-timed with m12_play and m12_class.",
+  },
+];
+
+export function getMonthlyLessonMeta(key: string): LessonMeta | undefined {
+  return MONTHLY_SCOPE_AND_SEQUENCE.find((l) => l.key === key);
+}
+
+const SLOT_ORDER: Record<string, number> = { class: 0, action_play: 1, spotlight: 2 };
+
+export function lessonsForMonth(monthIndex: number): LessonMeta[] {
+  return MONTHLY_SCOPE_AND_SEQUENCE.filter((l) => l.monthIndex === monthIndex).sort(
+    (a, b) => SLOT_ORDER[a.slot ?? "class"] - SLOT_ORDER[b.slot ?? "class"]
+  );
+}

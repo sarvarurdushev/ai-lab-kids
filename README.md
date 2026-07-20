@@ -3,12 +3,15 @@
 A teacher-led classroom platform teaching English *through* AI-literacy
 concepts, built for Korean elementary beginners. One teacher, one screen
 (a laptop on a projector), bilingual (English + Korean) content that fades
-as a class levels up, and real classroom infrastructure — organizations,
-schools, classes, rosters, and participation reporting.
+as a class levels up, an 8-week foundations unit followed by a full
+**12-month year-long themed curriculum**, six distinct activity-game
+engines, two age tracks (4-5 and 6+), and real classroom infrastructure —
+organizations, schools, classes, rosters, and participation reporting.
 
 See [`docs/AI_CURRICULUM.md`](docs/AI_CURRICULUM.md) for the full research
 and architecture writeup, [`docs/SCOPE_AND_SEQUENCE.md`](docs/SCOPE_AND_SEQUENCE.md)
-for the 24-lesson curriculum map, and
+for the 24-lesson foundations unit, [`docs/MONTHLY_CURRICULUM.md`](docs/MONTHLY_CURRICULUM.md)
+for the 12-month year curriculum, and
 [`docs/KOREAN_L1_NOTES.md`](docs/KOREAN_L1_NOTES.md) for the Korean
 learner-specific pedagogy behind it.
 
@@ -24,8 +27,9 @@ for validation.
 cp .env.example .env.local   # fill in DATABASE_URL, SESSION_SECRET
 npm install
 npm run db:migrate           # applies lib/db/migrations/ to your database
-npm run seed                 # demo org, school, teacher, org-admin, class,
-                              # 12 students — prints demo login credentials
+npm run seed                 # demo org, school, teacher, org-admin, two
+                              # classes (one per age track), 18 students —
+                              # prints demo login credentials
 npm run dev
 ```
 
@@ -40,8 +44,10 @@ Open `http://localhost:3000/login` and sign in with one of the accounts
 
 1. Sign in → `/dashboard` lists your classes (or every class in the org,
    if you're an admin).
-2. Open a class → roster (add/view students) + the full scope-and-sequence,
-   with **Start →** on every lesson that's fully built.
+2. Open a class → roster (add/view students), the age-track badge (Little
+   Sparks 4-5 / AI Explorers 6+), the 12-month **Year Curriculum**, and the
+   8-week **Foundations** unit — **Start →** on every lesson that's fully
+   built.
 3. Starting a lesson opens the **Presentation Player** — a projector-safe
    view that steps through warmup → vocabulary → concept → activity →
    formative check → wrap-up. You control pacing; nothing auto-advances.

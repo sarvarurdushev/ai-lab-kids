@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/Card";
 import { CreateClassForm } from "@/components/console/CreateClassForm";
 
 const LEVEL_LABEL: Record<string, string> = { full: "Full bilingual", light: "Light Korean", minimal: "Immersion" };
+const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks 4-5", explorers: "AI Explorers 6+" };
 
 export default async function DashboardPage() {
   const teacher = await requireTeacher();
@@ -46,9 +47,14 @@ export default async function DashboardPage() {
                   {teacher.role === "org_admin" && ` · ${c.teacherName}`}
                 </p>
               </div>
-              <span className="rounded-full bg-indigo/10 px-2 py-0.5 text-[10px] font-bold uppercase text-indigo-dark">
-                {LEVEL_LABEL[c.koreanSupportLevel]}
-              </span>
+              <div className="flex shrink-0 flex-col items-end gap-1">
+                <span className="rounded-full bg-mint/20 px-2 py-0.5 text-[10px] font-bold uppercase text-ink">
+                  {TRACK_LABEL[c.ageTrack]}
+                </span>
+                <span className="rounded-full bg-indigo/10 px-2 py-0.5 text-[10px] font-bold uppercase text-indigo-dark">
+                  {LEVEL_LABEL[c.koreanSupportLevel]}
+                </span>
+              </div>
             </Card>
           </Link>
         ))}

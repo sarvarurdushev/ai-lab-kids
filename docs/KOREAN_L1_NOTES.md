@@ -5,26 +5,31 @@ for Korean elementary beginners (CEFR pre-A1/A1). This is the research
 backing the "Korean L1 note" field on every lesson in
 [`lib/curriculum/scopeAndSequence.ts`](../lib/curriculum/scopeAndSequence.ts).
 
-## Phonology (the four sounds this unit drills)
+## Phonology (five sounds this curriculum drills)
 
-Korean's consonant inventory doesn't map 1:1 onto English's, so four gaps
-account for most of the pronunciation-related friction Korean learners hit
-early on. Sources: [Korean Learners' Production of English
+Korean's consonant inventory doesn't map 1:1 onto English's, so a handful
+of gaps account for most of the pronunciation-related friction Korean
+learners hit early on. The foundations unit drills the first four; the
+year curriculum's quarterly Spotlight checkpoints (see
+[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)) review all four
+across the year and add a fifth in Month 12. Sources: [Korean Learners'
+Production of English
 Consonants](https://files.eric.ed.gov/fulltext/EJ1414403.pdf), [A Catalogue
 of Errors Made by Korean Learners of
 English](https://onlinepedagogy.wordpress.com/2009/08/11/a-catalogue-of-errors-made-by-korean-learners-of-english/).
 
 | Gap | Why | Where it's drilled |
 |---|---|---|
-| /l/ vs /r/ | Korean has one liquid phoneme (ㄹ), realized as either [l] or [r] allophonically depending on position — the contrast simply isn't phonemic in the L1. | Week 2, Day 3 (`w2d3_light_or_right`) |
-| /f/ vs /p/ | No /f/ in Korean; it's regularly approximated with /p/ (ㅍ) or /h/ (ㅎ) via loanword conventions. | Week 3, Day 3 (`w3d3_fan_or_pan`) |
-| /θ/ ("th") vs /s/ | No dental fricative in Korean; commonly substituted with /s/ (ㅅ) or /t/ (ㅌ). | Week 4, Day 3 (`w4d3_think_or_sink`) |
+| /l/ vs /r/ | Korean has one liquid phoneme (ㄹ), realized as either [l] or [r] allophonically depending on position — the contrast simply isn't phonemic in the L1. | Week 2, Day 3 (`w2d3_light_or_right`); reviewed Month 3 Spotlight (`m3_spotlight`) |
+| /f/ vs /p/ | No /f/ in Korean; it's regularly approximated with /p/ (ㅍ) or /h/ (ㅎ) via loanword conventions. | Week 3, Day 3 (`w3d3_fan_or_pan`); reviewed Month 6 Spotlight (`m6_spotlight`) |
+| /θ/ ("th") vs /s/ | No dental fricative in Korean; commonly substituted with /s/ (ㅅ) or /t/ (ㅌ). | Week 4, Day 3 (`w4d3_think_or_sink`); reviewed Month 9 Spotlight (`m9_spotlight`) |
+| /v/ vs /b/ | No /v/ in Korean; it's regularly approximated with /b/ (ㅂ). A fifth, bonus contrast not covered in the foundations unit. | Month 12 Spotlight (`m12_spotlight`), the year's final checkpoint |
 | Consonant-cluster epenthesis | Korean syllable structure doesn't allow many consonant clusters, so learners often insert a vowel (e.g., "desk" → "des-ku"). | Noted, not drilled directly — see `w1d2` teacher note |
 
-**Design choice: listening before speaking.** All four minimal-pairs
-lessons are receptive (listen and pick) only — never "say this sound
-correctly." Asking for production before discrimination is solid just
-teaches guessing; real production practice is a later-phase addition (see
+**Design choice: listening before speaking.** Every minimal-pairs lesson
+is receptive (listen and pick) only — never "say this sound correctly."
+Asking for production before discrimination is solid just teaches
+guessing; real production practice is a later-phase addition (see
 [`docs/AI_CURRICULUM.md`](./AI_CURRICULUM.md) roadmap).
 
 ## Grammar / syntax

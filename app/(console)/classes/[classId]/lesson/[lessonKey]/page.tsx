@@ -4,6 +4,7 @@ import { classForTeacher } from "@/lib/console/authz";
 import { rosterForClass } from "@/lib/console/queries";
 import { startOrResumeLessonSession } from "@/lib/console/lessonSessions";
 import { getLesson } from "@/lib/curriculum";
+import { filterLessonForTrack } from "@/lib/trackContent";
 import { PresentationPlayer } from "@/components/presenter/PresentationPlayer";
 
 export default async function LessonPage({
@@ -18,8 +19,9 @@ export default async function LessonPage({
   const klass = await classForTeacher(teacher, classId);
   if (!klass) notFound();
 
-  const lesson = getLesson(lessonKey);
-  if (!lesson) notFound();
+  const rawLesson = getLesson(lessonKey);
+  if (!rawLesson) notFound();
+  const lesson = filterLessonForTrack(rawLesson, klass.ageTrack);
 
   const [session, roster] = await Promise.all([
     startOrResumeLessonSession(classId, teacher.id, lesson.unitKey, lesson.key),
