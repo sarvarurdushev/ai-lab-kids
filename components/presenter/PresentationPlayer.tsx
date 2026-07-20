@@ -131,11 +131,11 @@ export function PresentationPlayer({
         </div>
       )}
 
-      <Card className="flex items-center gap-3 !py-3 bg-gradient-to-r from-indigo/10 to-transparent">
-        <Vora size={44} mood="happy" />
+      <Card className="flex items-center gap-4 !py-4 bg-gradient-to-r from-indigo/10 to-transparent">
+        <Vora size={60} mood="happy" />
         <div>
-          <p className="font-display text-lg font-bold text-ink">{lesson.title.en}</p>
-          <p className="text-xs text-ink/50">{lesson.title.ko}</p>
+          <p className="font-display text-xl font-bold text-ink">{lesson.title.en}</p>
+          <p className="text-sm text-ink/50">{lesson.title.ko}</p>
         </div>
       </Card>
 
@@ -143,7 +143,7 @@ export function PresentationPlayer({
 
       {finished ? (
         <Card className="flex flex-col items-center gap-3 text-center">
-          <Vora size={100} mood="happy" bob />
+          <Vora size={120} mood="happy" bob />
           <p className="font-display text-lg font-bold text-indigo-dark">Lesson complete!</p>
           <Link href={`/classes/${classId}`}>
             <Button variant="secondary">Back to class</Button>

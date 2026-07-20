@@ -26,13 +26,13 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-5">
-      <Card className="flex items-center gap-4 bg-gradient-to-r from-indigo/15 via-coral/5 to-transparent">
-        <Vora size={56} mood="happy" bob />
+      <Card className="flex items-center gap-5 bg-gradient-to-r from-indigo/15 via-coral/5 to-transparent">
+        <Vora size={72} mood="happy" bob />
         <div>
-          <h1 className="font-display text-2xl font-bold text-indigo-dark">
+          <h1 className="font-display text-3xl font-bold text-indigo-dark">
             {teacher.role === "org_admin" ? "All Classes" : "My Classes"}
           </h1>
-          <p className="text-sm text-ink/60">
+          <p className="text-base text-ink/60">
             {teacher.role === "org_admin"
               ? "Every class across your organization."
               : "Pick a class to open its roster and start a lesson."}
@@ -46,7 +46,7 @@ export default async function DashboardPage() {
         </Link>
       )}
 
-      <div className="flex flex-col gap-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {myClasses.map((c) => {
           const TrackIcon = TRACK_ICON[c.ageTrack];
           return (

@@ -11,8 +11,8 @@ export default async function ConsoleLayout({ children }: { children: React.Reac
 
   return (
     <div className="flex min-h-full flex-1 flex-col bg-gradient-to-b from-indigo/10 via-cream to-cream">
-      <header className="flex items-center justify-between border-b border-ink/10 bg-white/70 px-4 py-3">
-        <Link href="/dashboard" className="font-display font-bold text-indigo-dark">
+      <header className="flex items-center justify-between border-b border-ink/10 bg-white/70 px-6 py-3">
+        <Link href="/dashboard" className="font-display text-lg font-bold text-indigo-dark">
           AI Lab <span className="text-ink/40">Console</span>
         </Link>
         <div className="flex items-center gap-3 text-sm">
@@ -27,7 +27,7 @@ export default async function ConsoleLayout({ children }: { children: React.Reac
           <SignOutButton />
         </div>
       </header>
-      <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-6">{children}</main>
+      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-8">{children}</main>
     </div>
   );
 }

@@ -84,11 +84,11 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
         </Link>
       </div>
 
-      <Card className="flex items-center gap-4 bg-gradient-to-r from-indigo/10 via-transparent to-transparent">
-        <Vora size={56} mood="happy" />
+      <Card className="flex items-center gap-5 bg-gradient-to-r from-indigo/10 via-transparent to-transparent">
+        <Vora size={72} mood="happy" />
         <div>
-          <h1 className="font-display text-2xl font-bold text-indigo-dark">{klass.name}</h1>
-          <p className="text-sm text-ink/60">
+          <h1 className="font-display text-3xl font-bold text-indigo-dark">{klass.name}</h1>
+          <p className="text-base text-ink/60">
             {klass.gradeLabel} ·{" "}
             <span className="font-semibold text-ink">{TRACK_LABEL[klass.ageTrack]}</span>
           </p>
@@ -117,6 +117,7 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
             Every month is 4 weekly lessons — one class per week, each a full standalone lesson plan.
           </p>
         </div>
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {MONTHS.map((month) => {
           const lessons = lessonsForMonth(month.monthIndex);
           const p = BIG_IDEA_PRESENTATION[month.bigIdeaFocus];
@@ -148,13 +149,14 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
             </Card>
           );
         })}
+        </div>
       </div>
 
       <details className="flex flex-col gap-4 rounded-3xl bg-white/50 p-4">
         <summary className="cursor-pointer text-xs font-bold tracking-wide text-ink/50 uppercase">
           Foundations — Vora&apos;s Classroom (8 weeks, start here first)
         </summary>
-        <div className="mt-3 flex flex-col gap-4">
+        <div className="mt-3 grid grid-cols-1 gap-4 lg:grid-cols-2">
           {UNITS.map((unit) => {
             const lessons = lessonsForWeek(unit.weekRange[0]);
             return (

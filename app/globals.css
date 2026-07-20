@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --background: #fbf8ff;
   --foreground: #241f33;
 
@@ -32,13 +33,16 @@
   --color-sky: var(--color-al-sky);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c1830;
-    --foreground: #f4f1ff;
-    --color-al-cream: #241f3d;
-  }
-}
+/*
+ * Deliberately no @media (prefers-color-scheme: dark) override: every
+ * component here (Card, badges, engines) is hand-styled against a light
+ * background (bg-white, bg-cream, text-ink), not dual-themed. A partial
+ * dark swap here previously flipped body background/text to light-on-dark
+ * while leaving every component's own colors fixed, producing dark text on
+ * a dark background — unreadable. `color-scheme: light` above also tells
+ * the browser (Chrome's "force dark on websites" included) to leave this
+ * page's colors alone rather than repainting them.
+ */
 
 body {
   background: var(--background);

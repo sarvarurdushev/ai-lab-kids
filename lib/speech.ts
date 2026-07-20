@@ -10,10 +10,19 @@ export function isSpeechSupported(): boolean {
 
 export function speak(text: string, lang: "en-US" | "ko-KR" = "en-US"): void {
   if (!isSpeechSupported()) return;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
-  utterance.rate = 0.9;
-  utterance.pitch = 1.1;
-  window.speechSynthesis.speak(utterance);
+  try {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+    utterance.rate = 0.9;
+    utterance.pitch = 1.1;
+    // Some browsers gate speech synthesis behind a permission prompt and
+    // throw (or reject a promise-like event) if it's dismissed rather than
+    // answered — read-aloud is a nice-to-have, so fail silently instead of
+    // crashing the lesson the teacher is running.
+    utterance.onerror = () => undefined;
+    window.speechSynthesis.speak(utterance);
+  } catch {
+    // ignore — read-aloud just doesn't happen this time
+  }
 }

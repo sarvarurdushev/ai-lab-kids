@@ -15,6 +15,7 @@ const baloo = Baloo_2({
 export const metadata: Metadata = {
   title: "AI Lab for Kids",
   description: "Learn how AI thinks while learning English — ages 4-8, no login needed.",
+  other: { "color-scheme": "light" },
 };
 
 export default function RootLayout({
