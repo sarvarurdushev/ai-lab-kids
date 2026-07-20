@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -71,6 +72,9 @@ export const m1_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[0],
+    },
+    {
       type: "check",
       prompt: { en: "\"It's a ___.\" — point to a space picture and have a student name it.", ko: "\"It's a ___.\" — 우주 그림을 가리키며 한 학생이 이름을 말해보게 하세요." },
       method: "cold_call",
@@ -78,8 +82,8 @@ export const m1_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six space words and saw how Vora finds a pattern in star pictures, the same way it sorts other pictures.",
-        ko: "오늘은 우주 단어 여섯 개를 배우고, 보라가 다른 그림을 분류할 때와 같은 방법으로 별 사진에서 패턴을 찾는 모습을 봤어요.",
+        en: "Today we learned six space words, saw how Vora finds a pattern in star pictures, and practiced spotting real AI in everyday life.",
+        ko: "오늘은 우주 단어 여섯 개를 배우고, 보라가 별 사진에서 패턴을 찾는 모습을 봤어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Look up at the sky tonight (or a picture of it) and say \"It's a star!\" or \"It's the moon!\" in English.",
@@ -155,6 +159,9 @@ export const m1_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[0],
+    },
+    {
       type: "check",
       prompt: {
         en: "Point to one picture from today's sort and ask a student: \"Space thing, or earth thing?\"",
@@ -165,8 +172,8 @@ export const m1_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — sorting space things from earth things, and matching space word pairs — with Vora guessing right along with us.",
-        ko: "오늘은 두 가지 게임을 했어요 — 우주 물건과 지구 물건을 분류하는 게임과 우주 단어 짝 맞추기 게임이에요 — 보라도 우리와 함께 추측하는 모습을 봤어요.",
+        en: "Today we played three activities — sorting space things from earth things, matching space word pairs, and helping Vora follow clear step-by-step instructions.",
+        ko: "오늘은 세 가지 활동을 했어요 — 우주 물건과 지구 물건을 분류하고, 우주 단어 짝을 맞추고, 보라가 분명한 단계별 지시를 따르도록 도와줬어요.",
       },
     },
   ],
@@ -238,6 +245,9 @@ export const m1_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[1],
+    },
+    {
       type: "check",
       prompt: { en: "Ask a pair: \"Which one did you match?\" and have them answer with the English word.", ko: "짝에게 물어보세요: \"어떤 것을 짝지었나요?\" 영어 단어로 답하게 하세요." },
       method: "cold_call",
@@ -245,8 +255,8 @@ export const m1_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — a matching game with space words, and sorting space things from earth things — and practiced remembering each word-picture pair.",
-        ko: "오늘은 두 가지 게임을 했어요 — 우주 단어 짝 맞추기 게임과 우주 물건·지구 물건을 분류하는 게임이에요 — 단어-그림 짝을 기억하는 연습을 했어요.",
+        en: "Today we played three activities — a matching game with space words, sorting space things from earth things, and spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — 우주 단어 짝 맞추기 게임, 우주 물건·지구 물건 분류 게임, 그리고 일상 속 진짜 AI 알아보기예요.",
       },
     },
   ],
@@ -297,6 +307,9 @@ export const m1_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
       type: "check",
       prompt: { en: "\"I see a ___.\" — each kid points to a space picture and finishes the sentence out loud.", ko: "\"I see a ___.\" — 각자 우주 그림을 가리키며 문장을 완성해 소리 내어 말해보세요." },
       method: "whole_class_thumbs",
@@ -304,8 +317,8 @@ export const m1_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today every kid built and said \"I see a ___\" about a space picture — our first full sentence about space!",
-        ko: "오늘은 모두가 우주 그림에 대해 \"I see a ___\" 문장을 만들고 말했어요 — 우주에 대한 첫 완전한 문장이었어요!",
+        en: "Today every kid built and said \"I see a ___\" about a space picture — our first full sentence about space — and helped Vora follow clear instructions.",
+        ko: "오늘은 모두가 우주 그림에 대해 \"I see a ___\" 문장을 만들고 말했어요 — 우주에 대한 첫 완전한 문장이었어요 — 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Point to something at home and say \"I see a ___\" in English.",

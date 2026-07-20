@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -76,6 +77,9 @@ export const m4_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask one table: name one thing we should recycle at home and one thing that's trash.",
@@ -86,8 +90,8 @@ export const m4_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned earth words and practiced \"We should / shouldn't ___,\" and sorted recycling from trash — just like scientists sort through huge amounts of data to understand our climate.",
-        ko: "오늘은 지구 단어를 배우고 \"We should / shouldn't ___\"를 연습했어요. 그리고 재활용품과 쓰레기를 분류했어요 — 과학자들이 방대한 데이터를 분류해 기후를 이해하는 것처럼요.",
+        en: "Today we learned earth words and practiced \"We should / shouldn't ___,\" and sorted recycling from trash — just like scientists sort through huge amounts of data to understand our climate, and practiced spotting real AI in everyday life.",
+        ko: "오늘은 지구 단어를 배우고 \"We should / shouldn't ___\"를 연습했어요. 그리고 재활용품과 쓰레기를 분류했어요 — 과학자들이 방대한 데이터를 분류해 기후를 이해하는 것처럼요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Find one thing at home that should be recycled, and tell a family member in English.",
@@ -154,6 +158,9 @@ export const m4_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a student to say the recycling steps in order: rinse it, sort it, put it in the bin.",
@@ -164,8 +171,8 @@ export const m4_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — putting the steps of recycling in order, and guessing what comes next in a pattern.",
-        ko: "오늘은 두 가지 게임을 했어요 — 재활용 순서를 배열하고, 패턴에서 다음에 올 것을 추측해봤어요.",
+        en: "Today we played three activities — putting the steps of recycling in order, guessing what comes next in a pattern, and helping Vora follow clear step-by-step instructions.",
+        ko: "오늘은 세 가지 활동을 했어요 — 재활용 순서를 배열하고, 패턴에서 다음에 올 것을 추측했어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
     },
   ],
@@ -228,6 +235,9 @@ export const m4_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Show one more pattern and ask a student to say what comes next, and explain why.",
@@ -238,8 +248,8 @@ export const m4_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — guessing what comes next in a pattern, and putting the steps of recycling in order.",
-        ko: "오늘은 두 가지 게임을 했어요 — 패턴에서 다음에 올 것을 추측하고, 재활용 순서를 배열해봤어요.",
+        en: "Today we played three activities — guessing what comes next in a pattern, putting the steps of recycling in order, and spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — 패턴에서 다음에 올 것을 추측하고, 재활용 순서를 배열했어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
     },
   ],
@@ -289,6 +299,9 @@ export const m4_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Everyone says \"We should recycle!\" together — thumbs up if you said the whole sentence.",
@@ -299,8 +312,8 @@ export const m4_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built our first \"we\" sentence together — \"We should recycle\" — closing out a month of caring for the earth.",
-        ko: "오늘은 우리의 첫 \"we\" 문장, \"We should recycle\"을 함께 만들었어요 — 지구를 돌보는 한 달을 마무리하는 문장이에요.",
+        en: "Today we built our first \"we\" sentence together — \"We should recycle\" — closing out a month of caring for the earth, and helped Vora follow clear instructions.",
+        ko: "오늘은 우리의 첫 \"we\" 문장, \"We should recycle\"을 함께 만들었어요 — 지구를 돌보는 한 달을 마무리하는 문장이에요. 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Say \"We should recycle\" with your family tonight, and pick one thing to recycle together.",

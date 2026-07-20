@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -70,6 +71,9 @@ export const m10_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask one table: \"What's your costume? Say 'I'm a ___.'\"",
@@ -80,8 +84,8 @@ export const m10_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six Halloween words, said \"Trick or treat!\" and \"I'm a ___,\" and sorted spooky things from not-spooky things — the same learn-from-examples idea Vora's used all year.",
-        ko: "오늘은 할로윈 단어 여섯 가지를 배우고, \"Trick or treat!\"와 \"I'm a ___\"를 말했으며, 무서운 것과 무섭지 않은 것을 분류했어요 — 보라가 1년 내내 사용해 온 '예시로 배우기'와 같은 방식이에요.",
+        en: "Today we learned six Halloween words, said \"Trick or treat!\" and \"I'm a ___,\" sorted spooky things from not-spooky things — the same learn-from-examples idea Vora's used all year — and practiced spotting real AI in everyday life.",
+        ko: "오늘은 할로윈 단어 여섯 가지를 배우고, \"Trick or treat!\"와 \"I'm a ___\"를 말했으며, 무서운 것과 무섭지 않은 것을 분류했어요 — 보라가 1년 내내 사용해 온 '예시로 배우기'와 같은 방식이에요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Tell a family member what costume you'd wear, using \"I'm a ___.\"",
@@ -150,6 +154,9 @@ export const m10_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Show one Halloween word card and see if everyone can say it out loud.",
@@ -160,8 +167,8 @@ export const m10_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — matching Halloween words to pictures, and guessing what comes next in a spooky pattern.",
-        ko: "오늘은 두 가지 게임을 했어요 — 할로윈 단어를 그림과 짝짓고, 무서운 패턴에서 다음에 올 것을 추측했어요.",
+        en: "Today we played three activities — matching Halloween words to pictures, guessing what comes next in a spooky pattern, and helping Vora follow clear step-by-step instructions.",
+        ko: "오늘은 세 가지 활동을 했어요 — 할로윈 단어를 그림과 짝짓고, 무서운 패턴에서 다음에 올 것을 추측했어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Draw two Halloween pictures at home and ask a family member to match them to the English words.",
@@ -230,6 +237,9 @@ export const m10_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask what picture should come next in today's pattern, without showing the options.",
@@ -240,8 +250,8 @@ export const m10_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — guessing what comes next in spooky patterns, and matching Halloween words to pictures.",
-        ko: "오늘은 두 가지 게임을 했어요 — 무서운 패턴에서 다음에 올 것을 추측하고, 할로윈 단어를 그림과 짝지었어요.",
+        en: "Today we played three activities — guessing what comes next in spooky patterns, matching Halloween words to pictures, and practicing spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — 무서운 패턴에서 다음에 올 것을 추측하고, 할로윈 단어를 그림과 짝지었어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Draw your own spooky pattern (like 🎃👻🎃👻) and ask a family member what comes next.",
@@ -296,6 +306,9 @@ export const m10_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Go around and have each kid say \"I'm a ___\" with any costume word — real or silly, all correct.",
@@ -306,8 +319,8 @@ export const m10_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built \"I'm a ghost\" and practiced saying \"I'm a ___\" with any costume we could imagine — full circle from \"It's a book\" back in Week 1!",
-        ko: "오늘은 \"I'm a ghost\"라는 문장을 만들고 상상할 수 있는 어떤 코스튬으로도 \"I'm a ___\"를 말해봤어요 — 1주차의 \"It's a book\"에서 시작해 한 바퀴 돌아온 셈이에요!",
+        en: "Today we built \"I'm a ghost\" and practiced saying \"I'm a ___\" with any costume we could imagine — full circle from \"It's a book\" back in Week 1 — and helped Vora follow clear step-by-step instructions.",
+        ko: "오늘은 \"I'm a ghost\"라는 문장을 만들고 상상할 수 있는 어떤 코스튬으로도 \"I'm a ___\"를 말해봤어요 — 1주차의 \"It's a book\"에서 시작해 한 바퀴 돌아온 셈이에요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
     },
   ],

@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -61,6 +62,9 @@ export const m8_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[1],
+    },
+    {
       type: "check",
       prompt: {
         en: "\"Let's go by ___.\" — ask a student to finish the sentence with their favorite way to travel.",
@@ -71,8 +75,8 @@ export const m8_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six travel words and saw how a map app reasons its way to the fastest route, one step at a time.",
-        ko: "오늘은 여행 단어 여섯 개를 배우고, 지도 앱이 한 단계씩 추론하여 가장 빠른 길을 찾는 방법을 배웠어요.",
+        en: "Today we learned six travel words, saw how a map app reasons its way to the fastest route, one step at a time, and practiced spotting real AI in everyday life.",
+        ko: "오늘은 여행 단어 여섯 개를 배우고, 지도 앱이 한 단계씩 추론하여 가장 빠른 길을 찾는 방법을 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Plan a pretend trip with a family member tonight — take turns saying \"Let's go by ___.\"",
@@ -148,6 +152,9 @@ export const m8_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: name one thing you'd pack for a trip.",
@@ -158,8 +165,8 @@ export const m8_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — sorting things into pack it and leave it, and matching transportation words to pictures.",
-        ko: "오늘은 두 가지 게임을 했어요 — 물건을 챙길 것과 두고 갈 것으로 분류하고, 탈것 단어를 그림과 짝지었어요.",
+        en: "Today we played three activities — sorting things into pack it and leave it, matching transportation words to pictures, and helping Vora follow clear step-by-step instructions.",
+        ko: "오늘은 세 가지 활동을 했어요 — 물건을 챙길 것과 두고 갈 것으로 분류하고, 탈것 단어를 그림과 짝지었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Pack a pretend suitcase with a family member tonight, naming each item in English.",
@@ -235,6 +242,9 @@ export const m8_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[2],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: name one way to travel on land and one way to travel by air or sea.",
@@ -245,8 +255,8 @@ export const m8_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — matching transportation words to pictures, and sorting things into pack it and leave it.",
-        ko: "오늘은 두 가지 게임을 했어요 — 탈것 단어를 그림과 짝짓고, 물건을 챙길 것과 두고 갈 것으로 분류했어요.",
+        en: "Today we played three activities — matching transportation words to pictures, sorting things into pack it and leave it, and spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — 탈것 단어를 그림과 짝짓고, 물건을 챙길 것과 두고 갈 것으로 분류했어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Name three ways to travel in English before bed tonight.",
@@ -302,6 +312,9 @@ export const m8_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a few kids \"Let's go by ___?\" and let them answer with their own favorite way to travel.",
@@ -312,8 +325,8 @@ export const m8_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built \"Let's go by airplane\" and practiced suggesting our own favorite way to travel.",
-        ko: "오늘은 \"Let's go by airplane\" 문장을 만들고, 가장 좋아하는 이동 방법을 직접 제안해봤어요.",
+        en: "Today we built \"Let's go by airplane,\" practiced suggesting our own favorite way to travel, and helped Vora follow clear step-by-step instructions.",
+        ko: "오늘은 \"Let's go by airplane\" 문장을 만들고, 가장 좋아하는 이동 방법을 직접 제안해봤어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Ask a family member \"Let's go by ___?\" tonight and let them pick their favorite way to travel too.",

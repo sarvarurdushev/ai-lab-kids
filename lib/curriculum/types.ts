@@ -61,7 +61,9 @@ export type ActivityEngine =
   | "sentence_builder"
   | "minimal_pairs"
   | "memory_match"
-  | "pattern_predictor";
+  | "pattern_predictor"
+  | "ai_or_not"
+  | "instruct_vora";
 
 export interface SortBucketItem {
   word: Bilingual;
@@ -127,13 +129,63 @@ export interface PatternPredictorConfig {
   }[];
 }
 
+/**
+ * "Is This AI?" — real-world recognition game, not vocabulary practice.
+ * Kids classify everyday things/systems as AI or not, with an immediate
+ * plain-language explanation after each answer. This is the single most
+ * widely-recommended elementary AI-literacy activity across ISTE ("K-2
+ * students identify AI in voice assistants") and AI4K12 Big Idea 5
+ * (Societal Impact / "AI is everywhere") — see docs/AI_CURRICULUM.md
+ * "Standards alignment". Content is authored once as a reusable bank (see
+ * lib/curriculum/aiLabBank.ts) and rotated across months, since the whole
+ * point is real-world examples, not month-themed vocabulary.
+ */
+export interface AIOrNotConfig {
+  engine: "ai_or_not";
+  title: Bilingual;
+  teacherNote: string;
+  items: {
+    scenario: Bilingual;
+    emoji: string;
+    isAI: boolean;
+    explanation: Bilingual;
+    minTrack?: AgeTrack;
+  }[];
+}
+
+/**
+ * "Give Vora Clear Instructions" — kids first watch a vague instruction
+ * cause Vora to do the wrong thing, then arrange precise, ordered steps
+ * that make Vora succeed. Concretely teaches that computers/AI act
+ * exactly on the instructions they're given (UNESCO AI Competency
+ * Framework for Students, "AI techniques and applications" /"AI system
+ * design" dimensions) — the same precision-matters idea behind
+ * programming an algorithm or writing a clear prompt, at an age-safe,
+ * fully offline remove from a real chatbot. Also a reusable bank — see
+ * lib/curriculum/aiLabBank.ts.
+ */
+export interface InstructVoraConfig {
+  engine: "instruct_vora";
+  title: Bilingual;
+  teacherNote: string;
+  goalLabel: Bilingual;
+  goalEmoji: string;
+  vagueInstruction: Bilingual;
+  vagueResultEmoji: string;
+  vagueResultText: Bilingual;
+  steps: { text: Bilingual; emoji: string }[];
+  successText: Bilingual;
+}
+
 export type ActivityConfig =
   | TrainTheRobotConfig
   | SequenceBuilderConfig
   | SentenceBuilderConfig
   | MinimalPairsConfig
   | MemoryMatchConfig
-  | PatternPredictorConfig;
+  | PatternPredictorConfig
+  | AIOrNotConfig
+  | InstructVoraConfig;
 
 export interface ActivitySegment {
   type: "activity";

@@ -30,35 +30,53 @@ formative check → wrap-up), not a fragment of a larger unit:
 
 1. **📖 Week 1** — the story/concept lesson. New vocabulary, the month's
    English sentence pattern, and the month's AI big idea explained through
-   Vora, with one activity game to practice it.
-2. **🎮 Week 2** — a full lesson built around both of the month's games,
-   back to back. A short warmup and AI-idea reinforcement, then game one,
-   then game two, then a formative check — playing is still teaching, not
-   a break from it.
-3. **🎮 Week 3** — the same two games again, in reverse order, with its
-   own warmup/concept framing — a second full pass at both, not a repeat
-   of Week 2 (a genuine answer to "just one game per week").
-4. **🎤 Week 4** — a short, low-stakes speaking-confidence lesson. One
-   sentence pattern or chant, built and said out loud by every child.
+   Vora, with the month's English game plus an `ai_or_not` real-world
+   AI-recognition activity.
+2. **🎮 Week 2** — a full lesson built around both of the month's English
+   games, back to back, plus an `instruct_vora` precise-instructions
+   activity. A short warmup and AI-idea reinforcement, then game one, game
+   two, the AI Lab activity, then a formative check — playing is still
+   teaching, not a break from it.
+3. **🎮 Week 3** — the same two English games again, in reverse order,
+   with its own warmup/concept framing, plus a second `ai_or_not` activity
+   (a different real-world scenario set than Week 1's) — a genuine second
+   full pass, not a repeat of Week 2.
+4. **🎤 Week 4** — a short, low-stakes speaking-confidence lesson, plus a
+   second `instruct_vora` activity (a different scenario than Week 2's).
+   One sentence pattern or chant, built and said out loud by every child.
    Every third month (3, 6, 9, 12), Week 4 is a listening-discrimination
    review of one of the five Korean L1 sound gaps this platform targets
    (see [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md)) instead of a
    new sentence — a quarterly checkpoint, not new content.
 
-## Six activity engines, not two
+Every week, in other words, includes at least one activity from the
+`ai_or_not` / `instruct_vora` bank (see below) in addition to its English
+game(s) — the answer to wanting kids to actually *practice* AI concepts
+every week, not just hear them named in a concept segment.
 
-The original pilot shipped with two engines. The year curriculum adds two
+## Eight activity engines, not two
+
+The original pilot shipped with two engines. The year curriculum adds six
 more, and every month deliberately rotates through a mix rather than
 reusing the same one:
 
-| Engine | What it does | AI big idea it demonstrates |
+| Engine | What it does | AI big idea / standard it demonstrates |
 | --- | --- | --- |
-| `train_the_robot` | Sort pictures into two categories, then check Vora's guesses | Perception, Learning |
+| `train_the_robot` | Sort pictures into two categories, train Vora, then test it on brand-new unseen items and see *why* it got any wrong | Perception, Learning; CSTA 1B-DA-06 |
 | `sequence_builder` | Put steps of a routine in order | Representation & Reasoning |
 | `sentence_builder` | Build an English sentence word-by-word in the right order | (English grammar, SVO word order) |
 | `minimal_pairs` | Listen and pick which of two similar-sounding words was said | Perception (Korean L1 sound gaps) |
-| `memory_match` *(new)* | Flip-card pairs game matching a word to its picture | Perception (recognition/recall) |
-| `pattern_predictor` *(new)* | "What comes next?" — pick the missing item in a short pattern | Representation & Reasoning, Learning |
+| `memory_match` | Flip-card pairs game matching a word to its picture | Perception (recognition/recall) |
+| `pattern_predictor` | "What comes next?" — pick the missing item in a short pattern | Representation & Reasoning, Learning |
+| `ai_or_not` *(new)* | Real-world "Is this AI, or not?" recognition game, with an explanation after every answer | Societal Impact; ISTE AI-recognition |
+| `instruct_vora` *(new)* | Watch a vague instruction fail, then build a precise ordered one that succeeds | UNESCO AI Competency Framework, "AI techniques and applications" |
+
+`ai_or_not` and `instruct_vora` are deliberately **not** month-themed —
+they live as a reusable bank of six item sets / six scenarios each
+([`lib/curriculum/aiLabBank.ts`](../lib/curriculum/aiLabBank.ts)), rotated
+across the 12 months, because the transferable skill (recognizing AI,
+giving precise instructions) matters more than tying it to that month's
+vocabulary.
 
 ## Age-track differentiation
 

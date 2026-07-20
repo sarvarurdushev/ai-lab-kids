@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -75,6 +76,9 @@ export const m11_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Make a feeling face without talking — can a partner guess and say \"You feel ___\"?",
@@ -85,8 +89,8 @@ export const m11_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we named six feelings and learned \"I feel ___\" — and how an AI can spot a smile, but can't truly know how someone feels inside.",
-        ko: "오늘은 감정 여섯 가지의 이름을 배우고 \"I feel ___\" 문장을 배웠어요 — 그리고 AI가 웃는 얼굴을 알아챌 수는 있어도, 마음속 진짜 기분까지 알 수는 없다는 것도 배웠어요.",
+        en: "Today we named six feelings and learned \"I feel ___\" — how an AI can spot a smile, but can't truly know how someone feels inside — and practiced spotting real AI in everyday life.",
+        ko: "오늘은 감정 여섯 가지의 이름을 배우고 \"I feel ___\" 문장을 배웠어요 — AI가 웃는 얼굴을 알아챌 수는 있어도, 마음속 진짜 기분까지 알 수는 없다는 것도 배웠고, 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Ask a family member \"How do you feel?\" tonight and really listen to their answer.",
@@ -158,6 +162,9 @@ export const m11_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"How do you feel?\" — can they answer with \"I feel ___\"?",
@@ -168,8 +175,8 @@ export const m11_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — building the sentence \"I feel happy\" one tile at a time and matching feeling words to faces — and practiced saying how we really feel.",
-        ko: "오늘은 두 가지 게임을 했어요 — \"I feel happy\" 문장을 한 타일씩 만들고, 감정 단어와 표정을 짝짓는 게임까지 하며 진짜 기분을 말하는 연습을 했어요.",
+        en: "Today we played three activities — building the sentence \"I feel happy\" one tile at a time, matching feeling words to faces, and helping Vora follow clear step-by-step instructions.",
+        ko: "오늘은 세 가지 활동을 했어요 — \"I feel happy\" 문장을 한 타일씩 만들고, 감정 단어와 표정을 짝지었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Act out a feeling for your family tonight and see if they can guess it in English.",
@@ -241,6 +248,9 @@ export const m11_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"Which feeling did you match?\" — can they say the English word?",
@@ -251,8 +261,8 @@ export const m11_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — matching feeling words to faces, and building the sentence \"I feel happy\" one tile at a time.",
-        ko: "오늘은 두 가지 게임을 했어요 — 감정 단어를 표정과 짝짓고, \"I feel happy\" 문장을 한 타일씩 만들어봤어요.",
+        en: "Today we played three activities — matching feeling words to faces, building the sentence \"I feel happy\" one tile at a time, and spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — 감정 단어를 표정과 짝짓고, \"I feel happy\" 문장을 한 타일씩 만들어봤어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Play a quick feelings guessing game with your family tonight.",
@@ -311,6 +321,9 @@ export const m11_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Every kid says \"I feel ___\" out loud, naming their real feeling right now.",
@@ -321,8 +334,8 @@ export const m11_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today every child said how they truly feel in English — one of the most personal sentences in the whole year.",
-        ko: "오늘은 모든 학생이 영어로 진짜 기분을 말했어요 — 올 한 해 중 가장 개인적인 문장이었어요.",
+        en: "Today every child said how they truly feel in English — one of the most personal sentences in the whole year — and helped Vora follow clear step-by-step instructions.",
+        ko: "오늘은 모든 학생이 영어로 진짜 기분을 말했어요 — 올 한 해 중 가장 개인적인 문장이었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Say \"I feel ___\" about your real feeling to someone at home tonight.",

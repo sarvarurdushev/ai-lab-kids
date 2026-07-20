@@ -49,5 +49,10 @@ function filterActivityConfig(config: ActivityConfig, track: AgeTrack): Activity
     case "sentence_builder":
       // Word order is the point of this engine — filtering would break the sentence, so both tracks always get the full sentence.
       return config;
+    case "ai_or_not":
+      return { ...config, items: keep(config.items, track) };
+    case "instruct_vora":
+      // A fixed short instruction sequence — no minTrack-tagged steps to filter.
+      return config;
   }
 }

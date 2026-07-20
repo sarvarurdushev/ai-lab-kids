@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -70,6 +71,9 @@ export const m9_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[2],
+    },
+    {
       type: "check",
       prompt: {
         en: "Everyone point to your ears, then your feet — no talking, just pointing!",
@@ -80,8 +84,8 @@ export const m9_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we named six body parts in English and learned that sensors, not just eyes, can notice how our bodies move.",
-        ko: "오늘은 영어로 신체 부위 여섯 가지의 이름을 배우고, 눈이 아니라 센서도 우리 몸의 움직임을 알아챌 수 있다는 걸 배웠어요.",
+        en: "Today we named six body parts in English, learned that sensors, not just eyes, can notice how our bodies move, and practiced spotting real AI in everyday life.",
+        ko: "오늘은 영어로 신체 부위 여섯 가지의 이름을 배우고, 눈이 아니라 센서도 우리 몸의 움직임을 알아챌 수 있다는 걸 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Touch and name three body parts in English before bedtime tonight.",
@@ -150,6 +154,9 @@ export const m9_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
       type: "check",
       prompt: {
         en: "Call out a step from today's routine (\"Touch your nose!\") and see if everyone can do it without looking at the screen.",
@@ -160,8 +167,8 @@ export const m9_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we moved our whole bodies through a four-step \"Vora Says\" routine, in order, from start to finish.",
-        ko: "오늘은 온몸을 움직이며 네 단계짜리 \"보라 가라사대\" 루틴을 처음부터 끝까지 순서대로 해봤어요.",
+        en: "Today we moved our whole bodies through a four-step \"Vora Says\" routine, in order, from start to finish, and helped Vora follow clear step-by-step instructions.",
+        ko: "오늘은 온몸을 움직이며 네 단계짜리 \"보라 가라사대\" 루틴을 처음부터 끝까지 순서대로 해봤어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Teach a family member the \"Vora Says\" game tonight using English body words.",
@@ -227,6 +234,9 @@ export const m9_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"Touch your nose!\" one more time and see if everyone can do it without looking at the screen.",
@@ -237,8 +247,8 @@ export const m9_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — building the sentence \"Touch your nose\" tile by tile, and moving through the four-step \"Vora Says\" routine.",
-        ko: "오늘은 두 가지 게임을 했어요 — \"Touch your nose\" 문장을 한 조각씩 만들고, 네 단계짜리 \"보라 가라사대\" 루틴을 몸으로 움직여봤어요.",
+        en: "Today we played three activities — building the sentence \"Touch your nose\" tile by tile, moving through the four-step \"Vora Says\" routine, and spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — \"Touch your nose\" 문장을 한 조각씩 만들고, 네 단계짜리 \"보라 가라사대\" 루틴을 몸으로 움직여봤어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Tell a family member \"Touch your nose!\" in English and see if they follow your command.",
@@ -299,6 +309,9 @@ export const m9_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[3],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"think\" and \"sink\" one more time — thumbs up if it's easier to hear the difference than it was in Week 4.",
@@ -309,8 +322,8 @@ export const m9_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we reviewed the th/s sound from Week 4 — one more sound-gap check-in before the year's last one in Month 12.",
-        ko: "오늘은 4주차에 배운 th/s 소리를 복습했어요 — 12월의 마지막 복습 전, 한 번 더 확인해봤어요.",
+        en: "Today we reviewed the th/s sound from Week 4 — one more sound-gap check-in before the year's last one in Month 12 — and helped Vora follow clear step-by-step instructions.",
+        ko: "오늘은 4주차에 배운 th/s 소리를 복습했어요 — 12월의 마지막 복습 전, 한 번 더 확인해봤어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
     },
   ],

@@ -73,6 +73,7 @@ export function TrainTheRobotEngine({
   const guessCorrectCount = guessOutcomes.filter(Boolean).length;
 
   if (roundIndex >= rounds.length) {
+    const allCorrect = guessCorrectCount === guessTotal;
     return (
       <div className="flex flex-col items-center gap-3 text-center">
         <Vora size={100} mood="happy" bob />
@@ -82,12 +83,17 @@ export function TrainTheRobotEngine({
             <SproutIcon size={16} className="text-mint" /> What Vora learned
           </p>
           <p className="max-w-xs text-xs text-ink/70">
-            Vora trained on <strong>{teachTotal}</strong> examples you sorted, then guessed{" "}
-            <strong>{guessTotal}</strong> new ones on its own — and got{" "}
+            Vora trained on <strong>{teachTotal}</strong> examples you labeled, then was tested on{" "}
+            <strong>{guessTotal}</strong> brand-new ones it had never seen before — and got{" "}
             <strong>
               {guessCorrectCount}/{guessTotal}
             </strong>{" "}
-            right. More good examples usually means better guesses!
+            right.
+          </p>
+          <p className="max-w-xs text-xs text-ink/70">
+            {allCorrect
+              ? "A perfect score! That's exactly how real AI is trained — labeled examples in, correct guesses on new data out."
+              : "Real AI makes mistakes too, especially on tricky or unusual examples — the fix is always the same: more, better-labeled examples to learn from."}
           </p>
         </div>
       </div>

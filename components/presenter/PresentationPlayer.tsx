@@ -48,6 +48,13 @@ const PatternPredictorEngine = dynamic(
   () => import("@/components/engines/PatternPredictorEngine").then((m) => m.PatternPredictorEngine),
   { ssr: false }
 );
+const AIOrNotEngine = dynamic(() => import("@/components/engines/AIOrNotEngine").then((m) => m.AIOrNotEngine), {
+  ssr: false,
+});
+const InstructVoraEngine = dynamic(
+  () => import("@/components/engines/InstructVoraEngine").then((m) => m.InstructVoraEngine),
+  { ssr: false }
+);
 
 interface RosterStudent {
   id: string;
@@ -233,6 +240,10 @@ export function PresentationPlayer({
               {segment.config.engine === "memory_match" && <MemoryMatchEngine config={segment.config} level={level} />}
               {segment.config.engine === "pattern_predictor" && (
                 <PatternPredictorEngine config={segment.config} level={level} />
+              )}
+              {segment.config.engine === "ai_or_not" && <AIOrNotEngine config={segment.config} level={level} />}
+              {segment.config.engine === "instruct_vora" && (
+                <InstructVoraEngine config={segment.config} level={level} />
               )}
             </div>
           )}

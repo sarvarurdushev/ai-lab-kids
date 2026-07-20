@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -79,6 +80,9 @@ export const m6_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"It's a big ___\" or \"It's a small ___\" about an animal picture or toy.",
@@ -89,8 +93,8 @@ export const m6_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned wild animal words and \"It's a big / small ___\" — and how wildlife cameras use AI to recognize which animal walked by.",
-        ko: "오늘은 야생 동물 단어와 \"It's a big / small ___\" 문장을 배웠어요 — 그리고 야생동물 카메라가 AI로 지나간 동물을 알아내는 방법도 배웠어요.",
+        en: "Today we learned wild animal words and \"It's a big / small ___\" — and how wildlife cameras use AI to recognize which animal walked by — and practiced spotting real AI in everyday life.",
+        ko: "오늘은 야생 동물 단어와 \"It's a big / small ___\" 문장을 배웠어요 — 그리고 야생동물 카메라가 AI로 지나간 동물을 알아내는 방법도 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Find a picture of an animal at home and say \"It's a big ___\" or \"It's a small ___.\"",
@@ -166,6 +170,9 @@ export const m6_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"What comes next?\" about the pattern lion, elephant, lion, elephant.",
@@ -176,8 +183,8 @@ export const m6_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — guessing what comes next in an animal pattern, and matching animal words to pictures.",
-        ko: "오늘은 두 가지 게임을 했어요 — 동물 패턴에서 다음에 올 것을 추측하고, 동물 단어를 그림과 짝지었어요.",
+        en: "Today we played three activities — guessing what comes next in an animal pattern, matching animal words to pictures, and helping Vora follow clear step-by-step instructions.",
+        ko: "오늘은 세 가지 활동을 했어요 — 동물 패턴에서 다음에 올 것을 추측하고, 동물 단어를 그림과 짝지었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
     },
   ],
@@ -249,6 +256,9 @@ export const m6_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[0],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"What's this animal?\" and point to one of the matched cards.",
@@ -259,8 +269,8 @@ export const m6_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — matching animal words to pictures, and guessing what comes next in an animal pattern.",
-        ko: "오늘은 두 가지 게임을 했어요 — 동물 단어를 그림과 짝짓고, 동물 패턴에서 다음에 올 것을 추측했어요.",
+        en: "Today we played three activities — matching animal words to pictures, guessing what comes next in an animal pattern, and spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — 동물 단어를 그림과 짝짓고, 동물 패턴에서 다음에 올 것을 추측했어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
     },
   ],
@@ -322,6 +332,9 @@ export const m6_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[0],
+    },
+    {
       type: "check",
       prompt: {
         en: "Say \"fan\" and \"pan\" one more time — thumbs up if you can hear the difference now.",
@@ -332,8 +345,8 @@ export const m6_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we reviewed the f sound from Week 3 — a great checkpoint before we meet two more tricky sounds later this year.",
-        ko: "오늘은 3주차에서 배운 f 소리를 복습했어요 — 올해 남은 두 가지 어려운 소리를 만나기 전 좋은 점검이었어요.",
+        en: "Today we reviewed the f sound from Week 3 — a great checkpoint before we meet two more tricky sounds later this year — and helped Vora follow clear step-by-step instructions.",
+        ko: "오늘은 3주차에서 배운 f 소리를 복습했어요 — 올해 남은 두 가지 어려운 소리를 만나기 전 좋은 점검이었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
     },
   ],

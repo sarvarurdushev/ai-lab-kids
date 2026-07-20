@@ -1,5 +1,6 @@
 import type { Lesson } from "../types";
 import { getMonthlyLessonMeta } from "../monthlyScopeAndSequence";
+import { AI_OR_NOT_SETS, INSTRUCT_VORA_SCENARIOS } from "../aiLabBank";
 
 function meta(key: string) {
   const m = getMonthlyLessonMeta(key);
@@ -69,6 +70,9 @@ export const m5_week1: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Show your own family photo (or draw one) and tell a partner: \"This is my ___.\"",
@@ -79,8 +83,8 @@ export const m5_week1: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned family words and the sentence \"This is my ___\" — and how even the smartest AI can mix up faces that you'd never confuse.",
-        ko: "오늘은 가족 단어와 \"This is my ___\" 문장을 배웠어요 — 그리고 아무리 똑똑한 AI라도 너희는 절대 헷갈리지 않을 얼굴을 헷갈릴 수 있다는 것도 배웠어요.",
+        en: "Today we learned family words and the sentence \"This is my ___\" — and how even the smartest AI can mix up faces that you'd never confuse — and practiced spotting real AI in everyday life.",
+        ko: "오늘은 가족 단어와 \"This is my ___\" 문장을 배웠어요 — 그리고 아무리 똑똑한 AI라도 너희는 절대 헷갈리지 않을 얼굴을 헷갈릴 수 있다는 것도 배웠어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
       homework: {
         en: "Introduce one family member to someone at home using \"This is my ___.\"",
@@ -157,6 +161,9 @@ export const m5_week2: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
       type: "check",
       prompt: {
         en: "Point to a family member in a photo or drawing and say: \"This is my ___.\"",
@@ -167,8 +174,8 @@ export const m5_week2: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built the sentence \"This is my brother\" tile by tile, then practiced it with a second game — sorting family and school words.",
-        ko: "오늘은 \"This is my brother\" 문장을 한 조각씩 만들고, 가족과 학교 단어를 분류하는 두 번째 게임으로 연습했어요.",
+        en: "Today we built the sentence \"This is my brother\" tile by tile, then practiced it with a second game — sorting family and school words — and helped Vora follow clear step-by-step instructions.",
+        ko: "오늘은 \"This is my brother\" 문장을 한 조각씩 만들고, 가족과 학교 단어를 분류하는 두 번째 게임으로 연습했어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
       },
     },
   ],
@@ -238,6 +245,9 @@ export const m5_week3: Lesson = {
       },
     },
     {
+      ...AI_OR_NOT_SETS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Ask a partner: \"Is 'teacher' a family word or a school word?\"",
@@ -248,8 +258,8 @@ export const m5_week3: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games — sorting family words from school words, and building the sentence \"This is my brother\" tile by tile.",
-        ko: "오늘은 두 가지 게임을 했어요 — 가족 단어와 학교 단어를 분류하고, \"This is my brother\" 문장을 한 조각씩 만들어봤어요.",
+        en: "Today we played three activities — sorting family words from school words, building the sentence \"This is my brother\" tile by tile, and spotting real AI in everyday life.",
+        ko: "오늘은 세 가지 활동을 했어요 — 가족 단어와 학교 단어를 분류하고, \"This is my brother\" 문장을 한 조각씩 만들었어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
       },
     },
   ],
@@ -299,6 +309,9 @@ export const m5_week4: Lesson = {
       },
     },
     {
+      ...INSTRUCT_VORA_SCENARIOS[5],
+    },
+    {
       type: "check",
       prompt: {
         en: "Every kid says \"This is my ___\" out loud, naming one real family member.",
@@ -309,8 +322,8 @@ export const m5_week4: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today every child proudly introduced one real family member in English — the whole point of the sentence.",
-        ko: "오늘은 모든 학생이 영어로 진짜 가족 중 한 명을 자신 있게 소개했어요 — 이 문장의 진짜 목적이에요.",
+        en: "Today every child proudly introduced one real family member in English — the whole point of the sentence — and helped Vora follow clear instructions.",
+        ko: "오늘은 모든 학생이 영어로 진짜 가족 중 한 명을 자신 있게 소개했어요 — 이 문장의 진짜 목적이에요. 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
       },
       homework: {
         en: "Say \"This is my ___\" about a family member to someone at home tonight.",

@@ -4,9 +4,12 @@ A teacher-led classroom platform teaching English *through* AI-literacy
 concepts, built for Korean elementary beginners. One teacher, one screen
 (a laptop on a projector), bilingual (English + Korean) content that fades
 as a class levels up, an 8-week foundations unit followed by a full
-**12-month year-long themed curriculum**, six distinct activity-game
-engines, two age tracks (4-5 and 6+), and real classroom infrastructure —
-organizations, schools, classes, rosters, and participation reporting.
+**12-month year-long themed curriculum**, eight distinct activity-game
+engines — including a real-world AI-recognition game and a give-precise-
+instructions game standards-mapped to ISTE, AI4K12, and UNESCO's AI
+Competency Framework for Students — two age tracks (4-5 and 6+), and real
+classroom infrastructure — organizations, schools, classes, rosters, and
+participation reporting.
 
 See [`docs/AI_CURRICULUM.md`](docs/AI_CURRICULUM.md) for the full research
 and architecture writeup, [`docs/SCOPE_AND_SEQUENCE.md`](docs/SCOPE_AND_SEQUENCE.md)

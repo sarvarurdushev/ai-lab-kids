@@ -46,19 +46,55 @@ grades.
 and MIT RAISE's [Day of AI](https://dayofai.org/) both teach "AI learns
 from labeled examples, and can get it wrong" through a sort-and-guess game
 rather than explanation. That mechanic is what `Train the Robot` is
-modeled on. Day of AI's unplugged ordered-step ("algorithm") activities
-for younger grades are what `Sequence Builder` is modeled on — and the
-same tile-ordering mechanic is reused a second time for English
-subject-verb-object sentence building (`Sentence Builder`), because
-"arrange things in the one correct order" is the same interaction whether
-the thing being ordered is a morning routine or a sentence. The year
-curriculum adds two more engines built the same way: `Memory Match` (a
-flip-card pairs game reinforcing vocabulary recognition) and
-`Pattern Predictor` (a "what comes next?" game that's a direct, concrete
-demonstration of pattern-based prediction — the same underlying idea
-behind weather forecasts, route-finding, and next-word suggestion). See
-[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md) for the full
-six-engine breakdown.
+modeled on — including AI for Oceans' train-then-test-on-unseen-data
+structure and its "you can break the AI with bad data" moment, which
+`Train the Robot`'s closing screen makes explicit (see
+[Standards alignment](#standards-alignment) below). Day of AI's unplugged
+ordered-step ("algorithm") activities for younger grades are what
+`Sequence Builder` is modeled on — and the same tile-ordering mechanic is
+reused a second time for English subject-verb-object sentence building
+(`Sentence Builder`), because "arrange things in the one correct order" is
+the same interaction whether the thing being ordered is a morning routine
+or a sentence. The year curriculum adds four more engines built the same
+way: `Memory Match` (a flip-card pairs game reinforcing vocabulary
+recognition), `Pattern Predictor` (a "what comes next?" game that's a
+direct, concrete demonstration of pattern-based prediction — the same
+underlying idea behind weather forecasts, route-finding, and next-word
+suggestion), `AI or Not?` (a real-world AI-recognition game — ISTE's
+elementary recommendation to have kids identify AI in daily life, not
+vocabulary-themed on purpose), and `Instruct Vora` (a give-precise-
+instructions game modeling why a computer/AI system does exactly what
+it's told). See [`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)
+for the full eight-engine breakdown.
+
+**Standards alignment.** Beyond AI4K12, three more K-12 AI-literacy
+frameworks directly shaped what the two newest engines actually make kids
+*do*, not just hear about:
+
+- [ISTE](https://iste.org/AI) recommends elementary students practice
+  *recognizing* AI in daily life (e.g. "identify AI in voice assistants")
+  as a distinct skill from vocabulary practice — this is `AI or Not?`,
+  authored as a reusable real-world scenario bank
+  ([`lib/curriculum/aiLabBank.ts`](../lib/curriculum/aiLabBank.ts)),
+  deliberately not tied to any one month's English theme.
+- [CSTA 1B-DA-06](https://csteachers.org/) (collect and label data to
+  train a simple model) is the standard behind the train → test-on-new-data
+  structure in `Train the Robot`, whose finish screen now explicitly
+  explains *why* a mistake happened (not enough/too narrow training data)
+  rather than just showing a score.
+- [UNESCO's AI Competency Framework for
+  Students](https://www.unesco.org/en/articles/ai-competency-framework-students)
+  (2024), "AI techniques and applications" / "AI system design"
+  dimensions, is what `Instruct Vora` teaches concretely: kids watch a
+  vague instruction make Vora fail, then build a precise, ordered one that
+  succeeds — the same precision-matters idea behind programming an
+  algorithm or writing a clear prompt, without any live text input or
+  chatbot (see [Safety](#safety-why-theres-no-live-chatbot)).
+
+Every week of the year curriculum now includes at least one of these two
+recognition/instruction-precision activities in addition to its English
+game(s) — the concrete answer to "kids should learn to use and reason
+about AI, not just play English games with an AI label on them."
 
 **Topic-based curriculum design.** The 12-month year curriculum (see
 [`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)) adapts a
@@ -132,13 +168,15 @@ the teacher's account is the only credential in the room.
   controls pacing manually (no auto-advance, no timers on non-activity
   segments), and resumes where it left off if the teacher closes the
   laptop mid-lesson (`lessonSessions.currentSegmentIndex`).
-- **Activity engines** (`components/engines/`) — six engines:
-  `TrainTheRobotEngine` (classification), `OrderingEngine` (routine
-  sequencing *and* SVO sentence building, same component),
-  `MinimalPairsEngine` (listening discrimination), `MemoryMatchEngine`
-  (flip-card pairs), and `PatternPredictorEngine` ("what comes next?").
-  Each is fully content-driven: authoring a new lesson means writing data
-  against `lib/curriculum/types.ts`, not new code.
+- **Activity engines** (`components/engines/`) — eight engines:
+  `TrainTheRobotEngine` (classification, train-then-test on unseen data),
+  `OrderingEngine` (routine sequencing *and* SVO sentence building, same
+  component), `MinimalPairsEngine` (listening discrimination),
+  `MemoryMatchEngine` (flip-card pairs), `PatternPredictorEngine` ("what
+  comes next?"), `AIOrNotEngine` (real-world AI-recognition), and
+  `InstructVoraEngine` (precise-instructions game). Each is fully
+  content-driven: authoring a new lesson means writing data against
+  `lib/curriculum/types.ts`, not new code.
 - **Participation marks & reporting** — at each formative-check segment,
   the teacher marks the whole class or an individual student
   (👍 got it / 🤔 needs practice / ⭐ excelling). `/reporting`
@@ -186,8 +224,10 @@ should know is *not* built yet. The 24-lesson foundations unit and the
 48-lesson, 12-month (4 lessons/month) year curriculum are now both fully authored (see
 [`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md) and
 [`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)) — 72 lessons and
-six activity engines total — so what's left is platform work, not content
-work:
+eight activity engines total, every year-curriculum week including at
+least one standards-mapped AI-recognition or instruction-precision
+activity in addition to its English game(s) — so what's left is platform
+work, not content work:
 
 1. **No live sync between a teacher device and a separate student-facing
    screen.** Today the Presentation Player is one device driving one
