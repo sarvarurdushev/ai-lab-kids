@@ -105,3 +105,37 @@ body {
 .al-bob {
   animation: al-bob 2.4s ease-in-out infinite;
 }
+
+/*
+ * Program Guide print stylesheet (app/curriculum/page.tsx and
+ * app/curriculum/[monthKey]/page.tsx) — this page printed/saved-as-PDF
+ * *is* the sales-meeting syllabus, so print output is a tested
+ * deliverable, not a side effect. .no-print hides on-screen-only chrome
+ * (nav, links, badges); PrintExpandDetails force-opens <details> before
+ * the print dialog opens (see components/curriculum/PrintExpandDetails.tsx).
+ */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .curriculum-print {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .curriculum-print * {
+    box-shadow: none !important;
+    background-image: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .curriculum-print a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  .curriculum-print .print-break-before {
+    break-before: page;
+  }
+  .curriculum-print .print-avoid-break {
+    break-inside: avoid;
+  }
+}

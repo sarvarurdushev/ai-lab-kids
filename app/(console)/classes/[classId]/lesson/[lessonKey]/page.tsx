@@ -6,6 +6,7 @@ import { startOrResumeLessonSession } from "@/lib/console/lessonSessions";
 import { getLesson } from "@/lib/curriculum";
 import { filterLessonForTrack } from "@/lib/trackContent";
 import { PresentationPlayer } from "@/components/presenter/PresentationPlayer";
+import { LessonPlanFacts } from "@/components/curriculum/LessonPlanFacts";
 
 export default async function LessonPage({
   params,
@@ -29,13 +30,24 @@ export default async function LessonPage({
   ]);
 
   return (
-    <PresentationPlayer
-      lesson={lesson}
-      level={klass.koreanSupportLevel}
-      sessionId={session.id}
-      classId={classId}
-      initialSegmentIndex={session.currentSegmentIndex}
-      roster={roster}
-    />
+    <div className="flex flex-col gap-4">
+      <details className="rounded-2xl bg-white/70 px-4 py-3 shadow-sm">
+        <summary className="cursor-pointer text-xs font-bold uppercase tracking-wide text-ink/50">
+          Lesson plan — for the teacher, not projected
+        </summary>
+        <div className="mt-2">
+          <LessonPlanFacts lesson={lesson} />
+        </div>
+      </details>
+
+      <PresentationPlayer
+        lesson={lesson}
+        level={klass.koreanSupportLevel}
+        sessionId={session.id}
+        classId={classId}
+        initialSegmentIndex={session.currentSegmentIndex}
+        roster={roster}
+      />
+    </div>
   );
 }

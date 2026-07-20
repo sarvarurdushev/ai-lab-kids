@@ -16,6 +16,9 @@ export default async function ConsoleLayout({ children }: { children: React.Reac
           AI Lab <span className="text-ink/40">Console</span>
         </Link>
         <div className="flex items-center gap-3 text-sm">
+          <Link href="/curriculum" className="font-semibold text-ink/50 hover:text-ink">
+            Curriculum
+          </Link>
           <span className="text-ink/60">
             {teacher.name} · {org?.name}
             {teacher.role === "org_admin" && (

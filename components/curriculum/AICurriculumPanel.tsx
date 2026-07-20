@@ -1,4 +1,4 @@
-import { curriculumStats } from "@/lib/curriculum";
+import { curriculumStats, STANDARDS_ALIGNMENT } from "@/lib/curriculum";
 import { Card } from "@/components/ui/Card";
 import { RobotHeadIcon } from "@/components/icons";
 
@@ -41,26 +41,16 @@ export function AICurriculumPanel() {
       <details className="text-[11px] text-ink/60">
         <summary className="cursor-pointer font-semibold text-ink/50">How each activity maps to a standard →</summary>
         <ul className="mt-2 flex flex-col gap-1.5 pl-1">
-          <li>
-            <strong>AI Lab · Is It AI?</strong> — real-world AI-recognition, matching ISTE&apos;s elementary
-            recommendation to identify AI in daily life, and AI4K12 Big Idea 5 (Societal Impact).
-          </li>
-          <li>
-            <strong>AI Lab · Clear Instructions</strong> — precise-instruction practice, matching the UNESCO AI
-            Competency Framework&apos;s &quot;AI techniques and applications&quot; / &quot;AI system design&quot;
-            dimensions.
-          </li>
-          <li>
-            <strong>Sorting Game</strong> (Train the Robot) — kids label training examples, then test Vora on
-            unseen ones and see why mistakes happen — CSTA 1B-DA-06, AI4K12 Big Ideas 1 &amp; 3 (Perception,
-            Learning).
-          </li>
-          <li>
-            <strong>Pattern Game</strong> — finding a rule in examples to predict what comes next — AI4K12 Big
-            Idea 2 (Representation &amp; Reasoning).
-          </li>
+          {STANDARDS_ALIGNMENT.map((m) => (
+            <li key={m.engine}>
+              <strong>{m.activityLabel.en}</strong> — {m.standardLine.en}
+            </li>
+          ))}
         </ul>
       </details>
+      <a href="/curriculum" className="text-[11px] font-bold text-indigo-dark underline">
+        View the full program guide →
+      </a>
     </Card>
   );
 }
