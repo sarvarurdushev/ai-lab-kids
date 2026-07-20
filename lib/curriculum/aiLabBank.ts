@@ -90,6 +90,44 @@ export const AI_OR_NOT_SETS: ActivitySegment[] = [
           },
           minTrack: "explorers",
         },
+        {
+          scenario: { en: "A washing machine that runs the same cycle every time you press start", ko: "시작 버튼을 누르면 항상 똑같이 돌아가는 세탁기" },
+          emoji: "🧺🔘",
+          isAI: false,
+          explanation: {
+            en: "Not AI — it just follows the same fixed steps every time. It doesn't look at your clothes or decide anything.",
+            ko: "AI가 아니에요 — 매번 똑같이 정해진 순서를 따를 뿐이에요. 옷을 살펴보거나 무언가를 결정하지 않아요.",
+          },
+        },
+        {
+          scenario: { en: "An email app that finishes your sentence as you type", ko: "네가 타이핑하는 동안 문장을 완성해주는 이메일 앱" },
+          emoji: "⌨️✨",
+          isAI: true,
+          explanation: {
+            en: "Yes! It learned from millions of sentences how words usually go together, so it can guess what you'll type next.",
+            ko: "맞아요! 수백만 개의 문장에서 단어들이 어떻게 이어지는지 배워서, 네가 다음에 뭘 쓸지 추측해요.",
+          },
+        },
+        {
+          scenario: { en: "A doorbell camera that tells you a stranger, not your family, is at the door", ko: "가족이 아니라 낯선 사람이 문 앞에 있다고 알려주는 초인종 카메라" },
+          emoji: "🔔📷",
+          isAI: true,
+          explanation: {
+            en: "Yes! It learned to recognize your family's faces, so it can tell when someone new shows up.",
+            ko: "맞아요! 가족들의 얼굴을 알아보도록 배워서, 새로운 사람이 오면 알아챌 수 있어요.",
+          },
+          minTrack: "explorers",
+        },
+        {
+          scenario: { en: "A pair of scissors that cuts paper", ko: "종이를 자르는 가위" },
+          emoji: "✂️",
+          isAI: false,
+          explanation: {
+            en: "Not AI — scissors just cut wherever you squeeze them. They don't sense or decide anything.",
+            ko: "AI가 아니에요 — 가위는 그냥 네가 쥐는 곳을 자를 뿐이에요. 아무것도 느끼거나 결정하지 않아요.",
+          },
+          minTrack: "explorers",
+        },
       ],
     },
   },
@@ -159,6 +197,44 @@ export const AI_OR_NOT_SETS: ActivitySegment[] = [
             en: "Yes! It's reacting to your choices and adjusting its own — that back-and-forth reasoning is AI.",
             ko: "맞아요! 캐릭터는 너의 선택에 반응해서 자기 행동을 바꿔요 — 그렇게 주고받는 추론이 바로 AI예요.",
           },
+        },
+        {
+          scenario: { en: "A calculator that adds the two numbers you type in", ko: "네가 입력한 두 숫자를 더해주는 계산기" },
+          emoji: "🧮",
+          isAI: false,
+          explanation: {
+            en: "Not AI — math facts never change, so it just follows the same fixed rule every time. No learning needed.",
+            ko: "AI가 아니에요 — 수학 규칙은 절대 바뀌지 않아서, 항상 똑같은 규칙을 따를 뿐이에요. 배울 필요가 없어요.",
+          },
+        },
+        {
+          scenario: { en: "A homework app that suggests your next math problem based on what you got wrong", ko: "네가 틀린 문제를 보고 다음 수학 문제를 추천해주는 숙제 앱" },
+          emoji: "📚🎯",
+          isAI: true,
+          explanation: {
+            en: "Yes! It learns from your mistakes and picks a problem that will help you practice exactly that.",
+            ko: "맞아요! 네가 틀린 것에서 배워서, 딱 그 부분을 연습할 수 있는 문제를 골라줘요.",
+          },
+        },
+        {
+          scenario: { en: "A stapler that joins two papers together", ko: "종이 두 장을 붙여주는 스테이플러" },
+          emoji: "📎",
+          isAI: false,
+          explanation: {
+            en: "Not AI — squeeze it, and it does the same thing every time. No thinking involved.",
+            ko: "AI가 아니에요 — 누르면 매번 똑같은 일을 해요. 아무 생각도 하지 않아요.",
+          },
+          minTrack: "explorers",
+        },
+        {
+          scenario: { en: "A tutoring app that changes its questions based on how you're doing", ko: "네가 얼마나 잘하는지에 따라 질문을 바꾸는 학습 앱" },
+          emoji: "🧑‍🏫📱",
+          isAI: true,
+          explanation: {
+            en: "Yes! It's constantly reasoning about what you know, so it can pick the right next question for you.",
+            ko: "맞아요! 네가 무엇을 아는지 계속 추론해서, 너에게 딱 맞는 다음 질문을 골라줘요.",
+          },
+          minTrack: "explorers",
         },
       ],
     },
@@ -230,6 +306,44 @@ export const AI_OR_NOT_SETS: ActivitySegment[] = [
             ko: "맞아요! 수천 명의 목소리와 수천 개의 단어 소리를 배워서, 너의 말을 글자로 바꿀 수 있어요.",
           },
         },
+        {
+          scenario: { en: "An elevator button that lights up when you press it", ko: "누르면 불이 켜지는 엘리베이터 버튼" },
+          emoji: "🔘🛗",
+          isAI: false,
+          explanation: {
+            en: "Not AI — press it, it lights up. It doesn't sense who you are or decide anything.",
+            ko: "AI가 아니에요 — 누르면 불이 켜질 뿐이에요. 네가 누군지 느끼거나 결정하지 않아요.",
+          },
+        },
+        {
+          scenario: { en: "A parking app that finds you an empty spot using camera pictures", ko: "카메라 사진으로 빈 주차 자리를 찾아주는 주차 앱" },
+          emoji: "🅿️📷",
+          isAI: true,
+          explanation: {
+            en: "Yes! It looks at pictures of parking spaces and figures out which ones are empty — that takes AI perception.",
+            ko: "맞아요! 주차 공간 사진을 보고 어디가 비었는지 알아내요 — AI의 지각이 필요한 일이에요.",
+          },
+        },
+        {
+          scenario: { en: "A vending machine that gives you a snack when you pay", ko: "돈을 내면 간식이 나오는 자판기" },
+          emoji: "🥤🏧",
+          isAI: false,
+          explanation: {
+            en: "Not AI — pay the right amount, get the snack. Same simple rule, every single time.",
+            ko: "AI가 아니에요 — 정확한 금액을 내면 간식이 나와요. 항상 똑같은 간단한 규칙이에요.",
+          },
+          minTrack: "explorers",
+        },
+        {
+          scenario: { en: "A security camera that can tell the difference between a person and a cat", ko: "사람과 고양이를 구별할 수 있는 보안 카메라" },
+          emoji: "📹🐱",
+          isAI: true,
+          explanation: {
+            en: "Yes! It learned what people and cats look like from thousands of pictures, so it can tell them apart.",
+            ko: "맞아요! 수천 장의 사진으로 사람과 고양이가 어떻게 생겼는지 배워서, 구별할 수 있어요.",
+          },
+          minTrack: "explorers",
+        },
       ],
     },
   },
@@ -296,6 +410,44 @@ export const AI_OR_NOT_SETS: ActivitySegment[] = [
           explanation: {
             en: "Yes! Remembering something about you and responding differently based on it takes real AI, not just gears.",
             ko: "맞아요! 너에 대해 기억하고 그에 따라 다르게 반응하는 건 톱니바퀴가 아니라 진짜 AI가 필요해요.",
+          },
+          minTrack: "explorers",
+        },
+        {
+          scenario: { en: "Building blocks that snap together the same way every time", ko: "매번 똑같이 딸깍 끼워지는 블록 장난감" },
+          emoji: "🧱",
+          isAI: false,
+          explanation: {
+            en: "Not AI — the blocks just fit together the same shape every time. You do all the building!",
+            ko: "AI가 아니에요 — 블록은 매번 똑같은 모양으로 끼워질 뿐이에요. 만드는 건 바로 너예요!",
+          },
+        },
+        {
+          scenario: { en: "A music app that makes up a new tune based on notes you hum", ko: "네가 흥얼거리는 음을 듣고 새로운 곡을 만들어주는 음악 앱" },
+          emoji: "🎵🎤",
+          isAI: true,
+          explanation: {
+            en: "Yes! It learned patterns from lots of music, so it can turn your humming into a brand-new tune.",
+            ko: "맞아요! 많은 음악에서 패턴을 배워서, 네가 흥얼거리는 소리로 새로운 곡을 만들어줘요.",
+          },
+        },
+        {
+          scenario: { en: "A coloring book with pictures already printed on the page", ko: "그림이 이미 인쇄되어 있는 색칠 공책" },
+          emoji: "🖍️📖",
+          isAI: false,
+          explanation: {
+            en: "Not AI — the pictures are just printed there. The book doesn't notice or decide anything about your coloring.",
+            ko: "AI가 아니에요 — 그림은 그냥 인쇄되어 있을 뿐이에요. 네가 어떻게 색칠하는지 알아채거나 결정하지 않아요.",
+          },
+          minTrack: "explorers",
+        },
+        {
+          scenario: { en: "A game that gets a little harder each time you win, just for you", ko: "네가 이길 때마다 너만을 위해 조금씩 더 어려워지는 게임" },
+          emoji: "🎮📈",
+          isAI: true,
+          explanation: {
+            en: "Yes! It's watching how well you play and adjusting just for you — that's AI reasoning about you specifically.",
+            ko: "맞아요! 네가 얼마나 잘하는지 지켜보고 너에게 맞게 조정해요 — 너만을 위한 AI 추론이에요.",
           },
           minTrack: "explorers",
         },
@@ -368,6 +520,44 @@ export const AI_OR_NOT_SETS: ActivitySegment[] = [
             ko: "AI가 아니에요 — 열쇠 모양이 자물쇠에 맞거나 안 맞을 뿐이에요. 아무 생각도 하지 않아요.",
           },
         },
+        {
+          scenario: { en: "An umbrella that opens when you press its button", ko: "버튼을 누르면 펴지는 우산" },
+          emoji: "☂️",
+          isAI: false,
+          explanation: {
+            en: "Not AI — press the button, it opens. No sensing, no deciding, every single time.",
+            ko: "AI가 아니에요 — 버튼을 누르면 펴질 뿐이에요. 느끼거나 결정하는 게 없어요, 항상.",
+          },
+        },
+        {
+          scenario: { en: "A fridge that tells you when you're almost out of milk", ko: "우유가 거의 떨어졌다고 알려주는 냉장고" },
+          emoji: "🧊🥛",
+          isAI: true,
+          explanation: {
+            en: "Yes! It watches what's inside and figures out patterns, like how fast your family uses milk.",
+            ko: "맞아요! 안에 무엇이 있는지 살펴보고, 가족이 우유를 얼마나 빨리 쓰는지 같은 패턴을 알아내요.",
+          },
+        },
+        {
+          scenario: { en: "A doormat that says welcome", ko: "환영한다고 적힌 현관 매트" },
+          emoji: "🚪",
+          isAI: false,
+          explanation: {
+            en: "Not AI — the word is just printed there. The mat doesn't notice who's stepping on it.",
+            ko: "AI가 아니에요 — 글자는 그냥 인쇄되어 있을 뿐이에요. 누가 밟는지 알아채지 않아요.",
+          },
+          minTrack: "explorers",
+        },
+        {
+          scenario: { en: "A robot vacuum that remembers the shape of your room", ko: "방의 모양을 기억하는 로봇 청소기" },
+          emoji: "🤖🧹",
+          isAI: true,
+          explanation: {
+            en: "Yes! It builds a map of your room from what its sensors notice, and uses it to clean better next time.",
+            ko: "맞아요! 센서로 느낀 것으로 방의 지도를 만들고, 다음번엔 더 잘 청소하는 데 사용해요.",
+          },
+          minTrack: "explorers",
+        },
       ],
     },
   },
@@ -437,6 +627,44 @@ export const AI_OR_NOT_SETS: ActivitySegment[] = [
             ko: "AI가 아니에요 — 크레용은 그냥 밀랍이에요. 무엇을 그리든 항상 같은 색 자국을 남겨요.",
           },
         },
+        {
+          scenario: { en: "A bridge that stays in the same place every day", ko: "매일 같은 자리에 그대로 있는 다리" },
+          emoji: "🌉",
+          isAI: false,
+          explanation: {
+            en: "Not AI — a bridge doesn't sense, learn, or decide. It's just strong and stays where it's built.",
+            ko: "AI가 아니에요 — 다리는 느끼거나 배우거나 결정하지 않아요. 그냥 튼튼하게 지어진 자리에 있을 뿐이에요.",
+          },
+        },
+        {
+          scenario: { en: "A news app that picks stories it thinks you'll like", ko: "네가 좋아할 것 같은 기사를 골라주는 뉴스 앱" },
+          emoji: "📰👀",
+          isAI: true,
+          explanation: {
+            en: "Yes! It learned what you've read before and reasons about what story to show you next.",
+            ko: "맞아요! 네가 전에 읽은 것을 배워서, 다음에 어떤 기사를 보여줄지 추론해요.",
+          },
+        },
+        {
+          scenario: { en: "A globe that spins when you push it", ko: "밀면 돌아가는 지구본" },
+          emoji: "🌐",
+          isAI: false,
+          explanation: {
+            en: "Not AI — push it, it spins. Same simple reaction, every single time.",
+            ko: "AI가 아니에요 — 밀면 돌아갈 뿐이에요. 항상 똑같이 간단한 반응이에요.",
+          },
+          minTrack: "explorers",
+        },
+        {
+          scenario: { en: "A satellite photo app that spots a hurricane forming", ko: "태풍이 만들어지는 것을 알아채는 위성 사진 앱" },
+          emoji: "🛰️🌀",
+          isAI: true,
+          explanation: {
+            en: "Yes! It learned what storms look like from space by studying thousands of past storm photos.",
+            ko: "맞아요! 우주에서 본 수천 개의 지난 태풍 사진을 공부해서, 태풍이 어떻게 생겼는지 배웠어요.",
+          },
+          minTrack: "explorers",
+        },
       ],
     },
   },
@@ -463,9 +691,11 @@ export const INSTRUCT_VORA_SCENARIOS: ActivitySegment[] = [
         ko: "이런! '뭐'는 무엇이든 될 수 있어서, 보라는 실수로 책을 가져왔어요.",
       },
       steps: [
+        { text: { en: "Look under the table", ko: "테이블 아래를 봐" }, emoji: "🪑" },
         { text: { en: "Look on the shelf", ko: "선반을 봐" }, emoji: "📚" },
         { text: { en: "Find the red ball", ko: "빨간 공을 찾아" }, emoji: "🔴" },
         { text: { en: "Pick it up", ko: "그것을 집어" }, emoji: "⚽" },
+        { text: { en: "Bring it to me", ko: "나에게 가져와" }, emoji: "🙋" },
       ],
       successText: {
         en: "Yes! Clear, step-by-step instructions helped Vora know exactly what to do — computers and AI always need that same kind of precision.",
@@ -492,9 +722,11 @@ export const INSTRUCT_VORA_SCENARIOS: ActivitySegment[] = [
         ko: "이런! '음식을 만들어'는 충분히 분명하지 않아서, 보라는 아이스크림 위에 피클을 올려버렸어요!",
       },
       steps: [
+        { text: { en: "Wash your hands", ko: "손을 씻어" }, emoji: "🧼" },
         { text: { en: "Get two pieces of bread", ko: "빵 두 조각을 가져와" }, emoji: "🍞" },
         { text: { en: "Add cheese in the middle", ko: "가운데에 치즈를 넣어" }, emoji: "🧀" },
         { text: { en: "Put the top slice on", ko: "위 조각을 덮어" }, emoji: "🥪" },
+        { text: { en: "Cut it in half", ko: "반으로 잘라" }, emoji: "🔪" },
       ],
       successText: {
         en: "Yum! Clear, step-by-step instructions helped Vora make the right snack this time.",
@@ -521,9 +753,11 @@ export const INSTRUCT_VORA_SCENARIOS: ActivitySegment[] = [
         ko: "이런! '뭐라도 입어'는 무엇인지 말해주지 않아서, 보라는 반바지와 선글라스를 입었어요 — 비 오는 날엔 완전히 틀렸죠!",
       },
       steps: [
+        { text: { en: "Check the weather", ko: "날씨를 확인해" }, emoji: "🌦️" },
         { text: { en: "Put on boots", ko: "장화를 신어" }, emoji: "👢" },
         { text: { en: "Grab an umbrella", ko: "우산을 챙겨" }, emoji: "☔" },
         { text: { en: "Zip up the raincoat", ko: "우비 지퍼를 올려" }, emoji: "🧥" },
+        { text: { en: "Open the front door", ko: "현관문을 열어" }, emoji: "🚪" },
       ],
       successText: {
         en: "Vora is ready for the rain now! Precise, ordered steps made all the difference.",
@@ -550,9 +784,11 @@ export const INSTRUCT_VORA_SCENARIOS: ActivitySegment[] = [
         ko: "이런! '치워'는 '어떻게'를 말해주지 않아서, 보라는 실수로 아끼는 장난감을 쓰레기통에 버릴 뻔했어요!",
       },
       steps: [
+        { text: { en: "Turn off the TV", ko: "TV를 꺼" }, emoji: "📺" },
         { text: { en: "Pick up the blocks", ko: "블록을 집어" }, emoji: "🧱" },
         { text: { en: "Put them in the bin", ko: "통에 넣어" }, emoji: "📦" },
         { text: { en: "Put the bin on the shelf", ko: "통을 선반에 올려" }, emoji: "🗄️" },
+        { text: { en: "Say \"All done!\"", ko: "\"다 했다!\"라고 말해" }, emoji: "🙌" },
       ],
       successText: {
         en: "All clean! Step-by-step instructions told Vora exactly what \"clean up\" means this time.",
@@ -579,9 +815,11 @@ export const INSTRUCT_VORA_SCENARIOS: ActivitySegment[] = [
         ko: "이런! '식물을 도와줘'는 어떻게 도울지 말해주지 않아서, 보라는 물 대신 쿠키를 줬어요!",
       },
       steps: [
+        { text: { en: "Check if the soil is dry", ko: "흙이 말랐는지 확인해" }, emoji: "👆" },
         { text: { en: "Get the watering can", ko: "물뿌리개를 가져와" }, emoji: "💧" },
         { text: { en: "Fill it with water", ko: "물을 채워" }, emoji: "🚰" },
         { text: { en: "Pour a little on the plant", ko: "식물에 조금 부어" }, emoji: "🌱" },
+        { text: { en: "Put it back in the sun", ko: "햇볕이 드는 곳에 다시 놓아" }, emoji: "☀️" },
       ],
       successText: {
         en: "The plant is happy now! Precise instructions helped Vora do the right thing.",
@@ -608,9 +846,11 @@ export const INSTRUCT_VORA_SCENARIOS: ActivitySegment[] = [
         ko: "이런! '반려동물에게 먹이를 줘'는 무엇을 줄지 말해주지 않아서, 보라는 어항에 피자 한 조각을 넣었어요!",
       },
       steps: [
+        { text: { en: "Walk to the fish tank", ko: "어항으로 걸어가" }, emoji: "🚶" },
         { text: { en: "Open the fish food", ko: "물고기 먹이를 열어" }, emoji: "🥫" },
         { text: { en: "Take a small pinch", ko: "조금만 집어" }, emoji: "🤏" },
         { text: { en: "Sprinkle it in the water", ko: "물 위에 뿌려" }, emoji: "🐟" },
+        { text: { en: "Watch them eat", ko: "먹는 모습을 지켜봐" }, emoji: "👀" },
       ],
       successText: {
         en: "The fish are happy! Precise, step-by-step instructions helped Vora take good care of them.",
