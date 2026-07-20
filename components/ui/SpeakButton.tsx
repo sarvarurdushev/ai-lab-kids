@@ -1,6 +1,7 @@
 "use client";
 
 import { speak } from "@/lib/speech";
+import { SpeakerIcon } from "@/components/icons";
 
 export function SpeakButton({
   text,
@@ -16,9 +17,9 @@ export function SpeakButton({
       type="button"
       onClick={() => speak(text, lang)}
       aria-label={`Read aloud: ${text}`}
-      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/80 text-lg shadow-sm transition-transform active:scale-90 ${className}`}
+      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/80 text-indigo shadow-sm transition-transform active:scale-90 ${className}`}
     >
-      🔊
+      <SpeakerIcon size={16} />
     </button>
   );
 }

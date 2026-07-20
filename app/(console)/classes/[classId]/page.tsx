@@ -14,29 +14,39 @@ import {
   type LessonMeta,
 } from "@/lib/curriculum";
 import { Card } from "@/components/ui/Card";
-import { Robi } from "@/components/mascot/Robi";
+import { Vora } from "@/components/mascot/Vora";
 import { AddStudentForm } from "@/components/console/AddStudentForm";
+import { BigIdeaIcon } from "@/components/curriculum/BigIdeaIcon";
+import { BookIcon, GamepadIcon, ChatIcon } from "@/components/icons";
 
 const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks — ages 4-5", explorers: "AI Explorers — ages 6+" };
-const SLOT_LABEL: Record<string, string> = { class: "📖 Class", action_play: "🎮 Action Play", spotlight: "🎤 Spotlight" };
+const SLOT_ICON: Record<string, (props: { size?: number; className?: string }) => React.JSX.Element> = {
+  week1: BookIcon,
+  week2: GamepadIcon,
+  week3: GamepadIcon,
+  week4: ChatIcon,
+};
+const SLOT_TEXT: Record<string, string> = { week1: "Week 1", week2: "Week 2", week3: "Week 3", week4: "Week 4" };
 
 function LessonRow({ lesson, classId, dayLabel }: { lesson: LessonMeta; classId: string; dayLabel: string }) {
   const authored = isLessonAuthored(lesson.key);
   const bigIdea = resolveBigIdea(lesson);
   const p = bigIdea ? BIG_IDEA_PRESENTATION[bigIdea] : null;
+  const SlotIcon = SLOT_ICON[lesson.slot ?? "week1"];
   return (
     <div className="flex items-center justify-between gap-2 rounded-xl bg-cream px-3 py-2">
       <div className="flex items-start gap-2">
         {p && (
           <span
             title={`AI idea: ${p.label.en}`}
-            className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-sm ${p.badgeClass}`}
+            className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${p.badgeClass}`}
           >
-            {p.emoji}
+            <BigIdeaIcon bigIdea={bigIdea!} size={15} />
           </span>
         )}
         <div>
-          <p className="text-sm font-semibold text-ink">
+          <p className="flex items-center gap-1.5 text-sm font-semibold text-ink">
+            <SlotIcon size={13} className="text-ink/40" />
             {dayLabel}: {lesson.title.en}
           </p>
           <p className="text-xs text-ink/50">{lesson.englishFocus.en}</p>
@@ -75,7 +85,7 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
       </div>
 
       <Card className="flex items-center gap-4 bg-gradient-to-r from-indigo/10 via-transparent to-transparent">
-        <Robi size={56} mood="happy" />
+        <Vora size={56} mood="happy" />
         <div>
           <h1 className="font-display text-2xl font-bold text-indigo-dark">{klass.name}</h1>
           <p className="text-sm text-ink/60">
@@ -104,7 +114,7 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
         <div>
           <p className="text-xs font-bold tracking-wide text-ink/50 uppercase">Year Curriculum — 12 Months</p>
           <p className="text-xs text-ink/50">
-            Every month: a Class lesson, an Action Play lesson (two games), and an English Spotlight.
+            Every month is 4 weekly lessons — one class per week, each a full standalone lesson plan.
           </p>
         </div>
         {MONTHS.map((month) => {
@@ -122,15 +132,17 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
                 <span
                   className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${p.badgeClass}`}
                 >
-                  {p.emoji} {p.label.en}
+                  <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label.en}
                 </span>
               </div>
-              <p className={`rounded-xl px-2.5 py-1.5 text-xs font-semibold text-ink/70 ${p.bannerClass} border`}>
-                {p.emoji} {month.summary.en}
+              <p
+                className={`flex items-start gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-ink/70 ${p.bannerClass} border`}
+              >
+                <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={14} className="mt-0.5 shrink-0" /> {month.summary.en}
               </p>
               <div className="mt-1 flex flex-col gap-1.5">
                 {lessons.map((lesson) => (
-                  <LessonRow key={lesson.key} lesson={lesson} classId={classId} dayLabel={SLOT_LABEL[lesson.slot ?? "class"]} />
+                  <LessonRow key={lesson.key} lesson={lesson} classId={classId} dayLabel={SLOT_TEXT[lesson.slot ?? "week1"]} />
                 ))}
               </div>
             </Card>
@@ -140,7 +152,7 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
 
       <details className="flex flex-col gap-4 rounded-3xl bg-white/50 p-4">
         <summary className="cursor-pointer text-xs font-bold tracking-wide text-ink/50 uppercase">
-          Foundations — Robi&apos;s Classroom (8 weeks, start here first)
+          Foundations — Vora&apos;s Classroom (8 weeks, start here first)
         </summary>
         <div className="mt-3 flex flex-col gap-4">
           {UNITS.map((unit) => {

@@ -39,7 +39,7 @@ guessing; real production practice is a later-phase addition (see
   the single biggest structural shift these kids face. The curriculum
   doesn't lecture on this — it makes word order *visible* by having kids
   physically place word tiles in order (`sentence_builder` activities,
-  e.g. `w4d2_count_with_robi`), reusing the same tile-ordering mechanic as
+  e.g. `w4d2_count_with_vora`), reusing the same tile-ordering mechanic as
   the algorithm/sequencing lessons on purpose: order-sensitivity is one
   concept taught twice, once for routines and once for sentences.
 - **No articles.** Korean has no a/an/the equivalent. Modeled repeatedly

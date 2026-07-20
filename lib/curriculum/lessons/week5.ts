@@ -70,17 +70,17 @@ export const w5d2_fruit_or_vegetable: Lesson = {
       title: { en: "Fruit or Vegetable?", ko: "과일일까요, 채소일까요?" },
       bigIdeas: ["perception", "learning"],
       lines: [
-        { en: "We've taught Robi to sort before — remember animals and vehicles?", ko: "우리는 전에도 로비에게 분류하는 법을 가르쳤었죠 — 동물과 탈것 기억나요?" },
-        { en: "Let's see if Robi can learn a brand new category: fruit and vegetable!", ko: "이번엔 로비가 완전히 새로운 분류인 과일과 채소를 배울 수 있는지 봐요!" },
+        { en: "We've taught Vora to sort before — remember animals and vehicles?", ko: "우리는 전에도 보라에게 분류하는 법을 가르쳤었죠 — 동물과 탈것 기억나요?" },
+        { en: "Let's see if Vora can learn a brand new category: fruit and vegetable!", ko: "이번엔 보라가 완전히 새로운 분류인 과일과 채소를 배울 수 있는지 봐요!" },
       ],
       teacherNote:
-        "Second full train/guess classification loop with brand-new vocabulary — a good moment to ask the class to predict out loud whether Robi will learn faster this time.",
+        "Second full train/guess classification loop with brand-new vocabulary — a good moment to ask the class to predict out loud whether Vora will learn faster this time.",
     },
     {
       type: "activity",
       instructions: {
-        en: "Kids sort the first few together as a class, then Robi starts guessing on its own — the class judges whether Robi got it right.",
-        ko: "처음 몇 개는 반 전체가 함께 분류하고, 그 다음엔 로비가 스스로 추측해요 — 로비가 맞았는지 학급이 판단해요.",
+        en: "Kids sort the first few together as a class, then Vora starts guessing on its own — the class judges whether Vora got it right.",
+        ko: "처음 몇 개는 반 전체가 함께 분류하고, 그 다음엔 보라가 스스로 추측해요 — 보라가 맞았는지 학급이 판단해요.",
       },
       config: {
         engine: "train_the_robot",
@@ -105,14 +105,14 @@ export const w5d2_fruit_or_vegetable: Lesson = {
     },
     {
       type: "check",
-      prompt: { en: "\"Robi learned faster / slower this time.\" Ask the class which, and why they think so.", ko: "\"로비가 이번엔 더 빨리 / 더 천천히 배웠어요.\" 학급에게 어느 쪽인지, 왜 그렇게 생각하는지 물어보세요." },
+      prompt: { en: "\"Vora learned faster / slower this time.\" Ask the class which, and why they think so.", ko: "\"보라가 이번엔 더 빨리 / 더 천천히 배웠어요.\" 학급에게 어느 쪽인지, 왜 그렇게 생각하는지 물어보세요." },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we practiced sorting fruit and vegetables, and checked whether Robi's learning got faster with practice.",
-        ko: "오늘은 과일과 채소를 분류하는 연습을 했고, 연습을 통해 로비의 학습이 더 빨라졌는지 확인했어요.",
+        en: "Today we practiced sorting fruit and vegetables, and checked whether Vora's learning got faster with practice.",
+        ko: "오늘은 과일과 채소를 분류하는 연습을 했고, 연습을 통해 보라의 학습이 더 빨라졌는지 확인했어요.",
       },
     },
   ],

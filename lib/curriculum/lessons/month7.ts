@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m7_class: Lesson = {
-  ...meta("m7_class"),
+export const m7_week1: Lesson = {
+  ...meta("m7_week1"),
   segments: [
     {
       type: "warmup",
@@ -33,7 +33,7 @@ export const m7_class: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Guesses Tomorrow's Weather", ko: "로비가 내일 날씨를 예측해요" },
+      title: { en: "Vora Guesses Tomorrow's Weather", ko: "보라가 내일 날씨를 예측해요" },
       bigIdeas: ["reasoning"],
       lines: [
         { en: "Yesterday was sunny, and today is sunny too — I wonder about tomorrow!", ko: "어제도 맑았고 오늘도 맑아요 — 내일은 어떨까 궁금해!" },
@@ -79,8 +79,8 @@ export const m7_class: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned seven weather words and saw how Robi finds a pattern in past weather, the same way a real forecast is made.",
-        ko: "오늘은 날씨 단어 일곱 개를 배우고, 진짜 일기예보처럼 로비가 지난 날씨에서 패턴을 찾는 모습을 봤어요.",
+        en: "Today we learned seven weather words and saw how Vora finds a pattern in past weather, the same way a real forecast is made.",
+        ko: "오늘은 날씨 단어 일곱 개를 배우고, 진짜 일기예보처럼 보라가 지난 날씨에서 패턴을 찾는 모습을 봤어요.",
       },
       homework: {
         en: "Ask a family member \"What's the weather?\" in Korean tonight, then answer them in English: \"It's ___ today.\"",
@@ -90,16 +90,27 @@ export const m7_class: Lesson = {
   ],
 };
 
-export const m7_play: Lesson = {
-  ...meta("m7_play"),
+export const m7_week2: Lesson = {
+  ...meta("m7_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Mime shivering and hugging yourself for cold, then mime fanning yourself and wiping sweat for hot. Ask \"Hot or cold?\" and have kids mime along before starting the games.",
-        ko: "추울 때는 몸을 떨며 자신을 안는 흉내를, 더울 때는 부채질하며 땀을 닦는 흉내를 내보세요. \"Hot or cold?\"라고 물어보고, 게임을 시작하기 전에 학생들도 함께 흉내 내게 하세요.",
+        en: "Mime shivering and hugging yourself for cold, then fan yourself and wipe your brow for hot. Ask \"Hot or cold?\" and have kids mime along before today's sorting game.",
+        ko: "추울 때는 몸을 떨며 자신을 안는 흉내를, 더울 때는 부채질하며 이마를 닦는 흉내를 내보세요. \"Hot or cold?\"라고 물어보고, 오늘의 분류 게임을 시작하기 전에 학생들도 함께 흉내 내게 하세요.",
       },
       prompt: { en: "Hot or cold? 🥵🥶", ko: "더울까요, 추울까요? 🥵🥶" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Looks Closely", ko: "보라가 자세히 살펴봐요" },
+      bigIdeas: ["perception"],
+      lines: [
+        { en: "A coat, a t-shirt — I look closely at each one before deciding where it goes.", ko: "코트, 티셔츠 — 나는 각각을 자세히 살펴본 다음 어디에 속하는지 정해." },
+        { en: "That's called sorting, and it's exactly what you're about to do with today's clothes!", ko: "이걸 분류라고 해, 오늘 너희가 옷으로 할 일이 바로 이거야!" },
+      ],
+      teacherNote:
+        "Keep this brief — Vora and the idea of sorting-by-looking were already introduced back in Week 1's forecast talk. This is just a quick bridge into today's sorting game below.",
     },
     {
       type: "activity",
@@ -126,6 +137,50 @@ export const m7_play: Lesson = {
       },
     },
     {
+      type: "check",
+      prompt: {
+        en: "Ask a partner: \"Is a coat hot weather or cold weather?\"",
+        ko: "짝에게 물어보세요: \"코트는 더운 날씨일까요, 추운 날씨일까요?\"",
+      },
+      method: "whole_class_thumbs",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we sorted clothes into hot weather and cold weather.",
+        ko: "오늘은 옷을 더운 날씨와 추운 날씨로 분류했어요.",
+      },
+      homework: {
+        en: "Pick out your own clothes for tomorrow's weather and say if they're \"hot weather\" or \"cold weather\" clothes, in English.",
+        ko: "내일 날씨에 맞는 옷을 직접 골라보고, 그 옷이 \"hot weather\" 옷인지 \"cold weather\" 옷인지 영어로 말해보세요.",
+      },
+    },
+  ],
+};
+
+export const m7_week3: Lesson = {
+  ...meta("m7_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Draw a big sun on the board (or hold up a sunny-weather photo) and ask \"What's the weather?\" Let kids call out \"sunny!\" before building today's sentence.",
+        ko: "칠판에 큰 해를 그리거나(또는 맑은 날씨 사진을 보여주며) \"What's the weather?\"라고 물어보세요. 오늘의 문장을 만들기 전에 학생들이 \"sunny!\"라고 외쳐보게 하세요.",
+      },
+      prompt: { en: "What's the weather? ☀️", ko: "날씨가 어때요? ☀️" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Builds a Sentence", ko: "보라가 문장을 만들어요" },
+      bigIdeas: [],
+      lines: [
+        { en: "Sunny, cloudy, rainy — whatever the weather, there's always a sentence for it: \"It's ___ today.\"", ko: "맑든, 흐리든, 비가 오든 — 날씨가 어떻든 그걸 말하는 문장이 있어: \"It's ___ today.\"" },
+        { en: "Let's build it together, one word at a time!", ko: "함께 한 단어씩 문장을 만들어보자!" },
+      ],
+      teacherNote:
+        "Just a quick bridge into today's sentence-building game — the \"It's ___\" pattern doesn't need re-teaching by now (see Week 1), this is pure practice.",
+    },
+    {
       type: "activity",
       instructions: {
         en: "Build the sentence one tile at a time, then have the whole class act out being in sunny weather (shielding their eyes, big smile) as they say it together.",
@@ -145,27 +200,27 @@ export const m7_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Ask a partner: \"Is a coat hot weather or cold weather?\"",
-        ko: "짝에게 물어보세요: \"코트는 더운 날씨일까요, 추운 날씨일까요?\"",
+        en: "Ask a partner: \"Is it sunny or rainy today?\" and check whether their answer matches the real weather.",
+        ko: "짝에게 물어보세요: \"Is it sunny or rainy today?\" 그리고 짝의 대답이 실제 날씨와 맞는지 확인해보세요.",
       },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we sorted clothes into hot weather and cold weather, and built the sentence \"It's sunny today.\"",
-        ko: "오늘은 옷을 더운 날씨와 추운 날씨로 분류하고, \"It's sunny today.\" 문장을 만들었어요.",
+        en: "Today we built the sentence \"It's sunny today\" one word at a time.",
+        ko: "오늘은 \"It's sunny today.\" 문장을 한 단어씩 만들었어요.",
       },
       homework: {
-        en: "Pick out your own clothes for tomorrow's weather and say if they're \"hot weather\" or \"cold weather\" clothes, in English.",
-        ko: "내일 날씨에 맞는 옷을 직접 골라보고, 그 옷이 \"hot weather\" 옷인지 \"cold weather\" 옷인지 영어로 말해보세요.",
+        en: "Look outside tonight and try building today's weather sentence with a family member.",
+        ko: "오늘 저녁 밖을 보고, 가족과 함께 오늘의 날씨 문장을 만들어보세요.",
       },
     },
   ],
 };
 
-export const m7_spotlight: Lesson = {
-  ...meta("m7_spotlight"),
+export const m7_week4: Lesson = {
+  ...meta("m7_week4"),
   segments: [
     {
       type: "warmup",

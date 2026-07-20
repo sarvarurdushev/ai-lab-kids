@@ -71,7 +71,7 @@ async function main() {
     .values({
       schoolId: school.id,
       teacherAccountId: teacher.id,
-      name: "Robi 3-A",
+      name: "Vora 3-A",
       gradeLabel: "Grade 3",
       koreanSupportLevel: "full",
       ageTrack: "explorers",

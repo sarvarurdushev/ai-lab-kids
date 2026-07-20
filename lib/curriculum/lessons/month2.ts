@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m2_class: Lesson = {
-  ...meta("m2_class"),
+export const m2_week1: Lesson = {
+  ...meta("m2_week1"),
   segments: [
     {
       type: "warmup",
@@ -88,16 +88,27 @@ export const m2_class: Lesson = {
   ],
 };
 
-export const m2_play: Lesson = {
-  ...meta("m2_play"),
+export const m2_week2: Lesson = {
+  ...meta("m2_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Mime zipping up a suitcase and ask: \"What do we do first when we go on a trip?\" Take a few quick guesses before the game.",
-        ko: "여행 가방 지퍼를 잠그는 흉내를 내며 물어보세요: \"여행 갈 때 가장 먼저 무엇을 할까요?\" 게임 전에 몇 가지 추측을 들어보세요.",
+        en: "Mime zipping up a suitcase and ask: \"What do we do first when we go on a trip?\" Take a few quick guesses before today's game.",
+        ko: "여행 가방 지퍼를 잠그는 흉내를 내며 물어보세요: \"여행 갈 때 가장 먼저 무엇을 할까요?\" 오늘 게임 전에 몇 가지 추측을 들어보세요.",
       },
       prompt: { en: "Let's go on a trip! ✈️", ko: "여행을 떠나요! ✈️" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Follows Steps", ko: "보라가 순서를 따라가요" },
+      bigIdeas: ["reasoning"],
+      lines: [
+        { en: "I do things in order, one step at a time — first, next, then, last.", ko: "나는 순서대로 해 — 첫 번째, 다음, 그다음, 마지막." },
+        { en: "Let's put a pretend trip in order together!", ko: "우리 함께 가상 여행의 순서를 정해보자!" },
+      ],
+      teacherNote:
+        "Quick reminder before the sequencing game — following ordered steps is Representation & Reasoning, the same skill behind an algorithm. Keep this brief; the game does the teaching.",
     },
     {
       type: "activity",
@@ -116,6 +127,46 @@ export const m2_play: Lesson = {
           { text: { en: "Try new food", ko: "새로운 음식 먹어보기" }, emoji: "🍜", minTrack: "explorers" },
         ],
       },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "\"First we pack your bag, next we...\" — have a student finish the whole sequence out loud.",
+        ko: "\"First we pack your bag, next we...\" — 한 학생이 전체 순서를 소리 내어 이어서 말해보게 하세요.",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we ordered the steps of a pretend trip, from packing our bags to trying new food.",
+        ko: "오늘은 가방 싸기부터 새로운 음식 먹어보기까지 가상 여행의 순서를 정했어요.",
+      },
+    },
+  ],
+};
+
+export const m2_week3: Lesson = {
+  ...meta("m2_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Hold up an imaginary card and flip it dramatically. Ask: \"Ready to find matching pairs?\" Take a quick cheer from the class before starting.",
+        ko: "가상의 카드를 들고 극적으로 뒤집어 보이세요. \"짝을 찾을 준비 됐나요?\"라고 물어보고 시작 전에 짧게 함성을 질러보게 하세요.",
+      },
+      prompt: { en: "Let's find a match! 🃏", ko: "짝을 찾아봐요! 🃏" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Remembers", ko: "보라가 기억해요" },
+      bigIdeas: ["learning"],
+      lines: [
+        { en: "The more I see a word and picture together, the better I remember them.", ko: "단어와 그림을 함께 볼수록, 나는 더 잘 기억해." },
+        { en: "Let's practice remembering world words together!", ko: "우리 함께 세계 단어를 기억하는 연습을 해보자!" },
+      ],
+      teacherNote:
+        "Brief reminder before the game — repeated exposure is how both Vora and kids get better at recognizing something, the Learning big idea. Keep it to a couple of lines; the matching game is the real practice.",
     },
     {
       type: "activity",
@@ -138,24 +189,21 @@ export const m2_play: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "\"First we pack your bag, next we...\" — have a student finish the whole sequence out loud.",
-        ko: "\"First we pack your bag, next we...\" — 한 학생이 전체 순서를 소리 내어 이어서 말해보게 하세요.",
-      },
+      prompt: { en: "Ask a pair: \"Which one did you match?\" and have them answer with the English word.", ko: "짝에게 물어보세요: \"어떤 것을 짝지었나요?\" 영어 단어로 답하게 하세요." },
       method: "cold_call",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games about the world — ordering the steps of a pretend trip, and matching world word-picture pairs.",
-        ko: "오늘은 세계에 대한 게임 두 가지를 했어요 — 가상 여행의 순서를 배열하고, 세계 단어-그림 짝을 맞췄어요.",
+        en: "Today we played a matching game with world words and practiced remembering each word-picture pair.",
+        ko: "오늘은 세계 단어로 짝 맞추기 게임을 하며 단어-그림 짝을 기억하는 연습을 했어요.",
       },
     },
   ],
 };
 
-export const m2_spotlight: Lesson = {
-  ...meta("m2_spotlight"),
+export const m2_week4: Lesson = {
+  ...meta("m2_week4"),
   segments: [
     {
       type: "warmup",

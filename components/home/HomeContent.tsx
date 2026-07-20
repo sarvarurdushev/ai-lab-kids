@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import Link from "next/link";
-import { Robi } from "@/components/mascot/Robi";
+import { Vora } from "@/components/mascot/Vora";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SpeakButton } from "@/components/ui/SpeakButton";
@@ -41,10 +41,10 @@ export function HomeContent() {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-center gap-3">
-        <Robi size={64} mood="happy" bob />
+        <Vora size={64} mood="happy" bob />
         <div className="relative flex-1 rounded-2xl rounded-bl-none bg-white/90 px-4 py-3 shadow-sm">
           <h1 className="font-display text-lg font-bold">AI Lab for Kids</h1>
-          <p className="text-sm text-ink/60">Learn how AI thinks — in English, with Robi!</p>
+          <p className="text-sm text-ink/60">Learn how AI thinks — in English, with Vora!</p>
         </div>
       </div>
 

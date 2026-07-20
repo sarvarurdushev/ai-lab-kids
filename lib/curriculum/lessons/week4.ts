@@ -113,8 +113,8 @@ export const w4d3_think_or_sink: Lesson = {
   ],
 };
 
-export const w4d2_count_with_robi: Lesson = {
-  ...meta("w4d2_count_with_robi"),
+export const w4d2_count_with_vora: Lesson = {
+  ...meta("w4d2_count_with_vora"),
   segments: [
     {
       type: "warmup",
@@ -137,7 +137,7 @@ export const w4d2_count_with_robi: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Counts, Too", ko: "로비도 세어봐요" },
+      title: { en: "Vora Counts, Too", ko: "보라도 세어봐요" },
       bigIdeas: ["perception"],
       lines: [
         { en: "When I look at a picture, I can count how many things are in it.", ko: "그림을 보면, 나는 그 안에 몇 개가 있는지 셀 수 있어." },

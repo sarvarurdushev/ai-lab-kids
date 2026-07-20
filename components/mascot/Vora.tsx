@@ -2,34 +2,34 @@
 
 import { useSvgId } from "./useSvgId";
 
-export type RobiMood = "happy" | "sad" | "neutral" | "thinking";
+export type VoraMood = "happy" | "sad" | "neutral" | "thinking";
 
-const EYES: Record<RobiMood, string> = {
+const EYES: Record<VoraMood, string> = {
   happy: "M 36 62 Q 42 56 48 62 M 64 62 Q 70 56 76 62",
   sad: "M 36 64 Q 42 70 48 64 M 64 64 Q 70 70 76 64",
   neutral: "M 34 62 L 50 62 M 62 62 L 78 62",
   thinking: "M 34 62 L 50 62 M 62 58 Q 70 54 78 58",
 };
 
-const MOUTH: Record<RobiMood, string> = {
+const MOUTH: Record<VoraMood, string> = {
   happy: "M 40 78 Q 56 92 72 78",
   sad: "M 40 84 Q 56 72 72 84",
   neutral: "M 44 80 L 68 80",
   thinking: "M 46 80 Q 56 78 66 82",
 };
 
-export function Robi({
+export function Vora({
   size = 96,
   mood = "neutral",
   className = "",
   bob = false,
 }: {
   size?: number;
-  mood?: RobiMood;
+  mood?: VoraMood;
   className?: string;
   bob?: boolean;
 }) {
-  const id = useSvgId("robi");
+  const id = useSvgId("vora");
   return (
     <div className={`${bob ? "al-bob" : ""} ${className}`} style={{ width: size, height: size }}>
       <svg viewBox="0 0 112 130" width={size} height={size}>

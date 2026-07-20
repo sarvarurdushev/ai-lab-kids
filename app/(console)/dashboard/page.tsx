@@ -3,13 +3,17 @@ import Link from "next/link";
 import { requireTeacher } from "@/lib/auth/requireTeacher";
 import { classesVisibleToTeacher, schoolsForOrg } from "@/lib/console/queries";
 import { Card } from "@/components/ui/Card";
-import { Robi } from "@/components/mascot/Robi";
+import { Vora } from "@/components/mascot/Vora";
 import { CreateClassForm } from "@/components/console/CreateClassForm";
+import { SparkleIcon, RocketIcon } from "@/components/icons";
 
 const LEVEL_LABEL: Record<string, string> = { full: "Full bilingual", light: "Light Korean", minimal: "Immersion" };
 const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks 4-5", explorers: "AI Explorers 6+" };
 const TRACK_ACCENT: Record<string, string> = { little_sparks: "border-coral", explorers: "border-indigo" };
-const TRACK_EMOJI: Record<string, string> = { little_sparks: "🌱", explorers: "🚀" };
+const TRACK_ICON: Record<string, (props: { size?: number; className?: string }) => React.JSX.Element> = {
+  little_sparks: SparkleIcon,
+  explorers: RocketIcon,
+};
 
 export default async function DashboardPage() {
   const teacher = await requireTeacher();
@@ -23,7 +27,7 @@ export default async function DashboardPage() {
   return (
     <div className="flex flex-col gap-5">
       <Card className="flex items-center gap-4 bg-gradient-to-r from-indigo/15 via-coral/5 to-transparent">
-        <Robi size={56} mood="happy" bob />
+        <Vora size={56} mood="happy" bob />
         <div>
           <h1 className="font-display text-2xl font-bold text-indigo-dark">
             {teacher.role === "org_admin" ? "All Classes" : "My Classes"}
@@ -43,13 +47,17 @@ export default async function DashboardPage() {
       )}
 
       <div className="flex flex-col gap-3">
-        {myClasses.map((c) => (
+        {myClasses.map((c) => {
+          const TrackIcon = TRACK_ICON[c.ageTrack];
+          return (
           <Link key={c.id} href={`/classes/${c.id}`}>
             <Card
               className={`flex items-center justify-between gap-3 border-l-4 transition-transform hover:scale-[1.01] ${TRACK_ACCENT[c.ageTrack]}`}
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl">{TRACK_EMOJI[c.ageTrack]}</span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo/10 text-indigo">
+                  <TrackIcon size={20} />
+                </span>
                 <div>
                   <p className="font-display font-bold text-ink">{c.name}</p>
                   <p className="text-xs text-ink/50">
@@ -68,7 +76,8 @@ export default async function DashboardPage() {
               </div>
             </Card>
           </Link>
-        ))}
+          );
+        })}
         {myClasses.length === 0 && (
           <p className="text-sm text-ink/50">No classes yet — create your first one below.</p>
         )}

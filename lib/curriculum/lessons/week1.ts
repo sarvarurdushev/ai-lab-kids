@@ -7,14 +7,14 @@ function meta(key: string) {
   return m;
 }
 
-export const w1d1_hello_robi: Lesson = {
-  ...meta("w1d1_hello_robi"),
+export const w1d1_hello_vora: Lesson = {
+  ...meta("w1d1_hello_vora"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Wave hello to the class and say \"Hello!\" a few times, encouraging kids to wave back before you introduce Robi.",
-        ko: "반 학생들에게 손을 흔들며 \"Hello!\"를 여러 번 말해보세요. 로비를 소개하기 전에 학생들도 함께 손을 흔들도록 격려해 주세요.",
+        en: "Wave hello to the class and say \"Hello!\" a few times, encouraging kids to wave back before you introduce Vora.",
+        ko: "반 학생들에게 손을 흔들며 \"Hello!\"를 여러 번 말해보세요. 보라를 소개하기 전에 학생들도 함께 손을 흔들도록 격려해 주세요.",
       },
       prompt: { en: "Hello! 👋", ko: "안녕! 👋" },
     },
@@ -30,27 +30,27 @@ export const w1d1_hello_robi: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Meet Robi", ko: "로비를 만나요" },
+      title: { en: "Meet Vora", ko: "보라를 만나요" },
       bigIdeas: ["natural_interaction"],
       lines: [
-        { en: "Hi! My name is Robi.", ko: "안녕! 내 이름은 로비야." },
+        { en: "Hi! My name is Vora.", ko: "안녕! 내 이름은 보라야." },
         { en: "I'm an AI — a computer friend who can talk and learn.", ko: "나는 AI야 — 말하고 배울 수 있는 컴퓨터 친구야." },
         { en: "I'm not a real robot toy. I live inside a screen!", ko: "나는 진짜 로봇 장난감이 아니야. 나는 화면 속에서 살아!" },
         { en: "I'm going to learn English with you this whole time we're together.", ko: "나는 우리가 함께하는 동안 너희와 영어를 배울 거야." },
       ],
       teacherNote:
-        "Keep this concrete: Robi is a friendly character, not a lecture on AI. The goal is just \"Robi = a computer friend who talks and learns,\" nothing more technical yet.",
+        "Keep this concrete: Vora is a friendly character, not a lecture on AI. The goal is just \"Vora = a computer friend who talks and learns,\" nothing more technical yet.",
     },
     {
       type: "check",
-      prompt: { en: "Everyone wave and say \"Hello, Robi!\" together.", ko: "다 함께 손을 흔들며 \"Hello, Robi!\"라고 말해봐요." },
+      prompt: { en: "Everyone wave and say \"Hello, Vora!\" together.", ko: "다 함께 손을 흔들며 \"Hello, Vora!\"라고 말해봐요." },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we said hello and goodbye, and we met Robi, our AI friend for this course.",
-        ko: "오늘은 hello와 goodbye를 배우고, 이번 학기 동안 함께할 AI 친구 로비를 만났어요.",
+        en: "Today we said hello and goodbye, and we met Vora, our AI friend for this course.",
+        ko: "오늘은 hello와 goodbye를 배우고, 이번 학기 동안 함께할 AI 친구 보라를 만났어요.",
       },
       homework: {
         en: "Say \"hello\" and \"goodbye\" to one family member in English tonight.",
@@ -60,8 +60,8 @@ export const w1d1_hello_robi: Lesson = {
   ],
 };
 
-export const w1d2_robis_classroom: Lesson = {
-  ...meta("w1d2_robis_classroom"),
+export const w1d2_voras_classroom: Lesson = {
+  ...meta("w1d2_voras_classroom"),
   segments: [
     {
       type: "warmup",
@@ -84,7 +84,7 @@ export const w1d2_robis_classroom: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Looks Around", ko: "로비가 주위를 둘러봐요" },
+      title: { en: "Vora Looks Around", ko: "보라가 주위를 둘러봐요" },
       bigIdeas: ["perception"],
       lines: [
         { en: "I can see things too — just like you!", ko: "나도 너희처럼 물건을 볼 수 있어!" },
@@ -164,8 +164,8 @@ export const w1d3_what_is_ai: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned that some things can learn and answer, and some things can't — and we practiced sorting them, just like Robi does.",
-        ko: "오늘은 어떤 것들은 배우고 답할 수 있지만 어떤 것들은 그럴 수 없다는 것을 배웠고, 로비처럼 분류하는 연습을 했어요.",
+        en: "Today we learned that some things can learn and answer, and some things can't — and we practiced sorting them, just like Vora does.",
+        ko: "오늘은 어떤 것들은 배우고 답할 수 있지만 어떤 것들은 그럴 수 없다는 것을 배웠고, 보라처럼 분류하는 연습을 했어요.",
       },
     },
   ],

@@ -36,8 +36,8 @@ export const w6d1_my_morning: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned four morning actions in English — tomorrow we'll put them in order for Robi.",
-        ko: "오늘은 영어로 아침 동작 네 가지를 배웠어요 — 내일은 로비를 위해 순서대로 배열해볼 거예요.",
+        en: "Today we learned four morning actions in English — tomorrow we'll put them in order for Vora.",
+        ko: "오늘은 영어로 아침 동작 네 가지를 배웠어요 — 내일은 보라를 위해 순서대로 배열해볼 거예요.",
       },
     },
   ],
@@ -96,8 +96,8 @@ export const w6d3_bedtime_routine: Lesson = {
   ],
 };
 
-export const w6d2_give_robi_the_steps: Lesson = {
-  ...meta("w6d2_give_robi_the_steps"),
+export const w6d2_give_vora_the_steps: Lesson = {
+  ...meta("w6d2_give_vora_the_steps"),
   segments: [
     {
       type: "warmup",
@@ -119,12 +119,12 @@ export const w6d2_give_robi_the_steps: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Follows Exact Steps", ko: "로비는 정확한 순서를 따라요" },
+      title: { en: "Vora Follows Exact Steps", ko: "보라는 정확한 순서를 따라요" },
       bigIdeas: ["reasoning"],
       lines: [
         { en: "Robots do exactly what you tell them — in exactly the order you tell them!", ko: "로봇은 너희가 말한 그대로, 정확히 그 순서대로 해!" },
         { en: "That list of steps is called an algorithm.", ko: "그 순서 목록을 '알고리즘'이라고 해." },
-        { en: "If the order is wrong, Robi still follows it — even if it doesn't make sense!", ko: "순서가 틀려도 로비는 그대로 따라 해 — 말이 안 되더라도!" },
+        { en: "If the order is wrong, Vora still follows it — even if it doesn't make sense!", ko: "순서가 틀려도 보라는 그대로 따라 해 — 말이 안 되더라도!" },
       ],
       teacherNote:
         "The punchline to land here: order isn't just a grammar rule, it's literally how instructions work for a computer. Consider demonstrating by \"executing\" a deliberately wrong order (e.g., \"eat breakfast, then wake up\") for a laugh before the activity.",
@@ -154,8 +154,8 @@ export const w6d2_give_robi_the_steps: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned first/next/then/last and practiced putting a routine in the right order — just like giving Robi an algorithm.",
-        ko: "오늘은 first/next/then/last를 배우고 루틴을 올바른 순서로 배열하는 연습을 했어요 — 로비에게 알고리즘을 알려주는 것처럼요.",
+        en: "Today we learned first/next/then/last and practiced putting a routine in the right order — just like giving Vora an algorithm.",
+        ko: "오늘은 first/next/then/last를 배우고 루틴을 올바른 순서로 배열하는 연습을 했어요 — 보라에게 알고리즘을 알려주는 것처럼요.",
       },
     },
   ],

@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m10_class: Lesson = {
-  ...meta("m10_class"),
+export const m10_week1: Lesson = {
+  ...meta("m10_week1"),
   segments: [
     {
       type: "warmup",
@@ -80,8 +80,8 @@ export const m10_class: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six Halloween words, said \"Trick or treat!\" and \"I'm a ___,\" and sorted spooky things from not-spooky things — the same learn-from-examples idea Robi's used all year.",
-        ko: "오늘은 할로윈 단어 여섯 가지를 배우고, \"Trick or treat!\"와 \"I'm a ___\"를 말했으며, 무서운 것과 무섭지 않은 것을 분류했어요 — 로비가 1년 내내 사용해 온 '예시로 배우기'와 같은 방식이에요.",
+        en: "Today we learned six Halloween words, said \"Trick or treat!\" and \"I'm a ___,\" and sorted spooky things from not-spooky things — the same learn-from-examples idea Vora's used all year.",
+        ko: "오늘은 할로윈 단어 여섯 가지를 배우고, \"Trick or treat!\"와 \"I'm a ___\"를 말했으며, 무서운 것과 무섭지 않은 것을 분류했어요 — 보라가 1년 내내 사용해 온 '예시로 배우기'와 같은 방식이에요.",
       },
       homework: {
         en: "Tell a family member what costume you'd wear, using \"I'm a ___.\"",
@@ -91,8 +91,8 @@ export const m10_class: Lesson = {
   ],
 };
 
-export const m10_play: Lesson = {
-  ...meta("m10_play"),
+export const m10_week2: Lesson = {
+  ...meta("m10_week2"),
   segments: [
     {
       type: "warmup",
@@ -101,6 +101,17 @@ export const m10_play: Lesson = {
         ko: "손으로 얼굴을 가리고 \"boo!\"라고 속삭인 다음, 활짝 웃는 얼굴을 보여주세요 — 게임을 시작하기 전에 다 함께 웃을 수 있는 작고 다정한 깜짝 놀래키기예요.",
       },
       prompt: { en: "Boo! 👻 Just kidding — let's play!", ko: "부우! 👻 장난이에요 — 이제 게임해요!" },
+    },
+    {
+      type: "concept",
+      title: { en: "Finding Matches, Like Vora Does", ko: "보라처럼 짝을 찾아요" },
+      bigIdeas: ["learning"],
+      lines: [
+        { en: "Remember — I learn by looking at lots of examples and finding what matches.", ko: "기억나? 나는 많은 예시를 보고 서로 맞는 걸 찾으면서 배워." },
+        { en: "Let's practice finding matches together with our Halloween words!", ko: "오늘은 할로윈 단어로 짝 찾기를 함께 연습해보자!" },
+      ],
+      teacherNote:
+        "Keep this short — the learning-from-examples idea was fully taught in Week 1. This is just a quick bridge line reframing the matching game as the same 'find what matches' skill before diving into the activity.",
     },
     {
       type: "activity",
@@ -122,6 +133,50 @@ export const m10_play: Lesson = {
       },
     },
     {
+      type: "check",
+      prompt: {
+        en: "Show one Halloween word card and see if everyone can say it out loud.",
+        ko: "할로윈 단어 카드를 하나 보여주고 모두 소리 내어 말할 수 있는지 확인해보세요.",
+      },
+      method: "whole_class_thumbs",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we matched Halloween words to pictures, finding pairs just like Vora finds matches in examples.",
+        ko: "오늘은 할로윈 단어를 그림과 짝지었어요 — 보라가 예시에서 짝을 찾는 것과 같은 방식이에요.",
+      },
+      homework: {
+        en: "Draw two Halloween pictures at home and ask a family member to match them to the English words.",
+        ko: "집에서 할로윈 그림을 두 개 그려보고, 가족에게 영어 단어와 짝지어보게 해보세요.",
+      },
+    },
+  ],
+};
+
+export const m10_week3: Lesson = {
+  ...meta("m10_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Draw a simple pumpkin, ghost, pumpkin shape on the board and ask kids to guess what comes next before you reveal it.",
+        ko: "칠판에 호박, 유령, 호박 모양을 간단히 그리고, 다음에 무엇이 올지 학생들에게 먼저 추측해보게 한 뒤 보여주세요.",
+      },
+      prompt: { en: "🎃 👻 🎃 ... what comes next?", ko: "🎃 👻 🎃 ... 다음엔 뭐가 올까요?" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Predicts Patterns", ko: "보라는 패턴을 예측해요" },
+      bigIdeas: ["reasoning"],
+      lines: [
+        { en: "Remember — I look at examples to find a pattern, and then I can guess what comes next.", ko: "기억나? 나는 예시를 보고 패턴을 찾아서 다음에 뭐가 올지 짐작할 수 있어." },
+        { en: "Let's find some spooky patterns together!", ko: "오늘은 무서운 패턴을 함께 찾아보자!" },
+      ],
+      teacherNote:
+        "Keep this short — the reasoning/pattern idea was already introduced this year (e.g. Month 8's pattern work). This is a quick bridge line before the game, not a full new teach.",
+    },
+    {
       type: "activity",
       instructions: {
         en: "Read the sequence out loud together (\"pumpkin, ghost, pumpkin, ghost...\") before asking what comes next — the pattern should feel obvious once it's spoken aloud.",
@@ -131,7 +186,7 @@ export const m10_play: Lesson = {
         engine: "pattern_predictor",
         title: { en: "What Comes Next?", ko: "다음엔 뭐가 올까요?" },
         teacherNote:
-          "Same 'find the pattern' skill as Robi's classification games — predicting what comes next from examples is part of the reasoning big idea, paired this month with learning.",
+          "Same 'find the pattern' skill as Vora's classification games — predicting what comes next from examples is part of the reasoning big idea, paired this month with learning.",
         rounds: [
           { sequence: ["🎃", "👻", "🎃", "👻"], answer: "🎃", options: ["🎃", "👻", "🦇"] },
           { sequence: ["👻", "🦇", "👻", "🦇"], answer: "👻", options: ["🎃", "👻", "🦇"] },
@@ -141,16 +196,16 @@ export const m10_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Show one Halloween word card and see if everyone can say it, then ask what picture should come next in today's pattern.",
-        ko: "할로윈 단어 카드를 보여주고 모두 말할 수 있는지 확인한 뒤, 오늘 패턴에서 다음에 올 그림이 무엇인지 물어보세요.",
+        en: "Ask what picture should come next in today's pattern, without showing the options.",
+        ko: "옵션을 보여주지 않고, 오늘 패턴에서 다음에 올 그림이 무엇인지 물어보세요.",
       },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we matched Halloween words to pictures and guessed what comes next in a spooky pattern, just like Robi learning from examples.",
-        ko: "오늘은 할로윈 단어를 그림과 짝짓고, 무서운 패턴에서 다음에 올 것을 추측했어요 — 로비가 예시로 배우는 것과 같은 방식이에요.",
+        en: "Today we guessed what comes next in spooky patterns, just like Vora predicting from examples.",
+        ko: "오늘은 무서운 패턴에서 다음에 올 것을 추측했어요 — 보라가 예시로 예측하는 것과 같은 방식이에요.",
       },
       homework: {
         en: "Draw your own spooky pattern (like 🎃👻🎃👻) and ask a family member what comes next.",
@@ -160,8 +215,8 @@ export const m10_play: Lesson = {
   ],
 };
 
-export const m10_spotlight: Lesson = {
-  ...meta("m10_spotlight"),
+export const m10_week4: Lesson = {
+  ...meta("m10_week4"),
   segments: [
     {
       type: "warmup",

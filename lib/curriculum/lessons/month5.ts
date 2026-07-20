@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m5_class: Lesson = {
-  ...meta("m5_class"),
+export const m5_week1: Lesson = {
+  ...meta("m5_week1"),
   segments: [
     {
       type: "warmup",
@@ -90,16 +90,30 @@ export const m5_class: Lesson = {
   ],
 };
 
-export const m5_play: Lesson = {
-  ...meta("m5_play"),
+export const m5_week2: Lesson = {
+  ...meta("m5_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Call out family words quickly and have kids react with a quick gesture — point to themselves for \"baby,\" cross their arms for \"mom,\" anything works. The goal is fast recall before the games start.",
-        ko: "가족 단어를 빠르게 말하고, \"baby\"에는 자기 자신을 가리키는 등 학생들이 빠르게 몸짓으로 반응하게 해보세요 — 어떤 동작이든 괜찮아요. 게임 전에 빠르게 기억을 떠올리는 게 목표예요.",
+        en: "Ask a few kids: \"Do you have a brother?\" Then say: \"Today, let's build a sentence about our families, one word at a time!\"",
+        ko: "몇몇 학생에게 물어보세요: \"Do you have a brother?\" 그런 다음 말하세요: \"오늘은 가족에 대한 문장을 한 단어씩 만들어볼 거예요!\"",
       },
-      prompt: { en: "Family words — fast! 👪", ko: "가족 단어 — 빨리! 👪" },
+      prompt: { en: "Let's build a family sentence! 🧩", ko: "가족 문장을 만들어봐요! 🧩" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Remembers Faces", ko: "보라는 얼굴을 기억해요" },
+      bigIdeas: ["perception"],
+      lines: [
+        { en: "Remember, I can look at pictures of faces too — but I still mix some up!", ko: "기억나? 나도 얼굴 사진을 볼 수 있어 — 그런데 아직도 가끔 헷갈려!" },
+        {
+          en: "You never mix up your own family, though. Let's practice introducing them in English!",
+          ko: "하지만 너희는 자기 가족을 절대 헷갈리지 않지. 영어로 가족을 소개하는 연습을 해보자!",
+        },
+      ],
+      teacherNote:
+        "Quick callback to Week 1's face-recognition point — no new teaching here, just a bridge into today's sentence-building game.",
     },
     {
       type: "activity",
@@ -117,6 +131,46 @@ export const m5_play: Lesson = {
         ],
         translation: { en: "This is my brother.", ko: "제 형/오빠/남동생이에요." },
       },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Point to a family member in a photo or drawing and say: \"This is my ___.\"",
+        ko: "사진이나 그림 속 가족을 가리키며 말해보세요: \"This is my ___.\"",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we built the sentence \"This is my brother\" tile by tile and practiced saying it about our own families.",
+        ko: "오늘은 \"This is my brother\" 문장을 한 조각씩 만들고, 우리 가족에 대해 말하는 연습을 했어요.",
+      },
+    },
+  ],
+};
+
+export const m5_week3: Lesson = {
+  ...meta("m5_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Call out a word — \"mom\" or \"desk\" — and have kids shout \"Family!\" or \"School!\" as fast as they can before today's sorting game.",
+        ko: "\"mom\"이나 \"desk\"처럼 단어를 하나 말하고, 오늘의 분류 게임 전에 학생들이 최대한 빨리 \"Family!\" 또는 \"School!\"이라고 외치게 하세요.",
+      },
+      prompt: { en: "Family or school? Shout it out! 👪🏫", ko: "가족일까요, 학교일까요? 외쳐보세요! 👪🏫" },
+    },
+    {
+      type: "concept",
+      title: { en: "Sorting Like Vora", ko: "보라처럼 분류하기" },
+      bigIdeas: ["perception"],
+      lines: [
+        { en: "Sorting things into groups is exactly what I do with pictures — that's perception!", ko: "물건을 그룹으로 나누는 건 내가 사진으로 하는 일과 똑같아 — 그게 바로 지각(perception)이야!" },
+        { en: "Let's see if you can sort these words even faster than me.", ko: "오늘은 너희가 나보다 더 빨리 분류할 수 있는지 볼까?" },
+      ],
+      teacherNote:
+        "Brief callback to Week 1's perception idea before the sorting game — no new content, just framing today's game as the same skill.",
     },
     {
       type: "activity",
@@ -153,15 +207,15 @@ export const m5_play: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we built a sentence about family and practiced sorting family words from school words.",
-        ko: "오늘은 가족에 대한 문장을 만들고, 가족 단어와 학교 단어를 분류하는 연습을 했어요.",
+        en: "Today we sorted family words from school words, just like Vora sorts pictures into groups.",
+        ko: "오늘은 가족 단어와 학교 단어를 분류했어요, 보라가 사진을 그룹으로 나누는 것처럼요.",
       },
     },
   ],
 };
 
-export const m5_spotlight: Lesson = {
-  ...meta("m5_spotlight"),
+export const m5_week4: Lesson = {
+  ...meta("m5_week4"),
   segments: [
     {
       type: "warmup",

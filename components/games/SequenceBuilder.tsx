@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
-import { Robi, type RobiMood } from "@/components/mascot/Robi";
+import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { playCorrect, playWrong, playGameOver, playTick, playPop } from "@/lib/sound";
@@ -188,12 +188,12 @@ export function SequenceBuilder({ track }: { track: AgeTrack }) {
     startRound(0);
   }
 
-  const robiMood: RobiMood = outcome === "correct" ? "happy" : outcome === "timeout" ? "sad" : "neutral";
+  const voraMood: VoraMood = outcome === "correct" ? "happy" : outcome === "timeout" ? "sad" : "neutral";
 
   if (phase === "ready") {
     return (
       <div className="flex flex-col items-center gap-5 text-center">
-        <Robi size={130} mood="happy" bob />
+        <Vora size={130} mood="happy" bob />
         <div>
           <h1 className="font-display text-2xl font-bold text-indigo-dark">Sequence Builder</h1>
           <p className="mt-1 text-sm text-ink/60">
@@ -211,7 +211,7 @@ export function SequenceBuilder({ track }: { track: AgeTrack }) {
   if (phase === "gameover") {
     return (
       <div className="flex flex-col items-center gap-4 text-center">
-        <Robi size={120} mood={correctCount >= TOTAL_ROUNDS * 0.6 ? "happy" : "neutral"} />
+        <Vora size={120} mood={correctCount >= TOTAL_ROUNDS * 0.6 ? "happy" : "neutral"} />
         <h1 className="font-display text-2xl font-bold text-indigo-dark">All done!</h1>
         <p className="text-ink/70">
           You ordered <span className="font-bold text-ink">{correctCount}</span> of{" "}
@@ -268,7 +268,7 @@ export function SequenceBuilder({ track }: { track: AgeTrack }) {
       )}
 
       <div className="flex flex-col items-center gap-1 rounded-3xl bg-white/80 py-3 shadow-sm">
-        <Robi size={56} mood={robiMood} />
+        <Vora size={56} mood={voraMood} />
         <p className="font-display text-base font-bold text-ink">{routine.title}</p>
       </div>
 

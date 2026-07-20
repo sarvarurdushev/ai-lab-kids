@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m9_class: Lesson = {
-  ...meta("m9_class"),
+export const m9_week1: Lesson = {
+  ...meta("m9_week1"),
   segments: [
     {
       type: "warmup",
@@ -33,7 +33,7 @@ export const m9_class: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Doesn't Have Eyes Like You!", ko: "로비는 너희처럼 눈이 없어요!" },
+      title: { en: "Vora Doesn't Have Eyes Like You!", ko: "보라는 너희처럼 눈이 없어요!" },
       bigIdeas: ["perception"],
       lines: [
         { en: "I don't have real eyes, or real hands, or real feet like you do!", ko: "나는 진짜 눈도, 손도, 발도 없어!" },
@@ -91,16 +91,30 @@ export const m9_class: Lesson = {
   ],
 };
 
-export const m9_play: Lesson = {
-  ...meta("m9_play"),
+export const m9_week2: Lesson = {
+  ...meta("m9_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Play a quick round of \"Robi Says\" instead of \"Simon Says\" — give one or two commands yourself (\"Robi says clap your hands!\") before today's game.",
-        ko: "\"사이먼 가라사대\" 대신 \"로비 가라사대\" 게임을 짧게 해보세요 — 오늘 게임을 시작하기 전에 직접 한두 가지 명령을 내려보세요(\"Robi says clap your hands!\").",
+        en: "Play a quick round of \"Vora Says\" instead of \"Simon Says\" — give one or two commands yourself (\"Vora says clap your hands!\") before today's game.",
+        ko: "\"사이먼 가라사대\" 대신 \"보라 가라사대\" 게임을 짧게 해보세요 — 오늘 게임을 시작하기 전에 직접 한두 가지 명령을 내려보세요(\"Vora says clap your hands!\").",
       },
-      prompt: { en: "Robi says... clap your hands! 👏", ko: "로비 가라사대... clap your hands! 👏" },
+      prompt: { en: "Vora says... clap your hands! 👏", ko: "보라 가라사대... clap your hands! 👏" },
+    },
+    {
+      type: "concept",
+      title: { en: "Sensors Follow You Even When You Move", ko: "센서는 네가 움직여도 계속 따라와요" },
+      bigIdeas: ["perception"],
+      lines: [
+        {
+          en: "Remember — a sensor can notice your body moving, step by step, even without eyes.",
+          ko: "기억나? 센서는 눈이 없어도 네 몸이 한 동작 한 동작 움직이는 걸 알아챌 수 있어.",
+        },
+        { en: "Let's move through a whole routine, and see how many steps a sensor could follow!", ko: "루틴 전체를 몸으로 움직여보면서, 센서가 몇 단계까지 따라올 수 있는지 보자!" },
+      ],
+      teacherNote:
+        "Keep this short — perception was fully taught in Week 1. This is just a quick bridge line before the physical routine, reframing today's movement game as something a sensor could track step by step.",
     },
     {
       type: "activity",
@@ -110,7 +124,7 @@ export const m9_play: Lesson = {
       },
       config: {
         engine: "sequence_builder",
-        title: { en: "Robi Says: Move Your Body!", ko: "로비 가라사대: 몸을 움직여요!" },
+        title: { en: "Vora Says: Move Your Body!", ko: "보라 가라사대: 몸을 움직여요!" },
         steps: [
           { text: { en: "Stand up", ko: "일어서기" }, emoji: "🧍" },
           { text: { en: "Touch your nose", ko: "코 만지기" }, emoji: "👃" },
@@ -118,6 +132,50 @@ export const m9_play: Lesson = {
           { text: { en: "Sit down", ko: "앉기" }, emoji: "🪑" },
         ],
       },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Call out a step from today's routine (\"Touch your nose!\") and see if everyone can do it without looking at the screen.",
+        ko: "오늘 루틴 중 한 단계를 외쳐보세요(\"Touch your nose!\") — 화면을 보지 않고도 모두 할 수 있는지 확인해보세요.",
+      },
+      method: "whole_class_thumbs",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we moved our whole bodies through a four-step \"Vora Says\" routine, in order, from start to finish.",
+        ko: "오늘은 온몸을 움직이며 네 단계짜리 \"보라 가라사대\" 루틴을 처음부터 끝까지 순서대로 해봤어요.",
+      },
+      homework: {
+        en: "Teach a family member the \"Vora Says\" game tonight using English body words.",
+        ko: "오늘 저녁 가족에게 영어 신체 단어로 \"보라 가라사대\" 게임을 가르쳐주세요.",
+      },
+    },
+  ],
+};
+
+export const m9_week3: Lesson = {
+  ...meta("m9_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Touch your own nose and say \"nose\" slowly, then wait for the class to touch theirs too. Do it two or three times, a little faster each time.",
+        ko: "선생님의 코를 만지며 천천히 \"nose\"라고 말한 다음, 학생들도 자기 코를 만지게 기다려주세요. 두세 번, 점점 더 빠르게 반복해보세요.",
+      },
+      prompt: { en: "Touch your nose! 👃", ko: "코를 만져보세요! 👃" },
+    },
+    {
+      type: "concept",
+      title: { en: "Words Can Be a Command, Too", ko: "말도 명령이 될 수 있어요" },
+      bigIdeas: ["perception"],
+      lines: [
+        { en: "Your body already knows how to touch your nose — now let's put that into words!", ko: "너희 몸은 이미 코를 만지는 법을 알고 있어 — 이제 그걸 말로 표현해보자!" },
+        { en: "When I hear a command like \"touch your nose,\" my sensors and cameras help me figure out where a nose even is.", ko: "\"touch your nose\" 같은 명령을 들으면, 내 센서와 카메라가 코가 어디에 있는지 알아내는 걸 도와줘." },
+      ],
+      teacherNote:
+        "Keep this brief — perception was fully taught in Week 1. This is just a quick bridge line connecting today's sentence-building game to the same 'sensors help notice the body' idea, before diving into the activity.",
     },
     {
       type: "activity",
@@ -138,27 +196,27 @@ export const m9_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Call out a step from today's routine (\"Touch your nose!\") and see if everyone can do it without looking at the screen.",
-        ko: "오늘 루틴 중 한 단계를 외쳐보세요(\"Touch your nose!\") — 화면을 보지 않고도 모두 할 수 있는지 확인해보세요.",
+        en: "Say \"Touch your nose!\" one more time and see if everyone can do it without looking at the screen.",
+        ko: "\"Touch your nose!\"를 한 번 더 말해보세요 — 화면을 보지 않고도 모두 할 수 있는지 확인해보세요.",
       },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we moved our whole bodies through a routine and built the sentence \"Touch your nose\" together.",
-        ko: "오늘은 온몸을 움직이며 루틴을 해보고, 다함께 \"Touch your nose\" 문장을 만들었어요.",
+        en: "Today we built the sentence \"Touch your nose\" tile by tile and practiced it together as a real command.",
+        ko: "오늘은 \"Touch your nose\" 문장을 한 조각씩 만들고, 진짜 명령처럼 다 함께 연습했어요.",
       },
       homework: {
-        en: "Teach a family member the \"Robi Says\" game tonight using English body words.",
-        ko: "오늘 저녁 가족에게 영어 신체 단어로 \"로비 가라사대\" 게임을 가르쳐주세요.",
+        en: "Tell a family member \"Touch your nose!\" in English and see if they follow your command.",
+        ko: "가족에게 영어로 \"Touch your nose!\"라고 말해보고, 명령을 따르는지 확인해보세요.",
       },
     },
   ],
 };
 
-export const m9_spotlight: Lesson = {
-  ...meta("m9_spotlight"),
+export const m9_week4: Lesson = {
+  ...meta("m9_week4"),
   segments: [
     {
       type: "warmup",

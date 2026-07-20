@@ -13,8 +13,8 @@ export const w8d1_talking_to_ai_safely: Lesson = {
     {
       type: "warmup",
       teacherScript: {
-        en: "Ask: \"Is Robi a real person?\" Let kids answer, then say \"Right — and that means talking to Robi has some special rules.\"",
-        ko: "\"로비는 진짜 사람일까요?\"라고 물어보세요. 학생들이 답하면 \"맞아요 — 그래서 로비와 이야기할 때는 특별한 규칙이 있어요\"라고 말해주세요.",
+        en: "Ask: \"Is Vora a real person?\" Let kids answer, then say \"Right — and that means talking to Vora has some special rules.\"",
+        ko: "\"보라는 진짜 사람일까요?\"라고 물어보세요. 학생들이 답하면 \"맞아요 — 그래서 보라와 이야기할 때는 특별한 규칙이 있어요\"라고 말해주세요.",
       },
       prompt: { en: "Talking to AI is a little different.", ko: "AI와 대화하는 건 조금 달라요." },
     },
@@ -148,20 +148,20 @@ export const w8d2_review_carnival: Lesson = {
   ],
 };
 
-export const w8d3_teach_robi_day: Lesson = {
-  ...meta("w8d3_teach_robi_day"),
+export const w8d3_teach_vora_day: Lesson = {
+  ...meta("w8d3_teach_vora_day"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Tell the class: today, they get to be the teacher. They'll invent a category and teach it to Robi, just like Robi has been learning from them all unit.",
-        ko: "학급에게 말해주세요: 오늘은 여러분이 선생님이 될 차례예요. 분류를 하나 만들어서 로비에게 가르쳐줄 거예요, 이번 학기 내내 로비가 여러분에게 배웠던 것처럼요.",
+        en: "Tell the class: today, they get to be the teacher. They'll invent a category and teach it to Vora, just like Vora has been learning from them all unit.",
+        ko: "학급에게 말해주세요: 오늘은 여러분이 선생님이 될 차례예요. 분류를 하나 만들어서 보라에게 가르쳐줄 거예요, 이번 학기 내내 보라가 여러분에게 배웠던 것처럼요.",
       },
-      prompt: { en: "Today, YOU teach Robi!", ko: "오늘은 여러분이 로비를 가르쳐요!" },
+      prompt: { en: "Today, YOU teach Vora!", ko: "오늘은 여러분이 보라를 가르쳐요!" },
     },
     {
       type: "concept",
-      title: { en: "Everything We Taught Robi", ko: "우리가 로비에게 가르친 모든 것" },
+      title: { en: "Everything We Taught Vora", ko: "우리가 보라에게 가르친 모든 것" },
       bigIdeas: ["learning", "societal_impact"],
       lines: [
         { en: "This unit, you taught me animals, food, colors, and how AI helpers work.", ko: "이번 학기 동안 너희는 나에게 동물, 음식, 색깔, 그리고 AI 도우미가 어떻게 작동하는지 가르쳐줬어." },
@@ -202,8 +202,8 @@ export const w8d3_teach_robi_day: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "You did it — eight weeks of English and AI, and today you taught Robi something brand new. Great job, AI Explorers!",
-        ko: "해냈어요 — 8주 동안 영어와 AI를 배웠고, 오늘은 로비에게 완전히 새로운 것을 가르쳤어요. 정말 잘했어요, AI 탐험가들!",
+        en: "You did it — eight weeks of English and AI, and today you taught Vora something brand new. Great job, AI Explorers!",
+        ko: "해냈어요 — 8주 동안 영어와 AI를 배웠고, 오늘은 보라에게 완전히 새로운 것을 가르쳤어요. 정말 잘했어요, AI 탐험가들!",
       },
     },
   ],

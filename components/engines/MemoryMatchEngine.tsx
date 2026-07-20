@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Robi } from "@/components/mascot/Robi";
+import { Vora } from "@/components/mascot/Vora";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { speak } from "@/lib/speech";
 import type { MemoryMatchConfig } from "@/lib/curriculum";
@@ -88,7 +88,7 @@ export function MemoryMatchEngine({
   if (allMatched) {
     return (
       <div className="flex flex-col items-center gap-3 text-center">
-        <Robi size={100} mood="happy" bob />
+        <Vora size={100} mood="happy" bob />
         <p className="font-display text-lg font-bold text-indigo-dark">You matched them all!</p>
       </div>
     );
@@ -97,7 +97,7 @@ export function MemoryMatchEngine({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-col items-center gap-1 rounded-3xl bg-white/80 py-3 shadow-sm">
-        <Robi size={48} mood="neutral" />
+        <Vora size={48} mood="neutral" />
         <p className="font-display text-base font-bold text-ink">{config.title.en}</p>
         <p className="text-xs text-ink/50">{config.title.ko}</p>
       </div>

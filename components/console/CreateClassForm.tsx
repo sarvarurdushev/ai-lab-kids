@@ -61,7 +61,7 @@ export function CreateClassForm({ schools }: { schools: School[] }) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="e.g. Robi 3-A"
+            placeholder="e.g. Vora 3-A"
             className="rounded-xl border-2 border-ink/10 bg-white px-3 py-2 text-sm focus:border-indigo focus:outline-none"
           />
         </label>

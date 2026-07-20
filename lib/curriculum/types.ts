@@ -50,7 +50,7 @@ export interface ConceptSegment {
   type: "concept";
   title: Bilingual;
   bigIdeas: BigIdea[];
-  /** Robi's lines, shown/spoken one at a time on the projector. A line with minTrack: "explorers" is skipped for little_sparks classes — see lib/trackContent.ts. */
+  /** Vora's lines, shown/spoken one at a time on the projector. A line with minTrack: "explorers" is skipped for little_sparks classes — see lib/trackContent.ts. */
   lines: (Bilingual & { minTrack?: AgeTrack })[];
   teacherNote: string;
 }
@@ -161,13 +161,21 @@ export type LessonSegment =
   | CheckSegment
   | WrapupSegment;
 
-/** Which of the month's three class sessions a lesson is — mirrors the "Class 50 / Action Play 50 / Today's English Spotlight" pillars of the reference curriculum. See lib/curriculum/months.ts. */
-export type MonthlySlot = "class" | "action_play" | "spotlight";
+/**
+ * Which of the month's four weekly class sessions a lesson is — one
+ * standalone, full lesson plan per week, matching a once-a-week class
+ * cadence. `week1` introduces the month's vocabulary/sentence pattern and
+ * AI concept; `week2` and `week3` each build a full lesson around one of
+ * the month's two games (still teaching/reinforcing the concept, not just
+ * playing); `week4` is the speaking-confidence + review week. See
+ * lib/curriculum/months.ts.
+ */
+export type MonthlySlot = "week1" | "week2" | "week3" | "week4";
 
 export interface LessonMeta {
   key: string;
   unitKey: string;
-  /** Set for the 8-week "Robi's Classroom" foundations unit. Monthly-curriculum lessons use monthIndex/slot instead. */
+  /** Set for the 8-week "Vora's Classroom" foundations unit. Monthly-curriculum lessons use monthIndex/slot instead. */
   week?: number;
   day?: number;
   /** Set for monthly-curriculum lessons (1-12) — see lib/curriculum/months.ts. */

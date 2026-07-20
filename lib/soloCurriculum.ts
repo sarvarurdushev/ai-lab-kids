@@ -51,10 +51,10 @@ export interface AiLabUnit {
 
 export const AI_LAB_UNITS: AiLabUnit[] = [
   {
-    key: "teach_robi_to_sort",
-    title: "Teach Robi to Sort",
+    key: "teach_vora_to_sort",
+    title: "Teach Vora to Sort",
     bigIdeas: ["perception", "learning", "societal_impact"],
-    tagline: "Sort pictures into groups, then check Robi's guesses.",
+    tagline: "Sort pictures into groups, then check Vora's guesses.",
     englishFocus: "Category words like animal, vehicle, fruit, and vegetable.",
     talkAboutIt:
       "Where else have you seen something try to guess what a picture is — a photo app that finds people, or a game that knows your voice?",
@@ -62,13 +62,13 @@ export const AI_LAB_UNITS: AiLabUnit[] = [
     href: "/train-the-robot",
   },
   {
-    key: "give_robi_the_steps",
-    title: "Give Robi the Steps",
+    key: "give_vora_the_steps",
+    title: "Give Vora the Steps",
     bigIdeas: ["reasoning"],
     tagline: "Put the steps of a routine in the right order.",
     englishFocus: "Sequencing words: first, next, then, and last.",
     talkAboutIt:
-      "What would happen if you told Robi to \"eat breakfast, then wake up\"? Order matters!",
+      "What would happen if you told Vora to \"eat breakfast, then wake up\"? Order matters!",
     gameSlug: "sequence_builder",
     href: "/sequence-builder",
   },
@@ -89,7 +89,7 @@ export const AI_SAFETY_CARDS: { emoji: string; text: string }[] = [
   { emoji: "🧠", text: "AI only knows what it's been shown or told — it doesn't know you unless you tell it." },
   { emoji: "🔒", text: "Never share your real name, address, or photos with an AI without a grown-up." },
   { emoji: "🙋", text: "If an AI says something confusing or scary, tell a grown-up right away." },
-  { emoji: "🤔", text: "AI can make mistakes — just like Robi did in Teach Robi to Sort. It's okay to double-check." },
+  { emoji: "🤔", text: "AI can make mistakes — just like Vora did in Teach Vora to Sort. It's okay to double-check." },
 ];
 
 export interface SortItem {

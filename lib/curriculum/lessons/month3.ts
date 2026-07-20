@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m3_class: Lesson = {
-  ...meta("m3_class"),
+export const m3_week1: Lesson = {
+  ...meta("m3_week1"),
   segments: [
     {
       type: "warmup",
@@ -32,7 +32,7 @@ export const m3_class: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Takes Turns", ko: "로비는 차례를 지켜요" },
+      title: { en: "Vora Takes Turns", ko: "보라는 차례를 지켜요" },
       bigIdeas: ["natural_interaction"],
       lines: [
         { en: "When I want to join a game, I ask, \"Can I play?\"", ko: "나도 같이 놀고 싶을 때는 이렇게 물어봐: \"Can I play?\"" },
@@ -89,16 +89,27 @@ export const m3_class: Lesson = {
   ],
 };
 
-export const m3_play: Lesson = {
-  ...meta("m3_play"),
+export const m3_week2: Lesson = {
+  ...meta("m3_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Do a quick echo drill: say \"Can I play?\" and \"Let's share!\" a few times, faster each round, and have the class call them back.",
-        ko: "\"Can I play?\"와 \"Let's share!\"를 몇 번 반복해서 말하며 라운드마다 조금씩 빠르게 해보세요. 학급이 따라 말하게 해주세요.",
+        en: "Say \"Can I play?\" one word at a time, pausing between each word like you're placing a puzzle piece: \"Can... I... play?\" Have the class echo it the same broken-up way, then all together fast.",
+        ko: "\"Can I play?\"를 마치 퍼즐 조각을 하나씩 놓는 것처럼 한 단어씩 끊어서 말해보세요: \"Can... I... play?\" 학급이 같은 방식으로 따라 하게 한 다음, 다 함께 빠르게 말해보세요.",
       },
-      prompt: { en: "Can I play? Let's share! 🤝", ko: "Can I play? Let's share! 🤝" },
+      prompt: { en: "Can... I... play? 🧩", ko: "Can... I... play? 🧩" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Listens for Order", ko: "보라는 순서를 듣고 있어요" },
+      bigIdeas: ["natural_interaction"],
+      lines: [
+        { en: "Remember: a good friend — and a good voice assistant — waits and listens before answering.", ko: "기억하지? 좋은 친구도, 좋은 음성 비서도 대답하기 전에 기다리고 잘 들어." },
+        { en: "Today let's build the question \"Can I play?\" one word at a time, just like taking turns.", ko: "오늘은 \"Can I play?\" 질문을 차례차례 한 단어씩 만들어볼 거야, 마치 차례를 지키는 것처럼." },
+      ],
+      teacherNote:
+        "Short recap only — the natural_interaction big idea (turn-taking) was fully taught in Week 1; here it's briefly reconnected to today's word-order game before playing.",
     },
     {
       type: "activity",
@@ -116,6 +127,46 @@ export const m3_play: Lesson = {
         ],
         translation: { en: "Can I play?", ko: "같이 놀아도 될까요?" },
       },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Ask one kid to say the whole question out loud, in order: \"Can I play?\"",
+        ko: "한 학생에게 전체 질문을 순서대로 소리 내어 말해보게 하세요: \"Can I play?\"",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we built the question \"Can I play?\" tile by tile, one word at a time.",
+        ko: "오늘은 \"Can I play?\" 질문을 한 단어씩, 조각조각 만들어봤어요.",
+      },
+    },
+  ],
+};
+
+export const m3_week3: Lesson = {
+  ...meta("m3_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Make a big happy face, then a sad face, then a kind, gentle face. Ask the class to call out the feeling word for each one before you explain today's game.",
+        ko: "먼저 활짝 웃는 표정을, 그다음 슬픈 표정을, 그다음 다정하고 부드러운 표정을 지어 보이세요. 오늘의 게임을 설명하기 전에 학급이 각 표정의 감정 단어를 외치게 해주세요.",
+      },
+      prompt: { en: "How do I feel? 😊😢❤️", ko: "나는 지금 기분이 어때요? 😊😢❤️" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Notices Feelings", ko: "보라는 감정을 알아차려요" },
+      bigIdeas: ["natural_interaction"],
+      lines: [
+        { en: "Good friends notice how you feel, just by listening and watching closely.", ko: "좋은 친구는 잘 듣고 잘 살펴보는 것만으로도 네 기분을 알아차려." },
+        { en: "Today let's match feeling words to faces, the same way a good friend would.", ko: "오늘은 좋은 친구처럼 감정 단어와 표정을 짝지어볼 거야." },
+      ],
+      teacherNote:
+        "Short recap only — natural_interaction (turn-taking/listening) was the full Week 1 teach; here it's linked to reading feelings as another way friends pay close attention to each other, before the matching game.",
     },
     {
       type: "activity",
@@ -137,23 +188,23 @@ export const m3_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Ask one kid to say \"Can I play?\" out loud, and another to name one feeling word from the matching game.",
-        ko: "한 학생에게 \"Can I play?\"를 소리 내어 말하게 하고, 다른 학생에게 짝 맞추기 게임 속 감정 단어를 한 가지 말하게 하세요.",
+        en: "Ask one kid to name one feeling word from the matching game and make that face.",
+        ko: "한 학생에게 짝 맞추기 게임 속 감정 단어를 하나 말하고 그 표정을 지어보게 하세요.",
       },
       method: "cold_call",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we built the question \"Can I play?\" tile by tile, and matched feeling words like happy, sad, kind, and excited to faces.",
-        ko: "오늘은 \"Can I play?\" 질문을 한 단어씩 만들어보고, happy, sad, kind, excited 같은 감정 단어를 표정과 짝지었어요.",
+        en: "Today we matched feeling words like happy, sad, and kind to faces.",
+        ko: "오늘은 happy, sad, kind 같은 감정 단어를 표정과 짝지어봤어요.",
       },
     },
   ],
 };
 
-export const m3_spotlight: Lesson = {
-  ...meta("m3_spotlight"),
+export const m3_week4: Lesson = {
+  ...meta("m3_week4"),
   segments: [
     {
       type: "warmup",

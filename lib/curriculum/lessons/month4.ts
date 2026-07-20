@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m4_class: Lesson = {
-  ...meta("m4_class"),
+export const m4_week1: Lesson = {
+  ...meta("m4_week1"),
   segments: [
     {
       type: "warmup",
@@ -33,7 +33,7 @@ export const m4_class: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Cares for Earth", ko: "로비는 지구를 아껴요" },
+      title: { en: "Vora Cares for Earth", ko: "보라는 지구를 아껴요" },
       bigIdeas: ["learning", "societal_impact"],
       lines: [
         { en: "There are things we should do for the earth, like \"We should turn off the water.\"", ko: "지구를 위해 우리가 해야 할 일들이 있어, 예를 들면 \"We should turn off the water.\" 같은 거야." },
@@ -49,7 +49,7 @@ export const m4_class: Lesson = {
         },
       ],
       teacherNote:
-        "Modal \"should\" has no verb-final Korean counterpart to lean on — the same challenge as \"can\" back in the foundations unit. Model it as a fixed chunk (\"We should ___\") before analyzing it. The AI thread here is Big Idea 3 (Learning): scientists don't guess about climate randomly, they learn patterns from enormous datasets, the same \"learn from lots of examples\" idea Robi has modeled with pictures all year.",
+        "Modal \"should\" has no verb-final Korean counterpart to lean on — the same challenge as \"can\" back in the foundations unit. Model it as a fixed chunk (\"We should ___\") before analyzing it. The AI thread here is Big Idea 3 (Learning): scientists don't guess about climate randomly, they learn patterns from enormous datasets, the same \"learn from lots of examples\" idea Vora has modeled with pictures all year.",
     },
     {
       type: "activity",
@@ -97,16 +97,27 @@ export const m4_class: Lesson = {
   ],
 };
 
-export const m4_play: Lesson = {
-  ...meta("m4_play"),
+export const m4_week2: Lesson = {
+  ...meta("m4_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Hold up a picture of a bottle. Ask \"Recycle or trash?\" and take a quick answer before moving into the games.",
-        ko: "병 그림을 들어 보이며 \"Recycle or trash?\"라고 물어보고, 게임을 시작하기 전에 빠르게 답을 들어보세요.",
+        en: "Hold up a picture of a messy, used bottle. Ask \"What do we do first?\" and take a few guesses before revealing today's recycling steps game.",
+        ko: "지저분하게 쓰인 병 그림을 들어 보이며 \"제일 먼저 무엇을 할까요?\"라고 물어보세요. 오늘의 재활용 순서 게임을 알려주기 전에 몇 가지 추측을 들어보세요.",
       },
-      prompt: { en: "Recycle or trash? ♻️", ko: "재활용일까요, 쓰레기일까요? ♻️" },
+      prompt: { en: "What do we do first? ♻️", ko: "제일 먼저 무엇을 할까요? ♻️" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Follows the Steps", ko: "보라는 순서를 따라가요" },
+      bigIdeas: ["learning", "societal_impact"],
+      lines: [
+        { en: "Remember: scientists use AI to study huge amounts of data to help our earth.", ko: "기억하지? 과학자들은 AI를 이용해 방대한 데이터를 연구해서 지구를 도와." },
+        { en: "Today, let's follow the exact steps of recycling, one after another.", ko: "오늘은 재활용의 정확한 순서를 하나씩 따라가 볼 거야." },
+      ],
+      teacherNote:
+        "Short recap only — Week 1 fully introduced the AI-learns-from-data thread through climate science; here it's briefly reconnected to today's ordered-steps game before playing.",
     },
     {
       type: "activity",
@@ -124,6 +135,46 @@ export const m4_play: Lesson = {
           { text: { en: "The truck takes it away", ko: "트럭이 가져가기" }, emoji: "🚛", minTrack: "explorers" },
         ],
       },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Ask a student to say the recycling steps in order: rinse it, sort it, put it in the bin.",
+        ko: "한 학생에게 재활용 순서를 차례대로 말해보게 하세요: 헹구기, 분류하기, 통에 넣기.",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we put the steps of recycling in order — rinse it, sort it, and put it in the bin.",
+        ko: "오늘은 재활용 순서를 배열해봤어요 — 헹구고, 분류하고, 통에 넣어요.",
+      },
+    },
+  ],
+};
+
+export const m4_week3: Lesson = {
+  ...meta("m4_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Show three emoji in a row — 🌱🌿🌱 — and ask \"What comes next?\" before revealing today's pattern game.",
+        ko: "이모지 세 개를 순서대로 보여주세요 — 🌱🌿🌱 — 그리고 오늘의 패턴 게임을 알려주기 전에 \"다음엔 무엇이 올까요?\"라고 물어보세요.",
+      },
+      prompt: { en: "What comes next? 🌱🌿🌱...", ko: "다음엔 무엇이 올까요? 🌱🌿🌱..." },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Finds the Pattern", ko: "보라는 패턴을 찾아요" },
+      bigIdeas: ["learning", "societal_impact"],
+      lines: [
+        { en: "Scientists look for patterns in weather data to understand our changing earth.", ko: "과학자들은 날씨 데이터에서 패턴을 찾아 우리 지구가 어떻게 변하는지 이해해." },
+        { en: "Let's practice finding a pattern too, and guess what comes next.", ko: "우리도 패턴을 찾는 연습을 하며 다음에 올 것을 추측해봐요." },
+      ],
+      teacherNote:
+        "Short recap only — Week 1 introduced the AI-learns-from-data thread through climate science; here it's briefly reconnected to pattern-finding before the prediction game.",
     },
     {
       type: "activity",
@@ -145,23 +196,23 @@ export const m4_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "\"First we rinse it, next we...\" — have a student finish the whole recycling sequence out loud.",
-        ko: "\"First we rinse it, next we...\" — 한 학생이 전체 재활용 순서를 소리 내어 이어서 말해보게 하세요.",
+        en: "Show one more pattern and ask a student to say what comes next, and explain why.",
+        ko: "패턴을 하나 더 보여주고, 한 학생에게 다음에 올 것과 그 이유를 말해보게 하세요.",
       },
       method: "cold_call",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we ordered the steps of recycling and guessed what comes next in a pattern — the same pattern-finding idea scientists use to understand our changing earth.",
-        ko: "오늘은 재활용 순서를 배열하고 패턴에서 다음에 올 것을 추측해봤어요 — 과학자들이 변화하는 지구를 이해하는 데 쓰는 것과 같은 패턴 찾기 방법이에요.",
+        en: "Today we looked at patterns like 🌱🌿🌱🌿 and guessed what comes next.",
+        ko: "오늘은 🌱🌿🌱🌿 같은 패턴을 보고 다음에 올 것을 추측해봤어요.",
       },
     },
   ],
 };
 
-export const m4_spotlight: Lesson = {
-  ...meta("m4_spotlight"),
+export const m4_week4: Lesson = {
+  ...meta("m4_week4"),
   segments: [
     {
       type: "warmup",

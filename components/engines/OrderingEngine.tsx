@@ -2,12 +2,13 @@
 
 import { useMemo, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Robi } from "@/components/mascot/Robi";
+import { Vora } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { connectorFor } from "@/lib/ordering";
 import { speak } from "@/lib/speech";
+import { SpeakerIcon, UndoIcon } from "@/components/icons";
 import type { SequenceBuilderConfig, SentenceBuilderConfig } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
 
@@ -137,7 +138,7 @@ export function OrderingEngine({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-col items-center gap-1 rounded-3xl bg-white/80 py-3 shadow-sm">
-        <Robi size={52} mood={solved ? "happy" : "neutral"} />
+        <Vora size={52} mood={solved ? "happy" : "neutral"} />
         <p className="font-display text-base font-bold text-ink">{title.en}</p>
         <p className="text-xs text-ink/50">{title.ko}</p>
       </div>
@@ -178,9 +179,9 @@ export function OrderingEngine({
       <button
         type="button"
         onClick={() => speak(readAloud, "en-US")}
-        className="mx-auto flex items-center gap-1 text-xs font-semibold text-indigo underline-offset-2 hover:underline"
+        className="mx-auto flex items-center gap-1.5 text-xs font-semibold text-indigo underline-offset-2 hover:underline"
       >
-        🔊 Read it aloud
+        <SpeakerIcon size={14} /> Read it aloud
       </button>
 
       {!solved && (
@@ -211,9 +212,9 @@ export function OrderingEngine({
               type="button"
               onClick={backspace}
               disabled={placedIds.length === 0}
-              className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink/60 shadow-sm disabled:opacity-40"
+              className="flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink/60 shadow-sm disabled:opacity-40"
             >
-              ⌫ Undo
+              <UndoIcon size={14} /> Undo
             </button>
           </div>
         </>

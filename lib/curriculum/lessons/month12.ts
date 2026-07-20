@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m12_class: Lesson = {
-  ...meta("m12_class"),
+export const m12_week1: Lesson = {
+  ...meta("m12_week1"),
   segments: [
     {
       type: "warmup",
@@ -92,16 +92,30 @@ export const m12_class: Lesson = {
   ],
 };
 
-export const m12_play: Lesson = {
-  ...meta("m12_play"),
+export const m12_week2: Lesson = {
+  ...meta("m12_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Tell the class today is a special carnival — one last round of favorite games, mixing memories from the whole year, from stars in Month 1 all the way to snow this month.",
-        ko: "오늘은 특별한 카니발이라고 말해주세요 — 1월의 별부터 이번 달의 눈까지, 1년 동안의 추억을 섞어서 좋아했던 게임들을 한 판씩 해볼 거예요.",
+        en: "Tell the class this is Round 1 of the Year-End Vora Carnival — a sorting game mixing words all the way back from Month 1. Ask: \"Do you remember any of our old words?\"",
+        ko: "오늘은 연말 보라 카니발의 1라운드라고 알려주세요 — 1월부터 배운 단어를 섞은 분류 게임이에요. \"우리가 배운 옛날 단어 기억나나요?\"라고 물어보세요.",
       },
-      prompt: { en: "Welcome to the Year-End Robi Carnival! 🎉", ko: "연말 로비 카니발에 오신 것을 환영해요! 🎉" },
+      prompt: { en: "Welcome back to the Vora Carnival — Round 1! 🎉", ko: "보라 카니발에 다시 오신 것을 환영해요 — 1라운드! 🎉" },
+    },
+    {
+      type: "concept",
+      title: { en: "One Year of Sorting", ko: "1년 동안의 분류" },
+      bigIdeas: ["perception", "learning"],
+      lines: [
+        {
+          en: "All year, I've been sorting pictures into groups — space things, animals, feelings, and more!",
+          ko: "1년 내내 나는 그림들을 그룹으로 분류해왔어 — 우주 물건, 동물, 감정, 그리고 더 많이!",
+        },
+        { en: "Let's see how many old words you still remember!", ko: "옛날 단어를 얼마나 많이 기억하는지 확인해보자!" },
+      ],
+      teacherNote:
+        "Quick, celebratory bridge into the cumulative review sort below — no new teaching, just a reminder that this is the same classification idea used all year (Months 1, 5, 6, 7, and 8's sorting games).",
     },
     {
       type: "activity",
@@ -129,6 +143,53 @@ export const m12_play: Lesson = {
       },
     },
     {
+      type: "check",
+      prompt: {
+        en: "Ask a few kids: \"Which word was easy to remember, and which was tricky?\"",
+        ko: "몇 명에게 물어보세요: \"어떤 단어가 기억하기 쉬웠고, 어떤 단어가 어려웠나요?\"",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we celebrated a whole year of words with one big review sort — look how much you remember!",
+        ko: "오늘은 1년 동안 배운 단어로 큰 복습 분류 게임을 하며 축하했어요 — 얼마나 많이 기억하는지 봐요!",
+      },
+      homework: {
+        en: "Tell your family one word you remembered from earlier this year.",
+        ko: "가족에게 올해 초에 배운 단어 중 기억나는 것을 한 가지 말해보세요.",
+      },
+    },
+  ],
+};
+
+export const m12_week3: Lesson = {
+  ...meta("m12_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Tell the class this is Round 2 of the Year-End Vora Carnival — patterns mixing pictures from all through the year. Chant a quick pattern like \"star, pumpkin, star, pumpkin\" and ask what comes next.",
+        ko: "오늘은 연말 보라 카니발의 2라운드라고 알려주세요 — 1년 동안 배운 그림을 섞은 패턴 게임이에요. \"star, pumpkin, star, pumpkin\"처럼 짧은 패턴을 챈트하고 다음에 올 것을 물어보세요.",
+      },
+      prompt: { en: "Round 2: A Year of Patterns! 🎉", ko: "2라운드: 1년의 패턴! 🎉" },
+    },
+    {
+      type: "concept",
+      title: { en: "Patterns All Year Long", ko: "1년 내내 패턴" },
+      bigIdeas: ["reasoning"],
+      lines: [
+        {
+          en: "All year, I've been finding patterns — stars and moons, lions and gifts, even sunny and cloudy days!",
+          ko: "1년 내내 나는 패턴을 찾아왔어 — 별과 달, 사자와 선물, 심지어 맑은 날과 흐린 날까지!",
+        },
+        { en: "Let's mix them all together and see what comes next!", ko: "이제 다 섞어서 다음에 올 것을 맞혀보자!" },
+      ],
+      teacherNote:
+        "Celebratory callback to the pattern-prediction thread used in Months 1, 4, 6, and 10 — no new teaching, just framing before the cumulative game.",
+    },
+    {
       type: "activity",
       instructions: {
         en: "Round 2: Look at the pattern — emoji from all through the year — and guess what comes next!",
@@ -154,23 +215,27 @@ export const m12_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Whole-class check-in: which game or month from this whole year was your favorite?",
-        ko: "학급 전체 점검: 1년 동안의 게임이나 달 중에서 어떤 게 가장 좋았나요?",
+        en: "Whole-class thumbs up if you can guess what comes next in the pattern: star, pumpkin, star, pumpkin, ___?",
+        ko: "패턴에서 다음에 올 것을 맞힐 수 있으면 다 함께 엄지를 올려주세요: star, pumpkin, star, pumpkin, ___?",
       },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we celebrated the whole year with one more sorting game and one more pattern game — a fun look back at everything we've learned with Robi.",
-        ko: "오늘은 분류 게임과 패턴 게임을 한 번 더 하며 한 해를 축하했어요 — 로비와 함께 배운 모든 것을 즐겁게 되돌아봤어요.",
+        en: "Today we celebrated a whole year of patterns, mixing pictures from every month into one big prediction game.",
+        ko: "오늘은 매달 배운 그림을 섞어 하나의 큰 예측 게임으로 1년의 패턴을 축하했어요.",
+      },
+      homework: {
+        en: "Make up your own pattern at home and ask your family what comes next.",
+        ko: "집에서 나만의 패턴을 만들어 가족에게 다음에 올 것을 물어보세요.",
       },
     },
   ],
 };
 
-export const m12_spotlight: Lesson = {
-  ...meta("m12_spotlight"),
+export const m12_week4: Lesson = {
+  ...meta("m12_week4"),
   segments: [
     {
       type: "warmup",

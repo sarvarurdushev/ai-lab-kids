@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m8_class: Lesson = {
-  ...meta("m8_class"),
+export const m8_week1: Lesson = {
+  ...meta("m8_week1"),
   segments: [
     {
       type: "warmup",
@@ -32,7 +32,7 @@ export const m8_class: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Finds the Fastest Way", ko: "로비가 가장 빠른 길을 찾아요" },
+      title: { en: "Vora Finds the Fastest Way", ko: "보라가 가장 빠른 길을 찾아요" },
       bigIdeas: ["reasoning"],
       lines: [
         { en: "I want to go to the park — but which way is fastest?", ko: "나는 공원에 가고 싶어 — 근데 어느 길이 제일 빠를까?" },
@@ -82,16 +82,27 @@ export const m8_class: Lesson = {
   ],
 };
 
-export const m8_play: Lesson = {
-  ...meta("m8_play"),
+export const m8_week2: Lesson = {
+  ...meta("m8_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Hold up two items — one to pack (like a toothbrush) and one to leave behind (like a sofa cushion) — and ask \"Pack it, or leave it?\" before starting the games.",
-        ko: "물건 두 가지를 들어 보이세요 — 챙길 것(예: 칫솔) 하나와 두고 갈 것(예: 소파 쿠션) 하나 — 그리고 게임을 시작하기 전에 \"Pack it, or leave it?\"이라고 물어보세요.",
+        en: "Hold up two items — one to pack (like a toothbrush) and one to leave behind (like a sofa cushion) — and ask \"Pack it, or leave it?\" before today's sorting game.",
+        ko: "물건 두 가지를 들어 보이세요 — 챙길 것(예: 칫솔) 하나와 두고 갈 것(예: 소파 쿠션) 하나 — 그리고 오늘의 분류 게임을 시작하기 전에 \"Pack it, or leave it?\"이라고 물어보세요.",
       },
       prompt: { en: "Pack it, or leave it? 🧳", ko: "챙길까요, 두고 갈까요? 🧳" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Decides What Goes In", ko: "보라가 무엇을 넣을지 정해요" },
+      bigIdeas: ["perception"],
+      lines: [
+        { en: "A toothbrush, a sofa — I look at each thing and decide: does it belong in the suitcase?", ko: "칫솔, 소파 — 나는 각 물건을 보고 정해: 이게 여행 가방에 들어갈까?" },
+        { en: "That's sorting, and it's just what you're about to do with today's things!", ko: "이게 분류야, 오늘 너희가 물건으로 할 일이 바로 이거야!" },
+      ],
+      teacherNote:
+        "Keep this brief — Vora's reasoning was already introduced in Week 1's map-app talk. This is just a quick bridge into today's packing game below.",
     },
     {
       type: "activity",
@@ -118,6 +129,50 @@ export const m8_play: Lesson = {
       },
     },
     {
+      type: "check",
+      prompt: {
+        en: "Ask a partner: name one thing you'd pack for a trip.",
+        ko: "짝에게 물어보세요: 여행에 챙길 물건 한 가지를 말해보세요.",
+      },
+      method: "whole_class_thumbs",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we sorted things into pack it and leave it.",
+        ko: "오늘은 물건을 챙길 것과 두고 갈 것으로 분류했어요.",
+      },
+      homework: {
+        en: "Pack a pretend suitcase with a family member tonight, naming each item in English.",
+        ko: "오늘 저녁 가족과 함께 가상으로 여행 가방을 싸며, 각 물건의 이름을 영어로 말해보세요.",
+      },
+    },
+  ],
+};
+
+export const m8_week3: Lesson = {
+  ...meta("m8_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Flip an imaginary card in the air and ask \"Airplane or train?\" — let kids guess before today's matching game.",
+        ko: "허공에 상상의 카드를 뒤집는 시늉을 하며 \"Airplane or train?\"이라고 물어보세요 — 오늘의 짝 맞추기 게임을 시작하기 전에 학생들이 맞혀보게 하세요.",
+      },
+      prompt: { en: "Airplane or train? ✈️🚂", ko: "비행기일까요, 기차일까요? ✈️🚂" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Remembers", ko: "보라가 기억해요" },
+      bigIdeas: ["learning"],
+      lines: [
+        { en: "The more times I see \"airplane,\" the faster I remember it — that's learning!", ko: "\"airplane\"을 더 많이 볼수록, 나는 더 빨리 기억해 — 이게 바로 학습이야!" },
+        { en: "Let's practice remembering together with today's matching game!", ko: "오늘 짝 맞추기 게임으로 함께 기억하는 연습을 해보자!" },
+      ],
+      teacherNote:
+        "Brief bridge only — the learning-through-repetition idea doesn't need re-teaching, just let today's game do the reinforcing.",
+    },
+    {
       type: "activity",
       instructions: {
         en: "Kids take turns flipping two cards at a time, saying the transportation word out loud if they find a match.",
@@ -139,27 +194,27 @@ export const m8_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Ask a partner: name one thing you'd pack and one thing you'd leave at home.",
-        ko: "짝에게 물어보세요: 챙길 물건 한 가지와 집에 두고 갈 물건 한 가지를 말해보세요.",
+        en: "Ask a partner: name one way to travel on land and one way to travel by air or sea.",
+        ko: "짝에게 물어보세요: 육지로 가는 방법 하나와 하늘 또는 바다로 가는 방법 하나를 말해보세요.",
       },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we sorted things into pack it and leave it, and matched transportation words to pictures.",
-        ko: "오늘은 물건을 챙길 것과 두고 갈 것으로 분류하고, 탈것 단어를 그림과 짝지었어요.",
+        en: "Today we matched transportation words to pictures.",
+        ko: "오늘은 탈것 단어를 그림과 짝지었어요.",
       },
       homework: {
-        en: "Pack a pretend suitcase with a family member tonight, naming each item in English.",
-        ko: "오늘 저녁 가족과 함께 가상으로 여행 가방을 싸며, 각 물건의 이름을 영어로 말해보세요.",
+        en: "Name three ways to travel in English before bed tonight.",
+        ko: "오늘 밤 자기 전에 이동 수단 세 가지를 영어로 말해보세요.",
       },
     },
   ],
 };
 
-export const m8_spotlight: Lesson = {
-  ...meta("m8_spotlight"),
+export const m8_week4: Lesson = {
+  ...meta("m8_week4"),
   segments: [
     {
       type: "warmup",

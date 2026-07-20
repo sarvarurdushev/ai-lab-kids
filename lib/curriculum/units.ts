@@ -1,7 +1,7 @@
 import type { Unit } from "./types";
 
 /**
- * "Robi's Classroom" — an 8-week, 24-lesson pilot unit (3 lessons/week)
+ * "Vora's Classroom" — an 8-week, 24-lesson pilot unit (3 lessons/week)
  * teaching foundational English *through* AI literacy concepts, for Korean
  * elementary beginners (CEFR pre-A1/A1). See docs/SCOPE_AND_SEQUENCE.md for
  * the full teacher-facing curriculum map and docs/KOREAN_L1_NOTES.md for
@@ -9,8 +9,8 @@ import type { Unit } from "./types";
  */
 export const UNITS: Unit[] = [
   {
-    key: "u1_meet_robi",
-    title: { en: "Meet Robi", ko: "로비를 만나요" },
+    key: "u1_meet_vora",
+    title: { en: "Meet Vora", ko: "보라를 만나요" },
     weekRange: [1, 1],
     summary: {
       en: "Greetings, classroom objects, and the first big idea: what is AI?",
@@ -76,8 +76,8 @@ export const UNITS: Unit[] = [
     title: { en: "Show What You Know", ko: "배운 것을 보여줘요" },
     weekRange: [8, 8],
     summary: {
-      en: "AI safety rules and a capstone showcase where kids 'teach' Robi something new.",
-      ko: "AI 안전 수칙과, 아이들이 로비에게 새로운 것을 '가르치는' 마무리 발표.",
+      en: "AI safety rules and a capstone showcase where kids 'teach' Vora something new.",
+      ko: "AI 안전 수칙과, 아이들이 보라에게 새로운 것을 '가르치는' 마무리 발표.",
     },
   },
 ];

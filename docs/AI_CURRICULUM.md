@@ -12,7 +12,7 @@ and without any live chatbot/LLM in the loop (see
 
 For the 24-lesson foundations unit, see
 [`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md). For the 12-month,
-36-lesson year curriculum that follows it, see
+48-lesson year curriculum that follows it, see
 [`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md). For the Korean
 learner-specific research behind what each lesson targets, see
 [`docs/KOREAN_L1_NOTES.md`](./KOREAN_L1_NOTES.md).
@@ -183,9 +183,9 @@ Roadmap), but are not the primary product surface.
 
 Honest gap list — what a company evaluating this for a real deployment
 should know is *not* built yet. The 24-lesson foundations unit and the
-36-lesson, 12-month year curriculum are now both fully authored (see
+48-lesson, 12-month (4 lessons/month) year curriculum are now both fully authored (see
 [`docs/SCOPE_AND_SEQUENCE.md`](./SCOPE_AND_SEQUENCE.md) and
-[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)) — 60 lessons and
+[`docs/MONTHLY_CURRICULUM.md`](./MONTHLY_CURRICULUM.md)) — 72 lessons and
 six activity engines total — so what's left is platform work, not content
 work:
 

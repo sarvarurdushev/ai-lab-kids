@@ -1,10 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Robi, type RobiMood } from "@/components/mascot/Robi";
+import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { playCorrect, playWrong } from "@/lib/sound";
 import { speak } from "@/lib/speech";
+import { SpeakerIcon } from "@/components/icons";
 import type { MinimalPairsConfig } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
 
@@ -54,7 +55,7 @@ export function MinimalPairsEngine({
   if (roundIndex >= rounds.length) {
     return (
       <div className="flex flex-col items-center gap-3 text-center">
-        <Robi size={100} mood="happy" bob />
+        <Vora size={100} mood="happy" bob />
         <p className="font-display text-lg font-bold text-indigo-dark">Great listening!</p>
       </div>
     );
@@ -88,7 +89,7 @@ export function MinimalPairsEngine({
     }
   }
 
-  const robiMood: RobiMood = answered ? (answered.good ? "happy" : "sad") : "neutral";
+  const voraMood: VoraMood = answered ? (answered.good ? "happy" : "sad") : "neutral";
 
   return (
     <div className="flex flex-col gap-4">
@@ -100,9 +101,9 @@ export function MinimalPairsEngine({
       </div>
 
       <div className="flex flex-col items-center gap-3 rounded-3xl bg-white/80 py-6 shadow-sm">
-        <Robi size={64} mood={robiMood} />
-        <Button onClick={playTarget} variant="secondary" className="!px-6 !py-3">
-          🔊 Play the word
+        <Vora size={64} mood={voraMood} />
+        <Button onClick={playTarget} variant="secondary" className="!flex !items-center !gap-2 !px-6 !py-3">
+          <SpeakerIcon size={18} /> Play the word
         </Button>
         {level === "full" && <p className="text-xs text-ink/40">단어를 듣고 아래에서 골라보세요.</p>}
       </div>

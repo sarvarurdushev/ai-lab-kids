@@ -60,8 +60,8 @@ export const w2d1_animal_safari: Lesson = {
   ],
 };
 
-export const w2d2_how_does_robi_see: Lesson = {
-  ...meta("w2d2_how_does_robi_see"),
+export const w2d2_how_does_vora_see: Lesson = {
+  ...meta("w2d2_how_does_vora_see"),
   segments: [
     {
       type: "warmup",
@@ -73,7 +73,7 @@ export const w2d2_how_does_robi_see: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "How Does Robi See?", ko: "로비는 어떻게 볼까요?" },
+      title: { en: "How Does Vora See?", ko: "보라는 어떻게 볼까요?" },
       bigIdeas: ["perception", "learning"],
       lines: [
         { en: "I learn by looking at LOTS of examples, not just one.", ko: "나는 하나가 아니라 아주 많은 예시를 보면서 배워." },
@@ -81,13 +81,13 @@ export const w2d2_how_does_robi_see: Lesson = {
         { en: "Sometimes I still guess wrong at first. That's how learning works!", ko: "가끔은 처음에 틀리게 추측하기도 해. 그게 바로 배우는 과정이야!" },
       ],
       teacherNote:
-        "This is the AI-for-Oceans-style train/guess loop, now revisited from Week 1 Day 3 with a new category — watch whether kids explain the \"Robi can be wrong\" idea in their own words before the activity.",
+        "This is the AI-for-Oceans-style train/guess loop, now revisited from Week 1 Day 3 with a new category — watch whether kids explain the \"Vora can be wrong\" idea in their own words before the activity.",
     },
     {
       type: "activity",
       instructions: {
-        en: "Kids sort the first few together as a class, then Robi starts guessing on its own — the class judges whether Robi got it right.",
-        ko: "처음 몇 개는 반 전체가 함께 분류하고, 그 다음엔 로비가 스스로 추측해요 — 로비가 맞았는지 학급이 판단해요.",
+        en: "Kids sort the first few together as a class, then Vora starts guessing on its own — the class judges whether Vora got it right.",
+        ko: "처음 몇 개는 반 전체가 함께 분류하고, 그 다음엔 보라가 스스로 추측해요 — 보라가 맞았는지 학급이 판단해요.",
       },
       config: {
         engine: "train_the_robot",
@@ -117,8 +117,8 @@ export const w2d2_how_does_robi_see: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we practiced sorting animals and vehicles, and saw Robi learn from examples — sometimes getting it wrong, and that's okay.",
-        ko: "오늘은 동물과 탈것을 분류하는 연습을 했고, 로비가 예시로부터 배우는 모습을 봤어요 — 가끔 틀려도 괜찮아요.",
+        en: "Today we practiced sorting animals and vehicles, and saw Vora learn from examples — sometimes getting it wrong, and that's okay.",
+        ko: "오늘은 동물과 탈것을 분류하는 연습을 했고, 보라가 예시로부터 배우는 모습을 봤어요 — 가끔 틀려도 괜찮아요.",
       },
     },
   ],

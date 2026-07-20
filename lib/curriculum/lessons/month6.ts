@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m6_class: Lesson = {
-  ...meta("m6_class"),
+export const m6_week1: Lesson = {
+  ...meta("m6_week1"),
   segments: [
     {
       type: "warmup",
@@ -52,7 +52,7 @@ export const m6_class: Lesson = {
         },
       ],
       teacherNote:
-        "Adjective-before-noun order (\"a big lion\") matches Korean word order exactly — call this out as an easy win, not everything in English is a hard shift. The wildlife-camera example makes \"perception\" concrete: recognizing an animal from a blurry night photo is a genuinely hard version of the same sorting game Robi's been playing all year.",
+        "Adjective-before-noun order (\"a big lion\") matches Korean word order exactly — call this out as an easy win, not everything in English is a hard shift. The wildlife-camera example makes \"perception\" concrete: recognizing an animal from a blurry night photo is a genuinely hard version of the same sorting game Vora's been playing all year.",
     },
     {
       type: "activity",
@@ -100,16 +100,27 @@ export const m6_class: Lesson = {
   ],
 };
 
-export const m6_play: Lesson = {
-  ...meta("m6_play"),
+export const m6_week2: Lesson = {
+  ...meta("m6_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Chant \"Lion, elephant, lion, elephant...\" and ask \"What comes next?\" Let kids call out the answer before the games start.",
-        ko: "\"Lion, elephant, lion, elephant...\"라고 챈트하며 \"What comes next?\"라고 물어보세요. 게임을 시작하기 전에 학생들이 답을 외치게 해 주세요.",
+        en: "Chant \"Lion, elephant, lion, elephant...\" together and ask \"What comes next?\" before today's pattern game.",
+        ko: "\"Lion, elephant, lion, elephant...\"를 함께 챈트하고, 오늘의 패턴 게임 전에 \"What comes next?\"라고 물어보세요.",
       },
-      prompt: { en: "Lion, elephant, lion, elephant... what comes next?", ko: "Lion, elephant, lion, elephant... 다음은 무엇일까요?" },
+      prompt: { en: "Lion, elephant, lion, elephant... what comes next? 🦁🐘", ko: "Lion, elephant, lion, elephant... 다음은 무엇일까요? 🦁🐘" },
+    },
+    {
+      type: "concept",
+      title: { en: "Patterns Help Me See", ko: "패턴이 나를 도와줘" },
+      bigIdeas: ["perception"],
+      lines: [
+        { en: "Remember the wildlife camera? It looks for patterns to guess which animal walked by.", ko: "야생동물 카메라 기억나? 패턴을 찾아서 어떤 동물이 지나갔는지 추측해." },
+        { en: "Today, you get to find the pattern too!", ko: "오늘은 너희도 패턴을 찾아볼 차례야!" },
+      ],
+      teacherNote:
+        "Quick callback to Week 1's wildlife-camera example — no new teaching, just a bridge into today's pattern-prediction game.",
     },
     {
       type: "activity",
@@ -135,6 +146,46 @@ export const m6_play: Lesson = {
       },
     },
     {
+      type: "check",
+      prompt: {
+        en: "Ask a partner: \"What comes next?\" about the pattern lion, elephant, lion, elephant.",
+        ko: "짝에게 물어보세요: \"lion, elephant, lion, elephant\" 패턴에서 \"What comes next?\"",
+      },
+      method: "whole_class_thumbs",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we guessed what comes next in an animal pattern — finding patterns is something both you and AI are good at.",
+        ko: "오늘은 동물 패턴에서 다음에 올 것을 추측했어요 — 패턴을 찾는 건 너희와 AI 둘 다 잘하는 일이에요.",
+      },
+    },
+  ],
+};
+
+export const m6_week3: Lesson = {
+  ...meta("m6_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Flash an animal emoji quickly and have kids call out the English word before today's matching game starts.",
+        ko: "동물 이모지를 빠르게 보여주고, 오늘의 짝 맞추기 게임을 시작하기 전에 학생들이 영어 단어를 외치게 하세요.",
+      },
+      prompt: { en: "Name that animal, fast! 🐯", ko: "동물 이름을 빨리 말해보세요! 🐯" },
+    },
+    {
+      type: "concept",
+      title: { en: "Remembering Like Vora", ko: "보라처럼 기억하기" },
+      bigIdeas: ["learning"],
+      lines: [
+        { en: "The more pictures I see, the better I get at remembering them — that's learning!", ko: "그림을 더 많이 볼수록 나는 더 잘 기억하게 돼 — 그게 바로 학습(learning)이야!" },
+        { en: "Let's practice remembering animal words together.", ko: "함께 동물 단어를 기억하는 연습을 해보자!" },
+      ],
+      teacherNote:
+        "Short bridge connecting today's memory game to the idea that repetition builds recognition — no new AI content, just framing.",
+    },
+    {
       type: "activity",
       instructions: {
         en: "Flip two cards at a time to find a matching animal word and picture. If they match, they stay face up!",
@@ -157,23 +208,23 @@ export const m6_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Ask a partner: \"What comes next?\" about the pattern lion, elephant, lion, elephant.",
-        ko: "짝에게 물어보세요: \"lion, elephant, lion, elephant\" 패턴에서 \"What comes next?\"",
+        en: "Ask a partner: \"What's this animal?\" and point to one of the matched cards.",
+        ko: "짝에게 물어보세요: \"이 동물은 뭐예요?\" 그리고 짝 맞춘 카드 중 하나를 가리켜 보세요.",
       },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we guessed what comes next in an animal pattern and matched animal words to pictures — both games about finding patterns, the same thing AI does.",
-        ko: "오늘은 동물 패턴에서 다음에 올 것을 추측하고, 동물 단어를 그림과 짝지었어요 — 둘 다 패턴을 찾는 게임이었어요, AI가 하는 일과 같아요.",
+        en: "Today we matched animal words to pictures — the more we practice, the better we remember, just like Vora.",
+        ko: "오늘은 동물 단어를 그림과 짝지었어요 — 연습할수록 더 잘 기억하게 돼요, 보라처럼요.",
       },
     },
   ],
 };
 
-export const m6_spotlight: Lesson = {
-  ...meta("m6_spotlight"),
+export const m6_week4: Lesson = {
+  ...meta("m6_week4"),
   segments: [
     {
       type: "warmup",
@@ -190,8 +241,8 @@ export const m6_spotlight: Lesson = {
       lines: [
         { en: "Remember the \"f\" sound? Bite your bottom lip gently and blow air.", ko: "\"f\" 소리 기억나나요? 아랫입술을 살짝 물고 바람을 불어보세요." },
         {
-          en: "We practiced this sound back in Week 3 of Robi's Classroom — let's see how much you remember!",
-          ko: "로비의 교실 3주차에서 이 소리를 연습했었죠 — 얼마나 기억하는지 확인해봐요!",
+          en: "We practiced this sound back in Week 3 of Vora's Classroom — let's see how much you remember!",
+          ko: "보라의 교실 3주차에서 이 소리를 연습했었죠 — 얼마나 기억하는지 확인해봐요!",
         },
         { en: "Let's listen very carefully and pick the word we hear: fan, or pan?", ko: "아주 잘 듣고 들리는 단어를 골라봐요: fan일까요, pan일까요?" },
         {

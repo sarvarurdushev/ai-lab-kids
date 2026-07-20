@@ -49,8 +49,8 @@ export const w3d1_rainbow_colors: Lesson = {
   ],
 };
 
-export const w3d2_robi_finds_pattern: Lesson = {
-  ...meta("w3d2_robi_finds_pattern"),
+export const w3d2_vora_finds_pattern: Lesson = {
+  ...meta("w3d2_vora_finds_pattern"),
   segments: [
     {
       type: "warmup",
@@ -72,7 +72,7 @@ export const w3d2_robi_finds_pattern: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Finds the Pattern", ko: "로비가 패턴을 찾아요" },
+      title: { en: "Vora Finds the Pattern", ko: "보라가 패턴을 찾아요" },
       bigIdeas: ["reasoning", "learning"],
       lines: [
         { en: "A pattern is something that repeats — like red, blue, red, blue.", ko: "패턴은 반복되는 거야 — red, blue, red, blue처럼." },
@@ -114,8 +114,8 @@ export const w3d2_robi_finds_pattern: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned shape words and practiced telling same from different — the skill behind every pattern Robi finds.",
-        ko: "오늘은 모양 단어를 배우고 같음과 다름을 구별하는 연습을 했어요 — 로비가 패턴을 찾는 데 필요한 바로 그 기술이에요.",
+        en: "Today we learned shape words and practiced telling same from different — the skill behind every pattern Vora finds.",
+        ko: "오늘은 모양 단어를 배우고 같음과 다름을 구별하는 연습을 했어요 — 보라가 패턴을 찾는 데 필요한 바로 그 기술이에요.",
       },
     },
   ],

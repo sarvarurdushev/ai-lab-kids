@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Robi } from "@/components/mascot/Robi";
+import { Vora } from "@/components/mascot/Vora";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { BilingualText } from "@/components/curriculum/BilingualText";
@@ -11,14 +11,18 @@ import { BigIdeaBanner } from "@/components/curriculum/BigIdeaBanner";
 import { MarkPanel } from "./MarkPanel";
 import { BIG_IDEA_LABELS, resolveBigIdea, type Lesson } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
+import { SunIcon, BookIcon, RobotHeadIcon, GamepadIcon, CheckCircleIcon, GiftIcon, SparkleIcon } from "@/components/icons";
 
-const SEGMENT_LABEL: Record<string, { emoji: string; text: string; className: string }> = {
-  warmup: { emoji: "🌤️", text: "Warm-up", className: "text-amber-dark" },
-  vocab: { emoji: "📚", text: "Vocabulary", className: "text-sky" },
-  concept: { emoji: "🤖", text: "Robi Explains", className: "text-indigo-dark" },
-  activity: { emoji: "🎮", text: "Activity", className: "text-coral" },
-  check: { emoji: "✅", text: "Formative Check", className: "text-mint" },
-  wrapup: { emoji: "🎁", text: "Wrap-up", className: "text-amber-dark" },
+const SEGMENT_LABEL: Record<
+  string,
+  { icon: (props: { size?: number; className?: string }) => React.JSX.Element; text: string; className: string }
+> = {
+  warmup: { icon: SunIcon, text: "Warm-up", className: "text-amber-dark" },
+  vocab: { icon: BookIcon, text: "Vocabulary", className: "text-sky" },
+  concept: { icon: RobotHeadIcon, text: "Vora Explains", className: "text-indigo-dark" },
+  activity: { icon: GamepadIcon, text: "Activity", className: "text-coral" },
+  check: { icon: CheckCircleIcon, text: "Formative Check", className: "text-mint" },
+  wrapup: { icon: GiftIcon, text: "Wrap-up", className: "text-amber-dark" },
 };
 
 // These three pick their tile/round order with Math.random() on first
@@ -107,8 +111,14 @@ export function PresentationPlayer({
         <Link href={`/classes/${classId}`} className="text-sm font-semibold text-ink/50">
           ← Exit lesson
         </Link>
-        <span className="rounded-full bg-white/70 px-3 py-1 text-sm font-bold text-ink/60 shadow-sm">
-          {finished ? "Done 🎉" : `${index + 1} / ${lesson.segments.length}`}
+        <span className="flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-sm font-bold text-ink/60 shadow-sm">
+          {finished ? (
+            <>
+              <SparkleIcon size={14} /> Done
+            </>
+          ) : (
+            `${index + 1} / ${lesson.segments.length}`
+          )}
         </span>
       </div>
 
@@ -122,7 +132,7 @@ export function PresentationPlayer({
       )}
 
       <Card className="flex items-center gap-3 !py-3 bg-gradient-to-r from-indigo/10 to-transparent">
-        <Robi size={44} mood="happy" />
+        <Vora size={44} mood="happy" />
         <div>
           <p className="font-display text-lg font-bold text-ink">{lesson.title.en}</p>
           <p className="text-xs text-ink/50">{lesson.title.ko}</p>
@@ -133,7 +143,7 @@ export function PresentationPlayer({
 
       {finished ? (
         <Card className="flex flex-col items-center gap-3 text-center">
-          <Robi size={100} mood="happy" bob />
+          <Vora size={100} mood="happy" bob />
           <p className="font-display text-lg font-bold text-indigo-dark">Lesson complete!</p>
           <Link href={`/classes/${classId}`}>
             <Button variant="secondary">Back to class</Button>
@@ -143,8 +153,8 @@ export function PresentationPlayer({
         <Card className="flex flex-col gap-4">
           {segment.type === "warmup" && (
             <div className="flex flex-col gap-3">
-              <p className={`text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.warmup.className}`}>
-                {SEGMENT_LABEL.warmup.emoji} {SEGMENT_LABEL.warmup.text}
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.warmup.className}`}>
+                <SEGMENT_LABEL.warmup.icon size={12} /> {SEGMENT_LABEL.warmup.text}
               </p>
               <p className="rounded-2xl bg-indigo/5 p-3 text-sm text-ink/70">
                 <span className="font-bold">Teacher script: </span>
@@ -158,8 +168,8 @@ export function PresentationPlayer({
 
           {segment.type === "vocab" && (
             <div className="flex flex-col gap-3">
-              <p className={`text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.vocab.className}`}>
-                {SEGMENT_LABEL.vocab.emoji} {SEGMENT_LABEL.vocab.text}
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.vocab.className}`}>
+                <SEGMENT_LABEL.vocab.icon size={12} /> {SEGMENT_LABEL.vocab.text}
               </p>
               <BilingualText text={segment.title} level={level} keyContent size="lg" />
               <div className="grid grid-cols-2 gap-2">
@@ -179,8 +189,8 @@ export function PresentationPlayer({
           {segment.type === "concept" && (
             <div className="flex flex-col gap-3">
               <div className="flex flex-wrap items-center gap-1.5">
-                <p className={`text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.concept.className}`}>
-                  {SEGMENT_LABEL.concept.emoji} {SEGMENT_LABEL.concept.text}
+                <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.concept.className}`}>
+                  <SEGMENT_LABEL.concept.icon size={12} /> {SEGMENT_LABEL.concept.text}
                 </p>
                 {segment.bigIdeas.map((idea) => (
                   <span
@@ -195,7 +205,7 @@ export function PresentationPlayer({
               <div className="flex flex-col gap-2">
                 {segment.lines.map((line, i) => (
                   <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
-                    <Robi size={28} />
+                    <Vora size={28} />
                     <BilingualText text={line} level={level} size="sm" />
                   </div>
                 ))}
@@ -209,8 +219,8 @@ export function PresentationPlayer({
 
           {segment.type === "activity" && (
             <div className="flex flex-col gap-3">
-              <p className={`text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.activity.className}`}>
-                {SEGMENT_LABEL.activity.emoji} {SEGMENT_LABEL.activity.text}
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.activity.className}`}>
+                <SEGMENT_LABEL.activity.icon size={12} /> {SEGMENT_LABEL.activity.text}
               </p>
               <BilingualText text={segment.instructions} level={level} keyContent size="sm" />
               {segment.config.engine === "train_the_robot" && (
@@ -229,8 +239,8 @@ export function PresentationPlayer({
 
           {segment.type === "check" && (
             <div className="flex flex-col gap-3">
-              <p className={`text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.check.className}`}>
-                {SEGMENT_LABEL.check.emoji} {SEGMENT_LABEL.check.text}
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.check.className}`}>
+                <SEGMENT_LABEL.check.icon size={12} /> {SEGMENT_LABEL.check.text}
               </p>
               <BilingualText text={segment.prompt} level={level} keyContent size="lg" />
               <MarkPanel sessionId={sessionId} activityKey={activityKey} roster={roster} />
@@ -239,8 +249,8 @@ export function PresentationPlayer({
 
           {segment.type === "wrapup" && (
             <div className="flex flex-col gap-3">
-              <p className={`text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.wrapup.className}`}>
-                {SEGMENT_LABEL.wrapup.emoji} {SEGMENT_LABEL.wrapup.text}
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.wrapup.className}`}>
+                <SEGMENT_LABEL.wrapup.icon size={12} /> {SEGMENT_LABEL.wrapup.text}
               </p>
               <BilingualText text={segment.summary} level={level} keyContent size="base" />
               {segment.homework && (

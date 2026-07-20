@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m11_class: Lesson = {
-  ...meta("m11_class"),
+export const m11_week1: Lesson = {
+  ...meta("m11_week1"),
   segments: [
     {
       type: "warmup",
@@ -32,7 +32,7 @@ export const m11_class: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Sees a Smile", ko: "로비가 웃는 얼굴을 봐요" },
+      title: { en: "Vora Sees a Smile", ko: "보라가 웃는 얼굴을 봐요" },
       bigIdeas: ["natural_interaction", "perception"],
       lines: [
         { en: "Look at my face! Can you guess how I feel?", ko: "내 얼굴을 봐! 내가 어떤 기분인지 맞혀볼래?" },
@@ -96,16 +96,30 @@ export const m11_class: Lesson = {
   ],
 };
 
-export const m11_play: Lesson = {
-  ...meta("m11_play"),
+export const m11_week2: Lesson = {
+  ...meta("m11_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Act out \"sad\" silently — droop your shoulders, pretend to sniffle — and ask \"How do I feel?\" Let kids guess before explaining today's charades game.",
-        ko: "말없이 어깨를 축 늘어뜨리고 훌쩍이는 시늉을 하며 \"How do I feel?\"이라고 물어보세요. 오늘의 몸으로 말해요 게임을 설명하기 전에 학생들이 먼저 추측하게 해주세요.",
+        en: "Act out a huge happy smile and freeze like a photo — ask the class: \"How do I feel?\" Tell them today we're going to build that sentence together, one word at a time.",
+        ko: "활짝 웃는 표정을 짓고 사진처럼 멈춰서 물어보세요: \"How do I feel?\" 오늘은 그 문장을 함께 한 단어씩 만들어볼 거라고 말해주세요.",
       },
-      prompt: { en: "Guess my feeling! 🎭", ko: "제 기분을 맞혀보세요! 🎭" },
+      prompt: { en: "Freeze! How do I feel? 📸", ko: "멈춰! 저는 기분이 어떨까요? 📸" },
+    },
+    {
+      type: "concept",
+      title: { en: "Just a Guess", ko: "그냥 추측일 뿐이에요" },
+      bigIdeas: ["natural_interaction"],
+      lines: [
+        {
+          en: "Remember — I can see a smile in a picture, but only you really know how you feel inside.",
+          ko: "기억하지? 나는 사진 속 웃는 얼굴을 볼 수 있지만, 네가 진짜 어떤 기분인지는 오직 너만 알아.",
+        },
+        { en: "Let's practice saying it together: I feel ___.", ko: "함께 연습해보자: I feel ___." },
+      ],
+      teacherNote:
+        "Quick reinforcement of Week 1's AI-limits idea — no new teaching here, just a short bridge into today's sentence-building game.",
     },
     {
       type: "activity",
@@ -123,6 +137,53 @@ export const m11_play: Lesson = {
         ],
         translation: { en: "I feel happy.", ko: "저는 행복해요." },
       },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Ask a partner: \"How do you feel?\" — can they answer with \"I feel ___\"?",
+        ko: "짝에게 물어보세요: \"How do you feel?\" — \"I feel ___\"로 답할 수 있나요?",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we built the sentence \"I feel happy\" one tile at a time and practiced saying how we really feel.",
+        ko: "오늘은 \"I feel happy\" 문장을 한 타일씩 만들고, 진짜 기분을 말하는 연습을 했어요.",
+      },
+      homework: {
+        en: "Act out a feeling for your family tonight and see if they can guess it in English.",
+        ko: "오늘 밤 가족 앞에서 감정을 몸으로 표현해보고, 가족이 영어로 맞힐 수 있는지 확인해보세요.",
+      },
+    },
+  ],
+};
+
+export const m11_week3: Lesson = {
+  ...meta("m11_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Ask the class to make three different feeling faces in a row — happy, sad, surprised — as fast as they can. Then tell them today we'll match feeling words to pictures.",
+        ko: "학생들에게 행복, 슬픔, 놀람 표정을 최대한 빠르게 연달아 지어보라고 하세요. 그런 다음 오늘은 감정 단어와 그림을 짝지어볼 거라고 말해주세요.",
+      },
+      prompt: { en: "Happy, sad, surprised — go! 🎭", ko: "행복, 슬픔, 놀람 — 시작! 🎭" },
+    },
+    {
+      type: "concept",
+      title: { en: "Matching Feelings", ko: "감정 짝짓기" },
+      bigIdeas: ["learning"],
+      lines: [
+        {
+          en: "Remember, I can spot a smile in a photo — but I get better at it by seeing lots and lots of examples, just like you're about to do!",
+          ko: "기억하지? 나는 사진 속 웃는 얼굴을 알아챌 수 있어 — 그런데 너희처럼 예시를 아주 많이 보면서 점점 더 잘하게 되는 거야!",
+        },
+        { en: "Let's match some feeling words to faces!", ko: "감정 단어와 표정을 짝지어보자!" },
+      ],
+      teacherNote:
+        "Brief callback to Week 1's AI-limits idea, reframed through Big Idea 3 (Learning): repeated exposure is how both Vora and kids build recognition.",
     },
     {
       type: "activity",
@@ -146,27 +207,27 @@ export const m11_play: Lesson = {
     {
       type: "check",
       prompt: {
-        en: "Ask a partner to act out a feeling — can you guess it and say \"You feel ___\"?",
-        ko: "짝에게 감정을 몸으로 표현해달라고 하세요 — 맞히고 \"You feel ___\"라고 말할 수 있나요?",
+        en: "Ask a partner: \"Which feeling did you match?\" — can they say the English word?",
+        ko: "짝에게 물어보세요: \"어떤 감정을 짝지었나요?\" — 영어 단어로 말할 수 있나요?",
       },
       method: "cold_call",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we acted out feelings, built \"I feel happy\" tile by tile, and matched feeling words to faces.",
-        ko: "오늘은 감정을 몸으로 표현하고, \"I feel happy\"를 한 타일씩 만들고, 감정 단어를 표정과 짝지었어요.",
+        en: "Today we matched feeling words to faces and practiced saying each one out loud.",
+        ko: "오늘은 감정 단어를 표정과 짝짓고, 각 단어를 소리 내어 말하는 연습을 했어요.",
       },
       homework: {
-        en: "Act out a feeling for your family tonight and see if they can guess it in English.",
-        ko: "오늘 밤 가족 앞에서 감정을 몸으로 표현해보고, 가족이 영어로 맞힐 수 있는지 확인해보세요.",
+        en: "Play a quick feelings guessing game with your family tonight.",
+        ko: "오늘 밤 가족과 함께 감정 맞히기 게임을 해보세요.",
       },
     },
   ],
 };
 
-export const m11_spotlight: Lesson = {
-  ...meta("m11_spotlight"),
+export const m11_week4: Lesson = {
+  ...meta("m11_week4"),
   segments: [
     {
       type: "warmup",
@@ -194,7 +255,7 @@ export const m11_spotlight: Lesson = {
         { en: "Ready? Let's build the sentence together, one word at a time.", ko: "준비됐나요? 함께 한 단어씩 문장을 만들어봐요." },
       ],
       teacherNote:
-        "Unlike Month 5's \"This is my sister,\" this sentence frame asks for a genuine, in-the-moment answer — encourage kids to swap in their real feeling, not just \"happy.\" Ties back to this month's AI honesty theme: this is one sentence Robi truly can't answer for them.",
+        "Unlike Month 5's \"This is my sister,\" this sentence frame asks for a genuine, in-the-moment answer — encourage kids to swap in their real feeling, not just \"happy.\" Ties back to this month's AI honesty theme: this is one sentence Vora truly can't answer for them.",
     },
     {
       type: "activity",

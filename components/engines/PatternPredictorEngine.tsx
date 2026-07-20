@@ -1,9 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Robi, type RobiMood } from "@/components/mascot/Robi";
+import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
+import { PatternGridIcon } from "@/components/icons";
 import type { PatternPredictorConfig } from "@/lib/curriculum";
 import type { KoreanSupportLevel } from "@/lib/i18n";
 
@@ -43,12 +44,23 @@ export function PatternPredictorEngine({
   const rounds = useMemo(() => buildRounds(config), [config]);
   const [roundIndex, setRoundIndex] = useState(0);
   const [answered, setAnswered] = useState<{ good: boolean } | null>(null);
+  const [outcomes, setOutcomes] = useState<boolean[]>([]);
+  const correctCount = outcomes.filter(Boolean).length;
 
   if (roundIndex >= rounds.length) {
     return (
       <div className="flex flex-col items-center gap-3 text-center">
-        <Robi size={100} mood="happy" bob />
+        <Vora size={100} mood="happy" bob />
         <p className="font-display text-lg font-bold text-indigo-dark">You found every pattern!</p>
+        <div className="flex flex-col items-center gap-1 rounded-2xl bg-indigo/10 px-4 py-3">
+          <p className="flex items-center gap-1.5 text-sm font-bold text-ink">
+            <PatternGridIcon size={16} className="text-indigo" /> Why this is AI reasoning
+          </p>
+          <p className="max-w-xs text-xs text-ink/70">
+            You found the rule in {correctCount}/{outcomes.length} patterns by looking at examples — that&apos;s
+            exactly how Vora predicts things too: no magic, just spotting what repeats.
+          </p>
+        </div>
       </div>
     );
   }
@@ -63,6 +75,7 @@ export function PatternPredictorEngine({
     if (correct) playCorrect();
     else playWrong();
     setAnswered({ good: correct });
+    setOutcomes((prev) => [...prev, correct]);
   }
 
   function next() {
@@ -75,7 +88,7 @@ export function PatternPredictorEngine({
     }
   }
 
-  const robiMood: RobiMood = answered ? (answered.good ? "happy" : "sad") : "thinking";
+  const voraMood: VoraMood = answered ? (answered.good ? "happy" : "sad") : "thinking";
 
   return (
     <div className="flex flex-col gap-4">
@@ -87,7 +100,7 @@ export function PatternPredictorEngine({
       </div>
 
       <div className="flex flex-col items-center gap-3 rounded-3xl bg-white/80 py-5 shadow-sm">
-        <Robi size={52} mood={robiMood} />
+        <Vora size={52} mood={voraMood} />
         <div className="flex items-center gap-2 text-4xl">
           {data.sequence.map((item, i) => (
             <span key={i}>{item}</span>

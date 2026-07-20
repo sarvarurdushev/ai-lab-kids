@@ -38,7 +38,7 @@ export const w7d1_what_can_robots_do: Lesson = {
         { en: "Real robots can clean floors, and real robots can fly!", ko: "진짜 로봇은 바닥을 청소할 수 있고, 하늘을 날 수도 있어!" },
         { en: "\"Can\" tells us what something is able to do.", ko: "\"Can\"은 무언가 할 수 있는 일을 말해줘." },
       ],
-      teacherNote: "First real-world grounding of \"robot\" beyond Robi the character — robot vacuums and delivery drones are good concrete examples if kids ask for more.",
+      teacherNote: "First real-world grounding of \"robot\" beyond Vora the character — robot vacuums and delivery drones are good concrete examples if kids ask for more.",
     },
     {
       type: "check",
@@ -117,20 +117,20 @@ export const w7d2_robots_at_home_and_school: Lesson = {
   ],
 };
 
-export const w7d3_robi_makes_a_mistake: Lesson = {
-  ...meta("w7d3_robi_makes_a_mistake"),
+export const w7d3_vora_makes_a_mistake: Lesson = {
+  ...meta("w7d3_vora_makes_a_mistake"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Ask: \"Can Robi see a picture? Can Robi feel hungry?\" Let kids guess before the activity.",
-        ko: "\"로비는 그림을 볼 수 있을까요? 배고픔을 느낄 수 있을까요?\"라고 물어보고 활동 전에 추측하게 하세요.",
+        en: "Ask: \"Can Vora see a picture? Can Vora feel hungry?\" Let kids guess before the activity.",
+        ko: "\"보라는 그림을 볼 수 있을까요? 배고픔을 느낄 수 있을까요?\"라고 물어보고 활동 전에 추측하게 하세요.",
       },
-      prompt: { en: "Can Robi do it?", ko: "로비가 할 수 있을까요?" },
+      prompt: { en: "Can Vora do it?", ko: "보라가 할 수 있을까요?" },
     },
     {
       type: "concept",
-      title: { en: "Robi Can, Robi Can't", ko: "로비가 할 수 있는 일, 할 수 없는 일" },
+      title: { en: "Vora Can, Vora Can't", ko: "보라가 할 수 있는 일, 할 수 없는 일" },
       bigIdeas: ["societal_impact", "learning"],
       lines: [
         { en: "I can talk, learn, and sort pictures — you've seen me do it all unit!", ko: "나는 말하고, 배우고, 그림을 분류할 수 있어 — 이번 학기 내내 봤지!" },
@@ -142,32 +142,32 @@ export const w7d3_robi_makes_a_mistake: Lesson = {
     {
       type: "activity",
       instructions: {
-        en: "Build the sentence one tile at a time, left to right. Then invite a few kids to say their own \"Robi can / can't ___\" sentence out loud.",
-        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 문장을 만들어요. 그런 다음 몇 명의 학생에게 자신만의 \"Robi can / can't ___\" 문장을 소리 내어 말해보게 하세요.",
+        en: "Build the sentence one tile at a time, left to right. Then invite a few kids to say their own \"Vora can / can't ___\" sentence out loud.",
+        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 문장을 만들어요. 그런 다음 몇 명의 학생에게 자신만의 \"Vora can / can't ___\" 문장을 소리 내어 말해보게 하세요.",
       },
       config: {
         engine: "sentence_builder",
-        title: { en: "Robi can fly.", ko: "로비는 날 수 있어요." },
+        title: { en: "Vora can fly.", ko: "보라는 날 수 있어요." },
         words: [
-          { text: "Robi", role: "subject", ko: "로비는" },
+          { text: "Vora", role: "subject", ko: "보라는" },
           { text: "can", role: "other", ko: "~할 수 있다" },
           { text: "fly", role: "verb", ko: "날다" },
         ],
-        translation: { en: "Robi can fly.", ko: "로비는 날 수 있어요." },
+        translation: { en: "Vora can fly.", ko: "보라는 날 수 있어요." },
       },
     },
     {
       type: "check",
-      prompt: { en: "\"Robi can ___. Robi can't ___.\" — each kid completes both blanks out loud.", ko: "\"Robi can ___. Robi can't ___.\" — 각자 두 빈칸을 채워 소리 내어 말해보세요." },
+      prompt: { en: "\"Vora can ___. Vora can't ___.\" — each kid completes both blanks out loud.", ko: "\"Vora can ___. Vora can't ___.\" — 각자 두 빈칸을 채워 소리 내어 말해보세요." },
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
       summary: {
-        en: "Today we built can/can't sentences about Robi — putting a grammar structure around the idea that AI has real limits.",
-        ko: "오늘은 로비에 대해 can/can't 문장을 만들었어요 — AI에게 진짜 한계가 있다는 생각에 문법 구조를 붙여봤어요.",
+        en: "Today we built can/can't sentences about Vora — putting a grammar structure around the idea that AI has real limits.",
+        ko: "오늘은 보라에 대해 can/can't 문장을 만들었어요 — AI에게 진짜 한계가 있다는 생각에 문법 구조를 붙여봤어요.",
       },
-      homework: { en: "Tell a family member one thing Robi can do and one thing Robi can't do.", ko: "가족에게 로비가 할 수 있는 일과 할 수 없는 일을 한 가지씩 말해보세요." },
+      homework: { en: "Tell a family member one thing Vora can do and one thing Vora can't do.", ko: "가족에게 보라가 할 수 있는 일과 할 수 없는 일을 한 가지씩 말해보세요." },
     },
   ],
 };

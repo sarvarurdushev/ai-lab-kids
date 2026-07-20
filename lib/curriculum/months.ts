@@ -5,7 +5,7 @@ import type { MonthlyUnit } from "./types";
  * topic (adapted from a reference topic-based ELT curriculum for young
  * Korean learners) with one AI4K12 big idea, so AI literacy and English
  * are taught through the same monthly theme instead of as separate tracks.
- * Runs alongside — not instead of — the 8-week "Robi's Classroom"
+ * Runs alongside — not instead of — the 8-week "Vora's Classroom"
  * foundations unit (see lib/curriculum/units.ts), which a class typically
  * completes first. See docs/MONTHLY_CURRICULUM.md for the full rationale
  * and docs/SCOPE_AND_SEQUENCE.md for the lesson-level map.
@@ -127,8 +127,8 @@ export const MONTHS: MonthlyUnit[] = [
     bigIdeaFocus: "learning",
     englishFocus: { en: "\"Trick or treat!\" / \"I'm a ___.\"", ko: "\"Trick or treat!\" / \"I'm a ___.\" 표현" },
     summary: {
-      en: "Costumes and spooky fun — and one more round of sorting practice, spooky vs. not-spooky, the same \"learn from examples\" idea Robi's used all year.",
-      ko: "코스튬과 오싹한 재미 — 그리고 무서운 것과 무섭지 않은 것을 분류하는 연습, 로비가 1년 내내 사용해 온 '예시로 배우기'와 같은 개념.",
+      en: "Costumes and spooky fun — and one more round of sorting practice, spooky vs. not-spooky, the same \"learn from examples\" idea Vora's used all year.",
+      ko: "코스튬과 오싹한 재미 — 그리고 무서운 것과 무섭지 않은 것을 분류하는 연습, 보라가 1년 내내 사용해 온 '예시로 배우기'와 같은 개념.",
     },
   },
   {

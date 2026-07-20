@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
-import { Robi, type RobiMood } from "@/components/mascot/Robi";
+import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { playCorrect, playWrong, playGameOver, playPop } from "@/lib/sound";
@@ -29,7 +29,7 @@ type Mode = "teach" | "guess";
 interface Round {
   item: SortItem;
   mode: Mode;
-  robiGuess?: "a" | "b";
+  voraGuess?: "a" | "b";
 }
 
 function pickPair(track: AgeTrack): SortCategoryPair {
@@ -46,8 +46,8 @@ function buildRounds(pair: SortCategoryPair, total: number, teachCount: number):
       rounds.push({ item, mode: "teach" });
     } else {
       const correct = Math.random() < ROBI_CORRECT_CHANCE;
-      const robiGuess = correct ? item.bucket : item.bucket === "a" ? "b" : "a";
-      rounds.push({ item, mode: "guess", robiGuess });
+      const voraGuess = correct ? item.bucket : item.bucket === "a" ? "b" : "a";
+      rounds.push({ item, mode: "guess", voraGuess });
     }
   }
   return rounds;
@@ -125,8 +125,8 @@ export function TrainTheRobot({ track }: { track: AgeTrack }) {
     if (phase !== "playing" || !pair || lockRef.current) return;
     lockRef.current = true;
     const round = rounds[roundIndex];
-    const robiWasRight = round.robiGuess === round.item.bucket;
-    const kidCorrect = (verdict === "right") === robiWasRight;
+    const voraWasRight = round.voraGuess === round.item.bucket;
+    const kidCorrect = (verdict === "right") === voraWasRight;
     const nextCorrectCount = correctCount + (kidCorrect ? 1 : 0);
     setCorrectCount(nextCorrectCount);
     setStreak(kidCorrect ? streak + 1 : 0);
@@ -135,9 +135,9 @@ export function TrainTheRobot({ track }: { track: AgeTrack }) {
     else playWrong();
     setFeedback({
       good: kidCorrect,
-      text: robiWasRight
-        ? `Robi was right! A ${round.item.word} is ${withArticle(bucketLabel(pair, round.item.bucket))}.`
-        : `Good catch! A ${round.item.word} is ${withArticle(bucketLabel(pair, round.item.bucket))}, not ${withArticle(bucketLabel(pair, round.robiGuess!))}. Robi needs more practice.`,
+      text: voraWasRight
+        ? `Vora was right! A ${round.item.word} is ${withArticle(bucketLabel(pair, round.item.bucket))}.`
+        : `Good catch! A ${round.item.word} is ${withArticle(bucketLabel(pair, round.item.bucket))}, not ${withArticle(bucketLabel(pair, round.voraGuess!))}. Vora needs more practice.`,
     });
     advance(nextCorrectCount);
   }
@@ -148,16 +148,16 @@ export function TrainTheRobot({ track }: { track: AgeTrack }) {
     setPhase("gameover");
   }
 
-  const robiMood: RobiMood = feedback ? (feedback.good ? "happy" : "sad") : "neutral";
+  const voraMood: VoraMood = feedback ? (feedback.good ? "happy" : "sad") : "neutral";
 
   if (phase === "ready") {
     return (
       <div className="flex flex-col items-center gap-5 text-center">
-        <Robi size={130} mood="happy" bob />
+        <Vora size={130} mood="happy" bob />
         <div>
           <h1 className="font-display text-2xl font-bold text-indigo-dark">Train the Robot</h1>
           <p className="mt-1 text-sm text-ink/60">
-            Sort pictures into two groups to teach Robi, then check Robi&apos;s own guesses!
+            Sort pictures into two groups to teach Vora, then check Vora&apos;s own guesses!
           </p>
         </div>
         <Button onClick={startGame}>Start Game</Button>
@@ -171,7 +171,7 @@ export function TrainTheRobot({ track }: { track: AgeTrack }) {
   if (phase === "gameover") {
     return (
       <div className="flex flex-col items-center gap-4 text-center">
-        <Robi size={120} mood={correctCount >= TOTAL_ROUNDS * 0.6 ? "happy" : "neutral"} />
+        <Vora size={120} mood={correctCount >= TOTAL_ROUNDS * 0.6 ? "happy" : "neutral"} />
         <h1 className="font-display text-2xl font-bold text-indigo-dark">All done!</h1>
         <p className="text-ink/70">
           You got <span className="font-bold text-ink">{correctCount}</span> of{" "}
@@ -216,20 +216,20 @@ export function TrainTheRobot({ track }: { track: AgeTrack }) {
       </div>
 
       <p className="text-center text-xs font-bold tracking-wide text-indigo uppercase">
-        {round.mode === "teach" ? "Teach Robi" : "Check Robi's guess"}
+        {round.mode === "teach" ? "Teach Vora" : "Check Vora's guess"}
       </p>
 
       <div className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-5 shadow-sm">
-        <Robi size={64} mood={robiMood} />
+        <Vora size={64} mood={voraMood} />
         <div className="flex items-center gap-2">
           <div className="text-6xl">{round.item.emoji}</div>
           <SpeakButton text={round.item.word} />
         </div>
         <p className="text-lg font-bold capitalize text-ink">{round.item.word}</p>
 
-        {round.mode === "guess" && round.robiGuess && (
+        {round.mode === "guess" && round.voraGuess && (
           <div className="mt-1 rounded-2xl bg-indigo/10 px-4 py-2 text-center text-sm font-semibold text-indigo-dark">
-            Robi thinks: {round.robiGuess === "a" ? pair.emojiA : pair.emojiB} {bucketLabel(pair, round.robiGuess)}
+            Vora thinks: {round.voraGuess === "a" ? pair.emojiA : pair.emojiB} {bucketLabel(pair, round.voraGuess)}
           </div>
         )}
       </div>
@@ -264,7 +264,7 @@ export function TrainTheRobot({ track }: { track: AgeTrack }) {
             className="flex flex-col items-center gap-1 rounded-2xl bg-mint/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
           >
             <span className="text-3xl">✅</span>
-            Robi is right
+            Vora is right
           </button>
           <button
             type="button"
@@ -273,7 +273,7 @@ export function TrainTheRobot({ track }: { track: AgeTrack }) {
             className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-50"
           >
             <span className="text-3xl">❌</span>
-            Robi is wrong
+            Vora is wrong
           </button>
         </div>
       )}

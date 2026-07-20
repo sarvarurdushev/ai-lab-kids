@@ -1,7 +1,7 @@
 import type { LessonMeta } from "./types";
 
 /**
- * The full 24-lesson map for "Robi's Classroom." Every lesson has metadata
+ * The full 24-lesson map for "Vora's Classroom." Every lesson has metadata
  * here regardless of whether it's fully authored yet — see
  * lib/curriculum/lessons/index.ts for which ones have complete,
  * Presentation-Player-ready segment content (AUTHORED_LESSON_KEYS) versus
@@ -9,29 +9,29 @@ import type { LessonMeta } from "./types";
  * renders this same data as a teacher-facing document.
  */
 export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
-  // Week 1 — Meet Robi
+  // Week 1 — Meet Vora
   {
-    key: "w1d1_hello_robi",
-    unitKey: "u1_meet_robi",
+    key: "w1d1_hello_vora",
+    unitKey: "u1_meet_vora",
     week: 1,
     day: 1,
-    title: { en: "Hello, Robi!", ko: "안녕, 로비!" },
+    title: { en: "Hello, Vora!", ko: "안녕, 보라!" },
     bigIdeas: ["natural_interaction"],
     englishFocus: { en: "Hello / Goodbye / What's your name? / My name is ___.", ko: "인사 표현과 이름 묻고 답하기" },
-    koreanL1Note: "First light exposure to /r/-/l/ contrast via \"Robi\" vs \"hello\" — notice only, no drilling yet (that starts Week 2).",
+    koreanL1Note: "First light exposure to /r/-/l/ contrast via \"Vora\" vs \"hello\" — notice only, no drilling yet (that starts Week 2).",
     objectives: [
       { en: "I can say hello and goodbye in English.", ko: "나는 영어로 인사할 수 있어요." },
       { en: "I can tell a friend my name.", ko: "나는 친구에게 내 이름을 말할 수 있어요." },
-      { en: "I can explain that Robi is a friendly AI helper, not a real robot toy.", ko: "나는 로비가 진짜 로봇 장난감이 아니라 다정한 AI 친구라는 것을 설명할 수 있어요." },
+      { en: "I can explain that Vora is a friendly AI helper, not a real robot toy.", ko: "나는 보라가 진짜 로봇 장난감이 아니라 다정한 AI 친구라는 것을 설명할 수 있어요." },
     ],
     standardsNote: "Korean MOE elementary English: greetings & self-introduction (초3-4 인사, 자기소개).",
   },
   {
-    key: "w1d2_robis_classroom",
-    unitKey: "u1_meet_robi",
+    key: "w1d2_voras_classroom",
+    unitKey: "u1_meet_vora",
     week: 1,
     day: 2,
-    title: { en: "Robi's Classroom", ko: "로비의 교실" },
+    title: { en: "Vora's Classroom", ko: "보라의 교실" },
     bigIdeas: ["perception"],
     englishFocus: { en: "Classroom object nouns (book, pencil, chair, desk, bag) + \"What is this? It's a ___.\"", ko: "교실 물건 명사와 \"이것은 무엇인가요?\" 표현" },
     koreanL1Note: "No consonant clusters in this word set yet — desk (/sk/ cluster) previewed only, not drilled.",
@@ -43,7 +43,7 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
   },
   {
     key: "w1d3_what_is_ai",
-    unitKey: "u1_meet_robi",
+    unitKey: "u1_meet_vora",
     week: 1,
     day: 3,
     title: { en: "What Is AI?", ko: "AI란 무엇일까요?" },
@@ -74,17 +74,17 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
     standardsNote: "Korean MOE elementary English: animals & plural nouns.",
   },
   {
-    key: "w2d2_how_does_robi_see",
+    key: "w2d2_how_does_vora_see",
     unitKey: "u2_animal_friends",
     week: 2,
     day: 2,
-    title: { en: "How Does Robi See?", ko: "로비는 어떻게 볼까요?" },
+    title: { en: "How Does Vora See?", ko: "보라는 어떻게 볼까요?" },
     bigIdeas: ["perception", "learning"],
     englishFocus: { en: "Category nouns: animal vs. vehicle.", ko: "분류 명사: 동물 대 탈것" },
     koreanL1Note: "Reinforces plural -s from Day 1 inside a new sentence frame (\"These are animals.\").",
     objectives: [
       { en: "I can sort pictures into 'animal' and 'vehicle.'", ko: "나는 그림을 '동물'과 '탈것'으로 분류할 수 있어요." },
-      { en: "I can explain that Robi learns from many examples, and sometimes guesses wrong.", ko: "나는 로비가 여러 예시를 보고 배우며, 가끔 틀리게 추측한다는 것을 설명할 수 있어요." },
+      { en: "I can explain that Vora learns from many examples, and sometimes guesses wrong.", ko: "나는 보라가 여러 예시를 보고 배우며, 가끔 틀리게 추측한다는 것을 설명할 수 있어요." },
     ],
     standardsNote: "AI4K12 Big Idea 1 (Perception) + Big Idea 3 (Learning), the AI-for-Oceans-style train/guess loop.",
   },
@@ -117,11 +117,11 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
     standardsNote: "Korean MOE elementary English: colors & basic adjectives.",
   },
   {
-    key: "w3d2_robi_finds_pattern",
+    key: "w3d2_vora_finds_pattern",
     unitKey: "u3_colors_patterns",
     week: 3,
     day: 2,
-    title: { en: "Robi Finds the Pattern", ko: "로비가 패턴을 찾아요" },
+    title: { en: "Vora Finds the Pattern", ko: "보라가 패턴을 찾아요" },
     bigIdeas: ["reasoning", "learning"],
     englishFocus: { en: "Shape nouns (circle, square, triangle, star) + \"same / different.\"", ko: "모양 명사와 \"같다 / 다르다\" 표현" },
     koreanL1Note: "Reinforces color adjectives inside a new frame (\"the same color,\" \"a different shape\").",
@@ -158,11 +158,11 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
     standardsNote: "Korean MOE elementary English: family & possessives.",
   },
   {
-    key: "w4d2_count_with_robi",
+    key: "w4d2_count_with_vora",
     unitKey: "u4_my_family",
     week: 4,
     day: 2,
-    title: { en: "Count with Robi", ko: "로비와 함께 세어보아요" },
+    title: { en: "Count with Vora", ko: "보라와 함께 세어보아요" },
     bigIdeas: ["perception", "reasoning"],
     englishFocus: { en: "Numbers 1-10 + \"I have ___.\" (subject-verb-object word order).", ko: "숫자 1-10과 \"I have ___.\" 문장 어순" },
     koreanL1Note: "Korean is SOV (\"나는 개를 두 마리 가지고 있어요\" = I dogs two have); English SVO is the single biggest word-order shift these kids face — build the sentence tile-by-tile so order becomes visible, not abstract.",
@@ -170,7 +170,7 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
       { en: "I can count to ten in English.", ko: "나는 영어로 10까지 셀 수 있어요." },
       { en: "I can build the sentence \"I have two dogs\" in the right word order.", ko: "나는 \"I have two dogs\"를 올바른 어순으로 만들 수 있어요." },
     ],
-    standardsNote: "Numbers (Korean MOE) + AI4K12 Big Idea 1 (Perception) — counting objects in an image is a classic computer-vision task, framed concretely as \"how many does Robi count?\"",
+    standardsNote: "Numbers (Korean MOE) + AI4K12 Big Idea 1 (Perception) — counting objects in an image is a classic computer-vision task, framed concretely as \"how many does Vora count?\"",
   },
   {
     key: "w4d3_think_or_sink",
@@ -207,7 +207,7 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
     bigIdeas: ["perception", "learning"],
     englishFocus: { en: "Category nouns: fruit vs. vegetable.", ko: "분류 명사: 과일 대 채소" },
     koreanL1Note: "Second full train/guess classification loop — checks whether the Week 2 concept transferred to a brand-new category.",
-    objectives: [{ en: "I can sort foods into 'fruit' and 'vegetable,' and check Robi's guesses.", ko: "나는 음식을 '과일'과 '채소'로 분류하고 로비의 추측을 확인할 수 있어요." }],
+    objectives: [{ en: "I can sort foods into 'fruit' and 'vegetable,' and check Vora's guesses.", ko: "나는 음식을 '과일'과 '채소'로 분류하고 보라의 추측을 확인할 수 있어요." }],
     standardsNote: "AI4K12 Big Idea 3 (Learning), second exposure for transfer/retention.",
   },
   {
@@ -237,11 +237,11 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
     standardsNote: "Korean MOE elementary English: daily routines.",
   },
   {
-    key: "w6d2_give_robi_the_steps",
+    key: "w6d2_give_vora_the_steps",
     unitKey: "u6_my_day",
     week: 6,
     day: 2,
-    title: { en: "Give Robi the Steps", ko: "로비에게 순서를 알려줘요" },
+    title: { en: "Give Vora the Steps", ko: "보라에게 순서를 알려줘요" },
     bigIdeas: ["reasoning"],
     englishFocus: { en: "Sequencing words: first, next, then, last.", ko: "순서 표현: first, next, then, last" },
     koreanL1Note: "Sequencing connectives are a genuine gap, not an L1-interference error — Korean has equivalents (먼저/그다음/마지막) but young learners rarely produce them unprompted in either language yet.",
@@ -287,15 +287,15 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
     standardsNote: "AI4K12 Big Idea 5 (Societal Impact) — where AI actually shows up in daily life.",
   },
   {
-    key: "w7d3_robi_makes_a_mistake",
+    key: "w7d3_vora_makes_a_mistake",
     unitKey: "u7_robot_helpers",
     week: 7,
     day: 3,
-    title: { en: "Robi Can, Robi Can't", ko: "로비가 할 수 있는 일, 할 수 없는 일" },
+    title: { en: "Vora Can, Vora Can't", ko: "보라가 할 수 있는 일, 할 수 없는 일" },
     bigIdeas: ["societal_impact", "learning"],
     englishFocus: { en: "\"can\" / \"can't\" sentence building.", ko: "\"can\" / \"can't\" 문장 만들기" },
     koreanL1Note: "Contrastive can/can't practice — pairs the grammar directly with the AI-limitations concept so the sentence isn't taught in a vacuum.",
-    objectives: [{ en: "I can build a sentence about something Robi can and can't do.", ko: "나는 로비가 할 수 있는 일과 할 수 없는 일에 대한 문장을 만들 수 있어요." }],
+    objectives: [{ en: "I can build a sentence about something Vora can and can't do.", ko: "나는 보라가 할 수 있는 일과 할 수 없는 일에 대한 문장을 만들 수 있어요." }],
     standardsNote: "Closes the loop on AI4K12 Big Idea 5 with a grammar-anchored production task.",
   },
 
@@ -321,18 +321,18 @@ export const SCOPE_AND_SEQUENCE: LessonMeta[] = [
     bigIdeas: ["perception", "learning", "reasoning"],
     englishFocus: { en: "Cumulative review across all eight weeks of vocabulary and sentence patterns.", ko: "8주간 배운 어휘와 문장 패턴 종합 복습" },
     koreanL1Note: "One round each of every activity engine, using review vocabulary only — this lesson is the closest thing to a formative assessment in the unit.",
-    objectives: [{ en: "I can play all four Robi games using words I've learned this unit.", ko: "나는 이번 학기에 배운 단어로 로비의 네 가지 게임을 모두 할 수 있어요." }],
+    objectives: [{ en: "I can play all four Vora games using words I've learned this unit.", ko: "나는 이번 학기에 배운 단어로 보라의 네 가지 게임을 모두 할 수 있어요." }],
     standardsNote: "Functions as the unit's cumulative formative check — see the participation-marks reporting model in docs/AI_CURRICULUM.md.",
   },
   {
-    key: "w8d3_teach_robi_day",
+    key: "w8d3_teach_vora_day",
     unitKey: "u8_show_what_you_know",
     week: 8,
     day: 3,
-    title: { en: "Teach Robi Day", ko: "로비를 가르치는 날" },
+    title: { en: "Teach Vora Day", ko: "보라를 가르치는 날" },
     bigIdeas: ["learning", "societal_impact"],
     englishFocus: { en: "Free production: describing a category the class invents, in English.", ko: "학급이 만든 분류를 영어로 설명하는 자유 발화 활동" },
-    koreanL1Note: "Capstone — teacher-facilitated, small groups pick a category (e.g., \"toys vs. not toys\") and describe it to the class before Robi \"learns\" it live. Ends the unit on production and confidence, not testing.",
+    koreanL1Note: "Capstone — teacher-facilitated, small groups pick a category (e.g., \"toys vs. not toys\") and describe it to the class before Vora \"learns\" it live. Ends the unit on production and confidence, not testing.",
     objectives: [
       { en: "I can describe a category I invented, in English, to my class.", ko: "나는 내가 만든 분류를 영어로 반 친구들에게 설명할 수 있어요." },
       { en: "I can explain one thing I learned about how AI works.", ko: "나는 AI가 작동하는 방식에 대해 배운 것을 한 가지 설명할 수 있어요." },

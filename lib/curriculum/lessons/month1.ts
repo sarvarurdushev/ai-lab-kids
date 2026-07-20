@@ -7,8 +7,8 @@ function meta(key: string) {
   return m;
 }
 
-export const m1_class: Lesson = {
-  ...meta("m1_class"),
+export const m1_week1: Lesson = {
+  ...meta("m1_week1"),
   segments: [
     {
       type: "warmup",
@@ -32,7 +32,7 @@ export const m1_class: Lesson = {
     },
     {
       type: "concept",
-      title: { en: "Robi Looks at the Stars", ko: "로비가 별을 봐요" },
+      title: { en: "Vora Looks at the Stars", ko: "보라가 별을 봐요" },
       bigIdeas: ["reasoning", "learning"],
       lines: [
         { en: "Look up — the night sky is full of stars!", ko: "위를 봐 — 밤하늘에 별이 가득해!" },
@@ -44,7 +44,7 @@ export const m1_class: Lesson = {
         { en: "Let's find a pattern together!", ko: "우리 함께 패턴을 찾아보자!" },
       ],
       teacherNote:
-        "This sets up the pattern_predictor activity below — keep \"pattern\" concrete: it just means \"what repeats.\" Big Idea: Representation & Reasoning (finding and extending a pattern), with a light Learning thread since Robi still needs lots of examples first, echoing Week 1 Day 3/Week 2 Day 2.",
+        "This sets up the pattern_predictor activity below — keep \"pattern\" concrete: it just means \"what repeats.\" Big Idea: Representation & Reasoning (finding and extending a pattern), with a light Learning thread since Vora still needs lots of examples first, echoing Week 1 Day 3/Week 2 Day 2.",
     },
     {
       type: "activity",
@@ -78,8 +78,8 @@ export const m1_class: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we learned six space words and saw how Robi finds a pattern in star pictures, the same way it sorts other pictures.",
-        ko: "오늘은 우주 단어 여섯 개를 배우고, 로비가 다른 그림을 분류할 때와 같은 방법으로 별 사진에서 패턴을 찾는 모습을 봤어요.",
+        en: "Today we learned six space words and saw how Vora finds a pattern in star pictures, the same way it sorts other pictures.",
+        ko: "오늘은 우주 단어 여섯 개를 배우고, 보라가 다른 그림을 분류할 때와 같은 방법으로 별 사진에서 패턴을 찾는 모습을 봤어요.",
       },
       homework: {
         en: "Look up at the sky tonight (or a picture of it) and say \"It's a star!\" or \"It's the moon!\" in English.",
@@ -89,16 +89,27 @@ export const m1_class: Lesson = {
   ],
 };
 
-export const m1_play: Lesson = {
-  ...meta("m1_play"),
+export const m1_week2: Lesson = {
+  ...meta("m1_week2"),
   segments: [
     {
       type: "warmup",
       teacherScript: {
-        en: "Hold up two hands like a scale and ask: \"Is a rocket a space thing, or an earth thing?\" Let kids answer fast — this is just a warm-up guess before the real game.",
-        ko: "양손을 저울처럼 들어 보이며 물어보세요: \"로켓은 우주 물건일까요, 지구 물건일까요?\" 빠르게 답하게 해보세요 — 본 게임 전 준비 단계예요.",
+        en: "Hold up two hands like a scale and ask: \"Is a rocket a space thing, or an earth thing?\" Let kids answer fast — this is just a warm-up guess before today's game.",
+        ko: "양손을 저울처럼 들어 보이며 물어보세요: \"로켓은 우주 물건일까요, 지구 물건일까요?\" 빠르게 답하게 해보세요 — 오늘 게임 전 준비 단계예요.",
       },
       prompt: { en: "Space thing, or earth thing? 🚀🌍", ko: "우주 물건일까요, 지구 물건일까요? 🚀🌍" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Looks Again", ko: "보라가 다시 봐요" },
+      bigIdeas: ["perception"],
+      lines: [
+        { en: "I look at a picture, just like you do.", ko: "나도 너희처럼 그림을 봐." },
+        { en: "Then I guess — is it a space thing, or an earth thing?", ko: "그다음 추측해 — 우주 물건일까, 지구 물건일까?" },
+      ],
+      teacherNote:
+        "Quick reminder before the sort — noticing a picture and guessing its category is Perception, the same skill behind Week 1's pattern-finding. Keep this to a few seconds; the real teaching happens in the game.",
     },
     {
       type: "activity",
@@ -123,6 +134,46 @@ export const m1_play: Lesson = {
           { word: { en: "book", ko: "책" }, emoji: "📖", bucket: "b" },
         ],
       },
+    },
+    {
+      type: "check",
+      prompt: {
+        en: "Point to one picture from today's sort and ask a student: \"Space thing, or earth thing?\"",
+        ko: "오늘 분류한 그림 중 하나를 가리키며 한 학생에게 물어보세요: \"우주 물건일까요, 지구 물건일까요?\"",
+      },
+      method: "cold_call",
+    },
+    {
+      type: "wrapup",
+      summary: {
+        en: "Today we sorted space things from earth things and watched Vora guess right along with us.",
+        ko: "오늘은 우주 물건과 지구 물건을 분류하고, 보라도 우리와 함께 추측하는 모습을 봤어요.",
+      },
+    },
+  ],
+};
+
+export const m1_week3: Lesson = {
+  ...meta("m1_week3"),
+  segments: [
+    {
+      type: "warmup",
+      teacherScript: {
+        en: "Hold up two fingers and say: \"Today we flip cards and find matches — like a memory game!\" Mime flipping a card before starting.",
+        ko: "손가락 두 개를 들어 보이며 말하세요: \"오늘은 카드를 뒤집어서 짝을 찾을 거예요 — 기억력 게임처럼요!\" 시작하기 전에 카드를 뒤집는 흉내를 내보세요.",
+      },
+      prompt: { en: "Ready to find a match? 🃏", ko: "짝을 찾을 준비 됐나요? 🃏" },
+    },
+    {
+      type: "concept",
+      title: { en: "Vora Remembers", ko: "보라가 기억해요" },
+      bigIdeas: ["learning"],
+      lines: [
+        { en: "The more I see a word and picture together, the better I remember them.", ko: "단어와 그림을 함께 볼수록, 나는 더 잘 기억해." },
+        { en: "Let's practice remembering space words together!", ko: "우리 함께 우주 단어를 기억하는 연습을 해보자!" },
+      ],
+      teacherNote:
+        "Brief reminder before the game — repeated exposure is how both Vora and kids get better at recognizing something, the Learning big idea from Week 1. Keep it to a couple of lines; the matching game is the real practice.",
     },
     {
       type: "activity",
@@ -151,15 +202,15 @@ export const m1_play: Lesson = {
     {
       type: "wrapup",
       summary: {
-        en: "Today we played two games with space words — sorting space things from earth things, and matching word-picture pairs.",
-        ko: "오늘은 우주 단어로 게임 두 가지를 했어요 — 우주 물건과 지구 물건을 분류하고, 단어-그림 짝을 맞췄어요.",
+        en: "Today we played a matching game with space words and practiced remembering each word-picture pair.",
+        ko: "오늘은 우주 단어로 짝 맞추기 게임을 하며 단어-그림 짝을 기억하는 연습을 했어요.",
       },
     },
   ],
 };
 
-export const m1_spotlight: Lesson = {
-  ...meta("m1_spotlight"),
+export const m1_week4: Lesson = {
+  ...meta("m1_week4"),
   segments: [
     {
       type: "warmup",
