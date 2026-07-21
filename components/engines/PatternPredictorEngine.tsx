@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/Button";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { PatternGridIcon, CheckCircleIcon, XCircleIcon } from "@/components/icons";
 import type { PatternPredictorConfig } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 
 // "What comes next?" pattern game — concretely demonstrates AI4K12 Big Idea
 // 2 (Representation & Reasoning): finding the rule in a short sequence and
@@ -35,11 +34,9 @@ function buildRounds(config: PatternPredictorConfig): Round[] {
 
 export function PatternPredictorEngine({
   config,
-  level,
   onFinished,
 }: {
   config: PatternPredictorConfig;
-  level: KoreanSupportLevel;
   onFinished?: () => void;
 }) {
   const rounds = useMemo(() => buildRounds(config), [config]);
@@ -102,7 +99,7 @@ export function PatternPredictorEngine({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between text-sm font-bold text-ink/50">
-        <span>{config.title.en}</span>
+        <span>{config.title}</span>
         <span>
           {roundIndex + 1}/{rounds.length}
         </span>
@@ -127,7 +124,6 @@ export function PatternPredictorEngine({
             </span>
           </div>
           <p className="text-base font-bold text-ink/70">What comes next?</p>
-          {level !== "minimal" && <p className="text-xs text-ink/40">다음에 무엇이 올까요?</p>}
         </motion.div>
       </AnimatePresence>
 

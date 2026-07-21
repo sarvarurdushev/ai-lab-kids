@@ -10,8 +10,6 @@ import {
   bigIdeaCoverage,
   BIG_IDEA_PRESENTATION,
   STANDARDS_ALIGNMENT,
-  L1_SOUND_TARGETS,
-  L1_GRAMMAR_NOTES,
   CHECKPOINT_MONTHS,
   PROGRAM_ARC,
   weekRoleLabel,
@@ -27,7 +25,7 @@ import { RobotHeadIcon, CheckCircleIcon, XCircleIcon, GlobeIcon, SparkleIcon } f
 export const metadata: Metadata = {
   title: "Program Guide — AI Lab for Kids",
   description:
-    "The full year-long AI-literacy + English curriculum for Korean elementary classrooms: objectives, standards, and Korean-L1 targeting for every lesson.",
+    "The full year-long AI-literacy + English curriculum for Korean elementary classrooms: objectives, standards, and activities for every lesson.",
 };
 
 function StatTile({ value, label }: { value: string; label: string }) {
@@ -85,7 +83,7 @@ export default function CurriculumPage() {
             standards-mapped from the first lesson to the last.
           </p>
           <div className="mx-auto grid w-full max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4">
-            <StatTile value={String(stats.lessons)} label="fully-authored bilingual lessons" />
+            <StatTile value={String(stats.lessons)} label="fully-authored lessons" />
             <StatTile value={String(stats.activities)} label={`activities · ${stats.engineCount} engine types`} />
             <StatTile value={String(stats.aiLabActivities)} label="AI Lab activities this year" />
             <StatTile value="5/5" label="AI4K12 Big Ideas covered" />
@@ -109,7 +107,7 @@ export default function CurriculumPage() {
               <p className="mt-1 text-sm text-ink/60">Month 12 reviews every game and every AI idea from the whole year, alongside the year&apos;s final listening checkpoint.</p>
             </div>
           </div>
-          <p className="rounded-2xl bg-indigo/10 px-4 py-3 text-sm font-semibold text-indigo-dark">{PROGRAM_ARC.en}</p>
+          <p className="rounded-2xl bg-indigo/10 px-4 py-3 text-sm font-semibold text-indigo-dark">{PROGRAM_ARC}</p>
 
           <div className="mt-2 flex flex-col gap-2">
             <p className="text-sm font-bold text-ink">Every lesson follows the same anatomy</p>
@@ -128,13 +126,13 @@ export default function CurriculumPage() {
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-4">
               {(["week1", "week2", "week3", "week4"] as const).map((slot) => (
                 <div key={slot} className="rounded-2xl bg-white/80 p-3 text-center shadow-sm">
-                  <p className="text-sm font-bold text-indigo-dark">{weekRoleLabel(7, slot).en}</p>
+                  <p className="text-sm font-bold text-indigo-dark">{weekRoleLabel(7, slot)}</p>
                 </div>
               ))}
             </div>
             <p className="text-xs text-ink/50">
-              Week 4 doubles as a quarterly listening checkpoint on Months 3, 6, 9, and 12 — see &quot;Korean-learner
-              targeting&quot; below.
+              Week 4 doubles as a quarterly listening checkpoint on Months 3, 6, 9, and 12, reviewing a pronunciation
+              contrast this age group commonly finds tricky.
             </p>
           </div>
 
@@ -176,15 +174,13 @@ export default function CurriculumPage() {
                           Unit {month.monthIndex}
                         </a>
                       </td>
-                      <td className="px-3 py-2">
-                        {month.title.en} <span className="text-ink/40">· {month.title.ko}</span>
-                      </td>
+                      <td className="px-3 py-2">{month.title}</td>
                       <td className="px-3 py-2">
                         <span className={`flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${p.badgeClass}`}>
-                          <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label.en}
+                          <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label}
                         </span>
                       </td>
-                      <td className="px-3 py-2 text-ink/60">{month.englishFocus.en}</td>
+                      <td className="px-3 py-2 text-ink/60">{month.englishFocus}</td>
                       <td className="px-3 py-2 text-ink/60">{isCheckpoint ? "✓ Listening checkpoint" : ""}</td>
                     </tr>
                   );
@@ -198,8 +194,8 @@ export default function CurriculumPage() {
         <section className="flex flex-col gap-4">
           <SectionHeading eyebrow="The core" title="Unit-by-unit detail" />
           <p className="text-sm text-ink/60">
-            Every lesson below is real, authored content — objectives, standards, and Korean-L1 teaching notes come
-            straight from the curriculum source, not marketing copy.
+            Every lesson below is real, authored content — objectives and standards come straight from the
+            curriculum source, not marketing copy.
           </p>
           <div className="flex flex-col gap-3">
             {TERMS.map((term) => (
@@ -220,12 +216,12 @@ export default function CurriculumPage() {
                       <summary className="flex cursor-pointer items-center justify-between gap-2 px-4 py-3">
                         <div>
                           <p className="font-display font-bold text-ink">
-                            Unit {month.monthIndex} · {month.title.en} <span className="font-normal text-ink/40">· {month.title.ko}</span>
+                            Unit {month.monthIndex} · {month.title}
                           </p>
-                          <p className="text-xs text-ink/50">{month.summary.en}</p>
+                          <p className="text-xs text-ink/50">{month.summary}</p>
                         </div>
                         <span className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${p.badgeClass}`}>
-                          <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label.en}
+                          <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label}
                         </span>
                       </summary>
                       <div className="flex flex-col gap-3 border-t border-ink/5 px-4 py-3">
@@ -236,9 +232,9 @@ export default function CurriculumPage() {
                             <div key={lesson.key} className="print-avoid-break rounded-xl bg-cream/60 p-3">
                               <div className="flex flex-wrap items-baseline justify-between gap-2">
                                 <p className="text-sm font-bold text-ink">
-                                  {role.en} — {lesson.title.en} <span className="font-normal text-ink/40">· {lesson.title.ko}</span>
+                                  {role} — {lesson.title}
                                 </p>
-                                <p className="text-xs text-ink/50">{lesson.englishFocus.en}</p>
+                                <p className="text-xs text-ink/50">{lesson.englishFocus}</p>
                               </div>
                               {authored && <ActivityChips lessonKey={lesson.key} className="mt-2" />}
                               <div className="mt-2">
@@ -258,7 +254,7 @@ export default function CurriculumPage() {
                   );
                 })}
                 <p className="rounded-2xl bg-mint/10 px-4 py-2 text-sm font-semibold text-mint">
-                  {term.checkpointLabel.en}
+                  {term.checkpointLabel}
                 </p>
               </div>
             ))}
@@ -290,12 +286,12 @@ export default function CurriculumPage() {
                       {i === 0 && (
                         <td className="px-3 py-2 font-semibold text-ink" rowSpan={3}>
                           Week {unit.weekRange[0]}
-                          <p className="text-xs font-normal text-ink/50">{unit.title.en}</p>
+                          <p className="text-xs font-normal text-ink/50">{unit.title}</p>
                         </td>
                       )}
                       <td className="px-3 py-2 text-ink/60">Day {lesson.day}</td>
-                      <td className="px-3 py-2 font-semibold text-ink">{lesson.title.en}</td>
-                      <td className="px-3 py-2 text-ink/60">{lesson.englishFocus.en}</td>
+                      <td className="px-3 py-2 font-semibold text-ink">{lesson.title}</td>
+                      <td className="px-3 py-2 text-ink/60">{lesson.englishFocus}</td>
                       <td className="px-3 py-2 text-ink/50">{lesson.standardsNote}</td>
                     </tr>
                   ))
@@ -321,7 +317,7 @@ export default function CurriculumPage() {
                   <span className={`flex h-9 w-9 items-center justify-center rounded-full ${p.badgeClass}`}>
                     <BigIdeaIcon bigIdea={bigIdea} size={18} />
                   </span>
-                  <p className="text-xs font-bold text-ink">{p.label.en}</p>
+                  <p className="text-xs font-bold text-ink">{p.label}</p>
                   <p className="text-[11px] text-ink/50">{lessonCount} lessons</p>
                 </div>
               );
@@ -332,55 +328,14 @@ export default function CurriculumPage() {
             <ul className="flex flex-col gap-2 text-sm text-ink/70">
               {STANDARDS_ALIGNMENT.map((m) => (
                 <li key={m.engine}>
-                  <strong className="text-ink">{m.activityLabel.en}</strong> — {m.standardLine.en}
+                  <strong className="text-ink">{m.activityLabel}</strong> — {m.standardLine}
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        {/* 7. Korean-learner targeting */}
-        <section className="flex flex-col gap-4">
-          <SectionHeading eyebrow="Built for this classroom" title="Korean-learner targeting" />
-          <p className="text-sm text-ink/60">
-            Korean has no /f/, /v/, /θ/, /ð/, or /l/-/r/ distinction, is syllable-timed, and is SOV with no articles.
-            Every gap below is targeted deliberately, not incidentally.
-          </p>
-          <div className="overflow-x-auto rounded-2xl bg-white/80 shadow-sm">
-            <table className="w-full min-w-[640px] border-collapse text-left text-sm">
-              <thead>
-                <tr className="border-b border-ink/10 text-xs font-bold uppercase tracking-wide text-ink/40">
-                  <th className="px-3 py-2">Gap</th>
-                  <th className="px-3 py-2">Why</th>
-                  <th className="px-3 py-2">Introduced</th>
-                  <th className="px-3 py-2">Reviewed</th>
-                </tr>
-              </thead>
-              <tbody>
-                {L1_SOUND_TARGETS.map((t) => (
-                  <tr key={t.gap} className="border-b border-ink/5 last:border-0 align-top">
-                    <td className="px-3 py-2 font-semibold text-ink">{t.gap}</td>
-                    <td className="px-3 py-2 text-ink/60">{t.why.en}</td>
-                    <td className="px-3 py-2 text-ink/60">{t.introducedAt.label}</td>
-                    <td className="px-3 py-2 text-ink/60">
-                      {t.reviewedAt.length > 0 ? t.reviewedAt.map((r) => r.label).join("; ") : "—"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {L1_GRAMMAR_NOTES.map((g) => (
-              <div key={g.title.en} className="rounded-2xl bg-white/80 p-4 shadow-sm">
-                <p className="font-semibold text-ink">{g.title.en}</p>
-                <p className="mt-1 text-sm text-ink/60">{g.note.en}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 8. Safety & approach */}
+        {/* 7. Safety & approach */}
         <section className="flex flex-col gap-4">
           <SectionHeading eyebrow="Trust" title="Safety & approach" />
           <div className="rounded-2xl bg-white/80 p-4 shadow-sm">

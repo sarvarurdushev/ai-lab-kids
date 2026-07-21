@@ -16,7 +16,6 @@ export function CreateClassForm({ schools }: { schools: School[] }) {
   const [name, setName] = useState("");
   const [gradeLabel, setGradeLabel] = useState("");
   const [schoolId, setSchoolId] = useState(schools[0]?.id ?? "");
-  const [koreanSupportLevel, setKoreanSupportLevel] = useState<"full" | "light" | "minimal">("full");
   const [ageTrack, setAgeTrack] = useState<"little_sparks" | "explorers">("explorers");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -37,7 +36,7 @@ export function CreateClassForm({ schools }: { schools: School[] }) {
       const res = await fetch("/api/classes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ schoolId, name, gradeLabel, koreanSupportLevel, ageTrack }),
+        body: JSON.stringify({ schoolId, name, gradeLabel, ageTrack }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -100,18 +99,6 @@ export function CreateClassForm({ schools }: { schools: School[] }) {
           >
             <option value="little_sparks">Little Sparks — ages 4-5</option>
             <option value="explorers">AI Explorers — ages 6+</option>
-          </select>
-        </label>
-        <label className="flex flex-col gap-1 text-sm font-semibold text-ink/70">
-          Korean support level
-          <select
-            value={koreanSupportLevel}
-            onChange={(e) => setKoreanSupportLevel(e.target.value as "full" | "light" | "minimal")}
-            className="rounded-xl border-2 border-ink/10 bg-white px-3 py-2 text-sm focus:border-indigo focus:outline-none"
-          >
-            <option value="full">Full — every line bilingual</option>
-            <option value="light">Light — key vocab/instructions only</option>
-            <option value="minimal">Minimal — English immersion</option>
           </select>
         </label>
         {error && <p className="text-sm font-semibold text-coral">{error}</p>}

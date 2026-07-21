@@ -42,7 +42,6 @@ export default async function LessonPage({
 
       <PresentationPlayer
         lesson={lesson}
-        level={klass.koreanSupportLevel}
         sessionId={session.id}
         classId={classId}
         initialSegmentIndex={session.currentSegmentIndex}

@@ -7,7 +7,6 @@ import { Vora } from "@/components/mascot/Vora";
 import { CreateClassForm } from "@/components/console/CreateClassForm";
 import { SparkleIcon, RocketIcon } from "@/components/icons";
 
-const LEVEL_LABEL: Record<string, string> = { full: "Full bilingual", light: "Light Korean", minimal: "Immersion" };
 const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks 4-5", explorers: "AI Explorers 6+" };
 const TRACK_ACCENT: Record<string, string> = { little_sparks: "border-coral", explorers: "border-indigo" };
 const TRACK_ICON: Record<string, (props: { size?: number; className?: string }) => React.JSX.Element> = {
@@ -69,9 +68,6 @@ export default async function DashboardPage() {
               <div className="flex shrink-0 flex-col items-end gap-1">
                 <span className="rounded-full bg-mint/20 px-2 py-0.5 text-[10px] font-bold uppercase text-ink">
                   {TRACK_LABEL[c.ageTrack]}
-                </span>
-                <span className="rounded-full bg-indigo/10 px-2 py-0.5 text-[10px] font-bold uppercase text-indigo-dark">
-                  {LEVEL_LABEL[c.koreanSupportLevel]}
                 </span>
               </div>
             </Card>

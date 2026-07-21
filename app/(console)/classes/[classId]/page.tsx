@@ -53,7 +53,7 @@ function LessonRow({
         <div className="flex items-start gap-2">
           {p && (
             <span
-              title={`AI idea: ${p.label.en}`}
+              title={`AI idea: ${p.label}`}
               className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${p.badgeClass}`}
             >
               <BigIdeaIcon bigIdea={bigIdea!} size={15} />
@@ -62,9 +62,9 @@ function LessonRow({
           <div>
             <p className="flex items-center gap-1.5 text-sm font-semibold text-ink">
               <SlotIcon size={13} className="text-ink/40" />
-              {dayLabel}: {lesson.title.en}
+              {dayLabel}: {lesson.title}
             </p>
-            <p className="text-xs text-ink/50">{lesson.englishFocus.en}</p>
+            <p className="text-xs text-ink/50">{lesson.englishFocus}</p>
           </div>
         </div>
         {authored ? (
@@ -154,7 +154,7 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
               <h2 className="font-display text-base font-bold text-ink">
                 Term {term.termIndex} <span className="font-normal text-ink/40">— Units {term.monthRange[0]}-{term.monthRange[1]}</span>
               </h2>
-              <span className="rounded-full bg-mint/15 px-2 py-0.5 text-[10px] font-bold text-mint">{term.checkpointLabel.en}</span>
+              <span className="rounded-full bg-mint/15 px-2 py-0.5 text-[10px] font-bold text-mint">{term.checkpointLabel}</span>
             </div>
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
               {MONTHS.filter((m) => m.monthIndex >= term.monthRange[0] && m.monthIndex <= term.monthRange[1]).map((month) => {
@@ -169,20 +169,19 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <p className="font-display font-bold text-ink">
-                          Unit {month.monthIndex} · {month.title.en}
+                          Unit {month.monthIndex} · {month.title}
                         </p>
-                        <p className="text-xs text-ink/50">{month.title.ko}</p>
                       </div>
                       <span
                         className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${p.badgeClass}`}
                       >
-                        <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label.en}
+                        <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label}
                       </span>
                     </div>
                     <p
                       className={`flex items-start gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-ink/70 ${p.bannerClass} border`}
                     >
-                      <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={14} className="mt-0.5 shrink-0" /> {month.summary.en}
+                      <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={14} className="mt-0.5 shrink-0" /> {month.summary}
                     </p>
                     {aiLabCount > 0 && (
                       <p className="flex items-center gap-1 text-[11px] font-bold text-indigo-dark">
@@ -195,7 +194,7 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
                           key={lesson.key}
                           lesson={lesson}
                           classId={classId}
-                          dayLabel={weekRoleLabel(month.monthIndex, lesson.slot ?? "week1").en}
+                          dayLabel={weekRoleLabel(month.monthIndex, lesson.slot ?? "week1")}
                         />
                       ))}
                     </div>
@@ -217,9 +216,8 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
             return (
               <Card key={unit.key} className="flex flex-col gap-2">
                 <p className="font-display font-bold text-ink">
-                  Week {unit.weekRange[0]} · {unit.title.en}
+                  Week {unit.weekRange[0]} · {unit.title}
                 </p>
-                <p className="text-xs text-ink/50">{unit.title.ko}</p>
                 <div className="mt-1 flex flex-col gap-1.5">
                   {lessons.map((lesson) => (
                     <LessonRow key={lesson.key} lesson={lesson} classId={classId} dayLabel={`Day ${lesson.day}`} />

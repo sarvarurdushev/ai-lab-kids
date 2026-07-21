@@ -4,11 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
-import { BilingualText } from "@/components/curriculum/BilingualText";
+import { EnglishText } from "@/components/curriculum/EnglishText";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { UndoIcon, RobotHeadIcon, SparkleIcon } from "@/components/icons";
 import type { InstructVoraConfig } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 
 // "Give Vora clear instructions" — first lets kids WATCH a vague
 // instruction go wrong, then has them build a precise, ordered instruction
@@ -34,11 +33,9 @@ const SHAKE_PAUSE_MS = 550;
 
 export function InstructVoraEngine({
   config,
-  level,
   onFinished,
 }: {
   config: InstructVoraConfig;
-  level: KoreanSupportLevel;
   onFinished?: () => void;
 }) {
   const [phase, setPhase] = useState<Phase>("vague");
@@ -86,7 +83,7 @@ export function InstructVoraEngine({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between text-sm font-bold text-ink/50">
         <span className="flex items-center gap-1.5">
-          <RobotHeadIcon size={14} className="text-indigo" /> {config.title.en}
+          <RobotHeadIcon size={14} className="text-indigo" /> {config.title}
         </span>
       </div>
 
@@ -105,7 +102,7 @@ export function InstructVoraEngine({
             {phase === "vague" ? config.vagueResultEmoji : config.goalEmoji}
           </motion.div>
         </AnimatePresence>
-        <BilingualText text={config.goalLabel} level={level} keyContent size="lg" />
+        <EnglishText text={config.goalLabel} size="lg" />
       </div>
 
       <AnimatePresence mode="wait">
@@ -119,10 +116,10 @@ export function InstructVoraEngine({
           >
             <div className="rounded-2xl bg-coral/10 px-4 py-3 text-center">
               <p className="text-xs font-bold uppercase tracking-wide text-coral">Vora heard:</p>
-              <BilingualText text={config.vagueInstruction} level={level} keyContent size="lg" />
+              <EnglishText text={config.vagueInstruction} size="lg" />
             </div>
             <div className="max-w-xs text-center text-sm text-ink/70">
-              <BilingualText text={config.vagueResultText} level={level} size="sm" />
+              <EnglishText text={config.vagueResultText} size="sm" />
             </div>
             <Button onClick={startBuilding} variant="secondary" className="!px-6 !py-2 !text-base">
               Let&apos;s fix it →
@@ -157,7 +154,7 @@ export function InstructVoraEngine({
                           transition={{ type: "spring", stiffness: 400, damping: 15 }}
                         >
                           <span className="text-2xl">{tile.emoji}</span>
-                          <span className="block text-xs font-bold leading-tight">{tile.text.en}</span>
+                          <span className="block text-xs font-bold leading-tight">{tile.text}</span>
                         </motion.div>
                       ) : (
                         <span className="text-lg font-bold">{i + 1}</span>
@@ -183,8 +180,7 @@ export function InstructVoraEngine({
                   >
                     <span className="text-3xl">{tile.emoji}</span>
                     <span className="flex-1">
-                      <span className="block text-base font-semibold text-ink">{tile.text.en}</span>
-                      {level !== "minimal" && <span className="block text-xs text-ink/50">{tile.text.ko}</span>}
+                      <span className="block text-base font-semibold text-ink">{tile.text}</span>
                     </span>
                   </motion.button>
                 ))}
@@ -214,7 +210,7 @@ export function InstructVoraEngine({
             <p className="flex items-center gap-1.5 text-lg font-bold text-mint">
               <SparkleIcon size={18} className="text-amber" /> Vora did it!
             </p>
-            <BilingualText text={config.successText} level={level} size="sm" />
+            <EnglishText text={config.successText} size="sm" />
           </motion.div>
         )}
       </AnimatePresence>

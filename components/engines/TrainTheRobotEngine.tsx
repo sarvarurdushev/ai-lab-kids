@@ -4,11 +4,10 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
-import { BilingualText } from "@/components/curriculum/BilingualText";
+import { EnglishText } from "@/components/curriculum/EnglishText";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { CheckCircleIcon, XCircleIcon, SproutIcon } from "@/components/icons";
 import type { TrainTheRobotConfig } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 
 // Classroom version of the classification engine: no timer, no individual
 // score, no auto-advance — the teacher paces the room and taps "Next" when
@@ -55,11 +54,9 @@ function buildRounds(config: TrainTheRobotConfig): Round[] {
 
 export function TrainTheRobotEngine({
   config,
-  level,
   onFinished,
 }: {
   config: TrainTheRobotConfig;
-  level: KoreanSupportLevel;
   onFinished?: () => void;
 }) {
   const rounds = useMemo(() => buildRounds(config), [config]);
@@ -208,12 +205,12 @@ export function TrainTheRobotEngine({
           <motion.div animate={answered ? { scale: [1, 1.25, 1] } : {}} transition={{ duration: 0.4 }} className="text-7xl">
             {item.emoji}
           </motion.div>
-          <BilingualText text={item.word} level={level} keyContent size="lg" />
+          <EnglishText text={item.word} size="lg" />
 
           {round.mode === "guess" && round.voraGuess && (
             <div className="mt-1 rounded-2xl bg-indigo/10 px-4 py-2 text-center text-sm font-semibold text-indigo-dark">
               Vora thinks: {round.voraGuess === "a" ? config.emojiA : config.emojiB}{" "}
-              {bucketLabel(round.voraGuess).en}
+              {bucketLabel(round.voraGuess)}
             </div>
           )}
         </motion.div>
@@ -229,8 +226,7 @@ export function TrainTheRobotEngine({
             className="flex flex-col items-center gap-1 rounded-2xl bg-amber/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
             <span className="text-3xl">{config.emojiA}</span>
-            {config.labelA.en}
-            <span className="text-xs font-normal text-ink/50">{config.labelA.ko}</span>
+            {config.labelA}
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.93 }}
@@ -240,8 +236,7 @@ export function TrainTheRobotEngine({
             className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
             <span className="text-3xl">{config.emojiB}</span>
-            {config.labelB.en}
-            <span className="text-xs font-normal text-ink/50">{config.labelB.ko}</span>
+            {config.labelB}
           </motion.button>
         </div>
       ) : (
@@ -280,7 +275,7 @@ export function TrainTheRobotEngine({
             }`}
           >
             {answered.good ? <CheckCircleIcon size={20} /> : <XCircleIcon size={20} />}
-            {answered.good ? "Great!" : `It's ${bucketLabel(item.bucket).en}`}
+            {answered.good ? "Great!" : `It's ${bucketLabel(item.bucket)}`}
           </motion.div>
           <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
             {roundIndex + 1 >= rounds.length ? "Finish" : "Next →"}

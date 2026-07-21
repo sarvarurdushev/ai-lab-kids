@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ monthKey:
   const { monthKey } = await params;
   const month = getMonth(monthKey);
   return {
-    title: month ? `Unit ${month.monthIndex} · ${month.title.en} — Pacing Guide — AI Lab for Kids` : "Pacing Guide — AI Lab for Kids",
+    title: month ? `Unit ${month.monthIndex} · ${month.title} — Pacing Guide — AI Lab for Kids` : "Pacing Guide — AI Lab for Kids",
   };
 }
 
@@ -51,14 +51,13 @@ export default async function UnitPacingGuidePage({ params }: { params: Promise<
             <RobotHeadIcon size={14} /> Teacher Pacing Guide
           </p>
           <h1 className="font-display text-3xl font-bold text-ink">
-            Unit {month.monthIndex} · {month.title.en} <span className="text-ink/40">· {month.title.ko}</span>
+            Unit {month.monthIndex} · {month.title}
           </h1>
           <span className={`flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold uppercase ${p.badgeClass}`}>
-            <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={12} /> {p.label.en}
+            <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={12} /> {p.label}
           </span>
-          <p className="text-sm text-ink/60">{month.summary.en}</p>
-          <p className="text-xs text-ink/50">{month.summary.ko}</p>
-          <p className="text-sm font-semibold text-ink/70">English focus: {month.englishFocus.en}</p>
+          <p className="text-sm text-ink/60">{month.summary}</p>
+          <p className="text-sm font-semibold text-ink/70">English focus: {month.englishFocus}</p>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -73,9 +72,9 @@ export default async function UnitPacingGuidePage({ params }: { params: Promise<
               <div key={lessonMeta.key} className="print-avoid-break rounded-2xl bg-white/85 p-4 shadow-sm">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <p className="font-display font-bold text-ink">
-                    {role.en} — {lessonMeta.title.en} <span className="font-normal text-ink/40">· {lessonMeta.title.ko}</span>
+                    {role} — {lessonMeta.title}
                   </p>
-                  <p className="text-xs text-ink/50">{lessonMeta.englishFocus.en}</p>
+                  <p className="text-xs text-ink/50">{lessonMeta.englishFocus}</p>
                 </div>
                 {authored && <ActivityChips lessonKey={lessonMeta.key} className="mt-2" />}
                 {vocabWords.length > 0 && (
@@ -84,7 +83,7 @@ export default async function UnitPacingGuidePage({ params }: { params: Promise<
                     <div className="mt-1 flex flex-wrap gap-2">
                       {vocabWords.map((w, i) => (
                         <span key={i} className="flex items-center gap-1 rounded-full bg-cream px-2 py-1 text-xs font-semibold text-ink/70">
-                          <span>{w.emoji}</span> {w.word.en}
+                          <span>{w.emoji}</span> {w.word}
                         </span>
                       ))}
                     </div>

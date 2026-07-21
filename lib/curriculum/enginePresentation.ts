@@ -1,4 +1,4 @@
-import type { ActivityEngine, Bilingual } from "./types";
+import type { ActivityEngine } from "./types";
 import { AUTHORED_LESSONS, getLesson } from "./lessons/index";
 import { RobotHeadIcon, GamepadIcon, PatternGridIcon, BookIcon, SpeakerIcon } from "@/components/icons";
 
@@ -21,11 +21,11 @@ import { RobotHeadIcon, GamepadIcon, PatternGridIcon, BookIcon, SpeakerIcon } fr
 export type ActivityDiscipline = "english" | "ai_literacy";
 
 export interface EnginePresentation {
-  label: Bilingual;
+  label: string;
   discipline: ActivityDiscipline;
   icon: (props: { size?: number; className?: string }) => React.JSX.Element;
   /** One short line for tooltips: the AI/English skill this engine drills. */
-  skillLine: Bilingual;
+  skillLine: string;
   chipClass: string;
 }
 
@@ -34,65 +34,59 @@ const ENGLISH_CHIP = "bg-cream text-ink/60 border border-ink/10";
 
 export const ENGINE_PRESENTATION: Record<ActivityEngine, EnginePresentation> = {
   ai_or_not: {
-    label: { en: "AI Lab · Is It AI?", ko: "AI 랩 · AI일까요?" },
+    label: "AI Lab · Is It AI?",
     discipline: "ai_literacy",
     icon: RobotHeadIcon,
-    skillLine: {
-      en: "Real-world AI recognition — kids classify everyday things as AI or not, with a reason.",
-      ko: "실생활 AI 인식 — 학생들이 일상 속 사물을 AI인지 아닌지 분류하고 이유를 배워요.",
-    },
+    skillLine: "Real-world AI recognition — kids classify everyday things as AI or not, with a reason.",
     chipClass: AI_LAB_CHIP,
   },
   instruct_vora: {
-    label: { en: "AI Lab · Clear Instructions", ko: "AI 랩 · 분명한 지시" },
+    label: "AI Lab · Clear Instructions",
     discipline: "ai_literacy",
     icon: RobotHeadIcon,
-    skillLine: {
-      en: "Precise-instruction practice — kids see a vague instruction fail, then build one that works.",
-      ko: "정확한 지시 연습 — 애매한 지시가 실패하는 것을 보고, 성공하는 지시를 만들어봐요.",
-    },
+    skillLine: "Precise-instruction practice — kids see a vague instruction fail, then build one that works.",
     chipClass: AI_LAB_CHIP,
   },
   train_the_robot: {
-    label: { en: "Sorting Game", ko: "분류 게임" },
+    label: "Sorting Game",
     discipline: "english",
     icon: GamepadIcon,
-    skillLine: { en: "Sort pictures, then test Vora on new ones — an AI classification demo.", ko: "그림을 분류하고 보라를 테스트해요 — AI 분류 시연이에요." },
+    skillLine: "Sort pictures, then test Vora on new ones — an AI classification demo.",
     chipClass: ENGLISH_CHIP,
   },
   pattern_predictor: {
-    label: { en: "Pattern Game", ko: "패턴 게임" },
+    label: "Pattern Game",
     discipline: "english",
     icon: PatternGridIcon,
-    skillLine: { en: "\"What comes next?\" — an AI pattern-prediction demo.", ko: "'다음은 무엇일까요?' — AI 패턴 예측 시연이에요." },
+    skillLine: "\"What comes next?\" — an AI pattern-prediction demo.",
     chipClass: ENGLISH_CHIP,
   },
   memory_match: {
-    label: { en: "Word Match", ko: "단어 짝 맞추기" },
+    label: "Word Match",
     discipline: "english",
     icon: GamepadIcon,
-    skillLine: { en: "Flip-card vocabulary recognition and recall.", ko: "카드 뒤집기로 단어를 인식하고 기억해요." },
+    skillLine: "Flip-card vocabulary recognition and recall.",
     chipClass: ENGLISH_CHIP,
   },
   sequence_builder: {
-    label: { en: "Step Order", ko: "순서 맞추기" },
+    label: "Step Order",
     discipline: "english",
     icon: GamepadIcon,
-    skillLine: { en: "Put routine steps in order.", ko: "루틴 단계를 순서대로 놓아요." },
+    skillLine: "Put routine steps in order.",
     chipClass: ENGLISH_CHIP,
   },
   sentence_builder: {
-    label: { en: "Sentence Builder", ko: "문장 만들기" },
+    label: "Sentence Builder",
     discipline: "english",
     icon: BookIcon,
-    skillLine: { en: "Build an English sentence word by word.", ko: "영어 문장을 한 단어씩 만들어요." },
+    skillLine: "Build an English sentence word by word.",
     chipClass: ENGLISH_CHIP,
   },
   minimal_pairs: {
-    label: { en: "Listening Game", ko: "듣기 게임" },
+    label: "Listening Game",
     discipline: "english",
     icon: SpeakerIcon,
-    skillLine: { en: "Listen and pick which of two similar-sounding words was said.", ko: "비슷한 소리의 두 단어 중 무엇을 들었는지 골라요." },
+    skillLine: "Listen and pick which of two similar-sounding words was said.",
     chipClass: ENGLISH_CHIP,
   },
 };
@@ -102,7 +96,7 @@ export function isAiLabEngine(engine: ActivityEngine): boolean {
 }
 
 /** Chip data for a lesson row — undefined for unauthored ("Planned") lessons. */
-export function lessonActivitySummaries(key: string): { engine: ActivityEngine; title: Bilingual }[] | undefined {
+export function lessonActivitySummaries(key: string): { engine: ActivityEngine; title: string }[] | undefined {
   const lesson = getLesson(key);
   if (!lesson) return undefined;
   return lesson.segments

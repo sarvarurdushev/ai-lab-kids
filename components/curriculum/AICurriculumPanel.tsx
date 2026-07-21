@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { curriculumStats, STANDARDS_ALIGNMENT } from "@/lib/curriculum";
 import { Card } from "@/components/ui/Card";
 import { RobotHeadIcon } from "@/components/icons";
@@ -31,7 +32,7 @@ export function AICurriculumPanel() {
         <StatTile value={String(stats.aiLabActivities)} label="AI Lab activities this year" />
         <StatTile value={String(stats.activities)} label={`activities · ${stats.engineCount} engine types`} />
         <StatTile value="5/5" label="AI4K12 Big Ideas covered" />
-        <StatTile value={String(stats.lessons)} label="fully-authored bilingual lessons" />
+        <StatTile value={String(stats.lessons)} label="fully-authored lessons" />
       </div>
       <p className="text-[11px] text-ink/50">
         Built against <strong>AI4K12&apos;s Five Big Ideas in AI</strong>, <strong>ISTE</strong>&apos;s elementary
@@ -43,14 +44,14 @@ export function AICurriculumPanel() {
         <ul className="mt-2 flex flex-col gap-1.5 pl-1">
           {STANDARDS_ALIGNMENT.map((m) => (
             <li key={m.engine}>
-              <strong>{m.activityLabel.en}</strong> — {m.standardLine.en}
+              <strong>{m.activityLabel}</strong> — {m.standardLine}
             </li>
           ))}
         </ul>
       </details>
-      <a href="/curriculum" className="text-[11px] font-bold text-indigo-dark underline">
+      <Link href="/curriculum" className="text-[11px] font-bold text-indigo-dark underline">
         View the full program guide →
-      </a>
+      </Link>
     </Card>
   );
 }

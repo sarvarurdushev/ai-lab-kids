@@ -1,4 +1,4 @@
-import type { BigIdea, Bilingual, LessonMeta } from "./types";
+import type { BigIdea, LessonMeta } from "./types";
 import { getMonth } from "./months";
 
 /**
@@ -11,9 +11,9 @@ import { getMonth } from "./months";
  */
 export interface BigIdeaPresentation {
   emoji: string;
-  label: Bilingual;
-  /** One plain sentence a teacher can read straight off the screen — the answer to "how is this AI?" */
-  kidLine: Bilingual;
+  label: string;
+  /** A short phrase a teacher can read straight off the screen — kept to a handful of words, not a full explanation, since this age can't follow multi-clause abstraction. */
+  kidLine: string;
   badgeClass: string;
   bannerClass: string;
   accentClass: string;
@@ -22,55 +22,40 @@ export interface BigIdeaPresentation {
 export const BIG_IDEA_PRESENTATION: Record<BigIdea, BigIdeaPresentation> = {
   perception: {
     emoji: "👀",
-    label: { en: "Perception", ko: "지각" },
-    kidLine: {
-      en: "This is AI perception — how Vora notices and makes sense of what it sees or hears.",
-      ko: "이건 AI의 '지각'이에요 — 보라가 보고 듣는 것을 알아차리고 이해하는 방법이에요.",
-    },
+    label: "Perception",
+    kidLine: "Vora sees and hears!",
     badgeClass: "bg-sky/15 text-sky",
     bannerClass: "bg-sky/10 border-sky/30",
     accentClass: "border-sky",
   },
   reasoning: {
     emoji: "🧩",
-    label: { en: "Reasoning", ko: "추론" },
-    kidLine: {
-      en: "This is AI reasoning — how Vora finds a pattern and figures out what comes next.",
-      ko: "이건 AI의 '추론'이에요 — 보라가 패턴을 찾아 다음에 올 것을 알아내는 방법이에요.",
-    },
+    label: "Reasoning",
+    kidLine: "Vora finds the pattern!",
     badgeClass: "bg-indigo/15 text-indigo-dark",
     bannerClass: "bg-indigo/10 border-indigo/30",
     accentClass: "border-indigo",
   },
   learning: {
     emoji: "🌱",
-    label: { en: "Learning", ko: "학습" },
-    kidLine: {
-      en: "This is AI learning — how Vora gets better by seeing lots of examples, and sometimes still guesses wrong.",
-      ko: "이건 AI의 '학습'이에요 — 보라가 많은 예시를 보며 점점 더 잘하게 되고, 가끔은 틀리게 추측하기도 해요.",
-    },
+    label: "Learning",
+    kidLine: "Vora learns from examples!",
     badgeClass: "bg-mint/15 text-mint",
     bannerClass: "bg-mint/10 border-mint/30",
     accentClass: "border-mint",
   },
   natural_interaction: {
     emoji: "💬",
-    label: { en: "Natural Interaction", ko: "자연스러운 상호작용" },
-    kidLine: {
-      en: "This is AI natural interaction — how Vora listens, waits its turn, and talks back like a friend.",
-      ko: "이건 AI의 '자연스러운 상호작용'이에요 — 보라가 친구처럼 듣고, 차례를 기다리고, 대답하는 방법이에요.",
-    },
+    label: "Talking with AI",
+    kidLine: "Vora listens, then talks!",
     badgeClass: "bg-coral/15 text-coral",
     bannerClass: "bg-coral/10 border-coral/30",
     accentClass: "border-coral",
   },
   societal_impact: {
     emoji: "🌍",
-    label: { en: "Societal Impact", ko: "사회적 영향" },
-    kidLine: {
-      en: "This is AI in real life — a real place AI helpers actually show up for people.",
-      ko: "이건 실제 생활 속의 AI예요 — 실제로 AI 도우미가 사람들을 돕는 곳이에요.",
-    },
+    label: "AI in Real Life",
+    kidLine: "AI helpers are everywhere!",
     badgeClass: "bg-amber/20 text-amber-dark",
     bannerClass: "bg-amber/10 border-amber/40",
     accentClass: "border-amber",

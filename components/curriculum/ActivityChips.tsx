@@ -11,10 +11,10 @@ export function ActivityChips({ lessonKey, className = "" }: { lessonKey: string
         return (
           <span
             key={`${engine}-${i}`}
-            title={`${ep.skillLine.en} — "${title.en}"`}
+            title={`${ep.skillLine} — "${title}"`}
             className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${ep.chipClass}`}
           >
-            <ep.icon size={10} /> {ep.label.en}
+            <ep.icon size={10} /> {ep.label}
           </span>
         );
       })}

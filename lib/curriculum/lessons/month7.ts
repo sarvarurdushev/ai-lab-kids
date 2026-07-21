@@ -13,47 +13,41 @@ export const m7_week1: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Look out the classroom window (or show a photo of the sky) and ask \"What's the weather today?\" Let a few kids answer in Korean before introducing the English words.",
-        ko: "교실 창밖을 보거나(또는 하늘 사진을 보여주며) \"What's the weather today?\"라고 물어보세요. 영어 단어를 소개하기 전에 학생들이 먼저 한국어로 답해보게 하세요.",
-      },
-      prompt: { en: "What's the weather today? 🌤️", ko: "오늘 날씨는 어때요? 🌤️" },
+      teacherScript: "Look out the classroom window (or show a photo of the sky) and ask \"What's the weather today?\" Let a few kids answer in Korean before introducing the English words.",
+      prompt: "What's the weather today? 🌤️",
     },
     {
       type: "vocab",
-      title: { en: "Weather Words", ko: "날씨 단어" },
+      title: "Weather Words",
       words: [
-        { word: { en: "sunny", ko: "맑은" }, emoji: "☀️" },
-        { word: { en: "rainy", ko: "비 오는" }, emoji: "🌧️" },
-        { word: { en: "cloudy", ko: "흐린" }, emoji: "☁️" },
-        { word: { en: "snowy", ko: "눈 오는" }, emoji: "❄️" },
-        { word: { en: "windy", ko: "바람 부는" }, emoji: "💨", minTrack: "explorers" },
-        { word: { en: "hot", ko: "더운" }, emoji: "🥵" },
-        { word: { en: "cold", ko: "추운" }, emoji: "🥶" },
+        { word: "sunny", emoji: "☀️" },
+        { word: "rainy", emoji: "🌧️" },
+        { word: "cloudy", emoji: "☁️" },
+        { word: "snowy", emoji: "❄️" },
+        { word: "windy", emoji: "💨", minTrack: "explorers" },
+        { word: "hot", emoji: "🥵" },
+        { word: "cold", emoji: "🥶" },
       ],
     },
     {
       type: "concept",
-      title: { en: "Vora Guesses Tomorrow's Weather", ko: "보라가 내일 날씨를 예측해요" },
+      title: "Vora Guesses Tomorrow's Weather",
       bigIdeas: ["reasoning"],
       lines: [
-        { en: "Yesterday was sunny, and today is sunny too — I wonder about tomorrow!", ko: "어제도 맑았고 오늘도 맑아요 — 내일은 어떨까 궁금해!" },
-        { en: "A weather forecast isn't magic — it's a careful guess, made by looking at lots of past weather.", ko: "일기예보는 마법이 아니야 — 지난 날씨를 많이 살펴보고 만든 신중한 추측이야." },
-        { en: "I look for a pattern, just like I do with pictures, and then I guess what comes next.", ko: "나는 그림을 볼 때처럼 패턴을 찾고, 그다음에 무엇이 올지 추측해." },
-        { en: "Let's find the weather pattern together!", ko: "우리 함께 날씨 패턴을 찾아보자!" },
+        { text: "Yesterday was sunny, and today is sunny too — I wonder about tomorrow!" },
+        { text: "A weather forecast isn't magic — it's a careful guess, made by looking at lots of past weather." },
+        { text: "I look for a pattern, just like I do with pictures, and then I guess what comes next." },
+        { text: "Let's find the weather pattern together!" },
       ],
       teacherNote:
         "Sets up the pattern_predictor activity below — keep \"forecast\" concrete: it just means a careful guess based on a pattern, not magic. This is also the third time this year kids build an \"It's ___\" sentence (Month 1's space objects, Month 6's animals), so expect faster, more confident production and spend the time you save on the new weather vocabulary instead.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Read each weather icon aloud together (\"sunny, cloudy, sunny, cloudy...\") before guessing what comes next. Let the whole class predict out loud before anyone taps an answer.",
-        ko: "다음을 추측하기 전에 날씨 이모지를 함께 소리 내어 읽어보세요(\"sunny, cloudy, sunny, cloudy...\"). 답을 누르기 전에 반 전체가 먼저 소리 내어 예측해 보게 하세요.",
-      },
+      instructions: "Read each weather icon aloud together (\"sunny, cloudy, sunny, cloudy...\") before guessing what comes next. Let the whole class predict out loud before anyone taps an answer.",
       config: {
         engine: "pattern_predictor",
-        title: { en: "What Comes Next in the Weather?", ko: "날씨에서 다음은 무엇일까요?" },
+        title: "What Comes Next in the Weather?",
         teacherNote:
           "This is the clearest real-world match yet for the pattern-prediction engine: real weather forecasters do exactly this at a much bigger scale — look for a pattern in a lot of past weather to guess what's coming next. Say the weather word out loud for each icon as it's read, not just the emoji.",
         rounds: [
@@ -77,22 +71,13 @@ export const m7_week1: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "\"It's ___ today.\" — point to a weather picture (or look outside) and have a student complete the sentence.",
-        ko: "\"It's ___ today.\" — 날씨 그림을 가리키거나(또는 밖을 보고) 한 학생이 문장을 완성해보게 하세요.",
-      },
+      prompt: "\"It's ___ today.\" — point to a weather picture (or look outside) and have a student complete the sentence.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we learned seven weather words, saw how Vora finds a pattern in past weather, the same way a real forecast is made, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
-        ko: "오늘은 날씨 단어 일곱 개를 배우고, 진짜 일기예보처럼 보라가 지난 날씨에서 패턴을 찾는 모습을 봤어요. 일상 속 진짜 AI를 알아보는 연습도 하고, 보라가 분명한 지시를 따르도록 도왔어요.",
-      },
-      homework: {
-        en: "Ask a family member \"What's the weather?\" in Korean tonight, then answer them in English: \"It's ___ today.\"",
-        ko: "오늘 저녁 가족에게 한국어로 \"오늘 날씨 어때요?\"라고 물어본 다음, 영어로 \"It's ___ today.\"라고 답해보세요.",
-      },
+      summary: "Today we learned seven weather words, saw how Vora finds a pattern in past weather, the same way a real forecast is made, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+      homework: "Ask a family member \"What's the weather?\" in Korean tonight, then answer them in English: \"It's ___ today.\"",
     },
   ],
 };
@@ -102,62 +87,52 @@ export const m7_week2: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Mime shivering and hugging yourself for cold, then fan yourself and wipe your brow for hot. Ask \"Hot or cold?\" and have kids mime along before today's sorting game.",
-        ko: "추울 때는 몸을 떨며 자신을 안는 흉내를, 더울 때는 부채질하며 이마를 닦는 흉내를 내보세요. \"Hot or cold?\"라고 물어보고, 오늘의 분류 게임을 시작하기 전에 학생들도 함께 흉내 내게 하세요.",
-      },
-      prompt: { en: "Hot or cold? 🥵🥶", ko: "더울까요, 추울까요? 🥵🥶" },
+      teacherScript: "Mime shivering and hugging yourself for cold, then fan yourself and wipe your brow for hot. Ask \"Hot or cold?\" and have kids mime along before today's sorting game.",
+      prompt: "Hot or cold? 🥵🥶",
     },
     {
       type: "concept",
-      title: { en: "Vora Looks Closely", ko: "보라가 자세히 살펴봐요" },
+      title: "Vora Looks Closely",
       bigIdeas: ["perception"],
       lines: [
-        { en: "A coat, a t-shirt — I look closely at each one before deciding where it goes.", ko: "코트, 티셔츠 — 나는 각각을 자세히 살펴본 다음 어디에 속하는지 정해." },
-        { en: "That's called sorting, and it's exactly what you're about to do with today's clothes!", ko: "이걸 분류라고 해, 오늘 너희가 옷으로 할 일이 바로 이거야!" },
+        { text: "A coat, a t-shirt — I look closely at each one before deciding where it goes." },
+        { text: "That's called sorting, and it's exactly what you're about to do with today's clothes!" },
       ],
       teacherNote:
         "Keep this brief — Vora and the idea of sorting-by-looking were already introduced back in Week 1's forecast talk. This is just a quick bridge into today's sorting game below.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "As a class, decide together whether each clothing item is for hot or cold weather before tapping — then have kids mime actually putting it on (shiver and hug yourself for coats and scarves, fan yourself for shorts and sandals). This doubles nicely as a movement break. Then play a second game to reinforce it.",
-        ko: "탭하기 전에 반 전체가 함께 각 옷이 더운 날씨용인지 추운 날씨용인지 정해보세요 — 그런 다음 학생들이 실제로 그 옷을 입는 흉내를 내보게 하세요(코트나 목도리는 몸을 떨며 안는 흉내, 반바지나 샌들은 부채질하는 흉내). 이렇게 하면 자연스러운 움직임 시간도 될 수 있어요. 그런 다음 두 번째 게임으로 복습해 보세요.",
-      },
+      instructions: "As a class, decide together whether each clothing item is for hot or cold weather before tapping — then have kids mime actually putting it on (shiver and hug yourself for coats and scarves, fan yourself for shorts and sandals). This doubles nicely as a movement break. Then play a second game to reinforce it.",
       config: {
         engine: "train_the_robot",
-        title: { en: "Hot Weather Clothes or Cold Weather Clothes?", ko: "더운 날씨 옷일까요, 추운 날씨 옷일까요?" },
-        labelA: { en: "Hot Weather", ko: "더운 날씨" },
-        labelB: { en: "Cold Weather", ko: "추운 날씨" },
+        title: "Hot Weather Clothes or Cold Weather Clothes?",
+        labelA: "Hot Weather",
+        labelB: "Cold Weather",
         emojiA: "🥵",
         emojiB: "🥶",
         items: [
-          { word: { en: "shorts", ko: "반바지" }, emoji: "🩳", bucket: "a" },
-          { word: { en: "t-shirt", ko: "티셔츠" }, emoji: "👕", bucket: "a" },
-          { word: { en: "sandals", ko: "샌들" }, emoji: "👡", bucket: "a" },
-          { word: { en: "sunglasses", ko: "선글라스" }, emoji: "🕶️", bucket: "a", minTrack: "explorers" },
-          { word: { en: "coat", ko: "코트" }, emoji: "🧥", bucket: "b" },
-          { word: { en: "scarf", ko: "목도리" }, emoji: "🧣", bucket: "b" },
-          { word: { en: "boots", ko: "부츠" }, emoji: "👢", bucket: "b" },
+          { word: "shorts", emoji: "🩳", bucket: "a" },
+          { word: "t-shirt", emoji: "👕", bucket: "a" },
+          { word: "sandals", emoji: "👡", bucket: "a" },
+          { word: "sunglasses", emoji: "🕶️", bucket: "a", minTrack: "explorers" },
+          { word: "coat", emoji: "🧥", bucket: "b" },
+          { word: "scarf", emoji: "🧣", bucket: "b" },
+          { word: "boots", emoji: "👢", bucket: "b" },
         ],
       },
     },
     {
       type: "activity",
-      instructions: {
-        en: "Build the sentence one tile at a time, then have the whole class act out being in sunny weather (shielding their eyes, big smile) as they say it together.",
-        ko: "한 번에 한 타일씩 문장을 만들고, 다 함께 말하면서 맑은 날씨에 있는 모습을 몸으로 표현해보세요(눈을 가리고 활짝 웃기).",
-      },
+      instructions: "Build the sentence one tile at a time, then have the whole class act out being in sunny weather (shielding their eyes, big smile) as they say it together.",
       config: {
         engine: "sentence_builder",
-        title: { en: "It's sunny today.", ko: "오늘은 맑아요." },
+        title: "It's sunny today.",
         words: [
-          { text: "It's", role: "subject", ko: "날씨가" },
-          { text: "sunny", role: "object", ko: "맑아요" },
-          { text: "today", role: "other", ko: "오늘" },
+          { text: "It's", role: "subject" },
+          { text: "sunny", role: "object" },
+          { text: "today", role: "other" },
         ],
-        translation: { en: "It's sunny today.", ko: "오늘은 맑아요." },
       },
     },
     {
@@ -165,22 +140,13 @@ export const m7_week2: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "Ask a partner: \"Is a coat hot weather or cold weather?\"",
-        ko: "짝에게 물어보세요: \"코트는 더운 날씨일까요, 추운 날씨일까요?\"",
-      },
+      prompt: "Ask a partner: \"Is a coat hot weather or cold weather?\"",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we sorted clothes into hot weather and cold weather, played a second game building the sentence \"It's sunny today,\" and helped Vora follow clear step-by-step instructions.",
-        ko: "오늘은 옷을 더운 날씨와 추운 날씨로 분류하고, 두 번째 게임으로 \"It's sunny today.\" 문장을 만들었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
-      },
-      homework: {
-        en: "Pick out your own clothes for tomorrow's weather and say if they're \"hot weather\" or \"cold weather\" clothes, in English.",
-        ko: "내일 날씨에 맞는 옷을 직접 골라보고, 그 옷이 \"hot weather\" 옷인지 \"cold weather\" 옷인지 영어로 말해보세요.",
-      },
+      summary: "Today we sorted clothes into hot weather and cold weather, played a second game building the sentence \"It's sunny today,\" and helped Vora follow clear step-by-step instructions.",
+      homework: "Pick out your own clothes for tomorrow's weather and say if they're \"hot weather\" or \"cold weather\" clothes, in English.",
     },
   ],
 };
@@ -190,61 +156,51 @@ export const m7_week3: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Draw a big sun on the board (or hold up a sunny-weather photo) and ask \"What's the weather?\" Let kids call out \"sunny!\" before building today's sentence.",
-        ko: "칠판에 큰 해를 그리거나(또는 맑은 날씨 사진을 보여주며) \"What's the weather?\"라고 물어보세요. 오늘의 문장을 만들기 전에 학생들이 \"sunny!\"라고 외쳐보게 하세요.",
-      },
-      prompt: { en: "What's the weather? ☀️", ko: "날씨가 어때요? ☀️" },
+      teacherScript: "Draw a big sun on the board (or hold up a sunny-weather photo) and ask \"What's the weather?\" Let kids call out \"sunny!\" before building today's sentence.",
+      prompt: "What's the weather? ☀️",
     },
     {
       type: "concept",
-      title: { en: "Vora Builds a Sentence", ko: "보라가 문장을 만들어요" },
+      title: "Vora Builds a Sentence",
       bigIdeas: [],
       lines: [
-        { en: "Sunny, cloudy, rainy — whatever the weather, there's always a sentence for it: \"It's ___ today.\"", ko: "맑든, 흐리든, 비가 오든 — 날씨가 어떻든 그걸 말하는 문장이 있어: \"It's ___ today.\"" },
-        { en: "Let's build it together, one word at a time!", ko: "함께 한 단어씩 문장을 만들어보자!" },
+        { text: "Sunny, cloudy, rainy — whatever the weather, there's always a sentence for it: \"It's ___ today.\"" },
+        { text: "Let's build it together, one word at a time!" },
       ],
       teacherNote:
         "Just a quick bridge into today's sentence-building game — the \"It's ___\" pattern doesn't need re-teaching by now (see Week 1), this is pure practice.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Build the sentence one tile at a time, then have the whole class act out being in sunny weather (shielding their eyes, big smile) as they say it together. Then play a second game to reinforce it.",
-        ko: "한 번에 한 타일씩 문장을 만들고, 다 함께 말하면서 맑은 날씨에 있는 모습을 몸으로 표현해보세요(눈을 가리고 활짝 웃기). 그런 다음 두 번째 게임으로 복습해 보세요.",
-      },
+      instructions: "Build the sentence one tile at a time, then have the whole class act out being in sunny weather (shielding their eyes, big smile) as they say it together. Then play a second game to reinforce it.",
       config: {
         engine: "sentence_builder",
-        title: { en: "It's sunny today.", ko: "오늘은 맑아요." },
+        title: "It's sunny today.",
         words: [
-          { text: "It's", role: "subject", ko: "날씨가" },
-          { text: "sunny", role: "object", ko: "맑아요" },
-          { text: "today", role: "other", ko: "오늘" },
+          { text: "It's", role: "subject" },
+          { text: "sunny", role: "object" },
+          { text: "today", role: "other" },
         ],
-        translation: { en: "It's sunny today.", ko: "오늘은 맑아요." },
       },
     },
     {
       type: "activity",
-      instructions: {
-        en: "As a class, decide together whether each clothing item is for hot or cold weather before tapping — then have kids mime actually putting it on (shiver and hug yourself for coats and scarves, fan yourself for shorts and sandals). This doubles nicely as a movement break.",
-        ko: "탭하기 전에 반 전체가 함께 각 옷이 더운 날씨용인지 추운 날씨용인지 정해보세요 — 그런 다음 학생들이 실제로 그 옷을 입는 흉내를 내보게 하세요(코트나 목도리는 몸을 떨며 안는 흉내, 반바지나 샌들은 부채질하는 흉내). 이렇게 하면 자연스러운 움직임 시간도 될 수 있어요.",
-      },
+      instructions: "As a class, decide together whether each clothing item is for hot or cold weather before tapping — then have kids mime actually putting it on (shiver and hug yourself for coats and scarves, fan yourself for shorts and sandals). This doubles nicely as a movement break.",
       config: {
         engine: "train_the_robot",
-        title: { en: "Hot Weather Clothes or Cold Weather Clothes?", ko: "더운 날씨 옷일까요, 추운 날씨 옷일까요?" },
-        labelA: { en: "Hot Weather", ko: "더운 날씨" },
-        labelB: { en: "Cold Weather", ko: "추운 날씨" },
+        title: "Hot Weather Clothes or Cold Weather Clothes?",
+        labelA: "Hot Weather",
+        labelB: "Cold Weather",
         emojiA: "🥵",
         emojiB: "🥶",
         items: [
-          { word: { en: "shorts", ko: "반바지" }, emoji: "🩳", bucket: "a" },
-          { word: { en: "t-shirt", ko: "티셔츠" }, emoji: "👕", bucket: "a" },
-          { word: { en: "sandals", ko: "샌들" }, emoji: "👡", bucket: "a" },
-          { word: { en: "sunglasses", ko: "선글라스" }, emoji: "🕶️", bucket: "a", minTrack: "explorers" },
-          { word: { en: "coat", ko: "코트" }, emoji: "🧥", bucket: "b" },
-          { word: { en: "scarf", ko: "목도리" }, emoji: "🧣", bucket: "b" },
-          { word: { en: "boots", ko: "부츠" }, emoji: "👢", bucket: "b" },
+          { word: "shorts", emoji: "🩳", bucket: "a" },
+          { word: "t-shirt", emoji: "👕", bucket: "a" },
+          { word: "sandals", emoji: "👡", bucket: "a" },
+          { word: "sunglasses", emoji: "🕶️", bucket: "a", minTrack: "explorers" },
+          { word: "coat", emoji: "🧥", bucket: "b" },
+          { word: "scarf", emoji: "🧣", bucket: "b" },
+          { word: "boots", emoji: "👢", bucket: "b" },
         ],
       },
     },
@@ -253,22 +209,13 @@ export const m7_week3: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "Ask a partner: \"Is it sunny or rainy today?\" and check whether their answer matches the real weather.",
-        ko: "짝에게 물어보세요: \"Is it sunny or rainy today?\" 그리고 짝의 대답이 실제 날씨와 맞는지 확인해보세요.",
-      },
+      prompt: "Ask a partner: \"Is it sunny or rainy today?\" and check whether their answer matches the real weather.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we played three activities — building the sentence \"It's sunny today\" one word at a time, sorting clothes into hot weather and cold weather, and spotting real AI in everyday life.",
-        ko: "오늘은 세 가지 활동을 했어요 — \"It's sunny today.\" 문장을 한 단어씩 만들고, 옷을 더운 날씨와 추운 날씨로 분류했어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
-      },
-      homework: {
-        en: "Look outside tonight and try building today's weather sentence with a family member.",
-        ko: "오늘 저녁 밖을 보고, 가족과 함께 오늘의 날씨 문장을 만들어보세요.",
-      },
+      summary: "Today we played three activities — building the sentence \"It's sunny today\" one word at a time, sorting clothes into hot weather and cold weather, and spotting real AI in everyday life.",
+      homework: "Look outside tonight and try building today's weather sentence with a family member.",
     },
   ],
 };
@@ -278,44 +225,33 @@ export const m7_week4: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Open the blinds or point to a window and ask \"What's it like outside right now?\" Let a few kids answer in Korean before starting today's English sentence.",
-        ko: "블라인드를 열거나 창문을 가리키며 \"What's it like outside right now?\"라고 물어보세요. 오늘의 영어 문장을 시작하기 전에 학생들이 먼저 한국어로 답해보게 하세요.",
-      },
-      prompt: { en: "What's it like outside? 🪟", ko: "밖은 어떤가요? 🪟" },
+      teacherScript: "Open the blinds or point to a window and ask \"What's it like outside right now?\" Let a few kids answer in Korean before starting today's English sentence.",
+      prompt: "What's it like outside? 🪟",
     },
     {
       type: "concept",
-      title: { en: "Check the Sky!", ko: "하늘을 확인해봐요!" },
+      title: "Check the Sky!",
       bigIdeas: [],
       lines: [
-        { en: "Look outside the window with me — what do you see?", ko: "나랑 같이 창밖을 봐 — 뭐가 보여?" },
-        { en: "However the sky looks, there's a sentence for it: \"It's ___ today.\"", ko: "하늘이 어떻게 보이든, 그걸 말하는 문장이 있어: \"It's ___ today.\"" },
-        {
-          en: "In Korean, weather doesn't need a subject — but English always keeps a little word: \"It.\"",
-          ko: "한국어는 날씨를 말할 때 주어가 필요 없지만, 영어는 항상 작은 단어 'It'을 넣어.",
-          minTrack: "explorers",
-        },
-        { en: "Let's build it together, then check if it's really true outside!", ko: "함께 문장을 만들고 나서, 밖이 정말 그런지 확인해보자!" },
+        { text: "Look outside the window with me — what do you see?" },
+        { text: "However the sky looks, there's a sentence for it: \"It's ___ today.\"" },
+        { text: "In Korean, weather doesn't need a subject — but English always keeps a little word: \"It.\"", minTrack: "explorers" },
+        { text: "Let's build it together, then check if it's really true outside!" },
       ],
       teacherNote:
-        "This is the most immediately real-world-checkable sentence pattern in the curriculum — after building it, look out the window together and see if the class's sentence is actually true today. Also a good moment to flag that English's \"It's\" has no direct Korean equivalent: Korean weather sentences (\"오늘 맑아요\") don't need a placeholder subject at all, so kids may want to skip straight to the weather word. Point out that English always keeps \"It's,\" even though nothing specific is \"it.\"",
+        "This is the most immediately real-world-checkable sentence pattern in the curriculum — after building it, look out the window together and see if the class's sentence is actually true today. Also a good moment to flag that English's \"It's\" has no direct Korean equivalent: Korean weather sentences don't need a placeholder subject at all, so kids may want to skip straight to the weather word. Point out that English always keeps \"It's,\" even though nothing specific is \"it.\"",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Build the sentence one tile at a time. Once it's complete, look out the window together — is it actually rainy today? If not, rebuild the sentence with the real weather word instead!",
-        ko: "한 번에 한 타일씩 문장을 만들어보세요. 완성되면 함께 창밖을 보세요 — 오늘 정말 비가 오나요? 아니라면 실제 날씨 단어로 문장을 다시 만들어보세요!",
-      },
+      instructions: "Build the sentence one tile at a time. Once it's complete, look out the window together — is it actually rainy today? If not, rebuild the sentence with the real weather word instead!",
       config: {
         engine: "sentence_builder",
-        title: { en: "It's rainy today.", ko: "오늘은 비가 와요." },
+        title: "It's rainy today.",
         words: [
-          { text: "It's", role: "subject", ko: "날씨가" },
-          { text: "rainy", role: "object", ko: "비가 와요" },
-          { text: "today", role: "other", ko: "오늘" },
+          { text: "It's", role: "subject" },
+          { text: "rainy", role: "object" },
+          { text: "today", role: "other" },
         ],
-        translation: { en: "It's rainy today.", ko: "오늘은 비가 와요." },
       },
     },
     {
@@ -326,22 +262,13 @@ export const m7_week4: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "Go around and have every child say \"It's ___ today\" using today's real weather.",
-        ko: "한 명씩 돌아가며 오늘의 진짜 날씨로 \"It's ___ today\"라고 말해보게 하세요.",
-      },
+      prompt: "Go around and have every child say \"It's ___ today\" using today's real weather.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we built \"It's ___ today,\" checked it against the real sky outside our window, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
-        ko: "오늘은 \"It's ___ today\" 문장을 만들고 창밖의 진짜 하늘과 비교했어요. 보라가 분명한 단계별 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
-      },
-      homework: {
-        en: "Check the weather every day this week and greet a family member with \"It's ___ today!\" in English.",
-        ko: "이번 주 매일 날씨를 확인하고, 가족에게 영어로 \"It's ___ today!\"라고 인사해보세요.",
-      },
+      summary: "Today we built \"It's ___ today,\" checked it against the real sky outside our window, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+      homework: "Check the weather every day this week and greet a family member with \"It's ___ today!\" in English.",
     },
   ],
 };

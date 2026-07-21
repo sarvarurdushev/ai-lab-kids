@@ -7,7 +7,6 @@ import { playCorrect, playWrong } from "@/lib/sound";
 import { speak } from "@/lib/speech";
 import { SpeakerIcon } from "@/components/icons";
 import type { MinimalPairsConfig } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 
 // Listening-discrimination engine targeting specific Korean L1 phoneme gaps
 // (see docs/KOREAN_L1_NOTES.md) — deliberately receptive only (listen and
@@ -40,11 +39,9 @@ function buildRounds(config: MinimalPairsConfig): Round[] {
 
 export function MinimalPairsEngine({
   config,
-  level,
   onFinished,
 }: {
   config: MinimalPairsConfig;
-  level: KoreanSupportLevel;
   onFinished?: () => void;
 }) {
   const rounds = useMemo(() => buildRounds(config), [config]);
@@ -105,7 +102,6 @@ export function MinimalPairsEngine({
         <Button onClick={playTarget} variant="secondary" className="!flex !items-center !gap-2 !px-6 !py-3">
           <SpeakerIcon size={18} /> Play the word
         </Button>
-        {level === "full" && <p className="text-xs text-ink/40">단어를 듣고 아래에서 골라보세요.</p>}
       </div>
 
       <div className="grid grid-cols-2 gap-3">
@@ -121,7 +117,6 @@ export function MinimalPairsEngine({
             >
               <span className="text-4xl">{word.emoji}</span>
               <span>{word.text}</span>
-              {level !== "minimal" && <span className="text-xs font-normal text-ink/50">{word.ko}</span>}
             </button>
           );
         })}

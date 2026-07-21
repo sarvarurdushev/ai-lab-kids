@@ -13,58 +13,45 @@ export const m3_week1: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Pretend two kids are already playing with blocks. Walk up and ask, hopefully, \"Can I play?\" Have the class echo the question with you before you explain anything.",
-        ko: "두 학생이 이미 블록 놀이를 하고 있다고 상상해보세요. 다가가서 기대하는 표정으로 \"Can I play?\"라고 물어보세요. 설명하기 전에 학급 전체가 함께 그 질문을 따라 말하게 해주세요.",
-      },
-      prompt: { en: "Can I play? 🧩", ko: "같이 놀아도 돼? 🧩" },
+      teacherScript: "Pretend two kids are already playing with blocks. Walk up and ask, hopefully, \"Can I play?\" Have the class echo the question with you before you explain anything.",
+      prompt: "Can I play? 🧩",
     },
     {
       type: "vocab",
-      title: { en: "Friendship Words", ko: "우정 단어" },
+      title: "Friendship Words",
       words: [
-        { word: { en: "friend", ko: "친구" }, emoji: "🧑‍🤝‍🧑" },
-        { word: { en: "share", ko: "나누다" }, emoji: "🤝" },
-        { word: { en: "play", ko: "놀다" }, emoji: "🧩" },
-        { word: { en: "kind", ko: "친절한" }, emoji: "❤️", minTrack: "explorers" },
-        { word: { en: "sorry", ko: "미안해" }, emoji: "😔" },
-        { word: { en: "happy", ko: "행복한" }, emoji: "😊" },
+        { word: "friend", emoji: "🧑‍🤝‍🧑" },
+        { word: "share", emoji: "🤝" },
+        { word: "play", emoji: "🧩" },
+        { word: "kind", emoji: "❤️", minTrack: "explorers" },
+        { word: "sorry", emoji: "😔" },
+        { word: "happy", emoji: "😊" },
       ],
     },
     {
       type: "concept",
-      title: { en: "Vora Takes Turns", ko: "보라는 차례를 지켜요" },
+      title: "Vora Takes Turns",
       bigIdeas: ["natural_interaction"],
       lines: [
-        { en: "When I want to join a game, I ask, \"Can I play?\"", ko: "나도 같이 놀고 싶을 때는 이렇게 물어봐: \"Can I play?\"" },
-        { en: "And when I have something good to share, I say, \"Let's share.\"", ko: "그리고 나눠줄 좋은 게 있을 때는 \"Let's share.\"라고 말해." },
-        {
-          en: "\"Can I ___?\" starts with a little helper word, just like \"Do you ___?\" did.",
-          ko: "\"Can I ___?\"도 \"Do you ___?\"처럼 작은 조동사로 문장을 시작해.",
-          minTrack: "explorers",
-        },
-        {
-          en: "A good voice assistant listens quietly until you stop talking, then it answers — that's how good friends take turns too.",
-          ko: "좋은 음성 비서는 네가 말을 멈출 때까지 조용히 듣고 나서 대답해 — 좋은 친구가 차례를 지키는 것과 똑같아.",
-        },
+        { text: "When I want to join a game, I ask, \"Can I play?\"" },
+        { text: "And when I have something good to share, I say, \"Let's share.\"" },
+        { text: "\"Can I ___?\" starts with a little helper word, just like \"Do you ___?\" did.", minTrack: "explorers" },
+        { text: "A good voice assistant listens quietly until you stop talking, then it answers — that's how good friends take turns too." },
       ],
       teacherNote:
         "\"Can I ___?\" is the second auxiliary-fronted question in the curriculum after \"Do you ___?\" in the foundations unit — name the shared pattern explicitly so it transfers. The AI thread: natural conversation depends on turn-taking, which is exactly what a voice assistant is designed to imitate (wait for silence, then respond).",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Kids take turns tapping the next step of making a new friend. Read each step aloud together as it's placed, then act it out with a partner.",
-        ko: "학생들이 돌아가며 새 친구를 사귀는 다음 단계를 탭해요. 배치할 때마다 함께 소리 내어 읽고, 짝과 함께 그 동작을 해보세요.",
-      },
+      instructions: "Kids take turns tapping the next step of making a new friend. Read each step aloud together as it's placed, then act it out with a partner.",
       config: {
         engine: "sequence_builder",
-        title: { en: "Making a Friend", ko: "친구 사귀기" },
+        title: "Making a Friend",
         steps: [
-          { text: { en: "Say hello", ko: "인사하기" }, emoji: "👋" },
-          { text: { en: "Ask their name", ko: "이름 물어보기" }, emoji: "🙋" },
-          { text: { en: "Ask to play", ko: "같이 놀자고 물어보기" }, emoji: "🧩" },
-          { text: { en: "Say thank you", ko: "고맙다고 말하기" }, emoji: "🙏" },
+          { text: "Say hello", emoji: "👋" },
+          { text: "Ask their name", emoji: "🙋" },
+          { text: "Ask to play", emoji: "🧩" },
+          { text: "Say thank you", emoji: "🙏" },
         ],
       },
     },
@@ -76,22 +63,13 @@ export const m3_week1: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "Turn to a partner. One kid asks \"Can I play?\" and the other answers \"Yes! Let's share.\"",
-        ko: "짝과 함께 해보세요. 한 명이 \"Can I play?\"라고 물으면 다른 한 명이 \"Yes! Let's share.\"라고 답해요.",
-      },
+      prompt: "Turn to a partner. One kid asks \"Can I play?\" and the other answers \"Yes! Let's share.\"",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we learned to ask \"Can I play?\" and offer \"Let's share,\" saw that a good voice assistant listens and takes turns like a good friend, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
-        ko: "오늘은 \"Can I play?\"라고 묻고 \"Let's share\"라고 제안하는 법을 배웠어요. 좋은 음성 비서도 좋은 친구처럼 듣고 차례를 지킨다는 것을 알았고, 일상 속 진짜 AI를 알아보는 연습도 했어요. 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
-      },
-      homework: {
-        en: "Ask someone at home \"Can I play?\" before you join their game tonight.",
-        ko: "오늘 저녁 집에서 놀이에 끼기 전에 \"Can I play?\"라고 물어보세요.",
-      },
+      summary: "Today we learned to ask \"Can I play?\" and offer \"Let's share,\" saw that a good voice assistant listens and takes turns like a good friend, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+      homework: "Ask someone at home \"Can I play?\" before you join their game tonight.",
     },
   ],
 };
@@ -101,54 +79,44 @@ export const m3_week2: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Say \"Can I play?\" one word at a time, pausing between each word like you're placing a puzzle piece: \"Can... I... play?\" Have the class echo it the same broken-up way, then all together fast.",
-        ko: "\"Can I play?\"를 마치 퍼즐 조각을 하나씩 놓는 것처럼 한 단어씩 끊어서 말해보세요: \"Can... I... play?\" 학급이 같은 방식으로 따라 하게 한 다음, 다 함께 빠르게 말해보세요.",
-      },
-      prompt: { en: "Can... I... play? 🧩", ko: "Can... I... play? 🧩" },
+      teacherScript: "Say \"Can I play?\" one word at a time, pausing between each word like you're placing a puzzle piece: \"Can... I... play?\" Have the class echo it the same broken-up way, then all together fast.",
+      prompt: "Can... I... play? 🧩",
     },
     {
       type: "concept",
-      title: { en: "Vora Listens for Order", ko: "보라는 순서를 듣고 있어요" },
+      title: "Vora Listens for Order",
       bigIdeas: ["natural_interaction"],
       lines: [
-        { en: "Remember: a good friend — and a good voice assistant — waits and listens before answering.", ko: "기억하지? 좋은 친구도, 좋은 음성 비서도 대답하기 전에 기다리고 잘 들어." },
-        { en: "Today let's build the question \"Can I play?\" one word at a time, just like taking turns.", ko: "오늘은 \"Can I play?\" 질문을 차례차례 한 단어씩 만들어볼 거야, 마치 차례를 지키는 것처럼." },
+        { text: "Remember: a good friend — and a good voice assistant — waits and listens before answering." },
+        { text: "Today let's build the question \"Can I play?\" one word at a time, just like taking turns." },
       ],
       teacherNote:
         "Short recap only — the natural_interaction big idea (turn-taking) was fully taught in Week 1; here it's briefly reconnected to today's word-order game before playing.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Build the question one tile at a time, left to right. Then have a few kids ask the whole question out loud to a partner across the room. Then play a second game to reinforce it.",
-        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 질문을 만들어요. 그런 다음 몇 명의 학생이 교실 반대편 짝에게 소리 내어 전체 질문을 해보게 하세요. 그런 다음 두 번째 게임을 하며 복습해보세요.",
-      },
+      instructions: "Build the question one tile at a time, left to right. Then have a few kids ask the whole question out loud to a partner across the room. Then play a second game to reinforce it.",
       config: {
         engine: "sentence_builder",
-        title: { en: "Can I play?", ko: "같이 놀아도 될까요?" },
+        title: "Can I play?",
         words: [
-          { text: "Can", role: "other", ko: "~해도 될까요" },
-          { text: "I", role: "subject", ko: "제가" },
-          { text: "play", role: "verb", ko: "놀다" },
+          { text: "Can", role: "other" },
+          { text: "I", role: "subject" },
+          { text: "play", role: "verb" },
         ],
-        translation: { en: "Can I play?", ko: "같이 놀아도 될까요?" },
       },
     },
     {
       type: "activity",
-      instructions: {
-        en: "Kids flip two cards at a time, trying to find the matching feeling word and face. Say the feeling word aloud together every time there's a match.",
-        ko: "학생들이 카드 두 장을 뒤집어 짝이 맞는 감정 단어와 표정을 찾아요. 짝이 맞을 때마다 함께 감정 단어를 소리 내어 말해주세요.",
-      },
+      instructions: "Kids flip two cards at a time, trying to find the matching feeling word and face. Say the feeling word aloud together every time there's a match.",
       config: {
         engine: "memory_match",
-        title: { en: "Feelings Match", ko: "감정 짝 맞추기" },
+        title: "Feelings Match",
         pairs: [
-          { word: { en: "happy", ko: "행복한" }, emoji: "😊" },
-          { word: { en: "sad", ko: "슬픈" }, emoji: "😢" },
-          { word: { en: "kind", ko: "다정한" }, emoji: "❤️" },
-          { word: { en: "excited", ko: "신난" }, emoji: "🤩", minTrack: "explorers" },
+          { word: "happy", emoji: "😊" },
+          { word: "sad", emoji: "😢" },
+          { word: "kind", emoji: "❤️" },
+          { word: "excited", emoji: "🤩", minTrack: "explorers" },
         ],
       },
     },
@@ -157,18 +125,12 @@ export const m3_week2: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "Ask one kid to say the whole question out loud, in order: \"Can I play?\"",
-        ko: "한 학생에게 전체 질문을 순서대로 소리 내어 말해보게 하세요: \"Can I play?\"",
-      },
+      prompt: "Ask one kid to say the whole question out loud, in order: \"Can I play?\"",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we played three activities — building the question \"Can I play?\" tile by tile, matching feeling words like happy, sad, and kind to faces, and helping Vora follow clear step-by-step instructions.",
-        ko: "오늘은 세 가지 활동을 했어요 — \"Can I play?\" 질문을 한 단어씩 만들고, happy, sad, kind 같은 감정 단어를 표정과 짝지었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
-      },
+      summary: "Today we played three activities — building the question \"Can I play?\" tile by tile, matching feeling words like happy, sad, and kind to faces, and helping Vora follow clear step-by-step instructions.",
     },
   ],
 };
@@ -178,55 +140,45 @@ export const m3_week3: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Make a big happy face, then a sad face, then a kind, gentle face. Ask the class to call out the feeling word for each one before you explain today's game.",
-        ko: "먼저 활짝 웃는 표정을, 그다음 슬픈 표정을, 그다음 다정하고 부드러운 표정을 지어 보이세요. 오늘의 게임을 설명하기 전에 학급이 각 표정의 감정 단어를 외치게 해주세요.",
-      },
-      prompt: { en: "How do I feel? 😊😢❤️", ko: "나는 지금 기분이 어때요? 😊😢❤️" },
+      teacherScript: "Make a big happy face, then a sad face, then a kind, gentle face. Ask the class to call out the feeling word for each one before you explain today's game.",
+      prompt: "How do I feel? 😊😢❤️",
     },
     {
       type: "concept",
-      title: { en: "Vora Notices Feelings", ko: "보라는 감정을 알아차려요" },
+      title: "Vora Notices Feelings",
       bigIdeas: ["natural_interaction"],
       lines: [
-        { en: "Good friends notice how you feel, just by listening and watching closely.", ko: "좋은 친구는 잘 듣고 잘 살펴보는 것만으로도 네 기분을 알아차려." },
-        { en: "Today let's match feeling words to faces, the same way a good friend would.", ko: "오늘은 좋은 친구처럼 감정 단어와 표정을 짝지어볼 거야." },
+        { text: "Good friends notice how you feel, just by listening and watching closely." },
+        { text: "Today let's match feeling words to faces, the same way a good friend would." },
       ],
       teacherNote:
         "Short recap only — natural_interaction (turn-taking/listening) was the full Week 1 teach; here it's linked to reading feelings as another way friends pay close attention to each other, before the matching game.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Kids flip two cards at a time, trying to find the matching feeling word and face. Say the feeling word aloud together every time there's a match. Then play a second game to reinforce it.",
-        ko: "학생들이 카드 두 장을 뒤집어 짝이 맞는 감정 단어와 표정을 찾아요. 짝이 맞을 때마다 함께 감정 단어를 소리 내어 말해주세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
-      },
+      instructions: "Kids flip two cards at a time, trying to find the matching feeling word and face. Say the feeling word aloud together every time there's a match. Then play a second game to reinforce it.",
       config: {
         engine: "memory_match",
-        title: { en: "Feelings Match", ko: "감정 짝 맞추기" },
+        title: "Feelings Match",
         pairs: [
-          { word: { en: "happy", ko: "행복한" }, emoji: "😊" },
-          { word: { en: "sad", ko: "슬픈" }, emoji: "😢" },
-          { word: { en: "kind", ko: "다정한" }, emoji: "❤️" },
-          { word: { en: "excited", ko: "신난" }, emoji: "🤩", minTrack: "explorers" },
+          { word: "happy", emoji: "😊" },
+          { word: "sad", emoji: "😢" },
+          { word: "kind", emoji: "❤️" },
+          { word: "excited", emoji: "🤩", minTrack: "explorers" },
         ],
       },
     },
     {
       type: "activity",
-      instructions: {
-        en: "Build the question one tile at a time, left to right. Then have a few kids ask the whole question out loud to a partner across the room.",
-        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 질문을 만들어요. 그런 다음 몇 명의 학생이 교실 반대편 짝에게 소리 내어 전체 질문을 해보게 하세요.",
-      },
+      instructions: "Build the question one tile at a time, left to right. Then have a few kids ask the whole question out loud to a partner across the room.",
       config: {
         engine: "sentence_builder",
-        title: { en: "Can I play?", ko: "같이 놀아도 될까요?" },
+        title: "Can I play?",
         words: [
-          { text: "Can", role: "other", ko: "~해도 될까요" },
-          { text: "I", role: "subject", ko: "제가" },
-          { text: "play", role: "verb", ko: "놀다" },
+          { text: "Can", role: "other" },
+          { text: "I", role: "subject" },
+          { text: "play", role: "verb" },
         ],
-        translation: { en: "Can I play?", ko: "같이 놀아도 될까요?" },
       },
     },
     {
@@ -234,18 +186,12 @@ export const m3_week3: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "Ask one kid to name one feeling word from the matching game and make that face.",
-        ko: "한 학생에게 짝 맞추기 게임 속 감정 단어를 하나 말하고 그 표정을 지어보게 하세요.",
-      },
+      prompt: "Ask one kid to name one feeling word from the matching game and make that face.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we played three activities — matching feeling words like happy, sad, and kind to faces, building the question \"Can I play?\" one word at a time, and spotting real AI in everyday life.",
-        ko: "오늘은 세 가지 활동을 했어요 — happy, sad, kind 같은 감정 단어를 표정과 짝짓고, \"Can I play?\" 질문을 한 단어씩 만들었어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
-      },
+      summary: "Today we played three activities — matching feeling words like happy, sad, and kind to faces, building the question \"Can I play?\" one word at a time, and spotting real AI in everyday life.",
     },
   ],
 };
@@ -255,45 +201,36 @@ export const m3_week4: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Say \"light\" and \"right\" slowly, back to back, a few times. Don't explain yet — just let the class notice the sounds are close but different, the same way they did back in Week 2.",
-        ko: "\"light\"와 \"right\"를 천천히, 반복해서 말해주세요. 아직 설명하지 말고, 2주차 때처럼 학생들이 소리가 비슷하지만 다르다는 것을 스스로 느끼게 해주세요.",
-      },
-      prompt: { en: "light... right... light... right...", ko: "light... right... light... right..." },
+      teacherScript: "Say \"light\" and \"right\" slowly, back to back, a few times. Don't explain yet — just let the class notice the sounds are close but different, the same way they did back in Week 2.",
+      prompt: "light... right... light... right...",
     },
     {
       type: "concept",
-      title: { en: "Listening Like a Good Friend", ko: "좋은 친구처럼 잘 듣기" },
+      title: "Listening Like a Good Friend",
       bigIdeas: ["perception"],
       lines: [
-        { en: "Remember \"l\" and \"r\"? They're still two different sounds in English.", ko: "\"l\"과 \"r\" 기억하나요? 영어에서는 여전히 서로 다른 두 소리예요." },
-        { en: "Good friends listen very carefully to each other — let's listen carefully too.", ko: "좋은 친구는 서로의 말을 아주 잘 들어요 — 우리도 잘 들어봐요." },
-        {
-          en: "This time, try to catch the difference before I say each word twice.",
-          ko: "이번에는 제가 각 단어를 두 번 말하기 전에 차이를 알아채 봐요.",
-        },
+        { text: "Remember \"l\" and \"r\"? They're still two different sounds in English." },
+        { text: "Good friends listen very carefully to each other — let's listen carefully too." },
+        { text: "This time, try to catch the difference before I say each word twice." },
       ],
       teacherNote:
-        "Quarter-checkpoint review of the foundations unit's Week 2 Day 3 /l/-/r/ contrast — the single highest-frequency Korean-learner sound gap, since Korean's single liquid phoneme /ㄹ/ covers both English sounds. Expect the same level of difficulty as Week 2; that's normal spaced repetition, not regression. Framing it as \"listening like a good friend\" keeps it tied to this month's theme.",
+        "Quarter-checkpoint review of the foundations unit's Week 2 Day 3 /l/-/r/ contrast — the single highest-frequency Korean-learner sound gap, since Korean's single liquid consonant covers both English sounds. Expect the same level of difficulty as Week 2; that's normal spaced repetition, not regression. Framing it as \"listening like a good friend\" keeps it tied to this month's theme.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Play each word once (tap the speaker icon), and have kids point to or say the picture they heard. Repeat any pair the class finds hard.",
-        ko: "각 단어를 한 번씩 재생하고(스피커 아이콘 탭), 학생들이 들은 단어의 그림을 가리키거나 말하게 하세요. 어려워하는 쌍은 반복해 주세요.",
-      },
+      instructions: "Play each word once (tap the speaker icon), and have kids point to or say the picture they heard. Repeat any pair the class finds hard.",
       config: {
         engine: "minimal_pairs",
-        title: { en: "Listen Closely: light or right?", ko: "잘 들어보세요: light일까요, right일까요?" },
+        title: "Listen Closely: light or right?",
         targetSound: "/l/ vs /r/",
         teacherNote:
           "Quarter-checkpoint review of the Week 2 Day 3 /l/-/r/ minimal pairs lesson — same pair set, intentionally, since spaced repetition is what makes this contrast stick for Korean L1 speakers.",
         pairs: [
-          { wordA: { text: "light", emoji: "💡", ko: "빛" }, wordB: { text: "right", emoji: "👉", ko: "오른쪽" } },
-          { wordA: { text: "lead", emoji: "🚶", ko: "이끌다" }, wordB: { text: "read", emoji: "📖", ko: "읽다" } },
-          { wordA: { text: "load", emoji: "📦", ko: "짐" }, wordB: { text: "road", emoji: "🛣️", ko: "도로" } },
-          { wordA: { text: "lock", emoji: "🔒", ko: "자물쇠" }, wordB: { text: "rock", emoji: "🪨", ko: "바위" } },
-          { wordA: { text: "low", emoji: "⬇️", ko: "낮은" }, wordB: { text: "row", emoji: "🚣", ko: "노를 젓다" } },
+          { wordA: { text: "light", emoji: "💡" }, wordB: { text: "right", emoji: "👉" } },
+          { wordA: { text: "lead", emoji: "🚶" }, wordB: { text: "read", emoji: "📖" } },
+          { wordA: { text: "load", emoji: "📦" }, wordB: { text: "road", emoji: "🛣️" } },
+          { wordA: { text: "lock", emoji: "🔒" }, wordB: { text: "rock", emoji: "🪨" } },
+          { wordA: { text: "low", emoji: "⬇️" }, wordB: { text: "row", emoji: "🚣" } },
         ],
       },
     },
@@ -305,18 +242,12 @@ export const m3_week4: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "Say \"light\" and \"right\" one more time — thumbs up if your ears caught the difference today.",
-        ko: "\"light\"와 \"right\"를 한 번 더 말해보세요 — 오늘 차이를 알아챘다면 엄지를 올려주세요.",
-      },
+      prompt: "Say \"light\" and \"right\" one more time — thumbs up if your ears caught the difference today.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we listened closely for the difference between l and r again, a little easier every time we practice, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
-        ko: "오늘은 l과 r 소리의 차이를 다시 한번 귀 기울여 들어봤어요 — 연습할수록 조금씩 쉬워져요. 보라가 분명한 단계별 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
-      },
+      summary: "Today we listened closely for the difference between l and r again, a little easier every time we practice, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
     },
   ],
 };

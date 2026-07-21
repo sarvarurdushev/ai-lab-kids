@@ -14,9 +14,7 @@ export function LessonPlanFacts({ lesson }: { lesson: LessonMeta }) {
         <p className="text-[10px] font-bold uppercase tracking-wide text-ink/40">I can... (objectives)</p>
         <ul className="mt-0.5 list-disc pl-4 text-ink/75">
           {lesson.objectives.map((o, i) => (
-            <li key={i}>
-              {o.en} <span className="text-ink/40">— {o.ko}</span>
-            </li>
+            <li key={i}>{o}</li>
           ))}
         </ul>
       </div>

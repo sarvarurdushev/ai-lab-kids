@@ -7,6 +7,5 @@ export * from "./bigIdeaPresentation";
 export * from "./aiLabBank";
 export * from "./enginePresentation";
 export * from "./standardsAlignment";
-export * from "./l1Targets";
 export * from "./programPresentation";
 export * from "./lessons/index";

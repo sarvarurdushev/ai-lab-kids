@@ -6,11 +6,10 @@ import dynamic from "next/dynamic";
 import { Vora } from "@/components/mascot/Vora";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { BilingualText } from "@/components/curriculum/BilingualText";
+import { EnglishText } from "@/components/curriculum/EnglishText";
 import { BigIdeaBanner } from "@/components/curriculum/BigIdeaBanner";
 import { MarkPanel } from "./MarkPanel";
 import { BIG_IDEA_LABELS, resolveBigIdea, ENGINE_PRESENTATION, isAiLabEngine, type Lesson, type LessonSegment } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 import { SunIcon, BookIcon, RobotHeadIcon, GamepadIcon, CheckCircleIcon, GiftIcon, SparkleIcon } from "@/components/icons";
 
 const SEGMENT_LABEL: Record<
@@ -33,7 +32,7 @@ function stripInfo(segment: LessonSegment): {
 } {
   if (segment.type === "activity") {
     const ep = ENGINE_PRESENTATION[segment.config.engine];
-    return { icon: ep.icon, title: ep.label.en, isAiLab: isAiLabEngine(segment.config.engine) };
+    return { icon: ep.icon, title: ep.label, isAiLab: isAiLabEngine(segment.config.engine) };
   }
   const label = SEGMENT_LABEL[segment.type];
   return { icon: label.icon, title: label.text, isAiLab: false };
@@ -79,14 +78,12 @@ interface RosterStudent {
 
 export function PresentationPlayer({
   lesson,
-  level,
   sessionId,
   classId,
   initialSegmentIndex,
   roster,
 }: {
   lesson: Lesson;
-  level: KoreanSupportLevel;
   sessionId: string;
   classId: string;
   initialSegmentIndex: number;
@@ -170,12 +167,11 @@ export function PresentationPlayer({
       <Card className="flex items-center gap-4 !py-4 bg-gradient-to-r from-indigo/10 to-transparent">
         <Vora size={60} mood="happy" />
         <div>
-          <p className="font-display text-xl font-bold text-ink">{lesson.title.en}</p>
-          <p className="text-sm text-ink/50">{lesson.title.ko}</p>
+          <p className="font-display text-xl font-bold text-ink">{lesson.title}</p>
         </div>
       </Card>
 
-      {!finished && bigIdea && <BigIdeaBanner bigIdea={bigIdea} level={level} />}
+      {!finished && bigIdea && <BigIdeaBanner bigIdea={bigIdea} />}
 
       {!finished && index === 0 && (
         <Card className="!py-3">
@@ -222,11 +218,9 @@ export function PresentationPlayer({
               </p>
               <p className="rounded-2xl bg-indigo/5 p-3 text-sm text-ink/70">
                 <span className="font-bold">Teacher script: </span>
-                {segment.teacherScript.en}
-                <br />
-                <span className="text-xs text-ink/50">{segment.teacherScript.ko}</span>
+                {segment.teacherScript}
               </p>
-              <BilingualText text={segment.prompt} level={level} keyContent size="lg" />
+              <EnglishText text={segment.prompt} size="lg" />
             </div>
           )}
 
@@ -235,15 +229,15 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.vocab.className}`}>
                 <SEGMENT_LABEL.vocab.icon size={12} /> {SEGMENT_LABEL.vocab.text}
               </p>
-              <BilingualText text={segment.title} level={level} keyContent size="lg" />
+              <EnglishText text={segment.title} size="lg" />
               <div className="grid grid-cols-2 gap-2">
                 {segment.words.map((w) => (
                   <div
-                    key={w.word.en}
+                    key={w.word}
                     className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
                   >
                     <span className="text-3xl">{w.emoji}</span>
-                    <BilingualText text={w.word} level={level} keyContent size="sm" />
+                    <EnglishText text={w.word} size="sm" />
                   </div>
                 ))}
               </div>
@@ -265,12 +259,12 @@ export function PresentationPlayer({
                   </span>
                 ))}
               </div>
-              <BilingualText text={segment.title} level={level} keyContent size="lg" />
+              <EnglishText text={segment.title} size="lg" />
               <div className="flex flex-col gap-2">
                 {segment.lines.map((line, i) => (
                   <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
                     <Vora size={28} />
-                    <BilingualText text={line} level={level} size="sm" />
+                    <EnglishText text={line.text} size="sm" />
                   </div>
                 ))}
               </div>
@@ -286,21 +280,21 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.activity.className}`}>
                 <SEGMENT_LABEL.activity.icon size={12} /> {SEGMENT_LABEL.activity.text}
               </p>
-              <BilingualText text={segment.instructions} level={level} keyContent size="sm" />
+              <EnglishText text={segment.instructions} size="sm" />
               {segment.config.engine === "train_the_robot" && (
-                <TrainTheRobotEngine config={segment.config} level={level} />
+                <TrainTheRobotEngine config={segment.config} />
               )}
               {(segment.config.engine === "sequence_builder" || segment.config.engine === "sentence_builder") && (
-                <OrderingEngine config={segment.config} level={level} />
+                <OrderingEngine config={segment.config} />
               )}
-              {segment.config.engine === "minimal_pairs" && <MinimalPairsEngine config={segment.config} level={level} />}
-              {segment.config.engine === "memory_match" && <MemoryMatchEngine config={segment.config} level={level} />}
+              {segment.config.engine === "minimal_pairs" && <MinimalPairsEngine config={segment.config} />}
+              {segment.config.engine === "memory_match" && <MemoryMatchEngine config={segment.config} />}
               {segment.config.engine === "pattern_predictor" && (
-                <PatternPredictorEngine config={segment.config} level={level} />
+                <PatternPredictorEngine config={segment.config} />
               )}
-              {segment.config.engine === "ai_or_not" && <AIOrNotEngine config={segment.config} level={level} />}
+              {segment.config.engine === "ai_or_not" && <AIOrNotEngine config={segment.config} />}
               {segment.config.engine === "instruct_vora" && (
-                <InstructVoraEngine config={segment.config} level={level} />
+                <InstructVoraEngine config={segment.config} />
               )}
             </div>
           )}
@@ -310,7 +304,7 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.check.className}`}>
                 <SEGMENT_LABEL.check.icon size={12} /> {SEGMENT_LABEL.check.text}
               </p>
-              <BilingualText text={segment.prompt} level={level} keyContent size="lg" />
+              <EnglishText text={segment.prompt} size="lg" />
               <MarkPanel sessionId={sessionId} activityKey={activityKey} roster={roster} />
             </div>
           )}
@@ -320,11 +314,11 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.wrapup.className}`}>
                 <SEGMENT_LABEL.wrapup.icon size={12} /> {SEGMENT_LABEL.wrapup.text}
               </p>
-              <BilingualText text={segment.summary} level={level} keyContent size="base" />
+              <EnglishText text={segment.summary} size="base" />
               {segment.homework && (
                 <div className="rounded-2xl bg-mint/10 p-3">
                   <p className="text-xs font-bold text-mint">Homework</p>
-                  <BilingualText text={segment.homework} level={level} keyContent size="sm" speakable={false} />
+                  <EnglishText text={segment.homework} size="sm" speakable={false} />
                 </div>
               )}
             </div>

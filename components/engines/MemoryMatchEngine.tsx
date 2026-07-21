@@ -5,7 +5,6 @@ import { Vora } from "@/components/mascot/Vora";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { speak } from "@/lib/speech";
 import type { MemoryMatchConfig } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 
 // Flip-card pairs game reinforcing a month's vocabulary through repeated
 // recognition rather than production — see docs/AI_CURRICULUM.md. Each
@@ -40,11 +39,9 @@ function buildCards(config: MemoryMatchConfig): Card[] {
 
 export function MemoryMatchEngine({
   config,
-  level,
   onFinished,
 }: {
   config: MemoryMatchConfig;
-  level: KoreanSupportLevel;
   onFinished?: () => void;
 }) {
   const cards = useMemo(() => buildCards(config), [config]);
@@ -58,7 +55,7 @@ export function MemoryMatchEngine({
   function flip(card: Card) {
     if (locked || flipped.includes(card.id) || matched.has(card.pairIndex)) return;
     playPop();
-    if (card.kind === "word") speak(config.pairs[card.pairIndex].word.en, "en-US");
+    if (card.kind === "word") speak(config.pairs[card.pairIndex].word, "en-US");
 
     const next = [...flipped, card.id];
     setFlipped(next);
@@ -98,8 +95,7 @@ export function MemoryMatchEngine({
     <div className="flex flex-col gap-3">
       <div className="flex flex-col items-center gap-1 rounded-3xl bg-white/80 py-3 shadow-sm">
         <Vora size={48} mood="neutral" />
-        <p className="font-display text-base font-bold text-ink">{config.title.en}</p>
-        <p className="text-xs text-ink/50">{config.title.ko}</p>
+        <p className="font-display text-base font-bold text-ink">{config.title}</p>
       </div>
 
       <div className="grid grid-cols-4 gap-2">
@@ -129,8 +125,7 @@ export function MemoryMatchEngine({
                   <span className="text-2xl">{pair.emoji}</span>
                 ) : (
                   <span className="flex flex-col items-center">
-                    <span className="text-xs font-bold leading-tight text-ink">{pair.word.en}</span>
-                    {level === "full" && <span className="text-[9px] leading-tight text-ink/50">{pair.word.ko}</span>}
+                    <span className="text-xs font-bold leading-tight text-ink">{pair.word}</span>
                   </span>
                 )
               ) : (

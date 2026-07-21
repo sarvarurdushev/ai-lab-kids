@@ -3,6 +3,11 @@
  * docs/AI_CURRICULUM.md ("Content vs. progress split") for why this lives
  * as versioned code, not database rows: curriculum content is authored and
  * reviewed like a textbook, not edited at runtime by end users.
+ *
+ * English-only by design: every learner-facing string is plain English.
+ * Kids at this age/level can't read fluently in either language, so the
+ * product leans on visuals (emoji, icons, Vora's expressions) to carry
+ * meaning instead of a second-language subtitle track.
  */
 
 /** "Little Sparks" (4-5, pre-reader) vs "AI Explorers" (6+, early reader) — same values used by lib/soloCurriculum.ts. */
@@ -18,16 +23,10 @@ export const BIG_IDEA_LABELS: Record<BigIdea, string> = {
   societal_impact: "Societal Impact",
 };
 
-/** Every learner-facing string carries both languages — see lib/i18n.ts for how korean_support_level decides what's shown. */
-export interface Bilingual {
-  en: string;
-  ko: string;
-}
-
 export interface VocabWord {
-  word: Bilingual;
+  word: string;
   emoji: string;
-  /** Present only when this word is chosen specifically to drill a Korean L1 sound gap (see docs/KOREAN_L1_NOTES.md). */
+  /** Present only when this word is chosen specifically to drill a sound gap common for Korean-speaking learners (see docs/KOREAN_L1_NOTES.md). */
   targetsSound?: string;
   /** Set to "explorers" for bonus words shown only to the 6+ track — see lib/trackContent.ts. Omit to show to every track. */
   minTrack?: AgeTrack;
@@ -35,23 +34,23 @@ export interface VocabWord {
 
 export interface WarmupSegment {
   type: "warmup";
-  teacherScript: Bilingual;
+  teacherScript: string;
   /** What the teacher says/does to open the lesson — displayed on the projector as a prompt for the class to respond to together. */
-  prompt: Bilingual;
+  prompt: string;
 }
 
 export interface VocabSegment {
   type: "vocab";
-  title: Bilingual;
+  title: string;
   words: VocabWord[];
 }
 
 export interface ConceptSegment {
   type: "concept";
-  title: Bilingual;
+  title: string;
   bigIdeas: BigIdea[];
-  /** Vora's lines, shown/spoken one at a time on the projector. A line with minTrack: "explorers" is skipped for little_sparks classes — see lib/trackContent.ts. */
-  lines: (Bilingual & { minTrack?: AgeTrack })[];
+  /** Vora's lines, shown/spoken one at a time on the projector — kept to a short phrase each. A line with minTrack: "explorers" is skipped for little_sparks classes — see lib/trackContent.ts. */
+  lines: { text: string; minTrack?: AgeTrack }[];
   teacherNote: string;
 }
 
@@ -66,7 +65,7 @@ export type ActivityEngine =
   | "instruct_vora";
 
 export interface SortBucketItem {
-  word: Bilingual;
+  word: string;
   emoji: string;
   bucket: "a" | "b";
   minTrack?: AgeTrack;
@@ -74,9 +73,9 @@ export interface SortBucketItem {
 
 export interface TrainTheRobotConfig {
   engine: "train_the_robot";
-  title: Bilingual;
-  labelA: Bilingual;
-  labelB: Bilingual;
+  title: string;
+  labelA: string;
+  labelB: string;
   emojiA: string;
   emojiB: string;
   items: SortBucketItem[];
@@ -84,27 +83,26 @@ export interface TrainTheRobotConfig {
 
 export interface SequenceBuilderConfig {
   engine: "sequence_builder";
-  title: Bilingual;
-  steps: { text: Bilingual; emoji: string; minTrack?: AgeTrack }[];
+  title: string;
+  steps: { text: string; emoji: string; minTrack?: AgeTrack }[];
 }
 
 /** Same ordering mechanic as sequence_builder, but the tiles are words of a sentence (SVO drill) instead of routine steps — connector labels become grammar roles instead of first/next/then/last. */
 export interface SentenceBuilderConfig {
   engine: "sentence_builder";
-  title: Bilingual;
+  title: string;
   /** Words in correct left-to-right order; each tagged with its grammar role for the teacher-facing label. */
-  words: { text: string; role: "subject" | "verb" | "object" | "other"; ko: string }[];
-  translation: Bilingual;
+  words: { text: string; role: "subject" | "verb" | "object" | "other" }[];
 }
 
 export interface MinimalPairsConfig {
   engine: "minimal_pairs";
-  title: Bilingual;
+  title: string;
   targetSound: string;
   teacherNote: string;
   pairs: {
-    wordA: { text: string; emoji: string; ko: string };
-    wordB: { text: string; emoji: string; ko: string };
+    wordA: { text: string; emoji: string };
+    wordB: { text: string; emoji: string };
     minTrack?: AgeTrack;
   }[];
 }
@@ -112,14 +110,14 @@ export interface MinimalPairsConfig {
 /** Flip-card pairs game: reinforces a month's vocabulary through recognition/recall rather than production. Modeled on the classic "memory" game — see docs/AI_CURRICULUM.md. */
 export interface MemoryMatchConfig {
   engine: "memory_match";
-  title: Bilingual;
-  pairs: { word: Bilingual; emoji: string; minTrack?: AgeTrack }[];
+  title: string;
+  pairs: { word: string; emoji: string; minTrack?: AgeTrack }[];
 }
 
 /** "What comes next?" — a short emoji sequence with one blank; kids pick the missing item from a few choices. Concretely demonstrates the "representation & reasoning" / "learning" big idea: AI (and people) predict what comes next by finding a pattern in examples. */
 export interface PatternPredictorConfig {
   engine: "pattern_predictor";
-  title: Bilingual;
+  title: string;
   teacherNote: string;
   rounds: {
     sequence: string[];
@@ -138,17 +136,19 @@ export interface PatternPredictorConfig {
  * (Societal Impact / "AI is everywhere") — see docs/AI_CURRICULUM.md
  * "Standards alignment". Content is authored once as a reusable bank (see
  * lib/curriculum/aiLabBank.ts) and rotated across months, since the whole
- * point is real-world examples, not month-themed vocabulary.
+ * point is real-world examples, not month-themed vocabulary. Content is
+ * kept to a short label + emoji per item — recognition, not reading, is
+ * the point.
  */
 export interface AIOrNotConfig {
   engine: "ai_or_not";
-  title: Bilingual;
+  title: string;
   teacherNote: string;
   items: {
-    scenario: Bilingual;
+    scenario: string;
     emoji: string;
     isAI: boolean;
-    explanation: Bilingual;
+    explanation: string;
     minTrack?: AgeTrack;
   }[];
 }
@@ -162,19 +162,20 @@ export interface AIOrNotConfig {
  * design" dimensions) — the same precision-matters idea behind
  * programming an algorithm or writing a clear prompt, at an age-safe,
  * fully offline remove from a real chatbot. Also a reusable bank — see
- * lib/curriculum/aiLabBank.ts.
+ * lib/curriculum/aiLabBank.ts. Every string here is short by design: the
+ * steps are the activity, not the narration around them.
  */
 export interface InstructVoraConfig {
   engine: "instruct_vora";
-  title: Bilingual;
+  title: string;
   teacherNote: string;
-  goalLabel: Bilingual;
+  goalLabel: string;
   goalEmoji: string;
-  vagueInstruction: Bilingual;
+  vagueInstruction: string;
   vagueResultEmoji: string;
-  vagueResultText: Bilingual;
-  steps: { text: Bilingual; emoji: string }[];
-  successText: Bilingual;
+  vagueResultText: string;
+  steps: { text: string; emoji: string }[];
+  successText: string;
 }
 
 export type ActivityConfig =
@@ -189,20 +190,20 @@ export type ActivityConfig =
 
 export interface ActivitySegment {
   type: "activity";
-  instructions: Bilingual;
+  instructions: string;
   config: ActivityConfig;
 }
 
 export interface CheckSegment {
   type: "check";
-  prompt: Bilingual;
+  prompt: string;
   method: "whole_class_thumbs" | "cold_call";
 }
 
 export interface WrapupSegment {
   type: "wrapup";
-  summary: Bilingual;
-  homework?: Bilingual;
+  summary: string;
+  homework?: string;
 }
 
 export type LessonSegment =
@@ -233,11 +234,12 @@ export interface LessonMeta {
   /** Set for monthly-curriculum lessons (1-12) — see lib/curriculum/months.ts. */
   monthIndex?: number;
   slot?: MonthlySlot;
-  title: Bilingual;
+  title: string;
   bigIdeas: BigIdea[];
-  englishFocus: Bilingual;
+  englishFocus: string;
+  /** Teacher-only pedagogical rationale — plain English prose about a Korean-learner phonology/grammar gap this lesson targets (see docs/KOREAN_L1_NOTES.md). Never shown to kids or projected. */
   koreanL1Note: string;
-  objectives: Bilingual[];
+  objectives: string[];
   standardsNote: string;
 }
 
@@ -247,19 +249,19 @@ export interface Lesson extends LessonMeta {
 
 export interface Unit {
   key: string;
-  title: Bilingual;
+  title: string;
   weekRange: [number, number];
-  summary: Bilingual;
+  summary: string;
 }
 
 /** One month of the year-long themed curriculum — see docs/MONTHLY_CURRICULUM.md. Each month has three lessons (class/action_play/spotlight slots) reachable via lessonsForMonth(). */
 export interface MonthlyUnit {
   key: string;
   monthIndex: number;
-  title: Bilingual;
+  title: string;
   /** The real-world topic this month adapts (from the reference 12-month topic guide), kept for teacher orientation even though the AI big idea is the pedagogical spine. */
   posterTheme: string;
   bigIdeaFocus: BigIdea;
-  englishFocus: Bilingual;
-  summary: Bilingual;
+  englishFocus: string;
+  summary: string;
 }

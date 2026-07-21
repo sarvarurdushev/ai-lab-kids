@@ -10,7 +10,6 @@ import { connectorFor } from "@/lib/ordering";
 import { speak } from "@/lib/speech";
 import { SpeakerIcon, UndoIcon } from "@/components/icons";
 import type { SequenceBuilderConfig, SentenceBuilderConfig } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 
 // Classroom version of the ordering mechanic — reused for two different
 // grammar/AI concepts rather than built twice: routine sequencing
@@ -23,7 +22,6 @@ interface Tile {
   id: string;
   order: number;
   primary: string;
-  secondary: string;
   emoji?: string;
   label: string;
 }
@@ -47,7 +45,7 @@ const ROLE_LABELS: Record<string, string> = {
 };
 
 function tilesFromConfig(config: SequenceBuilderConfig | SentenceBuilderConfig): {
-  title: { en: string; ko: string };
+  title: string;
   tiles: Tile[];
   readAloud: string;
 } {
@@ -58,12 +56,11 @@ function tilesFromConfig(config: SequenceBuilderConfig | SentenceBuilderConfig):
       tiles: config.steps.map((step, i) => ({
         id: `s-${i}`,
         order: i,
-        primary: step.text.en,
-        secondary: step.text.ko,
+        primary: step.text,
         emoji: step.emoji,
         label: connectorFor(i, total),
       })),
-      readAloud: config.steps.map((step, i) => `${connectorFor(i, total)}, ${step.text.en}.`).join(" "),
+      readAloud: config.steps.map((step, i) => `${connectorFor(i, total)}, ${step.text}.`).join(" "),
     };
   }
   return {
@@ -72,7 +69,6 @@ function tilesFromConfig(config: SequenceBuilderConfig | SentenceBuilderConfig):
       id: `w-${i}`,
       order: i,
       primary: w.text,
-      secondary: w.ko,
       label: ROLE_LABELS[w.role] ?? "",
     })),
     readAloud: config.words.map((w) => w.text).join(" ") + ".",
@@ -81,11 +77,9 @@ function tilesFromConfig(config: SequenceBuilderConfig | SentenceBuilderConfig):
 
 export function OrderingEngine({
   config,
-  level,
   onFinished,
 }: {
   config: SequenceBuilderConfig | SentenceBuilderConfig;
-  level: KoreanSupportLevel;
   onFinished?: () => void;
 }) {
   const { title, tiles, readAloud } = useMemo(() => tilesFromConfig(config), [config]);
@@ -139,8 +133,7 @@ export function OrderingEngine({
     <div className="flex flex-col gap-3">
       <div className="flex flex-col items-center gap-1 rounded-3xl bg-white/80 py-3 shadow-sm">
         <Vora size={52} mood={solved ? "happy" : "neutral"} />
-        <p className="font-display text-base font-bold text-ink">{title.en}</p>
-        <p className="text-xs text-ink/50">{title.ko}</p>
+        <p className="font-display text-base font-bold text-ink">{title}</p>
       </div>
 
       <motion.div
@@ -200,7 +193,6 @@ export function OrderingEngine({
                     {tile.emoji && <span className="text-2xl">{tile.emoji}</span>}
                     <span className="flex-1">
                       <span className="block text-sm font-semibold text-ink">{tile.primary}</span>
-                      {level !== "minimal" && <span className="block text-xs text-ink/50">{tile.secondary}</span>}
                     </span>
                   </button>
                   <SpeakButton text={tile.primary} lang="en-US" className="h-7 w-7 text-sm" />

@@ -13,60 +13,51 @@ export const m2_week1: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Show a world map or globe (or just sweep your arms wide and say \"the whole world!\") and ask: \"What country are we in right now?\" Let kids answer \"Korea!\" together.",
-        ko: "세계 지도나 지구본을 보여주거나(또는 팔을 크게 벌리며 \"온 세상!\"이라고 말하며) 물어보세요: \"우리는 지금 어느 나라에 있나요?\" 학생들이 함께 \"한국!\"이라고 답하게 하세요.",
-      },
-      prompt: { en: "Hello, world! 🌍", ko: "안녕, 세계! 🌍" },
+      teacherScript: "Show a world map or globe (or just sweep your arms wide and say \"the whole world!\") and ask: \"What country are we in right now?\" Let kids answer \"Korea!\" together.",
+      prompt: "Hello, world! 🌍",
     },
     {
       type: "vocab",
-      title: { en: "World Words", ko: "세계 단어" },
+      title: "World Words",
       words: [
-        { word: { en: "world", ko: "세계" }, emoji: "🌍" },
-        { word: { en: "flag", ko: "국기" }, emoji: "🚩" },
-        { word: { en: "food", ko: "음식" }, emoji: "🍲" },
-        { word: { en: "dance", ko: "춤" }, emoji: "💃" },
-        { word: { en: "music", ko: "음악" }, emoji: "🎵" },
-        { word: { en: "clothes", ko: "옷" }, emoji: "👘", minTrack: "explorers" },
+        { word: "world", emoji: "🌍" },
+        { word: "flag", emoji: "🚩" },
+        { word: "food", emoji: "🍲" },
+        { word: "dance", emoji: "💃" },
+        { word: "music", emoji: "🎵" },
+        { word: "clothes", emoji: "👘", minTrack: "explorers" },
       ],
     },
     {
       type: "concept",
-      title: { en: "I'm from Korea!", ko: "저는 한국에서 왔어요!" },
+      title: "I'm from Korea!",
       bigIdeas: ["societal_impact"],
       lines: [
-        { en: "I'm from Korea!", ko: "저는 한국에서 왔어요!" },
-        { en: "There are so many other countries too — like Japan, and the USA.", ko: "다른 나라도 정말 많아 — 일본이나 미국처럼." },
-        {
-          en: "People in other countries speak different languages — but a translator app uses AI to help everyone understand each other.",
-          ko: "다른 나라 사람들은 다른 언어를 써 — 하지만 번역 앱이 AI로 모두가 서로 이해하도록 도와줘.",
-        },
+        { text: "I'm from Korea!" },
+        { text: "There are so many other countries too — like Japan, and the USA." },
+        { text: "People in other countries speak different languages — but a translator app uses AI to help everyone understand each other." },
       ],
       teacherNote:
         "Start with \"I'm from Korea\" — every child can say this truthfully and proudly — before naming other countries. This is societal_impact's first appearance: keep the translator-app example concrete (e.g., \"like when a friend visits from another country and doesn't know Korean yet\").",
     },
     {
       type: "activity",
-      instructions: {
-        en: "As a class, decide together where each picture goes before anyone taps — talk through why kimchi and bibimbap are Korean food.",
-        ko: "탭하기 전에 반 전체가 함께 각 그림이 어디로 가야 할지 정해보세요 — 김치와 비빔밥이 왜 한국 음식인지 이야기해 보세요.",
-      },
+      instructions: "As a class, decide together where each picture goes before anyone taps — talk through why kimchi and bibimbap are Korean food.",
       config: {
         engine: "train_the_robot",
-        title: { en: "From Korea or From Another Country?", ko: "한국에서 왔을까요, 다른 나라에서 왔을까요?" },
-        labelA: { en: "From Korea", ko: "한국에서" },
-        labelB: { en: "From Another Country", ko: "다른 나라에서" },
+        title: "From Korea or From Another Country?",
+        labelA: "From Korea",
+        labelB: "From Another Country",
         emojiA: "🇰🇷",
         emojiB: "🌎",
         items: [
-          { word: { en: "kimchi", ko: "김치" }, emoji: "🥬", bucket: "a" },
-          { word: { en: "bibimbap", ko: "비빔밥" }, emoji: "🍚", bucket: "a" },
-          { word: { en: "hanbok", ko: "한복" }, emoji: "👘", bucket: "a", minTrack: "explorers" },
-          { word: { en: "pizza", ko: "피자" }, emoji: "🍕", bucket: "b" },
-          { word: { en: "taco", ko: "타코" }, emoji: "🌮", bucket: "b" },
-          { word: { en: "sushi", ko: "초밥" }, emoji: "🍣", bucket: "b" },
-          { word: { en: "baguette", ko: "바게트" }, emoji: "🥖", bucket: "b" },
+          { word: "kimchi", emoji: "🥬", bucket: "a" },
+          { word: "bibimbap", emoji: "🍚", bucket: "a" },
+          { word: "hanbok", emoji: "👘", bucket: "a", minTrack: "explorers" },
+          { word: "pizza", emoji: "🍕", bucket: "b" },
+          { word: "taco", emoji: "🌮", bucket: "b" },
+          { word: "sushi", emoji: "🍣", bucket: "b" },
+          { word: "baguette", emoji: "🥖", bucket: "b" },
         ],
       },
     },
@@ -78,19 +69,13 @@ export const m2_week1: Lesson = {
     },
     {
       type: "check",
-      prompt: { en: "\"I'm from ___.\" — ask one student to say this about themselves.", ko: "\"I'm from ___.\" — 한 학생에게 자신에 대해 말해보게 하세요." },
+      prompt: "\"I'm from ___.\" — ask one student to say this about themselves.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we learned six world words, practiced saying \"I'm from Korea,\" learned that translator apps use AI to help people understand each other, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
-        ko: "오늘은 세계 단어 여섯 개를 배우고 \"I'm from Korea\"라고 말하는 연습을 했어요. 번역 앱이 AI로 서로 다른 언어를 쓰는 사람들이 이해하도록 돕는다는 것도 배우고, 일상 속 진짜 AI를 알아보는 연습도 했어요. 그리고 보라가 분명한 지시를 따르도록 도왔어요.",
-      },
-      homework: {
-        en: "Tell a family member \"I'm from Korea\" in English tonight.",
-        ko: "오늘 저녁, 가족에게 영어로 \"I'm from Korea\"라고 말해보세요.",
-      },
+      summary: "Today we learned six world words, practiced saying \"I'm from Korea,\" learned that translator apps use AI to help people understand each other, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+      homework: "Tell a family member \"I'm from Korea\" in English tonight.",
     },
   ],
 };
@@ -100,57 +85,48 @@ export const m2_week2: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Mime zipping up a suitcase and ask: \"What do we do first when we go on a trip?\" Take a few quick guesses before today's game.",
-        ko: "여행 가방 지퍼를 잠그는 흉내를 내며 물어보세요: \"여행 갈 때 가장 먼저 무엇을 할까요?\" 오늘 게임 전에 몇 가지 추측을 들어보세요.",
-      },
-      prompt: { en: "Let's go on a trip! ✈️", ko: "여행을 떠나요! ✈️" },
+      teacherScript: "Mime zipping up a suitcase and ask: \"What do we do first when we go on a trip?\" Take a few quick guesses before today's game.",
+      prompt: "Let's go on a trip! ✈️",
     },
     {
       type: "concept",
-      title: { en: "Vora Follows Steps", ko: "보라가 순서를 따라가요" },
+      title: "Vora Follows Steps",
       bigIdeas: ["reasoning"],
       lines: [
-        { en: "I do things in order, one step at a time — first, next, then, last.", ko: "나는 순서대로 해 — 첫 번째, 다음, 그다음, 마지막." },
-        { en: "Let's put a pretend trip in order together!", ko: "우리 함께 가상 여행의 순서를 정해보자!" },
+        { text: "I do things in order, one step at a time — first, next, then, last." },
+        { text: "Let's put a pretend trip in order together!" },
       ],
       teacherNote:
         "Quick reminder before the sequencing game — following ordered steps is Representation & Reasoning, the same skill behind an algorithm. Keep this brief; the game does the teaching.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Kids take turns tapping the next step. Read each step aloud with its sequencing word (\"First, pack your bag...\") as it's placed. Then play a second game to reinforce it.",
-        ko: "학생들이 돌아가며 다음 단계를 탭해요. 배치할 때마다 순서 표현과 함께 소리 내어 읽어주세요(\"First, pack your bag...\"). 그런 다음 두 번째 게임으로 복습해 보세요.",
-      },
+      instructions: "Kids take turns tapping the next step. Read each step aloud with its sequencing word (\"First, pack your bag...\") as it's placed. Then play a second game to reinforce it.",
       config: {
         engine: "sequence_builder",
-        title: { en: "A Pretend Trip", ko: "가상 여행" },
+        title: "A Pretend Trip",
         steps: [
-          { text: { en: "Pack your bag", ko: "가방 싸기" }, emoji: "🧳" },
-          { text: { en: "Go to the airport", ko: "공항 가기" }, emoji: "🛫" },
-          { text: { en: "Fly on a plane", ko: "비행기 타기" }, emoji: "✈️" },
-          { text: { en: "Say hello!", ko: "인사하기" }, emoji: "👋" },
-          { text: { en: "Try new food", ko: "새로운 음식 먹어보기" }, emoji: "🍜", minTrack: "explorers" },
+          { text: "Pack your bag", emoji: "🧳" },
+          { text: "Go to the airport", emoji: "🛫" },
+          { text: "Fly on a plane", emoji: "✈️" },
+          { text: "Say hello!", emoji: "👋" },
+          { text: "Try new food", emoji: "🍜", minTrack: "explorers" },
         ],
       },
     },
     {
       type: "activity",
-      instructions: {
-        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips.",
-        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요.",
-      },
+      instructions: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips.",
       config: {
         engine: "memory_match",
-        title: { en: "World Word Match", ko: "세계 단어 짝 맞추기" },
+        title: "World Word Match",
         pairs: [
-          { word: { en: "world", ko: "세계" }, emoji: "🌍" },
-          { word: { en: "flag", ko: "국기" }, emoji: "🚩" },
-          { word: { en: "food", ko: "음식" }, emoji: "🍲" },
-          { word: { en: "dance", ko: "춤" }, emoji: "💃" },
-          { word: { en: "music", ko: "음악" }, emoji: "🎵" },
-          { word: { en: "clothes", ko: "옷" }, emoji: "👘", minTrack: "explorers" },
+          { word: "world", emoji: "🌍" },
+          { word: "flag", emoji: "🚩" },
+          { word: "food", emoji: "🍲" },
+          { word: "dance", emoji: "💃" },
+          { word: "music", emoji: "🎵" },
+          { word: "clothes", emoji: "👘", minTrack: "explorers" },
         ],
       },
     },
@@ -159,18 +135,12 @@ export const m2_week2: Lesson = {
     },
     {
       type: "check",
-      prompt: {
-        en: "\"First we pack your bag, next we...\" — have a student finish the whole sequence out loud.",
-        ko: "\"First we pack your bag, next we...\" — 한 학생이 전체 순서를 소리 내어 이어서 말해보게 하세요.",
-      },
+      prompt: "\"First we pack your bag, next we...\" — have a student finish the whole sequence out loud.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we played three activities — ordering the steps of a pretend trip, matching world words to pictures, and helping Vora follow clear step-by-step instructions.",
-        ko: "오늘은 세 가지 활동을 했어요 — 가상 여행의 순서를 정하고, 세계 단어와 그림을 짝지었어요. 그리고 보라가 분명한 단계별 지시를 따르도록 도왔어요.",
-      },
+      summary: "Today we played three activities — ordering the steps of a pretend trip, matching world words to pictures, and helping Vora follow clear step-by-step instructions.",
     },
   ],
 };
@@ -180,57 +150,48 @@ export const m2_week3: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Hold up an imaginary card and flip it dramatically. Ask: \"Ready to find matching pairs?\" Take a quick cheer from the class before starting.",
-        ko: "가상의 카드를 들고 극적으로 뒤집어 보이세요. \"짝을 찾을 준비 됐나요?\"라고 물어보고 시작 전에 짧게 함성을 질러보게 하세요.",
-      },
-      prompt: { en: "Let's find a match! 🃏", ko: "짝을 찾아봐요! 🃏" },
+      teacherScript: "Hold up an imaginary card and flip it dramatically. Ask: \"Ready to find matching pairs?\" Take a quick cheer from the class before starting.",
+      prompt: "Let's find a match! 🃏",
     },
     {
       type: "concept",
-      title: { en: "Vora Remembers", ko: "보라가 기억해요" },
+      title: "Vora Remembers",
       bigIdeas: ["learning"],
       lines: [
-        { en: "The more I see a word and picture together, the better I remember them.", ko: "단어와 그림을 함께 볼수록, 나는 더 잘 기억해." },
-        { en: "Let's practice remembering world words together!", ko: "우리 함께 세계 단어를 기억하는 연습을 해보자!" },
+        { text: "The more I see a word and picture together, the better I remember them." },
+        { text: "Let's practice remembering world words together!" },
       ],
       teacherNote:
         "Brief reminder before the game — repeated exposure is how both Vora and kids get better at recognizing something, the Learning big idea. Keep it to a couple of lines; the matching game is the real practice.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips. Then play a second game to reinforce it.",
-        ko: "학생들이 돌아가며 카드 두 장을 뒤집어요. 단어 카드가 뒤집힐 때마다 함께 영어 단어를 소리 내어 말해보세요. 그런 다음 두 번째 게임으로 복습해 보세요.",
-      },
+      instructions: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips. Then play a second game to reinforce it.",
       config: {
         engine: "memory_match",
-        title: { en: "World Word Match", ko: "세계 단어 짝 맞추기" },
+        title: "World Word Match",
         pairs: [
-          { word: { en: "world", ko: "세계" }, emoji: "🌍" },
-          { word: { en: "flag", ko: "국기" }, emoji: "🚩" },
-          { word: { en: "food", ko: "음식" }, emoji: "🍲" },
-          { word: { en: "dance", ko: "춤" }, emoji: "💃" },
-          { word: { en: "music", ko: "음악" }, emoji: "🎵" },
-          { word: { en: "clothes", ko: "옷" }, emoji: "👘", minTrack: "explorers" },
+          { word: "world", emoji: "🌍" },
+          { word: "flag", emoji: "🚩" },
+          { word: "food", emoji: "🍲" },
+          { word: "dance", emoji: "💃" },
+          { word: "music", emoji: "🎵" },
+          { word: "clothes", emoji: "👘", minTrack: "explorers" },
         ],
       },
     },
     {
       type: "activity",
-      instructions: {
-        en: "Kids take turns tapping the next step. Read each step aloud with its sequencing word (\"First, pack your bag...\") as it's placed.",
-        ko: "학생들이 돌아가며 다음 단계를 탭해요. 배치할 때마다 순서 표현과 함께 소리 내어 읽어주세요(\"First, pack your bag...\").",
-      },
+      instructions: "Kids take turns tapping the next step. Read each step aloud with its sequencing word (\"First, pack your bag...\") as it's placed.",
       config: {
         engine: "sequence_builder",
-        title: { en: "A Pretend Trip", ko: "가상 여행" },
+        title: "A Pretend Trip",
         steps: [
-          { text: { en: "Pack your bag", ko: "가방 싸기" }, emoji: "🧳" },
-          { text: { en: "Go to the airport", ko: "공항 가기" }, emoji: "🛫" },
-          { text: { en: "Fly on a plane", ko: "비행기 타기" }, emoji: "✈️" },
-          { text: { en: "Say hello!", ko: "인사하기" }, emoji: "👋" },
-          { text: { en: "Try new food", ko: "새로운 음식 먹어보기" }, emoji: "🍜", minTrack: "explorers" },
+          { text: "Pack your bag", emoji: "🧳" },
+          { text: "Go to the airport", emoji: "🛫" },
+          { text: "Fly on a plane", emoji: "✈️" },
+          { text: "Say hello!", emoji: "👋" },
+          { text: "Try new food", emoji: "🍜", minTrack: "explorers" },
         ],
       },
     },
@@ -239,15 +200,12 @@ export const m2_week3: Lesson = {
     },
     {
       type: "check",
-      prompt: { en: "Ask a pair: \"Which one did you match?\" and have them answer with the English word.", ko: "짝에게 물어보세요: \"어떤 것을 짝지었나요?\" 영어 단어로 답하게 하세요." },
+      prompt: "Ask a pair: \"Which one did you match?\" and have them answer with the English word.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today we played three activities — matching world words to pictures, ordering the steps of a pretend trip, and spotting real AI in everyday life.",
-        ko: "오늘은 세 가지 활동을 했어요 — 세계 단어와 그림을 짝짓고, 가상 여행의 순서를 정했어요. 그리고 일상 속 진짜 AI를 알아보는 연습도 했어요.",
-      },
+      summary: "Today we played three activities — matching world words to pictures, ordering the steps of a pretend trip, and spotting real AI in everyday life.",
     },
   ],
 };
@@ -257,43 +215,32 @@ export const m2_week4: Lesson = {
   segments: [
     {
       type: "warmup",
-      teacherScript: {
-        en: "Point to yourself and say \"I'm from Korea!\" with a big proud smile. Ask kids to point to themselves too.",
-        ko: "자신을 가리키며 자랑스러운 미소로 \"I'm from Korea!\"라고 말해보세요. 학생들도 자신을 가리키게 하세요.",
-      },
-      prompt: { en: "Where are you from? 🇰🇷", ko: "어디에서 왔나요? 🇰🇷" },
+      teacherScript: "Point to yourself and say \"I'm from Korea!\" with a big proud smile. Ask kids to point to themselves too.",
+      prompt: "Where are you from? 🇰🇷",
     },
     {
       type: "concept",
-      title: { en: "I'm from Korea!", ko: "저는 한국에서 왔어요!" },
+      title: "I'm from Korea!",
       bigIdeas: [],
       lines: [
-        { en: "I'm from Korea. That's my country!", ko: "나는 한국에서 왔어. 그게 내 나라야!" },
-        { en: "\"I'm\" is a short way to say \"I am\" — two words squished into one.", ko: "\"I'm\"은 \"I am\"을 짧게 줄인 말이야 — 두 단어를 하나로 붙인 거지." },
-        {
-          en: "Korean doesn't squish words together like that, so let's practice saying \"I'm\" as one quick sound.",
-          ko: "한국어에는 이렇게 단어를 붙이는 방법이 없으니까, \"I'm\"을 한 번에 빠르게 말하는 연습을 해보자.",
-          minTrack: "explorers",
-        },
+        { text: "I'm from Korea. That's my country!" },
+        { text: "\"I'm\" is a short way to say \"I am\" — two words squished into one." },
+        { text: "Korean doesn't squish words together like that, so let's practice saying \"I'm\" as one quick sound.", minTrack: "explorers" },
       ],
       teacherNote:
         "Call out the contraction briefly (\"I'm\" = \"I am\") since Korean has no equivalent — model it as one chunk, not two words squeezed together, then move straight into building the sentence.",
     },
     {
       type: "activity",
-      instructions: {
-        en: "Build the sentence one tile at a time, left to right. Then have every kid stand up, one at a time, and say \"I'm from Korea!\" out loud.",
-        ko: "왼쪽에서 오른쪽으로 한 번에 한 단어씩 문장을 만들어요. 그런 다음 모든 학생이 한 명씩 일어나 \"I'm from Korea!\"라고 소리 내어 말해보게 하세요.",
-      },
+      instructions: "Build the sentence one tile at a time, left to right. Then have every kid stand up, one at a time, and say \"I'm from Korea!\" out loud.",
       config: {
         engine: "sentence_builder",
-        title: { en: "I'm from Korea.", ko: "저는 한국에서 왔어요." },
+        title: "I'm from Korea.",
         words: [
-          { text: "I'm", role: "subject", ko: "저는" },
-          { text: "from", role: "other", ko: "~에서 왔다" },
-          { text: "Korea", role: "object", ko: "한국" },
+          { text: "I'm", role: "subject" },
+          { text: "from", role: "other" },
+          { text: "Korea", role: "object" },
         ],
-        translation: { en: "I'm from Korea.", ko: "저는 한국에서 왔어요." },
       },
     },
     {
@@ -304,19 +251,13 @@ export const m2_week4: Lesson = {
     },
     {
       type: "check",
-      prompt: { en: "\"I'm from ___.\" — each kid says this with confidence, standing tall.", ko: "\"I'm from ___.\" — 각자 당당하게 서서 말해보세요." },
+      prompt: "\"I'm from ___.\" — each kid says this with confidence, standing tall.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: {
-        en: "Today every kid stood up and proudly said \"I'm from Korea!\" — a sentence that's true for all of us — helped Vora follow clear instructions, and spotted real AI in everyday life.",
-        ko: "오늘은 모두가 일어나 자랑스럽게 \"I'm from Korea!\"라고 말했어요 — 우리 모두에게 진짜인 문장이에요 — 보라가 분명한 지시를 따르도록 돕고, 일상 속 진짜 AI도 알아봤어요.",
-      },
-      homework: {
-        en: "Say \"I'm from Korea\" to a family member tonight, standing tall and proud.",
-        ko: "오늘 저녁, 당당하게 서서 가족에게 \"I'm from Korea\"라고 말해보세요.",
-      },
+      summary: "Today every kid stood up and proudly said \"I'm from Korea!\" — a sentence that's true for all of us — helped Vora follow clear instructions, and spotted real AI in everyday life.",
+      homework: "Say \"I'm from Korea\" to a family member tonight, standing tall and proud.",
     },
   ],
 };

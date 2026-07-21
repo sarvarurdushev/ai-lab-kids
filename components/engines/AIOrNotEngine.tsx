@@ -4,11 +4,10 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
-import { BilingualText } from "@/components/curriculum/BilingualText";
+import { EnglishText } from "@/components/curriculum/EnglishText";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { RobotHeadIcon, GlobeIcon, CheckCircleIcon, XCircleIcon, SparkleIcon } from "@/components/icons";
 import type { AIOrNotConfig } from "@/lib/curriculum";
-import type { KoreanSupportLevel } from "@/lib/i18n";
 
 // Real-world AI-recognition game — the standards-backed answer to "kids
 // should learn AI, not just play English games with an AI label." Modeled
@@ -32,11 +31,9 @@ function shuffle<T>(items: T[]): T[] {
 
 export function AIOrNotEngine({
   config,
-  level,
   onFinished,
 }: {
   config: AIOrNotConfig;
-  level: KoreanSupportLevel;
   onFinished?: () => void;
 }) {
   const items = useMemo(() => shuffle(config.items), [config]);
@@ -100,7 +97,7 @@ export function AIOrNotEngine({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between text-sm font-bold text-ink/50">
-        <span>{config.title.en}</span>
+        <span>{config.title}</span>
         <span className="flex items-center gap-1">
           {items.map((_, i) => (
             <span
@@ -128,7 +125,7 @@ export function AIOrNotEngine({
           >
             {item.emoji}
           </motion.div>
-          <BilingualText text={item.scenario} level={level} keyContent size="lg" />
+          <EnglishText text={item.scenario} size="lg" />
         </motion.div>
       </AnimatePresence>
 
@@ -173,7 +170,7 @@ export function AIOrNotEngine({
               {answered.correct ? <CheckCircleIcon size={22} /> : <XCircleIcon size={22} />}
               {answered.correct ? "Yes!" : item.isAI ? "It IS AI!" : "Not AI!"}
             </motion.div>
-            <BilingualText text={item.explanation} level={level} size="sm" />
+            <EnglishText text={item.explanation} size="sm" />
             <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
               {index + 1 >= items.length ? "Finish" : "Next →"}
             </Button>
