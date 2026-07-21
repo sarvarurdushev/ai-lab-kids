@@ -28,6 +28,8 @@ function filterSegment(segment: LessonSegment, track: AgeTrack): LessonSegment {
     case "activity":
       return { ...segment, config: filterActivityConfig(segment.config, track) };
     case "warmup":
+    case "movement":
+    case "chant":
     case "check":
     case "wrapup":
       return segment;

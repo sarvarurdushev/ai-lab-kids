@@ -200,6 +200,33 @@ export interface CheckSegment {
   method: "whole_class_thumbs" | "cold_call";
 }
 
+/**
+ * A short, physical, whole-class energy break tied to the lesson's own
+ * vocabulary — kids act out each word instead of just hearing it. Exists
+ * to add real engaged minutes to a lesson (not padding), and to give
+ * movement-based reinforcement for kids who don't learn well from sitting
+ * and listening. Content-only, no interactive engine needed.
+ */
+export interface MovementSegment {
+  type: "movement";
+  title: string;
+  instructions: string;
+  moves: { text: string; emoji: string }[];
+}
+
+/**
+ * A short call-and-response chant reinforcing the lesson's target sentence
+ * pattern through rhythm and repetition — a standard, well-evidenced ESL
+ * technique for this age group. The teacher says the call line, the whole
+ * class echoes the response line. Content-only, no interactive engine.
+ */
+export interface ChantSegment {
+  type: "chant";
+  title: string;
+  instructions: string;
+  lines: { call: string; response: string }[];
+}
+
 export interface WrapupSegment {
   type: "wrapup";
   summary: string;
@@ -211,6 +238,8 @@ export type LessonSegment =
   | VocabSegment
   | ConceptSegment
   | ActivitySegment
+  | MovementSegment
+  | ChantSegment
   | CheckSegment
   | WrapupSegment;
 

@@ -9,7 +9,17 @@ import { Button } from "@/components/ui/Button";
 import { EnglishText } from "@/components/curriculum/EnglishText";
 import { BigIdeaBanner } from "@/components/curriculum/BigIdeaBanner";
 import { BIG_IDEA_LABELS, resolveBigIdea, ENGINE_PRESENTATION, isAiLabEngine, type Lesson, type LessonSegment } from "@/lib/curriculum";
-import { SunIcon, BookIcon, RobotHeadIcon, GamepadIcon, CheckCircleIcon, GiftIcon, SparkleIcon } from "@/components/icons";
+import {
+  SunIcon,
+  BookIcon,
+  RobotHeadIcon,
+  GamepadIcon,
+  CheckCircleIcon,
+  GiftIcon,
+  SparkleIcon,
+  RunIcon,
+  MusicNoteIcon,
+} from "@/components/icons";
 
 const SEGMENT_LABEL: Record<
   string,
@@ -19,6 +29,8 @@ const SEGMENT_LABEL: Record<
   vocab: { icon: BookIcon, text: "Vocabulary", className: "text-sky" },
   concept: { icon: RobotHeadIcon, text: "Vora Explains", className: "text-indigo-dark" },
   activity: { icon: GamepadIcon, text: "Activity", className: "text-coral" },
+  movement: { icon: RunIcon, text: "Movement Break", className: "text-mint" },
+  chant: { icon: MusicNoteIcon, text: "Chant Time", className: "text-coral" },
   check: { icon: CheckCircleIcon, text: "Formative Check", className: "text-mint" },
   wrapup: { icon: GiftIcon, text: "Wrap-up", className: "text-amber-dark" },
 };
@@ -285,6 +297,61 @@ export function PresentationPlayer({
               {segment.config.engine === "instruct_vora" && (
                 <InstructVoraEngine config={segment.config} />
               )}
+            </div>
+          )}
+
+          {segment.type === "movement" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.movement.className}`}>
+                <SEGMENT_LABEL.movement.icon size={12} /> {SEGMENT_LABEL.movement.text}
+              </p>
+              <p className="rounded-2xl bg-mint/5 p-3 text-sm text-ink/70">
+                <span className="font-bold">Teacher: </span>
+                {segment.instructions}
+              </p>
+              <EnglishText text={segment.title} size="lg" />
+              <div className="grid grid-cols-2 gap-2">
+                {segment.moves.map((m, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
+                  >
+                    <span className="text-3xl">{m.emoji}</span>
+                    <EnglishText text={m.text} size="sm" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {segment.type === "chant" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.chant.className}`}>
+                <SEGMENT_LABEL.chant.icon size={12} /> {SEGMENT_LABEL.chant.text}
+              </p>
+              <p className="rounded-2xl bg-coral/5 p-3 text-sm text-ink/70">
+                <span className="font-bold">Teacher: </span>
+                {segment.instructions}
+              </p>
+              <EnglishText text={segment.title} size="lg" />
+              <div className="flex flex-col gap-2">
+                {segment.lines.map((line, i) => (
+                  <div key={i} className="flex flex-col gap-1 rounded-2xl bg-white p-3 shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <span className="shrink-0 rounded-full bg-indigo/10 px-2 py-0.5 text-[10px] font-bold text-indigo-dark uppercase">
+                        Say
+                      </span>
+                      <EnglishText text={line.call} size="sm" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="shrink-0 rounded-full bg-coral/10 px-2 py-0.5 text-[10px] font-bold text-coral uppercase">
+                        Echo
+                      </span>
+                      <EnglishText text={line.response} size="sm" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

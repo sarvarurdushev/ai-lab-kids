@@ -194,3 +194,25 @@ export function RobotHeadIcon(props: IconProps) {
     </Base>
   );
 }
+
+export function RunIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <circle cx="14.5" cy="4.5" r="1.7" fill="currentColor" stroke="none" />
+      <path d="M11 8l2.5 2 .5 4 3 3" />
+      <path d="M13.5 10l-4 1.5-2.5 4" />
+      <path d="M14 12l3.5-1 2.5 1.5" />
+      <path d="M13.5 14l-1.5 4-3 1.5" />
+    </Base>
+  );
+}
+
+export function MusicNoteIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M9 17V5.5L19 4v11.5" />
+      <circle cx="6.5" cy="17" r="2.5" />
+      <circle cx="16.5" cy="15.5" r="2.5" />
+    </Base>
+  );
+}

@@ -30,6 +30,21 @@ export const m7_week1: Lesson = {
       ],
     },
     {
+      type: "movement",
+      title: "Weather Actions!",
+      instructions:
+        "Call out each weather word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Sunny — stretch your arms up high", emoji: "☀️" },
+        { text: "Rainy — wiggle your fingers down like rain", emoji: "🌧️" },
+        { text: "Cloudy — float your arms slowly side to side", emoji: "☁️" },
+        { text: "Windy — sway your whole body like a tree", emoji: "💨" },
+        { text: "Snowy — shiver and hug yourself", emoji: "❄️" },
+        { text: "Hot — fan your face fast", emoji: "🥵" },
+        { text: "Cold — hug yourself and shiver", emoji: "🥶" },
+      ],
+    },
+    {
       type: "concept",
       title: "Vora Guesses Tomorrow's Weather",
       bigIdeas: ["reasoning"],
@@ -70,13 +85,25 @@ export const m7_week1: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[0],
     },
     {
+      type: "chant",
+      title: "Weather Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching weather picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Weather, weather, what do you see?", response: "It's sunny, it's sunny, look at me!" },
+        { call: "Weather, weather, what's the news?", response: "It's rainy, it's rainy, grab your shoes!" },
+        { call: "Weather, weather, tell me true —", response: "It's cloudy, it's cloudy, gray and blue!" },
+        { call: "Weather, weather, what's today?", response: "Look outside and shout — hooray!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "\"It's ___ today.\" — point to a weather picture (or look outside) and have a student complete the sentence.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we learned seven weather words, saw how Vora finds a pattern in past weather, the same way a real forecast is made, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+      summary: "Today we learned seven weather words, acted them out, saw how Vora finds a pattern in past weather (the same way a real forecast is made), practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about the weather together.",
       homework: "Ask a family member \"What's the weather?\" in Korean tonight, then answer them in English: \"It's ___ today.\"",
     },
   ],
