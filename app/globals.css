@@ -92,20 +92,6 @@ body {
   animation: al-shake 0.5s;
 }
 
-@keyframes al-bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.al-bob {
-  animation: al-bob 2.4s ease-in-out infinite;
-}
-
 /*
  * Program Guide print stylesheet (app/curriculum/page.tsx and
  * app/curriculum/[monthKey]/page.tsx) — this page printed/saved-as-PDF

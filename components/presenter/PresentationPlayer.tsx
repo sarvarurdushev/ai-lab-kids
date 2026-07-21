@@ -109,6 +109,7 @@ export function PresentationPlayer({
   function goNext() {
     const next = index + 1;
     if (next >= lesson.segments.length) {
+      setIndex(next);
       fetch(`/api/lesson-sessions/${sessionId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -206,7 +207,7 @@ export function PresentationPlayer({
 
       {finished ? (
         <Card className="flex flex-col items-center gap-3 text-center">
-          <Vora size={120} mood="happy" bob />
+          <Vora size={120} mood="happy" bob celebrate />
           <p className="font-display text-lg font-bold text-indigo-dark">Lesson complete!</p>
           <Link href={`/classes/${classId}`}>
             <Button variant="secondary">Back to class</Button>

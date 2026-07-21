@@ -92,7 +92,7 @@ export function InstructVoraEngine({
 
       <div className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm">
         <motion.div animate={phase === "vague" ? { rotate: [0, -6, 6, -4, 4, 0] } : {}} transition={{ duration: 0.6 }}>
-          <Vora size={64} mood={voraMood} bob={phase === "success"} />
+          <Vora size={64} mood={voraMood} bob={phase === "success"} celebrate={phase === "success"} />
         </motion.div>
         <AnimatePresence mode="wait">
           <motion.div

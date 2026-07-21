@@ -55,7 +55,7 @@ export function MinimalPairsEngine({
   if (roundIndex >= rounds.length) {
     return (
       <div className="flex flex-col items-center gap-3 text-center">
-        <Vora size={100} mood="happy" bob />
+        <Vora size={100} mood="happy" bob celebrate />
         <p className="font-display text-lg font-bold text-indigo-dark">Great listening!</p>
       </div>
     );
