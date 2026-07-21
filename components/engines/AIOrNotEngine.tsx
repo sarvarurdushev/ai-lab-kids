@@ -119,7 +119,7 @@ export function AIOrNotEngine({
           className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm"
         >
           <Vora size={52} mood={voraMood} />
-          <BehaviorDemo isAI={item.isAI} icon={item.emoji} />
+          <BehaviorDemo isAI={item.isAI} icon={item.emoji} scenario={item.scenario} />
           <EnglishText text={item.scenario} size="lg" />
         </motion.div>
       </AnimatePresence>
