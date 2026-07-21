@@ -8,7 +8,6 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { EnglishText } from "@/components/curriculum/EnglishText";
 import { BigIdeaBanner } from "@/components/curriculum/BigIdeaBanner";
-import { MarkPanel } from "./MarkPanel";
 import { BIG_IDEA_LABELS, resolveBigIdea, ENGINE_PRESENTATION, isAiLabEngine, type Lesson, type LessonSegment } from "@/lib/curriculum";
 import { SunIcon, BookIcon, RobotHeadIcon, GamepadIcon, CheckCircleIcon, GiftIcon, SparkleIcon } from "@/components/icons";
 
@@ -69,29 +68,19 @@ const InstructVoraEngine = dynamic(
   { ssr: false }
 );
 
-interface RosterStudent {
-  id: string;
-  koreanName: string;
-  englishName: string | null;
-  avatarEmoji: string;
-}
-
 export function PresentationPlayer({
   lesson,
   sessionId,
   classId,
   initialSegmentIndex,
-  roster,
 }: {
   lesson: Lesson;
   sessionId: string;
   classId: string;
   initialSegmentIndex: number;
-  roster: RosterStudent[];
 }) {
   const [index, setIndex] = useState(Math.min(initialSegmentIndex, lesson.segments.length - 1));
   const segment = lesson.segments[index];
-  const activityKey = `${lesson.key}:${index}`;
   const bigIdea = resolveBigIdea(lesson);
 
   async function persistIndex(next: number) {
@@ -305,7 +294,6 @@ export function PresentationPlayer({
                 <SEGMENT_LABEL.check.icon size={12} /> {SEGMENT_LABEL.check.text}
               </p>
               <EnglishText text={segment.prompt} size="lg" />
-              <MarkPanel sessionId={sessionId} activityKey={activityKey} roster={roster} />
             </div>
           )}
 

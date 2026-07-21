@@ -2,7 +2,6 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { requireTeacher } from "@/lib/auth/requireTeacher";
 import { classForTeacher } from "@/lib/console/authz";
-import { rosterForClass } from "@/lib/console/queries";
 import {
   UNITS,
   MONTHS,
@@ -19,7 +18,6 @@ import {
 } from "@/lib/curriculum";
 import { Card } from "@/components/ui/Card";
 import { Vora } from "@/components/mascot/Vora";
-import { AddStudentForm } from "@/components/console/AddStudentForm";
 import { AICurriculumPanel } from "@/components/curriculum/AICurriculumPanel";
 import { BigIdeaIcon } from "@/components/curriculum/BigIdeaIcon";
 import { ActivityChips } from "@/components/curriculum/ActivityChips";
@@ -97,8 +95,6 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
   const klass = await classForTeacher(teacher, classId);
   if (!klass) notFound();
 
-  const roster = await rosterForClass(classId);
-
   return (
     <div className="flex flex-col gap-6">
       <div>
@@ -119,21 +115,6 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
       </Card>
 
       <AICurriculumPanel />
-
-      <Card className="flex flex-col gap-3">
-        <p className="text-xs font-bold tracking-wide text-ink/50 uppercase">Roster ({roster.length})</p>
-        <div className="flex flex-wrap gap-2">
-          {roster.map((s) => (
-            <span key={s.id} className="flex items-center gap-1 rounded-full bg-cream px-3 py-1.5 text-sm font-semibold">
-              <span>{s.avatarEmoji}</span>
-              {s.englishName || s.koreanName}
-              {s.englishName && <span className="text-xs text-ink/40">({s.koreanName})</span>}
-            </span>
-          ))}
-          {roster.length === 0 && <p className="text-sm text-ink/50">No students yet — add your first one below.</p>}
-        </div>
-        <AddStudentForm classId={classId} />
-      </Card>
 
       <div className="flex flex-col gap-6">
         <div className="flex items-end justify-between gap-2">

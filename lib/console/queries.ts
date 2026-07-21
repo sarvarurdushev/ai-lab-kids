@@ -1,7 +1,7 @@
 import "server-only";
 import { asc, eq } from "drizzle-orm";
 import { db } from "@/lib/db/client";
-import { classes, schools, students, teacherAccounts, organizations } from "@/lib/db/schema";
+import { classes, schools, teacherAccounts, organizations } from "@/lib/db/schema";
 import type { AuthedTeacher } from "@/lib/auth/requireTeacher";
 
 export async function classesVisibleToTeacher(teacher: AuthedTeacher) {
@@ -17,10 +17,6 @@ export async function classesVisibleToTeacher(teacher: AuthedTeacher) {
 
 export async function schoolsForOrg(organizationId: string) {
   return db.select().from(schools).where(eq(schools.organizationId, organizationId)).orderBy(asc(schools.name));
-}
-
-export async function rosterForClass(classId: string) {
-  return db.select().from(students).where(eq(students.classId, classId)).orderBy(asc(students.sortOrder), asc(students.createdAt));
 }
 
 export async function getOrganization(organizationId: string) {

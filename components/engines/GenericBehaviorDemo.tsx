@@ -20,10 +20,9 @@ export function GenericBehaviorDemo({ isAI, icon }: { isAI: boolean; icon: strin
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
-    setStage(0);
     const id = setInterval(() => setStage((s) => (s + 1) % 4), STAGE_MS);
     return () => clearInterval(id);
-  }, [isAI, icon]);
+  }, []);
 
   const situationIndex = stage < 2 ? 0 : 1;
   const situation = SITUATIONS[situationIndex];

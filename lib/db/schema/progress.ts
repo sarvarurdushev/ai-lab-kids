@@ -1,11 +1,5 @@
-import { pgTable, pgEnum, uuid, text, integer, timestamp, uniqueIndex, index } from "drizzle-orm/pg-core";
-import { classes, students, teacherAccounts } from "./tenancy";
-
-export const participationMarkEnum = pgEnum("participation_mark", [
-  "needs_practice",
-  "got_it",
-  "excelling",
-]);
+import { pgTable, uuid, text, integer, timestamp, index } from "drizzle-orm/pg-core";
+import { classes, teacherAccounts } from "./tenancy";
 
 // One row per time a class opens a lesson in the Presentation Player. Tracks
 // resume position (currentSegmentIndex) so a teacher can close the laptop
@@ -25,27 +19,4 @@ export const lessonSessions = pgTable("lesson_sessions", {
   completedAt: timestamp("completed_at", { withTimezone: true }),
 }, (table) => [
   index("lesson_sessions_class_idx").on(table.classId, table.startedAt),
-]);
-
-// A teacher's formative check on one student for one activity within a
-// lesson session. studentId is null for a whole-class quick mark (the
-// common case in a one-screen classroom — most checks are "did the room
-// get it," not per-kid).
-export const participationMarks = pgTable("participation_marks", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  lessonSessionId: uuid("lesson_session_id")
-    .notNull()
-    .references(() => lessonSessions.id, { onDelete: "cascade" }),
-  studentId: uuid("student_id").references(() => students.id, { onDelete: "cascade" }),
-  activityKey: text("activity_key").notNull(),
-  mark: participationMarkEnum("mark").notNull(),
-  note: text("note"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-}, (table) => [
-  index("participation_marks_session_idx").on(table.lessonSessionId),
-  uniqueIndex("participation_marks_unique_idx").on(
-    table.lessonSessionId,
-    table.studentId,
-    table.activityKey
-  ),
 ]);

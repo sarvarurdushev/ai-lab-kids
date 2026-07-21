@@ -1,33 +1,9 @@
 import "./_env";
 import { db } from "@/lib/db/client";
-import { organizations, schools, teacherAccounts, classes, students } from "@/lib/db/schema";
+import { organizations, schools, teacherAccounts, classes } from "@/lib/db/schema";
 import { hashPassword } from "@/lib/auth/password";
 
 const DEMO_PASSWORD = "demo-pass-1234";
-
-const STUDENTS = [
-  { koreanName: "지민", englishName: "Jimmy", avatarEmoji: "🐱" },
-  { koreanName: "서연", englishName: "Sarah", avatarEmoji: "🐰" },
-  { koreanName: "도윤", englishName: "David", avatarEmoji: "🐶" },
-  { koreanName: "하은", englishName: "Hannah", avatarEmoji: "🦊" },
-  { koreanName: "시우", englishName: "Simon", avatarEmoji: "🐻" },
-  { koreanName: "지호", englishName: "Jio", avatarEmoji: "🧒" },
-  { koreanName: "수아", englishName: "Sue", avatarEmoji: "👧" },
-  { koreanName: "은우", englishName: "Eugene", avatarEmoji: "👦" },
-  { koreanName: "예준", englishName: "Jun", avatarEmoji: "🐱" },
-  { koreanName: "아린", englishName: "Ally", avatarEmoji: "🐰" },
-  { koreanName: "준서", englishName: "Jason", avatarEmoji: "🐶" },
-  { koreanName: "다은", englishName: "Diana", avatarEmoji: "🦊" },
-];
-
-const SPARKS_STUDENTS = [
-  { koreanName: "민준", englishName: "Min", avatarEmoji: "🐨" },
-  { koreanName: "서아", englishName: "Sia", avatarEmoji: "🐥" },
-  { koreanName: "하준", englishName: "Ha", avatarEmoji: "🐢" },
-  { koreanName: "지우", englishName: "Jiu", avatarEmoji: "🐸" },
-  { koreanName: "채원", englishName: "Chloe", avatarEmoji: "🐷" },
-  { koreanName: "유준", englishName: "Yu", avatarEmoji: "🐵" },
-];
 
 async function main() {
   console.log("Seeding AI Lab for Kids (Teacher Console)...\n");
@@ -78,11 +54,6 @@ async function main() {
     })
     .returning();
 
-  const insertedStudents = await db
-    .insert(students)
-    .values(STUDENTS.map((s, i) => ({ classId: demoClass.id, ...s, sortOrder: i })))
-    .returning();
-
   // Second demo class on the "Little Sparks" (4-5) track, same teacher, so
   // the age-track content filtering (see lib/trackContent.ts) is visible
   // side-by-side with the "AI Explorers" (6+) class above.
@@ -98,15 +69,10 @@ async function main() {
     })
     .returning();
 
-  const insertedSparksStudents = await db
-    .insert(students)
-    .values(SPARKS_STUDENTS.map((s, i) => ({ classId: sparksClass.id, ...s, sortOrder: i })))
-    .returning();
-
   console.log("Organization:", org.name);
   console.log("School:", school.name);
-  console.log("Class:", demoClass.name, `(${insertedStudents.length} students, AI Explorers 6+)`);
-  console.log("Class:", sparksClass.name, `(${insertedSparksStudents.length} students, Little Sparks 4-5)`);
+  console.log("Class:", demoClass.name, "(AI Explorers 6+)");
+  console.log("Class:", sparksClass.name, "(Little Sparks 4-5)");
   console.log("\nDemo logins (password for both):", DEMO_PASSWORD);
   console.log("  Org admin:", admin.email);
   console.log("  Teacher:  ", teacher.email);

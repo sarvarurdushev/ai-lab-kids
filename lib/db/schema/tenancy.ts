@@ -82,14 +82,3 @@ export const classes = pgTable("classes", {
   index("classes_teacher_idx").on(table.teacherAccountId),
 ]);
 
-export const students = pgTable("students", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  classId: uuid("class_id")
-    .notNull()
-    .references(() => classes.id, { onDelete: "cascade" }),
-  koreanName: text("korean_name").notNull(),
-  englishName: text("english_name"),
-  avatarEmoji: text("avatar_emoji").notNull().default("🧒"),
-  sortOrder: integer("sort_order").notNull().default(0),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-}, (table) => [index("students_class_idx").on(table.classId)]);

@@ -2,14 +2,15 @@
 
 A teacher-led classroom platform teaching English *through* AI-literacy
 concepts, built for Korean elementary beginners. One teacher, one screen
-(a laptop on a projector), bilingual (English + Korean) content that fades
-as a class levels up, an 8-week foundations unit followed by a full
-**12-month year-long themed curriculum**, eight distinct activity-game
-engines — including a real-world AI-recognition game and a give-precise-
-instructions game standards-mapped to ISTE, AI4K12, and UNESCO's AI
-Competency Framework for Students — two age tracks (4-5 and 6+), and real
-classroom infrastructure — organizations, schools, classes, rosters, and
-participation reporting.
+(a laptop on a projector), English-only content, an 8-week foundations unit
+followed by a full **12-month year-long themed curriculum**, eight distinct
+activity-game engines — including a real-world AI-recognition game and a
+give-precise-instructions game standards-mapped to ISTE, AI4K12, and
+UNESCO's AI Competency Framework for Students — two age tracks (4-5 and
+6+), and real classroom infrastructure — organizations, schools, and
+classes. There is no student roster or individual student tracking; the
+whole product is designed to be run projected for the whole room, not per
+child.
 
 See [`docs/AI_CURRICULUM.md`](docs/AI_CURRICULUM.md) for the full research
 and architecture writeup, [`docs/SCOPE_AND_SEQUENCE.md`](docs/SCOPE_AND_SEQUENCE.md)
@@ -31,7 +32,7 @@ cp .env.example .env.local   # fill in DATABASE_URL, SESSION_SECRET
 npm install
 npm run db:migrate           # applies lib/db/migrations/ to your database
 npm run seed                 # demo org, school, teacher, org-admin, two
-                              # classes (one per age track), 18 students —
+                              # classes (one per age track) —
                               # prints demo login credentials
 npm run dev
 ```
@@ -41,23 +42,22 @@ Open `http://localhost:3000/login` and sign in with one of the accounts
 
 - **Teacher** — sees their own classes, runs lessons.
 - **Org admin** — sees every class in the organization, plus
-  `/reporting` for cross-class participation rollups.
+  `/reporting` for cross-class lesson-completion rollups.
 
 ## The teacher flow
 
 1. Sign in → `/dashboard` lists your classes (or every class in the org,
    if you're an admin).
-2. Open a class → roster (add/view students), the age-track badge (Little
-   Sparks 4-5 / AI Explorers 6+), the 12-month **Year Curriculum**, and the
-   8-week **Foundations** unit — **Start →** on every lesson that's fully
-   built.
+2. Open a class → the age-track badge (Little Sparks 4-5 / AI Explorers 6+),
+   the 12-month **Year Curriculum**, and the 8-week **Foundations** unit —
+   **Start →** on every lesson that's fully built.
 3. Starting a lesson opens the **Presentation Player** — a projector-safe
    view that steps through warmup → vocabulary → concept → activity →
    formative check → wrap-up. You control pacing; nothing auto-advances.
-   Closing the tab and coming back resumes where you left off.
-4. At each formative check, mark the whole class or an individual student
-   (👍 got it / 🤔 needs practice / ⭐ excelling). Org admins see these
-   rolled up at `/reporting`.
+   Closing the tab and coming back resumes where you left off. There's no
+   roster and no per-student tracking — the formative check is just a
+   prompt for the teacher to ask the whole room, nothing is recorded per
+   child.
 
 ## Solo practice pages
 

@@ -1,7 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { requireTeacher } from "@/lib/auth/requireTeacher";
 import { classForTeacher } from "@/lib/console/authz";
-import { rosterForClass } from "@/lib/console/queries";
 import { startOrResumeLessonSession } from "@/lib/console/lessonSessions";
 import { getLesson } from "@/lib/curriculum";
 import { filterLessonForTrack } from "@/lib/trackContent";
@@ -24,10 +23,7 @@ export default async function LessonPage({
   if (!rawLesson) notFound();
   const lesson = filterLessonForTrack(rawLesson, klass.ageTrack);
 
-  const [session, roster] = await Promise.all([
-    startOrResumeLessonSession(classId, teacher.id, lesson.unitKey, lesson.key),
-    rosterForClass(classId),
-  ]);
+  const session = await startOrResumeLessonSession(classId, teacher.id, lesson.unitKey, lesson.key);
 
   return (
     <div className="flex flex-col gap-4">
@@ -45,7 +41,6 @@ export default async function LessonPage({
         sessionId={session.id}
         classId={classId}
         initialSegmentIndex={session.currentSegmentIndex}
-        roster={roster}
       />
     </div>
   );
