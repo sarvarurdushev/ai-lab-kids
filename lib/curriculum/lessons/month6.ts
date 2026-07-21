@@ -43,6 +43,20 @@ export const m6_week1: Lesson = {
         "Adjective-before-noun order (\"a big lion\") matches Korean word order exactly — call this out as an easy win, not everything in English is a hard shift. The wildlife-camera example makes \"perception\" concrete: recognizing an animal from a blurry night photo is a genuinely hard version of the same sorting game Vora's been playing all year.",
     },
     {
+      type: "movement",
+      title: "Wild Animal Actions!",
+      instructions:
+        "Call out each animal and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Lion — stomp and roar loudly", emoji: "🦁" },
+        { text: "Elephant — swing your arm like a trunk", emoji: "🐘" },
+        { text: "Monkey — scratch your sides and hop", emoji: "🐵" },
+        { text: "Zebra — gallop in place", emoji: "🦓" },
+        { text: "Penguin — waddle with your arms at your sides", emoji: "🐧" },
+        { text: "Tiger — crouch low and swipe your paws", emoji: "🐯" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Sort each animal: is it big, or small?",
       config: {
@@ -70,13 +84,25 @@ export const m6_week1: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[5],
     },
     {
+      type: "chant",
+      title: "Big or Small Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching animal picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Animal, animal, who do you see?", response: "It's a big elephant, big as can be!" },
+        { call: "Animal, animal, who's on the ground?", response: "It's a small monkey, hopping around!" },
+        { call: "Animal, animal, who's big and strong?", response: "It's a big lion, roaring along!" },
+        { call: "Animal, animal, who waddles by?", response: "It's a small penguin, waving hi!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Say \"It's a big ___\" or \"It's a small ___\" about an animal picture or toy.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we learned wild animal words and \"It's a big / small ___\" — and how wildlife cameras use AI to recognize which animal walked by — practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+      summary: "Today we learned wild animal words and \"It's a big / small ___\" — and how wildlife cameras use AI to recognize which animal walked by — acted out wild animal actions together, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about big and small animals together.",
       homework: "Find a picture of an animal at home and say \"It's a big ___\" or \"It's a small ___.\"",
     },
   ],
@@ -100,6 +126,20 @@ export const m6_week2: Lesson = {
       ],
       teacherNote:
         "Quick callback to Week 1's wildlife-camera example — no new teaching, just a bridge into today's pattern-prediction game.",
+    },
+    {
+      type: "movement",
+      title: "Animal Actions!",
+      instructions:
+        "Call out each animal and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Lion — stomp and roar loudly", emoji: "🦁" },
+        { text: "Elephant — swing your arm like a trunk", emoji: "🐘" },
+        { text: "Monkey — scratch your sides and hop", emoji: "🐵" },
+        { text: "Zebra — gallop in place", emoji: "🦓" },
+        { text: "Penguin — waddle with your arms at your sides", emoji: "🐧" },
+        { text: "Tiger — crouch low and swipe your paws", emoji: "🐯" },
+      ],
     },
     {
       type: "activity",
@@ -142,13 +182,25 @@ export const m6_week2: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[5],
     },
     {
+      type: "chant",
+      title: "Big and Small Animal Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching animal picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Animal, animal, what comes next?", response: "It's a big lion, roaring next!" },
+        { call: "Animal, animal, who do you see?", response: "It's a small monkey, hopping with glee!" },
+        { call: "Animal, animal, what's the pattern true?", response: "It's a big elephant, right on cue!" },
+        { call: "Animal, animal, guess who's here?", response: "It's a small penguin, give a cheer!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Ask a partner: \"What comes next?\" about the pattern lion, elephant, lion, elephant.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we played three activities — guessing what comes next in an animal pattern, matching animal words to pictures, and helping Vora follow clear step-by-step instructions.",
+      summary: "Today we acted out animal actions, played three activities — guessing what comes next in an animal pattern, matching animal words to pictures, and helping Vora follow clear step-by-step instructions — and chanted about big and small animals together.",
     },
   ],
 };
@@ -171,6 +223,20 @@ export const m6_week3: Lesson = {
       ],
       teacherNote:
         "Short bridge connecting today's memory game to the idea that repetition builds recognition — no new AI content, just framing.",
+    },
+    {
+      type: "movement",
+      title: "Wild Animal Actions!",
+      instructions:
+        "Call out each animal and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Lion — stomp and roar loudly", emoji: "🦁" },
+        { text: "Elephant — swing your arm like a trunk", emoji: "🐘" },
+        { text: "Monkey — scratch your sides and hop", emoji: "🐵" },
+        { text: "Zebra — gallop in place", emoji: "🦓" },
+        { text: "Penguin — waddle with your arms at your sides", emoji: "🐧" },
+        { text: "Tiger — crouch low and swipe your paws", emoji: "🐯" },
+      ],
     },
     {
       type: "activity",
@@ -213,13 +279,25 @@ export const m6_week3: Lesson = {
       ...AI_OR_NOT_SETS[0],
     },
     {
+      type: "chant",
+      title: "What's This Animal? Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching animal picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "What's this animal, king of them all?", response: "It's a lion, standing tall!" },
+        { call: "What's this animal, swinging by?", response: "It's a monkey, way up high!" },
+        { call: "What's this animal, black and white?", response: "It's a zebra, what a sight!" },
+        { call: "What's this animal, waddling slow?", response: "It's a penguin, off we go!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Ask a partner: \"What's this animal?\" and point to one of the matched cards.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we played three activities — matching animal words to pictures, guessing what comes next in an animal pattern, and spotting real AI in everyday life.",
+      summary: "Today we acted out animal actions, played three activities — matching animal words to pictures, guessing what comes next in an animal pattern, and spotting real AI in everyday life — and chanted about the animals together.",
     },
   ],
 };
@@ -244,6 +322,20 @@ export const m6_week4: Lesson = {
       ],
       teacherNote:
         "Second quarter-checkpoint review — Korean has no /f/ phoneme, so this contrast is genuinely new rather than just underused, and benefits from repeated exposure across the year. If your class completed the foundations unit, this is a direct callback to Week 3 Day 3; if not, simply treat it as a first introduction.",
+    },
+    {
+      type: "movement",
+      title: "Sound Actions: F or P!",
+      instructions:
+        "Call out each word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Fan — fan your face with your hand", emoji: "🪭" },
+        { text: "Pan — mime flipping a pancake", emoji: "🍳" },
+        { text: "Fine — give a big thumbs-up", emoji: "👍" },
+        { text: "Pine — reach up tall like a tree", emoji: "🌲" },
+        { text: "Fork — mime eating with a fork", emoji: "🍴" },
+        { text: "Pork — rub your tummy like it's yummy", emoji: "🥓" },
+      ],
     },
     {
       type: "activity",
@@ -273,13 +365,25 @@ export const m6_week4: Lesson = {
       ...AI_OR_NOT_SETS[0],
     },
     {
+      type: "chant",
+      title: "Fan or Pan? Chant",
+      instructions:
+        "Say each call line clearly, then have the class echo the response back, listening for the difference.",
+      lines: [
+        { call: "Listen close — fan or pan?", response: "Fan, fan, fan — feel the air!" },
+        { call: "Listen close — fine or pine?", response: "Fine, fine, fine — thumbs up there!" },
+        { call: "Listen close — fork or pork?", response: "Fork, fork, fork — time to eat!" },
+        { call: "Listen close, can you tell?", response: "F or P — we know them well!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Say \"fan\" and \"pan\" one more time — thumbs up if you can hear the difference now.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we reviewed the f sound from Week 3 — a great checkpoint before we meet two more tricky sounds later this year — helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+      summary: "Today we reviewed the f sound from Week 3 — a great checkpoint before we meet two more tricky sounds later this year — acted out fan, pan, and more sound words, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted the f and p sounds together.",
     },
   ],
 };

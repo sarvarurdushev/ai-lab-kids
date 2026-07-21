@@ -129,6 +129,20 @@ export const m7_week2: Lesson = {
         "Keep this brief — Vora and the idea of sorting-by-looking were already introduced back in Week 1's forecast talk. This is just a quick bridge into today's sorting game below.",
     },
     {
+      type: "movement",
+      title: "Hot & Cold Clothes Actions!",
+      instructions:
+        "Call out each clothing word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Shorts — pat your legs like putting on shorts", emoji: "🩳" },
+        { text: "T-shirt — pull an imaginary t-shirt over your head", emoji: "👕" },
+        { text: "Sandals — wiggle your toes", emoji: "👡" },
+        { text: "Coat — hug yourself and zip up an imaginary coat", emoji: "🧥" },
+        { text: "Scarf — wrap your hands around your neck like a scarf", emoji: "🧣" },
+        { text: "Boots — stomp your feet like wearing big boots", emoji: "👢" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "As a class, decide together whether each clothing item is for hot or cold weather before tapping — then have kids mime actually putting it on (shiver and hug yourself for coats and scarves, fan yourself for shorts and sandals). This doubles nicely as a movement break. Then play a second game to reinforce it.",
       config: {
@@ -166,13 +180,25 @@ export const m7_week2: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[0],
     },
     {
+      type: "chant",
+      title: "It's Sunny Today Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching weather or clothes picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Weather, weather, what do you see?", response: "It's sunny today, warm as can be!" },
+        { call: "Weather, weather, is it hot?", response: "It's hot today — shorts, I've got!" },
+        { call: "Weather, weather, feeling cold?", response: "It's cold today — put on your coat!" },
+        { call: "Weather, weather, what's today?", response: "It's sunny today — hip hip hooray!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Ask a partner: \"Is a coat hot weather or cold weather?\"",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we sorted clothes into hot weather and cold weather, played a second game building the sentence \"It's sunny today,\" and helped Vora follow clear step-by-step instructions.",
+      summary: "Today we acted out hot and cold weather clothes, sorted clothes into hot weather and cold weather, played a second game building the sentence \"It's sunny today,\" helped Vora follow clear step-by-step instructions, and chanted about the weather together.",
       homework: "Pick out your own clothes for tomorrow's weather and say if they're \"hot weather\" or \"cold weather\" clothes, in English.",
     },
   ],
@@ -196,6 +222,20 @@ export const m7_week3: Lesson = {
       ],
       teacherNote:
         "Just a quick bridge into today's sentence-building game — the \"It's ___\" pattern doesn't need re-teaching by now (see Week 1), this is pure practice.",
+    },
+    {
+      type: "movement",
+      title: "Hot & Cold Clothes Actions!",
+      instructions:
+        "Call out each clothing word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Shorts — pat your legs like putting on shorts", emoji: "🩳" },
+        { text: "T-shirt — pull an imaginary t-shirt over your head", emoji: "👕" },
+        { text: "Sandals — wiggle your toes", emoji: "👡" },
+        { text: "Coat — hug yourself and zip up an imaginary coat", emoji: "🧥" },
+        { text: "Scarf — wrap your hands around your neck like a scarf", emoji: "🧣" },
+        { text: "Boots — stomp your feet like wearing big boots", emoji: "👢" },
+      ],
     },
     {
       type: "activity",
@@ -235,13 +275,25 @@ export const m7_week3: Lesson = {
       ...AI_OR_NOT_SETS[1],
     },
     {
+      type: "chant",
+      title: "Sunny or Rainy Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching weather picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Weather, weather, what do you see?", response: "It's sunny today, look and see!" },
+        { call: "Weather, weather, hear the rain?", response: "It's rainy today, again and again!" },
+        { call: "Weather, weather, clear and bright?", response: "It's sunny today, what a sight!" },
+        { call: "Weather, weather, wet today?", response: "It's rainy today, hip hip hooray!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Ask a partner: \"Is it sunny or rainy today?\" and check whether their answer matches the real weather.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we played three activities — building the sentence \"It's sunny today\" one word at a time, sorting clothes into hot weather and cold weather, and spotting real AI in everyday life.",
+      summary: "Today we acted out hot and cold weather clothes, played three activities — building the sentence \"It's sunny today\" one word at a time, sorting clothes into hot weather and cold weather, and spotting real AI in everyday life — and chanted about sunny and rainy weather together.",
       homework: "Look outside tonight and try building today's weather sentence with a family member.",
     },
   ],
@@ -269,6 +321,20 @@ export const m7_week4: Lesson = {
         "This is the most immediately real-world-checkable sentence pattern in the curriculum — after building it, look out the window together and see if the class's sentence is actually true today. Also a good moment to flag that English's \"It's\" has no direct Korean equivalent: Korean weather sentences don't need a placeholder subject at all, so kids may want to skip straight to the weather word. Point out that English always keeps \"It's,\" even though nothing specific is \"it.\"",
     },
     {
+      type: "movement",
+      title: "Weather Review Actions!",
+      instructions:
+        "Call out each weather word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Sunny — stretch your arms up high", emoji: "☀️" },
+        { text: "Rainy — wiggle your fingers down like rain", emoji: "🌧️" },
+        { text: "Cloudy — float your arms slowly side to side", emoji: "☁️" },
+        { text: "Snowy — shiver and hug yourself", emoji: "❄️" },
+        { text: "Hot — fan your face fast", emoji: "🥵" },
+        { text: "Cold — hug yourself and shiver", emoji: "🥶" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Build the sentence one tile at a time. Once it's complete, look out the window together — is it actually rainy today? If not, rebuild the sentence with the real weather word instead!",
       config: {
@@ -288,13 +354,25 @@ export const m7_week4: Lesson = {
       ...AI_OR_NOT_SETS[1],
     },
     {
+      type: "chant",
+      title: "Weather Review Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching weather picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Weather, weather, white and cold?", response: "It's snowy today, so I'm told!" },
+        { call: "Weather, weather, sweaty and bright?", response: "It's hot today, day and night!" },
+        { call: "Weather, weather, shiver and shake?", response: "It's cold today, for goodness sake!" },
+        { call: "Weather, weather, what's today?", response: "Check outside and shout — hooray!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Go around and have every child say \"It's ___ today\" using today's real weather.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we built \"It's ___ today,\" checked it against the real sky outside our window, helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+      summary: "Today we acted out weather words one more time, built \"It's ___ today,\" checked it against the real sky outside our window, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted about the weather together.",
       homework: "Check the weather every day this week and greet a family member with \"It's ___ today!\" in English.",
     },
   ],

@@ -29,13 +29,39 @@ export const w8d1_talking_to_ai_safely: Lesson = {
         "Read each rule aloud once, then ask the class to repeat it back in their own words (English or Korean, either is fine here) — this is a discussion lesson, not a decoding-practice lesson. Deliberately kept to four short lines.",
     },
     {
+      type: "movement",
+      title: "AI Safety Actions!",
+      instructions:
+        "Call out each safety word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Name — zip your lips and shake your head no", emoji: "🤐" },
+        { text: "Address — cross your arms in a big X", emoji: "❌" },
+        { text: "Photo — cover your face with your hands", emoji: "🙈" },
+        { text: "Grown-up — raise your hand high and wave", emoji: "✋" },
+        { text: "Mistake — shrug your shoulders", emoji: "🤷" },
+        { text: "Double-check — nod your head yes, twice", emoji: "✅" },
+      ],
+    },
+    {
+      type: "chant",
+      title: "AI Safety Chant!",
+      instructions:
+        "Say each call line and have the whole class echo the response line back to you.",
+      lines: [
+        { call: "AI, AI, what's the rule?", response: "Don't share your name, keep it cool!" },
+        { call: "AI, AI, what do we do?", response: "Don't share your address, that's true!" },
+        { call: "AI, AI, if it's scary —", response: "Tell a grown-up, don't be wary!" },
+        { call: "AI, AI, can it be wrong?", response: "Yes it can — double-check along!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "\"Tell me one rule for talking to an AI.\" — go around the room.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we learned four rules for talking to AI safely — the last new idea before our review week.",
+      summary: "Today we learned four rules for talking to AI safely — the last new idea before our review week, acted out each safety rule, and chanted them together.",
       homework: "Tell a family member one AI safety rule you learned today.",
     },
   ],
@@ -48,6 +74,20 @@ export const w8d2_review_carnival: Lesson = {
       type: "warmup",
       teacherScript: "Tell the class today is a carnival — one quick round of every game they've learned this unit, mixing old favorites.",
       prompt: "Welcome to the Review Carnival! 🎉",
+    },
+    {
+      type: "movement",
+      title: "Carnival Warm-Up Actions!",
+      instructions:
+        "Call out each word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Dog — pant and wag like a puppy", emoji: "🐶" },
+        { text: "Bird — flap your arms and tweet", emoji: "🐦" },
+        { text: "Rabbit — hop up and down", emoji: "🐰" },
+        { text: "Bus — drive a big steering wheel", emoji: "🚌" },
+        { text: "Train — chug your arms like train wheels", emoji: "🚂" },
+        { text: "Bike — pedal your legs in place", emoji: "🚲" },
+      ],
     },
     {
       type: "activity",
@@ -112,13 +152,25 @@ export const w8d2_review_carnival: Lesson = {
       },
     },
     {
+      type: "chant",
+      title: "Carnival Review Chant!",
+      instructions:
+        "Say each call line and have the whole class echo the response line back to you.",
+      lines: [
+        { call: "Carnival, carnival, what do you see?", response: "I have two dogs, look at me!" },
+        { call: "Carnival, carnival, tell me true —", response: "I have two birds, how about you?" },
+        { call: "Carnival, carnival, hop this way —", response: "I have two rabbits, hip hip hooray!" },
+        { call: "Carnival, carnival, our review's done —", response: "We learned so much and had such fun!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Whole-class check-in: which carnival round was easiest? Which was the trickiest?",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we played one round of every game from this unit — a fun cumulative check of everything we've learned.",
+      summary: "Today we played one round of every game from this unit — a fun cumulative check of everything we've learned, warmed up acting out review words, and ended with a carnival chant together.",
     },
   ],
 };
@@ -144,6 +196,20 @@ export const w8d3_teach_vora_day: Lesson = {
         "This is the unit's capstone. Split the class into small groups; each group picks a category (\"toys vs. not toys,\" \"sports vs. not sports\" — anything with real classroom objects works), describes it to the class in English (\"A ___ is a toy\"), then leads the room through a live version of the Train the Robot loop using real objects. The app activity below is one worked example to run together first, as a model.",
     },
     {
+      type: "movement",
+      title: "Toy or Not a Toy Actions!",
+      instructions:
+        "Call out each item and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Ball — bounce like a ball", emoji: "⚽" },
+        { text: "Teddy bear — hug yourself tight", emoji: "🧸" },
+        { text: "Kite — wave your arms up like flying a kite", emoji: "🪁" },
+        { text: "Book — open your hands like a book", emoji: "📖" },
+        { text: "Pencil — pretend to write in the air", emoji: "✏️" },
+        { text: "Chair — sit down and stand up fast", emoji: "🪑" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Run this one together as the model round before groups invent their own categories.",
       config: {
@@ -164,13 +230,25 @@ export const w8d3_teach_vora_day: Lesson = {
       },
     },
     {
+      type: "chant",
+      title: "Teach Vora Chant!",
+      instructions:
+        "Say each call line and have the whole class echo the response line back to you.",
+      lines: [
+        { call: "Teacher Vora, what do you see?", response: "A ball is a toy, bounce with me!" },
+        { call: "Teacher Vora, tell me true —", response: "A teddy bear's a toy for you!" },
+        { call: "Teacher Vora, what do you say?", response: "A book is not a toy today!" },
+        { call: "Teacher Vora, we've learned so much —", response: "Now it's our turn to teach as such!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Each group presents their invented category to the class in English before the live round.",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "You did it — eight weeks of English and AI, and today you taught Vora something brand new. Great job, AI Explorers!",
+      summary: "You did it — eight weeks of English and AI, and today you taught Vora something brand new after acting out toy words and chanting together. Great job, AI Explorers!",
     },
   ],
 };

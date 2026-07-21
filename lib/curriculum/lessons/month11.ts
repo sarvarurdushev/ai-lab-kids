@@ -42,6 +42,20 @@ export const m11_week1: Lesson = {
         "This month's honest AI boundary: recognizing a facial expression (a shape a camera can detect) isn't the same as understanding a feeling. Also flag the grammar shift explicitly: \"I feel ___\" uses a real verb (feel), unlike the \"It's ___\" copula pattern used all year (Months 1, 6, and 7) — a quick side-by-side (\"It's sunny\" vs. \"I feel happy\") helps prevent kids from saying \"I'm feel happy\" or overusing \"it's\" for their own feelings.",
     },
     {
+      type: "movement",
+      title: "Feelings Actions!",
+      instructions:
+        "Call out each feeling word and make the matching face and body pose together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Happy — big smile and jump", emoji: "😊" },
+        { text: "Sad — pouty face and droopy shoulders", emoji: "😢" },
+        { text: "Angry — stomp your feet and cross your arms", emoji: "😠" },
+        { text: "Scared — jump back and cover your eyes", emoji: "😨" },
+        { text: "Surprised — gasp and throw your arms wide", emoji: "😲" },
+        { text: "Tired — big yawn and slow stretch", emoji: "😴" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "As a class, decide together where each feeling goes before anyone taps — happy feelings on one side, not-happy feelings on the other.",
       config: {
@@ -69,13 +83,25 @@ export const m11_week1: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[4],
     },
     {
+      type: "chant",
+      title: "I Feel Chant",
+      instructions:
+        "Say each call line and make the matching feeling face. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Feelings, feelings, what do you see?", response: "I feel happy, happy me!" },
+        { call: "Feelings, feelings, tell me true —", response: "I feel sad, a little blue." },
+        { call: "Feelings, feelings, hear me shout —", response: "I feel angry, watch me pout!" },
+        { call: "Feelings, feelings, how about you?", response: "I feel tired — good night to you!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Make a feeling face without talking — can a partner guess and say \"You feel ___\"?",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we named six feelings and learned \"I feel ___\" — how an AI can spot a smile, but can't truly know how someone feels inside — practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+      summary: "Today we named six feelings and learned \"I feel ___,\" acted them out — how an AI can spot a smile, but can't truly know how someone feels inside — practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about feelings together.",
       homework: "Ask a family member \"How do you feel?\" tonight and really listen to their answer.",
     },
   ],
@@ -99,6 +125,20 @@ export const m11_week2: Lesson = {
       ],
       teacherNote:
         "Quick reinforcement of Week 1's AI-limits idea — no new teaching here, just a short bridge into today's sentence-building game.",
+    },
+    {
+      type: "movement",
+      title: "Freeze-Frame Feelings!",
+      instructions:
+        "Call out each feeling word and freeze in that pose like a photo — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Happy — big smile, hands up", emoji: "😊" },
+        { text: "Sad — droopy shoulders, pouty lip", emoji: "😢" },
+        { text: "Angry — stomp and cross your arms", emoji: "😠" },
+        { text: "Scared — jump and cover your eyes", emoji: "😨" },
+        { text: "Surprised — gasp, hands on cheeks", emoji: "😲" },
+        { text: "Tired — big yawn, slow stretch", emoji: "😴" },
+      ],
     },
     {
       type: "activity",
@@ -133,13 +173,25 @@ export const m11_week2: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[4],
     },
     {
+      type: "chant",
+      title: "Feel It Chant",
+      instructions:
+        "Say each call line and freeze in the matching feeling pose. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Freeze, freeze, show me your face —", response: "I feel happy, all over the place!" },
+        { call: "Freeze, freeze, what do you see?", response: "I feel scared, oh help me!" },
+        { call: "Freeze, freeze, don't make a sound —", response: "I feel surprised, look all around!" },
+        { call: "Freeze, freeze, day is through —", response: "I feel tired, how about you?" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Ask a partner: \"How do you feel?\" — can they answer with \"I feel ___\"?",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we played three activities — building the sentence \"I feel happy\" one tile at a time, matching feeling words to faces, and helping Vora follow clear step-by-step instructions.",
+      summary: "Today we played three activities — building the sentence \"I feel happy\" one tile at a time, acting out feelings like freeze-frame photos, matching feeling words to faces, helping Vora follow clear step-by-step instructions, and chanting about feelings together.",
       homework: "Act out a feeling for your family tonight and see if they can guess it in English.",
     },
   ],
@@ -163,6 +215,20 @@ export const m11_week3: Lesson = {
       ],
       teacherNote:
         "Brief callback to Week 1's AI-limits idea, reframed through Big Idea 3 (Learning): repeated exposure is how both Vora and kids build recognition.",
+    },
+    {
+      type: "movement",
+      title: "Act It, Match It!",
+      instructions:
+        "Call out each feeling word and act it out with your face and body together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Happy — jump with a big grin", emoji: "😊" },
+        { text: "Sad — sniffle and rub your eyes", emoji: "😢" },
+        { text: "Angry — stomp both feet loudly", emoji: "😠" },
+        { text: "Scared — gasp and hide behind your hands", emoji: "😨" },
+        { text: "Surprised — jump back with wide eyes", emoji: "😲" },
+        { text: "Tired — droop your head and yawn", emoji: "😴" },
+      ],
     },
     {
       type: "activity",
@@ -197,13 +263,25 @@ export const m11_week3: Lesson = {
       ...AI_OR_NOT_SETS[5],
     },
     {
+      type: "chant",
+      title: "How Do You Feel Chant",
+      instructions:
+        "Say each call line and act out the feeling. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "How do you feel? Tell me it's true —", response: "I feel happy, look at you!" },
+        { call: "How do you feel? Boo hoo hoo —", response: "I feel sad, boo hoo hoo!" },
+        { call: "How do you feel? Stomp your feet —", response: "I feel angry, hear the beat!" },
+        { call: "How do you feel? Day is through —", response: "I feel tired, good night to you!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Ask a partner: \"Which feeling did you match?\" — can they say the English word?",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we played three activities — matching feeling words to faces, building the sentence \"I feel happy\" one tile at a time, and spotting real AI in everyday life.",
+      summary: "Today we played three activities — matching feeling words to faces, acting out each feeling with our face and body, building the sentence \"I feel happy\" one tile at a time, spotting real AI in everyday life, and chanting about how we feel together.",
       homework: "Play a quick feelings guessing game with your family tonight.",
     },
   ],
@@ -231,6 +309,20 @@ export const m11_week4: Lesson = {
         "Unlike Month 5's \"This is my sister,\" this sentence frame asks for a genuine, in-the-moment answer — encourage kids to swap in their real feeling, not just \"happy.\" Ties back to this month's AI honesty theme: this is one sentence Vora truly can't answer for them.",
     },
     {
+      type: "movement",
+      title: "Show Your Real Feeling!",
+      instructions:
+        "Call out each feeling word and act it out for real together, then invite a few kids to add their own true feeling at the end.",
+      moves: [
+        { text: "Happy — jump up and cheer", emoji: "😊" },
+        { text: "Sad — hug yourself and sniffle", emoji: "😢" },
+        { text: "Angry — cross your arms and frown", emoji: "😠" },
+        { text: "Scared — freeze and gasp", emoji: "😨" },
+        { text: "Surprised — throw your hands up", emoji: "😲" },
+        { text: "Tired — rub your eyes and yawn", emoji: "😴" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Build the sentence one tile at a time, left to right. Then invite several kids to swap in their own true feeling and say it out loud.",
       config: {
@@ -250,13 +342,25 @@ export const m11_week4: Lesson = {
       ...AI_OR_NOT_SETS[5],
     },
     {
+      type: "chant",
+      title: "My True Feeling Chant",
+      instructions:
+        "Say each call line and have the class answer together, then invite a few kids to swap in their own real feeling. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "How do you feel? Tell me it's true —", response: "I feel happy, that's the news for you!" },
+        { call: "How do you feel? Don't be shy —", response: "I feel sad, and that's just fine." },
+        { call: "How do you feel? Shout it out —", response: "I feel scared, without a doubt!" },
+        { call: "How do you feel? Day is done —", response: "I feel tired, we had such fun!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Every kid says \"I feel ___\" out loud, naming their real feeling right now.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today every child said how they truly feel in English — one of the most personal sentences in the whole year — helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+      summary: "Today every child said how they truly feel in English — one of the most personal sentences in the whole year — acted out feelings together, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted their true feelings together.",
       homework: "Say \"I feel ___\" about your real feeling to someone at home tonight.",
     },
   ],

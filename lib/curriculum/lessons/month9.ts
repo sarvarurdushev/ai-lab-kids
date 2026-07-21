@@ -42,6 +42,21 @@ export const m9_week1: Lesson = {
         "This month broadens 'perception' beyond seeing — sensors that detect motion or touch are a form of perception too, even without eyes or a camera. Motion-sensor games (dance games, some fitness trackers) are the concrete example to point to if kids ask how.",
     },
     {
+      type: "movement",
+      title: "Body Part Actions!",
+      instructions:
+        "Call out each body part and touch it together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Eyes — point to your eyes and blink big", emoji: "👀" },
+        { text: "Nose — touch your nose and wiggle it", emoji: "👃" },
+        { text: "Mouth — touch your mouth and open it wide", emoji: "👄" },
+        { text: "Ears — touch your ears and wiggle them", emoji: "👂" },
+        { text: "Hands — clap your hands high", emoji: "🙌" },
+        { text: "Feet — stomp your feet", emoji: "🦶" },
+        { text: "Shoulders — shrug your shoulders up and down", emoji: "🙆" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Kids take turns flipping two cards at a time, saying the body part out loud if they find a match.",
       config: {
@@ -65,13 +80,25 @@ export const m9_week1: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[2],
     },
     {
+      type: "chant",
+      title: "Body Parts Chant",
+      instructions:
+        "Say each call line and touch (or point to) the matching body part. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Body, body, what do you see?", response: "Touch your eyes, touch your eyes, look at me!" },
+        { call: "Body, body, smell the air,", response: "Touch your nose, touch your nose, right there!" },
+        { call: "Body, body, listen well,", response: "Touch your ears, touch your ears, ring the bell!" },
+        { call: "Body, body, stomp the floor,", response: "Touch your feet, touch your feet, give me more!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Everyone point to your ears, then your feet — no talking, just pointing!",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we named six body parts in English, learned that sensors, not just eyes, can notice how our bodies move, practiced spotting real AI in everyday life, and helped Vora follow clear instructions.",
+      summary: "Today we named six body parts in English, acted them out, learned that sensors, not just eyes, can notice how our bodies move, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about our body parts together.",
       homework: "Touch and name three body parts in English before bedtime tonight.",
     },
   ],
@@ -95,6 +122,18 @@ export const m9_week2: Lesson = {
       ],
       teacherNote:
         "Keep this short — perception was fully taught in Week 1. This is just a quick bridge line before the physical routine, reframing today's movement game as something a sensor could track step by step.",
+    },
+    {
+      type: "movement",
+      title: "Vora Says: Move!",
+      instructions:
+        "Call out each step and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Stand up — jump to your feet", emoji: "🧍" },
+        { text: "Touch your nose — tap your nose with one finger", emoji: "👃" },
+        { text: "Clap your hands — clap three times big", emoji: "👏" },
+        { text: "Sit down — plop back into your seat", emoji: "🪑" },
+      ],
     },
     {
       type: "activity",
@@ -126,13 +165,25 @@ export const m9_week2: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[2],
     },
     {
+      type: "chant",
+      title: "Touch Your Nose Chant",
+      instructions:
+        "Say each call line and do the matching action. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Vora says, what do we do?", response: "Stand up, stand up — me and you!" },
+        { call: "Vora says, where's your nose?", response: "Touch your nose, touch your nose, here it goes!" },
+        { call: "Vora says, clap out loud,", response: "Clap your hands, clap your hands, make us proud!" },
+        { call: "Vora says, rest a while,", response: "Sit back down, sit back down, with a smile!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Call out a step from today's routine (\"Touch your nose!\") and see if everyone can do it without looking at the screen.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we moved our whole bodies through a four-step \"Vora Says\" routine, in order, from start to finish, and helped Vora follow clear step-by-step instructions.",
+      summary: "Today we moved our whole bodies through a four-step \"Vora Says\" routine, in order, from start to finish, acted it out again with a movement break, helped Vora follow clear step-by-step instructions, and chanted the \"Vora Says\" routine together.",
       homework: "Teach a family member the \"Vora Says\" game tonight using English body words.",
     },
   ],
@@ -156,6 +207,18 @@ export const m9_week3: Lesson = {
       ],
       teacherNote:
         "Keep this brief — perception was fully taught in Week 1. This is just a quick bridge line connecting today's sentence-building game to the same 'sensors help notice the body' idea, before diving into the activity.",
+    },
+    {
+      type: "movement",
+      title: "Move Your Body!",
+      instructions:
+        "Call out each step and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Stand up — jump to your feet", emoji: "🧍" },
+        { text: "Touch your nose — tap your nose with one finger", emoji: "👃" },
+        { text: "Clap your hands — clap three times big", emoji: "👏" },
+        { text: "Sit down — plop back into your seat", emoji: "🪑" },
+      ],
     },
     {
       type: "activity",
@@ -187,13 +250,25 @@ export const m9_week3: Lesson = {
       ...AI_OR_NOT_SETS[3],
     },
     {
+      type: "chant",
+      title: "Vora Says Chant",
+      instructions:
+        "Say each call line and do the matching action. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Vora says, what do we do?", response: "Stand up, stand up — me and you!" },
+        { call: "Vora says, where's your nose?", response: "Touch your nose, touch your nose, here it goes!" },
+        { call: "Vora says, clap out loud,", response: "Clap your hands, clap your hands, make us proud!" },
+        { call: "Vora says, rest a while,", response: "Sit back down, sit back down, with a smile!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Say \"Touch your nose!\" one more time and see if everyone can do it without looking at the screen.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we played three activities — building the sentence \"Touch your nose\" tile by tile, moving through the four-step \"Vora Says\" routine, and spotting real AI in everyday life.",
+      summary: "Today we played three activities — building the sentence \"Touch your nose\" tile by tile, acted it out with a movement break, moving through the four-step \"Vora Says\" routine, spotting real AI in everyday life, and chanted the \"Vora Says\" routine together.",
       homework: "Tell a family member \"Touch your nose!\" in English and see if they follow your command.",
     },
   ],
@@ -218,6 +293,20 @@ export const m9_week4: Lesson = {
       ],
       teacherNote:
         "This is the third quarter-checkpoint listening review (after Week 4's original th/s lesson) — ties this month's 'sensors, not just eyes' theme directly to the ears as a sensor too.",
+    },
+    {
+      type: "movement",
+      title: "Listening Actions!",
+      instructions:
+        "Call out each word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Think — tap your temple like you're thinking hard", emoji: "🤔" },
+        { text: "Sink — mime turning on a faucet and washing your hands", emoji: "🚰" },
+        { text: "Mouth — point to your mouth and open it wide", emoji: "👄" },
+        { text: "Mouse — wiggle your fingers like tiny mouse feet", emoji: "🐭" },
+        { text: "Bath — mime scrubbing your arms like you're in the tub", emoji: "🛁" },
+        { text: "Bass — flap your hands like fish fins swimming", emoji: "🐟" },
+      ],
     },
     {
       type: "activity",
@@ -247,13 +336,25 @@ export const m9_week4: Lesson = {
       ...AI_OR_NOT_SETS[3],
     },
     {
+      type: "chant",
+      title: "Think or Sink Chant",
+      instructions:
+        "Say each call line, then have the class say the matching word back to you as the response.",
+      lines: [
+        { call: "Listen, listen, what do you hear?", response: "Think, think — the answer is clear!" },
+        { call: "Listen, listen, water below?", response: "Sink, sink — watch it flow!" },
+        { call: "Listen, listen, open your mouth,", response: "Mouth, mouth — now say it out!" },
+        { call: "Listen, listen, tiny and quick?", response: "Mouse, mouse — that did the trick!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Say \"think\" and \"sink\" one more time — thumbs up if it's easier to hear the difference than it was in Week 4.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we reviewed the th/s sound from Week 4 — one more sound-gap check-in before the year's last one in Month 12 — helped Vora follow clear step-by-step instructions, and spotted real AI in everyday life.",
+      summary: "Today we reviewed the th/s sound from Week 4 — one more sound-gap check-in before the year's last one in Month 12 — acted out think, sink, mouth, and mouse, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted the think/sink sounds together.",
     },
   ],
 };
