@@ -28,13 +28,39 @@ export const w3d1_rainbow_colors: Lesson = {
       ],
     },
     {
+      type: "movement",
+      title: "Rainbow Color Actions!",
+      instructions:
+        "Call out each color word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Red — stomp your feet like a fire truck", emoji: "🔴" },
+        { text: "Blue — wave your arms like ocean waves", emoji: "🔵" },
+        { text: "Yellow — reach up high like the sun", emoji: "🟡" },
+        { text: "Green — wiggle like grass in the wind", emoji: "🟢" },
+        { text: "Purple — twirl around like a grape", emoji: "🟣" },
+        { text: "Orange — bounce like a round orange", emoji: "🟠" },
+      ],
+    },
+    {
+      type: "chant",
+      title: "Rainbow Colors Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching color. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Colors, colors, what do you see?", response: "It is red, red as can be!" },
+        { call: "Colors, colors, look up high,", response: "It is blue, blue like the sky!" },
+        { call: "Colors, colors, shining bright,", response: "It is yellow, yellow light!" },
+        { call: "Colors, colors, what's your guess?", response: "It is green, green is the best!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Point to something in the room and say \"It is ___.\"",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we learned six colors in English — and good news, color words go in the same place in a sentence as they do in Korean!",
+      summary: "Today we learned six colors in English — and good news, color words go in the same place in a sentence as they do in Korean — we acted out the colors and chanted \"It is ___\" together.",
       homework: "Find three colorful things at home and say their color in English.",
     },
   ],
@@ -71,6 +97,18 @@ export const w3d2_vora_finds_pattern: Lesson = {
         "This is the conceptual seed for \"machine learning finds patterns in data\" — keep the demonstration physical (blocks, claps, or the warm-up chant), the app activity below only drills the same/different vocabulary that supports it.",
     },
     {
+      type: "movement",
+      title: "Shape Actions!",
+      instructions:
+        "Call out each shape word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Circle — draw a big circle in the air", emoji: "⭕" },
+        { text: "Square — make a square shape with your arms", emoji: "🟦" },
+        { text: "Triangle — make a triangle over your head with your arms", emoji: "🔺" },
+        { text: "Star — stretch out your arms and legs like a star", emoji: "⭐" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Each item shows two shapes or colors together. Sort: are they the same, or different?",
       config: {
@@ -92,13 +130,25 @@ export const w3d2_vora_finds_pattern: Lesson = {
       },
     },
     {
+      type: "chant",
+      title: "Same or Different Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching shapes. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Red, red — same or different?", response: "Same, same, that's for certain!" },
+        { call: "Circle, square — same or different?", response: "Different, different, plain to see!" },
+        { call: "Star, star — same or different?", response: "Same, same, that's the key!" },
+        { call: "Triangle, circle — same or different?", response: "Different, different, one two three!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Show two fingers of the same color and two of different colors — name each: \"same\" or \"different.\"",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we learned shape words and practiced telling same from different — the skill behind every pattern Vora finds.",
+      summary: "Today we learned shape words, practiced telling same from different — the skill behind every pattern Vora finds — acted out the shapes, and chanted \"same\" and \"different\" together.",
     },
   ],
 };
@@ -124,6 +174,20 @@ export const w3d3_fan_or_pan: Lesson = {
         "Unlike the l/r lesson, this contrast is genuinely absent from Korean (not just non-phonemic), so a quick mouth-shape demo here earns its keep before the listening activity.",
     },
     {
+      type: "movement",
+      title: "Fan or Pan Actions!",
+      instructions:
+        "Call out each word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Fan — wave your hand in front of your face like a fan", emoji: "🪭" },
+        { text: "Pan — pretend to flip food in a pan", emoji: "🍳" },
+        { text: "Fine — give a big thumbs up", emoji: "👍" },
+        { text: "Fork — pretend to eat with a fork", emoji: "🍴" },
+        { text: "Pork — rub your tummy like it's yummy", emoji: "🥓" },
+        { text: "Pull — pretend to pull open a heavy door", emoji: "🚪" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Play each word once, and have kids point to or say the picture they heard. Repeat any pair the class finds hard.",
       config: {
@@ -140,13 +204,25 @@ export const w3d3_fan_or_pan: Lesson = {
       },
     },
     {
+      type: "chant",
+      title: "Fan or Pan Chant",
+      instructions:
+        "Say each call line slowly and clearly. The whole class echoes the response line back, listening for the f or p sound.",
+      lines: [
+        { call: "Fan, fan, listen well,", response: "Fan, fan, I can tell!" },
+        { call: "Pan, pan, listen well,", response: "Pan, pan, I can tell!" },
+        { call: "Fork or pork, which do you hear?", response: "Fork or pork, listen clear!" },
+        { call: "Full or pull, tell me true,", response: "F or P, I hear you!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Say \"fan\" and \"pan\" one more time — thumbs up if you can hear the difference now.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we practiced listening for the f sound — brand new for Korean speakers, so lots of practice is completely normal.",
+      summary: "Today we practiced listening for the f sound — brand new for Korean speakers, so lots of practice is completely normal — we acted out some of the words and chanted the f and p sounds together.",
     },
   ],
 };

@@ -39,13 +39,37 @@ export const w1d1_hello_vora: Lesson = {
         "Keep this concrete: Vora is a friendly character, not a lecture on AI. The goal is just \"Vora = a computer friend who talks and learns,\" nothing more technical yet.",
     },
     {
+      type: "movement",
+      title: "Greeting Actions!",
+      instructions:
+        "Call out each greeting word and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Hello — wave both hands big and high", emoji: "👋" },
+        { text: "Goodbye — wave slowly and blow a kiss", emoji: "🙋" },
+        { text: "My name is... — point to yourself and smile big", emoji: "🧑" },
+        { text: "Friend — link arms with a neighbor and hop", emoji: "🧑‍🤝‍🧑" },
+      ],
+    },
+    {
+      type: "chant",
+      title: "Hello and Goodbye Chant",
+      instructions:
+        "Say each call line and wave (or point) as you say it. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Hello, hello, what do we say?", response: "Hello, hello, hooray, hooray!" },
+        { call: "Who is this? Who is this?", response: "It's my friend, it's my friend!" },
+        { call: "Time to go, what do we say?", response: "Goodbye, goodbye, see you today!" },
+        { call: "Hello, goodbye, what do we say?", response: "Hello, friend! Goodbye, friend!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Everyone wave and say \"Hello, Vora!\" together.",
       method: "whole_class_thumbs",
     },
     {
       type: "wrapup",
-      summary: "Today we said hello and goodbye, and we met Vora, our AI friend for this course.",
+      summary: "Today we said hello and goodbye, met Vora, our AI friend for this course, acted out our greetings, and chanted hello and goodbye together.",
       homework: "Say \"hello\" and \"goodbye\" to one family member in English tonight.",
     },
   ],
@@ -83,13 +107,38 @@ export const w1d2_voras_classroom: Lesson = {
         "First use of the word \"perception\" — say it once, define it in one plain sentence, and move on. Don't quiz on the term itself.",
     },
     {
+      type: "movement",
+      title: "Classroom Object Actions!",
+      instructions:
+        "Call out each classroom object and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Book — open your hands like a book and 'read'", emoji: "📖" },
+        { text: "Pencil — pretend to write in the air", emoji: "✏️" },
+        { text: "Chair — pretend to sit down slowly", emoji: "🪑" },
+        { text: "Desk — pat your hands on an imaginary desk", emoji: "🗄️" },
+        { text: "Bag — swing an imaginary bag onto your shoulder", emoji: "🎒" },
+      ],
+    },
+    {
+      type: "chant",
+      title: "What Is This? Chant",
+      instructions:
+        "Say each call line and hold up (or point to) the matching classroom object. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "What is this? What is this?", response: "It's a book, it's a book!" },
+        { call: "What is this? Tell me true!", response: "It's a pencil, yellow and new!" },
+        { call: "What is this? Look and see!", response: "It's a chair, for you and me!" },
+        { call: "What is this? What do you spy?", response: "It's a bag, hanging up high!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Point to something in the room and ask a partner \"What is this?\"",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we named five classroom objects and asked \"What is this?\"",
+      summary: "Today we named five classroom objects, asked \"What is this?\", acted out each object, and chanted \"What is this?\" together.",
     },
   ],
 };
@@ -115,6 +164,20 @@ export const w1d3_what_is_ai: Lesson = {
         "This is the first classification loop of the course. Frame it as sorting, not testing — wrong guesses are expected and fine.",
     },
     {
+      type: "movement",
+      title: "Smart Helper or Regular Thing Actions!",
+      instructions:
+        "Call out each item and do the action together — go slow the first time through, then speed up for a fun challenge round.",
+      moves: [
+        { text: "Voice assistant — cup your hand to your ear and say 'Hello!'", emoji: "🔊" },
+        { text: "Phone — hold a pretend phone to your ear", emoji: "📱" },
+        { text: "Robot — walk stiffly like a robot", emoji: "🤖" },
+        { text: "Book — open your hands like a book", emoji: "📖" },
+        { text: "Pencil — pretend to write in the air", emoji: "✏️" },
+        { text: "Ball — pretend to bounce a ball", emoji: "⚽" },
+      ],
+    },
+    {
       type: "activity",
       instructions: "As a class, decide together where each picture goes before anyone taps — this is a shared sort, not an individual quiz.",
       config: {
@@ -136,13 +199,25 @@ export const w1d3_what_is_ai: Lesson = {
       },
     },
     {
+      type: "chant",
+      title: "Smart Helper Chant",
+      instructions:
+        "Say each call line and point to (or hold up) the matching picture. The whole class echoes the response line back to you.",
+      lines: [
+        { call: "Robot, robot, what are you?", response: "I'm a smart helper, that is true!" },
+        { call: "Phone, phone, tell me so,", response: "I'm a smart helper, yes, I know!" },
+        { call: "Book, book, can you learn?", response: "No, I'm a regular thing, it's my turn!" },
+        { call: "Ball, ball, smart or plain?", response: "Just a regular thing, again and again!" },
+      ],
+    },
+    {
       type: "check",
       prompt: "Ask one table: \"Tell me one smart helper you have at home.\"",
       method: "cold_call",
     },
     {
       type: "wrapup",
-      summary: "Today we learned that some things can learn and answer, and some things can't — and we practiced sorting them, just like Vora does.",
+      summary: "Today we learned that some things can learn and answer, and some things can't — we practiced sorting them just like Vora does, acted out smart helpers and regular things, and chanted about them together.",
     },
   ],
 };
