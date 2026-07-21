@@ -52,7 +52,7 @@ export function PatternPredictorEngine({
         animate={{ opacity: 1, scale: 1 }}
         className="flex flex-col items-center gap-3 text-center"
       >
-        <Vora size={100} mood="happy" bob celebrate />
+        <Vora size={100} mood="excited" bob celebrate />
         <motion.p
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}

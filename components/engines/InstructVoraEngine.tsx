@@ -77,7 +77,7 @@ export function InstructVoraEngine({
     setPlacedIds((ids) => ids.slice(0, -1));
   }
 
-  const voraMood: VoraMood = phase === "vague" ? "sad" : phase === "success" ? "happy" : "neutral";
+  const voraMood: VoraMood = phase === "vague" ? "surprised" : phase === "success" ? "excited" : "neutral";
 
   return (
     <div className="flex flex-col gap-4">
