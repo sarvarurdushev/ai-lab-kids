@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Vora, type VoraMood } from "@/components/mascot/Vora";
 import { Button } from "@/components/ui/Button";
 import { EnglishText } from "@/components/curriculum/EnglishText";
+import { BehaviorDemo } from "./BehaviorDemo";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { RobotHeadIcon, GlobeIcon, CheckCircleIcon, XCircleIcon, SparkleIcon } from "@/components/icons";
 import type { AIOrNotConfig } from "@/lib/curriculum";
@@ -118,13 +119,7 @@ export function AIOrNotEngine({
           className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm"
         >
           <Vora size={52} mood={voraMood} />
-          <motion.div
-            animate={answered ? { scale: [1, 1.25, 1] } : {}}
-            transition={{ duration: 0.4 }}
-            className="text-7xl"
-          >
-            {item.emoji}
-          </motion.div>
+          <BehaviorDemo isAI={item.isAI} icon={item.emoji} />
           <EnglishText text={item.scenario} size="lg" />
         </motion.div>
       </AnimatePresence>
