@@ -35,8 +35,14 @@ export const m5_week1: Lesson = {
       bigIdeas: ["perception"],
       lines: [
         { text: "This is my mom. This is my dad. This is my family!" },
-        { text: "I can look at pictures of faces, too — that's called perception." },
-        { text: "But sometimes I mix up two people who look alike, like sisters or twins." },
+        {
+          text: "I can look at pictures of faces, too — that's called perception.",
+          textSimple: "I can look at faces too. That's called perception!",
+        },
+        {
+          text: "But sometimes I mix up two people who look alike, like sisters or twins.",
+          textSimple: "Sometimes I mix up people who look alike.",
+        },
         { text: "You never mix up your own family, though — not even for a second!", minTrack: "explorers" },
       ],
       teacherNote:
@@ -87,8 +93,16 @@ export const m5_week1: Lesson = {
       lines: [
         { call: "Family, family, who do you see?", response: "This is my mom, waving at me!" },
         { call: "Family, family, who's big and strong?", response: "This is my dad, singing our song!" },
-        { call: "Family, family, who runs and plays?", response: "This is my brother, all through the day!" },
-        { call: "Family, family, who do you love?", response: "This is my sister, I give her a hug!" },
+        {
+          call: "Family, family, who runs and plays?",
+          response: "This is my brother, all through the day!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Family, family, who do you love?",
+          response: "This is my sister, I give her a hug!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -99,6 +113,7 @@ export const m5_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned family words and the sentence \"This is my ___\" — and how even the smartest AI can mix up faces that you'd never confuse — acted out family actions together, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about our families together.",
+      summarySimple: "Today we learned family words, moved our bodies, and sang a family chant with Vora!",
       homework: "Introduce one family member to someone at home using \"This is my ___.\"",
     },
   ],
@@ -117,7 +132,10 @@ export const m5_week2: Lesson = {
       title: "Vora Remembers Faces",
       bigIdeas: ["perception"],
       lines: [
-        { text: "Remember, I can look at pictures of faces too — but I still mix some up!" },
+        {
+          text: "Remember, I can look at pictures of faces too — but I still mix some up!",
+          textSimple: "I can look at faces too. But I still make mistakes!",
+        },
         { text: "You never mix up your own family, though. Let's practice introducing them in English!" },
       ],
       teacherNote:
@@ -182,8 +200,16 @@ export const m5_week2: Lesson = {
       lines: [
         { call: "Who is this, playing near?", response: "This is my brother, my brother is here!" },
         { call: "Who is this, on the go?", response: "This is my mom, I love her so!" },
-        { call: "Who is this, big and strong?", response: "This is my dad, singing along!" },
-        { call: "Who is this, right by your side?", response: "This is my sister, right by my side!" },
+        {
+          call: "Who is this, big and strong?",
+          response: "This is my dad, singing along!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Who is this, right by your side?",
+          response: "This is my sister, right by my side!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -194,6 +220,7 @@ export const m5_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we built the sentence \"This is my brother\" tile by tile, then practiced it with a second game — sorting family and school words — acted out family and school actions together, helped Vora follow clear step-by-step instructions, and chanted about our families together.",
+      summarySimple: "Today we built a family sentence, moved our bodies, and sang a chant with Vora!",
     },
   ],
 };
@@ -211,7 +238,10 @@ export const m5_week3: Lesson = {
       title: "Sorting Like Vora",
       bigIdeas: ["perception"],
       lines: [
-        { text: "Sorting things into groups is exactly what I do with pictures — that's perception!" },
+        {
+          text: "Sorting things into groups is exactly what I do with pictures — that's perception!",
+          textSimple: "I sort pictures into groups too. That's perception!",
+        },
         { text: "Let's see if you can sort these words even faster than me." },
       ],
       teacherNote:
@@ -276,8 +306,16 @@ export const m5_week3: Lesson = {
       lines: [
         { call: "Who is this, running fast?", response: "This is my brother, having a blast!" },
         { call: "Who is this, cooking today?", response: "This is my mom, hip-hip-hooray!" },
-        { call: "Who is this, tall as a tree?", response: "This is my dad, smiling at me!" },
-        { call: "Who is this, sharing a toy?", response: "This is my sister, oh what joy!" },
+        {
+          call: "Who is this, tall as a tree?",
+          response: "This is my dad, smiling at me!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Who is this, sharing a toy?",
+          response: "This is my sister, oh what joy!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -288,6 +326,7 @@ export const m5_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we acted out family and school actions, played three activities — sorting family words from school words, building the sentence \"This is my brother\" tile by tile, and spotting real AI in everyday life — and chanted about our families together.",
+      summarySimple: "Today we sorted family and school words, moved our bodies, and sang a chant with Vora!",
     },
   ],
 };
@@ -306,7 +345,10 @@ export const m5_week4: Lesson = {
       bigIdeas: [],
       lines: [
         { text: "This... is my sister!" },
-        { text: "You can say it about anyone in your family — a brother, a grandma, even a pet!" },
+        {
+          text: "You can say it about anyone in your family — a brother, a grandma, even a pet!",
+          textSimple: "You can say it about mom, dad, or a pet too!",
+        },
         { text: "Ready? Let's build the sentence together, one word at a time." },
       ],
       teacherNote:
@@ -353,8 +395,16 @@ export const m5_week4: Lesson = {
       lines: [
         { call: "Who is this, standing near?", response: "This is my sister, she is here!" },
         { call: "Who is this, running fast?", response: "This is my brother, having a blast!" },
-        { call: "Who is this, baking a treat?", response: "This is my grandma, isn't she sweet!" },
-        { call: "Who is this? Point and say!", response: "This is my family — hip, hip, hooray!" },
+        {
+          call: "Who is this, baking a treat?",
+          response: "This is my grandma, isn't she sweet!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Who is this? Point and say!",
+          response: "This is my family — hip, hip, hooray!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -365,6 +415,7 @@ export const m5_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today every child proudly introduced one real family member in English — the whole point of the sentence — acted out family actions together, helped Vora follow clear instructions, spotted real AI in everyday life, and chanted about family together.",
+      summarySimple: "Today everyone said \"This is my family!\" and we moved and sang together!",
       homework: "Say \"This is my ___\" about a family member to someone at home tonight.",
     },
   ],

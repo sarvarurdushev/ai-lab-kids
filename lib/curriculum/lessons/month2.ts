@@ -34,8 +34,14 @@ export const m2_week1: Lesson = {
       bigIdeas: ["societal_impact"],
       lines: [
         { text: "I'm from Korea!" },
-        { text: "There are so many other countries too — like Japan, and the USA." },
-        { text: "People in other countries speak different languages — but a translator app uses AI to help everyone understand each other." },
+        {
+          text: "There are so many other countries too — like Japan, and the USA.",
+          textSimple: "There are many other countries too!",
+        },
+        {
+          text: "People in other countries speak different languages — but a translator app uses AI to help everyone understand each other.",
+          textSimple: "People speak different languages. A translator app helps everyone understand!",
+        },
       ],
       teacherNote:
         "Start with \"I'm from Korea\" — every child can say this truthfully and proudly — before naming other countries. This is societal_impact's first appearance: keep the translator-app example concrete (e.g., \"like when a friend visits from another country and doesn't know Korean yet\").",
@@ -51,7 +57,7 @@ export const m2_week1: Lesson = {
         { text: "Food — pretend to eat with a spoon", emoji: "🍲" },
         { text: "Dance — wiggle and dance in place", emoji: "💃" },
         { text: "Music — clap your hands to the beat", emoji: "🎵" },
-        { text: "Clothes — pretend to put on a hat", emoji: "👘" },
+        { text: "Clothes — pretend to put on a hat", emoji: "👘", minTrack: "explorers" },
       ],
     },
     {
@@ -89,8 +95,12 @@ export const m2_week1: Lesson = {
       lines: [
         { call: "Where are you from, from, from?", response: "I'm from Korea, my home!" },
         { call: "What flies up high and waves so bright?", response: "It's our flag, up so high!" },
-        { call: "What do we eat that tastes so great?", response: "That's our food, on every plate!" },
-        { call: "What do we do to a happy beat?", response: "We dance, we dance, with happy feet!" },
+        {
+          call: "What do we eat that tastes so great?",
+          response: "That's our food, on every plate!",
+          minTrack: "explorers",
+        },
+        { call: "What do we do to a happy beat?", response: "We dance, we dance, with happy feet!", minTrack: "explorers" },
       ],
     },
     {
@@ -101,6 +111,7 @@ export const m2_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned six world words, acted them out, practiced saying \"I'm from Korea,\" learned that translator apps use AI to help people understand each other, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about the world together.",
+      summarySimple: "Today we learned world words, said \"I'm from Korea,\" and sang a world chant with Vora!",
       homework: "Tell a family member \"I'm from Korea\" in English tonight.",
     },
   ],
@@ -119,7 +130,10 @@ export const m2_week2: Lesson = {
       title: "Vora Follows Steps",
       bigIdeas: ["reasoning"],
       lines: [
-        { text: "I do things in order, one step at a time — first, next, then, last." },
+        {
+          text: "I do things in order, one step at a time — first, next, then, last.",
+          textSimple: "I do things in order. First, next, then, last!",
+        },
         { text: "Let's put a pretend trip in order together!" },
       ],
       teacherNote:
@@ -180,8 +194,12 @@ export const m2_week2: Lesson = {
       lines: [
         { call: "What do we do first, first, first?", response: "First we pack our bag, our bag!" },
         { call: "What comes next, tell me true?", response: "Next we go, the airport too!" },
-        { call: "Then what do we do up high?", response: "Then we fly, up in the sky!" },
-        { call: "Last of all, what do we say?", response: "Say hello — hooray, hooray!" },
+        {
+          call: "Then what do we do up high?",
+          response: "Then we fly, up in the sky!",
+          minTrack: "explorers",
+        },
+        { call: "Last of all, what do we say?", response: "Say hello — hooray, hooray!", minTrack: "explorers" },
       ],
     },
     {
@@ -192,6 +210,7 @@ export const m2_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — ordering the steps of a pretend trip, acting out each step, matching world words to pictures, helping Vora follow clear step-by-step instructions, and chanting the trip steps together.",
+      summarySimple: "Today we packed a pretend trip, moved our bodies, and sang a trip chant with Vora!",
     },
   ],
 };
@@ -209,7 +228,10 @@ export const m2_week3: Lesson = {
       title: "Vora Remembers",
       bigIdeas: ["learning"],
       lines: [
-        { text: "The more I see a word and picture together, the better I remember them." },
+        {
+          text: "The more I see a word and picture together, the better I remember them.",
+          textSimple: "Practice helps me remember!",
+        },
         { text: "Let's practice remembering world words together!" },
       ],
       teacherNote:
@@ -271,8 +293,12 @@ export const m2_week3: Lesson = {
       lines: [
         { call: "What's the first thing we should do?", response: "Pack our bag, me and you!" },
         { call: "Next, oh next, where do we go?", response: "To the airport, off we go!" },
-        { call: "Then, oh then, up in the air?", response: "We fly and fly, without a care!" },
-        { call: "Last of all, what do we say?", response: "Hello, hello — hooray, hooray!" },
+        {
+          call: "Then, oh then, up in the air?",
+          response: "We fly and fly, without a care!",
+          minTrack: "explorers",
+        },
+        { call: "Last of all, what do we say?", response: "Hello, hello — hooray, hooray!", minTrack: "explorers" },
       ],
     },
     {
@@ -283,6 +309,7 @@ export const m2_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — matching world words to pictures, acting them out, ordering the steps of a pretend trip, spotting real AI in everyday life, and chanting our pretend trip together.",
+      summarySimple: "Today we played a matching game, moved our bodies, and sang a chant with Vora!",
     },
   ],
 };
@@ -294,6 +321,7 @@ export const m2_week4: Lesson = {
       type: "warmup",
       teacherScript: "Point to yourself and say \"I'm from Korea!\" with a big proud smile. Ask kids to point to themselves too.",
       prompt: "Where are you from? 🇰🇷",
+      promptSimple: "Point to yourself! Say Korea! 🇰🇷",
     },
     {
       type: "concept",
@@ -301,7 +329,10 @@ export const m2_week4: Lesson = {
       bigIdeas: [],
       lines: [
         { text: "I'm from Korea. That's my country!" },
-        { text: "\"I'm\" is a short way to say \"I am\" — two words squished into one." },
+        {
+          text: "\"I'm\" is a short way to say \"I am\" — two words squished into one.",
+          textSimple: "\"I'm\" means \"I am.\"",
+        },
         { text: "Korean doesn't squish words together like that, so let's practice saying \"I'm\" as one quick sound.", minTrack: "explorers" },
       ],
       teacherNote:
@@ -347,8 +378,12 @@ export const m2_week4: Lesson = {
       lines: [
         { call: "Where are you from, tell me so?", response: "I'm from Korea, that's where I go!" },
         { call: "Say it once, say it loud!", response: "I'm from Korea, and I'm proud!" },
-        { call: "Stand up tall, don't be shy!", response: "I'm from Korea — reach for the sky!" },
-        { call: "One more time, all together now!", response: "I'm from Korea — take a bow!" },
+        {
+          call: "Stand up tall, don't be shy!",
+          response: "I'm from Korea — reach for the sky!",
+          minTrack: "explorers",
+        },
+        { call: "One more time, all together now!", response: "I'm from Korea — take a bow!", minTrack: "explorers" },
       ],
     },
     {
@@ -359,6 +394,7 @@ export const m2_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today every kid stood up and proudly said \"I'm from Korea!\" — a sentence that's true for all of us — acted it out with big proud actions, helped Vora follow clear instructions, spotted real AI in everyday life, and chanted it together.",
+      summarySimple: "Today we stood tall and said \"I'm from Korea!\" together with Vora!",
       homework: "Say \"I'm from Korea\" to a family member tonight, standing tall and proud.",
     },
   ],

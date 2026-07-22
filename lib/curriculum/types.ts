@@ -37,6 +37,8 @@ export interface WarmupSegment {
   teacherScript: string;
   /** What the teacher says/does to open the lesson — displayed on the projector as a prompt for the class to respond to together. */
   prompt: string;
+  /** A shorter, simpler version of `prompt` shown instead for Little Sparks (4-5) classes — see lib/trackContent.ts. Optional: falls back to `prompt` until authored. */
+  promptSimple?: string;
 }
 
 export interface VocabSegment {
@@ -49,8 +51,8 @@ export interface ConceptSegment {
   type: "concept";
   title: string;
   bigIdeas: BigIdea[];
-  /** Vora's lines, shown/spoken one at a time on the projector — kept to a short phrase each. A line with minTrack: "explorers" is skipped for little_sparks classes — see lib/trackContent.ts. */
-  lines: { text: string; minTrack?: AgeTrack }[];
+  /** Vora's lines, shown/spoken one at a time on the projector — kept to a short phrase each. A line with minTrack: "explorers" is skipped for little_sparks classes; `textSimple`, when present, replaces `text` for little_sparks instead of skipping the line — see lib/trackContent.ts. */
+  lines: { text: string; textSimple?: string; minTrack?: AgeTrack }[];
   teacherNote: string;
 }
 
@@ -211,7 +213,8 @@ export interface MovementSegment {
   type: "movement";
   title: string;
   instructions: string;
-  moves: { text: string; emoji: string }[];
+  /** A move tagged minTrack: "explorers" is skipped for little_sparks classes, giving a shorter movement break — see lib/trackContent.ts. */
+  moves: { text: string; emoji: string; minTrack?: AgeTrack }[];
 }
 
 /**
@@ -224,12 +227,15 @@ export interface ChantSegment {
   type: "chant";
   title: string;
   instructions: string;
-  lines: { call: string; response: string }[];
+  /** A line tagged minTrack: "explorers" is skipped for little_sparks classes — a shorter, slower chant with more repetition of the remaining lines, rather than every line simplified in place — see lib/trackContent.ts. */
+  lines: { call: string; response: string; minTrack?: AgeTrack }[];
 }
 
 export interface WrapupSegment {
   type: "wrapup";
   summary: string;
+  /** A shorter, simpler version of `summary` shown instead for Little Sparks (4-5) classes — see lib/trackContent.ts. Optional: falls back to `summary` until authored. */
+  summarySimple?: string;
   homework?: string;
 }
 

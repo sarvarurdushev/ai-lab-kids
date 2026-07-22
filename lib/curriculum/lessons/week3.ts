@@ -14,6 +14,7 @@ export const w3d1_rainbow_colors: Lesson = {
       type: "warmup",
       teacherScript: "Hold up something red and ask \"What color is this?\" before teaching the word.",
       prompt: "What color is this? 🔴",
+      promptSimple: "Look! What color is it? 🔴",
     },
     {
       type: "vocab",
@@ -49,8 +50,12 @@ export const w3d1_rainbow_colors: Lesson = {
       lines: [
         { call: "Colors, colors, what do you see?", response: "It is red, red as can be!" },
         { call: "Colors, colors, look up high,", response: "It is blue, blue like the sky!" },
-        { call: "Colors, colors, shining bright,", response: "It is yellow, yellow light!" },
-        { call: "Colors, colors, what's your guess?", response: "It is green, green is the best!" },
+        {
+          call: "Colors, colors, shining bright,",
+          response: "It is yellow, yellow light!",
+          minTrack: "explorers",
+        },
+        { call: "Colors, colors, what's your guess?", response: "It is green, green is the best!", minTrack: "explorers" },
       ],
     },
     {
@@ -61,6 +66,7 @@ export const w3d1_rainbow_colors: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned six colors in English — and good news, color words go in the same place in a sentence as they do in Korean — we acted out the colors and chanted \"It is ___\" together.",
+      summarySimple: "Today we learned colors and chanted about them together!",
       homework: "Find three colorful things at home and say their color in English.",
     },
   ],
@@ -89,9 +95,18 @@ export const w3d2_vora_finds_pattern: Lesson = {
       title: "Vora Finds the Pattern",
       bigIdeas: ["reasoning", "learning"],
       lines: [
-        { text: "A pattern is something that repeats — like red, blue, red, blue." },
-        { text: "Finding patterns is one of the most important things AI does!" },
-        { text: "Let's practice telling what's the same and what's different." },
+        {
+          text: "A pattern is something that repeats — like red, blue, red, blue.",
+          textSimple: "A pattern repeats. Red, blue, red, blue!",
+        },
+        {
+          text: "Finding patterns is one of the most important things AI does!",
+          textSimple: "AI loves finding patterns!",
+        },
+        {
+          text: "Let's practice telling what's the same and what's different.",
+          textSimple: "Let's practice: same or different?",
+        },
       ],
       teacherNote:
         "This is the conceptual seed for \"machine learning finds patterns in data\" — keep the demonstration physical (blocks, claps, or the warm-up chant), the app activity below only drills the same/different vocabulary that supports it.",
@@ -137,8 +152,12 @@ export const w3d2_vora_finds_pattern: Lesson = {
       lines: [
         { call: "Red, red — same or different?", response: "Same, same, that's for certain!" },
         { call: "Circle, square — same or different?", response: "Different, different, plain to see!" },
-        { call: "Star, star — same or different?", response: "Same, same, that's the key!" },
-        { call: "Triangle, circle — same or different?", response: "Different, different, one two three!" },
+        {
+          call: "Star, star — same or different?",
+          response: "Same, same, that's the key!",
+          minTrack: "explorers",
+        },
+        { call: "Triangle, circle — same or different?", response: "Different, different, one two three!", minTrack: "explorers" },
       ],
     },
     {
@@ -149,6 +168,7 @@ export const w3d2_vora_finds_pattern: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned shape words, practiced telling same from different — the skill behind every pattern Vora finds — acted out the shapes, and chanted \"same\" and \"different\" together.",
+      summarySimple: "Today we practiced telling same from different!",
     },
   ],
 };
@@ -166,8 +186,14 @@ export const w3d3_fan_or_pan: Lesson = {
       title: "A New Sound: f",
       bigIdeas: ["perception"],
       lines: [
-        { text: "Korean doesn't have the English \"f\" sound — it's brand new for your mouth!" },
-        { text: "Bite your bottom lip gently and blow air for \"f.\"" },
+        {
+          text: "Korean doesn't have the English \"f\" sound — it's brand new for your mouth!",
+          textSimple: "The 'f' sound is brand new for you!",
+        },
+        {
+          text: "Bite your bottom lip gently and blow air for \"f.\"",
+          textSimple: "Bite your lip. Blow air. That's f!",
+        },
         { text: "Let's listen very carefully and pick the word we hear." },
       ],
       teacherNote:
@@ -211,8 +237,12 @@ export const w3d3_fan_or_pan: Lesson = {
       lines: [
         { call: "Fan, fan, listen well,", response: "Fan, fan, I can tell!" },
         { call: "Pan, pan, listen well,", response: "Pan, pan, I can tell!" },
-        { call: "Fork or pork, which do you hear?", response: "Fork or pork, listen clear!" },
-        { call: "Full or pull, tell me true,", response: "F or P, I hear you!" },
+        {
+          call: "Fork or pork, which do you hear?",
+          response: "Fork or pork, listen clear!",
+          minTrack: "explorers",
+        },
+        { call: "Full or pull, tell me true,", response: "F or P, I hear you!", minTrack: "explorers" },
       ],
     },
     {
@@ -223,6 +253,7 @@ export const w3d3_fan_or_pan: Lesson = {
     {
       type: "wrapup",
       summary: "Today we practiced listening for the f sound — brand new for Korean speakers, so lots of practice is completely normal — we acted out some of the words and chanted the f and p sounds together.",
+      summarySimple: "Today we listened closely for the f sound!",
     },
   ],
 };

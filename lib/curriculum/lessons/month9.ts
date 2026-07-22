@@ -34,9 +34,18 @@ export const m9_week1: Lesson = {
       title: "Vora Doesn't Have Eyes Like You!",
       bigIdeas: ["perception"],
       lines: [
-        { text: "I don't have real eyes, or real hands, or real feet like you do!" },
-        { text: "But some games can still tell when your body moves — they use something called a sensor, not eyes." },
-        { text: "A fitness tracker on your wrist can feel you jump, even with the lights off!" },
+        {
+          text: "I don't have real eyes, or real hands, or real feet like you do!",
+          textSimple: "I don't have real eyes, hands, or feet like you!",
+        },
+        {
+          text: "But some games can still tell when your body moves — they use something called a sensor, not eyes.",
+          textSimple: "Some games can feel you move. That's called a sensor!",
+        },
+        {
+          text: "A fitness tracker on your wrist can feel you jump, even with the lights off!",
+          textSimple: "A tracker on your wrist can feel you jump!",
+        },
       ],
       teacherNote:
         "This month broadens 'perception' beyond seeing — sensors that detect motion or touch are a form of perception too, even without eyes or a camera. Motion-sensor games (dance games, some fitness trackers) are the concrete example to point to if kids ask how.",
@@ -53,7 +62,7 @@ export const m9_week1: Lesson = {
         { text: "Ears — touch your ears and wiggle them", emoji: "👂" },
         { text: "Hands — clap your hands high", emoji: "🙌" },
         { text: "Feet — stomp your feet", emoji: "🦶" },
-        { text: "Shoulders — shrug your shoulders up and down", emoji: "🙆" },
+        { text: "Shoulders — shrug your shoulders up and down", emoji: "🙆", minTrack: "explorers" },
       ],
     },
     {
@@ -87,8 +96,16 @@ export const m9_week1: Lesson = {
       lines: [
         { call: "Body, body, what do you see?", response: "Touch your eyes, touch your eyes, look at me!" },
         { call: "Body, body, smell the air,", response: "Touch your nose, touch your nose, right there!" },
-        { call: "Body, body, listen well,", response: "Touch your ears, touch your ears, ring the bell!" },
-        { call: "Body, body, stomp the floor,", response: "Touch your feet, touch your feet, give me more!" },
+        {
+          call: "Body, body, listen well,",
+          response: "Touch your ears, touch your ears, ring the bell!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Body, body, stomp the floor,",
+          response: "Touch your feet, touch your feet, give me more!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -99,6 +116,7 @@ export const m9_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we named six body parts in English, acted them out, learned that sensors, not just eyes, can notice how our bodies move, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about our body parts together.",
+      summarySimple: "Today we learned body part words, moved our bodies, and sang a body chant with Vora!",
       homework: "Touch and name three body parts in English before bedtime tonight.",
     },
   ],
@@ -117,8 +135,14 @@ export const m9_week2: Lesson = {
       title: "Sensors Follow You Even When You Move",
       bigIdeas: ["perception"],
       lines: [
-        { text: "Remember — a sensor can notice your body moving, step by step, even without eyes." },
-        { text: "Let's move through a whole routine, and see how many steps a sensor could follow!" },
+        {
+          text: "Remember — a sensor can notice your body moving, step by step, even without eyes.",
+          textSimple: "A sensor can notice you move, even without eyes!",
+        },
+        {
+          text: "Let's move through a whole routine, and see how many steps a sensor could follow!",
+          textSimple: "Let's move together and see what a sensor can follow!",
+        },
       ],
       teacherNote:
         "Keep this short — perception was fully taught in Week 1. This is just a quick bridge line before the physical routine, reframing today's movement game as something a sensor could track step by step.",
@@ -172,8 +196,16 @@ export const m9_week2: Lesson = {
       lines: [
         { call: "Vora says, what do we do?", response: "Stand up, stand up — me and you!" },
         { call: "Vora says, where's your nose?", response: "Touch your nose, touch your nose, here it goes!" },
-        { call: "Vora says, clap out loud,", response: "Clap your hands, clap your hands, make us proud!" },
-        { call: "Vora says, rest a while,", response: "Sit back down, sit back down, with a smile!" },
+        {
+          call: "Vora says, clap out loud,",
+          response: "Clap your hands, clap your hands, make us proud!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Vora says, rest a while,",
+          response: "Sit back down, sit back down, with a smile!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -184,6 +216,7 @@ export const m9_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we moved our whole bodies through a four-step \"Vora Says\" routine, in order, from start to finish, acted it out again with a movement break, helped Vora follow clear step-by-step instructions, and chanted the \"Vora Says\" routine together.",
+      summarySimple: "Today we followed the \"Vora Says\" game, moved our bodies, and sang a chant with Vora!",
       homework: "Teach a family member the \"Vora Says\" game tonight using English body words.",
     },
   ],
@@ -202,8 +235,14 @@ export const m9_week3: Lesson = {
       title: "Words Can Be a Command, Too",
       bigIdeas: ["perception"],
       lines: [
-        { text: "Your body already knows how to touch your nose — now let's put that into words!" },
-        { text: "When I hear a command like \"touch your nose,\" my sensors and cameras help me figure out where a nose even is." },
+        {
+          text: "Your body already knows how to touch your nose — now let's put that into words!",
+          textSimple: "Your body knows how to touch your nose. Let's say it in words!",
+        },
+        {
+          text: "When I hear a command like \"touch your nose,\" my sensors and cameras help me figure out where a nose even is.",
+          textSimple: "My sensors and cameras help me find your nose!",
+        },
       ],
       teacherNote:
         "Keep this brief — perception was fully taught in Week 1. This is just a quick bridge line connecting today's sentence-building game to the same 'sensors help notice the body' idea, before diving into the activity.",
@@ -257,8 +296,16 @@ export const m9_week3: Lesson = {
       lines: [
         { call: "Vora says, what do we do?", response: "Stand up, stand up — me and you!" },
         { call: "Vora says, where's your nose?", response: "Touch your nose, touch your nose, here it goes!" },
-        { call: "Vora says, clap out loud,", response: "Clap your hands, clap your hands, make us proud!" },
-        { call: "Vora says, rest a while,", response: "Sit back down, sit back down, with a smile!" },
+        {
+          call: "Vora says, clap out loud,",
+          response: "Clap your hands, clap your hands, make us proud!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Vora says, rest a while,",
+          response: "Sit back down, sit back down, with a smile!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -269,6 +316,7 @@ export const m9_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — building the sentence \"Touch your nose\" tile by tile, acted it out with a movement break, moving through the four-step \"Vora Says\" routine, spotting real AI in everyday life, and chanted the \"Vora Says\" routine together.",
+      summarySimple: "Today we said \"Touch your nose!\", moved our bodies, and sang a chant with Vora!",
       homework: "Tell a family member \"Touch your nose!\" in English and see if they follow your command.",
     },
   ],
@@ -287,8 +335,14 @@ export const m9_week4: Lesson = {
       title: "Ears Are Sensors Too",
       bigIdeas: ["perception"],
       lines: [
-        { text: "This month we learned that eyes, hands, and sensors all help us notice the world." },
-        { text: "Your ears are sensors too — let's use them for a super-careful listening game." },
+        {
+          text: "This month we learned that eyes, hands, and sensors all help us notice the world.",
+          textSimple: "Eyes, hands, and sensors all help us notice things!",
+        },
+        {
+          text: "Your ears are sensors too — let's use them for a super-careful listening game.",
+          textSimple: "Your ears are sensors too! Let's listen carefully.",
+        },
         { text: "Listen very closely: think... or sink?" },
       ],
       teacherNote:
@@ -343,8 +397,16 @@ export const m9_week4: Lesson = {
       lines: [
         { call: "Listen, listen, what do you hear?", response: "Think, think — the answer is clear!" },
         { call: "Listen, listen, water below?", response: "Sink, sink — watch it flow!" },
-        { call: "Listen, listen, open your mouth,", response: "Mouth, mouth — now say it out!" },
-        { call: "Listen, listen, tiny and quick?", response: "Mouse, mouse — that did the trick!" },
+        {
+          call: "Listen, listen, open your mouth,",
+          response: "Mouth, mouth — now say it out!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Listen, listen, tiny and quick?",
+          response: "Mouse, mouse — that did the trick!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -355,6 +417,7 @@ export const m9_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we reviewed the th/s sound from Week 4 — one more sound-gap check-in before the year's last one in Month 12 — acted out think, sink, mouth, and mouse, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted the think/sink sounds together.",
+      summarySimple: "Today we practiced the th and s sounds, moved our bodies, and sang a sound chant with Vora!",
     },
   ],
 };

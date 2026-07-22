@@ -34,10 +34,19 @@ export const m4_week1: Lesson = {
       title: "Vora Cares for Earth",
       bigIdeas: ["learning", "societal_impact"],
       lines: [
-        { text: "There are things we should do for the earth, like \"We should turn off the water.\"" },
-        { text: "And things we shouldn't do, like \"We shouldn't throw trash on the ground.\"" },
+        {
+          text: "There are things we should do for the earth, like \"We should turn off the water.\"",
+          textSimple: "We should turn off the water.",
+        },
+        {
+          text: "And things we shouldn't do, like \"We shouldn't throw trash on the ground.\"",
+          textSimple: "We shouldn't throw trash on the ground.",
+        },
         { text: "\"Should\" stays exactly the same word every time — it doesn't change for \"I\" or \"we\" like some Korean verb endings do.", minTrack: "explorers" },
-        { text: "Scientists use AI to study huge amounts of weather data, so they can understand how our earth is changing." },
+        {
+          text: "Scientists use AI to study huge amounts of weather data, so they can understand how our earth is changing.",
+          textSimple: "Scientists use AI to study our earth.",
+        },
       ],
       teacherNote:
         "Modal \"should\" has no verb-final Korean counterpart to lean on — the same challenge as \"can\" back in the foundations unit. Model it as a fixed chunk (\"We should ___\") before analyzing it. The AI thread here is Big Idea 3 (Learning): scientists don't guess about climate randomly, they learn patterns from enormous datasets, the same \"learn from lots of examples\" idea Vora has modeled with pictures all year.",
@@ -53,7 +62,7 @@ export const m4_week1: Lesson = {
         { text: "Trash — hold your nose and toss it away", emoji: "🗑️" },
         { text: "Earth — hug yourself in a big circle like a globe", emoji: "🌎" },
         { text: "Water — wiggle your fingers like dripping water", emoji: "💧" },
-        { text: "Air — blow a big breath out like wind", emoji: "💨" },
+        { text: "Air — blow a big breath out like wind", emoji: "💨", minTrack: "explorers" },
         { text: "Plant — crouch down small, then grow up tall", emoji: "🌱" },
       ],
     },
@@ -92,8 +101,12 @@ export const m4_week1: Lesson = {
       lines: [
         { call: "What should we do with a bottle or can?", response: "We should recycle — yes we can!" },
         { call: "What should we do with the water each day?", response: "We should save it — don't waste it away!" },
-        { call: "What shouldn't we throw on the ground below?", response: "We shouldn't throw trash — no, no, no!" },
-        { call: "What do we do for our whole earth so grand?", response: "We should care for it, hand in hand!" },
+        {
+          call: "What shouldn't we throw on the ground below?",
+          response: "We shouldn't throw trash — no, no, no!",
+          minTrack: "explorers",
+        },
+        { call: "What do we do for our whole earth so grand?", response: "We should care for it, hand in hand!", minTrack: "explorers" },
       ],
     },
     {
@@ -104,6 +117,7 @@ export const m4_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned earth words, acted them out, practiced \"We should / shouldn't ___,\" and sorted recycling from trash — just like scientists sort through huge amounts of data to understand our climate, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about caring for the earth together.",
+      summarySimple: "Today we learned earth words, sorted recycling from trash, and sang an earth chant with Vora!",
       homework: "Find one thing at home that should be recycled, and tell a family member in English.",
     },
   ],
@@ -116,14 +130,21 @@ export const m4_week2: Lesson = {
       type: "warmup",
       teacherScript: "Hold up a picture of a messy, used bottle. Ask \"What do we do first?\" and take a few guesses before revealing today's recycling steps game.",
       prompt: "What do we do first? ♻️",
+      promptSimple: "Bottle's dirty! What now? ♻️",
     },
     {
       type: "concept",
       title: "Vora Follows the Steps",
       bigIdeas: ["learning", "societal_impact"],
       lines: [
-        { text: "Remember: scientists use AI to study huge amounts of data to help our earth." },
-        { text: "Today, let's follow the exact steps of recycling, one after another." },
+        {
+          text: "Remember: scientists use AI to study huge amounts of data to help our earth.",
+          textSimple: "Scientists use AI to help our earth.",
+        },
+        {
+          text: "Today, let's follow the exact steps of recycling, one after another.",
+          textSimple: "Let's follow the recycling steps!",
+        },
       ],
       teacherNote:
         "Short recap only — Week 1 fully introduced the AI-learns-from-data thread through climate science; here it's briefly reconnected to today's ordered-steps game before playing.",
@@ -181,8 +202,12 @@ export const m4_week2: Lesson = {
       lines: [
         { call: "What do we do first with a bottle in hand?", response: "First we rinse it, isn't that grand?" },
         { call: "What comes next, before we're through?", response: "Next we sort it — me and you!" },
-        { call: "Then what do we do, don't delay?", response: "Then we put it in the bin, hooray!" },
-        { call: "Last of all, where does it go?", response: "The truck takes it away, off we go!" },
+        {
+          call: "Then what do we do, don't delay?",
+          response: "Then we put it in the bin, hooray!",
+          minTrack: "explorers",
+        },
+        { call: "Last of all, where does it go?", response: "The truck takes it away, off we go!", minTrack: "explorers" },
       ],
     },
     {
@@ -193,6 +218,7 @@ export const m4_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — putting the steps of recycling in order, acting out each step, guessing what comes next in a pattern, helping Vora follow clear step-by-step instructions, and chanting the recycling steps together.",
+      summarySimple: "Today we put recycling steps in order and sang a recycling chant with Vora!",
     },
   ],
 };
@@ -210,8 +236,14 @@ export const m4_week3: Lesson = {
       title: "Vora Finds the Pattern",
       bigIdeas: ["learning", "societal_impact"],
       lines: [
-        { text: "Scientists look for patterns in weather data to understand our changing earth." },
-        { text: "Let's practice finding a pattern too, and guess what comes next." },
+        {
+          text: "Scientists look for patterns in weather data to understand our changing earth.",
+          textSimple: "Scientists look for patterns in weather.",
+        },
+        {
+          text: "Let's practice finding a pattern too, and guess what comes next.",
+          textSimple: "Let's find a pattern! What comes next?",
+        },
       ],
       teacherNote:
         "Short recap only — Week 1 introduced the AI-learns-from-data thread through climate science; here it's briefly reconnected to pattern-finding before the prediction game.",
@@ -269,8 +301,12 @@ export const m4_week3: Lesson = {
       lines: [
         { call: "Leaf, then plant, then leaf again —", response: "What comes next? A leaf, my friend!" },
         { call: "Recycle, trash, recycle too —", response: "What comes next? Recycle — that's true!" },
-        { call: "Rinse it, sort it, what comes then?", response: "Put it in the bin — and count to ten!" },
-        { call: "Last of all, where does it go?", response: "The truck takes it away, off we go!" },
+        {
+          call: "Rinse it, sort it, what comes then?",
+          response: "Put it in the bin — and count to ten!",
+          minTrack: "explorers",
+        },
+        { call: "Last of all, where does it go?", response: "The truck takes it away, off we go!", minTrack: "explorers" },
       ],
     },
     {
@@ -281,6 +317,7 @@ export const m4_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — guessing what comes next in a pattern, acting out earth actions, putting the steps of recycling in order, spotting real AI in everyday life, and chanting about patterns and recycling together.",
+      summarySimple: "Today we guessed what comes next and sang a pattern chant with Vora!",
     },
   ],
 };
@@ -298,9 +335,18 @@ export const m4_week4: Lesson = {
       title: "All of Us Together",
       bigIdeas: [],
       lines: [
-        { text: "All month we talked about things we should do for the earth." },
-        { text: "Today, let's say it together, out loud: We should recycle." },
-        { text: "Notice this sentence uses \"We,\" not \"I\" — it's about all of us together, not just one person." },
+        {
+          text: "All month we talked about things we should do for the earth.",
+          textSimple: "We talked about caring for the earth.",
+        },
+        {
+          text: "Today, let's say it together, out loud: We should recycle.",
+          textSimple: "Let's say it together: We should recycle!",
+        },
+        {
+          text: "Notice this sentence uses \"We,\" not \"I\" — it's about all of us together, not just one person.",
+          textSimple: "\"We\" means all of us together!",
+        },
       ],
       teacherNote:
         "First group-subject (\"we\") sentence in the curriculum — every earlier sentence pattern (\"I see a...\", \"I'm from...\", \"This is my...\") was first-person singular. Call out the shift explicitly: \"we\" means the whole class saying it together, which is a small but genuine grammatical step worth naming.",
@@ -345,8 +391,12 @@ export const m4_week4: Lesson = {
       lines: [
         { call: "What do we say, all of us together?", response: "We should recycle, now and forever!" },
         { call: "Who takes care of our earth so grand?", response: "We do, we do, hand in hand!" },
-        { call: "Say it loud, don't be shy —", response: "We should recycle, way up high!" },
-        { call: "One more time, all together now!", response: "We should recycle — take a bow!" },
+        {
+          call: "Say it loud, don't be shy —",
+          response: "We should recycle, way up high!",
+          minTrack: "explorers",
+        },
+        { call: "One more time, all together now!", response: "We should recycle — take a bow!", minTrack: "explorers" },
       ],
     },
     {
@@ -357,6 +407,7 @@ export const m4_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we built our first \"we\" sentence together — \"We should recycle\" — acted it out with the whole class, closing out a month of caring for the earth, helped Vora follow clear instructions, spotted real AI in everyday life, and chanted it together one more time.",
+      summarySimple: "Today we all said \"We should recycle!\" together with Vora!",
       homework: "Say \"We should recycle\" with your family tonight, and pick one thing to recycle together.",
     },
   ],

@@ -33,9 +33,18 @@ export const m10_week1: Lesson = {
       title: "Spooky or Not Spooky?",
       bigIdeas: ["learning"],
       lines: [
-        { text: "Halloween is full of spooky things — ghosts, witches, bats!" },
-        { text: "Remember how I learned to sort smart helpers from regular things, way back at the start? Today we're sorting again — spooky, or not spooky." },
-        { text: "I look at lots of examples to learn what counts as spooky. That's how I learn — from examples, every time." },
+        {
+          text: "Halloween is full of spooky things — ghosts, witches, bats!",
+          textSimple: "Halloween has ghosts, witches, and bats!",
+        },
+        {
+          text: "Remember how I learned to sort smart helpers from regular things, way back at the start? Today we're sorting again — spooky, or not spooky.",
+          textSimple: "Today we sort things: spooky, or not spooky!",
+        },
+        {
+          text: "I look at lots of examples to learn what counts as spooky. That's how I learn — from examples, every time.",
+          textSimple: "I learn by looking at lots of examples!",
+        },
       ],
       teacherNote:
         "This is a lighter, seasonal repeat of the classification loop from the very first foundations lesson (w1d3, 'Smart Helper or Regular Thing?') — call that back explicitly if the class remembers it. The AI big idea is the same all year: sort examples into two buckets, and that's a form of learning.",
@@ -48,7 +57,7 @@ export const m10_week1: Lesson = {
       moves: [
         { text: "Pumpkin — make a big round shape with your arms", emoji: "🎃" },
         { text: "Ghost — float your arms and go 'boo!'", emoji: "👻" },
-        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙" },
+        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙", minTrack: "explorers" },
         { text: "Bat — flap your arms like wings and flutter around", emoji: "🦇" },
         { text: "Candy — mime unwrapping candy and popping it in your mouth", emoji: "🍬" },
         { text: "Costume — twirl around like you're showing off a costume", emoji: "🎭" },
@@ -89,8 +98,16 @@ export const m10_week1: Lesson = {
       lines: [
         { call: "Halloween, Halloween, who do I see?", response: "I'm a ghost, I'm a ghost, boo to thee!" },
         { call: "Halloween, Halloween, what's that spark?", response: "I'm a pumpkin, I'm a pumpkin, glowing in the dark!" },
-        { call: "Halloween, Halloween, flying by night?", response: "I'm a bat, I'm a bat, out of sight!" },
-        { call: "Halloween, Halloween, what will you be?", response: "I'm a witch, I'm a witch — come trick-or-treat with me!" },
+        {
+          call: "Halloween, Halloween, flying by night?",
+          response: "I'm a bat, I'm a bat, out of sight!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Halloween, Halloween, what will you be?",
+          response: "I'm a witch, I'm a witch — come trick-or-treat with me!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -101,6 +118,7 @@ export const m10_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned six Halloween words, acted them out, said \"Trick or treat!\" and \"I'm a ___,\" sorted spooky things from not-spooky things — the same learn-from-examples idea Vora's used all year — practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted \"I'm a ___\" together.",
+      summarySimple: "Today we learned Halloween words, played dress-up, and said \"I'm a ___\" with Vora!",
       homework: "Tell a family member what costume you'd wear, using \"I'm a ___.\"",
     },
   ],
@@ -113,13 +131,17 @@ export const m10_week2: Lesson = {
       type: "warmup",
       teacherScript: "Whisper \"boo!\" behind your hands, then reveal a big smile — a tiny, friendly scare to get everyone giggling before the games start.",
       prompt: "Boo! 👻 Just kidding — let's play!",
+      promptSimple: "Boo! Let's play! 👻",
     },
     {
       type: "concept",
       title: "Finding Matches, Like Vora Does",
       bigIdeas: ["learning"],
       lines: [
-        { text: "Remember — I learn by looking at lots of examples and finding what matches." },
+        {
+          text: "Remember — I learn by looking at lots of examples and finding what matches.",
+          textSimple: "I learn by finding what matches!",
+        },
         { text: "Let's practice finding matches together with our Halloween words!" },
       ],
       teacherNote:
@@ -133,7 +155,7 @@ export const m10_week2: Lesson = {
       moves: [
         { text: "Pumpkin — make a big round shape with your arms", emoji: "🎃" },
         { text: "Ghost — float your arms and go 'boo!'", emoji: "👻" },
-        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙" },
+        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙", minTrack: "explorers" },
         { text: "Bat — flap your arms like wings and flutter around", emoji: "🦇" },
         { text: "Candy — mime unwrapping candy and popping it in your mouth", emoji: "🍬" },
         { text: "Costume — twirl around like you're showing off a costume", emoji: "🎭" },
@@ -180,8 +202,16 @@ export const m10_week2: Lesson = {
       lines: [
         { call: "Halloween, Halloween, what do you see?", response: "I'm a pumpkin, I'm a pumpkin, look at me!" },
         { call: "Halloween, Halloween, flying at night?", response: "I'm a bat, I'm a bat, out of sight!" },
-        { call: "Halloween, Halloween, who says boo?", response: "I'm a ghost, I'm a ghost, boo to you!" },
-        { call: "Halloween, Halloween, sweet to eat?", response: "It's candy, it's candy, oh so sweet!" },
+        {
+          call: "Halloween, Halloween, who says boo?",
+          response: "I'm a ghost, I'm a ghost, boo to you!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Halloween, Halloween, sweet to eat?",
+          response: "It's candy, it's candy, oh so sweet!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -192,6 +222,7 @@ export const m10_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — matching Halloween words to pictures, acted out our Halloween words, guessing what comes next in a spooky pattern, helped Vora follow clear step-by-step instructions, and chanted \"I'm a ___\" together.",
+      summarySimple: "Today we played Halloween games and acted out fun Halloween words with Vora!",
       homework: "Draw two Halloween pictures at home and ask a family member to match them to the English words.",
     },
   ],
@@ -210,7 +241,10 @@ export const m10_week3: Lesson = {
       title: "Vora Predicts Patterns",
       bigIdeas: ["reasoning"],
       lines: [
-        { text: "Remember — I look at examples to find a pattern, and then I can guess what comes next." },
+        {
+          text: "Remember — I look at examples to find a pattern, and then I can guess what comes next.",
+          textSimple: "I look for a pattern. Then I guess what's next!",
+        },
         { text: "Let's find some spooky patterns together!" },
       ],
       teacherNote:
@@ -224,7 +258,7 @@ export const m10_week3: Lesson = {
       moves: [
         { text: "Pumpkin — make a big round shape with your arms", emoji: "🎃" },
         { text: "Ghost — float your arms and go 'boo!'", emoji: "👻" },
-        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙" },
+        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙", minTrack: "explorers" },
         { text: "Bat — flap your arms like wings and flutter around", emoji: "🦇" },
         { text: "Candy — mime unwrapping candy and popping it in your mouth", emoji: "🍬" },
         { text: "Costume — twirl around like you're showing off a costume", emoji: "🎭" },
@@ -271,8 +305,16 @@ export const m10_week3: Lesson = {
       lines: [
         { call: "Halloween, Halloween, who's the star?", response: "I'm a witch, I'm a witch, flying far!" },
         { call: "Halloween, Halloween, round and bright?", response: "I'm a pumpkin, I'm a pumpkin, glowing light!" },
-        { call: "Halloween, Halloween, what's that treat?", response: "It's candy, it's candy, oh so sweet!" },
-        { call: "Halloween, Halloween, who says boo?", response: "I'm a ghost, I'm a ghost, boo to you!" },
+        {
+          call: "Halloween, Halloween, what's that treat?",
+          response: "It's candy, it's candy, oh so sweet!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Halloween, Halloween, who says boo?",
+          response: "I'm a ghost, I'm a ghost, boo to you!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -283,6 +325,7 @@ export const m10_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — guessing what comes next in spooky patterns, matching Halloween words to pictures, acted out our Halloween words, practicing spotting real AI in everyday life, and chanted \"I'm a ___\" together.",
+      summarySimple: "Today we found patterns, matched Halloween words, and played games with Vora!",
       homework: "Draw your own spooky pattern (like 🎃👻🎃👻) and ask a family member what comes next.",
     },
   ],
@@ -301,7 +344,10 @@ export const m10_week4: Lesson = {
       title: "Any Costume Counts!",
       bigIdeas: ["learning"],
       lines: [
-        { text: "Today there's no wrong answer — pick any costume you like, real or totally made up!" },
+        {
+          text: "Today there's no wrong answer — pick any costume you like, real or totally made up!",
+          textSimple: "Pick any costume! Any answer is okay!",
+        },
         { text: "Just put it in the sentence: \"I'm a ___.\"" },
         { text: "I'm a ghost. Silly, right? Now it's your turn!" },
         { text: "Explorers, try a two-word costume, like \"a scary witch\" or \"a silly pumpkin\"!", minTrack: "explorers" },
@@ -317,7 +363,7 @@ export const m10_week4: Lesson = {
       moves: [
         { text: "Pumpkin — make a big round shape with your arms", emoji: "🎃" },
         { text: "Ghost — float your arms and go 'boo!'", emoji: "👻" },
-        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙" },
+        { text: "Witch — stir an invisible pot and cackle", emoji: "🧙", minTrack: "explorers" },
         { text: "Bat — flap your arms like wings and flutter around", emoji: "🦇" },
         { text: "Candy — mime unwrapping candy and popping it in your mouth", emoji: "🍬" },
         { text: "Costume — twirl around like you're showing off a costume", emoji: "🎭" },
@@ -349,8 +395,16 @@ export const m10_week4: Lesson = {
       lines: [
         { call: "Halloween, Halloween, who do I see?", response: "I'm a ghost, I'm a ghost, boo to thee!" },
         { call: "Halloween, Halloween, cast a spell?", response: "I'm a witch, I'm a witch, ring my bell!" },
-        { call: "Halloween, Halloween, glowing bright?", response: "I'm a pumpkin, I'm a pumpkin, on Halloween night!" },
-        { call: "Halloween, Halloween, now it's you —", response: "I'm a ___! Say your costume too!" },
+        {
+          call: "Halloween, Halloween, glowing bright?",
+          response: "I'm a pumpkin, I'm a pumpkin, on Halloween night!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Halloween, Halloween, now it's you —",
+          response: "I'm a ___! Say your costume too!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -361,6 +415,7 @@ export const m10_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we built \"I'm a ghost,\" acted out our costume words, and practiced saying \"I'm a ___\" with any costume we could imagine — full circle from \"It's a book\" back in Week 1 — helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted \"I'm a ___\" together.",
+      summarySimple: "Today we said \"I'm a ___\" and dressed up as anything we wanted!",
     },
   ],
 };

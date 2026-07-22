@@ -33,9 +33,18 @@ export const m8_week1: Lesson = {
       title: "Vora Finds the Fastest Way",
       bigIdeas: ["reasoning"],
       lines: [
-        { text: "I want to go to the park — but which way is fastest?" },
-        { text: "A map app tries out lots of paths, one by one, and reasons about which is best." },
-        { text: "Then it picks the best one — just like figuring out the fastest way to school!" },
+        {
+          text: "I want to go to the park — but which way is fastest?",
+          textSimple: "I want to go to the park. Which way is fastest?",
+        },
+        {
+          text: "A map app tries out lots of paths, one by one, and reasons about which is best.",
+          textSimple: "A map app tries lots of paths. It picks the best one!",
+        },
+        {
+          text: "Then it picks the best one — just like figuring out the fastest way to school!",
+          textSimple: "It picks the best way, just like you do!",
+        },
         { text: "Let's go! Let's go by airplane, by train, or by ship!" },
       ],
       teacherNote:
@@ -51,7 +60,7 @@ export const m8_week1: Lesson = {
         { text: "Train — pump your arms like wheels and chug forward", emoji: "🚂" },
         { text: "Ship — rock side to side like ocean waves", emoji: "🚢" },
         { text: "Suitcase — mime zipping up a big suitcase", emoji: "🧳" },
-        { text: "Map — hold up open hands like unfolding a map and look around", emoji: "🗺️" },
+        { text: "Map — hold up open hands like unfolding a map and look around", emoji: "🗺️", minTrack: "explorers" },
         { text: "Ticket — mime pulling a ticket from your pocket and hold it high", emoji: "🎫" },
       ],
     },
@@ -83,8 +92,16 @@ export const m8_week1: Lesson = {
       lines: [
         { call: "Travel, travel, where do we go?", response: "Let's go by airplane, way up we go!" },
         { call: "Travel, travel, on the tracks?", response: "Let's go by train, clickety-clack!" },
-        { call: "Travel, travel, on the sea?", response: "Let's go by ship, sailing free!" },
-        { call: "Travel, travel, don't forget —", response: "Pack your suitcase — let's go, let's go!" },
+        {
+          call: "Travel, travel, on the sea?",
+          response: "Let's go by ship, sailing free!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Travel, travel, don't forget —",
+          response: "Pack your suitcase — let's go, let's go!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -95,6 +112,7 @@ export const m8_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned six travel words, acted them out, saw how a map app reasons its way to the fastest route, one step at a time, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about ways to travel together.",
+      summarySimple: "Today we learned travel words, moved our bodies, and sang a travel chant with Vora!",
       homework: "Plan a pretend trip with a family member tonight — take turns saying \"Let's go by ___.\"",
     },
   ],
@@ -113,8 +131,14 @@ export const m8_week2: Lesson = {
       title: "Vora Decides What Goes In",
       bigIdeas: ["perception"],
       lines: [
-        { text: "A toothbrush, a sofa — I look at each thing and decide: does it belong in the suitcase?" },
-        { text: "That's sorting, and it's just what you're about to do with today's things!" },
+        {
+          text: "A toothbrush, a sofa — I look at each thing and decide: does it belong in the suitcase?",
+          textSimple: "I look at each thing. Does it go in the suitcase?",
+        },
+        {
+          text: "That's sorting, and it's just what you're about to do with today's things!",
+          textSimple: "That's sorting! Now you get to sort too.",
+        },
       ],
       teacherNote:
         "Keep this brief — Vora's reasoning was already introduced in Week 1's map-app talk. This is just a quick bridge into today's packing game below.",
@@ -127,7 +151,7 @@ export const m8_week2: Lesson = {
       moves: [
         { text: "T-shirt — fold it in the air and pack it in your suitcase", emoji: "👕" },
         { text: "Toothbrush — mime brushing your teeth fast", emoji: "🪥" },
-        { text: "Passport — hold up an open hand like flashing your passport", emoji: "🛂" },
+        { text: "Passport — hold up an open hand like flashing your passport", emoji: "🛂", minTrack: "explorers" },
         { text: "Socks — pretend to pull on socks one at a time", emoji: "🧦" },
         { text: "Sofa — flop back like a comfy sofa", emoji: "🛋️" },
         { text: "TV — freeze still like a TV screen", emoji: "📺" },
@@ -182,8 +206,16 @@ export const m8_week2: Lesson = {
       lines: [
         { call: "Suitcase, suitcase, what goes in?", response: "A t-shirt, a t-shirt — pack it and win!" },
         { call: "Suitcase, suitcase, don't forget —", response: "A toothbrush, a toothbrush, it's not packed yet!" },
-        { call: "Suitcase, suitcase, cozy and snug?", response: "Leave the sofa, leave the sofa, give it a hug!" },
-        { call: "Suitcase, suitcase, ready to go?", response: "Pack your socks, pack your socks — off we go!" },
+        {
+          call: "Suitcase, suitcase, cozy and snug?",
+          response: "Leave the sofa, leave the sofa, give it a hug!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Suitcase, suitcase, ready to go?",
+          response: "Pack your socks, pack your socks — off we go!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -194,6 +226,7 @@ export const m8_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — sorting things into pack it and leave it, acted out packing a suitcase, matching transportation words to pictures, helped Vora follow clear step-by-step instructions, and chanted about packing together.",
+      summarySimple: "Today we packed a pretend suitcase, moved our bodies, and sang a packing chant with Vora!",
       homework: "Pack a pretend suitcase with a family member tonight, naming each item in English.",
     },
   ],
@@ -212,7 +245,10 @@ export const m8_week3: Lesson = {
       title: "Vora Remembers",
       bigIdeas: ["learning"],
       lines: [
-        { text: "The more times I see \"airplane,\" the faster I remember it — that's learning!" },
+        {
+          text: "The more times I see \"airplane,\" the faster I remember it — that's learning!",
+          textSimple: "The more I see a word, the faster I remember it!",
+        },
         { text: "Let's practice remembering together with today's matching game!" },
       ],
       teacherNote:
@@ -228,7 +264,7 @@ export const m8_week3: Lesson = {
         { text: "Train — pump your arms like wheels and chug forward", emoji: "🚂" },
         { text: "Ship — rock side to side like ocean waves", emoji: "🚢" },
         { text: "Suitcase — mime zipping up a big suitcase", emoji: "🧳" },
-        { text: "Map — hold up open hands like unfolding a map and look around", emoji: "🗺️" },
+        { text: "Map — hold up open hands like unfolding a map and look around", emoji: "🗺️", minTrack: "explorers" },
         { text: "Ticket — mime pulling a ticket from your pocket and hold it high", emoji: "🎫" },
       ],
     },
@@ -280,8 +316,16 @@ export const m8_week3: Lesson = {
       lines: [
         { call: "How do we travel, way up high?", response: "Let's go by airplane, up in the sky!" },
         { call: "How do we travel, on the track?", response: "Let's go by train, clickety-clack!" },
-        { call: "How do we travel, on the sea?", response: "Let's go by ship, sailing free!" },
-        { call: "Pack your suitcase, grab your ticket too —", response: "Let's go, let's go — it's up to you!" },
+        {
+          call: "How do we travel, on the sea?",
+          response: "Let's go by ship, sailing free!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Pack your suitcase, grab your ticket too —",
+          response: "Let's go, let's go — it's up to you!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -292,6 +336,7 @@ export const m8_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — matching transportation words to pictures, acted out our travel words, sorting things into pack it and leave it, spotting real AI in everyday life, and chanted about ways to travel together.",
+      summarySimple: "Today we matched travel words, moved our bodies, and sang a travel chant with Vora!",
       homework: "Name three ways to travel in English before bed tonight.",
     },
   ],
@@ -310,8 +355,14 @@ export const m8_week4: Lesson = {
       title: "Where Should We Go?",
       bigIdeas: [],
       lines: [
-        { text: "If we could go anywhere today, where would you pick?" },
-        { text: "However we get there, there's one sentence for it: \"Let's go by ___.\"" },
+        {
+          text: "If we could go anywhere today, where would you pick?",
+          textSimple: "Where would you like to go today?",
+        },
+        {
+          text: "However we get there, there's one sentence for it: \"Let's go by ___.\"",
+          textSimple: "We can say: \"Let's go by ___.\"",
+        },
         { text: "\"Let's\" is a short way of saying \"let us\" — but we say it as one piece, like a single word.", minTrack: "explorers" },
         { text: "Let's build it together — and pick your favorite way to go!" },
       ],
@@ -328,7 +379,7 @@ export const m8_week4: Lesson = {
         { text: "Train — pump your arms like wheels and chug forward", emoji: "🚂" },
         { text: "Ship — rock side to side like ocean waves", emoji: "🚢" },
         { text: "Suitcase — mime zipping up a big suitcase", emoji: "🧳" },
-        { text: "Map — hold up open hands like unfolding a map and look around", emoji: "🗺️" },
+        { text: "Map — hold up open hands like unfolding a map and look around", emoji: "🗺️", minTrack: "explorers" },
         { text: "Ticket — mime pulling a ticket from your pocket and hold it high", emoji: "🎫" },
       ],
     },
@@ -359,8 +410,16 @@ export const m8_week4: Lesson = {
       lines: [
         { call: "Travel, travel, where do we go?", response: "Let's go by airplane, way up we go!" },
         { call: "Travel, travel, on the tracks?", response: "Let's go by train, clickety-clack!" },
-        { call: "Travel, travel, on the sea?", response: "Let's go by ship, sailing free!" },
-        { call: "Travel, travel, don't forget —", response: "Pack your suitcase — let's go, let's go!" },
+        {
+          call: "Travel, travel, on the sea?",
+          response: "Let's go by ship, sailing free!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Travel, travel, don't forget —",
+          response: "Pack your suitcase — let's go, let's go!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -371,6 +430,7 @@ export const m8_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we built \"Let's go by airplane,\" acted out our travel words, practiced suggesting our own favorite way to travel, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted about ways to travel together.",
+      summarySimple: "Today we said \"Let's go!\", moved our bodies, and sang a travel chant with Vora!",
       homework: "Ask a family member \"Let's go by ___?\" tonight and let them pick their favorite way to travel too.",
     },
   ],

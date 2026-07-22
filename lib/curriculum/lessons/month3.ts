@@ -33,10 +33,19 @@ export const m3_week1: Lesson = {
       title: "Vora Takes Turns",
       bigIdeas: ["natural_interaction"],
       lines: [
-        { text: "When I want to join a game, I ask, \"Can I play?\"" },
-        { text: "And when I have something good to share, I say, \"Let's share.\"" },
+        {
+          text: "When I want to join a game, I ask, \"Can I play?\"",
+          textSimple: "I ask, \"Can I play?\"",
+        },
+        {
+          text: "And when I have something good to share, I say, \"Let's share.\"",
+          textSimple: "I say, \"Let's share.\"",
+        },
         { text: "\"Can I ___?\" starts with a little helper word, just like \"Do you ___?\" did.", minTrack: "explorers" },
-        { text: "A good voice assistant listens quietly until you stop talking, then it answers — that's how good friends take turns too." },
+        {
+          text: "A good voice assistant listens quietly until you stop talking, then it answers — that's how good friends take turns too.",
+          textSimple: "Good friends listen first, then talk!",
+        },
       ],
       teacherNote:
         "\"Can I ___?\" is the second auxiliary-fronted question in the curriculum after \"Do you ___?\" in the foundations unit — name the shared pattern explicitly so it transfers. The AI thread: natural conversation depends on turn-taking, which is exactly what a voice assistant is designed to imitate (wait for silence, then respond).",
@@ -50,7 +59,7 @@ export const m3_week1: Lesson = {
         { text: "Friend — link arms with a partner and smile", emoji: "🧑‍🤝‍🧑" },
         { text: "Share — hold out your hands like giving something", emoji: "🤝" },
         { text: "Play — pretend to build blocks together", emoji: "🧩" },
-        { text: "Kind — give yourself a warm hug", emoji: "❤️" },
+        { text: "Kind — give yourself a warm hug", emoji: "❤️", minTrack: "explorers" },
         { text: "Sorry — hang your head gently and pat your heart", emoji: "😔" },
         { text: "Happy — jump up with a big smile", emoji: "😊" },
       ],
@@ -83,8 +92,12 @@ export const m3_week1: Lesson = {
       lines: [
         { call: "Can I play, play, play with you?", response: "Yes, let's play — me and you!" },
         { call: "Can I share, share, share today?", response: "Yes, let's share — hip hip hooray!" },
-        { call: "Will you be my friend, my friend?", response: "Yes, I'll be your friend till the end!" },
-        { call: "How do we feel when we're kind and true?", response: "Happy, happy — me and you!" },
+        {
+          call: "Will you be my friend, my friend?",
+          response: "Yes, I'll be your friend till the end!",
+          minTrack: "explorers",
+        },
+        { call: "How do we feel when we're kind and true?", response: "Happy, happy — me and you!", minTrack: "explorers" },
       ],
     },
     {
@@ -95,6 +108,7 @@ export const m3_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned to ask \"Can I play?\" and offer \"Let's share,\" acted out being kind friends, saw that a good voice assistant listens and takes turns like a good friend, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about friendship together.",
+      summarySimple: "Today we learned to say \"Can I play?\" and \"Let's share,\" and sang a friendship chant with Vora!",
       homework: "Ask someone at home \"Can I play?\" before you join their game tonight.",
     },
   ],
@@ -113,8 +127,14 @@ export const m3_week2: Lesson = {
       title: "Vora Listens for Order",
       bigIdeas: ["natural_interaction"],
       lines: [
-        { text: "Remember: a good friend — and a good voice assistant — waits and listens before answering." },
-        { text: "Today let's build the question \"Can I play?\" one word at a time, just like taking turns." },
+        {
+          text: "Remember: a good friend — and a good voice assistant — waits and listens before answering.",
+          textSimple: "Good friends listen first, then answer.",
+        },
+        {
+          text: "Today let's build the question \"Can I play?\" one word at a time, just like taking turns.",
+          textSimple: "Let's build \"Can I play?\" one word at a time!",
+        },
       ],
       teacherNote:
         "Short recap only — the natural_interaction big idea (turn-taking) was fully taught in Week 1; here it's briefly reconnected to today's word-order game before playing.",
@@ -171,8 +191,12 @@ export const m3_week2: Lesson = {
       lines: [
         { call: "Can I play, play, play today?", response: "Yes! Let's play and shout hooray!" },
         { call: "How do you feel when the sun is bright?", response: "Happy, happy — what a sight!" },
-        { call: "How do you feel when your toy is gone?", response: "Sad, so sad — but we carry on!" },
-        { call: "How do you feel when you're kind and true?", response: "Excited, excited — me and you!" },
+        {
+          call: "How do you feel when your toy is gone?",
+          response: "Sad, so sad — but we carry on!",
+          minTrack: "explorers",
+        },
+        { call: "How do you feel when you're kind and true?", response: "Excited, excited — me and you!", minTrack: "explorers" },
       ],
     },
     {
@@ -183,6 +207,7 @@ export const m3_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — building the question \"Can I play?\" tile by tile, acting out feelings and friendship words, matching feeling words like happy, sad, and kind to faces, helping Vora follow clear step-by-step instructions, and chanting about feelings and friends together.",
+      summarySimple: "Today we built \"Can I play?\" and sang a feelings chant with Vora!",
     },
   ],
 };
@@ -200,8 +225,14 @@ export const m3_week3: Lesson = {
       title: "Vora Notices Feelings",
       bigIdeas: ["natural_interaction"],
       lines: [
-        { text: "Good friends notice how you feel, just by listening and watching closely." },
-        { text: "Today let's match feeling words to faces, the same way a good friend would." },
+        {
+          text: "Good friends notice how you feel, just by listening and watching closely.",
+          textSimple: "Good friends notice how you feel.",
+        },
+        {
+          text: "Today let's match feeling words to faces, the same way a good friend would.",
+          textSimple: "Let's match feeling words to faces!",
+        },
       ],
       teacherNote:
         "Short recap only — natural_interaction (turn-taking/listening) was the full Week 1 teach; here it's linked to reading feelings as another way friends pay close attention to each other, before the matching game.",
@@ -258,8 +289,12 @@ export const m3_week3: Lesson = {
       lines: [
         { call: "How do you feel on a sunny day?", response: "Happy, happy — hip hip hooray!" },
         { call: "How do you feel when you drop your toy?", response: "Sad, so sad — oh no, oh boy!" },
-        { call: "How do you feel sharing with a friend?", response: "Kind, so kind — right to the end!" },
-        { call: "Can I play, play, play with you?", response: "Yes, let's play — excited too!" },
+        {
+          call: "How do you feel sharing with a friend?",
+          response: "Kind, so kind — right to the end!",
+          minTrack: "explorers",
+        },
+        { call: "Can I play, play, play with you?", response: "Yes, let's play — excited too!", minTrack: "explorers" },
       ],
     },
     {
@@ -270,6 +305,7 @@ export const m3_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — matching feeling words like happy, sad, and kind to faces, acting out each feeling, building the question \"Can I play?\" one word at a time, spotting real AI in everyday life, and chanting about feelings together.",
+      summarySimple: "Today we matched feeling faces, moved our bodies, and sang a feelings chant with Vora!",
     },
   ],
 };
@@ -288,8 +324,14 @@ export const m3_week4: Lesson = {
       bigIdeas: ["perception"],
       lines: [
         { text: "Remember \"l\" and \"r\"? They're still two different sounds in English." },
-        { text: "Good friends listen very carefully to each other — let's listen carefully too." },
-        { text: "This time, try to catch the difference before I say each word twice." },
+        {
+          text: "Good friends listen very carefully to each other — let's listen carefully too.",
+          textSimple: "Let's listen very carefully!",
+        },
+        {
+          text: "This time, try to catch the difference before I say each word twice.",
+          textSimple: "Listen for the difference!",
+        },
       ],
       teacherNote:
         "Quarter-checkpoint review of the foundations unit's Week 2 Day 3 /l/-/r/ contrast — the single highest-frequency Korean-learner sound gap, since Korean's single liquid consonant covers both English sounds. Expect the same level of difficulty as Week 2; that's normal spaced repetition, not regression. Framing it as \"listening like a good friend\" keeps it tied to this month's theme.",
@@ -340,8 +382,12 @@ export const m3_week4: Lesson = {
       lines: [
         { call: "Listen close, now tell me true —", response: "Light or right, which one is new?" },
         { call: "Is it lead, or is it read?", response: "Listen close — use your head!" },
-        { call: "Is it load, or is it road?", response: "Listen close — down the road!" },
-        { call: "Is it lock, or is it rock?", response: "Listen close — tick tock, tick tock!" },
+        {
+          call: "Is it load, or is it road?",
+          response: "Listen close — down the road!",
+          minTrack: "explorers",
+        },
+        { call: "Is it lock, or is it rock?", response: "Listen close — tick tock, tick tock!", minTrack: "explorers" },
       ],
     },
     {
@@ -352,6 +398,7 @@ export const m3_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we listened closely for the difference between l and r again, acted out the sounds with fun actions, a little easier every time we practice, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted the tricky sound pairs together.",
+      summarySimple: "Today we listened for l and r sounds and sang a fun chant with Vora!",
     },
   ],
 };

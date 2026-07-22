@@ -15,6 +15,7 @@ export const m7_week1: Lesson = {
       type: "warmup",
       teacherScript: "Look out the classroom window (or show a photo of the sky) and ask \"What's the weather today?\" Let a few kids answer in Korean before introducing the English words.",
       prompt: "What's the weather today? 🌤️",
+      promptSimple: "Look outside! Sunny or rainy? 🌤️",
     },
     {
       type: "vocab",
@@ -38,7 +39,7 @@ export const m7_week1: Lesson = {
         { text: "Sunny — stretch your arms up high", emoji: "☀️" },
         { text: "Rainy — wiggle your fingers down like rain", emoji: "🌧️" },
         { text: "Cloudy — float your arms slowly side to side", emoji: "☁️" },
-        { text: "Windy — sway your whole body like a tree", emoji: "💨" },
+        { text: "Windy — sway your whole body like a tree", emoji: "💨", minTrack: "explorers" },
         { text: "Snowy — shiver and hug yourself", emoji: "❄️" },
         { text: "Hot — fan your face fast", emoji: "🥵" },
         { text: "Cold — hug yourself and shiver", emoji: "🥶" },
@@ -49,9 +50,18 @@ export const m7_week1: Lesson = {
       title: "Vora Guesses Tomorrow's Weather",
       bigIdeas: ["reasoning"],
       lines: [
-        { text: "Yesterday was sunny, and today is sunny too — I wonder about tomorrow!" },
-        { text: "A weather forecast isn't magic — it's a careful guess, made by looking at lots of past weather." },
-        { text: "I look for a pattern, just like I do with pictures, and then I guess what comes next." },
+        {
+          text: "Yesterday was sunny, and today is sunny too — I wonder about tomorrow!",
+          textSimple: "Sunny yesterday. Sunny today. Tomorrow too?",
+        },
+        {
+          text: "A weather forecast isn't magic — it's a careful guess, made by looking at lots of past weather.",
+          textSimple: "A forecast is a guess. Not magic!",
+        },
+        {
+          text: "I look for a pattern, just like I do with pictures, and then I guess what comes next.",
+          textSimple: "I find a pattern. Then I guess!",
+        },
         { text: "Let's find the weather pattern together!" },
       ],
       teacherNote:
@@ -92,8 +102,12 @@ export const m7_week1: Lesson = {
       lines: [
         { call: "Weather, weather, what do you see?", response: "It's sunny, it's sunny, look at me!" },
         { call: "Weather, weather, what's the news?", response: "It's rainy, it's rainy, grab your shoes!" },
-        { call: "Weather, weather, tell me true —", response: "It's cloudy, it's cloudy, gray and blue!" },
-        { call: "Weather, weather, what's today?", response: "Look outside and shout — hooray!" },
+        {
+          call: "Weather, weather, tell me true —",
+          response: "It's cloudy, it's cloudy, gray and blue!",
+          minTrack: "explorers",
+        },
+        { call: "Weather, weather, what's today?", response: "Look outside and shout — hooray!", minTrack: "explorers" },
       ],
     },
     {
@@ -104,6 +118,7 @@ export const m7_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned seven weather words, acted them out, saw how Vora finds a pattern in past weather (the same way a real forecast is made), practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about the weather together.",
+      summarySimple: "Today we learned weather words, moved our bodies, and sang a weather chant with Vora!",
       homework: "Ask a family member \"What's the weather?\" in Korean tonight, then answer them in English: \"It's ___ today.\"",
     },
   ],

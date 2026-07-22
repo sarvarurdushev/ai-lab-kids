@@ -33,7 +33,10 @@ export const w4d1_my_family: Lesson = {
       title: "My Family",
       bigIdeas: [],
       lines: [
-        { text: "\"My\" means it belongs to me — my mom, my dad, my family." },
+        {
+          text: "\"My\" means it belongs to me — my mom, my dad, my family.",
+          textSimple: "My mom. My dad. My family!",
+        },
       ],
       teacherNote:
         "Korean family terms encode relative age and the speaker's gender in a way English \"brother/sister\" doesn't — expect kids to want to specify more. Validate that (\"Yes, in Korean we'd say more — in English we just say brother!\") rather than treating it as a mistake.",
@@ -50,7 +53,11 @@ export const w4d1_my_family: Lesson = {
         { text: "Brother — fist bump the air", emoji: "👦" },
         { text: "Grandma — wave slowly like saying hello", emoji: "👵" },
         { text: "Grandpa — pat both knees", emoji: "👴" },
-        { text: "Baby — rock your arms like holding a baby", emoji: "👶" },
+        {
+          text: "Baby — rock your arms like holding a baby",
+          emoji: "👶",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -61,8 +68,12 @@ export const w4d1_my_family: Lesson = {
       lines: [
         { call: "Family, family, who's this here?", response: "This is my mom, my mom so dear!" },
         { call: "Family, family, who's over there?", response: "This is my dad, with silly hair!" },
-        { call: "Family, family, who do you see?", response: "This is my sister, playing with me!" },
-        { call: "Family, family, tell me true —", response: "This is my family, I love you!" },
+        {
+          call: "Family, family, who do you see?",
+          response: "This is my sister, playing with me!",
+          minTrack: "explorers",
+        },
+        { call: "Family, family, tell me true —", response: "This is my family, I love you!", minTrack: "explorers" },
       ],
     },
     {
@@ -73,6 +84,7 @@ export const w4d1_my_family: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned family words and how to say \"my\" family members in English, acted out our family words together, and chanted about our families.",
+      summarySimple: "Today we learned family words and sang about our families!",
       homework: "Introduce your family in English to someone at home.",
     },
   ],
@@ -91,8 +103,14 @@ export const w4d3_think_or_sink: Lesson = {
       title: "A New Sound: th",
       bigIdeas: ["perception"],
       lines: [
-        { text: "For \"th,\" put your tongue between your teeth and blow air gently." },
-        { text: "Korean doesn't have this sound either — it's another brand-new one!" },
+        {
+          text: "For \"th,\" put your tongue between your teeth and blow air gently.",
+          textSimple: "Put your tongue between your teeth. Blow air!",
+        },
+        {
+          text: "Korean doesn't have this sound either — it's another brand-new one!",
+          textSimple: "This sound is brand new for you too!",
+        },
         { text: "Let's listen very carefully and pick the word we hear." },
       ],
       teacherNote: "Korean has no dental fricative /θ/; it's commonly substituted with /s/ or /t/ in loanwords and early L2 production.",
@@ -135,8 +153,12 @@ export const w4d3_think_or_sink: Lesson = {
       lines: [
         { call: "Th or s, which do you hear?", response: "Think! Think! Loud and clear!" },
         { call: "Th or s, listen well —", response: "Bath! Bath! Now can you tell?" },
-        { call: "Th or s, say it slow —", response: "Mouth! Mouth! Watch it go!" },
-        { call: "Th or s, one more time —", response: "Path! Path! Say it in rhyme!" },
+        {
+          call: "Th or s, say it slow —",
+          response: "Mouth! Mouth! Watch it go!",
+          minTrack: "explorers",
+        },
+        { call: "Th or s, one more time —", response: "Path! Path! Say it in rhyme!", minTrack: "explorers" },
       ],
     },
     {
@@ -147,6 +169,7 @@ export const w4d3_think_or_sink: Lesson = {
     {
       type: "wrapup",
       summary: "Today we practiced listening for the th sound — the third new sound this unit — acted out th and s words together, and chanted about the sounds we heard. One more to go in Week 8's review!",
+      summarySimple: "Today we listened closely for the th sound!",
     },
   ],
 };
@@ -175,8 +198,14 @@ export const w4d2_count_with_vora: Lesson = {
       title: "Vora Counts, Too",
       bigIdeas: ["perception"],
       lines: [
-        { text: "When I look at a picture, I can count how many things are in it." },
-        { text: "\"How many dogs?\" \"Two dogs!\" — counting is a way of understanding a picture." },
+        {
+          text: "When I look at a picture, I can count how many things are in it.",
+          textSimple: "I can count things in a picture!",
+        },
+        {
+          text: "\"How many dogs?\" \"Two dogs!\" — counting is a way of understanding a picture.",
+          textSimple: "How many dogs? Two dogs! Counting helps me understand.",
+        },
       ],
       teacherNote:
         "Keep this light — it's just planting that \"counting what's in a picture\" is something both people and AI do, ahead of the sentence-building activity.",
@@ -216,8 +245,12 @@ export const w4d2_count_with_vora: Lesson = {
       lines: [
         { call: "Counting, counting, one and two —", response: "I have two dogs, how about you?" },
         { call: "Counting, counting, one, two, three —", response: "I have three dogs, running free!" },
-        { call: "Counting, counting, four or more —", response: "I have four dogs at my door!" },
-        { call: "Counting, counting, count up high —", response: "I have five dogs, reaching the sky!" },
+        {
+          call: "Counting, counting, four or more —",
+          response: "I have four dogs at my door!",
+          minTrack: "explorers",
+        },
+        { call: "Counting, counting, count up high —", response: "I have five dogs, reaching the sky!", minTrack: "explorers" },
       ],
     },
     {
@@ -228,6 +261,7 @@ export const w4d2_count_with_vora: Lesson = {
     {
       type: "wrapup",
       summary: "Today we counted to five and built the sentence \"I have two dogs\" in the right English word order, acted out the numbers with our fingers, and chanted about counting dogs together.",
+      summarySimple: "Today we counted to five and built a sentence with Vora!",
       homework: "Count five things at home in English.",
     },
   ],

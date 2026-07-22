@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, useMotionValue, useSpring } from "motion/react";
+import type { MotionValue } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { HERO_IMAGES, BIG_IDEA_IMAGE, SEGMENT_IMAGE, MONTH_IMAGE, MONTHS, curriculumStats } from "@/lib/curriculum";
 import { RobotHeadIcon, GamepadIcon, GlobeIcon, SparkleIcon, RunIcon } from "@/components/icons";
@@ -52,6 +53,105 @@ function ConnectorLine({ d, delay }: { d: string; delay: number }) {
       animate={{ pathLength: 1, opacity: 0.8 }}
       transition={{ duration: 1.1, delay, ease: [0.16, 1, 0.3, 1] }}
     />
+  );
+}
+
+function CursorTrail({
+  mouseX,
+  mouseY,
+  active,
+}: {
+  mouseX: MotionValue<number>;
+  mouseY: MotionValue<number>;
+  active: boolean;
+}) {
+  const x1 = useSpring(mouseX, { stiffness: 320, damping: 30 });
+  const y1 = useSpring(mouseY, { stiffness: 320, damping: 30 });
+  const x2 = useSpring(mouseX, { stiffness: 160, damping: 26 });
+  const y2 = useSpring(mouseY, { stiffness: 160, damping: 26 });
+  const x3 = useSpring(mouseX, { stiffness: 80, damping: 20 });
+  const y3 = useSpring(mouseY, { stiffness: 80, damping: 20 });
+
+  return (
+    <div
+      className={`pointer-events-none absolute inset-0 z-0 hidden transition-opacity duration-700 sm:block ${
+        active ? "opacity-100" : "opacity-0"
+      }`}
+      aria-hidden="true"
+    >
+      <motion.div style={{ x: x3, y: y3 }} className="absolute left-0 top-0">
+        <div className="h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo/25 blur-2xl" />
+      </motion.div>
+      <motion.div style={{ x: x2, y: y2 }} className="absolute left-0 top-0">
+        <div className="h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-light/70 blur-[3px]" />
+      </motion.div>
+      <motion.div style={{ x: x1, y: y1 }} className="absolute left-0 top-0">
+        <div className="h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber shadow-[0_0_24px_6px_rgba(255,176,0,0.55)]" />
+      </motion.div>
+    </div>
+  );
+}
+
+/**
+ * Owns its own pointer tracking (rather than lifting mouseX/mouseY into
+ * Marketing()) so a mouse move only re-renders the hero, not the whole page.
+ */
+function Hero() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const [active, setActive] = useState(false);
+
+  function handlePointerMove(e: ReactPointerEvent<HTMLDivElement>) {
+    const rect = sectionRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+    if (!active) setActive(true);
+  }
+
+  return (
+    <section
+      ref={sectionRef}
+      onPointerMove={handlePointerMove}
+      className="relative px-6 pb-20 pt-10 sm:pb-28 sm:pt-16"
+    >
+      <div
+        className="al-animate-pulse-glow pointer-events-none absolute left-1/2 top-[22%] h-72 w-[40rem] max-w-[92vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo/25 blur-[110px]"
+        aria-hidden="true"
+      />
+      <CursorTrail mouseX={mouseX} mouseY={mouseY} active={active} />
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-10 mx-auto max-w-2xl text-center"
+      >
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-light">AI Literacy + English</p>
+        <h1 className="font-display mt-5 text-4xl font-bold tracking-tight sm:text-6xl">
+          Kids don&apos;t just play with <span className="text-indigo-light">AI</span> — they learn how it thinks.
+        </h1>
+        <p className="mt-5 text-lg text-white/60">
+          A full year of teacher-led lessons where English and real AI concepts are taught side by side, one
+          screen, one class, with Vora leading the way.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <Link href="/signup">
+            <Button variant="primary" className="!rounded-full !px-8">
+              Get started
+            </Button>
+          </Link>
+          <Link href="/login">
+            <Button variant="ghost" className="!rounded-full !border !border-white/20 !bg-white/5 !px-8 !text-white hover:!bg-white/10">
+              Teacher log in
+            </Button>
+          </Link>
+        </div>
+      </motion.div>
+
+      <HeroConstellation />
+      <MobileHeroImages />
+    </section>
   );
 }
 
@@ -180,6 +280,75 @@ function SystemStatusCard() {
   );
 }
 
+function smoothPath(points: { x: number; y: number }[]): string {
+  if (points.length === 0) return "";
+  let d = `M ${points[0].x} ${points[0].y}`;
+  for (let i = 0; i < points.length - 1; i++) {
+    const midX = (points[i].x + points[i + 1].x) / 2;
+    const midY = (points[i].y + points[i + 1].y) / 2;
+    d += ` Q ${points[i].x} ${points[i].y} ${midX} ${midY}`;
+  }
+  const last = points[points.length - 1];
+  d += ` T ${last.x} ${last.y}`;
+  return d;
+}
+
+// A nominal viewBox whose aspect ratio (~5.3:1) approximates the real
+// rendered aspect of the lg:grid-cols-6 gallery row across its realistic
+// width range, so preserveAspectRatio="none" doesn't visibly distort the
+// dashed trail or waypoint circles drawn on top of it.
+const JOURNEY_VIEW = { w: 1000, h: 190 };
+const JOURNEY_POINTS = GALLERY_MONTHS.map((_, i) => ({
+  x: ((i + 0.5) / GALLERY_MONTHS.length) * JOURNEY_VIEW.w,
+  y: i % 2 === 0 ? 58 : 104,
+}));
+
+/** A dashed trail drawn over the gallery thumbnails — "a whole year's journey" made literal. Only shown at lg+, where the 6 months sit in a single row and the waypoints land on each card. */
+function GalleryJourneyPath() {
+  return (
+    <svg
+      viewBox={`0 0 ${JOURNEY_VIEW.w} ${JOURNEY_VIEW.h}`}
+      preserveAspectRatio="none"
+      className="pointer-events-none absolute inset-0 z-20 hidden lg:block"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="al-journey-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#ffb000" />
+          <stop offset="100%" stopColor="#8b7ff0" />
+        </linearGradient>
+      </defs>
+      <motion.path
+        d={smoothPath(JOURNEY_POINTS)}
+        fill="none"
+        stroke="url(#al-journey-gradient)"
+        strokeWidth={3}
+        strokeDasharray="10 10"
+        strokeLinecap="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        whileInView={{ pathLength: 1, opacity: 0.9 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+      />
+      {JOURNEY_POINTS.map((p, i) => (
+        <motion.circle
+          key={i}
+          cx={p.x}
+          cy={p.y}
+          r={10}
+          fill="#07070d"
+          stroke="#ffb000"
+          strokeWidth={3}
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.4 + i * 0.15, type: "spring", stiffness: 280, damping: 18 }}
+        />
+      ))}
+    </svg>
+  );
+}
+
 export function Marketing() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#07070d] text-white">
@@ -204,43 +373,7 @@ export function Marketing() {
         </nav>
       </header>
 
-      {/* Hero */}
-      <section className="relative px-6 pb-20 pt-10 sm:pb-28 sm:pt-16">
-        <div
-          className="al-animate-pulse-glow pointer-events-none absolute left-1/2 top-[22%] h-72 w-[40rem] max-w-[92vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo/25 blur-[110px]"
-          aria-hidden="true"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 mx-auto max-w-2xl text-center"
-        >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-light">AI Literacy + English</p>
-          <h1 className="font-display mt-5 text-4xl font-bold tracking-tight sm:text-6xl">
-            Kids don&apos;t just play with <span className="text-indigo-light">AI</span> — they learn how it thinks.
-          </h1>
-          <p className="mt-5 text-lg text-white/60">
-            A full year of teacher-led lessons where English and real AI concepts are taught side by side, one
-            screen, one class, with Vora leading the way.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/signup">
-              <Button variant="primary" className="!rounded-full !px-8">
-                Get started
-              </Button>
-            </Link>
-            <Link href="/login">
-              <Button variant="ghost" className="!rounded-full !border !border-white/20 !bg-white/5 !px-8 !text-white hover:!bg-white/10">
-                Teacher log in
-              </Button>
-            </Link>
-          </div>
-        </motion.div>
-
-        <HeroConstellation />
-        <MobileHeroImages />
-      </section>
+      <Hero />
 
       <SystemStatusCard />
 
@@ -288,26 +421,29 @@ export function Marketing() {
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-light">A whole year with Vora</p>
           <h2 className="font-display mt-3 text-3xl font-bold">12 themed units, one big idea each</h2>
         </motion.div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {GALLERY_MONTHS.map((key, i) => {
-            const month = MONTHS.find((m) => m.key === key);
-            if (!month) return null;
-            return (
-              <motion.div
-                key={key}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="al-glass overflow-hidden rounded-2xl"
-              >
-                <div className="relative aspect-square w-full">
-                  <Image src={MONTH_IMAGE[key]} alt="" fill sizes="200px" className="object-cover" />
-                </div>
-                <p className="px-2 py-2 text-center text-xs font-semibold text-white/80">{month.title}</p>
-              </motion.div>
-            );
-          })}
+        <div className="relative">
+          <GalleryJourneyPath />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {GALLERY_MONTHS.map((key, i) => {
+              const month = MONTHS.find((m) => m.key === key);
+              if (!month) return null;
+              return (
+                <motion.div
+                  key={key}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className="al-glass overflow-hidden rounded-2xl"
+                >
+                  <div className="relative aspect-square w-full">
+                    <Image src={MONTH_IMAGE[key]} alt="" fill sizes="200px" className="object-cover" />
+                  </div>
+                  <p className="px-2 py-2 text-center text-xs font-semibold text-white/80">{month.title}</p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

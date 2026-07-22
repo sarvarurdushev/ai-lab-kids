@@ -21,18 +21,31 @@ function keep<T extends { minTrack?: AgeTrack }>(items: T[], track: AgeTrack): T
 
 function filterSegment(segment: LessonSegment, track: AgeTrack): LessonSegment {
   switch (segment.type) {
+    case "warmup":
+      return track === "little_sparks" && segment.promptSimple
+        ? { ...segment, prompt: segment.promptSimple }
+        : segment;
     case "vocab":
       return { ...segment, words: keep(segment.words, track) };
     case "concept":
-      return { ...segment, lines: keep(segment.lines, track) };
+      return {
+        ...segment,
+        lines: keep(segment.lines, track).map((line) =>
+          track === "little_sparks" && line.textSimple ? { ...line, text: line.textSimple } : line
+        ),
+      };
     case "activity":
       return { ...segment, config: filterActivityConfig(segment.config, track) };
-    case "warmup":
     case "movement":
+      return { ...segment, moves: keep(segment.moves, track) };
     case "chant":
+      return { ...segment, lines: keep(segment.lines, track) };
     case "check":
-    case "wrapup":
       return segment;
+    case "wrapup":
+      return track === "little_sparks" && segment.summarySimple
+        ? { ...segment, summary: segment.summarySimple }
+        : segment;
   }
 }
 

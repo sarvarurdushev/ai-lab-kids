@@ -59,8 +59,16 @@ export const w5d1_yummy_food: Lesson = {
       lines: [
         { call: "Yummy, yummy, what do you like?", response: "I like apples, take a bite!" },
         { call: "Yummy, yummy, what's for you?", response: "I like rice, and kimchi too!" },
-        { call: "Yummy, yummy, tell me true —", response: "I like bibimbap, how about you?" },
-        { call: "Yummy, yummy, one more time —", response: "I like bread and milk, so fine!" },
+        {
+          call: "Yummy, yummy, tell me true —",
+          response: "I like bibimbap, how about you?",
+          minTrack: "explorers",
+        },
+        {
+          call: "Yummy, yummy, one more time —",
+          response: "I like bread and milk, so fine!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -71,6 +79,7 @@ export const w5d1_yummy_food: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned food words — including some we already knew in Korean — and how to say \"I like ___\" in English, acted out the food words, and chanted about our favorite foods.",
+      summarySimple: "Today we learned yummy food words and sang a food chant with Vora!",
     },
   ],
 };
@@ -88,8 +97,14 @@ export const w5d2_fruit_or_vegetable: Lesson = {
       title: "Fruit or Vegetable?",
       bigIdeas: ["perception", "learning"],
       lines: [
-        { text: "We've taught Vora to sort before — remember animals and vehicles?" },
-        { text: "Let's see if Vora can learn a brand new category: fruit and vegetable!" },
+        {
+          text: "We've taught Vora to sort before — remember animals and vehicles?",
+          textSimple: "Vora sorted before. Remember animals and cars?",
+        },
+        {
+          text: "Let's see if Vora can learn a brand new category: fruit and vegetable!",
+          textSimple: "Can Vora learn a new group: fruit and vegetables?",
+        },
       ],
       teacherNote:
         "Second full train/guess classification loop with brand-new vocabulary — a good moment to ask the class to predict out loud whether Vora will learn faster this time.",
@@ -103,7 +118,7 @@ export const w5d2_fruit_or_vegetable: Lesson = {
         { text: "Apple — pretend to take a big bite", emoji: "🍎" },
         { text: "Banana — peel an imaginary banana", emoji: "🍌" },
         { text: "Carrot — crunch like biting a carrot", emoji: "🥕" },
-        { text: "Broccoli — make tiny tree branches with your arms", emoji: "🥦" },
+        { text: "Broccoli — make tiny tree branches with your arms", emoji: "🥦", minTrack: "explorers" },
         { text: "Corn — pretend to munch corn side to side", emoji: "🌽" },
         { text: "Tomato — squeeze your hands like squishing a tomato", emoji: "🍅" },
       ],
@@ -140,8 +155,16 @@ export const w5d2_fruit_or_vegetable: Lesson = {
       lines: [
         { call: "Apple, apple, fruit or not?", response: "That's a fruit — yes, a lot!" },
         { call: "Carrot, carrot, what do you say?", response: "That's a vegetable — hip hip hooray!" },
-        { call: "Banana, banana, tell me true —", response: "That's a fruit, yellow and new!" },
-        { call: "Broccoli, broccoli, green and small —", response: "That's a vegetable, best of all!" },
+        {
+          call: "Banana, banana, tell me true —",
+          response: "That's a fruit, yellow and new!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Broccoli, broccoli, green and small —",
+          response: "That's a vegetable, best of all!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -152,6 +175,7 @@ export const w5d2_fruit_or_vegetable: Lesson = {
     {
       type: "wrapup",
       summary: "Today we practiced sorting fruit and vegetables, checked whether Vora's learning got faster with practice, acted out fruits and vegetables, and chanted about what's a fruit and what's a vegetable.",
+      summarySimple: "Today we sorted fruits and vegetables and sang a chant about them with Vora!",
     },
   ],
 };
@@ -169,8 +193,14 @@ export const w5d3_do_you_like: Lesson = {
       title: "Asking with \"Do\"",
       bigIdeas: [],
       lines: [
-        { text: "In Korean, we ask a question just by changing how our voice sounds." },
-        { text: "In English, we add a new word at the very front: \"Do.\"" },
+        {
+          text: "In Korean, we ask a question just by changing how our voice sounds.",
+          textSimple: "In Korean, our voice changes to ask a question.",
+        },
+        {
+          text: "In English, we add a new word at the very front: \"Do.\"",
+          textSimple: "In English, we add \"Do\" at the start.",
+        },
         { text: "Let's build the question one word at a time." },
       ],
       teacherNote:
@@ -182,7 +212,7 @@ export const w5d3_do_you_like: Lesson = {
       instructions:
         "Call out each line and do the action together — go slow the first time through, then speed up for a fun challenge round.",
       moves: [
-        { text: "Do you—? — shrug your shoulders and open your hands", emoji: "🤷" },
+        { text: "Do you—? — shrug your shoulders and open your hands", emoji: "🤷", minTrack: "explorers" },
         { text: "Like — give a big thumbs up", emoji: "👍" },
         { text: "Apples — pretend to take a big bite", emoji: "🍎" },
         { text: "Pizza — pretend to take a big cheesy bite", emoji: "🍕" },
@@ -212,8 +242,16 @@ export const w5d3_do_you_like: Lesson = {
       lines: [
         { call: "Do you like apples? Ask your friend —", response: "Yes, I do! Now ask again!" },
         { call: "Do you like pizza, warm and round?", response: "Yes, I do! Best food in town!" },
-        { call: "Do you like apples, hard and sweet?", response: "No, I don't! Not a treat!" },
-        { call: "Do you like pizza — one more time?", response: "Yes, I do! Say it in rhyme!" },
+        {
+          call: "Do you like apples, hard and sweet?",
+          response: "No, I don't! Not a treat!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Do you like pizza — one more time?",
+          response: "Yes, I do! Say it in rhyme!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -224,6 +262,7 @@ export const w5d3_do_you_like: Lesson = {
     {
       type: "wrapup",
       summary: "Today we built yes/no questions with \"Do you like ___?\" — closing out our week on food and choices, acted out asking and answering, and chanted \"Do you like ___?\" together.",
+      summarySimple: "Today we learned to ask \"Do you like ___?\" and chanted about our favorite foods!",
       homework: "Ask a family member \"Do you like ___?\" about three different foods.",
     },
   ],

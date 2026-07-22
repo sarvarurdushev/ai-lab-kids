@@ -34,8 +34,14 @@ export const m11_week1: Lesson = {
       bigIdeas: ["natural_interaction", "perception"],
       lines: [
         { text: "Look at my face! Can you guess how I feel?" },
-        { text: "I see a big smile, so I might guess: happy! But seeing a smile isn't the same as really knowing how you feel inside." },
-        { text: "Only you really know how you feel. Let's practice saying it together: I feel ___." },
+        {
+          text: "I see a big smile, so I might guess: happy! But seeing a smile isn't the same as really knowing how you feel inside.",
+          textSimple: "I see a smile. I guess: happy! But guessing isn't the same as really knowing.",
+        },
+        {
+          text: "Only you really know how you feel. Let's practice saying it together: I feel ___.",
+          textSimple: "Only YOU know how you feel. Let's say: I feel ___.",
+        },
         { text: "Even the smartest AI can only guess from a picture — it can't feel a warm hug or a hard day, the way you can.", minTrack: "explorers" },
       ],
       teacherNote:
@@ -51,7 +57,7 @@ export const m11_week1: Lesson = {
         { text: "Sad — pouty face and droopy shoulders", emoji: "😢" },
         { text: "Angry — stomp your feet and cross your arms", emoji: "😠" },
         { text: "Scared — jump back and cover your eyes", emoji: "😨" },
-        { text: "Surprised — gasp and throw your arms wide", emoji: "😲" },
+        { text: "Surprised — gasp and throw your arms wide", emoji: "😲", minTrack: "explorers" },
         { text: "Tired — big yawn and slow stretch", emoji: "😴" },
       ],
     },
@@ -90,8 +96,16 @@ export const m11_week1: Lesson = {
       lines: [
         { call: "Feelings, feelings, what do you see?", response: "I feel happy, happy me!" },
         { call: "Feelings, feelings, tell me true —", response: "I feel sad, a little blue." },
-        { call: "Feelings, feelings, hear me shout —", response: "I feel angry, watch me pout!" },
-        { call: "Feelings, feelings, how about you?", response: "I feel tired — good night to you!" },
+        {
+          call: "Feelings, feelings, hear me shout —",
+          response: "I feel angry, watch me pout!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Feelings, feelings, how about you?",
+          response: "I feel tired — good night to you!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -102,6 +116,7 @@ export const m11_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we named six feelings and learned \"I feel ___,\" acted them out — how an AI can spot a smile, but can't truly know how someone feels inside — practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about feelings together.",
+      summarySimple: "Today we named our feelings, made feeling faces, and chanted about feelings with Vora!",
       homework: "Ask a family member \"How do you feel?\" tonight and really listen to their answer.",
     },
   ],
@@ -120,7 +135,10 @@ export const m11_week2: Lesson = {
       title: "Just a Guess",
       bigIdeas: ["natural_interaction"],
       lines: [
-        { text: "Remember — I can see a smile in a picture, but only you really know how you feel inside." },
+        {
+          text: "Remember — I can see a smile in a picture, but only you really know how you feel inside.",
+          textSimple: "I can see a smile. But only YOU know how you feel.",
+        },
         { text: "Let's practice saying it together: I feel ___." },
       ],
       teacherNote:
@@ -136,7 +154,7 @@ export const m11_week2: Lesson = {
         { text: "Sad — droopy shoulders, pouty lip", emoji: "😢" },
         { text: "Angry — stomp and cross your arms", emoji: "😠" },
         { text: "Scared — jump and cover your eyes", emoji: "😨" },
-        { text: "Surprised — gasp, hands on cheeks", emoji: "😲" },
+        { text: "Surprised — gasp, hands on cheeks", emoji: "😲", minTrack: "explorers" },
         { text: "Tired — big yawn, slow stretch", emoji: "😴" },
       ],
     },
@@ -180,8 +198,16 @@ export const m11_week2: Lesson = {
       lines: [
         { call: "Freeze, freeze, show me your face —", response: "I feel happy, all over the place!" },
         { call: "Freeze, freeze, what do you see?", response: "I feel scared, oh help me!" },
-        { call: "Freeze, freeze, don't make a sound —", response: "I feel surprised, look all around!" },
-        { call: "Freeze, freeze, day is through —", response: "I feel tired, how about you?" },
+        {
+          call: "Freeze, freeze, don't make a sound —",
+          response: "I feel surprised, look all around!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Freeze, freeze, day is through —",
+          response: "I feel tired, how about you?",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -192,6 +218,7 @@ export const m11_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — building the sentence \"I feel happy\" one tile at a time, acting out feelings like freeze-frame photos, matching feeling words to faces, helping Vora follow clear step-by-step instructions, and chanting about feelings together.",
+      summarySimple: "Today we built the sentence \"I feel happy\" and played feeling games with Vora!",
       homework: "Act out a feeling for your family tonight and see if they can guess it in English.",
     },
   ],
@@ -210,7 +237,10 @@ export const m11_week3: Lesson = {
       title: "Matching Feelings",
       bigIdeas: ["learning"],
       lines: [
-        { text: "Remember, I can spot a smile in a photo — but I get better at it by seeing lots and lots of examples, just like you're about to do!" },
+        {
+          text: "Remember, I can spot a smile in a photo — but I get better at it by seeing lots and lots of examples, just like you're about to do!",
+          textSimple: "I get better by seeing lots of examples — just like you!",
+        },
         { text: "Let's match some feeling words to faces!" },
       ],
       teacherNote:
@@ -226,7 +256,7 @@ export const m11_week3: Lesson = {
         { text: "Sad — sniffle and rub your eyes", emoji: "😢" },
         { text: "Angry — stomp both feet loudly", emoji: "😠" },
         { text: "Scared — gasp and hide behind your hands", emoji: "😨" },
-        { text: "Surprised — jump back with wide eyes", emoji: "😲" },
+        { text: "Surprised — jump back with wide eyes", emoji: "😲", minTrack: "explorers" },
         { text: "Tired — droop your head and yawn", emoji: "😴" },
       ],
     },
@@ -270,8 +300,16 @@ export const m11_week3: Lesson = {
       lines: [
         { call: "How do you feel? Tell me it's true —", response: "I feel happy, look at you!" },
         { call: "How do you feel? Boo hoo hoo —", response: "I feel sad, boo hoo hoo!" },
-        { call: "How do you feel? Stomp your feet —", response: "I feel angry, hear the beat!" },
-        { call: "How do you feel? Day is through —", response: "I feel tired, good night to you!" },
+        {
+          call: "How do you feel? Stomp your feet —",
+          response: "I feel angry, hear the beat!",
+          minTrack: "explorers",
+        },
+        {
+          call: "How do you feel? Day is through —",
+          response: "I feel tired, good night to you!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -282,6 +320,7 @@ export const m11_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played three activities — matching feeling words to faces, acting out each feeling with our face and body, building the sentence \"I feel happy\" one tile at a time, spotting real AI in everyday life, and chanting about how we feel together.",
+      summarySimple: "Today we matched feeling words to faces and acted out our feelings with Vora!",
       homework: "Play a quick feelings guessing game with your family tonight.",
     },
   ],
@@ -300,8 +339,14 @@ export const m11_week4: Lesson = {
       title: "I Feel Happy!",
       bigIdeas: [],
       lines: [
-        { text: "I feel happy today, because I get to see you!" },
-        { text: "How do YOU feel right now? Happy? Tired? Something else — any true answer is a great answer." },
+        {
+          text: "I feel happy today, because I get to see you!",
+          textSimple: "I feel happy today!",
+        },
+        {
+          text: "How do YOU feel right now? Happy? Tired? Something else — any true answer is a great answer.",
+          textSimple: "How do YOU feel? Any answer is a great answer!",
+        },
         { text: "Your feelings are yours. Not even the smartest AI can tell you how you really feel inside — only you know that.", minTrack: "explorers" },
         { text: "Ready? Let's build the sentence together, one word at a time." },
       ],
@@ -318,7 +363,7 @@ export const m11_week4: Lesson = {
         { text: "Sad — hug yourself and sniffle", emoji: "😢" },
         { text: "Angry — cross your arms and frown", emoji: "😠" },
         { text: "Scared — freeze and gasp", emoji: "😨" },
-        { text: "Surprised — throw your hands up", emoji: "😲" },
+        { text: "Surprised — throw your hands up", emoji: "😲", minTrack: "explorers" },
         { text: "Tired — rub your eyes and yawn", emoji: "😴" },
       ],
     },
@@ -349,8 +394,16 @@ export const m11_week4: Lesson = {
       lines: [
         { call: "How do you feel? Tell me it's true —", response: "I feel happy, that's the news for you!" },
         { call: "How do you feel? Don't be shy —", response: "I feel sad, and that's just fine." },
-        { call: "How do you feel? Shout it out —", response: "I feel scared, without a doubt!" },
-        { call: "How do you feel? Day is done —", response: "I feel tired, we had such fun!" },
+        {
+          call: "How do you feel? Shout it out —",
+          response: "I feel scared, without a doubt!",
+          minTrack: "explorers",
+        },
+        {
+          call: "How do you feel? Day is done —",
+          response: "I feel tired, we had such fun!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -361,6 +414,7 @@ export const m11_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today every child said how they truly feel in English — one of the most personal sentences in the whole year — acted out feelings together, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted their true feelings together.",
+      summarySimple: "Today everyone said how they really feel in English with Vora!",
       homework: "Say \"I feel ___\" about your real feeling to someone at home tonight.",
     },
   ],

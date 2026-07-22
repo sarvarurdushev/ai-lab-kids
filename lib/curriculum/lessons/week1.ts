@@ -31,9 +31,15 @@ export const w1d1_hello_vora: Lesson = {
       bigIdeas: ["natural_interaction"],
       lines: [
         { text: "Hi! My name is Vora." },
-        { text: "I'm an AI — a computer friend who can talk and learn." },
+        {
+          text: "I'm an AI — a computer friend who can talk and learn.",
+          textSimple: "I'm a computer friend. I can talk and learn!",
+        },
         { text: "I'm not a real robot toy. I live inside a screen!" },
-        { text: "I'm going to learn English with you this whole time we're together." },
+        {
+          text: "I'm going to learn English with you this whole time we're together.",
+          textSimple: "I will learn English with you all year!",
+        },
       ],
       teacherNote:
         "Keep this concrete: Vora is a friendly character, not a lecture on AI. The goal is just \"Vora = a computer friend who talks and learns,\" nothing more technical yet.",
@@ -58,8 +64,12 @@ export const w1d1_hello_vora: Lesson = {
       lines: [
         { call: "Hello, hello, what do we say?", response: "Hello, hello, hooray, hooray!" },
         { call: "Who is this? Who is this?", response: "It's my friend, it's my friend!" },
-        { call: "Time to go, what do we say?", response: "Goodbye, goodbye, see you today!" },
-        { call: "Hello, goodbye, what do we say?", response: "Hello, friend! Goodbye, friend!" },
+        {
+          call: "Time to go, what do we say?",
+          response: "Goodbye, goodbye, see you today!",
+          minTrack: "explorers",
+        },
+        { call: "Hello, goodbye, what do we say?", response: "Hello, friend! Goodbye, friend!", minTrack: "explorers" },
       ],
     },
     {
@@ -70,6 +80,7 @@ export const w1d1_hello_vora: Lesson = {
     {
       type: "wrapup",
       summary: "Today we said hello and goodbye, met Vora, our AI friend for this course, acted out our greetings, and chanted hello and goodbye together.",
+      summarySimple: "Today we said hello and goodbye to our new friend Vora!",
       homework: "Say \"hello\" and \"goodbye\" to one family member in English tonight.",
     },
   ],
@@ -100,8 +111,14 @@ export const w1d2_voras_classroom: Lesson = {
       bigIdeas: ["perception"],
       lines: [
         { text: "I can see things too — just like you!" },
-        { text: "When I look at a picture, I try to name what's in it." },
-        { text: "That's called perception — how I understand what I see." },
+        {
+          text: "When I look at a picture, I try to name what's in it.",
+          textSimple: "I look at a picture. I try to name it!",
+        },
+        {
+          text: "That's called perception — how I understand what I see.",
+          textSimple: "That's called perception. It means understanding what I see.",
+        },
       ],
       teacherNote:
         "First use of the word \"perception\" — say it once, define it in one plain sentence, and move on. Don't quiz on the term itself.",
@@ -127,8 +144,12 @@ export const w1d2_voras_classroom: Lesson = {
       lines: [
         { call: "What is this? What is this?", response: "It's a book, it's a book!" },
         { call: "What is this? Tell me true!", response: "It's a pencil, yellow and new!" },
-        { call: "What is this? Look and see!", response: "It's a chair, for you and me!" },
-        { call: "What is this? What do you spy?", response: "It's a bag, hanging up high!" },
+        {
+          call: "What is this? Look and see!",
+          response: "It's a chair, for you and me!",
+          minTrack: "explorers",
+        },
+        { call: "What is this? What do you spy?", response: "It's a bag, hanging up high!", minTrack: "explorers" },
       ],
     },
     {
@@ -139,6 +160,7 @@ export const w1d2_voras_classroom: Lesson = {
     {
       type: "wrapup",
       summary: "Today we named five classroom objects, asked \"What is this?\", acted out each object, and chanted \"What is this?\" together.",
+      summarySimple: "Today we learned classroom words and chanted 'What is this?' together!",
     },
   ],
 };
@@ -150,15 +172,25 @@ export const w1d3_what_is_ai: Lesson = {
       type: "warmup",
       teacherScript: "Ask: \"Is a book smart? Is a phone smart?\" Let kids answer with gut instinct — there's no wrong answer yet, you're just activating the idea.",
       prompt: "Smart helper, or regular thing?",
+      promptSimple: "Is it smart, or just a thing?",
     },
     {
       type: "concept",
       title: "Smart Helper or Regular Thing?",
       bigIdeas: ["perception", "learning"],
       lines: [
-        { text: "Some things can learn and answer questions — like me!" },
-        { text: "Some things just sit there and don't change. That's okay too." },
-        { text: "Let's sort some pictures together: smart helper, or regular thing?" },
+        {
+          text: "Some things can learn and answer questions — like me!",
+          textSimple: "Some things can learn. I can learn too!",
+        },
+        {
+          text: "Some things just sit there and don't change. That's okay too.",
+          textSimple: "Some things don't learn. That's okay!",
+        },
+        {
+          text: "Let's sort some pictures together: smart helper, or regular thing?",
+          textSimple: "Let's sort pictures: smart or not smart?",
+        },
       ],
       teacherNote:
         "This is the first classification loop of the course. Frame it as sorting, not testing — wrong guesses are expected and fine.",
@@ -169,7 +201,11 @@ export const w1d3_what_is_ai: Lesson = {
       instructions:
         "Call out each item and do the action together — go slow the first time through, then speed up for a fun challenge round.",
       moves: [
-        { text: "Voice assistant — cup your hand to your ear and say 'Hello!'", emoji: "🔊" },
+        {
+          text: "Voice assistant — cup your hand to your ear and say 'Hello!'",
+          emoji: "🔊",
+          minTrack: "explorers",
+        },
         { text: "Phone — hold a pretend phone to your ear", emoji: "📱" },
         { text: "Robot — walk stiffly like a robot", emoji: "🤖" },
         { text: "Book — open your hands like a book", emoji: "📖" },
@@ -206,8 +242,12 @@ export const w1d3_what_is_ai: Lesson = {
       lines: [
         { call: "Robot, robot, what are you?", response: "I'm a smart helper, that is true!" },
         { call: "Phone, phone, tell me so,", response: "I'm a smart helper, yes, I know!" },
-        { call: "Book, book, can you learn?", response: "No, I'm a regular thing, it's my turn!" },
-        { call: "Ball, ball, smart or plain?", response: "Just a regular thing, again and again!" },
+        {
+          call: "Book, book, can you learn?",
+          response: "No, I'm a regular thing, it's my turn!",
+          minTrack: "explorers",
+        },
+        { call: "Ball, ball, smart or plain?", response: "Just a regular thing, again and again!", minTrack: "explorers" },
       ],
     },
     {
@@ -218,6 +258,7 @@ export const w1d3_what_is_ai: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned that some things can learn and answer, and some things can't — we practiced sorting them just like Vora does, acted out smart helpers and regular things, and chanted about them together.",
+      summarySimple: "Today we learned that some things are smart helpers and some things are not!",
     },
   ],
 };

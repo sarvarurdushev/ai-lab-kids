@@ -14,16 +14,29 @@ export const w8d1_talking_to_ai_safely: Lesson = {
       type: "warmup",
       teacherScript: "Ask: \"Is Vora a real person?\" Let kids answer, then say \"Right — and that means talking to Vora has some special rules.\"",
       prompt: "Talking to AI is a little different.",
+      promptSimple: "AI is not a real person.",
     },
     {
       type: "concept",
       title: "Talking to AI Safely",
       bigIdeas: ["natural_interaction", "societal_impact"],
       lines: [
-        { text: "AI only knows what it's been shown or told — it doesn't know you unless you tell it." },
-        { text: "Never share your real name, address, or photos with an AI without a grown-up." },
-        { text: "If an AI says something confusing or scary, tell a grown-up right away." },
-        { text: "AI can make mistakes — just like I did with the calculator sort! It's okay to double-check." },
+        {
+          text: "AI only knows what it's been shown or told — it doesn't know you unless you tell it.",
+          textSimple: "AI only knows what you tell it.",
+        },
+        {
+          text: "Never share your real name, address, or photos with an AI without a grown-up.",
+          textSimple: "Don't share your name or photos with AI alone.",
+        },
+        {
+          text: "If an AI says something confusing or scary, tell a grown-up right away.",
+          textSimple: "If AI says something scary, tell a grown-up.",
+        },
+        {
+          text: "AI can make mistakes — just like I did with the calculator sort! It's okay to double-check.",
+          textSimple: "AI can make mistakes. It's okay to double-check!",
+        },
       ],
       teacherNote:
         "Read each rule aloud once, then ask the class to repeat it back in their own words (English or Korean, either is fine here) — this is a discussion lesson, not a decoding-practice lesson. Deliberately kept to four short lines.",
@@ -50,8 +63,16 @@ export const w8d1_talking_to_ai_safely: Lesson = {
       lines: [
         { call: "AI, AI, what's the rule?", response: "Don't share your name, keep it cool!" },
         { call: "AI, AI, what do we do?", response: "Don't share your address, that's true!" },
-        { call: "AI, AI, if it's scary —", response: "Tell a grown-up, don't be wary!" },
-        { call: "AI, AI, can it be wrong?", response: "Yes it can — double-check along!" },
+        {
+          call: "AI, AI, if it's scary —",
+          response: "Tell a grown-up, don't be wary!",
+          minTrack: "explorers",
+        },
+        {
+          call: "AI, AI, can it be wrong?",
+          response: "Yes it can — double-check along!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -62,6 +83,7 @@ export const w8d1_talking_to_ai_safely: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned four rules for talking to AI safely — the last new idea before our review week, acted out each safety rule, and chanted them together.",
+      summarySimple: "Today we learned safety rules for talking to AI, and chanted them together!",
       homework: "Tell a family member one AI safety rule you learned today.",
     },
   ],
@@ -159,8 +181,16 @@ export const w8d2_review_carnival: Lesson = {
       lines: [
         { call: "Carnival, carnival, what do you see?", response: "I have two dogs, look at me!" },
         { call: "Carnival, carnival, tell me true —", response: "I have two birds, how about you?" },
-        { call: "Carnival, carnival, hop this way —", response: "I have two rabbits, hip hip hooray!" },
-        { call: "Carnival, carnival, our review's done —", response: "We learned so much and had such fun!" },
+        {
+          call: "Carnival, carnival, hop this way —",
+          response: "I have two rabbits, hip hip hooray!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Carnival, carnival, our review's done —",
+          response: "We learned so much and had such fun!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -171,6 +201,7 @@ export const w8d2_review_carnival: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played one round of every game from this unit — a fun cumulative check of everything we've learned, warmed up acting out review words, and ended with a carnival chant together.",
+      summarySimple: "Today we played review games and sang a carnival chant with Vora!",
     },
   ],
 };
@@ -188,9 +219,18 @@ export const w8d3_teach_vora_day: Lesson = {
       title: "Everything We Taught Vora",
       bigIdeas: ["learning", "societal_impact"],
       lines: [
-        { text: "This unit, you taught me animals, food, colors, and how AI helpers work." },
-        { text: "You showed me that even AI needs lots of examples, and that it's okay to be wrong sometimes." },
-        { text: "Now it's your turn: invent your own category and teach it to me!" },
+        {
+          text: "This unit, you taught me animals, food, colors, and how AI helpers work.",
+          textSimple: "You taught me lots of new things this unit!",
+        },
+        {
+          text: "You showed me that even AI needs lots of examples, and that it's okay to be wrong sometimes.",
+          textSimple: "AI needs lots of examples. It's okay to be wrong!",
+        },
+        {
+          text: "Now it's your turn: invent your own category and teach it to me!",
+          textSimple: "Now it's your turn to teach me something new!",
+        },
       ],
       teacherNote:
         "This is the unit's capstone. Split the class into small groups; each group picks a category (\"toys vs. not toys,\" \"sports vs. not sports\" — anything with real classroom objects works), describes it to the class in English (\"A ___ is a toy\"), then leads the room through a live version of the Train the Robot loop using real objects. The app activity below is one worked example to run together first, as a model.",
@@ -237,8 +277,16 @@ export const w8d3_teach_vora_day: Lesson = {
       lines: [
         { call: "Teacher Vora, what do you see?", response: "A ball is a toy, bounce with me!" },
         { call: "Teacher Vora, tell me true —", response: "A teddy bear's a toy for you!" },
-        { call: "Teacher Vora, what do you say?", response: "A book is not a toy today!" },
-        { call: "Teacher Vora, we've learned so much —", response: "Now it's our turn to teach as such!" },
+        {
+          call: "Teacher Vora, what do you say?",
+          response: "A book is not a toy today!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Teacher Vora, we've learned so much —",
+          response: "Now it's our turn to teach as such!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -249,6 +297,7 @@ export const w8d3_teach_vora_day: Lesson = {
     {
       type: "wrapup",
       summary: "You did it — eight weeks of English and AI, and today you taught Vora something brand new after acting out toy words and chanting together. Great job, AI Explorers!",
+      summarySimple: "Today you taught Vora something new. Great job!",
     },
   ],
 };

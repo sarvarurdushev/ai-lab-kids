@@ -35,8 +35,14 @@ export const m6_week1: Lesson = {
       bigIdeas: ["perception"],
       lines: [
         { text: "Look — it's a big elephant! And over there, it's a small monkey!" },
-        { text: "\"Big\" and \"small\" go right before the animal name, just like in Korean!" },
-        { text: "Deep in a forest, a hidden camera watches all day and night. When an animal walks by, AI helps it guess: lion, or mouse?" },
+        {
+          text: "\"Big\" and \"small\" go right before the animal name, just like in Korean!",
+          textSimple: "Say \"big\" or \"small\" right before the animal name!",
+        },
+        {
+          text: "Deep in a forest, a hidden camera watches all day and night. When an animal walks by, AI helps it guess: lion, or mouse?",
+          textSimple: "A hidden camera watches the forest. AI guesses which animal it sees!",
+        },
         { text: "Scientists use those camera photos to learn which animals live in a forest — without ever walking in themselves!", minTrack: "explorers" },
       ],
       teacherNote:
@@ -91,8 +97,16 @@ export const m6_week1: Lesson = {
       lines: [
         { call: "Animal, animal, who do you see?", response: "It's a big elephant, big as can be!" },
         { call: "Animal, animal, who's on the ground?", response: "It's a small monkey, hopping around!" },
-        { call: "Animal, animal, who's big and strong?", response: "It's a big lion, roaring along!" },
-        { call: "Animal, animal, who waddles by?", response: "It's a small penguin, waving hi!" },
+        {
+          call: "Animal, animal, who's big and strong?",
+          response: "It's a big lion, roaring along!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Animal, animal, who waddles by?",
+          response: "It's a small penguin, waving hi!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -103,6 +117,7 @@ export const m6_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned wild animal words and \"It's a big / small ___\" — and how wildlife cameras use AI to recognize which animal walked by — acted out wild animal actions together, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about big and small animals together.",
+      summarySimple: "Today we learned animal words, said big and small, and sang an animal chant with Vora!",
       homework: "Find a picture of an animal at home and say \"It's a big ___\" or \"It's a small ___.\"",
     },
   ],
@@ -121,7 +136,10 @@ export const m6_week2: Lesson = {
       title: "Patterns Help Me See",
       bigIdeas: ["perception"],
       lines: [
-        { text: "Remember the wildlife camera? It looks for patterns to guess which animal walked by." },
+        {
+          text: "Remember the wildlife camera? It looks for patterns to guess which animal walked by.",
+          textSimple: "The wildlife camera looks for patterns too!",
+        },
         { text: "Today, you get to find the pattern too!" },
       ],
       teacherNote:
@@ -189,8 +207,16 @@ export const m6_week2: Lesson = {
       lines: [
         { call: "Animal, animal, what comes next?", response: "It's a big lion, roaring next!" },
         { call: "Animal, animal, who do you see?", response: "It's a small monkey, hopping with glee!" },
-        { call: "Animal, animal, what's the pattern true?", response: "It's a big elephant, right on cue!" },
-        { call: "Animal, animal, guess who's here?", response: "It's a small penguin, give a cheer!" },
+        {
+          call: "Animal, animal, what's the pattern true?",
+          response: "It's a big elephant, right on cue!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Animal, animal, guess who's here?",
+          response: "It's a small penguin, give a cheer!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -201,6 +227,7 @@ export const m6_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we acted out animal actions, played three activities — guessing what comes next in an animal pattern, matching animal words to pictures, and helping Vora follow clear step-by-step instructions — and chanted about big and small animals together.",
+      summarySimple: "Today we played animal games, moved our bodies, and sang an animal chant with Vora!",
     },
   ],
 };
@@ -218,7 +245,10 @@ export const m6_week3: Lesson = {
       title: "Remembering Like Vora",
       bigIdeas: ["learning"],
       lines: [
-        { text: "The more pictures I see, the better I get at remembering them — that's learning!" },
+        {
+          text: "The more pictures I see, the better I get at remembering them — that's learning!",
+          textSimple: "The more I practice, the better I remember!",
+        },
         { text: "Let's practice remembering animal words together." },
       ],
       teacherNote:
@@ -286,8 +316,16 @@ export const m6_week3: Lesson = {
       lines: [
         { call: "What's this animal, king of them all?", response: "It's a lion, standing tall!" },
         { call: "What's this animal, swinging by?", response: "It's a monkey, way up high!" },
-        { call: "What's this animal, black and white?", response: "It's a zebra, what a sight!" },
-        { call: "What's this animal, waddling slow?", response: "It's a penguin, off we go!" },
+        {
+          call: "What's this animal, black and white?",
+          response: "It's a zebra, what a sight!",
+          minTrack: "explorers",
+        },
+        {
+          call: "What's this animal, waddling slow?",
+          response: "It's a penguin, off we go!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -298,6 +336,7 @@ export const m6_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we acted out animal actions, played three activities — matching animal words to pictures, guessing what comes next in an animal pattern, and spotting real AI in everyday life — and chanted about the animals together.",
+      summarySimple: "Today we matched animal words, moved our bodies, and sang an animal chant with Vora!",
     },
   ],
 };
@@ -315,9 +354,18 @@ export const m6_week4: Lesson = {
       title: "Remember This Sound?",
       bigIdeas: ["perception"],
       lines: [
-        { text: "Remember the \"f\" sound? Bite your bottom lip gently and blow air." },
-        { text: "We practiced this sound back in Week 3 of Vora's Classroom — let's see how much you remember!" },
-        { text: "Let's listen very carefully and pick the word we hear: fan, or pan?" },
+        {
+          text: "Remember the \"f\" sound? Bite your bottom lip gently and blow air.",
+          textSimple: "Remember the \"f\" sound? Bite your lip and blow air!",
+        },
+        {
+          text: "We practiced this sound back in Week 3 of Vora's Classroom — let's see how much you remember!",
+          textSimple: "We practiced this sound before. Let's remember it!",
+        },
+        {
+          text: "Let's listen very carefully and pick the word we hear: fan, or pan?",
+          textSimple: "Let's listen! Fan, or pan?",
+        },
         { text: "Even grown-ups keep practicing sounds that aren't in their first language — you're doing exactly what language learners do!", minTrack: "explorers" },
       ],
       teacherNote:
@@ -372,8 +420,16 @@ export const m6_week4: Lesson = {
       lines: [
         { call: "Listen close — fan or pan?", response: "Fan, fan, fan — feel the air!" },
         { call: "Listen close — fine or pine?", response: "Fine, fine, fine — thumbs up there!" },
-        { call: "Listen close — fork or pork?", response: "Fork, fork, fork — time to eat!" },
-        { call: "Listen close, can you tell?", response: "F or P — we know them well!" },
+        {
+          call: "Listen close — fork or pork?",
+          response: "Fork, fork, fork — time to eat!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Listen close, can you tell?",
+          response: "F or P — we know them well!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -384,6 +440,7 @@ export const m6_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we reviewed the f sound from Week 3 — a great checkpoint before we meet two more tricky sounds later this year — acted out fan, pan, and more sound words, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted the f and p sounds together.",
+      summarySimple: "Today we practiced the f and p sounds, moved our bodies, and sang a sound chant with Vora!",
     },
   ],
 };

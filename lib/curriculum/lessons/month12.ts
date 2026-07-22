@@ -33,9 +33,15 @@ export const m12_week1: Lesson = {
       title: "I Want ___ for Christmas!",
       bigIdeas: ["societal_impact"],
       lines: [
-        { text: "Brrr! It's winter — time for snow, cookies, and a Christmas tree!" },
+        {
+          text: "Brrr! It's winter — time for snow, cookies, and a Christmas tree!",
+          textSimple: "It's winter! Time for snow and cookies!",
+        },
         { text: "I want a new game for Christmas. What do you want? \"I want ___ for Christmas.\"" },
-        { text: "This year, you taught me so much! Like how a translator app helps people who speak different languages, how a wildlife camera spots an animal in the dark, and how a weather forecast guesses tomorrow's weather." },
+        {
+          text: "This year, you taught me so much! Like how a translator app helps people who speak different languages, how a wildlife camera spots an animal in the dark, and how a weather forecast guesses tomorrow's weather.",
+          textSimple: "This year, you taught me so much about AI helpers!",
+        },
         { text: "You even taught me that a map app finds the fastest way home by trying lots of paths!", minTrack: "explorers" },
       ],
       teacherNote:
@@ -51,7 +57,7 @@ export const m12_week1: Lesson = {
         { text: "Snowman — stand round and stiff like a snowman", emoji: "⛄" },
         { text: "Gift — mime shaking a wrapped present by your ear", emoji: "🎁" },
         { text: "Christmas tree — stretch your arms out like branches", emoji: "🎄" },
-        { text: "Santa — pat your belly and laugh \"ho ho ho\"", emoji: "🎅" },
+        { text: "Santa — pat your belly and laugh \"ho ho ho\"", emoji: "🎅", minTrack: "explorers" },
         { text: "Cookie — mime taking a big bite", emoji: "🍪" },
       ],
     },
@@ -83,8 +89,16 @@ export const m12_week1: Lesson = {
       lines: [
         { call: "Christmas, Christmas, what do you see?", response: "I want a gift, right under the tree!" },
         { call: "Christmas, Christmas, what's your wish?", response: "I want a snowman, just like this!" },
-        { call: "Christmas, Christmas, what's the treat?", response: "I want a cookie, yummy and sweet!" },
-        { call: "Christmas, Christmas, tell me true —", response: "What do you want? It's up to you!" },
+        {
+          call: "Christmas, Christmas, what's the treat?",
+          response: "I want a cookie, yummy and sweet!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Christmas, Christmas, tell me true —",
+          response: "What do you want? It's up to you!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -95,6 +109,7 @@ export const m12_week1: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned winter words, acted them out, the sentence \"I want ___ for Christmas,\" remembered AI helpers from all through the year, practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about Christmas wishes together.",
+      summarySimple: "Today we learned winter words and sang about Christmas wishes with Vora!",
       homework: "Tell your family what you want for Christmas, and one AI helper you learned about this year.",
     },
   ],
@@ -107,13 +122,17 @@ export const m12_week2: Lesson = {
       type: "warmup",
       teacherScript: "Tell the class this is Round 1 of the Year-End Vora Carnival — a sorting game mixing words all the way back from Month 1. Ask: \"Do you remember any of our old words?\"",
       prompt: "Welcome back to the Vora Carnival — Round 1! 🎉",
+      promptSimple: "Round 1! Let's play! 🎉",
     },
     {
       type: "concept",
       title: "One Year of Sorting",
       bigIdeas: ["perception", "learning"],
       lines: [
-        { text: "All year, I've been sorting pictures into groups — space things, animals, feelings, and more!" },
+        {
+          text: "All year, I've been sorting pictures into groups — space things, animals, feelings, and more!",
+          textSimple: "All year, I sorted pictures into groups!",
+        },
         { text: "Let's see how many old words you still remember!" },
       ],
       teacherNote:
@@ -129,8 +148,8 @@ export const m12_week2: Lesson = {
         { text: "Airplane — stretch your arms out wide and zoom around", emoji: "✈️" },
         { text: "Sun — stretch your arms up high and shine", emoji: "☀️" },
         { text: "Lion — stomp and give a big roar", emoji: "🦁" },
-        { text: "Elephant — swing your arm like a trunk", emoji: "🐘" },
-        { text: "Train — chug your arms like train wheels", emoji: "🚂" },
+        { text: "Elephant — swing your arm like a trunk", emoji: "🐘", minTrack: "explorers" },
+        { text: "Train — chug your arms like train wheels", emoji: "🚂", minTrack: "explorers" },
         { text: "Car — pretend to steer a wheel fast", emoji: "🚗" },
       ],
     },
@@ -187,8 +206,16 @@ export const m12_week2: Lesson = {
       lines: [
         { call: "Rocket, rocket, where do you go?", response: "Up in the sky, blast off — go!" },
         { call: "Lion, lion, where do you roam?", response: "On the ground, that's my home!" },
-        { call: "Airplane, airplane, where do you fly?", response: "Up, up, up in the sky!" },
-        { call: "Car, car, where do you drive?", response: "On the ground, come along for the ride!" },
+        {
+          call: "Airplane, airplane, where do you fly?",
+          response: "Up, up, up in the sky!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Car, car, where do you drive?",
+          response: "On the ground, come along for the ride!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -199,6 +226,7 @@ export const m12_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played two carnival rounds — a big review sort of words from all through the year, acted many of them out, a first round of year-long patterns, helped Vora follow clear step-by-step instructions, and chanted about sky and ground together.",
+      summarySimple: "Today we played a fun Vora Carnival game, remembering old words together!",
       homework: "Tell your family one word you remembered from earlier this year.",
     },
   ],
@@ -217,7 +245,10 @@ export const m12_week3: Lesson = {
       title: "Patterns All Year Long",
       bigIdeas: ["reasoning"],
       lines: [
-        { text: "All year, I've been finding patterns — stars and moons, lions and gifts, even sunny and cloudy days!" },
+        {
+          text: "All year, I've been finding patterns — stars and moons, lions and gifts, even sunny and cloudy days!",
+          textSimple: "All year, I found patterns everywhere!",
+        },
         { text: "Let's mix them all together and see what comes next!" },
       ],
       teacherNote:
@@ -234,7 +265,7 @@ export const m12_week3: Lesson = {
         { text: "Lion — stomp and give a big roar", emoji: "🦁" },
         { text: "Gift — mime shaking a wrapped present by your ear", emoji: "🎁" },
         { text: "Sun — stretch your arms up high and shine", emoji: "☀️" },
-        { text: "Moon — curl up small and sleepy", emoji: "🌙" },
+        { text: "Moon — curl up small and sleepy", emoji: "🌙", minTrack: "explorers" },
       ],
     },
     {
@@ -290,8 +321,16 @@ export const m12_week3: Lesson = {
       lines: [
         { call: "Star, pumpkin, star, pumpkin — what comes next?", response: "Star! That's the pattern, it's no big test!" },
         { call: "Lion, gift, lion, gift — what comes next?", response: "Lion! We found the pattern best!" },
-        { call: "Sun, sun, moon, moon, sun, sun — what comes next?", response: "Moon! We can see the pattern best!" },
-        { call: "Patterns, patterns, all year through —", response: "We found them all, me and you!" },
+        {
+          call: "Sun, sun, moon, moon, sun, sun — what comes next?",
+          response: "Moon! We can see the pattern best!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Patterns, patterns, all year through —",
+          response: "We found them all, me and you!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -302,6 +341,7 @@ export const m12_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we played two carnival rounds — a whole year of patterns, acted out some of the pictures, one big review sort of words from every month, practiced spotting real AI in everyday life, and chanted about what comes next together.",
+      summarySimple: "Today we played a pattern game and found what comes next with Vora!",
       homework: "Make up your own pattern at home and ask your family what comes next.",
     },
   ],
@@ -320,9 +360,18 @@ export const m12_week4: Lesson = {
       title: "One Brand-New Sound",
       bigIdeas: ["perception"],
       lines: [
-        { text: "This year, our ears worked hard: light and right, fan and pan, think and sink..." },
-        { text: "Today's sound is brand new — we've never practiced it before: /v/!" },
-        { text: "Bite your bottom lip gently and buzz: vvvan. Now listen closely — van, or ban?" },
+        {
+          text: "This year, our ears worked hard: light and right, fan and pan, think and sink...",
+          textSimple: "This year, we practiced listening hard!",
+        },
+        {
+          text: "Today's sound is brand new — we've never practiced it before: /v/!",
+          textSimple: "Today's sound is brand new: /v/!",
+        },
+        {
+          text: "Bite your bottom lip gently and buzz: vvvan. Now listen closely — van, or ban?",
+          textSimple: "Buzz your lip: vvvan! Van, or ban?",
+        },
         { text: "Korean doesn't have this exact sound, so even grown-ups keep practicing it — you're doing exactly what real language learners do!", minTrack: "explorers" },
       ],
       teacherNote:
@@ -338,8 +387,8 @@ export const m12_week4: Lesson = {
         { text: "Ban — cross your arms and shake your head no", emoji: "🚫" },
         { text: "Vest — pat your chest like zipping up a vest", emoji: "🦺" },
         { text: "Best — throw your arms up like a champion", emoji: "🥇" },
-        { text: "Vet — pretend to gently pet an animal", emoji: "👩‍⚕️" },
-        { text: "Bet — shrug and roll invisible dice", emoji: "🎲" },
+        { text: "Vet — pretend to gently pet an animal", emoji: "👩‍⚕️", minTrack: "explorers" },
+        { text: "Bet — shrug and roll invisible dice", emoji: "🎲", minTrack: "explorers" },
       ],
     },
     {
@@ -376,8 +425,16 @@ export const m12_week4: Lesson = {
       lines: [
         { call: "Listen, listen, van or ban?", response: "Van, van, drive if you can!" },
         { call: "Listen, listen, vest or best?", response: "Vest, vest, zip up your chest!" },
-        { call: "Listen, listen, vet or bet?", response: "Vet, vet, don't you forget!" },
-        { call: "Listen, listen, we're at the end —", response: "We learned so much, our AI friend!" },
+        {
+          call: "Listen, listen, vet or bet?",
+          response: "Vet, vet, don't you forget!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Listen, listen, we're at the end —",
+          response: "We learned so much, our AI friend!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -388,6 +445,7 @@ export const m12_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we met one brand-new sound, /v/, acted out van, vest, and vet, finished the year's whole listening journey — light and right, fan and pan, think and sink, and now van and ban — helped Vora follow clear step-by-step instructions, spotted real AI in everyday life one last time, and chanted van and ban together to close out the year.",
+      summarySimple: "Today we learned a brand-new sound, /v/, and chanted van and ban with Vora!",
       homework: "Practice saying \"van\" and \"ban\" for your family tonight — see if they can hear the difference too!",
     },
   ],

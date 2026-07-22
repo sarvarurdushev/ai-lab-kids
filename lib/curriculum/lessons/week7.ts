@@ -46,7 +46,10 @@ export const w7d1_what_can_robots_do: Lesson = {
       title: "Robots Can...",
       bigIdeas: ["societal_impact"],
       lines: [
-        { text: "Real robots can clean floors, and real robots can fly!" },
+        {
+          text: "Real robots can clean floors, and real robots can fly!",
+          textSimple: "Real robots can clean. Real robots can fly!",
+        },
         { text: "\"Can\" tells us what something is able to do." },
       ],
       teacherNote: "First real-world grounding of \"robot\" beyond Vora the character — robot vacuums and delivery drones are good concrete examples if kids ask for more.",
@@ -59,8 +62,16 @@ export const w7d1_what_can_robots_do: Lesson = {
       lines: [
         { call: "Robot, robot, what can you do?", response: "I can clean, clean, just for you!" },
         { call: "Robot, robot, tell me true —", response: "I can cook, cook, a meal for you!" },
-        { call: "Robot, robot, up in the sky —", response: "I can fly, fly, way up high!" },
-        { call: "Robot, robot, one more thing —", response: "I can swim, swim, hear me sing!" },
+        {
+          call: "Robot, robot, up in the sky —",
+          response: "I can fly, fly, way up high!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Robot, robot, one more thing —",
+          response: "I can swim, swim, hear me sing!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -71,6 +82,7 @@ export const w7d1_what_can_robots_do: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned action verbs and how \"can\" describes what something is able to do, acted out each action, and chanted about what robots can do together.",
+      summarySimple: "Today we learned action words and chanted about what robots can do!",
     },
   ],
 };
@@ -88,9 +100,18 @@ export const w7d2_robots_at_home_and_school: Lesson = {
       title: "Robots at Home and School",
       bigIdeas: ["societal_impact", "perception"],
       lines: [
-        { text: "Some helpers around you are AI — they learn and answer." },
-        { text: "Some helpers are smart tools, but not AI — they just do one job the same way every time." },
-        { text: "This one is tricky — let's sort them together and talk about why." },
+        {
+          text: "Some helpers around you are AI — they learn and answer.",
+          textSimple: "Some helpers are AI. They learn and answer!",
+        },
+        {
+          text: "Some helpers are smart tools, but not AI — they just do one job the same way every time.",
+          textSimple: "Some helpers are not AI. They do the same job every time.",
+        },
+        {
+          text: "This one is tricky — let's sort them together and talk about why.",
+          textSimple: "This one is tricky. Let's sort them together!",
+        },
       ],
       teacherNote:
         "The hardest sort in the unit on purpose — a calculator is fast and \"smart-seeming\" but doesn't learn or adapt, which is exactly the distinction worth sitting with. Expect more \"needs practice\" marks here than any other lesson; that's the activity working as intended, not a sign kids are behind.",
@@ -105,9 +126,9 @@ export const w7d2_robots_at_home_and_school: Lesson = {
         { text: "Robot vacuum — scoot low and spin in a circle", emoji: "🤖" },
         { text: "Smart speaker — tap the air like pressing a button", emoji: "📢" },
         { text: "Calculator — tap invisible number buttons", emoji: "🧮" },
-        { text: "Alarm clock — mime waking up and stretching", emoji: "⏰" },
+        { text: "Alarm clock — mime waking up and stretching", emoji: "⏰", minTrack: "explorers" },
         { text: "Flashlight — click your hands open like a beam", emoji: "🔦" },
-        { text: "Lamp — reach up high and \"switch on\" with a click", emoji: "💡" },
+        { text: "Lamp — reach up high and \"switch on\" with a click", emoji: "💡", minTrack: "explorers" },
       ],
     },
     {
@@ -139,8 +160,16 @@ export const w7d2_robots_at_home_and_school: Lesson = {
       lines: [
         { call: "Robot vacuum, what do you say?", response: "I'm AI — I learn every day!" },
         { call: "Alarm clock, what do you say?", response: "Not AI — I ring the same way!" },
-        { call: "Smart speaker, tell me true —", response: "I'm AI — I listen to you!" },
-        { call: "Flashlight, what do you say?", response: "Not AI — just click and away!" },
+        {
+          call: "Smart speaker, tell me true —",
+          response: "I'm AI — I listen to you!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Flashlight, what do you say?",
+          response: "Not AI — just click and away!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -151,6 +180,7 @@ export const w7d2_robots_at_home_and_school: Lesson = {
     {
       type: "wrapup",
       summary: "Today we sorted real helpers into AI and not-AI — the trickiest sort yet, and a big step in understanding what AI actually is, acted out each helper, and chanted about AI or not together.",
+      summarySimple: "Today we sorted helpers into AI and not-AI, and chanted about it together!",
     },
   ],
 };
@@ -168,9 +198,18 @@ export const w7d3_vora_makes_a_mistake: Lesson = {
       title: "Vora Can, Vora Can't",
       bigIdeas: ["societal_impact", "learning"],
       lines: [
-        { text: "I can talk, learn, and sort pictures — you've seen me do it all unit!" },
-        { text: "But I can't feel hungry, and I can't really see the real world like you do." },
-        { text: "Knowing what AI can't do is just as important as knowing what it can." },
+        {
+          text: "I can talk, learn, and sort pictures — you've seen me do it all unit!",
+          textSimple: "I can talk, learn, and sort pictures!",
+        },
+        {
+          text: "But I can't feel hungry, and I can't really see the real world like you do.",
+          textSimple: "But I can't feel hungry. I can't really see like you!",
+        },
+        {
+          text: "Knowing what AI can't do is just as important as knowing what it can.",
+          textSimple: "It's important to know what AI can't do too.",
+        },
       ],
       teacherNote: "Direct callback to Week 1 Day 3 and Week 2 Day 2's \"AI can be wrong\" thread — this lesson is where that idea gets a name (limitations) and a grammar structure to express it.",
     },
@@ -184,7 +223,7 @@ export const w7d3_vora_makes_a_mistake: Lesson = {
         { text: "Talk — cup your hands and chat", emoji: "💬" },
         { text: "Learn — tap your head like you're thinking", emoji: "🧠" },
         { text: "See a picture — make binoculars with your hands", emoji: "👀" },
-        { text: "Sort — mime moving toys into two piles", emoji: "🗂️" },
+        { text: "Sort — mime moving toys into two piles", emoji: "🗂️", minTrack: "explorers" },
         { text: "Feel hungry — rub your tummy", emoji: "🍽️" },
       ],
     },
@@ -209,8 +248,16 @@ export const w7d3_vora_makes_a_mistake: Lesson = {
       lines: [
         { call: "Vora, Vora, can you fly?", response: "Yes I can, up in the sky!" },
         { call: "Vora, Vora, can you talk?", response: "Yes I can, listen while I talk!" },
-        { call: "Vora, Vora, can you feel?", response: "No I can't, hunger's not real!" },
-        { call: "Vora, Vora, tell me true —", response: "I can learn, just like you!" },
+        {
+          call: "Vora, Vora, can you feel?",
+          response: "No I can't, hunger's not real!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Vora, Vora, tell me true —",
+          response: "I can learn, just like you!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -221,6 +268,7 @@ export const w7d3_vora_makes_a_mistake: Lesson = {
     {
       type: "wrapup",
       summary: "Today we built can/can't sentences about Vora — putting a grammar structure around the idea that AI has real limits, acted out Vora's actions, and chanted \"can\" and \"can't\" together.",
+      summarySimple: "Today we learned what Vora can and can't do, and chanted about it together!",
       homework: "Tell a family member one thing Vora can do and one thing Vora can't do.",
     },
   ],

@@ -45,8 +45,16 @@ export const w6d1_my_morning: Lesson = {
       lines: [
         { call: "Morning, morning, what do you do?", response: "I wake up bright, and stretch up too!" },
         { call: "Morning, morning, what comes next?", response: "I get dressed, all fresh and dressed!" },
-        { call: "Morning, morning, time to eat —", response: "I eat breakfast, yummy and sweet!" },
-        { call: "Morning, morning, one more thing —", response: "I brush my teeth, then off I spring!" },
+        {
+          call: "Morning, morning, time to eat —",
+          response: "I eat breakfast, yummy and sweet!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Morning, morning, one more thing —",
+          response: "I brush my teeth, then off I spring!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -57,6 +65,7 @@ export const w6d1_my_morning: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned four morning actions in English, acted them out, and chanted about our morning routine — tomorrow we'll put them in order for Vora.",
+      summarySimple: "Today we learned morning words and sang a morning chant with Vora!",
     },
   ],
 };
@@ -113,8 +122,16 @@ export const w6d3_bedtime_routine: Lesson = {
       lines: [
         { call: "Bedtime, bedtime, what comes first?", response: "First, put on pajamas — comfy and soft!" },
         { call: "Bedtime, bedtime, what comes next?", response: "Next, brush your teeth, all clean and fresh!" },
-        { call: "Bedtime, bedtime, then what do you do?", response: "Then, read a story, me and you!" },
-        { call: "Bedtime, bedtime, what comes last?", response: "Last, go to sleep — sweet dreams at last!" },
+        {
+          call: "Bedtime, bedtime, then what do you do?",
+          response: "Then, read a story, me and you!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Bedtime, bedtime, what comes last?",
+          response: "Last, go to sleep — sweet dreams at last!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -125,6 +142,7 @@ export const w6d3_bedtime_routine: Lesson = {
     {
       type: "wrapup",
       summary: "Today we ordered a brand-new routine using first/next/then/last — showing we can use the sequencing skill anywhere, not just for one routine, acted out each bedtime step, and chanted the whole routine together.",
+      summarySimple: "Today we practiced our bedtime routine in order and sang a bedtime chant!",
     },
   ],
 };
@@ -152,9 +170,18 @@ export const w6d2_give_vora_the_steps: Lesson = {
       title: "Vora Follows Exact Steps",
       bigIdeas: ["reasoning"],
       lines: [
-        { text: "Robots do exactly what you tell them — in exactly the order you tell them!" },
-        { text: "That list of steps is called an algorithm." },
-        { text: "If the order is wrong, Vora still follows it — even if it doesn't make sense!" },
+        {
+          text: "Robots do exactly what you tell them — in exactly the order you tell them!",
+          textSimple: "Robots do just what you say — in that exact order!",
+        },
+        {
+          text: "That list of steps is called an algorithm.",
+          textSimple: "This list of steps has a name: algorithm!",
+        },
+        {
+          text: "If the order is wrong, Vora still follows it — even if it doesn't make sense!",
+          textSimple: "If the order is wrong, Vora still does it!",
+        },
       ],
       teacherNote:
         "The punchline to land here: order isn't just a grammar rule, it's literally how instructions work for a computer. Consider demonstrating by \"executing\" a deliberately wrong order (e.g., \"eat breakfast, then wake up\") for a laugh before the activity.",
@@ -193,8 +220,16 @@ export const w6d2_give_vora_the_steps: Lesson = {
       lines: [
         { call: "Routine, routine, what comes first?", response: "First, we wake up — no time to rest!" },
         { call: "Routine, routine, what comes next?", response: "Next, get dressed — looking your best!" },
-        { call: "Routine, routine, then what do we do?", response: "Then, eat breakfast — yummy for you!" },
-        { call: "Routine, routine, what comes last?", response: "Last, brush your teeth — nice and fast!" },
+        {
+          call: "Routine, routine, then what do we do?",
+          response: "Then, eat breakfast — yummy for you!",
+          minTrack: "explorers",
+        },
+        {
+          call: "Routine, routine, what comes last?",
+          response: "Last, brush your teeth — nice and fast!",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -205,6 +240,7 @@ export const w6d2_give_vora_the_steps: Lesson = {
     {
       type: "wrapup",
       summary: "Today we learned first/next/then/last and practiced putting a routine in the right order — just like giving Vora an algorithm, acted out the sequencing words, and chanted our morning routine in order.",
+      summarySimple: "Today we learned first, next, then, and last, and put our morning routine in order!",
     },
   ],
 };
