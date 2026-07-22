@@ -153,6 +153,52 @@ body {
 }
 
 /*
+ * A single "terminal readout" card on the marketing page (see
+ * SystemStatusCard in components/home/Marketing.tsx) — a wink at the
+ * engineering underneath the friendly kid-facing surface, not a reskin of
+ * the whole site. Scoped to that one component only.
+ */
+.al-scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(51, 255, 0, 0.06),
+    rgba(51, 255, 0, 0.06) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+@keyframes al-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.al-animate-blink {
+  animation: al-blink 1s step-end infinite;
+}
+
+@keyframes al-typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.al-animate-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  animation: al-typewriter 1.8s steps(40, end) forwards;
+}
+
+/*
  * Program Guide print stylesheet (app/curriculum/page.tsx and
  * app/curriculum/[monthKey]/page.tsx) — this page printed/saved-as-PDF
  * *is* the sales-meeting syllabus, so print output is a tested

@@ -8,11 +8,16 @@ export type { ContentOverride };
 /** All content overrides, keyed by contentKey — small table, cheap to load whole. */
 export async function allContentOverrides(): Promise<Record<string, ContentOverride>> {
   const rows = await db
-    .select({ contentKey: contentOverrides.contentKey, textOverride: contentOverrides.textOverride, imageUrl: contentOverrides.imageUrl })
+    .select({
+      contentKey: contentOverrides.contentKey,
+      textOverride: contentOverrides.textOverride,
+      imageUrl: contentOverrides.imageUrl,
+      audioUrl: contentOverrides.audioUrl,
+    })
     .from(contentOverrides);
   const map: Record<string, ContentOverride> = {};
   for (const row of rows) {
-    map[row.contentKey] = { textOverride: row.textOverride, imageUrl: row.imageUrl };
+    map[row.contentKey] = { textOverride: row.textOverride, imageUrl: row.imageUrl, audioUrl: row.audioUrl };
   }
   return map;
 }

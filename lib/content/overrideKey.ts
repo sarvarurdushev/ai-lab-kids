@@ -1,6 +1,7 @@
 export interface ContentOverride {
   textOverride: string | null;
   imageUrl: string | null;
+  audioUrl: string | null;
 }
 
 /**
@@ -87,4 +88,28 @@ export function patternPredictorGlyphs(round: { sequence: string[]; options: str
 
 export function patternGlyphKey(lessonKey: string, segmentIndex: number, roundIndex: number, glyphIndex: number): string {
   return contentItemKey("pattern_glyph", lessonKey, segmentIndex, roundIndex, glyphIndex);
+}
+
+export function warmupPromptKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("warmup_prompt", lessonKey, segmentIndex);
+}
+
+export function conceptLineKey(lessonKey: string, segmentIndex: number, lineIndex: number): string {
+  return contentItemKey("concept_line", lessonKey, segmentIndex, lineIndex);
+}
+
+export function chantLineKey(lessonKey: string, segmentIndex: number, lineIndex: number, part: "call" | "response"): string {
+  return contentItemKey("chant_line", lessonKey, segmentIndex, lineIndex, part);
+}
+
+export function chantSongKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("chant_song", lessonKey, segmentIndex);
+}
+
+export function wrapupSummaryKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("wrapup_summary", lessonKey, segmentIndex);
+}
+
+export function wrapupHomeworkKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("wrapup_homework", lessonKey, segmentIndex);
 }

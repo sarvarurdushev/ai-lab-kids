@@ -5,13 +5,22 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { requireOrgAdmin } from "@/lib/auth/requireTeacher";
 
-const ALLOWED_TYPES: Record<string, string> = {
+const ALLOWED_IMAGE_TYPES: Record<string, string> = {
   "image/png": "png",
   "image/jpeg": "jpg",
   "image/webp": "webp",
   "image/gif": "gif",
 };
-const MAX_BYTES = 8 * 1024 * 1024; // 8MB — plenty for a phone photo, small enough to keep disk usage sane
+const ALLOWED_AUDIO_TYPES: Record<string, string> = {
+  "audio/mpeg": "mp3",
+  "audio/mp4": "m4a",
+  "audio/wav": "wav",
+  "audio/x-wav": "wav",
+  "audio/ogg": "ogg",
+  "audio/webm": "weba",
+};
+const MAX_IMAGE_BYTES = 8 * 1024 * 1024; // 8MB — plenty for a phone photo
+const MAX_AUDIO_BYTES = 20 * 1024 * 1024; // 20MB — a few minutes of a chant recording
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
 
 export async function POST(request: NextRequest) {
@@ -24,12 +33,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
   }
 
-  const ext = ALLOWED_TYPES[file.type];
+  const imageExt = ALLOWED_IMAGE_TYPES[file.type];
+  const audioExt = ALLOWED_AUDIO_TYPES[file.type];
+  const ext = imageExt ?? audioExt;
   if (!ext) {
-    return NextResponse.json({ error: "Only PNG, JPEG, WEBP, or GIF images are allowed" }, { status: 400 });
+    return NextResponse.json({ error: "Only PNG/JPEG/WEBP/GIF images or MP3/M4A/WAV/OGG audio are allowed" }, { status: 400 });
   }
-  if (file.size > MAX_BYTES) {
-    return NextResponse.json({ error: "Image is too large (max 8MB)" }, { status: 400 });
+  const maxBytes = imageExt ? MAX_IMAGE_BYTES : MAX_AUDIO_BYTES;
+  if (file.size > maxBytes) {
+    return NextResponse.json({ error: `File is too large (max ${maxBytes / (1024 * 1024)}MB)` }, { status: 400 });
   }
 
   const bytes = Buffer.from(await file.arrayBuffer());
@@ -37,5 +49,5 @@ export async function POST(request: NextRequest) {
   await mkdir(UPLOAD_DIR, { recursive: true });
   await writeFile(path.join(UPLOAD_DIR, filename), bytes);
 
-  return NextResponse.json({ url: `/uploads/${filename}` });
+  return NextResponse.json({ url: `/uploads/${filename}`, kind: imageExt ? "image" : "audio" });
 }

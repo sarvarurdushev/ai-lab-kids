@@ -19,7 +19,17 @@ import {
   type Lesson,
   type LessonSegment,
 } from "@/lib/curriculum";
-import { vocabOverrideKey, movementOverrideKey, type ContentOverride } from "@/lib/content/overrideKey";
+import {
+  vocabOverrideKey,
+  movementOverrideKey,
+  warmupPromptKey,
+  conceptLineKey,
+  chantLineKey,
+  chantSongKey,
+  wrapupSummaryKey,
+  wrapupHomeworkKey,
+  type ContentOverride,
+} from "@/lib/content/overrideKey";
 import {
   SunIcon,
   BookIcon,
@@ -239,7 +249,19 @@ export function PresentationPlayer({
                 <span className="font-bold">Teacher script: </span>
                 {segment.teacherScript}
               </p>
-              <EnglishText text={segment.prompt} size="lg" />
+              {(() => {
+                const override = contentOverrides[warmupPromptKey(lesson.key, index)];
+                return (
+                  <>
+                    {override?.imageUrl && (
+                      <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-2xl">
+                        <Image src={override.imageUrl} alt="" fill sizes="112px" className="object-cover" />
+                      </div>
+                    )}
+                    <EnglishText text={override?.textOverride || segment.prompt} size="lg" />
+                  </>
+                );
+              })()}
             </div>
           )}
 
@@ -289,12 +311,20 @@ export function PresentationPlayer({
               </div>
               <EnglishText text={segment.title} size="lg" />
               <div className="flex flex-col gap-2">
-                {segment.lines.map((line, i) => (
-                  <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
-                    <Vora size={28} />
-                    <EnglishText text={line.text} size="sm" />
-                  </div>
-                ))}
+                {segment.lines.map((line, i) => {
+                  const override = contentOverrides[conceptLineKey(lesson.key, index, i)];
+                  return (
+                    <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
+                      <Vora size={28} />
+                      {override?.imageUrl && (
+                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
+                          <Image src={override.imageUrl} alt="" fill sizes="40px" className="object-cover" />
+                        </div>
+                      )}
+                      <EnglishText text={override?.textOverride || line.text} size="sm" />
+                    </div>
+                  );
+                })}
               </div>
               <p className="rounded-xl bg-amber/10 p-2 text-xs text-ink/60">
                 <span className="font-bold">Teacher note: </span>
@@ -407,23 +437,35 @@ export function PresentationPlayer({
                 {segment.instructions}
               </p>
               <EnglishText text={segment.title} size="lg" />
+              {(() => {
+                const songOverride = contentOverrides[chantSongKey(lesson.key, index)];
+                return (
+                  songOverride?.audioUrl && (
+                    <audio controls src={songOverride.audioUrl} className="h-9 w-full" />
+                  )
+                );
+              })()}
               <div className="flex flex-col gap-2">
-                {segment.lines.map((line, i) => (
-                  <div key={i} className="flex flex-col gap-1 rounded-2xl bg-white p-3 shadow-sm">
-                    <div className="flex items-center gap-2">
-                      <span className="shrink-0 rounded-full bg-indigo/10 px-2 py-0.5 text-[10px] font-bold text-indigo-dark uppercase">
-                        Say
-                      </span>
-                      <EnglishText text={line.call} size="sm" />
+                {segment.lines.map((line, i) => {
+                  const callOverride = contentOverrides[chantLineKey(lesson.key, index, i, "call")];
+                  const responseOverride = contentOverrides[chantLineKey(lesson.key, index, i, "response")];
+                  return (
+                    <div key={i} className="flex flex-col gap-1 rounded-2xl bg-white p-3 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="shrink-0 rounded-full bg-indigo/10 px-2 py-0.5 text-[10px] font-bold text-indigo-dark uppercase">
+                          Say
+                        </span>
+                        <EnglishText text={callOverride?.textOverride || line.call} size="sm" />
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="shrink-0 rounded-full bg-coral/10 px-2 py-0.5 text-[10px] font-bold text-coral uppercase">
+                          Echo
+                        </span>
+                        <EnglishText text={responseOverride?.textOverride || line.response} size="sm" />
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="shrink-0 rounded-full bg-coral/10 px-2 py-0.5 text-[10px] font-bold text-coral uppercase">
-                        Echo
-                      </span>
-                      <EnglishText text={line.response} size="sm" />
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -442,11 +484,15 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.wrapup.className}`}>
                 <SEGMENT_LABEL.wrapup.icon size={12} /> {SEGMENT_LABEL.wrapup.text}
               </p>
-              <EnglishText text={segment.summary} size="base" />
+              <EnglishText text={contentOverrides[wrapupSummaryKey(lesson.key, index)]?.textOverride || segment.summary} size="base" />
               {segment.homework && (
                 <div className="rounded-2xl bg-mint/10 p-3">
                   <p className="text-xs font-bold text-mint">Homework</p>
-                  <EnglishText text={segment.homework} size="sm" speakable={false} />
+                  <EnglishText
+                    text={contentOverrides[wrapupHomeworkKey(lesson.key, index)]?.textOverride || segment.homework}
+                    size="sm"
+                    speakable={false}
+                  />
                 </div>
               )}
             </div>

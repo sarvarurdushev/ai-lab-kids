@@ -16,8 +16,9 @@ export const teacherApprovalSchema = z.object({
 
 export const contentOverrideSchema = z.object({
   contentKey: z.string().min(1).max(200),
-  textOverride: z.string().trim().max(200).nullable().optional(),
+  textOverride: z.string().trim().max(2000).nullable().optional(),
   imageUrl: z.string().trim().max(500).nullable().optional(),
+  audioUrl: z.string().trim().max(500).nullable().optional(),
 });
 
 export const createClassSchema = z.object({

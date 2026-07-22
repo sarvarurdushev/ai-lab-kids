@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
-import { HERO_IMAGES, BIG_IDEA_IMAGE, SEGMENT_IMAGE, MONTH_IMAGE, MONTHS } from "@/lib/curriculum";
+import { HERO_IMAGES, BIG_IDEA_IMAGE, SEGMENT_IMAGE, MONTH_IMAGE, MONTHS, curriculumStats } from "@/lib/curriculum";
 import { RobotHeadIcon, GamepadIcon, GlobeIcon, SparkleIcon, RunIcon } from "@/components/icons";
 
 const SATELLITES = [
@@ -140,6 +140,46 @@ function MobileHeroImages() {
   );
 }
 
+/**
+ * A single "terminal readout" card — a wink at the real engineering under
+ * the friendly kid-facing surface, not a reskin of the page. Numbers come
+ * straight from curriculumStats() so this can't drift into marketing
+ * fiction as content changes, same principle as the Program Guide's trust
+ * panel.
+ */
+function SystemStatusCard() {
+  const stats = curriculumStats();
+  const lines = [
+    "$ vora --status",
+    `[OK] ${stats.lessons} lessons authored`,
+    `[OK] ${stats.activities} activities across ${stats.engineCount} engine types`,
+    `[OK] ${stats.aiLabActivities} real AI-literacy activities`,
+    "[OK] 0 live AI calls — fully scripted, always safe",
+  ];
+  return (
+    <div className="mx-auto max-w-xl px-6">
+      <p className="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">Peek under the hood</p>
+      <div
+        className="al-scanlines relative overflow-hidden rounded-2xl border border-[#1f521f] bg-black p-5 font-mono text-[13px] leading-relaxed text-[#33ff00] sm:text-sm"
+        style={{ textShadow: "0 0 5px rgba(51,255,0,0.5)" }}
+      >
+        {lines.map((line, i) => (
+          <motion.p
+            key={line}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.3 }}
+          >
+            {line}
+          </motion.p>
+        ))}
+        <span className="al-animate-blink inline-block h-3.5 w-2 translate-y-0.5 bg-[#33ff00]" />
+      </div>
+    </div>
+  );
+}
+
 export function Marketing() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#07070d] text-white">
@@ -201,6 +241,8 @@ export function Marketing() {
         <HeroConstellation />
         <MobileHeroImages />
       </section>
+
+      <SystemStatusCard />
 
       {/* Features */}
       <section className="relative z-10 mx-auto max-w-5xl px-6 py-16 sm:py-24">
@@ -293,8 +335,19 @@ export function Marketing() {
         </motion.div>
       </section>
 
-      <footer className="relative z-10 border-t border-white/10 px-6 py-8 text-center text-xs text-white/40">
-        AI Lab for Kids — teacher-led AI literacy &amp; English, for ages 4-8.
+      <footer className="relative z-10 flex flex-col items-center gap-3 border-t border-white/10 px-6 py-8 text-center text-xs text-white/40">
+        <p>AI Lab for Kids — teacher-led AI literacy &amp; English, for ages 4-8.</p>
+        <nav className="flex items-center gap-4">
+          <Link href="/contact" className="hover:text-white/70">
+            Contact
+          </Link>
+          <Link href="/privacy" className="hover:text-white/70">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="hover:text-white/70">
+            Terms
+          </Link>
+        </nav>
       </footer>
     </div>
   );

@@ -14,13 +14,19 @@ export async function PUT(request: NextRequest) {
   const parsed = contentOverrideSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid request" }, { status: 400 });
 
-  const { contentKey, textOverride, imageUrl } = parsed.data;
+  const { contentKey, textOverride, imageUrl, audioUrl } = parsed.data;
   await db
     .insert(contentOverrides)
-    .values({ contentKey, textOverride: textOverride ?? null, imageUrl: imageUrl ?? null, updatedBy: admin.id })
+    .values({ contentKey, textOverride: textOverride ?? null, imageUrl: imageUrl ?? null, audioUrl: audioUrl ?? null, updatedBy: admin.id })
     .onConflictDoUpdate({
       target: contentOverrides.contentKey,
-      set: { textOverride: textOverride ?? null, imageUrl: imageUrl ?? null, updatedBy: admin.id, updatedAt: new Date() },
+      set: {
+        textOverride: textOverride ?? null,
+        imageUrl: imageUrl ?? null,
+        audioUrl: audioUrl ?? null,
+        updatedBy: admin.id,
+        updatedAt: new Date(),
+      },
     });
 
   return NextResponse.json({ ok: true });

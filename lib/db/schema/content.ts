@@ -19,6 +19,7 @@ export const contentOverrides = pgTable(
     contentKey: text("content_key").notNull(),
     textOverride: text("text_override"),
     imageUrl: text("image_url"),
+    audioUrl: text("audio_url"),
     updatedBy: uuid("updated_by").references(() => teacherAccounts.id, { onDelete: "set null" }),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },

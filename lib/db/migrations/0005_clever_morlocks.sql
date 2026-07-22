@@ -1,0 +1,1 @@
+ALTER TABLE "content_overrides" ADD COLUMN "audio_url" text;
