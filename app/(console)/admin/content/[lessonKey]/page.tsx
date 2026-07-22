@@ -18,10 +18,13 @@ import {
   patternPredictorGlyphs,
   patternGlyphKey,
   warmupPromptKey,
+  warmupPromptSimpleKey,
   conceptLineKey,
+  conceptLineSimpleKey,
   chantLineKey,
   chantSongKey,
   wrapupSummaryKey,
+  wrapupSummarySimpleKey,
   wrapupHomeworkKey,
 } from "@/lib/content/overrideKey";
 import { Card } from "@/components/ui/Card";
@@ -37,6 +40,8 @@ interface EditableItem {
   minTrack?: AgeTrack;
   /** True for plain-sentence fields (chant lines, wrap-up text) with no natural image slot — rendered with TextOverrideEditor instead of the emoji/photo box. */
   noImage?: boolean;
+  /** Set for warmup/concept/wrapup fields that have a separate wording per track (see warmupPromptSimpleKey etc.) — labels which track's version this particular editor controls, distinct from minTrack's "only shown to this track at all" meaning. */
+  variantLabel?: string;
 }
 
 interface EditableSection {
@@ -74,12 +79,24 @@ export default async function AdminLessonContentPage({
   const editableSections: EditableSection[] = lesson.segments
     .map((segment, segIndex): EditableSection | null => {
       if (segment.type === "warmup") {
-        return {
-          segIndex,
-          title: "Warm-up prompt",
-          kind: "Warm-up",
-          items: [{ key: warmupPromptKey(lesson.key, segIndex), originalText: segment.prompt, emoji: "💭" }],
-        };
+        const items: EditableItem[] = [];
+        if (track === "all" || track === "explorers") {
+          items.push({
+            key: warmupPromptKey(lesson.key, segIndex),
+            originalText: segment.prompt,
+            emoji: "💭",
+            variantLabel: "AI Explorers (6+) wording",
+          });
+        }
+        if (track === "all" || track === "little_sparks") {
+          items.push({
+            key: warmupPromptSimpleKey(lesson.key, segIndex),
+            originalText: segment.promptSimple ?? segment.prompt,
+            emoji: "💭",
+            variantLabel: "Little Sparks (4-5) wording",
+          });
+        }
+        return { segIndex, title: "Warm-up prompt", kind: "Warm-up", items };
       }
       if (segment.type === "vocab") {
         return {
@@ -95,17 +112,31 @@ export default async function AdminLessonContentPage({
         };
       }
       if (segment.type === "concept") {
-        return {
-          segIndex,
-          title: segment.title,
-          kind: "Vora Explains",
-          items: segment.lines.map((l, i) => ({
-            key: conceptLineKey(lesson.key, segIndex, i),
-            originalText: l.text,
-            emoji: "🤖",
-            minTrack: l.minTrack,
-          })),
-        };
+        const items: EditableItem[] = segment.lines.flatMap((l, i) => {
+          // A line already gated to one track entirely (minTrack) behaves like every other gated item below — one editor, hidden by the generic track filter. Only ungated lines get the paired Explorers/Little-Sparks wording editors.
+          if (l.minTrack) {
+            return [{ key: conceptLineKey(lesson.key, segIndex, i), originalText: l.text, emoji: "🤖", minTrack: l.minTrack }];
+          }
+          const lineItems: EditableItem[] = [];
+          if (track === "all" || track === "explorers") {
+            lineItems.push({
+              key: conceptLineKey(lesson.key, segIndex, i),
+              originalText: l.text,
+              emoji: "🤖",
+              variantLabel: "AI Explorers (6+) wording",
+            });
+          }
+          if (track === "all" || track === "little_sparks") {
+            lineItems.push({
+              key: conceptLineSimpleKey(lesson.key, segIndex, i),
+              originalText: l.textSimple ?? l.text,
+              emoji: "🤖",
+              variantLabel: "Little Sparks (4-5) wording",
+            });
+          }
+          return lineItems;
+        });
+        return { segIndex, title: segment.title, kind: "Vora Explains", items };
       }
       if (segment.type === "movement") {
         return {
@@ -116,6 +147,7 @@ export default async function AdminLessonContentPage({
             key: movementOverrideKey(lesson.key, segIndex, i),
             originalText: m.text,
             emoji: m.emoji,
+            minTrack: m.minTrack,
           })),
         };
       }
@@ -125,15 +157,31 @@ export default async function AdminLessonContentPage({
           title: segment.title,
           kind: "Chant Time",
           items: segment.lines.flatMap((l, i) => [
-            { key: chantLineKey(lesson.key, segIndex, i, "call" as const), originalText: l.call, emoji: "🗣️", noImage: true },
-            { key: chantLineKey(lesson.key, segIndex, i, "response" as const), originalText: l.response, emoji: "👂", noImage: true },
+            { key: chantLineKey(lesson.key, segIndex, i, "call" as const), originalText: l.call, emoji: "🗣️", noImage: true, minTrack: l.minTrack },
+            { key: chantLineKey(lesson.key, segIndex, i, "response" as const), originalText: l.response, emoji: "👂", noImage: true, minTrack: l.minTrack },
           ]),
         };
       }
       if (segment.type === "wrapup") {
-        const items: EditableItem[] = [
-          { key: wrapupSummaryKey(lesson.key, segIndex), originalText: segment.summary, emoji: "🎁", noImage: true },
-        ];
+        const items: EditableItem[] = [];
+        if (track === "all" || track === "explorers") {
+          items.push({
+            key: wrapupSummaryKey(lesson.key, segIndex),
+            originalText: segment.summary,
+            emoji: "🎁",
+            noImage: true,
+            variantLabel: "AI Explorers (6+) wording",
+          });
+        }
+        if (track === "all" || track === "little_sparks") {
+          items.push({
+            key: wrapupSummarySimpleKey(lesson.key, segIndex),
+            originalText: segment.summarySimple ?? segment.summary,
+            emoji: "🎁",
+            noImage: true,
+            variantLabel: "Little Sparks (4-5) wording",
+          });
+        }
         if (segment.homework) {
           items.push({ key: wrapupHomeworkKey(lesson.key, segIndex), originalText: segment.homework, emoji: "📝", noImage: true });
         }
@@ -312,6 +360,10 @@ export default async function AdminLessonContentPage({
               const trackBadge = item.minTrack ? (
                 <span className="mb-1 w-fit rounded-full bg-amber/15 px-2 py-0.5 text-[10px] font-bold uppercase text-amber-dark">
                   {TRACK_LABEL[item.minTrack]} only
+                </span>
+              ) : item.variantLabel ? (
+                <span className="mb-1 w-fit rounded-full bg-indigo/10 px-2 py-0.5 text-[10px] font-bold uppercase text-indigo-dark">
+                  {item.variantLabel}
                 </span>
               ) : null;
               return item.noImage ? (

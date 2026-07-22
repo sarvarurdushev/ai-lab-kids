@@ -94,8 +94,18 @@ export function warmupPromptKey(lessonKey: string, segmentIndex: number): string
   return contentItemKey("warmup_prompt", lessonKey, segmentIndex);
 }
 
+/** The Little Sparks (4-5)-only wording override — separate from warmupPromptKey's AI Explorers (6+)/default wording, so editing one track's prompt never clobbers the other's. */
+export function warmupPromptSimpleKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("warmup_prompt_simple", lessonKey, segmentIndex);
+}
+
 export function conceptLineKey(lessonKey: string, segmentIndex: number, lineIndex: number): string {
   return contentItemKey("concept_line", lessonKey, segmentIndex, lineIndex);
+}
+
+/** The Little Sparks (4-5)-only wording override for a concept line — see warmupPromptSimpleKey. */
+export function conceptLineSimpleKey(lessonKey: string, segmentIndex: number, lineIndex: number): string {
+  return contentItemKey("concept_line_simple", lessonKey, segmentIndex, lineIndex);
 }
 
 export function chantLineKey(lessonKey: string, segmentIndex: number, lineIndex: number, part: "call" | "response"): string {
@@ -108,6 +118,11 @@ export function chantSongKey(lessonKey: string, segmentIndex: number): string {
 
 export function wrapupSummaryKey(lessonKey: string, segmentIndex: number): string {
   return contentItemKey("wrapup_summary", lessonKey, segmentIndex);
+}
+
+/** The Little Sparks (4-5)-only wording override for the wrap-up summary — see warmupPromptSimpleKey. */
+export function wrapupSummarySimpleKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("wrapup_summary_simple", lessonKey, segmentIndex);
 }
 
 export function wrapupHomeworkKey(lessonKey: string, segmentIndex: number): string {

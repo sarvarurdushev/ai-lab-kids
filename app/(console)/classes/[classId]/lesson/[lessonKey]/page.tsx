@@ -44,6 +44,7 @@ export default async function LessonPage({
         classId={classId}
         initialSegmentIndex={session.currentSegmentIndex}
         contentOverrides={contentOverrides}
+        track={klass.ageTrack}
       />
     </div>
   );

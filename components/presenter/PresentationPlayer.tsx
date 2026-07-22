@@ -18,15 +18,19 @@ import {
   HERO_IMAGES,
   type Lesson,
   type LessonSegment,
+  type AgeTrack,
 } from "@/lib/curriculum";
 import {
   vocabOverrideKey,
   movementOverrideKey,
   warmupPromptKey,
+  warmupPromptSimpleKey,
   conceptLineKey,
+  conceptLineSimpleKey,
   chantLineKey,
   chantSongKey,
   wrapupSummaryKey,
+  wrapupSummarySimpleKey,
   wrapupHomeworkKey,
   type ContentOverride,
 } from "@/lib/content/overrideKey";
@@ -107,16 +111,19 @@ export function PresentationPlayer({
   classId,
   initialSegmentIndex,
   contentOverrides = {},
+  track,
 }: {
   lesson: Lesson;
   sessionId: string;
   classId: string;
   initialSegmentIndex: number;
   contentOverrides?: Record<string, ContentOverride>;
+  track: AgeTrack;
 }) {
   const [index, setIndex] = useState(Math.min(initialSegmentIndex, lesson.segments.length - 1));
   const segment = lesson.segments[index];
   const bigIdea = resolveBigIdea(lesson);
+  const isLittleSparks = track === "little_sparks";
 
   async function persistIndex(next: number) {
     setIndex(next);
@@ -250,7 +257,8 @@ export function PresentationPlayer({
                 {segment.teacherScript}
               </p>
               {(() => {
-                const override = contentOverrides[warmupPromptKey(lesson.key, index)];
+                const key = isLittleSparks ? warmupPromptSimpleKey(lesson.key, index) : warmupPromptKey(lesson.key, index);
+                const override = contentOverrides[key];
                 return (
                   <>
                     {override?.imageUrl && (
@@ -312,7 +320,8 @@ export function PresentationPlayer({
               <EnglishText text={segment.title} size="lg" />
               <div className="flex flex-col gap-2">
                 {segment.lines.map((line, i) => {
-                  const override = contentOverrides[conceptLineKey(lesson.key, index, i)];
+                  const key = isLittleSparks ? conceptLineSimpleKey(lesson.key, index, i) : conceptLineKey(lesson.key, index, i);
+                  const override = contentOverrides[key];
                   return (
                     <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
                       <Vora size={28} />
@@ -484,7 +493,13 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.wrapup.className}`}>
                 <SEGMENT_LABEL.wrapup.icon size={12} /> {SEGMENT_LABEL.wrapup.text}
               </p>
-              <EnglishText text={contentOverrides[wrapupSummaryKey(lesson.key, index)]?.textOverride || segment.summary} size="base" />
+              <EnglishText
+                text={
+                  contentOverrides[isLittleSparks ? wrapupSummarySimpleKey(lesson.key, index) : wrapupSummaryKey(lesson.key, index)]
+                    ?.textOverride || segment.summary
+                }
+                size="base"
+              />
               {segment.homework && (
                 <div className="rounded-2xl bg-mint/10 p-3">
                   <p className="text-xs font-bold text-mint">Homework</p>
