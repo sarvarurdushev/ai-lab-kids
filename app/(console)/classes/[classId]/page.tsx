@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { requireTeacher } from "@/lib/auth/requireTeacher";
 import { classForTeacher } from "@/lib/console/authz";
 import {
@@ -11,6 +12,7 @@ import {
   lessonsForMonth,
   resolveBigIdea,
   BIG_IDEA_PRESENTATION,
+  MONTH_IMAGE,
   lessonActivitySummaries,
   isAiLabEngine,
   weekRoleLabel,
@@ -146,38 +148,49 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
                   return sum + (activities?.filter((a) => isAiLabEngine(a.engine)).length ?? 0);
                 }, 0);
                 return (
-                  <Card key={month.key} className={`flex flex-col gap-2 border-l-4 ${p.accentClass}`}>
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <p className="font-display font-bold text-ink">
-                          Unit {month.monthIndex} · {month.title}
-                        </p>
-                      </div>
-                      <span
-                        className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${p.badgeClass}`}
-                      >
-                        <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label}
-                      </span>
+                  <Card key={month.key} className={`flex flex-col gap-2 overflow-hidden border-l-4 !p-0 ${p.accentClass}`}>
+                    <div className="relative h-28 w-full shrink-0">
+                      <Image
+                        src={MONTH_IMAGE[month.key]}
+                        alt=""
+                        fill
+                        sizes="480px"
+                        className="object-cover"
+                      />
                     </div>
-                    <p
-                      className={`flex items-start gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-ink/70 ${p.bannerClass} border`}
-                    >
-                      <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={14} className="mt-0.5 shrink-0" /> {month.summary}
-                    </p>
-                    {aiLabCount > 0 && (
-                      <p className="flex items-center gap-1 text-[11px] font-bold text-indigo-dark">
-                        <RobotHeadIcon size={11} /> {aiLabCount} AI Lab activities this unit
+                    <div className="flex flex-col gap-2 p-5">
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <p className="font-display font-bold text-ink">
+                            Unit {month.monthIndex} · {month.title}
+                          </p>
+                        </div>
+                        <span
+                          className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${p.badgeClass}`}
+                        >
+                          <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label}
+                        </span>
+                      </div>
+                      <p
+                        className={`flex items-start gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-ink/70 ${p.bannerClass} border`}
+                      >
+                        <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={14} className="mt-0.5 shrink-0" /> {month.summary}
                       </p>
-                    )}
-                    <div className="mt-1 flex flex-col gap-1.5">
-                      {lessons.map((lesson) => (
-                        <LessonRow
-                          key={lesson.key}
-                          lesson={lesson}
-                          classId={classId}
-                          dayLabel={weekRoleLabel(month.monthIndex, lesson.slot ?? "week1")}
-                        />
-                      ))}
+                      {aiLabCount > 0 && (
+                        <p className="flex items-center gap-1 text-[11px] font-bold text-indigo-dark">
+                          <RobotHeadIcon size={11} /> {aiLabCount} AI Lab activities this unit
+                        </p>
+                      )}
+                      <div className="mt-1 flex flex-col gap-1.5">
+                        {lessons.map((lesson) => (
+                          <LessonRow
+                            key={lesson.key}
+                            lesson={lesson}
+                            classId={classId}
+                            dayLabel={weekRoleLabel(month.monthIndex, lesson.slot ?? "week1")}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </Card>
                 );

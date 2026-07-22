@@ -2,13 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Vora } from "@/components/mascot/Vora";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { EnglishText } from "@/components/curriculum/EnglishText";
 import { BigIdeaBanner } from "@/components/curriculum/BigIdeaBanner";
-import { BIG_IDEA_LABELS, resolveBigIdea, ENGINE_PRESENTATION, isAiLabEngine, type Lesson, type LessonSegment } from "@/lib/curriculum";
+import {
+  BIG_IDEA_LABELS,
+  resolveBigIdea,
+  ENGINE_PRESENTATION,
+  isAiLabEngine,
+  SEGMENT_IMAGE,
+  HERO_IMAGES,
+  type Lesson,
+  type LessonSegment,
+} from "@/lib/curriculum";
 import {
   SunIcon,
   BookIcon,
@@ -203,12 +213,17 @@ export function PresentationPlayer({
       )}
 
       {finished ? (
-        <Card className="flex flex-col items-center gap-3 text-center">
-          <Vora size={120} mood="excited" bob celebrate />
-          <p className="font-display text-lg font-bold text-indigo-dark">Lesson complete!</p>
-          <Link href={`/classes/${classId}`}>
-            <Button variant="secondary">Back to class</Button>
-          </Link>
+        <Card className="flex flex-col items-center gap-3 overflow-hidden text-center !p-0">
+          <div className="relative h-48 w-full">
+            <Image src={HERO_IMAGES.celebrate} alt="" fill sizes="480px" className="object-cover" />
+          </div>
+          <div className="flex flex-col items-center gap-3 px-5 pb-5">
+            <Vora size={80} mood="excited" bob celebrate />
+            <p className="font-display text-lg font-bold text-indigo-dark">Lesson complete!</p>
+            <Link href={`/classes/${classId}`}>
+              <Button variant="secondary">Back to class</Button>
+            </Link>
+          </div>
         </Card>
       ) : (
         <Card className="flex flex-col gap-4">
@@ -305,6 +320,9 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.movement.className}`}>
                 <SEGMENT_LABEL.movement.icon size={12} /> {SEGMENT_LABEL.movement.text}
               </p>
+              <div className="relative h-36 w-full overflow-hidden rounded-2xl">
+                <Image src={SEGMENT_IMAGE.movement} alt="" fill sizes="480px" className="object-cover" />
+              </div>
               <p className="rounded-2xl bg-mint/5 p-3 text-sm text-ink/70">
                 <span className="font-bold">Teacher: </span>
                 {segment.instructions}
@@ -329,6 +347,9 @@ export function PresentationPlayer({
               <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.chant.className}`}>
                 <SEGMENT_LABEL.chant.icon size={12} /> {SEGMENT_LABEL.chant.text}
               </p>
+              <div className="relative h-36 w-full overflow-hidden rounded-2xl">
+                <Image src={SEGMENT_IMAGE.chant} alt="" fill sizes="480px" className="object-cover" />
+              </div>
               <p className="rounded-2xl bg-coral/5 p-3 text-sm text-ink/70">
                 <span className="font-bold">Teacher: </span>
                 {segment.instructions}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   MONTHS,
   UNITS,
@@ -9,6 +10,7 @@ import {
   curriculumStats,
   bigIdeaCoverage,
   BIG_IDEA_PRESENTATION,
+  MONTH_IMAGE,
   STANDARDS_ALIGNMENT,
   CHECKPOINT_MONTHS,
   PROGRAM_ARC,
@@ -213,12 +215,17 @@ export default function CurriculumPage() {
                       data-print-expand
                       className={`print-avoid-break rounded-2xl border-l-4 bg-white/80 shadow-sm ${p.accentClass}`}
                     >
-                      <summary className="flex cursor-pointer items-center justify-between gap-2 px-4 py-3">
-                        <div>
-                          <p className="font-display font-bold text-ink">
-                            Unit {month.monthIndex} · {month.title}
-                          </p>
-                          <p className="text-xs text-ink/50">{month.summary}</p>
+                      <summary className="flex cursor-pointer items-center justify-between gap-3 px-4 py-3">
+                        <div className="flex items-center gap-3">
+                          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl">
+                            <Image src={MONTH_IMAGE[month.key]} alt="" fill sizes="48px" className="object-cover" />
+                          </div>
+                          <div>
+                            <p className="font-display font-bold text-ink">
+                              Unit {month.monthIndex} · {month.title}
+                            </p>
+                            <p className="text-xs text-ink/50">{month.summary}</p>
+                          </div>
                         </div>
                         <span className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${p.badgeClass}`}>
                           <BigIdeaIcon bigIdea={month.bigIdeaFocus} size={11} /> {p.label}
