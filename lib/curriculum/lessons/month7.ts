@@ -137,8 +137,14 @@ export const m7_week2: Lesson = {
       title: "Vora Looks Closely",
       bigIdeas: ["perception"],
       lines: [
-        { text: "A coat, a t-shirt — I look closely at each one before deciding where it goes." },
-        { text: "That's called sorting, and it's exactly what you're about to do with today's clothes!" },
+        {
+          text: "A coat, a t-shirt — I look closely at each one before deciding where it goes.",
+          textSimple: "I look closely at each one.",
+        },
+        {
+          text: "That's called sorting, and it's exactly what you're about to do with today's clothes!",
+          textSimple: "That's sorting! Let's sort clothes too.",
+        },
       ],
       teacherNote:
         "Keep this brief — Vora and the idea of sorting-by-looking were already introduced back in Week 1's forecast talk. This is just a quick bridge into today's sorting game below.",
@@ -202,8 +208,12 @@ export const m7_week2: Lesson = {
       lines: [
         { call: "Weather, weather, what do you see?", response: "It's sunny today, warm as can be!" },
         { call: "Weather, weather, is it hot?", response: "It's hot today — shorts, I've got!" },
-        { call: "Weather, weather, feeling cold?", response: "It's cold today — put on your coat!" },
-        { call: "Weather, weather, what's today?", response: "It's sunny today — hip hip hooray!" },
+        {
+          call: "Weather, weather, feeling cold?",
+          response: "It's cold today — put on your coat!",
+          minTrack: "explorers",
+        },
+        { call: "Weather, weather, what's today?", response: "It's sunny today — hip hip hooray!", minTrack: "explorers" },
       ],
     },
     {
@@ -214,6 +224,7 @@ export const m7_week2: Lesson = {
     {
       type: "wrapup",
       summary: "Today we acted out hot and cold weather clothes, sorted clothes into hot weather and cold weather, played a second game building the sentence \"It's sunny today,\" helped Vora follow clear step-by-step instructions, and chanted about the weather together.",
+      summarySimple: "Today we sorted hot and cold clothes and chanted about the weather!",
       homework: "Pick out your own clothes for tomorrow's weather and say if they're \"hot weather\" or \"cold weather\" clothes, in English.",
     },
   ],
@@ -232,7 +243,10 @@ export const m7_week3: Lesson = {
       title: "Vora Builds a Sentence",
       bigIdeas: [],
       lines: [
-        { text: "Sunny, cloudy, rainy — whatever the weather, there's always a sentence for it: \"It's ___ today.\"" },
+        {
+          text: "Sunny, cloudy, rainy — whatever the weather, there's always a sentence for it: \"It's ___ today.\"",
+          textSimple: "There's always a sentence: \"It's ___ today.\"",
+        },
         { text: "Let's build it together, one word at a time!" },
       ],
       teacherNote:
@@ -297,8 +311,12 @@ export const m7_week3: Lesson = {
       lines: [
         { call: "Weather, weather, what do you see?", response: "It's sunny today, look and see!" },
         { call: "Weather, weather, hear the rain?", response: "It's rainy today, again and again!" },
-        { call: "Weather, weather, clear and bright?", response: "It's sunny today, what a sight!" },
-        { call: "Weather, weather, wet today?", response: "It's rainy today, hip hip hooray!" },
+        {
+          call: "Weather, weather, clear and bright?",
+          response: "It's sunny today, what a sight!",
+          minTrack: "explorers",
+        },
+        { call: "Weather, weather, wet today?", response: "It's rainy today, hip hip hooray!", minTrack: "explorers" },
       ],
     },
     {
@@ -309,6 +327,7 @@ export const m7_week3: Lesson = {
     {
       type: "wrapup",
       summary: "Today we acted out hot and cold weather clothes, played three activities — building the sentence \"It's sunny today\" one word at a time, sorting clothes into hot weather and cold weather, and spotting real AI in everyday life — and chanted about sunny and rainy weather together.",
+      summarySimple: "Today we sorted clothes, built a weather sentence, and chanted together!",
       homework: "Look outside tonight and try building today's weather sentence with a family member.",
     },
   ],
@@ -321,6 +340,7 @@ export const m7_week4: Lesson = {
       type: "warmup",
       teacherScript: "Open the blinds or point to a window and ask \"What's it like outside right now?\" Let a few kids answer in Korean before starting today's English sentence.",
       prompt: "What's it like outside? 🪟",
+      promptSimple: "Look outside! Sunny? Rainy? 🪟",
     },
     {
       type: "concept",
@@ -328,9 +348,15 @@ export const m7_week4: Lesson = {
       bigIdeas: [],
       lines: [
         { text: "Look outside the window with me — what do you see?" },
-        { text: "However the sky looks, there's a sentence for it: \"It's ___ today.\"" },
+        {
+          text: "However the sky looks, there's a sentence for it: \"It's ___ today.\"",
+          textSimple: "There's a sentence for every sky: \"It's ___ today.\"",
+        },
         { text: "In Korean, weather doesn't need a subject — but English always keeps a little word: \"It.\"", minTrack: "explorers" },
-        { text: "Let's build it together, then check if it's really true outside!" },
+        {
+          text: "Let's build it together, then check if it's really true outside!",
+          textSimple: "Let's build it, then check outside!",
+        },
       ],
       teacherNote:
         "This is the most immediately real-world-checkable sentence pattern in the curriculum — after building it, look out the window together and see if the class's sentence is actually true today. Also a good moment to flag that English's \"It's\" has no direct Korean equivalent: Korean weather sentences don't need a placeholder subject at all, so kids may want to skip straight to the weather word. Point out that English always keeps \"It's,\" even though nothing specific is \"it.\"",
@@ -376,8 +402,12 @@ export const m7_week4: Lesson = {
       lines: [
         { call: "Weather, weather, white and cold?", response: "It's snowy today, so I'm told!" },
         { call: "Weather, weather, sweaty and bright?", response: "It's hot today, day and night!" },
-        { call: "Weather, weather, shiver and shake?", response: "It's cold today, for goodness sake!" },
-        { call: "Weather, weather, what's today?", response: "Check outside and shout — hooray!" },
+        {
+          call: "Weather, weather, shiver and shake?",
+          response: "It's cold today, for goodness sake!",
+          minTrack: "explorers",
+        },
+        { call: "Weather, weather, what's today?", response: "Check outside and shout — hooray!", minTrack: "explorers" },
       ],
     },
     {
@@ -388,6 +418,7 @@ export const m7_week4: Lesson = {
     {
       type: "wrapup",
       summary: "Today we acted out weather words one more time, built \"It's ___ today,\" checked it against the real sky outside our window, helped Vora follow clear step-by-step instructions, spotted real AI in everyday life, and chanted about the weather together.",
+      summarySimple: "Today we said weather words, built a sentence, and checked the real sky!",
       homework: "Check the weather every day this week and greet a family member with \"It's ___ today!\" in English.",
     },
   ],
