@@ -18,7 +18,7 @@ export default async function ConsoleLayout({ children }: { children: React.Reac
         </Link>
         <div className="flex items-center gap-3 text-sm">
           {teacher.role === "org_admin" && (
-            <Link href="/admin/teachers" className="font-semibold text-ink/50 hover:text-ink">
+            <Link href="/admin" className="font-semibold text-ink/50 hover:text-ink">
               Admin
             </Link>
           )}
