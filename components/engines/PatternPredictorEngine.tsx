@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { PatternGridIcon, CheckCircleIcon, XCircleIcon } from "@/components/icons";
 import type { PatternPredictorConfig } from "@/lib/curriculum";
+import { patternPredictorGlyphs, patternGlyphKey, type ContentOverride } from "@/lib/content/overrideKey";
+import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 
 // "What comes next?" pattern game — concretely demonstrates AI4K12 Big Idea
 // 2 (Representation & Reasoning): finding the rule in a short sequence and
@@ -34,9 +36,15 @@ function buildRounds(config: PatternPredictorConfig): Round[] {
 
 export function PatternPredictorEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: PatternPredictorConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
   const rounds = useMemo(() => buildRounds(config), [config]);
@@ -73,6 +81,12 @@ export function PatternPredictorEngine({
 
   const round = rounds[roundIndex];
   const data = config.rounds[round.roundIndex];
+  const glyphs = patternPredictorGlyphs(data);
+  function glyphOverride(value: string) {
+    const glyphIndex = glyphs.indexOf(value);
+    if (glyphIndex === -1) return undefined;
+    return contentOverrides[patternGlyphKey(lessonKey, segmentIndex, round.roundIndex, glyphIndex)];
+  }
 
   function choose(option: string) {
     if (answered) return;
@@ -117,7 +131,7 @@ export function PatternPredictorEngine({
           <Vora size={52} mood={voraMood} />
           <div className="flex items-center gap-2 text-5xl">
             {data.sequence.map((item, i) => (
-              <span key={i}>{item}</span>
+              <OverridableGlyph key={i} override={glyphOverride(item)} emoji={item} emojiClassName="text-5xl" boxSize={56} />
             ))}
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-dashed border-indigo/40 text-3xl font-bold text-indigo">
               ?
@@ -137,7 +151,7 @@ export function PatternPredictorEngine({
             onClick={() => choose(option)}
             className="flex items-center justify-center rounded-2xl bg-indigo/10 py-5 text-4xl shadow-sm disabled:opacity-50"
           >
-            {option}
+            <OverridableGlyph override={glyphOverride(option)} emoji={option} emojiClassName="text-4xl" boxSize={56} />
           </motion.button>
         ))}
       </div>

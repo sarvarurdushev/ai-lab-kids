@@ -14,6 +14,9 @@ export default async function AdminHomePage() {
   return (
     <div className="flex flex-col gap-6">
       <div>
+        <Link href="/dashboard" className="text-sm font-semibold text-ink/50 hover:text-ink">
+          ← Dashboard
+        </Link>
         <h1 className="font-display text-2xl font-bold text-indigo-dark">Admin</h1>
         <p className="text-sm text-ink/60">Manage teacher access and edit curriculum content.</p>
       </div>

@@ -5,6 +5,8 @@ import { Vora } from "@/components/mascot/Vora";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { speak } from "@/lib/speech";
 import type { MemoryMatchConfig } from "@/lib/curriculum";
+import { memoryPairKey, type ContentOverride } from "@/lib/content/overrideKey";
+import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 
 // Flip-card pairs game reinforcing a month's vocabulary through repeated
 // recognition rather than production — see docs/AI_CURRICULUM.md. Each
@@ -39,9 +41,15 @@ function buildCards(config: MemoryMatchConfig): Card[] {
 
 export function MemoryMatchEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: MemoryMatchConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
   const cards = useMemo(() => buildCards(config), [config]);
@@ -55,7 +63,10 @@ export function MemoryMatchEngine({
   function flip(card: Card) {
     if (locked || flipped.includes(card.id) || matched.has(card.pairIndex)) return;
     playPop();
-    if (card.kind === "word") speak(config.pairs[card.pairIndex].word, "en-US");
+    if (card.kind === "word") {
+      const override = contentOverrides[memoryPairKey(lessonKey, segmentIndex, card.pairIndex)];
+      speak(override?.textOverride || config.pairs[card.pairIndex].word, "en-US");
+    }
 
     const next = [...flipped, card.id];
     setFlipped(next);
@@ -104,6 +115,7 @@ export function MemoryMatchEngine({
           const isFlipped = isMatched || flipped.includes(card.id);
           const isWrong = wrongPair.includes(card.id);
           const pair = config.pairs[card.pairIndex];
+          const override = contentOverrides[memoryPairKey(lessonKey, segmentIndex, card.pairIndex)];
           return (
             <button
               key={card.id}
@@ -122,10 +134,10 @@ export function MemoryMatchEngine({
             >
               {isFlipped ? (
                 card.kind === "emoji" ? (
-                  <span className="text-2xl">{pair.emoji}</span>
+                  <OverridableGlyph override={override} emoji={pair.emoji} emojiClassName="text-2xl" boxSize={36} />
                 ) : (
                   <span className="flex flex-col items-center">
-                    <span className="text-xs font-bold leading-tight text-ink">{pair.word}</span>
+                    <span className="text-xs font-bold leading-tight text-ink">{override?.textOverride || pair.word}</span>
                   </span>
                 )
               ) : (

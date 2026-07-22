@@ -7,6 +7,8 @@ import { playCorrect, playWrong } from "@/lib/sound";
 import { speak } from "@/lib/speech";
 import { SpeakerIcon } from "@/components/icons";
 import type { MinimalPairsConfig } from "@/lib/curriculum";
+import { minimalPairKey, type ContentOverride } from "@/lib/content/overrideKey";
+import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 
 // Listening-discrimination engine targeting specific Korean L1 phoneme gaps
 // (see docs/KOREAN_L1_NOTES.md) — deliberately receptive only (listen and
@@ -39,9 +41,15 @@ function buildRounds(config: MinimalPairsConfig): Round[] {
 
 export function MinimalPairsEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: MinimalPairsConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
   const rounds = useMemo(() => buildRounds(config), [config]);
@@ -61,9 +69,12 @@ export function MinimalPairsEngine({
   const round = rounds[roundIndex];
   const pair = config.pairs[round.pairIndex];
   const targetWord = round.answer === "a" ? pair.wordA : pair.wordB;
+  const overrideA = contentOverrides[minimalPairKey(lessonKey, segmentIndex, round.pairIndex, "a")];
+  const overrideB = contentOverrides[minimalPairKey(lessonKey, segmentIndex, round.pairIndex, "b")];
+  const targetOverride = round.answer === "a" ? overrideA : overrideB;
 
   function playTarget() {
-    speak(targetWord.text, "en-US");
+    speak(targetOverride?.textOverride || targetWord.text, "en-US");
     setPlayed(true);
   }
 
@@ -107,6 +118,7 @@ export function MinimalPairsEngine({
       <div className="grid grid-cols-2 gap-3">
         {(["a", "b"] as const).map((side) => {
           const word = side === "a" ? pair.wordA : pair.wordB;
+          const override = side === "a" ? overrideA : overrideB;
           return (
             <button
               key={side}
@@ -115,8 +127,8 @@ export function MinimalPairsEngine({
               onClick={() => answer(side)}
               className="flex flex-col items-center gap-1 rounded-2xl bg-indigo/10 py-5 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-40"
             >
-              <span className="text-4xl">{word.emoji}</span>
-              <span>{word.text}</span>
+              <OverridableGlyph override={override} emoji={word.emoji} emojiClassName="text-4xl" boxSize={48} />
+              <span>{override?.textOverride || word.text}</span>
             </button>
           );
         })}
@@ -127,7 +139,7 @@ export function MinimalPairsEngine({
       {answered && (
         <div className="flex flex-col items-center gap-2">
           <p className={`text-center text-sm font-bold ${answered.good ? "text-mint" : "text-coral"}`}>
-            {answered.good ? "Yes! That's it." : `It was "${targetWord.text}."`}
+            {answered.good ? "Yes! That's it." : `It was "${targetOverride?.textOverride || targetWord.text}."`}
           </p>
           <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
             {roundIndex + 1 >= rounds.length ? "Finish" : "Next →"}

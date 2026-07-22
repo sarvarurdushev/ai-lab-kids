@@ -9,6 +9,7 @@ import { BehaviorDemo } from "./BehaviorDemo";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { RobotHeadIcon, GlobeIcon, CheckCircleIcon, XCircleIcon, SparkleIcon } from "@/components/icons";
 import type { AIOrNotConfig } from "@/lib/curriculum";
+import { aiOrNotItemKey, type ContentOverride } from "@/lib/content/overrideKey";
 
 // Real-world AI-recognition game — the standards-backed answer to "kids
 // should learn AI, not just play English games with an AI label." Modeled
@@ -32,12 +33,21 @@ function shuffle<T>(items: T[]): T[] {
 
 export function AIOrNotEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: AIOrNotConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
-  const items = useMemo(() => shuffle(config.items), [config]);
+  const items = useMemo(
+    () => shuffle(config.items.map((item, originalIndex) => ({ ...item, originalIndex }))),
+    [config]
+  );
   const [index, setIndex] = useState(0);
   const [answered, setAnswered] = useState<{ chose: boolean; correct: boolean } | null>(null);
   const [outcomes, setOutcomes] = useState<boolean[]>([]);
@@ -72,6 +82,7 @@ export function AIOrNotEngine({
   }
 
   const item = items[index];
+  const override = contentOverrides[aiOrNotItemKey(lessonKey, segmentIndex, item.originalIndex)];
 
   function choose(choice: boolean) {
     if (answered) return;
@@ -119,8 +130,8 @@ export function AIOrNotEngine({
           className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm"
         >
           <Vora size={52} mood={voraMood} />
-          <BehaviorDemo isAI={item.isAI} icon={item.emoji} scenario={item.scenario} />
-          <EnglishText text={item.scenario} size="lg" />
+          <BehaviorDemo isAI={item.isAI} icon={item.emoji} iconImageUrl={override?.imageUrl} scenario={item.scenario} />
+          <EnglishText text={override?.textOverride || item.scenario} size="lg" />
         </motion.div>
       </AnimatePresence>
 

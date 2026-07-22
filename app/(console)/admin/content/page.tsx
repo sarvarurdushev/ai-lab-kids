@@ -22,9 +22,12 @@ export default async function AdminContentIndexPage() {
   return (
     <div className="flex flex-col gap-6">
       <div>
+        <Link href="/admin" className="text-sm font-semibold text-ink/50 hover:text-ink">
+          ← Admin
+        </Link>
         <h1 className="font-display text-2xl font-bold text-indigo-dark">Edit Curriculum Content</h1>
         <p className="text-sm text-ink/60">
-          Pick a lesson to attach real photos or replace labels for its vocabulary and Movement Break items.
+          Pick a lesson to attach real photos or replace labels for any of its words, actions, or activity items.
         </p>
       </div>
 

@@ -10,12 +10,15 @@ export function OverrideItemEditor({
   emoji,
   initialTextOverride,
   initialImageUrl,
+  textEditable = true,
 }: {
   contentKey: string;
   originalText: string;
   emoji: string;
   initialTextOverride: string | null;
   initialImageUrl: string | null;
+  /** Set false for content where the label itself is the game logic (e.g. Pattern Predictor glyphs) — only the photo can change, never the text. */
+  textEditable?: boolean;
 }) {
   const [text, setText] = useState(initialTextOverride ?? "");
   const [imageUrl, setImageUrl] = useState<string | null>(initialImageUrl);
@@ -94,13 +97,19 @@ export function OverrideItemEditor({
           e.target.value = "";
         }}
       />
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder={originalText}
-        className="min-w-0 flex-1 rounded-lg border-2 border-ink/10 bg-white px-2 py-1.5 text-sm focus:border-indigo focus:outline-none"
-      />
+      {textEditable ? (
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder={originalText}
+          className="min-w-0 flex-1 rounded-lg border-2 border-ink/10 bg-white px-2 py-1.5 text-sm focus:border-indigo focus:outline-none"
+        />
+      ) : (
+        <span className="min-w-0 flex-1 text-sm text-ink/50">
+          Photo only — this glyph is also the answer key, so its label can&apos;t be changed here.
+        </span>
+      )}
       <div className="flex shrink-0 items-center gap-1.5">
         {status === "saved" && <span className="text-xs font-semibold text-mint">Saved</span>}
         {status === "error" && <span className="text-xs font-semibold text-coral">Error</span>}

@@ -146,9 +146,9 @@ export function Marketing() {
       <div className="al-bg-dots al-animate-drift pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
 
       <header className="relative z-20 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-        <span className="font-display text-lg font-bold text-white">
+        <Link href="/" className="font-display text-lg font-bold text-white">
           AI Lab <span className="text-white/40">for Kids</span>
-        </span>
+        </Link>
         <nav className="flex items-center gap-4 text-sm">
           <Link href="/curriculum" className="font-semibold text-white/60 hover:text-white">
             Program Guide

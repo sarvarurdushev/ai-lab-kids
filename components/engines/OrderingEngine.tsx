@@ -10,6 +10,8 @@ import { connectorFor } from "@/lib/ordering";
 import { speak } from "@/lib/speech";
 import { SpeakerIcon, UndoIcon } from "@/components/icons";
 import type { SequenceBuilderConfig, SentenceBuilderConfig } from "@/lib/curriculum";
+import { sequenceStepKey, type ContentOverride } from "@/lib/content/overrideKey";
+import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 
 // Classroom version of the ordering mechanic — reused for two different
 // grammar/AI concepts rather than built twice: routine sequencing
@@ -24,6 +26,7 @@ interface Tile {
   primary: string;
   emoji?: string;
   label: string;
+  override?: ContentOverride;
 }
 
 const SHAKE_PAUSE_MS = 550;
@@ -44,7 +47,12 @@ const ROLE_LABELS: Record<string, string> = {
   other: "",
 };
 
-function tilesFromConfig(config: SequenceBuilderConfig | SentenceBuilderConfig): {
+function tilesFromConfig(
+  config: SequenceBuilderConfig | SentenceBuilderConfig,
+  lessonKey: string,
+  segmentIndex: number,
+  contentOverrides: Record<string, ContentOverride>
+): {
   title: string;
   tiles: Tile[];
   readAloud: string;
@@ -53,13 +61,17 @@ function tilesFromConfig(config: SequenceBuilderConfig | SentenceBuilderConfig):
     const total = config.steps.length;
     return {
       title: config.title,
-      tiles: config.steps.map((step, i) => ({
-        id: `s-${i}`,
-        order: i,
-        primary: step.text,
-        emoji: step.emoji,
-        label: connectorFor(i, total),
-      })),
+      tiles: config.steps.map((step, i) => {
+        const override = contentOverrides[sequenceStepKey(lessonKey, segmentIndex, i)];
+        return {
+          id: `s-${i}`,
+          order: i,
+          primary: override?.textOverride || step.text,
+          emoji: step.emoji,
+          label: connectorFor(i, total),
+          override,
+        };
+      }),
       readAloud: config.steps.map((step, i) => `${connectorFor(i, total)}, ${step.text}.`).join(" "),
     };
   }
@@ -77,12 +89,21 @@ function tilesFromConfig(config: SequenceBuilderConfig | SentenceBuilderConfig):
 
 export function OrderingEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: SequenceBuilderConfig | SentenceBuilderConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
-  const { title, tiles, readAloud } = useMemo(() => tilesFromConfig(config), [config]);
+  const { title, tiles, readAloud } = useMemo(
+    () => tilesFromConfig(config, lessonKey, segmentIndex, contentOverrides),
+    [config, lessonKey, segmentIndex, contentOverrides]
+  );
   const [pool, setPool] = useState(() => shuffle(tiles));
   const [placedIds, setPlacedIds] = useState<string[]>([]);
   const [shake, setShake] = useState(false);
@@ -154,7 +175,9 @@ export function OrderingEngine({
               >
                 {tile ? (
                   <>
-                    {tile.emoji && <span className="text-xl">{tile.emoji}</span>}
+                    {tile.emoji && (
+                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-xl" boxSize={28} />
+                    )}
                     <span className="text-xs font-bold leading-tight">{tile.primary}</span>
                   </>
                 ) : (
@@ -190,7 +213,9 @@ export function OrderingEngine({
                     disabled={shake}
                     className="flex flex-1 items-center gap-2 py-1.5 text-left transition-transform active:scale-95 disabled:opacity-50"
                   >
-                    {tile.emoji && <span className="text-2xl">{tile.emoji}</span>}
+                    {tile.emoji && (
+                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-2xl" boxSize={32} />
+                    )}
                     <span className="flex-1">
                       <span className="block text-sm font-semibold text-ink">{tile.primary}</span>
                     </span>

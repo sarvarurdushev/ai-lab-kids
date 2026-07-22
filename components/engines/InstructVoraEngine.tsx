@@ -8,6 +8,13 @@ import { EnglishText } from "@/components/curriculum/EnglishText";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { UndoIcon, RobotHeadIcon, SparkleIcon } from "@/components/icons";
 import type { InstructVoraConfig } from "@/lib/curriculum";
+import {
+  instructVoraGoalKey,
+  instructVoraVagueKey,
+  instructVoraStepKey,
+  type ContentOverride,
+} from "@/lib/content/overrideKey";
+import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 
 // "Give Vora clear instructions" — first lets kids WATCH a vague
 // instruction go wrong, then has them build a precise, ordered instruction
@@ -33,13 +40,21 @@ const SHAKE_PAUSE_MS = 550;
 
 export function InstructVoraEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: InstructVoraConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
   const [phase, setPhase] = useState<Phase>("vague");
   const [pool] = useState(() => shuffle(config.steps.map((step, i) => ({ ...step, order: i, id: `s-${i}` }))));
+  const goalOverride = contentOverrides[instructVoraGoalKey(lessonKey, segmentIndex)];
+  const vagueOverride = contentOverrides[instructVoraVagueKey(lessonKey, segmentIndex)];
   const [placedIds, setPlacedIds] = useState<string[]>([]);
   const [shake, setShake] = useState(false);
 
@@ -97,9 +112,13 @@ export function InstructVoraEngine({
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 350, damping: 14 }}
-            className="text-5xl"
           >
-            {phase === "vague" ? config.vagueResultEmoji : config.goalEmoji}
+            <OverridableGlyph
+              override={phase === "vague" ? vagueOverride : goalOverride}
+              emoji={phase === "vague" ? config.vagueResultEmoji : config.goalEmoji}
+              emojiClassName="text-5xl"
+              boxSize={64}
+            />
           </motion.div>
         </AnimatePresence>
         <EnglishText text={config.goalLabel} size="lg" />
@@ -138,6 +157,7 @@ export function InstructVoraEngine({
               {Array.from({ length: config.steps.length }).map((_, i) => {
                 const id = placedIds[i];
                 const tile = id ? pool.find((t) => t.id === id) : undefined;
+                const stepOverride = tile ? contentOverrides[instructVoraStepKey(lessonKey, segmentIndex, tile.order)] : undefined;
                 return (
                   <div
                     key={i}
@@ -153,8 +173,8 @@ export function InstructVoraEngine({
                           animate={{ scale: 1 }}
                           transition={{ type: "spring", stiffness: 400, damping: 15 }}
                         >
-                          <span className="text-2xl">{tile.emoji}</span>
-                          <span className="block text-xs font-bold leading-tight">{tile.text}</span>
+                          <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-2xl" boxSize={28} />
+                          <span className="block text-xs font-bold leading-tight">{stepOverride?.textOverride || tile.text}</span>
                         </motion.div>
                       ) : (
                         <span className="text-lg font-bold">{i + 1}</span>
@@ -168,22 +188,25 @@ export function InstructVoraEngine({
             <div className="grid grid-cols-1 gap-2">
               {pool
                 .filter((t) => !placedIds.includes(t.id))
-                .map((tile) => (
-                  <motion.button
-                    key={tile.id}
-                    layout
-                    whileTap={{ scale: 0.95 }}
-                    type="button"
-                    disabled={shake}
-                    onClick={() => tap(tile.id)}
-                    className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-left shadow-sm disabled:opacity-50"
-                  >
-                    <span className="text-3xl">{tile.emoji}</span>
-                    <span className="flex-1">
-                      <span className="block text-base font-semibold text-ink">{tile.text}</span>
-                    </span>
-                  </motion.button>
-                ))}
+                .map((tile) => {
+                  const stepOverride = contentOverrides[instructVoraStepKey(lessonKey, segmentIndex, tile.order)];
+                  return (
+                    <motion.button
+                      key={tile.id}
+                      layout
+                      whileTap={{ scale: 0.95 }}
+                      type="button"
+                      disabled={shake}
+                      onClick={() => tap(tile.id)}
+                      className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-left shadow-sm disabled:opacity-50"
+                    >
+                      <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-3xl" boxSize={40} />
+                      <span className="flex-1">
+                        <span className="block text-base font-semibold text-ink">{stepOverride?.textOverride || tile.text}</span>
+                      </span>
+                    </motion.button>
+                  );
+                })}
             </div>
 
             <div className="flex justify-center">

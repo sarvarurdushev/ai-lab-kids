@@ -8,6 +8,8 @@ import { EnglishText } from "@/components/curriculum/EnglishText";
 import { playCorrect, playWrong, playPop } from "@/lib/sound";
 import { CheckCircleIcon, XCircleIcon, SproutIcon } from "@/components/icons";
 import type { TrainTheRobotConfig } from "@/lib/curriculum";
+import { trainRobotItemKey, trainRobotBucketKey, type ContentOverride } from "@/lib/content/overrideKey";
+import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 
 // Classroom version of the classification engine: no timer, no individual
 // score, no auto-advance — the teacher paces the room and taps "Next" when
@@ -54,9 +56,15 @@ function buildRounds(config: TrainTheRobotConfig): Round[] {
 
 export function TrainTheRobotEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: TrainTheRobotConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
   const rounds = useMemo(() => buildRounds(config), [config]);
@@ -110,9 +118,13 @@ export function TrainTheRobotEngine({
 
   const round = rounds[roundIndex];
   const item = config.items[round.itemIndex];
+  const itemOverride = contentOverrides[trainRobotItemKey(lessonKey, segmentIndex, round.itemIndex)];
+  const bucketAOverride = contentOverrides[trainRobotBucketKey(lessonKey, segmentIndex, "a")];
+  const bucketBOverride = contentOverrides[trainRobotBucketKey(lessonKey, segmentIndex, "b")];
 
   function bucketLabel(bucket: "a" | "b") {
-    return bucket === "a" ? config.labelA : config.labelB;
+    const override = bucket === "a" ? bucketAOverride : bucketBOverride;
+    return override?.textOverride || (bucket === "a" ? config.labelA : config.labelB);
   }
 
   function answerTeach(bucket: "a" | "b") {
@@ -202,14 +214,20 @@ export function TrainTheRobotEngine({
           className="flex flex-col items-center gap-2 rounded-3xl bg-white/80 py-6 shadow-sm"
         >
           <Vora size={60} mood={voraMood} />
-          <motion.div animate={answered ? { scale: [1, 1.25, 1] } : {}} transition={{ duration: 0.4 }} className="text-7xl">
-            {item.emoji}
+          <motion.div animate={answered ? { scale: [1, 1.25, 1] } : {}} transition={{ duration: 0.4 }}>
+            <OverridableGlyph override={itemOverride} emoji={item.emoji} emojiClassName="text-7xl" boxSize={88} rounded="rounded-2xl" />
           </motion.div>
-          <EnglishText text={item.word} size="lg" />
+          <EnglishText text={itemOverride?.textOverride || item.word} size="lg" />
 
           {round.mode === "guess" && round.voraGuess && (
-            <div className="mt-1 rounded-2xl bg-indigo/10 px-4 py-2 text-center text-sm font-semibold text-indigo-dark">
-              Vora thinks: {round.voraGuess === "a" ? config.emojiA : config.emojiB}{" "}
+            <div className="mt-1 flex items-center justify-center gap-1.5 rounded-2xl bg-indigo/10 px-4 py-2 text-center text-sm font-semibold text-indigo-dark">
+              Vora thinks:{" "}
+              <OverridableGlyph
+                override={round.voraGuess === "a" ? bucketAOverride : bucketBOverride}
+                emoji={round.voraGuess === "a" ? config.emojiA : config.emojiB}
+                emojiClassName="text-base"
+                boxSize={20}
+              />{" "}
               {bucketLabel(round.voraGuess)}
             </div>
           )}
@@ -225,8 +243,8 @@ export function TrainTheRobotEngine({
             onClick={() => answerTeach("a")}
             className="flex flex-col items-center gap-1 rounded-2xl bg-amber/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
-            <span className="text-3xl">{config.emojiA}</span>
-            {config.labelA}
+            <OverridableGlyph override={bucketAOverride} emoji={config.emojiA} boxSize={40} />
+            {bucketLabel("a")}
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.93 }}
@@ -235,8 +253,8 @@ export function TrainTheRobotEngine({
             onClick={() => answerTeach("b")}
             className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
-            <span className="text-3xl">{config.emojiB}</span>
-            {config.labelB}
+            <OverridableGlyph override={bucketBOverride} emoji={config.emojiB} boxSize={40} />
+            {bucketLabel("b")}
           </motion.button>
         </div>
       ) : (

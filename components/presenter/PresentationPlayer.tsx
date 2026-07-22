@@ -310,19 +310,50 @@ export function PresentationPlayer({
               </p>
               <EnglishText text={segment.instructions} size="sm" />
               {segment.config.engine === "train_the_robot" && (
-                <TrainTheRobotEngine config={segment.config} />
+                <TrainTheRobotEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  contentOverrides={contentOverrides}
+                />
               )}
               {(segment.config.engine === "sequence_builder" || segment.config.engine === "sentence_builder") && (
-                <OrderingEngine config={segment.config} />
+                <OrderingEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
               )}
-              {segment.config.engine === "minimal_pairs" && <MinimalPairsEngine config={segment.config} />}
-              {segment.config.engine === "memory_match" && <MemoryMatchEngine config={segment.config} />}
+              {segment.config.engine === "minimal_pairs" && (
+                <MinimalPairsEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  contentOverrides={contentOverrides}
+                />
+              )}
+              {segment.config.engine === "memory_match" && (
+                <MemoryMatchEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  contentOverrides={contentOverrides}
+                />
+              )}
               {segment.config.engine === "pattern_predictor" && (
-                <PatternPredictorEngine config={segment.config} />
+                <PatternPredictorEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  contentOverrides={contentOverrides}
+                />
               )}
-              {segment.config.engine === "ai_or_not" && <AIOrNotEngine config={segment.config} />}
+              {segment.config.engine === "ai_or_not" && (
+                <AIOrNotEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
               {segment.config.engine === "instruct_vora" && (
-                <InstructVoraEngine config={segment.config} />
+                <InstructVoraEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  contentOverrides={contentOverrides}
+                />
               )}
             </div>
           )}

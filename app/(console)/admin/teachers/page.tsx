@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { requireOrgAdmin } from "@/lib/auth/requireTeacher";
 import { pendingTeachersForOrg } from "@/lib/console/queries";
 import { Card } from "@/components/ui/Card";
@@ -13,6 +14,9 @@ export default async function AdminTeachersPage() {
   return (
     <div className="flex flex-col gap-6">
       <div>
+        <Link href="/admin" className="text-sm font-semibold text-ink/50 hover:text-ink">
+          ← Admin
+        </Link>
         <h1 className="font-display text-2xl font-bold text-indigo-dark">Pending Teacher Sign-ups</h1>
         <p className="text-sm text-ink/60">New accounts can&apos;t start a class until you approve them here.</p>
       </div>

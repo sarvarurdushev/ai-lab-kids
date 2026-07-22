@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
 // A generic, content-agnostic "proof of behavior" loop used by every
@@ -15,7 +16,7 @@ import { motion, AnimatePresence } from "motion/react";
 const SITUATIONS = ["⭐", "❤️"] as const;
 const STAGE_MS = 1000;
 
-export function GenericBehaviorDemo({ isAI, icon }: { isAI: boolean; icon: string }) {
+export function GenericBehaviorDemo({ isAI, icon, iconImageUrl }: { isAI: boolean; icon: string; iconImageUrl?: string | null }) {
   // 0: situation A arrives, 1: reaction to A, 2: situation B arrives, 3: reaction to B
   const [stage, setStage] = useState(0);
 
@@ -48,9 +49,9 @@ export function GenericBehaviorDemo({ isAI, icon }: { isAI: boolean; icon: strin
       <motion.div
         animate={reacted ? { scale: [1, 1.18, 1] } : { scale: 1 }}
         transition={{ duration: 0.35 }}
-        className="flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo/10 text-4xl"
+        className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-indigo/10 text-4xl"
       >
-        {icon}
+        {iconImageUrl ? <Image src={iconImageUrl} alt="" fill sizes="64px" className="object-cover" /> : icon}
       </motion.div>
 
       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-ink/5">
