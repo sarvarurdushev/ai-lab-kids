@@ -19,6 +19,7 @@ import {
   type Lesson,
   type LessonSegment,
 } from "@/lib/curriculum";
+import { vocabOverrideKey, movementOverrideKey, type ContentOverride } from "@/lib/content/overrideKey";
 import {
   SunIcon,
   BookIcon,
@@ -95,11 +96,13 @@ export function PresentationPlayer({
   sessionId,
   classId,
   initialSegmentIndex,
+  contentOverrides = {},
 }: {
   lesson: Lesson;
   sessionId: string;
   classId: string;
   initialSegmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
 }) {
   const [index, setIndex] = useState(Math.min(initialSegmentIndex, lesson.segments.length - 1));
   const segment = lesson.segments[index];
@@ -247,15 +250,24 @@ export function PresentationPlayer({
               </p>
               <EnglishText text={segment.title} size="lg" />
               <div className="grid grid-cols-2 gap-2">
-                {segment.words.map((w) => (
-                  <div
-                    key={w.word}
-                    className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
-                  >
-                    <span className="text-3xl">{w.emoji}</span>
-                    <EnglishText text={w.word} size="sm" />
-                  </div>
-                ))}
+                {segment.words.map((w, wIdx) => {
+                  const override = contentOverrides[vocabOverrideKey(lesson.key, index, wIdx)];
+                  return (
+                    <div
+                      key={w.word}
+                      className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
+                    >
+                      {override?.imageUrl ? (
+                        <div className="relative h-16 w-16 overflow-hidden rounded-xl">
+                          <Image src={override.imageUrl} alt="" fill sizes="64px" className="object-cover" />
+                        </div>
+                      ) : (
+                        <span className="text-3xl">{w.emoji}</span>
+                      )}
+                      <EnglishText text={override?.textOverride || w.word} size="sm" />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -329,15 +341,24 @@ export function PresentationPlayer({
               </p>
               <EnglishText text={segment.title} size="lg" />
               <div className="grid grid-cols-2 gap-2">
-                {segment.moves.map((m, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
-                  >
-                    <span className="text-3xl">{m.emoji}</span>
-                    <EnglishText text={m.text} size="sm" />
-                  </div>
-                ))}
+                {segment.moves.map((m, i) => {
+                  const override = contentOverrides[movementOverrideKey(lesson.key, index, i)];
+                  return (
+                    <div
+                      key={i}
+                      className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
+                    >
+                      {override?.imageUrl ? (
+                        <div className="relative h-16 w-16 overflow-hidden rounded-xl">
+                          <Image src={override.imageUrl} alt="" fill sizes="64px" className="object-cover" />
+                        </div>
+                      ) : (
+                        <span className="text-3xl">{m.emoji}</span>
+                      )}
+                      <EnglishText text={override?.textOverride || m.text} size="sm" />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}

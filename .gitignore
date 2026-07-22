@@ -24,3 +24,7 @@ yarn-error.log*
 # typescript
 next-env.d.ts
 tsconfig.tsbuildinfo
+
+# admin-uploaded content images (not curated project assets — see public/images/)
+/public/uploads/*
+!/public/uploads/.gitkeep

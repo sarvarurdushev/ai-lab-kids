@@ -10,6 +10,16 @@ export const updateLessonSessionSchema = z.object({
   completed: z.boolean().optional(),
 });
 
+export const teacherApprovalSchema = z.object({
+  action: z.enum(["approve", "reject"]),
+});
+
+export const contentOverrideSchema = z.object({
+  contentKey: z.string().min(1).max(200),
+  textOverride: z.string().trim().max(200).nullable().optional(),
+  imageUrl: z.string().trim().max(500).nullable().optional(),
+});
+
 export const createClassSchema = z.object({
   schoolId: z.string().uuid(),
   name: z.string().trim().min(1).max(120),

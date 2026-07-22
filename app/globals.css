@@ -7,6 +7,7 @@
 
   --color-al-indigo: #6c5ce7;
   --color-al-indigo-dark: #5142c9;
+  --color-al-indigo-light: #a79cf5;
   --color-al-amber: #ffb703;
   --color-al-amber-dark: #e89400;
   --color-al-mint: #2ec4b6;
@@ -24,6 +25,7 @@
 
   --color-indigo: var(--color-al-indigo);
   --color-indigo-dark: var(--color-al-indigo-dark);
+  --color-indigo-light: var(--color-al-indigo-light);
   --color-amber: var(--color-al-amber);
   --color-amber-dark: var(--color-al-amber-dark);
   --color-mint: var(--color-al-mint);
@@ -90,6 +92,64 @@ body {
 
 .al-shake {
   animation: al-shake 0.5s;
+}
+
+/*
+ * Marketing home page (components/home/Marketing.tsx) only — a deliberately
+ * dark, glassy "AI lab" aesthetic that's the opposite of the light kid-facing
+ * app shell everywhere else, so these are scoped utility classes, never
+ * touching :root/body, and never used outside that one page.
+ */
+.al-bg-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.al-glass {
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+@keyframes al-float-card {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+.al-animate-float {
+  animation: al-float-card 5s ease-in-out infinite;
+}
+
+@keyframes al-pulse-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.55;
+  }
+}
+.al-animate-pulse-glow {
+  animation: al-pulse-glow 4.5s ease-in-out infinite;
+}
+
+@keyframes al-drift-bg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 120px 120px;
+  }
+}
+.al-animate-drift {
+  animation: al-drift-bg 40s linear infinite;
 }
 
 /*

@@ -1,10 +1,5 @@
-import { Shell } from "@/components/layout/Shell";
-import { HomeContent } from "@/components/home/HomeContent";
+import { Marketing } from "@/components/home/Marketing";
 
 export default function HomePage() {
-  return (
-    <Shell>
-      <HomeContent />
-    </Shell>
-  );
+  return <Marketing />;
 }

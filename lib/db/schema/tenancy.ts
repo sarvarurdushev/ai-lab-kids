@@ -9,7 +9,9 @@ import {
   index,
 } from "drizzle-orm/pg-core";
 
-export const teacherRoleEnum = pgEnum("teacher_role", ["org_admin", "teacher"]);
+// "pending" = signed up but not yet approved by an org admin — can log in
+// but sees a holding page instead of the console (see app/(console)/layout.tsx).
+export const teacherRoleEnum = pgEnum("teacher_role", ["pending", "org_admin", "teacher"]);
 
 export const koreanSupportLevelEnum = pgEnum("korean_support_level", [
   "full", // every instruction/feedback line shows Korean text + can play Korean audio

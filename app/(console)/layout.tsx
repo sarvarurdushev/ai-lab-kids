@@ -7,6 +7,7 @@ import { SignOutButton } from "@/components/console/SignOutButton";
 export default async function ConsoleLayout({ children }: { children: React.ReactNode }) {
   const teacher = await requireTeacher();
   if (!teacher) redirect("/login");
+  if (teacher.role === "pending") redirect("/pending-approval");
   const org = await getOrganization(teacher.organizationId);
 
   return (
@@ -16,6 +17,11 @@ export default async function ConsoleLayout({ children }: { children: React.Reac
           AI Lab <span className="text-ink/40">Console</span>
         </Link>
         <div className="flex items-center gap-3 text-sm">
+          {teacher.role === "org_admin" && (
+            <Link href="/admin/teachers" className="font-semibold text-ink/50 hover:text-ink">
+              Admin
+            </Link>
+          )}
           <Link href="/curriculum" className="font-semibold text-ink/50 hover:text-ink">
             Curriculum
           </Link>

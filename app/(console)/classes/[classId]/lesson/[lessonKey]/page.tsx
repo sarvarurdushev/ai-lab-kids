@@ -4,6 +4,7 @@ import { classForTeacher } from "@/lib/console/authz";
 import { startOrResumeLessonSession } from "@/lib/console/lessonSessions";
 import { getLesson } from "@/lib/curriculum";
 import { filterLessonForTrack } from "@/lib/trackContent";
+import { allContentOverrides } from "@/lib/content/overrides";
 import { PresentationPlayer } from "@/components/presenter/PresentationPlayer";
 import { LessonPlanFacts } from "@/components/curriculum/LessonPlanFacts";
 
@@ -24,6 +25,7 @@ export default async function LessonPage({
   const lesson = filterLessonForTrack(rawLesson, klass.ageTrack);
 
   const session = await startOrResumeLessonSession(classId, teacher.id, lesson.unitKey, lesson.key);
+  const contentOverrides = await allContentOverrides();
 
   return (
     <div className="flex flex-col gap-4">
@@ -41,6 +43,7 @@ export default async function LessonPage({
         sessionId={session.id}
         classId={classId}
         initialSegmentIndex={session.currentSegmentIndex}
+        contentOverrides={contentOverrides}
       />
     </div>
   );

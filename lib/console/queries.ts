@@ -1,5 +1,5 @@
 import "server-only";
-import { asc, eq } from "drizzle-orm";
+import { and, asc, eq } from "drizzle-orm";
 import { db } from "@/lib/db/client";
 import { classes, schools, teacherAccounts, organizations } from "@/lib/db/schema";
 import type { AuthedTeacher } from "@/lib/auth/requireTeacher";
@@ -22,4 +22,12 @@ export async function schoolsForOrg(organizationId: string) {
 export async function getOrganization(organizationId: string) {
   const [org] = await db.select().from(organizations).where(eq(organizations.id, organizationId)).limit(1);
   return org;
+}
+
+export async function pendingTeachersForOrg(organizationId: string) {
+  return db
+    .select({ id: teacherAccounts.id, name: teacherAccounts.name, email: teacherAccounts.email, createdAt: teacherAccounts.createdAt })
+    .from(teacherAccounts)
+    .where(and(eq(teacherAccounts.organizationId, organizationId), eq(teacherAccounts.role, "pending")))
+    .orderBy(asc(teacherAccounts.createdAt));
 }

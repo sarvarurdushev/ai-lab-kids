@@ -10,7 +10,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "seed": "tsx --conditions=react-server scripts/seed.ts"
+    "seed": "tsx --conditions=react-server scripts/seed.ts",
+    "promote-admin": "tsx --conditions=react-server scripts/promoteAdmin.ts"
   },
   "dependencies": {
     "@node-rs/argon2": "^2.0.2",
