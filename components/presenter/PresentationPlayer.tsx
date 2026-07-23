@@ -355,8 +355,8 @@ export function PresentationPlayer({
                 return (
                   <>
                     {override?.imageUrl && (
-                      <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-2xl">
-                        <Image src={override.imageUrl} alt="" fill sizes="112px" className="object-cover" />
+                      <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-2xl">
+                        <Image src={override.imageUrl} alt="" fill sizes="160px" className="object-cover" />
                       </div>
                     )}
                     <EnglishText text={override?.textOverride || segment.prompt} size="lg" />
@@ -381,11 +381,11 @@ export function PresentationPlayer({
                       className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
                     >
                       {override?.imageUrl ? (
-                        <div className="relative h-16 w-16 overflow-hidden rounded-xl">
-                          <Image src={override.imageUrl} alt="" fill sizes="64px" className="object-cover" />
+                        <div className="relative h-28 w-28 overflow-hidden rounded-xl">
+                          <Image src={override.imageUrl} alt="" fill sizes="112px" className="object-cover" />
                         </div>
                       ) : (
-                        <span className="text-3xl">{w.emoji}</span>
+                        <span className="text-6xl">{w.emoji}</span>
                       )}
                       <EnglishText text={override?.textOverride || w.word} size="sm" />
                     </div>
@@ -419,8 +419,8 @@ export function PresentationPlayer({
                     <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
                       <Vora size={28} />
                       {override?.imageUrl && (
-                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
-                          <Image src={override.imageUrl} alt="" fill sizes="40px" className="object-cover" />
+                        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg">
+                          <Image src={override.imageUrl} alt="" fill sizes="64px" className="object-cover" />
                         </div>
                       )}
                       <EnglishText text={override?.textOverride || line.text} size="sm" />
@@ -512,11 +512,11 @@ export function PresentationPlayer({
                       className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
                     >
                       {override?.imageUrl ? (
-                        <div className="relative h-16 w-16 overflow-hidden rounded-xl">
-                          <Image src={override.imageUrl} alt="" fill sizes="64px" className="object-cover" />
+                        <div className="relative h-28 w-28 overflow-hidden rounded-xl">
+                          <Image src={override.imageUrl} alt="" fill sizes="112px" className="object-cover" />
                         </div>
                       ) : (
-                        <span className="text-3xl">{m.emoji}</span>
+                        <span className="text-6xl">{m.emoji}</span>
                       )}
                       <EnglishText text={override?.textOverride || m.text} size="sm" />
                     </div>
@@ -620,13 +620,13 @@ export function PresentationPlayer({
                 {segment.prompts.map((p, i) => {
                   const override = contentOverrides[teamRelayPromptKey(lesson.key, index, i)];
                   return (
-                    <div key={i} className="flex items-center gap-2 rounded-2xl bg-cream p-3 shadow-sm">
+                    <div key={i} className="flex items-center gap-3 rounded-2xl bg-cream p-3 shadow-sm">
                       {override?.imageUrl ? (
-                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
-                          <Image src={override.imageUrl} alt="" fill sizes="40px" className="object-cover" />
+                        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl">
+                          <Image src={override.imageUrl} alt="" fill sizes="80px" className="object-cover" />
                         </div>
                       ) : (
-                        <span className="text-2xl">{p.emoji}</span>
+                        <span className="text-5xl">{p.emoji}</span>
                       )}
                       <EnglishText text={override?.textOverride || p.text} size="sm" />
                     </div>
@@ -651,13 +651,13 @@ export function PresentationPlayer({
                   const override = contentOverrides[standSitStatementKey(lesson.key, index, i)];
                   return (
                     <details key={i} className="rounded-2xl bg-cream p-3 shadow-sm">
-                      <summary className="flex cursor-pointer items-center gap-2">
+                      <summary className="flex cursor-pointer items-center gap-3">
                         {override?.imageUrl ? (
-                          <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
-                            <Image src={override.imageUrl} alt="" fill sizes="40px" className="object-cover" />
+                          <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl">
+                            <Image src={override.imageUrl} alt="" fill sizes="80px" className="object-cover" />
                           </div>
                         ) : (
-                          <span className="text-2xl">{s.emoji}</span>
+                          <span className="text-5xl">{s.emoji}</span>
                         )}
                         <EnglishText text={override?.textOverride || s.text} size="sm" />
                       </summary>
@@ -687,17 +687,20 @@ export function PresentationPlayer({
                 const override = contentOverrides[key];
                 return <EnglishText text={override?.textOverride || segment.question} size="base" />;
               })()}
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {segment.options.map((o, i) => {
                   const override = contentOverrides[classVoteOptionKey(lesson.key, index, i)];
                   return (
-                    <div key={i} className="flex items-center gap-1.5 rounded-full bg-cream px-3 py-1.5 shadow-sm">
+                    <div
+                      key={i}
+                      className="flex flex-col items-center gap-1 rounded-2xl bg-cream p-3 text-center shadow-sm"
+                    >
                       {override?.imageUrl ? (
-                        <div className="relative h-6 w-6 shrink-0 overflow-hidden rounded-full">
-                          <Image src={override.imageUrl} alt="" fill sizes="24px" className="object-cover" />
+                        <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                          <Image src={override.imageUrl} alt="" fill sizes="80px" className="object-cover" />
                         </div>
                       ) : (
-                        <span className="text-lg">{o.emoji}</span>
+                        <span className="text-5xl">{o.emoji}</span>
                       )}
                       <EnglishText text={override?.textOverride || o.text} size="sm" />
                     </div>

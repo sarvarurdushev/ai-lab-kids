@@ -49,9 +49,9 @@ export function GenericBehaviorDemo({ isAI, icon, iconImageUrl }: { isAI: boolea
       <motion.div
         animate={reacted ? { scale: [1, 1.18, 1] } : { scale: 1 }}
         transition={{ duration: 0.35 }}
-        className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-indigo/10 text-4xl"
+        className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl bg-indigo/10 text-6xl"
       >
-        {iconImageUrl ? <Image src={iconImageUrl} alt="" fill sizes="64px" className="object-cover" /> : icon}
+        {iconImageUrl ? <Image src={iconImageUrl} alt="" fill sizes="112px" className="object-cover" /> : icon}
       </motion.div>
 
       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-ink/5">

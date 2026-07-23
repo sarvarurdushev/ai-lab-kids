@@ -131,9 +131,9 @@ export function PatternPredictorEngine({
           <Vora size={52} mood={voraMood} />
           <div className="flex items-center gap-2 text-5xl">
             {data.sequence.map((item, i) => (
-              <OverridableGlyph key={i} override={glyphOverride(item)} emoji={item} emojiClassName="text-5xl" boxSize={56} />
+              <OverridableGlyph key={i} override={glyphOverride(item)} emoji={item} emojiClassName="text-6xl" boxSize={72} />
             ))}
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-dashed border-indigo/40 text-3xl font-bold text-indigo">
+            <span className="flex h-[72px] w-[72px] items-center justify-center rounded-2xl border-2 border-dashed border-indigo/40 text-4xl font-bold text-indigo">
               ?
             </span>
           </div>
@@ -151,7 +151,7 @@ export function PatternPredictorEngine({
             onClick={() => choose(option)}
             className="flex items-center justify-center rounded-2xl bg-indigo/10 py-5 text-4xl shadow-sm disabled:opacity-50"
           >
-            <OverridableGlyph override={glyphOverride(option)} emoji={option} emojiClassName="text-4xl" boxSize={56} />
+            <OverridableGlyph override={glyphOverride(option)} emoji={option} emojiClassName="text-6xl" boxSize={80} />
           </motion.button>
         ))}
       </div>

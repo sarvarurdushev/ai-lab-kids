@@ -169,14 +169,14 @@ export function OrderingEngine({
           return (
             <div key={i} className="flex flex-col items-center gap-1">
               <div
-                className={`flex h-16 w-full flex-col items-center justify-center rounded-xl border-2 px-1 text-center ${
+                className={`flex h-24 w-full flex-col items-center justify-center rounded-xl border-2 px-1 text-center ${
                   tile ? "border-amber bg-amber/10" : "border-dashed border-ink/20 text-ink/20"
                 }`}
               >
                 {tile ? (
                   <>
                     {tile.emoji && (
-                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-xl" boxSize={28} />
+                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-3xl" boxSize={44} />
                     )}
                     <span className="text-xs font-bold leading-tight">{tile.primary}</span>
                   </>
@@ -214,7 +214,7 @@ export function OrderingEngine({
                     className="flex flex-1 items-center gap-2 py-1.5 text-left transition-transform active:scale-95 disabled:opacity-50"
                   >
                     {tile.emoji && (
-                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-2xl" boxSize={32} />
+                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-4xl" boxSize={52} />
                     )}
                     <span className="flex-1">
                       <span className="block text-sm font-semibold text-ink">{tile.primary}</span>

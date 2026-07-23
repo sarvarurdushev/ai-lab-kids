@@ -122,7 +122,7 @@ export function MemoryMatchEngine({
               type="button"
               disabled={isMatched || locked}
               onClick={() => flip(card)}
-              className={`flex h-16 flex-col items-center justify-center rounded-xl border-2 px-1 text-center transition-transform active:scale-95 disabled:pointer-events-none ${
+              className={`flex h-24 flex-col items-center justify-center rounded-xl border-2 px-1 text-center transition-transform active:scale-95 disabled:pointer-events-none ${
                 isMatched
                   ? "border-mint bg-mint/15"
                   : isWrong
@@ -134,7 +134,7 @@ export function MemoryMatchEngine({
             >
               {isFlipped ? (
                 card.kind === "emoji" ? (
-                  <OverridableGlyph override={override} emoji={pair.emoji} emojiClassName="text-2xl" boxSize={36} />
+                  <OverridableGlyph override={override} emoji={pair.emoji} emojiClassName="text-4xl" boxSize={56} />
                 ) : (
                   <span className="flex flex-col items-center">
                     <span className="text-xs font-bold leading-tight text-ink">{override?.textOverride || pair.word}</span>

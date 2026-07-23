@@ -127,7 +127,7 @@ export function MinimalPairsEngine({
               onClick={() => answer(side)}
               className="flex flex-col items-center gap-1 rounded-2xl bg-indigo/10 py-5 font-display font-bold text-ink shadow-sm transition-transform active:scale-95 disabled:opacity-40"
             >
-              <OverridableGlyph override={override} emoji={word.emoji} emojiClassName="text-4xl" boxSize={48} />
+              <OverridableGlyph override={override} emoji={word.emoji} emojiClassName="text-7xl" boxSize={100} />
               <span>{override?.textOverride || word.text}</span>
             </button>
           );

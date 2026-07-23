@@ -116,8 +116,8 @@ export function InstructVoraEngine({
             <OverridableGlyph
               override={phase === "vague" ? vagueOverride : goalOverride}
               emoji={phase === "vague" ? config.vagueResultEmoji : config.goalEmoji}
-              emojiClassName="text-5xl"
-              boxSize={64}
+              emojiClassName="text-7xl"
+              boxSize={100}
             />
           </motion.div>
         </AnimatePresence>
@@ -161,7 +161,7 @@ export function InstructVoraEngine({
                 return (
                   <div
                     key={i}
-                    className={`flex h-16 flex-col items-center justify-center rounded-xl border-2 px-1 text-center ${
+                    className={`flex h-24 flex-col items-center justify-center rounded-xl border-2 px-1 text-center ${
                       tile ? "border-mint bg-mint/10" : "border-dashed border-ink/20 text-ink/20"
                     }`}
                   >
@@ -173,7 +173,7 @@ export function InstructVoraEngine({
                           animate={{ scale: 1 }}
                           transition={{ type: "spring", stiffness: 400, damping: 15 }}
                         >
-                          <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-2xl" boxSize={28} />
+                          <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-3xl" boxSize={44} />
                           <span className="block text-xs font-bold leading-tight">{stepOverride?.textOverride || tile.text}</span>
                         </motion.div>
                       ) : (
@@ -200,7 +200,7 @@ export function InstructVoraEngine({
                       onClick={() => tap(tile.id)}
                       className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-left shadow-sm disabled:opacity-50"
                     >
-                      <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-3xl" boxSize={40} />
+                      <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-4xl" boxSize={52} />
                       <span className="flex-1">
                         <span className="block text-base font-semibold text-ink">{stepOverride?.textOverride || tile.text}</span>
                       </span>

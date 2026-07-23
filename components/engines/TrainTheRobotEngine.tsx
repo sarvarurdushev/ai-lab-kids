@@ -215,7 +215,7 @@ export function TrainTheRobotEngine({
         >
           <Vora size={60} mood={voraMood} />
           <motion.div animate={answered ? { scale: [1, 1.25, 1] } : {}} transition={{ duration: 0.4 }}>
-            <OverridableGlyph override={itemOverride} emoji={item.emoji} emojiClassName="text-7xl" boxSize={88} rounded="rounded-2xl" />
+            <OverridableGlyph override={itemOverride} emoji={item.emoji} emojiClassName="text-8xl" boxSize={130} rounded="rounded-2xl" />
           </motion.div>
           <EnglishText text={itemOverride?.textOverride || item.word} size="lg" />
 
@@ -243,7 +243,7 @@ export function TrainTheRobotEngine({
             onClick={() => answerTeach("a")}
             className="flex flex-col items-center gap-1 rounded-2xl bg-amber/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
-            <OverridableGlyph override={bucketAOverride} emoji={config.emojiA} boxSize={40} />
+            <OverridableGlyph override={bucketAOverride} emoji={config.emojiA} emojiClassName="text-4xl" boxSize={56} />
             {bucketLabel("a")}
           </motion.button>
           <motion.button
@@ -253,7 +253,7 @@ export function TrainTheRobotEngine({
             onClick={() => answerTeach("b")}
             className="flex flex-col items-center gap-1 rounded-2xl bg-coral/15 py-4 font-display text-lg font-bold text-ink shadow-sm disabled:opacity-50"
           >
-            <OverridableGlyph override={bucketBOverride} emoji={config.emojiB} boxSize={40} />
+            <OverridableGlyph override={bucketBOverride} emoji={config.emojiB} emojiClassName="text-4xl" boxSize={56} />
             {bucketLabel("b")}
           </motion.button>
         </div>
