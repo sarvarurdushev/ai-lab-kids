@@ -39,6 +39,7 @@ import { Card } from "@/components/ui/Card";
 import { OverrideItemEditor } from "@/components/console/OverrideItemEditor";
 import { TextOverrideEditor } from "@/components/console/TextOverrideEditor";
 import { SongOverrideEditor } from "@/components/console/SongOverrideEditor";
+import { StoryPanelEditor } from "@/components/console/StoryPanelEditor";
 
 interface EditableItem {
   key: string;
@@ -50,6 +51,8 @@ interface EditableItem {
   noImage?: boolean;
   /** Set for warmup/concept/wrapup fields that have a separate wording per track (see warmupPromptSimpleKey etc.) — labels which track's version this particular editor controls, distinct from minTrack's "only shown to this track at all" meaning. */
   variantLabel?: string;
+  /** True for Story Time panels — rendered with the big picture-first StoryPanelEditor instead of the small thumbnail editor, since a story slide's visual is the point. */
+  large?: boolean;
 }
 
 interface EditableSection {
@@ -228,6 +231,7 @@ export default async function AdminLessonContentPage({
               originalText: p.text,
               emoji: p.emoji,
               variantLabel: "AI Explorers (6+) wording",
+              large: true,
             });
           }
           if (track === "all" || track === "little_sparks") {
@@ -236,6 +240,7 @@ export default async function AdminLessonContentPage({
               originalText: p.textSimple ?? p.text,
               emoji: p.emoji,
               variantLabel: "Little Sparks (4-5) wording",
+              large: true,
             });
           }
           return panelItems;
@@ -460,7 +465,18 @@ export default async function AdminLessonContentPage({
                   {item.variantLabel}
                 </span>
               ) : null;
-              return item.noImage ? (
+              return item.large ? (
+                <div key={item.key} className="flex flex-col gap-1">
+                  {trackBadge}
+                  <StoryPanelEditor
+                    contentKey={item.key}
+                    originalText={item.originalText}
+                    emoji={item.emoji}
+                    initialTextOverride={override?.textOverride ?? null}
+                    initialImageUrl={override?.imageUrl ?? null}
+                  />
+                </div>
+              ) : item.noImage ? (
                 <div key={item.key} className="flex flex-col gap-1">
                   {trackBadge}
                   <TextOverrideEditor

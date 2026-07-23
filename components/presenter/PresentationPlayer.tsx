@@ -18,6 +18,7 @@ import {
   HERO_IMAGES,
   type Lesson,
   type LessonSegment,
+  type StorySegment,
   type AgeTrack,
 } from "@/lib/curriculum";
 import {
@@ -120,6 +121,82 @@ const InstructVoraEngine = dynamic(
   () => import("@/components/engines/InstructVoraEngine").then((m) => m.InstructVoraEngine),
   { ssr: false }
 );
+
+/**
+ * One Story Time panel at a time, big picture first — a real photo (or a
+ * huge fallback emoji) fills most of the slide, with the sentence as a
+ * caption underneath, and its own prev/next dots so a story reads like a
+ * picture book instead of a wall of chat bubbles. Keyed by segment index
+ * from the caller so switching lessons/segments remounts it at panel 1.
+ */
+function StorySlide({
+  segment,
+  lessonKey,
+  segIndex,
+  contentOverrides,
+  isLittleSparks,
+}: {
+  segment: StorySegment;
+  lessonKey: string;
+  segIndex: number;
+  contentOverrides: Record<string, ContentOverride>;
+  isLittleSparks: boolean;
+}) {
+  const [panelIndex, setPanelIndex] = useState(0);
+  const panel = segment.panels[panelIndex];
+  const key = isLittleSparks
+    ? storyPanelSimpleKey(lessonKey, segIndex, panelIndex)
+    : storyPanelKey(lessonKey, segIndex, panelIndex);
+  const override = contentOverrides[key];
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-indigo/10 via-cream to-amber/10">
+        {override?.imageUrl ? (
+          <Image src={override.imageUrl} alt="" fill sizes="700px" className="object-cover" />
+        ) : (
+          <span className="text-[110px] leading-none">{panel.emoji}</span>
+        )}
+      </div>
+      <div className="flex items-center justify-center gap-1.5">
+        {segment.panels.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setPanelIndex(i)}
+            aria-label={`Go to panel ${i + 1}`}
+            className={`h-2 rounded-full transition-all ${i === panelIndex ? "w-6 bg-indigo-dark" : "w-2 bg-indigo/20"}`}
+          />
+        ))}
+      </div>
+      <div className="flex items-center justify-center gap-2 px-2 text-center">
+        <Vora size={24} />
+        <EnglishText text={override?.textOverride || panel.text} size="base" />
+      </div>
+      <div className="flex items-center justify-between">
+        <Button
+          variant="ghost"
+          className="!px-3 !py-1.5 !text-xs"
+          onClick={() => setPanelIndex((p) => Math.max(0, p - 1))}
+          disabled={panelIndex === 0}
+        >
+          ← Prev
+        </Button>
+        <span className="text-xs font-bold text-ink/40">
+          {panelIndex + 1} / {segment.panels.length}
+        </span>
+        <Button
+          variant="ghost"
+          className="!px-3 !py-1.5 !text-xs"
+          onClick={() => setPanelIndex((p) => Math.min(segment.panels.length - 1, p + 1))}
+          disabled={panelIndex >= segment.panels.length - 1}
+        >
+          Next →
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 export function PresentationPlayer({
   lesson,
@@ -640,25 +717,14 @@ export function PresentationPlayer({
                 const audioOverride = contentOverrides[storyAudioKey(lesson.key, index)];
                 return audioOverride?.audioUrl && <audio controls src={audioOverride.audioUrl} className="h-9 w-full" />;
               })()}
-              <div className="flex flex-col gap-2">
-                {segment.panels.map((panel, i) => {
-                  const key = isLittleSparks ? storyPanelSimpleKey(lesson.key, index, i) : storyPanelKey(lesson.key, index, i);
-                  const override = contentOverrides[key];
-                  return (
-                    <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
-                      <Vora size={28} />
-                      {override?.imageUrl ? (
-                        <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg">
-                          <Image src={override.imageUrl} alt="" fill sizes="48px" className="object-cover" />
-                        </div>
-                      ) : (
-                        <span className="text-2xl">{panel.emoji}</span>
-                      )}
-                      <EnglishText text={override?.textOverride || panel.text} size="sm" />
-                    </div>
-                  );
-                })}
-              </div>
+              <StorySlide
+                key={index}
+                segment={segment}
+                lessonKey={lesson.key}
+                segIndex={index}
+                contentOverrides={contentOverrides}
+                isLittleSparks={isLittleSparks}
+              />
               <p className="rounded-xl bg-amber/10 p-2 text-xs text-ink/60">
                 <span className="font-bold">Teacher note: </span>
                 {segment.teacherNote}
