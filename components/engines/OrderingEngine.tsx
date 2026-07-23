@@ -169,14 +169,14 @@ export function OrderingEngine({
           return (
             <div key={i} className="flex flex-col items-center gap-1">
               <div
-                className={`flex h-24 w-full flex-col items-center justify-center rounded-xl border-2 px-1 text-center ${
+                className={`flex h-36 w-full flex-col items-center justify-center gap-1 rounded-xl border-2 px-1 text-center ${
                   tile ? "border-amber bg-amber/10" : "border-dashed border-ink/20 text-ink/20"
                 }`}
               >
                 {tile ? (
                   <>
                     {tile.emoji && (
-                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-3xl" boxSize={44} />
+                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-6xl" boxSize={72} />
                     )}
                     <span className="text-xs font-bold leading-tight">{tile.primary}</span>
                   </>
@@ -206,19 +206,17 @@ export function OrderingEngine({
             {pool
               .filter((t) => !placedIds.includes(t.id))
               .map((tile) => (
-                <div key={tile.id} className="flex items-center gap-1 rounded-2xl bg-white pl-3 pr-1.5 py-1.5 shadow-sm">
+                <div key={tile.id} className="flex flex-col items-center gap-1 rounded-2xl bg-white p-3 shadow-sm">
                   <button
                     type="button"
                     onClick={() => tap(tile)}
                     disabled={shake}
-                    className="flex flex-1 items-center gap-2 py-1.5 text-left transition-transform active:scale-95 disabled:opacity-50"
+                    className="flex flex-col items-center gap-1 transition-transform active:scale-95 disabled:opacity-50"
                   >
                     {tile.emoji && (
-                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-4xl" boxSize={52} />
+                      <OverridableGlyph override={tile.override} emoji={tile.emoji} emojiClassName="text-7xl" boxSize={96} />
                     )}
-                    <span className="flex-1">
-                      <span className="block text-sm font-semibold text-ink">{tile.primary}</span>
-                    </span>
+                    <span className="text-center text-sm font-semibold text-ink">{tile.primary}</span>
                   </button>
                   <SpeakButton text={tile.primary} lang="en-US" className="h-7 w-7 text-sm" />
                 </div>

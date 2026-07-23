@@ -74,16 +74,16 @@ export function OverrideItemEditor({
       <button
         type="button"
         onClick={() => fileInput.current?.click()}
-        className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm"
+        className="group relative flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm"
         title="Click to upload a photo"
       >
         {imageUrl ? (
-          <Image src={imageUrl} alt="" fill sizes="56px" className="object-cover" />
+          <Image src={imageUrl} alt="" fill sizes="112px" className="object-cover" />
         ) : (
-          <span className="text-2xl">{emoji}</span>
+          <span className="text-6xl">{emoji}</span>
         )}
-        <span className="absolute inset-0 flex items-center justify-center bg-ink/0 text-[9px] font-bold text-white opacity-0 transition-opacity hover:bg-ink/50 hover:opacity-100">
-          {status === "uploading" ? "..." : "Change"}
+        <span className="absolute inset-0 flex items-center justify-center bg-ink/0 text-xs font-bold text-white opacity-0 transition-opacity group-hover:bg-ink/50 group-hover:opacity-100">
+          {status === "uploading" ? "Uploading..." : imageUrl ? "Change photo" : "Upload photo"}
         </span>
       </button>
       <input

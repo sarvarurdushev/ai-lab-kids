@@ -198,9 +198,9 @@ export function InstructVoraEngine({
                       type="button"
                       disabled={shake}
                       onClick={() => tap(tile.id)}
-                      className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-left shadow-sm disabled:opacity-50"
+                      className="flex items-center gap-3 rounded-2xl bg-white px-3 py-3 text-left shadow-sm disabled:opacity-50"
                     >
-                      <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-4xl" boxSize={52} />
+                      <OverridableGlyph override={stepOverride} emoji={tile.emoji} emojiClassName="text-6xl" boxSize={80} />
                       <span className="flex-1">
                         <span className="block text-base font-semibold text-ink">{stepOverride?.textOverride || tile.text}</span>
                       </span>
