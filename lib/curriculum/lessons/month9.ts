@@ -51,6 +51,24 @@ export const m9_week1: Lesson = {
         "This month broadens 'perception' beyond seeing — sensors that detect motion or touch are a form of perception too, even without eyes or a camera. Motion-sensor games (dance games, some fitness trackers) are the concrete example to point to if kids ask how.",
     },
     {
+      type: "story",
+      title: "Vora and the Night Light",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 2 to ask \"How COULD it know, with no eyes?\" before revealing Vora's discovery — the whole point is letting kids wonder before the sensor is named.",
+      panels: [
+        { text: "One night, Mia tiptoed down a dark hallway to get water. Suddenly — click! — a little light flipped on all by itself!", textSimple: "Mia walked in the dark. Click! A light turned on!", emoji: "🌙" },
+        { text: "Vora blinked. \"Wait — how did that light know Mia was there? It doesn't even have eyes!\"", textSimple: "Vora said, \"How did it know? No eyes!\"", emoji: "👀" },
+        { text: "Vora looked closer. No camera, no eyes — just a tiny bump near the light called a sensor.", textSimple: "Vora looked closer. Just a tiny sensor, no eyes.", emoji: "🔍" },
+        { text: "\"Oh! A sensor can feel you move, the same way YOUR skin feels a breeze — without ever seeing you at all!\"", textSimple: "\"A sensor feels you move — no eyes needed!\"", emoji: "💡" },
+        { text: "Mia clapped. \"So it's like the light has its own kind of feeling — just not with eyes!\"", textSimple: "Mia clapped. \"It feels — just not with eyes!\"", emoji: "👏" },
+        { text: "It wasn't magic — a sensor simply notices movement, the same way your hands, ears, and skin notice the world every day.", textSimple: "No magic! A sensor notices movement, just like your body does.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "How did the night light know Mia was in the hallway, even in the dark?", discussionNote: "It used a motion sensor to feel movement, not eyes or a camera — the same idea from today's lesson." },
+        { question: "What parts of YOUR body help you notice things, even with your eyes closed?", discussionNote: "Open discussion — ears (sound), skin/hands (touch), and nose (smell) all sense the world without needing to see it." },
+      ],
+    },
+    {
       type: "movement",
       title: "Body Part Actions!",
       instructions:
@@ -87,6 +105,19 @@ export const m9_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
+      type: "team_relay",
+      title: "Body & Sensor Relay!",
+      instructions:
+        "Split the class into two teams. Read each prompt aloud and let team members take turns calling out an answer — any true answer counts! Alternate teams each round.",
+      prompts: [
+        { text: "Name a body part on YOUR face!", emoji: "👀" },
+        { text: "Name something your ears can hear!", emoji: "👂" },
+        { text: "Name something your hands can feel!", emoji: "🙌" },
+        { text: "Name a body part you use to smell something!", emoji: "👃" },
+        { text: "Name something a sensor (not eyes) could notice!", emoji: "🤖", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -148,6 +179,24 @@ export const m9_week2: Lesson = {
         "Keep this short — perception was fully taught in Week 1. This is just a quick bridge line before the physical routine, reframing today's movement game as something a sensor could track step by step.",
     },
     {
+      type: "story",
+      title: "Vora's Step-Counting Puzzle",
+      teacherNote:
+        "Read each panel aloud. Pause after panel 3 to ask \"What do YOU think is happening inside the band?\" before revealing panel 4 — let kids guess before Vora explains the sensor.",
+      panels: [
+        { text: "At recess, Jun wore a little band on his wrist and ran around the playground.", textSimple: "Jun wore a band and ran around.", emoji: "🏃" },
+        { text: "Vora noticed the numbers on the band kept changing — 5, 6, 7 jumps! \"How does it know?\" Vora wondered.", textSimple: "The numbers changed! 5, 6, 7 jumps! \"How?\"", emoji: "❓" },
+        { text: "Vora watched closely: every time Jun's wrist swung up and down, the number went up by one.", textSimple: "Every swing, the number went up by one.", emoji: "👋" },
+        { text: "\"Ohh! The band has a sensor that feels each swing and each step, just like it's counting along with Jun's body!\"", textSimple: "\"A sensor feels each swing and counts along!\"", emoji: "💡" },
+        { text: "By the end of recess, the band showed 42 jumps — and Jun didn't have to count a single one himself!", textSimple: "42 jumps! Jun didn't count a single one!", emoji: "🔢" },
+        { text: "It wasn't magic — the sensor just felt Jun's movements, one step at a time, the same way it followed our \"Vora Says\" moves today.", textSimple: "No magic! It just felt each movement.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "How did the wristband know how many times Jun jumped?", discussionNote: "A sensor inside felt each movement/swing and counted one by one — not by watching with eyes." },
+        { question: "Could a sensor follow OUR \"Vora Says\" routine today (stand, touch nose, clap, sit)? Why or why not?", discussionNote: "Yes — a motion sensor could feel each of those movements in order, the same way it followed Jun's jumps." },
+      ],
+    },
+    {
       type: "movement",
       title: "Vora Says: Move!",
       instructions:
@@ -187,6 +236,19 @@ export const m9_week2: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
+      type: "class_vote",
+      title: "Would You Wear a Sensor Band?",
+      instructions:
+        "Read the question aloud. Kids vote by raising hands for each option — there's no right answer, just talk about why!",
+      question: "Would you want to wear a band that counts your jumps and steps at recess?",
+      questionSimple: "Do you want a band that counts your jumps?",
+      options: [
+        { text: "Yes, cool!", emoji: "🤩" },
+        { text: "No thanks", emoji: "🙅" },
+        { text: "Not sure", emoji: "🤔" },
+      ],
     },
     {
       type: "chant",
@@ -248,6 +310,24 @@ export const m9_week3: Lesson = {
         "Keep this brief — perception was fully taught in Week 1. This is just a quick bridge line connecting today's sentence-building game to the same 'sensors help notice the body' idea, before diving into the activity.",
     },
     {
+      type: "story",
+      title: "Vora Tries to Find Its Own Nose",
+      teacherNote:
+        "Read each panel aloud, pointing to Vora's confused expression in panel 1 and its playful solution in panel 5. A fun, silly one — let the class laugh at Vora's cartoon nose before the closing moral.",
+      panels: [
+        { text: "\"Touch your nose!\" the class shouted. Vora looked down... but Vora doesn't have a real nose!", textSimple: "\"Touch your nose!\" But Vora has no real nose!", emoji: "🤖" },
+        { text: "\"Hmm,\" said Vora, \"how would a robot even know where a nose is?\"", textSimple: "Vora said, \"How would a robot know where a nose is?\"", emoji: "❓" },
+        { text: "Vora remembered a toy robot that COULD point to noses — it used a tiny camera to look for two eyes and a nose shape in between.", textSimple: "A toy robot uses a camera to find eyes and a nose shape.", emoji: "📷" },
+        { text: "\"So a camera and a sensor work together — they notice shapes on your face, the same way YOU noticed where to touch!\"", textSimple: "\"A camera notices face shapes, like you noticed your nose!\"", emoji: "💡" },
+        { text: "Vora drew a big cartoon nose on the board instead and touched THAT — \"Close enough for me!\" Vora laughed.", textSimple: "Vora drew a cartoon nose and touched it instead!", emoji: "😄" },
+        { text: "It's not magic — a robot with a camera just looks for patterns and shapes, the same way it looks for patterns in weather or pictures.", textSimple: "No magic! Just looking for shapes and patterns.", emoji: "🧩" },
+      ],
+      comprehensionQuestions: [
+        { question: "How could a toy robot know where a nose is on a face?", discussionNote: "It uses a camera to notice the shape and position of eyes and nose — pattern-spotting, not real understanding." },
+        { question: "Is it funny or strange that Vora doesn't have a real nose? What do YOU think Vora's \"nose\" looks like?", discussionNote: "Open discussion — a fun chance for kids to imagine Vora's body their own way." },
+      ],
+    },
+    {
       type: "movement",
       title: "Move Your Body!",
       instructions:
@@ -287,6 +367,18 @@ export const m9_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[3],
+    },
+    {
+      type: "stand_sit",
+      title: "Senses True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on.",
+      statements: [
+        { text: "Your ears help you hear sounds.", isTrue: true, explanation: "Yes! Ears are sensors for sound.", emoji: "👂" },
+        { text: "A sensor needs eyes to notice you move.", isTrue: false, explanation: "No — sensors can feel movement without any eyes at all.", emoji: "🙅" },
+        { text: "You can touch your nose even with your eyes closed.", isTrue: true, explanation: "Yes! Your body remembers where your nose is without looking.", emoji: "👃" },
+        { text: "Robots can only notice things by looking at a camera.", isTrue: false, explanation: "No — many robots use sensors that feel touch, sound, or motion, not just cameras.", emoji: "🤖", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -349,6 +441,24 @@ export const m9_week4: Lesson = {
         "This is the third quarter-checkpoint listening review (after Week 4's original th/s lesson) — ties this month's 'sensors, not just eyes' theme directly to the ears as a sensor too.",
     },
     {
+      type: "story",
+      title: "Vora's Last New Sound",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 2 to ask \"How could Vora figure it out without looking?\" This story loops the whole month's 'sensors, not eyes' idea back to ears and listening.",
+      panels: [
+        { text: "Vora sat by the window, and outside a strange sound went \"ssss... ssss...\" — was it a hose, or someone saying \"think\" softly?", textSimple: "Vora heard \"ssss...\" outside. A hose? Or \"think\"?", emoji: "👂" },
+        { text: "Vora couldn't see anything outside — just listened very, very closely.", textSimple: "Vora couldn't see. Just listened closely.", emoji: "🌳" },
+        { text: "\"My ears — well, my microphone — are sensors too,\" Vora realized. \"I don't need eyes to notice a sound.\"", textSimple: "\"My microphone is a sensor too — no eyes needed!\"", emoji: "🎙️" },
+        { text: "Vora listened for the tiny puff of air on \"th\" words, and the hiss on \"s\" words, just like in today's game.", textSimple: "Vora listened for the tiny sound differences, like in today's game.", emoji: "💨" },
+        { text: "\"Ssss... that's a hose, not a 'think'!\" Vora said proudly, and sure enough, a garden hose was leaking nearby.", textSimple: "\"That's a hose!\" Vora said. And it was!", emoji: "🚿" },
+        { text: "It wasn't magic — Vora's microphone is a sensor for sound, just like YOUR ears, and careful listening is a skill anyone can practice.", textSimple: "No magic! A microphone senses sound, just like your ears.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "How did Vora figure out the sound without looking outside?", discussionNote: "Vora used its microphone — a sensor for sound — and listened carefully for small differences, just like the ear is a sensor for us." },
+        { question: "Is it easier for YOU to hear \"think\" and \"sink\" now than it was in Week 4 of the fall? Why might that be?", discussionNote: "Open discussion — repeated practice and listening to many examples helps both people and AI get better at noticing small differences." },
+      ],
+    },
+    {
       type: "movement",
       title: "Listening Actions!",
       instructions:
@@ -388,6 +498,19 @@ export const m9_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[3],
+    },
+    {
+      type: "team_relay",
+      title: "Listen & Say Relay!",
+      instructions:
+        "Split into two teams. Read each prompt aloud and let teams take turns calling out an answer — celebrate any good try, since these are tricky sounds!",
+      prompts: [
+        { text: "Say a word that starts with the \"th\" sound!", emoji: "🤔" },
+        { text: "Say a word that starts with the \"s\" sound!", emoji: "🚰" },
+        { text: "Name something you can hear with your ears!", emoji: "👂" },
+        { text: "Say \"mouth\" and \"mouse\" — can your team hear the difference?", emoji: "👄", minTrack: "explorers" },
+        { text: "Name a sound a sensor could \"hear\" instead of see!", emoji: "🎙️", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",

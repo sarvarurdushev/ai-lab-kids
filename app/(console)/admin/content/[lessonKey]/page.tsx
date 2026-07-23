@@ -26,6 +26,14 @@ import {
   wrapupSummaryKey,
   wrapupSummarySimpleKey,
   wrapupHomeworkKey,
+  teamRelayPromptKey,
+  standSitStatementKey,
+  classVoteQuestionKey,
+  classVoteQuestionSimpleKey,
+  classVoteOptionKey,
+  storyPanelKey,
+  storyPanelSimpleKey,
+  storyAudioKey,
 } from "@/lib/content/overrideKey";
 import { Card } from "@/components/ui/Card";
 import { OverrideItemEditor } from "@/components/console/OverrideItemEditor";
@@ -161,6 +169,78 @@ export default async function AdminLessonContentPage({
             { key: chantLineKey(lesson.key, segIndex, i, "response" as const), originalText: l.response, emoji: "👂", noImage: true, minTrack: l.minTrack },
           ]),
         };
+      }
+      if (segment.type === "team_relay") {
+        return {
+          segIndex,
+          title: segment.title,
+          kind: "Team Relay",
+          items: segment.prompts.map((p, i) => ({
+            key: teamRelayPromptKey(lesson.key, segIndex, i),
+            originalText: p.text,
+            emoji: p.emoji,
+            minTrack: p.minTrack,
+          })),
+        };
+      }
+      if (segment.type === "stand_sit") {
+        return {
+          segIndex,
+          title: segment.title,
+          kind: "Stand Up, Sit Down",
+          items: segment.statements.map((s, i) => ({
+            key: standSitStatementKey(lesson.key, segIndex, i),
+            originalText: s.text,
+            emoji: s.emoji,
+            minTrack: s.minTrack,
+          })),
+        };
+      }
+      if (segment.type === "class_vote") {
+        const items: EditableItem[] = [];
+        if (track === "all" || track === "explorers") {
+          items.push({
+            key: classVoteQuestionKey(lesson.key, segIndex),
+            originalText: segment.question,
+            emoji: "🗳️",
+            variantLabel: "AI Explorers (6+) wording",
+          });
+        }
+        if (track === "all" || track === "little_sparks") {
+          items.push({
+            key: classVoteQuestionSimpleKey(lesson.key, segIndex),
+            originalText: segment.questionSimple ?? segment.question,
+            emoji: "🗳️",
+            variantLabel: "Little Sparks (4-5) wording",
+          });
+        }
+        segment.options.forEach((o, i) => {
+          items.push({ key: classVoteOptionKey(lesson.key, segIndex, i), originalText: o.text, emoji: o.emoji });
+        });
+        return { segIndex, title: segment.title, kind: "Class Vote", items };
+      }
+      if (segment.type === "story") {
+        const items: EditableItem[] = segment.panels.flatMap((p, i) => {
+          const panelItems: EditableItem[] = [];
+          if (track === "all" || track === "explorers") {
+            panelItems.push({
+              key: storyPanelKey(lesson.key, segIndex, i),
+              originalText: p.text,
+              emoji: p.emoji,
+              variantLabel: "AI Explorers (6+) wording",
+            });
+          }
+          if (track === "all" || track === "little_sparks") {
+            panelItems.push({
+              key: storyPanelSimpleKey(lesson.key, segIndex, i),
+              originalText: p.textSimple ?? p.text,
+              emoji: p.emoji,
+              variantLabel: "Little Sparks (4-5) wording",
+            });
+          }
+          return panelItems;
+        });
+        return { segIndex, title: segment.title, kind: "Story Time", items };
       }
       if (segment.type === "wrapup") {
         const items: EditableItem[] = [];
@@ -305,6 +385,10 @@ export default async function AdminLessonContentPage({
     .map((s, i) => (s.type === "chant" ? i : -1))
     .filter((i) => i !== -1);
 
+  const storySegmentIndexes = lesson.segments
+    .map((s, i) => (s.type === "story" ? i : -1))
+    .filter((i) => i !== -1);
+
   return (
     <div className="flex flex-col gap-6">
       <div>
@@ -337,6 +421,16 @@ export default async function AdminLessonContentPage({
           key={segIndex}
           contentKey={chantSongKey(lesson.key, segIndex)}
           initialAudioUrl={overrides[chantSongKey(lesson.key, segIndex)]?.audioUrl ?? null}
+        />
+      ))}
+
+      {storySegmentIndexes.map((segIndex) => (
+        <SongOverrideEditor
+          key={segIndex}
+          contentKey={storyAudioKey(lesson.key, segIndex)}
+          initialAudioUrl={overrides[storyAudioKey(lesson.key, segIndex)]?.audioUrl ?? null}
+          label="Story narration (optional)"
+          uploadLabel="narration"
         />
       ))}
 

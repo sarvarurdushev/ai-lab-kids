@@ -42,6 +42,54 @@ export const w4d1_my_family: Lesson = {
         "Korean family terms encode relative age and the speaker's gender in a way English \"brother/sister\" doesn't — expect kids to want to specify more. Validate that (\"Yes, in Korean we'd say more — in English we just say brother!\") rather than treating it as a mistake.",
     },
     {
+      type: "story",
+      title: "Vora Learns a New Family Word",
+      teacherNote:
+        "Pause after panel 2 to ask the class what THEY call their own grandparents before revealing what Vora learns — this personalizes the story and previews today's family vocabulary.",
+      panels: [
+        {
+          text: "A girl named Sora showed Vora a photo of her whole family, all smiling together.",
+          textSimple: "Sora showed Vora her family photo.",
+          emoji: "👨‍👩‍👧‍👦",
+        },
+        {
+          text: "\"Who is this?\" asked Vora, pointing at an older man with a big smile. \"I don't know that word yet.\"",
+          textSimple: "\"Who is this?\" asked Vora.",
+          emoji: "❓",
+        },
+        {
+          text: "\"That's my grandpa!\" said Sora. \"He tells the best stories.\"",
+          textSimple: "\"That's my grandpa!\" said Sora.",
+          emoji: "👴",
+        },
+        {
+          text: "\"Grandpa,\" repeated Vora. \"Thank you for teaching me — now I know that word too!\"",
+          textSimple: "\"Grandpa,\" said Vora. \"Now I know that word!\"",
+          emoji: "💬",
+        },
+        {
+          text: "The next day, Vora saw another photo with an older man in it and said right away, \"Is that your grandpa?\"",
+          textSimple: "The next day, Vora used the new word!",
+          emoji: "✅",
+        },
+        {
+          text: "Vora wasn't magic — it didn't already know the word \"grandpa\" — it learned it by listening to Sora, the exact same way you learn new words from the people around you.",
+          textSimple: "No magic! Vora learned \"grandpa\" by listening to Sora.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora learn the word \"grandpa\"?",
+          discussionNote: "It didn't already know the word — it asked, listened to Sora's answer, and remembered it, the same way people learn new words from each other.",
+        },
+        {
+          question: "What's a word a grown-up in YOUR family taught you?",
+          discussionNote: "Open discussion — connect back to the idea that learning new words from people you talk to is something both kids and Vora do.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Family Actions!",
       instructions:
@@ -58,6 +106,20 @@ export const w4d1_my_family: Lesson = {
           emoji: "👶",
           minTrack: "explorers",
         },
+      ],
+    },
+    {
+      type: "class_vote",
+      title: "Family Talk Vote!",
+      instructions:
+        "Read the question aloud. Have kids vote with a show of hands or turn-and-talk with a partner. There's no single right answer — the goal is getting kids talking about their own families.",
+      question: "What's your favorite thing to do with your family?",
+      questionSimple: "What do you like to do with your family?",
+      options: [
+        { text: "Eat a yummy meal together", emoji: "🍚" },
+        { text: "Play games together", emoji: "🎲" },
+        { text: "Watch a movie together", emoji: "🎬" },
+        { text: "Go outside together", emoji: "🌳" },
       ],
     },
     {
@@ -116,6 +178,49 @@ export const w4d3_think_or_sink: Lesson = {
       teacherNote: "Korean has no dental fricative /θ/; it's commonly substituted with /s/ or /t/ in loanwords and early L2 production.",
     },
     {
+      type: "story",
+      title: "Vora Spots the Tricky Tongue",
+      teacherNote:
+        "Model putting your tongue between your teeth for 'th' and pulling it back for 's' as you read panels 2-4, so kids can see the tongue-position difference Vora describes.",
+      panels: [
+        {
+          text: "Vora heard two words that almost sound the same: \"think\" and \"sink.\"",
+          textSimple: "Vora heard \"think\" and \"sink.\"",
+          emoji: "🤔",
+        },
+        {
+          text: "\"They sound so close together,\" said Vora. \"I need to look for a clue.\"",
+          textSimple: "\"They sound close,\" said Vora.",
+          emoji: "🔎",
+        },
+        {
+          text: "Vora noticed that for \"think,\" the tongue peeks out between the teeth. For \"sink,\" the tongue stays hidden behind the teeth.",
+          textSimple: "\"Think\" — tongue peeks out. \"Sink\" — tongue stays hidden.",
+          emoji: "👅",
+        },
+        {
+          text: "\"Now I can tell them apart!\" said Vora. \"Watching the tongue is the clue!\"",
+          textSimple: "\"Now I can tell them apart!\" said Vora.",
+          emoji: "✅",
+        },
+        {
+          text: "Vora wasn't magic — it just noticed a small difference in tongue position, exactly what YOU are about to practice listening for.",
+          textSimple: "No magic! Vora just noticed the tongue's position.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What clue helped Vora tell \"think\" and \"sink\" apart?",
+          discussionNote: "Watching where the tongue goes — peeking out between the teeth for 'th,' staying hidden for 's' — a visible clue, not a guess.",
+        },
+        {
+          question: "Try saying 'think' and 'sink' yourself — can you feel where your tongue goes for each one?",
+          discussionNote: "Open, hands-on discussion — have kids feel their own tongue position, reinforcing the story's observation.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Th and S Sound Actions!",
       instructions:
@@ -144,6 +249,19 @@ export const w4d3_think_or_sink: Lesson = {
           { wordA: { text: "path", emoji: "🛤️" }, wordB: { text: "pass", emoji: "🏈" } },
         ],
       },
+    },
+    {
+      type: "team_relay",
+      title: "Th or S Word Relay",
+      instructions:
+        "Split the class into teams. Read each prompt aloud and have the next team try it together before moving to the next team. Check each other's tongue position for 'th' words as a class.",
+      prompts: [
+        { text: "Say a word that starts with the TH sound, like 'think'!", emoji: "🤔" },
+        { text: "Say a word that starts with the S sound, like 'sink'!", emoji: "🚰" },
+        { text: "Point to your mouth and say 'mouth'!", emoji: "👄" },
+        { text: "Wiggle your nose like a mouse and say 'mouse'!", emoji: "🐭" },
+        { text: "Pretend to wash in the bath and say 'bath'!", emoji: "🛁", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -211,6 +329,49 @@ export const w4d2_count_with_vora: Lesson = {
         "Keep this light — it's just planting that \"counting what's in a picture\" is something both people and AI do, ahead of the sentence-building activity.",
     },
     {
+      type: "story",
+      title: "Vora Counts the Dogs at the Park",
+      teacherNote:
+        "Pause after panel 2 to let the class count along with Vora out loud before panel 3 reveals the total — great rehearsal for the sentence-building activity below.",
+      panels: [
+        {
+          text: "Vora looked at a photo of a park full of dogs, running and playing everywhere.",
+          textSimple: "Vora saw a park full of dogs.",
+          emoji: "🐶",
+        },
+        {
+          text: "\"How many dogs are there?\" someone asked. Vora looked closely and started counting: one, two, three...",
+          textSimple: "\"How many dogs?\" Vora started counting.",
+          emoji: "🔢",
+        },
+        {
+          text: "Vora counted very carefully, touching each dog with its eyes so it wouldn't count the same dog twice: four, five!",
+          textSimple: "Vora counted carefully. Four, five!",
+          emoji: "👀",
+        },
+        {
+          text: "\"There are five dogs at the park!\" said Vora. \"I have five dogs in this picture.\"",
+          textSimple: "\"Five dogs!\" said Vora.",
+          emoji: "5️⃣",
+        },
+        {
+          text: "Vora wasn't magic — it just counted one at a time, very carefully, so it wouldn't skip one or count one twice, exactly like you do with your fingers.",
+          textSimple: "No magic! Vora counted one at a time, carefully.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora make sure it didn't count the same dog twice?",
+          discussionNote: "It counted carefully and kept track of each one, one at a time — a careful process, not a magic guess.",
+        },
+        {
+          question: "Count something around the room right now — how many did you find?",
+          discussionNote: "Open, hands-on practice — have a few kids share their count out loud, reinforcing careful one-at-a-time counting.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Counting Actions!",
       instructions:
@@ -236,6 +397,25 @@ export const w4d2_count_with_vora: Lesson = {
           { text: "dogs", role: "object" },
         ],
       },
+    },
+    {
+      type: "stand_sit",
+      title: "Counting: True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer and read the explanation before moving on.",
+      statements: [
+        { text: "If you count one, two, three, you have counted three things.", isTrue: true, explanation: "Yes! Counting up to three means there are three things.", emoji: "3️⃣" },
+        { text: "Four is more than two.", isTrue: true, explanation: "Yes! Four is a bigger number than two.", emoji: "4️⃣" },
+        { text: "If you count the same dog twice, you get the right total.", isTrue: false, explanation: "No — counting something twice gives you the wrong total. Each thing gets counted just once!", emoji: "🐶" },
+        { text: "One means just a single thing, all by itself.", isTrue: true, explanation: "Yes! One means just a single thing.", emoji: "1️⃣" },
+        {
+          text: "You can only count things you can see — never things you hear, like claps.",
+          isTrue: false,
+          explanation: "No — you can count sounds too, like counting claps or drumbeats!",
+          emoji: "👏",
+          minTrack: "explorers",
+        },
+      ],
     },
     {
       type: "chant",

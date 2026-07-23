@@ -47,6 +47,49 @@ export const m2_week1: Lesson = {
         "Start with \"I'm from Korea\" — every child can say this truthfully and proudly — before naming other countries. This is societal_impact's first appearance: keep the translator-app example concrete (e.g., \"like when a friend visits from another country and doesn't know Korean yet\").",
     },
     {
+      type: "story",
+      title: "Vora Meets a New Friend",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 3 to ask what the class thinks happens when the two kids can't understand each other's words — the point is that AI translation helps people connect, it doesn't replace them talking.",
+      panels: [
+        {
+          text: "A new student named Mina moved to Vora's town, all the way from another country.",
+          textSimple: "Mina moved here from far away.",
+          emoji: "🧳",
+        },
+        {
+          text: "Mina wanted to say hello, but her words were different — Vora's friends didn't understand her language yet.",
+          textSimple: "Mina spoke a different language.",
+          emoji: "🗣️",
+        },
+        {
+          text: "Vora held up a little translator app and Mina spoke into it.",
+          textSimple: "Vora used a translator app.",
+          emoji: "📱",
+        },
+        {
+          text: "The app changed Mina's words into words everyone understood — and soon, Mina and her new friends were playing together!",
+          textSimple: "The app helped everyone understand! They played together.",
+          emoji: "🤝",
+        },
+        {
+          text: "The app didn't make new friends by itself — it just helped the words travel between two kids who already wanted to be friends.",
+          textSimple: "The app just helped the words. The kids did the rest!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What problem did the translator app solve for Mina and her new friends?",
+          discussionNote: "It changed Mina's words into words her new friends could understand, so they could talk and play together even though they spoke different languages.",
+        },
+        {
+          question: "Have you ever met someone who speaks a different language? How did you understand each other?",
+          discussionNote: "Open discussion — point out that gestures, pictures, and patience work too, not just apps.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "World Words Actions!",
       instructions:
@@ -86,6 +129,24 @@ export const m2_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
+      type: "stand_sit",
+      title: "From Korea or Not — True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on.",
+      statements: [
+        { text: "Every country has its own flag.", isTrue: true, explanation: "Yes! Flags help us tell countries apart.", emoji: "🚩" },
+        { text: "Everyone in the world eats the exact same food.", isTrue: false, explanation: "No — different countries have different favorite foods!", emoji: "🍲" },
+        { text: "People all around the world speak the same language.", isTrue: false, explanation: "No — there are many different languages!", emoji: "🗣️" },
+        {
+          text: "A translator app can help people who speak different languages understand each other.",
+          isTrue: true,
+          explanation: "Yes! It changes words from one language into another.",
+          emoji: "📱",
+          minTrack: "explorers",
+        },
+      ],
     },
     {
       type: "chant",
@@ -140,6 +201,49 @@ export const m2_week2: Lesson = {
         "Quick reminder before the sequencing game — following ordered steps is Representation & Reasoning, the same skill behind an algorithm. Keep this brief; the game does the teaching.",
     },
     {
+      type: "story",
+      title: "Vora Packs for a Trip",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 3 to ask what should come next before revealing panel 4 — the whole point is that skipping a step causes a problem, just like in the instruct_vora activity.",
+      panels: [
+        {
+          text: "Vora was so excited for a trip that it packed its bag and ran straight to the plane!",
+          textSimple: "Vora packed and ran to the plane!",
+          emoji: "🧳",
+        },
+        {
+          text: "But wait — Vora forgot to go to the airport first! The plane wasn't even there.",
+          textSimple: "Oops! No airport, no plane!",
+          emoji: "😳",
+        },
+        {
+          text: "\"I skipped a step,\" said Vora. \"What should I have done in order?\"",
+          textSimple: "\"I skipped a step!\" said Vora.",
+          emoji: "🤔",
+        },
+        {
+          text: "Vora tried again: pack the bag, go to the airport, THEN fly on the plane — first, next, then.",
+          textSimple: "Pack, airport, THEN fly. In order!",
+          emoji: "✈️",
+        },
+        {
+          text: "Doing things in the right order isn't magic — it just means thinking through each step, one at a time, before you jump ahead.",
+          textSimple: "No magic — just steps, in order!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What went wrong when Vora skipped a step?",
+          discussionNote: "It tried to fly before going to the airport — steps done out of order don't work, just like in today's sequencing game.",
+        },
+        {
+          question: "Can you think of something you do at home that has to happen in a certain order?",
+          discussionNote: "Open discussion — brushing teeth before bed, putting on socks before shoes, etc.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Pretend Trip Actions!",
       instructions:
@@ -185,6 +289,20 @@ export const m2_week2: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
+      type: "class_vote",
+      title: "Where Would You Like to Visit?",
+      instructions:
+        "Read the question aloud. Let kids vote by raising their hands for their favorite choice, or discuss as a class why they picked it.",
+      question: "If you could take a pretend trip anywhere, where would you go?",
+      questionSimple: "Where do you want to go on a pretend trip?",
+      options: [
+        { text: "The beach", emoji: "🏖️" },
+        { text: "The mountains", emoji: "⛰️" },
+        { text: "Another country", emoji: "🌍" },
+        { text: "Space", emoji: "🚀" },
+      ],
     },
     {
       type: "chant",
@@ -238,6 +356,49 @@ export const m2_week3: Lesson = {
         "Brief reminder before the game — repeated exposure is how both Vora and kids get better at recognizing something, the Learning big idea. Keep it to a couple of lines; the matching game is the real practice.",
     },
     {
+      type: "story",
+      title: "Vora Remembers the Whole Trip",
+      teacherNote:
+        "Read each panel aloud, emphasizing that Vora needed several tries before it could remember the whole sequence — link this back to the memory game's repeated flips.",
+      panels: [
+        {
+          text: "The first time Vora tried to remember the trip steps, it mixed up the order.",
+          textSimple: "First try: Vora mixed up the order.",
+          emoji: "😵",
+        },
+        {
+          text: "Vora practiced the steps again — pack, airport, fly, say hello.",
+          textSimple: "Vora practiced again and again.",
+          emoji: "🔁",
+        },
+        {
+          text: "After a few tries, Vora said all four steps perfectly, in the right order, without stopping to think.",
+          textSimple: "Then Vora got it right every time!",
+          emoji: "🎯",
+        },
+        {
+          text: "\"Practice made it stick,\" said Vora, \"just like flipping the same word cards again and again.\"",
+          textSimple: "\"Practice made it stick!\" said Vora.",
+          emoji: "🃏",
+        },
+        {
+          text: "Remembering isn't magic — it's what happens after you see or do something enough times, whether you're Vora or a kid playing memory match.",
+          textSimple: "No magic — just practice, again and again!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What helped Vora finally remember all the trip steps in order?",
+          discussionNote: "Practicing them again and again — repetition is what makes memory stick, for Vora and for us.",
+        },
+        {
+          question: "What's something you had to practice a few times before you remembered it perfectly?",
+          discussionNote: "Open discussion — tying shoes, a song, a dance move, spelling your name.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "World Words on the Move!",
       instructions:
@@ -284,6 +445,19 @@ export const m2_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[2],
+    },
+    {
+      type: "team_relay",
+      title: "World Words Relay!",
+      instructions:
+        "Split the class into two teams. Read each prompt aloud, then point to one team to shout out an answer before switching to the other team for the next prompt. Any reasonable answer counts!",
+      prompts: [
+        { text: "Name something you'd pack for a trip!", emoji: "🧳" },
+        { text: "Name a food from another country!", emoji: "🍕" },
+        { text: "Name something people wave at a parade!", emoji: "🚩" },
+        { text: "Name something you might hear at a festival!", emoji: "🎵", minTrack: "explorers" },
+        { text: "Name something you do to say hello!", emoji: "👋" },
+      ],
     },
     {
       type: "chant",
@@ -339,6 +513,49 @@ export const m2_week4: Lesson = {
         "Call out the contraction briefly (\"I'm\" = \"I am\") since Korean has no equivalent — model it as one chunk, not two words squeezed together, then move straight into building the sentence.",
     },
     {
+      type: "story",
+      title: "Vora Says Where It's From",
+      teacherNote:
+        "Read each panel aloud. Pause after panel 2 to ask kids to guess what Vora says next, before revealing panel 3 — model saying \"I'm from Korea\" with the same pride Vora shows.",
+      panels: [
+        {
+          text: "Vora visited a video call with friends from all over the world — Japan, Brazil, and Kenya.",
+          textSimple: "Vora video-called friends from all over.",
+          emoji: "💻",
+        },
+        {
+          text: "One by one, each friend proudly said where they were from — and a translator app helped every word cross the screen.",
+          textSimple: "Everyone said where they're from. A translator app helped!",
+          emoji: "📱",
+        },
+        {
+          text: "When it was Vora's turn, it said proudly, \"I'm from Korea!\"",
+          textSimple: "\"I'm from Korea!\" said Vora, proudly.",
+          emoji: "🇰🇷",
+        },
+        {
+          text: "Everyone cheered, even though they lived in different countries and spoke different languages.",
+          textSimple: "Everyone cheered together!",
+          emoji: "🎉",
+        },
+        {
+          text: "The app helped the words travel, but the pride in saying \"I'm from Korea\" — that part was all Vora's.",
+          textSimple: "The app helped the words. The pride was Vora's own!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora's friends from other countries understand what Vora said?",
+          discussionNote: "A translator app helped change the words — connecting back to how AI translation helps people from different countries understand each other.",
+        },
+        {
+          question: "How do YOU feel when you say \"I'm from Korea\"?",
+          discussionNote: "Open discussion — invite a few kids to share, reinforcing pride in identity.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Proud to Be From Korea!",
       instructions:
@@ -369,6 +586,24 @@ export const m2_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[2],
+    },
+    {
+      type: "stand_sit",
+      title: "Proud to Be From Korea — True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on.",
+      statements: [
+        { text: "Everyone in this class can say \"I'm from Korea.\"", isTrue: true, explanation: "Yes! We can all say it proudly, together.", emoji: "🇰🇷" },
+        { text: "\"I'm\" is a short way of saying two words.", isTrue: true, explanation: "Yes! \"I'm\" is short for \"I am.\"", emoji: "✂️" },
+        { text: "Every country in the world speaks Korean.", isTrue: false, explanation: "No — different countries speak different languages!", emoji: "🌍" },
+        {
+          text: "A translator app could help you say hello to a friend from another country.",
+          isTrue: true,
+          explanation: "Yes! It helps translate words between languages.",
+          emoji: "📱",
+          minTrack: "explorers",
+        },
+      ],
     },
     {
       type: "chant",

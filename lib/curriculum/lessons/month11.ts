@@ -48,6 +48,24 @@ export const m11_week1: Lesson = {
         "This month's honest AI boundary: recognizing a facial expression (a shape a camera can detect) isn't the same as understanding a feeling. Also flag the grammar shift explicitly: \"I feel ___\" uses a real verb (feel), unlike the \"It's ___\" copula pattern used all year (Months 1, 6, and 7) — a quick side-by-side (\"It's sunny\" vs. \"I feel happy\") helps prevent kids from saying \"I'm feel happy\" or overusing \"it's\" for their own feelings.",
     },
     {
+      type: "story",
+      title: "Vora Guesses Wrong",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 2 to ask \"How could Sam be smiling AND a little sad?\" before revealing Sam's own explanation — the point is letting kids sit with the surprise before Vora resolves it.",
+      panels: [
+        { text: "Vora saw a photo of a boy named Sam, smiling big at the camera. \"Sam looks happy!\" Vora said.", textSimple: "Vora saw Sam smiling. \"Sam looks happy!\"", emoji: "😊" },
+        { text: "But later, Sam's teacher said Sam had actually just lost his favorite toy that same morning.", textSimple: "But Sam had just lost his favorite toy that morning.", emoji: "🧸" },
+        { text: "\"But... the photo showed a big smile,\" Vora said, puzzled. \"How could Sam be sad AND smiling?\"", textSimple: "Vora was puzzled. \"Sad AND smiling?\"", emoji: "❓" },
+        { text: "Sam explained: \"I smiled for the photo, but inside I still felt a little sad about my toy.\"", textSimple: "Sam said, \"I smiled for the photo, but I felt sad too.\"", emoji: "💬" },
+        { text: "\"Oh,\" said Vora quietly. \"I can see a smile... but I can't see what's really happening inside someone's heart.\"", textSimple: "\"I can see a smile, but not what's inside your heart.\"", emoji: "💭" },
+        { text: "It's not magic, and it's not mind-reading — Vora can only guess from a picture, but only Sam really knows how Sam feels.", textSimple: "No magic! Vora can only guess. Only Sam really knows.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why did Vora guess Sam was happy, even though Sam actually felt a little sad?", discussionNote: "Vora only saw the smile in the photo — a picture can't show everything happening inside someone's heart." },
+        { question: "Has YOUR face ever shown one feeling while you felt something different inside? What happened?", discussionNote: "Open, gentle discussion — normalize that feelings and faces don't always perfectly match, and that's okay." },
+      ],
+    },
+    {
       type: "movement",
       title: "Feelings Actions!",
       instructions:
@@ -87,6 +105,18 @@ export const m11_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
+      type: "stand_sit",
+      title: "Feelings & AI True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on.",
+      statements: [
+        { text: "A computer can see a smile in a photo.", isTrue: true, explanation: "Yes! Computers can be trained to notice smiles and other expressions.", emoji: "😊" },
+        { text: "A computer always knows exactly how you feel inside.", isTrue: false, explanation: "No — only YOU really know that. A computer can only guess from what it sees.", emoji: "🧠" },
+        { text: "You can feel one way inside and show a different face outside.", isTrue: true, explanation: "Yes! That happens to everyone sometimes, and it's okay.", emoji: "🎭", minTrack: "explorers" },
+        { text: "Only sad people can smile.", isTrue: false, explanation: "No — people smile for lots of reasons, even when they feel a little sad too.", emoji: "😢" },
+      ],
     },
     {
       type: "chant",
@@ -145,6 +175,24 @@ export const m11_week2: Lesson = {
         "Quick reinforcement of Week 1's AI-limits idea — no new teaching here, just a short bridge into today's sentence-building game.",
     },
     {
+      type: "story",
+      title: "Vora's Guessing Game",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 3 to ask \"Do you think Vora will guess right this time?\" before revealing Priya's real feeling in panel 4 — the surprise is the whole point.",
+      panels: [
+        { text: "Vora set up a fun game: \"I'll look at your face and guess your feeling!\" The whole class lined up to try.", textSimple: "Vora played a guessing game with the class.", emoji: "🎮" },
+        { text: "First was Aiden, grinning ear to ear. \"Happy!\" guessed Vora — correct!", textSimple: "Aiden grinned. \"Happy!\" guessed Vora. Correct!", emoji: "😄" },
+        { text: "Next was Priya, with a totally still, calm face. \"Um... happy? Tired? I'm not sure,\" said Vora.", textSimple: "Priya's face was calm. Vora wasn't sure.", emoji: "😐" },
+        { text: "Priya said, \"Actually, I feel excited! I just have a quiet face.\" Vora had guessed wrong.", textSimple: "Priya said, \"I feel excited! I just have a quiet face.\"", emoji: "😲" },
+        { text: "\"I guess I can't always tell just by looking,\" Vora admitted. \"Some feelings hide well!\"", textSimple: "\"I can't always tell just by looking!\" said Vora.", emoji: "🙈" },
+        { text: "It's not magic — a guess from a face is still just a guess, and the only sure way to know is to ask, and really listen.", textSimple: "No magic! A guess is just a guess. Ask, and listen.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why did Vora get Priya's feeling wrong?", discussionNote: "Priya's face looked calm even though she felt excited inside — faces don't always match feelings, so a guess can be wrong." },
+        { question: "What's a better way to find out how someone really feels, instead of just guessing from their face?", discussionNote: "Ask them directly, and listen — the point of practicing \"I feel ___\" and \"How do you feel?\" this month." },
+      ],
+    },
+    {
       type: "movement",
       title: "Freeze-Frame Feelings!",
       instructions:
@@ -189,6 +237,19 @@ export const m11_week2: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
+      type: "class_vote",
+      title: "Guess It or Ask It?",
+      instructions:
+        "Read the question aloud. Kids vote by raising hands — there's no single right answer, just a fun chance to talk about how we like to be understood.",
+      question: "Would you rather have a friend GUESS how you feel from your face, or ASK you directly?",
+      questionSimple: "Guess your feeling, or ask you?",
+      options: [
+        { text: "Guess it", emoji: "🤔" },
+        { text: "Ask me!", emoji: "💬" },
+        { text: "Both are okay", emoji: "🤝" },
+      ],
     },
     {
       type: "chant",
@@ -247,6 +308,24 @@ export const m11_week3: Lesson = {
         "Brief callback to Week 1's AI-limits idea, reframed through Big Idea 3 (Learning): repeated exposure is how both Vora and kids build recognition.",
     },
     {
+      type: "story",
+      title: "Vora Practices and Practices",
+      teacherNote:
+        "Read each panel aloud, pointing out how much time passes (Monday to Friday) — the point is that Vora's improvement takes many, many examples, not a single lesson. Pause after panel 3 to ask what kids notice.",
+      panels: [
+        { text: "On Monday, Vora looked at a photo of a crying face and guessed, \"Angry?\" — but it was actually sad.", textSimple: "Monday: Vora saw a crying face and guessed wrong.", emoji: "😢" },
+        { text: "Vora looked at many more photos all week — smiling faces, crying faces, surprised faces — dozens and dozens of them.", textSimple: "All week, Vora looked at many, many faces.", emoji: "🗂️" },
+        { text: "Slowly, Vora started noticing little differences: angry eyebrows scrunch down, sad eyes look droopy.", textSimple: "Vora noticed small differences between faces.", emoji: "🔎" },
+        { text: "By Friday, Vora looked at a new crying photo and said, \"That one's sad — see the droopy eyes?\" Correct!", textSimple: "Friday: Vora said \"sad\" and was right!", emoji: "✅" },
+        { text: "\"I got better just by seeing lots and lots of examples,\" Vora realized, \"the exact same way you got better at today's matching game!\"", textSimple: "\"I got better by seeing lots of examples!\"", emoji: "💡" },
+        { text: "It's not magic — practicing with many examples is how both Vora and YOU get better at noticing patterns, whether it's feelings or matching cards.", textSimple: "No magic! Practicing with examples helps anyone get better.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "How did Vora get better at telling angry faces from sad faces?", discussionNote: "By looking at lots and lots of examples over time — the same \"learning from examples\" idea taught all year." },
+        { question: "What's something YOU got better at just by practicing it many times?", discussionNote: "Open discussion — riding a bike, reading, a sport, a game — connects the AI learning idea to kids' own experience." },
+      ],
+    },
+    {
       type: "movement",
       title: "Act It, Match It!",
       instructions:
@@ -291,6 +370,19 @@ export const m11_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[5],
+    },
+    {
+      type: "team_relay",
+      title: "Feelings Relay!",
+      instructions:
+        "Split into two teams. Read each prompt aloud and let team members take turns calling out an answer or acting out a feeling for the other team to guess.",
+      prompts: [
+        { text: "Name a feeling word and make the face!", emoji: "😊" },
+        { text: "Name a feeling you had this week!", emoji: "😴" },
+        { text: "Name a feeling that makes you want to jump!", emoji: "🤩" },
+        { text: "Show a feeling face — can the other team guess it?", emoji: "😲", minTrack: "explorers" },
+        { text: "Name a feeling you feel on a rainy day!", emoji: "😢", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -354,6 +446,23 @@ export const m11_week4: Lesson = {
         "Unlike Month 5's \"This is my sister,\" this sentence frame asks for a genuine, in-the-moment answer — encourage kids to swap in their real feeling, not just \"happy.\" Ties back to this month's AI honesty theme: this is one sentence Vora truly can't answer for them.",
     },
     {
+      type: "story",
+      title: "The Question Only YOU Can Answer",
+      teacherNote:
+        "Read each panel aloud slowly, especially Vora's pause in panel 3 — that's the emotional heart of the story. Let the closing line land quietly before moving to discussion.",
+      panels: [
+        { text: "Vora asked the whole class, \"How do you feel today?\" and waited for the answers.", textSimple: "Vora asked, \"How do you feel today?\"", emoji: "❓" },
+        { text: "\"I could guess,\" Vora thought, looking at everyone's faces — some smiling, some quiet, some yawning.", textSimple: "Vora looked at faces — smiling, quiet, yawning.", emoji: "👀" },
+        { text: "But Vora stopped itself. \"Wait — I don't need to guess. I can just ask, and really listen to what's true for each of you.\"", textSimple: "Vora stopped. \"I'll ask, and really listen.\"", emoji: "🛑" },
+        { text: "One by one, the class answered — happy, tired, a little nervous, excited — and every single answer was correct, because it came from them.", textSimple: "Everyone answered. Every answer was correct — it was theirs!", emoji: "🗣️" },
+        { text: "\"Even the smartest AI in the world can't answer this question for you,\" said Vora. \"Only you know how you really feel — and that makes your answer special.\"", textSimple: "\"Only YOU know how you feel. That makes it special.\"", emoji: "💛" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why couldn't Vora just guess everyone's feeling instead of asking?", discussionNote: "A guess from a face can be wrong — only the person themselves truly knows how they feel inside." },
+        { question: "How did it feel to have your own true answer be the \"correct\" one today?", discussionNote: "Open discussion — celebrate that personal feelings don't need anyone else's approval to be valid." },
+      ],
+    },
+    {
       type: "movement",
       title: "Show Your Real Feeling!",
       instructions:
@@ -385,6 +494,20 @@ export const m11_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[5],
+    },
+    {
+      type: "class_vote",
+      title: "Hardest Feeling to Show?",
+      instructions:
+        "Read the question aloud. Kids vote by raising hands, or try acting out each feeling silently to test their guess — no single right answer, just a fun closing discussion.",
+      question: "Which feeling is hardest to show just with your face, without saying any words?",
+      questionSimple: "Which feeling is hard to show without words?",
+      options: [
+        { text: "Happy", emoji: "😊" },
+        { text: "Tired", emoji: "😴" },
+        { text: "Surprised", emoji: "😲" },
+        { text: "Nervous", emoji: "😬" },
+      ],
     },
     {
       type: "chant",

@@ -42,6 +42,49 @@ export const w8d1_talking_to_ai_safely: Lesson = {
         "Read each rule aloud once, then ask the class to repeat it back in their own words (English or Korean, either is fine here) — this is a discussion lesson, not a decoding-practice lesson. Deliberately kept to four short lines.",
     },
     {
+      type: "story",
+      title: "Junho and the Curious Question",
+      teacherNote:
+        "Read this right after the four safety rules — it turns the abstract rules into one concrete choice a kid actually makes. Use Junho's choice as the model answer for the check-in question at the end of the lesson.",
+      panels: [
+        {
+          text: "Junho loved chatting with a friendly AI helper on the family tablet, with his mom nearby.",
+          textSimple: "Junho chats with an AI helper. Mom is nearby.",
+          emoji: "📱",
+        },
+        {
+          text: "One day, the AI helper asked, \"What's your home address? I'd love to know where you live!\"",
+          textSimple: "The AI asked for his home address.",
+          emoji: "❓",
+        },
+        {
+          text: "Junho paused. He remembered Vora's rule: never share your address without a grown-up.",
+          textSimple: "Junho remembered: don't share your address alone!",
+          emoji: "🤐",
+        },
+        {
+          text: "Instead of answering, Junho called his mom over and told her what the AI had asked.",
+          textSimple: "Junho told his mom instead of answering.",
+          emoji: "🙋",
+        },
+        {
+          text: "\"Great choice!\" said Vora. \"An AI only knows what you tell it — checking with a grown-up first keeps you in control.\"",
+          textSimple: "\"Great choice!\" said Vora. Asking a grown-up is smart!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "Why didn't Junho answer the AI helper's question right away?",
+          discussionNote: "He remembered the safety rule about not sharing personal information like an address without checking with a grown-up first — the story makes that rule concrete.",
+        },
+        {
+          question: "What would YOU do if an AI or app asked you a question that felt too personal?",
+          discussionNote: "Open discussion — guide kids back to telling a grown-up, the same choice Junho made.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "AI Safety Actions!",
       instructions:
@@ -53,6 +96,18 @@ export const w8d1_talking_to_ai_safely: Lesson = {
         { text: "Grown-up — raise your hand high and wave", emoji: "✋" },
         { text: "Mistake — shrug your shoulders", emoji: "🤷" },
         { text: "Double-check — nod your head yes, twice", emoji: "✅" },
+      ],
+    },
+    {
+      type: "team_relay",
+      title: "AI Safety Relay!",
+      instructions:
+        "Split the class into two or three teams. Read one prompt aloud at a time; teams take turns racing to give a good answer using today's safety rules. Cheer for every good answer, then move to the next team.",
+      prompts: [
+        { text: "Name one thing you should NEVER share with an AI without asking a grown-up!", emoji: "🤐" },
+        { text: "Name someone you could tell if an AI said something scary or confusing!", emoji: "✋" },
+        { text: "Name one rule for talking to AI safely!", emoji: "✅" },
+        { text: "Name something you should do if you think an AI made a mistake!", emoji: "🤷", minTrack: "explorers" },
       ],
     },
     {
@@ -109,6 +164,49 @@ export const w8d2_review_carnival: Lesson = {
         { text: "Bus — drive a big steering wheel", emoji: "🚌" },
         { text: "Train — chug your arms like train wheels", emoji: "🚂" },
         { text: "Bike — pedal your legs in place", emoji: "🚲" },
+      ],
+    },
+    {
+      type: "story",
+      title: "Vora Remembers Everything",
+      teacherNote:
+        "Read this before the four review rounds as a fun framing device — pause on each panel and ask the class which past lesson it's referencing before moving on.",
+      panels: [
+        {
+          text: "Standing at the carnival games, Vora looked back at everything the class had taught it this unit.",
+          textSimple: "Vora remembers everything this unit!",
+          emoji: "🎉",
+        },
+        {
+          text: "\"Remember when you taught me dogs and birds are animals, but buses and trains are vehicles?\" Vora grinned.",
+          textSimple: "\"You taught me animals and vehicles!\"",
+          emoji: "🐶",
+        },
+        {
+          text: "\"And you taught me the right order for a morning routine — first, next, then, last!\"",
+          textSimple: "\"You taught me the right order too!\"",
+          emoji: "🔁",
+        },
+        {
+          text: "\"You even helped me hear the difference between tricky sounds, like light and right!\"",
+          textSimple: "\"You helped me hear tricky sounds!\"",
+          emoji: "👂",
+        },
+        {
+          text: "Vora wasn't magic at the start of the unit — every single game, it got a little bit better because the class taught it, step by step, example by example.",
+          textSimple: "No magic! Vora learned from YOU, bit by bit.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "Which carnival game reminded you of something Vora learned earlier in the unit?",
+          discussionNote: "Open discussion — connect back to specific past lessons (animals/vehicles, the morning routine, the sound-listening lessons).",
+        },
+        {
+          question: "What's one thing YOU got better at this unit, just like Vora did?",
+          discussionNote: "Open discussion — encourage personal reflection alongside the parallel to Vora's learning.",
+        },
       ],
     },
     {
@@ -174,6 +272,24 @@ export const w8d2_review_carnival: Lesson = {
       },
     },
     {
+      type: "stand_sit",
+      title: "Unit Review True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on.",
+      statements: [
+        { text: "A dog is a vehicle.", isTrue: false, explanation: "No — a dog is an animal!", emoji: "🐶" },
+        { text: "First, next, then, and last help us put steps in the right order.", isTrue: true, explanation: "Yes! Those words tell us the order to do things in.", emoji: "🔁" },
+        { text: "\"Light\" and \"right\" sound exactly the same.", isTrue: false, explanation: "No — they start with different sounds, /l/ and /r/!", emoji: "💡" },
+        {
+          text: "Vora got better at these games because it practiced with YOUR help all unit long.",
+          isTrue: true,
+          explanation: "Yes! That's exactly how Vora — and real AI — learns: lots of examples and practice.",
+          emoji: "🤖",
+          minTrack: "explorers",
+        },
+      ],
+    },
+    {
       type: "chant",
       title: "Carnival Review Chant!",
       instructions:
@@ -236,6 +352,54 @@ export const w8d3_teach_vora_day: Lesson = {
         "This is the unit's capstone. Split the class into small groups; each group picks a category (\"toys vs. not toys,\" \"sports vs. not sports\" — anything with real classroom objects works), describes it to the class in English (\"A ___ is a toy\"), then leads the room through a live version of the Train the Robot loop using real objects. The app activity below is one worked example to run together first, as a model.",
     },
     {
+      type: "story",
+      title: "Somi Teaches Vora Something New",
+      teacherNote:
+        "Read this right after the concept intro, before the group role-play activity — it's a worked \"story version\" of exactly what each small group is about to do live.",
+      panels: [
+        {
+          text: "On the very last day, it was finally the kids' turn to be the teacher.",
+          textSimple: "Today, kids get to teach Vora!",
+          emoji: "🍎",
+        },
+        {
+          text: "Somi decided to teach Vora a brand new category: musical instrument, or not a musical instrument.",
+          textSimple: "Somi picks a new category: instrument or not!",
+          emoji: "🎸",
+        },
+        {
+          text: "She showed just a few examples: a drum and a guitar are instruments. A spoon and a rock are not.",
+          textSimple: "Drum and guitar: instruments. Spoon and rock: not!",
+          emoji: "🥁",
+        },
+        {
+          text: "Vora thought hard about the examples, comparing them carefully.",
+          textSimple: "Vora thought hard about the examples.",
+          emoji: "🧠",
+        },
+        {
+          text: "Then Somi held up something brand new: a violin! \"That's a musical instrument!\" guessed Vora — correct!",
+          textSimple: "A violin! \"Instrument!\" said Vora. Right!",
+          emoji: "🎻",
+        },
+        {
+          text: "Vora wasn't magic — Somi taught it with just a few clear examples, the exact same way Vora has learned everything, all unit long, from the whole class.",
+          textSimple: "No magic! Somi taught Vora with examples, like always.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Somi teach Vora a brand new category it had never seen before?",
+          discussionNote: "She showed just a few clear examples of each group — the same train-the-robot pattern used all unit — showing that's really how Vora (and real AI) learns.",
+        },
+        {
+          question: "What category would YOU want to teach Vora today?",
+          discussionNote: "Open discussion — this directly sets up each group's own invented category for the live activity.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Toy or Not a Toy Actions!",
       instructions:
@@ -268,6 +432,19 @@ export const w8d3_teach_vora_day: Lesson = {
           { word: "chair", emoji: "🪑", bucket: "b" },
         ],
       },
+    },
+    {
+      type: "class_vote",
+      title: "Pick a Category to Teach!",
+      instructions:
+        "Read each option aloud. Kids vote by raising their hands for the category they think would be the most fun to teach Vora — celebrate the variety of ideas before groups head off to invent their own real category.",
+      question: "Which invented category do you think would be the most fun to teach Vora?",
+      options: [
+        { text: "Toys vs. not toys", emoji: "🧸" },
+        { text: "Sports vs. not sports", emoji: "⚽" },
+        { text: "Yummy vs. not yummy", emoji: "🍬" },
+        { text: "Something your group invents", emoji: "💡" },
+      ],
     },
     {
       type: "chant",

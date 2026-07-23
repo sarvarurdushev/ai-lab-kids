@@ -239,6 +239,75 @@ export interface WrapupSegment {
   homework?: string;
 }
 
+/**
+ * Unplugged, teacher-run team competition — no interactive engine, just a
+ * script the projector displays while teams take turns calling out an
+ * answer. Modeled on the "Categories Relay" format widely used in ESL
+ * young-learner classrooms to get far more kids speaking per minute than
+ * one-at-a-time Q&A (see docs/AI_CURRICULUM.md, "Activity design").
+ */
+export interface TeamRelaySegment {
+  type: "team_relay";
+  title: string;
+  instructions: string;
+  /** Each prompt is read aloud in turn to alternating teams; a prompt tagged minTrack: "explorers" is skipped for little_sparks classes, giving a shorter relay — see lib/trackContent.ts. */
+  prompts: { text: string; emoji: string; minTrack?: AgeTrack }[];
+}
+
+/**
+ * Unplugged whole-body true/false game — the teacher reads a statement,
+ * kids stand if it's true and crouch/sit if it's false, then the teacher
+ * reveals the answer and a one-line explanation. A TPR-style alternative to
+ * tap-to-answer recognition games (see docs/AI_CURRICULUM.md's Total
+ * Physical Response research), giving a genuine movement break with
+ * real content instead of just the pre-lesson energy release.
+ */
+export interface StandSitSegment {
+  type: "stand_sit";
+  title: string;
+  instructions: string;
+  /** A statement tagged minTrack: "explorers" is skipped for little_sparks classes — see lib/trackContent.ts. */
+  statements: { text: string; isTrue: boolean; explanation: string; emoji: string; minTrack?: AgeTrack }[];
+}
+
+/**
+ * Unplugged open-discussion / show-of-hands poll — the teacher poses a
+ * question with no single correct answer, the class votes or discusses,
+ * and the teacher can share their own take after. Distinct from a
+ * CheckSegment (which checks understanding of a specific grammar pattern):
+ * this is a genuine opinion/discussion moment, the kind of teacher-led
+ * talk elementary AI-literacy guides recommend alongside any game.
+ */
+export interface ClassVoteSegment {
+  type: "class_vote";
+  title: string;
+  instructions: string;
+  question: string;
+  /** A shorter, simpler version of `question` shown instead for Little Sparks (4-5) classes — see lib/trackContent.ts. Optional: falls back to `question` until authored. */
+  questionSimple?: string;
+  options: { text: string; emoji: string }[];
+}
+
+/**
+ * A short illustrated read-aloud where Vora tells a story that makes the
+ * month's AI big idea concrete through narrative, not a game — comprehensible
+ * input via storytelling is a core, well-evidenced technique for this age
+ * band (see docs/AI_CURRICULUM.md's Total Physical Response / comprehensible
+ * input research), distinct from every game-based activity engine here.
+ * Reuses the same audio-upload system built for chant songs, so a teacher
+ * can record or upload real narration (see lib/content/overrideKey.ts's
+ * storyAudioKey).
+ */
+export interface StorySegment {
+  type: "story";
+  title: string;
+  teacherNote: string;
+  /** Vora's narration, one panel at a time. A panel's textSimple, when present, replaces text for little_sparks — see lib/trackContent.ts. */
+  panels: { text: string; textSimple?: string; emoji: string }[];
+  /** Open discussion prompts the teacher asks after the story — no stored answer, just a hint of what a good response looks like. */
+  comprehensionQuestions: { question: string; discussionNote: string }[];
+}
+
 export type LessonSegment =
   | WarmupSegment
   | VocabSegment
@@ -247,7 +316,11 @@ export type LessonSegment =
   | MovementSegment
   | ChantSegment
   | CheckSegment
-  | WrapupSegment;
+  | WrapupSegment
+  | TeamRelaySegment
+  | StandSitSegment
+  | ClassVoteSegment
+  | StorySegment;
 
 /**
  * Which of the month's four weekly class sessions a lesson is — one

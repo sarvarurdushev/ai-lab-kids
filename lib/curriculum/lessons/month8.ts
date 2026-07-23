@@ -51,6 +51,24 @@ export const m8_week1: Lesson = {
         "\"Let's ___\" is a fixed suggestion chunk with no word-by-word Korean equivalent to build from — teach it whole, the same approach as \"Can I ___?\" in Month 3. Keep \"reasoning\" concrete here: a map app doesn't magically know the fastest way, it tries out many paths and compares them, the same step-by-step idea behind the sequence_builder activity below.",
     },
     {
+      type: "story",
+      title: "Vora Tries Every Path",
+      teacherNote:
+        "Read each panel aloud, letting the class imagine each route with you. Pause after panel 4 to ask which path THEY would choose before revealing Vora's answer in panel 5 — the point is that reasoning means comparing options, not guessing the first one.",
+      panels: [
+        { text: "Vora wanted to get to the playground fast — but there were three different ways to go.", textSimple: "Vora wanted to get to the playground fast!", emoji: "🛝" },
+        { text: "Path One: straight through the crowded market. So many people — that would be slow!", textSimple: "Path One: crowded market. Too slow!", emoji: "🏪" },
+        { text: "Path Two: the long way around the lake. Pretty, but really far.", textSimple: "Path Two: around the lake. Too far!", emoji: "🏞️" },
+        { text: "Path Three: a quick trail through the trees — not too crowded, and not too far.", textSimple: "Path Three: through the trees. Quick!", emoji: "🌳" },
+        { text: "Vora compared all three paths in its mind and picked Path Three: \"That's the fastest way!\"", textSimple: "\"Path Three is fastest!\" said Vora.", emoji: "⚡" },
+        { text: "Vora wasn't guessing — it thought about every path first, then reasoned out which one was truly best, just like a map app does for you every day.", textSimple: "Vora thought it through — that's reasoning!", emoji: "🗺️" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why didn't Vora just pick the very first path it thought of?", discussionNote: "It compared all three paths and reasoned about which was actually fastest, instead of guessing right away." },
+        { question: "Can you think of two ways to get to school or a friend's house? Which one is faster?", discussionNote: "Open discussion — connects reasoning-about-routes to the child's own everyday experience." },
+      ],
+    },
+    {
       type: "movement",
       title: "Travel Actions!",
       instructions:
@@ -83,6 +101,18 @@ export const m8_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
+      type: "stand_sit",
+      title: "Travel True or False!",
+      instructions:
+        "Read each statement aloud. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then share the short explanation before moving on.",
+      statements: [
+        { text: "An airplane can fly all the way across the ocean.", isTrue: true, explanation: "Yes! Airplanes can travel very long distances.", emoji: "✈️" },
+        { text: "You need a suitcase to carry your clothes on a trip.", isTrue: true, explanation: "Yes — a suitcase helps you pack everything you need!", emoji: "🧳" },
+        { text: "A map app always picks the very first path it thinks of.", isTrue: false, explanation: "No — it compares lots of paths first, then picks the best one!", emoji: "🗺️" },
+        { text: "A ticket is only used for trains, never for planes or ships.", isTrue: false, explanation: "No — you can use a ticket for planes, trains, and ships!", emoji: "🎫", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -144,6 +174,23 @@ export const m8_week2: Lesson = {
         "Keep this brief — Vora's reasoning was already introduced in Week 1's map-app talk. This is just a quick bridge into today's packing game below.",
     },
     {
+      type: "story",
+      title: "Vora's Tricky Suitcase",
+      teacherNote:
+        "Read each panel aloud, pointing to each item as Vora considers it. Pause after panel 3 to ask the class what THEY would do with the teddy bear before revealing Vora's decision in panel 4.",
+      panels: [
+        { text: "Vora looked at a huge pile: t-shirts, a toothbrush, a sofa cushion, and a TV remote, all jumbled together.", textSimple: "A huge pile of things, all jumbled up!", emoji: "🧺" },
+        { text: "Vora looked closely at the toothbrush: small, light, and useful for the trip. \"Pack it!\"", textSimple: "\"Small and useful — pack it!\" said Vora.", emoji: "🪥" },
+        { text: "Then Vora looked closely at the sofa cushion: big, heavy, and comfy right at home. \"Leave it!\"", textSimple: "\"Big and heavy — leave it!\" said Vora.", emoji: "🛋️" },
+        { text: "Then Vora found a stuffed teddy bear. Pack it, or leave it? Vora looked closely — small enough to fit, and comforting for the trip. \"Pack it!\"", textSimple: "A teddy bear! Small and comforting — pack it!", emoji: "🧸" },
+        { text: "Vora didn't just look at size — it thought about whether each thing was truly needed for the trip before deciding.", textSimple: "Vora thought about what was really needed.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "How did Vora decide the teddy bear should be packed?", discussionNote: "It looked closely at the size and thought about whether it was useful or comforting for the trip, not just guessing by size alone." },
+        { question: "What's one thing YOU would pack for a trip, and one thing you'd leave at home?", discussionNote: "Open discussion — personal connection to sorting items by purpose." },
+      ],
+    },
+    {
       type: "movement",
       title: "Packing Time!",
       instructions:
@@ -197,6 +244,18 @@ export const m8_week2: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[1],
+    },
+    {
+      type: "team_relay",
+      title: "Pack It or Leave It Relay!",
+      instructions:
+        "Split the class into two (or more) teams. Read each prompt aloud and have the next player from each team call out an answer — award a point for every correct answer, then move to the next prompt.",
+      prompts: [
+        { text: "Name something you'd PACK for a trip!", emoji: "🧳" },
+        { text: "Name something you'd LEAVE at home!", emoji: "🚫" },
+        { text: "Name something you'd pack to keep clean!", emoji: "🪥" },
+        { text: "Name something too big to fit in a suitcase!", emoji: "🛋️", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -255,6 +314,23 @@ export const m8_week3: Lesson = {
         "Brief bridge only — the learning-through-repetition idea doesn't need re-teaching, just let today's game do the reinforcing.",
     },
     {
+      type: "story",
+      title: "Vora Gets Faster at the Game",
+      teacherNote:
+        "Read each panel aloud, emphasizing how much faster Vora gets each round. Pause after panel 2 to ask the class if THEY have ever made a mistake the first time they tried a new game before revealing panel 3.",
+      panels: [
+        { text: "Vora sat down to play a matching game with travel cards: airplane, train, ship, suitcase.", textSimple: "Vora played a matching game with travel cards.", emoji: "🎴" },
+        { text: "In the very first round, Vora peeked at the airplane card, forgot where it was, and flipped the wrong one!", textSimple: "Round 1: Vora forgot and got it wrong!", emoji: "❌" },
+        { text: "Vora kept playing, round after round, seeing the very same cards again and again.", textSimple: "Vora played again and again with the same cards.", emoji: "🔁" },
+        { text: "By the fifth round, Vora remembered exactly where the train card was — flip, match, no mistakes!", textSimple: "Round 5: no mistakes at all!", emoji: "🚂" },
+        { text: "Vora didn't get a memory upgrade — it just kept practicing and seeing the same words over and over, and that's what learning really is.", textSimple: "No upgrade — just lots of practice! That's learning.", emoji: "🌟" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why did Vora get better at the matching game the more times it played?", discussionNote: "Repeated practice with the same cards is what learning looks like — no sudden new power, just lots of exposure." },
+        { question: "What's a game or skill you've gotten better at just by practicing it?", discussionNote: "Open discussion — connects the learning big idea to the child's own real experience." },
+      ],
+    },
+    {
       type: "movement",
       title: "Transportation Actions!",
       instructions:
@@ -307,6 +383,19 @@ export const m8_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[2],
+    },
+    {
+      type: "class_vote",
+      title: "Dream Trip Vote!",
+      instructions:
+        "Ask the question aloud. Kids vote by raising their hand for their favorite option, or simply discuss as a class — there's no single right answer.",
+      question: "If you could travel anywhere, where would you like to go?",
+      options: [
+        { text: "The beach", emoji: "🏖️" },
+        { text: "The mountains", emoji: "⛰️" },
+        { text: "A big city", emoji: "🏙️" },
+        { text: "Another country", emoji: "🌍" },
+      ],
     },
     {
       type: "chant",
@@ -370,6 +459,24 @@ export const m8_week4: Lesson = {
         "\"Let's\" is a fixed suggestion chunk, just like \"Can I ___?\" back in Month 3 — teach it as one piece, not word-by-word. After building the airplane sentence, invite a few kids to rebuild it with train, ship, or another word of their choosing — a real choice makes the sentence feel truer, not just a drill.",
     },
     {
+      type: "story",
+      title: "Vora Plans a Trip to Grandma's",
+      teacherNote:
+        "Read each panel aloud, letting the class guess which travel option will work at each step. Pause after panel 3 to ask which way THEY would pick before revealing Vora's final choice in panel 5 — the point is that reasoning means checking whether an option can even work, not just picking any answer.",
+      panels: [
+        { text: "Vora wanted to visit Grandma, who lived across the ocean. How should Vora get there?", textSimple: "Vora wanted to visit Grandma across the ocean!", emoji: "👵" },
+        { text: "Train? Vora thought about it: \"No train tracks go across the ocean — that won't work!\"", textSimple: "\"No tracks cross the ocean!\" said Vora.", emoji: "🚂" },
+        { text: "Airplane? \"Yes — planes can fly over the ocean, and fast too!\" said Vora.", textSimple: "\"A plane can fly over — fast!\" said Vora.", emoji: "✈️" },
+        { text: "Ship? \"Yes, a ship can cross the ocean too, but it takes a lot longer,\" said Vora.", textSimple: "\"A ship works too, but it's slower,\" said Vora.", emoji: "🚢" },
+        { text: "Vora thought it all through and decided: \"Let's go by airplane — it gets us there quickest!\"", textSimple: "\"Let's go by airplane!\" said Vora.", emoji: "🎉" },
+        { text: "Vora looked at what each choice could really do, then reasoned about what worked best — not a random pick, a real plan.", textSimple: "Vora made a real plan, not a random pick.", emoji: "🧠" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why couldn't Vora choose the train to visit Grandma across the ocean?", discussionNote: "Reasoning means thinking about whether an option can actually work — trains need tracks on land, not water." },
+        { question: "If YOU were planning a big trip, how would you decide the best way to get there?", discussionNote: "Open discussion — connects reasoning about travel choices to the child's own decision-making." },
+      ],
+    },
+    {
       type: "movement",
       title: "Let's Go! Actions",
       instructions:
@@ -401,6 +508,18 @@ export const m8_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[2],
+    },
+    {
+      type: "stand_sit",
+      title: "Ways to Travel: True or False!",
+      instructions:
+        "Read each statement aloud. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then share the short explanation before moving on.",
+      statements: [
+        { text: "A train can drive across the ocean.", isTrue: false, explanation: "No — trains need tracks on land, not water!", emoji: "🚂" },
+        { text: "A ship can carry you across the ocean.", isTrue: true, explanation: "Yes! Ships are made to sail across the sea.", emoji: "🚢" },
+        { text: "\"Let's go by ___\" only works with one kind of transportation.", isTrue: false, explanation: "No — you can finish it with airplane, train, ship, or more!", emoji: "🗣️" },
+        { text: "Thinking about which way is fastest before choosing is called reasoning.", isTrue: true, explanation: "Yes — comparing choices and picking the best one is reasoning!", emoji: "🧠", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",

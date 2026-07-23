@@ -51,6 +51,49 @@ export const m3_week1: Lesson = {
         "\"Can I ___?\" is the second auxiliary-fronted question in the curriculum after \"Do you ___?\" in the foundations unit — name the shared pattern explicitly so it transfers. The AI thread: natural conversation depends on turn-taking, which is exactly what a voice assistant is designed to imitate (wait for silence, then respond).",
     },
     {
+      type: "story",
+      title: "Vora Learns to Wait Its Turn",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 3 to ask what a good friend (or a good voice assistant) should do before answering — the point is patience and listening, not interrupting.",
+      panels: [
+        {
+          text: "Vora saw two friends building a tower and blurted out, \"Can I play can I play can I play?!\" all at once, cutting them off.",
+          textSimple: "Vora talked too fast and interrupted!",
+          emoji: "😬",
+        },
+        {
+          text: "The friends looked confused — they hadn't even finished their own sentence yet.",
+          textSimple: "The friends were confused.",
+          emoji: "😕",
+        },
+        {
+          text: "\"I need to wait and listen first,\" Vora realized, \"just like a good voice assistant waits for quiet before it answers.\"",
+          textSimple: "\"Wait and listen first,\" said Vora.",
+          emoji: "👂",
+        },
+        {
+          text: "So Vora waited quietly until the friends finished talking, then asked calmly, \"Can I play?\"",
+          textSimple: "Vora waited, then asked calmly.",
+          emoji: "🙋",
+        },
+        {
+          text: "\"Yes!\" said the friends — because Vora listened first, then took its turn, just like good friends (and good voice assistants) do.",
+          textSimple: "\"Yes!\" Because Vora waited its turn.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What did Vora do differently the second time it asked to play?",
+          discussionNote: "It waited quietly and listened until the friends were done talking, instead of interrupting — the same turn-taking a voice assistant uses.",
+        },
+        {
+          question: "Why do you think waiting for your turn helps you make friends?",
+          discussionNote: "Open discussion — connects listening/patience to being a good friend, mirroring how a voice assistant waits for silence before responding.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Friendship Actions!",
       instructions:
@@ -83,6 +126,20 @@ export const m3_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
+      type: "class_vote",
+      title: "What Makes a Good Friend?",
+      instructions:
+        "Read the question aloud. Let kids vote by raising their hands for the choice they think matters most, or discuss as a class.",
+      question: "What do you think is the most important thing a good friend does?",
+      questionSimple: "What does a good friend do?",
+      options: [
+        { text: "Shares", emoji: "🤝" },
+        { text: "Listens", emoji: "👂" },
+        { text: "Says sorry", emoji: "😔" },
+        { text: "Plays together", emoji: "🧩" },
+      ],
     },
     {
       type: "chant",
@@ -140,6 +197,49 @@ export const m3_week2: Lesson = {
         "Short recap only — the natural_interaction big idea (turn-taking) was fully taught in Week 1; here it's briefly reconnected to today's word-order game before playing.",
     },
     {
+      type: "story",
+      title: "Vora Builds the Question, One Word at a Time",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 3 to let kids guess the missing word before Vora says it in panel 4.",
+      panels: [
+        {
+          text: "Vora wanted to ask to join a game, but the words came out jumbled: \"Play I can?\"",
+          textSimple: "Vora said the words all mixed up!",
+          emoji: "🔀",
+        },
+        {
+          text: "A friend gently said, \"I don't understand — can you try again?\"",
+          textSimple: "\"I don't understand,\" said a friend.",
+          emoji: "🤷",
+        },
+        {
+          text: "Vora thought carefully about the right order: Can... I... play?",
+          textSimple: "Vora thought: Can... I... play?",
+          emoji: "🧩",
+        },
+        {
+          text: "\"Can I play?\" Vora asked clearly — and this time, the friend understood right away!",
+          textSimple: "\"Can I play?\" Now it made sense!",
+          emoji: "😊",
+        },
+        {
+          text: "Putting words in the right order isn't just a game — it's how we make sure our friends really understand us.",
+          textSimple: "Right order helps friends understand!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "Why didn't Vora's friend understand the first time?",
+          discussionNote: "The words were in the wrong order — \"Play I can?\" doesn't make sense, but \"Can I play?\" does, the same word-order skill from today's game.",
+        },
+        {
+          question: "Can you think of another question that has a special word order, like \"Can I play?\"",
+          discussionNote: "Open discussion — \"Can I have...?\", \"Do you want...?\" — any question starting with a helper word.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Can I Play? Actions!",
       instructions:
@@ -182,6 +282,19 @@ export const m3_week2: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[2],
+    },
+    {
+      type: "team_relay",
+      title: "How Do You Feel?",
+      instructions:
+        "Split the class into two teams. Read each prompt aloud, then point to one team to shout out the matching feeling word before switching to the other team for the next prompt.",
+      prompts: [
+        { text: "How do you feel when you get a present?", emoji: "🎁" },
+        { text: "How do you feel when your toy breaks?", emoji: "😢" },
+        { text: "How do you feel when you share with a friend?", emoji: "🤝" },
+        { text: "How do you feel before a fun trip?", emoji: "🤩", minTrack: "explorers" },
+        { text: "How do you feel when someone is kind to you?", emoji: "❤️" },
+      ],
     },
     {
       type: "chant",
@@ -238,6 +351,49 @@ export const m3_week3: Lesson = {
         "Short recap only — natural_interaction (turn-taking/listening) was the full Week 1 teach; here it's linked to reading feelings as another way friends pay close attention to each other, before the matching game.",
     },
     {
+      type: "story",
+      title: "Vora Notices a Sad Friend",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 2 to ask kids what clues might show someone is sad, before Vora notices them in panel 3.",
+      panels: [
+        {
+          text: "At recess, Vora noticed a friend sitting alone, not playing with anyone.",
+          textSimple: "A friend sat alone at recess.",
+          emoji: "🪑",
+        },
+        {
+          text: "Vora looked closely: droopy shoulders, a quiet frown, no smile at all.",
+          textSimple: "Droopy shoulders. No smile.",
+          emoji: "😔",
+        },
+        {
+          text: "\"Those are clues that my friend feels sad,\" Vora realized, looking and listening closely.",
+          textSimple: "\"My friend feels sad,\" Vora realized.",
+          emoji: "🔍",
+        },
+        {
+          text: "So Vora walked over and asked gently, \"Are you okay? Can I sit with you?\"",
+          textSimple: "\"Can I sit with you?\" asked Vora.",
+          emoji: "🤗",
+        },
+        {
+          text: "Noticing feelings isn't magic — it's paying close attention to a friend's face and body, then choosing to be kind.",
+          textSimple: "No magic — just noticing, then being kind!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What clues told Vora that its friend felt sad?",
+          discussionNote: "Droopy shoulders and no smile — noticing small clues in someone's face and body is how we tell how they feel, just like today's matching game.",
+        },
+        {
+          question: "What could you do if you noticed a friend feeling sad at school?",
+          discussionNote: "Open discussion — sit with them, ask if they're okay, share a toy, tell a teacher.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Feelings in Action!",
       instructions:
@@ -280,6 +436,24 @@ export const m3_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[3],
+    },
+    {
+      type: "stand_sit",
+      title: "Feelings — True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on.",
+      statements: [
+        { text: "You can tell how someone feels by looking at their face.", isTrue: true, explanation: "Yes! Faces show feelings like happy, sad, or excited.", emoji: "😊" },
+        { text: "Everybody feels happy all day, every day.", isTrue: false, explanation: "No — everyone feels different feelings at different times!", emoji: "🎭" },
+        { text: "It's kind to ask a friend if they're okay when they look sad.", isTrue: true, explanation: "Yes! Asking shows you care.", emoji: "🤗" },
+        {
+          text: "Feeling excited and feeling happy always look exactly the same.",
+          isTrue: false,
+          explanation: "No — excited might look bouncy and loud, happy might look calm and smiley!",
+          emoji: "🤩",
+          minTrack: "explorers",
+        },
+      ],
     },
     {
       type: "chant",
@@ -337,6 +511,49 @@ export const m3_week4: Lesson = {
         "Quarter-checkpoint review of the foundations unit's Week 2 Day 3 /l/-/r/ contrast — the single highest-frequency Korean-learner sound gap, since Korean's single liquid consonant covers both English sounds. Expect the same level of difficulty as Week 2; that's normal spaced repetition, not regression. Framing it as \"listening like a good friend\" keeps it tied to this month's theme.",
     },
     {
+      type: "story",
+      title: "Vora Listens Very Carefully",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 3 to let kids guess which word Vora heard before revealing panel 4 — the point is careful listening, just like the minimal-pairs game.",
+      panels: [
+        {
+          text: "A friend said a word to Vora, but it sounded almost the same as another word Vora knew.",
+          textSimple: "A word sounded like two words!",
+          emoji: "❓",
+        },
+        {
+          text: "\"Did you say 'light,' or 'right'?\" Vora asked, listening very closely.",
+          textSimple: "\"Light, or right?\" asked Vora.",
+          emoji: "👂",
+        },
+        {
+          text: "The friend said it again, slowly: \"L-l-light — like a lamp.\"",
+          textSimple: "\"Light — like a lamp,\" said the friend.",
+          emoji: "💡",
+        },
+        {
+          text: "\"Light!\" said Vora. \"I heard the tiny difference that time.\"",
+          textSimple: "\"Light!\" Vora heard it that time!",
+          emoji: "🎧",
+        },
+        {
+          text: "Hearing the tiny difference between two close sounds takes real practice — for Vora, and for us too, just like today's listening game.",
+          textSimple: "Careful listening takes practice — for everyone!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "Why did Vora need to listen extra carefully to tell 'light' and 'right' apart?",
+          discussionNote: "The two words sound very close, so Vora had to listen for a small difference — the same skill as today's minimal-pairs game.",
+        },
+        {
+          question: "What's a word in Korean that sounds a little like another word, where you have to listen closely?",
+          discussionNote: "Open discussion — invite kids to share any Korean examples they can think of, reinforcing that careful listening applies to any language.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Light and Right Actions!",
       instructions:
@@ -373,6 +590,20 @@ export const m3_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[3],
+    },
+    {
+      type: "class_vote",
+      title: "Which Sound Is Trickier?",
+      instructions:
+        "Read the question aloud. Let kids vote by raising their hands, or discuss as a class why one sound feels harder.",
+      question: "Which sound do you think is trickier to hear — the 'l' sound or the 'r' sound?",
+      questionSimple: "Which sound is trickier — 'l' or 'r'?",
+      options: [
+        { text: "The 'l' sound (light)", emoji: "💡" },
+        { text: "The 'r' sound (right)", emoji: "👉" },
+        { text: "Both are equally tricky", emoji: "🤔" },
+        { text: "Neither — they're easy now!", emoji: "🎉" },
+      ],
     },
     {
       type: "chant",

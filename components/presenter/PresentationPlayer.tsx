@@ -32,6 +32,14 @@ import {
   wrapupSummaryKey,
   wrapupSummarySimpleKey,
   wrapupHomeworkKey,
+  teamRelayPromptKey,
+  standSitStatementKey,
+  classVoteQuestionKey,
+  classVoteQuestionSimpleKey,
+  classVoteOptionKey,
+  storyPanelKey,
+  storyPanelSimpleKey,
+  storyAudioKey,
   type ContentOverride,
 } from "@/lib/content/overrideKey";
 import {
@@ -44,6 +52,10 @@ import {
   SparkleIcon,
   RunIcon,
   MusicNoteIcon,
+  TeamIcon,
+  HandRaiseIcon,
+  ChatIcon,
+  OpenBookIcon,
 } from "@/components/icons";
 
 const SEGMENT_LABEL: Record<
@@ -58,6 +70,10 @@ const SEGMENT_LABEL: Record<
   chant: { icon: MusicNoteIcon, text: "Chant Time", className: "text-coral" },
   check: { icon: CheckCircleIcon, text: "Formative Check", className: "text-mint" },
   wrapup: { icon: GiftIcon, text: "Wrap-up", className: "text-amber-dark" },
+  team_relay: { icon: TeamIcon, text: "Team Relay", className: "text-coral" },
+  stand_sit: { icon: HandRaiseIcon, text: "Stand Up, Sit Down", className: "text-mint" },
+  class_vote: { icon: ChatIcon, text: "Class Vote", className: "text-sky" },
+  story: { icon: OpenBookIcon, text: "Story Time", className: "text-indigo-dark" },
 };
 
 /** Icon + title + "is this a real AI-literacy activity" for the segment strip and agenda chips. */
@@ -508,6 +524,154 @@ export function PresentationPlayer({
                     size="sm"
                     speakable={false}
                   />
+                </div>
+              )}
+            </div>
+          )}
+
+          {segment.type === "team_relay" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.team_relay.className}`}>
+                <SEGMENT_LABEL.team_relay.icon size={12} /> {SEGMENT_LABEL.team_relay.text}
+              </p>
+              <p className="rounded-2xl bg-coral/5 p-3 text-sm text-ink/70">
+                <span className="font-bold">Teacher: </span>
+                {segment.instructions}
+              </p>
+              <EnglishText text={segment.title} size="lg" />
+              <div className="flex flex-col gap-2">
+                {segment.prompts.map((p, i) => {
+                  const override = contentOverrides[teamRelayPromptKey(lesson.key, index, i)];
+                  return (
+                    <div key={i} className="flex items-center gap-2 rounded-2xl bg-cream p-3 shadow-sm">
+                      {override?.imageUrl ? (
+                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
+                          <Image src={override.imageUrl} alt="" fill sizes="40px" className="object-cover" />
+                        </div>
+                      ) : (
+                        <span className="text-2xl">{p.emoji}</span>
+                      )}
+                      <EnglishText text={override?.textOverride || p.text} size="sm" />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {segment.type === "stand_sit" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.stand_sit.className}`}>
+                <SEGMENT_LABEL.stand_sit.icon size={12} /> {SEGMENT_LABEL.stand_sit.text}
+              </p>
+              <p className="rounded-2xl bg-mint/5 p-3 text-sm text-ink/70">
+                <span className="font-bold">Teacher: </span>
+                {segment.instructions}
+              </p>
+              <EnglishText text={segment.title} size="lg" />
+              <div className="flex flex-col gap-2">
+                {segment.statements.map((s, i) => {
+                  const override = contentOverrides[standSitStatementKey(lesson.key, index, i)];
+                  return (
+                    <details key={i} className="rounded-2xl bg-cream p-3 shadow-sm">
+                      <summary className="flex cursor-pointer items-center gap-2">
+                        {override?.imageUrl ? (
+                          <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
+                            <Image src={override.imageUrl} alt="" fill sizes="40px" className="object-cover" />
+                          </div>
+                        ) : (
+                          <span className="text-2xl">{s.emoji}</span>
+                        )}
+                        <EnglishText text={override?.textOverride || s.text} size="sm" />
+                      </summary>
+                      <p className="mt-2 text-xs text-ink/60">
+                        <span className="font-bold">{s.isTrue ? "True! " : "False! "}</span>
+                        {s.explanation}
+                      </p>
+                    </details>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {segment.type === "class_vote" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.class_vote.className}`}>
+                <SEGMENT_LABEL.class_vote.icon size={12} /> {SEGMENT_LABEL.class_vote.text}
+              </p>
+              <p className="rounded-2xl bg-sky/5 p-3 text-sm text-ink/70">
+                <span className="font-bold">Teacher: </span>
+                {segment.instructions}
+              </p>
+              <EnglishText text={segment.title} size="lg" />
+              {(() => {
+                const key = isLittleSparks ? classVoteQuestionSimpleKey(lesson.key, index) : classVoteQuestionKey(lesson.key, index);
+                const override = contentOverrides[key];
+                return <EnglishText text={override?.textOverride || segment.question} size="base" />;
+              })()}
+              <div className="flex flex-wrap gap-2">
+                {segment.options.map((o, i) => {
+                  const override = contentOverrides[classVoteOptionKey(lesson.key, index, i)];
+                  return (
+                    <div key={i} className="flex items-center gap-1.5 rounded-full bg-cream px-3 py-1.5 shadow-sm">
+                      {override?.imageUrl ? (
+                        <div className="relative h-6 w-6 shrink-0 overflow-hidden rounded-full">
+                          <Image src={override.imageUrl} alt="" fill sizes="24px" className="object-cover" />
+                        </div>
+                      ) : (
+                        <span className="text-lg">{o.emoji}</span>
+                      )}
+                      <EnglishText text={override?.textOverride || o.text} size="sm" />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {segment.type === "story" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.story.className}`}>
+                <SEGMENT_LABEL.story.icon size={12} /> {SEGMENT_LABEL.story.text}
+              </p>
+              <EnglishText text={segment.title} size="lg" />
+              {(() => {
+                const audioOverride = contentOverrides[storyAudioKey(lesson.key, index)];
+                return audioOverride?.audioUrl && <audio controls src={audioOverride.audioUrl} className="h-9 w-full" />;
+              })()}
+              <div className="flex flex-col gap-2">
+                {segment.panels.map((panel, i) => {
+                  const key = isLittleSparks ? storyPanelSimpleKey(lesson.key, index, i) : storyPanelKey(lesson.key, index, i);
+                  const override = contentOverrides[key];
+                  return (
+                    <div key={i} className="flex items-start gap-2 rounded-2xl rounded-bl-none bg-white px-3 py-2 shadow-sm">
+                      <Vora size={28} />
+                      {override?.imageUrl ? (
+                        <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg">
+                          <Image src={override.imageUrl} alt="" fill sizes="48px" className="object-cover" />
+                        </div>
+                      ) : (
+                        <span className="text-2xl">{panel.emoji}</span>
+                      )}
+                      <EnglishText text={override?.textOverride || panel.text} size="sm" />
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="rounded-xl bg-amber/10 p-2 text-xs text-ink/60">
+                <span className="font-bold">Teacher note: </span>
+                {segment.teacherNote}
+              </p>
+              {segment.comprehensionQuestions.length > 0 && (
+                <div className="flex flex-col gap-1.5 rounded-2xl bg-indigo/5 p-3">
+                  <p className="text-xs font-bold uppercase tracking-wide text-indigo-dark">Talk about it</p>
+                  {segment.comprehensionQuestions.map((q, i) => (
+                    <details key={i} className="text-sm text-ink/70">
+                      <summary className="cursor-pointer font-semibold">{q.question}</summary>
+                      <p className="mt-1 pl-2 text-xs text-ink/50">{q.discussionNote}</p>
+                    </details>
+                  ))}
                 </div>
               )}
             </div>

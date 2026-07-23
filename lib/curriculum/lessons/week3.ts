@@ -29,6 +29,54 @@ export const w3d1_rainbow_colors: Lesson = {
       ],
     },
     {
+      type: "story",
+      title: "Vora Names the Rainbow",
+      teacherNote:
+        "Point to a real rainbow picture (or draw one) as you read each panel, matching Vora's color-naming to the actual band of the rainbow.",
+      panels: [
+        {
+          text: "After the rain stopped, a big rainbow stretched across the sky, and Vora looked up in wonder.",
+          textSimple: "A rainbow appeared. Vora looked up.",
+          emoji: "🌈",
+        },
+        {
+          text: "\"Red, I know that one!\" said Vora. \"But wait — is that next band blue, or is it purple?\"",
+          textSimple: "\"Red!\" said Vora. \"But is that blue or purple?\"",
+          emoji: "🤔",
+        },
+        {
+          text: "Vora looked very closely, comparing the tricky color right next to the colors it already knew for sure.",
+          textSimple: "Vora looked closely and compared the colors.",
+          emoji: "🔍",
+        },
+        {
+          text: "\"It's a little more pink than blue,\" said Vora. \"That one is purple!\"",
+          textSimple: "\"That one is purple!\" said Vora.",
+          emoji: "🟣",
+        },
+        {
+          text: "One by one, Vora named every single color in the rainbow — red, blue, yellow, green, purple, and orange!",
+          textSimple: "Vora named every color in the rainbow!",
+          emoji: "🌈",
+        },
+        {
+          text: "Vora wasn't magic — it just looked really closely and compared each color side by side, the same way you can too.",
+          textSimple: "No magic! Vora just looked closely and compared colors.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora figure out the tricky color was purple and not blue?",
+          discussionNote: "It looked closely and compared the color right next to colors it already knew — careful comparing, not a magic guess.",
+        },
+        {
+          question: "What's a color that's sometimes tricky for YOU to tell apart from another color?",
+          discussionNote: "Open discussion — e.g. blue vs purple, red vs orange — the point is that noticing close differences is a skill everyone (and Vora) can practice.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Rainbow Color Actions!",
       instructions:
@@ -40,6 +88,22 @@ export const w3d1_rainbow_colors: Lesson = {
         { text: "Green — wiggle like grass in the wind", emoji: "🟢" },
         { text: "Purple — twirl around like a grape", emoji: "🟣" },
         { text: "Orange — bounce like a round orange", emoji: "🟠" },
+      ],
+    },
+    {
+      type: "class_vote",
+      title: "Favorite Color Vote!",
+      instructions:
+        "Read the question aloud. Have kids vote with a show of hands for their favorite color, one option at a time. Count the hands out loud together for each color.",
+      question: "Which color is YOUR favorite?",
+      questionSimple: "What color do you like best?",
+      options: [
+        { text: "Red", emoji: "🔴" },
+        { text: "Blue", emoji: "🔵" },
+        { text: "Yellow", emoji: "🟡" },
+        { text: "Green", emoji: "🟢" },
+        { text: "Purple", emoji: "🟣" },
+        { text: "Orange", emoji: "🟠" },
       ],
     },
     {
@@ -112,6 +176,54 @@ export const w3d2_vora_finds_pattern: Lesson = {
         "This is the conceptual seed for \"machine learning finds patterns in data\" — keep the demonstration physical (blocks, claps, or the warm-up chant), the app activity below only drills the same/different vocabulary that supports it.",
     },
     {
+      type: "story",
+      title: "Vora and the Missing Bead",
+      teacherNote:
+        "Draw the shape pattern on the board as you read (circle, square, circle, square, ___) and pause before panel 4 to let kids guess what shape comes next.",
+      panels: [
+        {
+          text: "Vora was helping make a shape bracelet: circle, square, circle, square, circle...",
+          textSimple: "Vora made a bracelet: circle, square, circle, square.",
+          emoji: "⭕",
+        },
+        {
+          text: "But then one bead fell off! There was a gap right in the middle of the pattern.",
+          textSimple: "One bead fell off! There was a gap.",
+          emoji: "🕳️",
+        },
+        {
+          text: "\"Let's look at the pattern,\" said Vora. \"Circle, square, circle, square... what comes next?\"",
+          textSimple: "\"What comes next?\" asked Vora.",
+          emoji: "🤔",
+        },
+        {
+          text: "\"A square!\" said Vora. \"The pattern keeps repeating — circle, then square, again and again.\"",
+          textSimple: "\"A square!\" said Vora. The pattern repeats!",
+          emoji: "🟦",
+        },
+        {
+          text: "Vora popped the square bead back into the gap, and the bracelet's pattern was perfect again.",
+          textSimple: "The square bead fit perfectly!",
+          emoji: "✨",
+        },
+        {
+          text: "Vora wasn't magic — it just looked at what repeated over and over, and used that pattern to figure out the missing piece, the same trick you'll use in today's game.",
+          textSimple: "No magic! Vora just found the pattern.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora know the missing bead had to be a square?",
+          discussionNote: "It looked at the repeating pattern — circle, square, circle, square — and used that pattern to figure out what came next, not a random guess.",
+        },
+        {
+          question: "Can you think of a pattern you've seen somewhere else, like on clothes or in music?",
+          discussionNote: "Open discussion — the point is that patterns are everywhere, and noticing them is a skill both people and AI use.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Shape Actions!",
       instructions:
@@ -143,6 +255,25 @@ export const w3d2_vora_finds_pattern: Lesson = {
           { word: "star, triangle", emoji: "⭐🔺", bucket: "b" },
         ],
       },
+    },
+    {
+      type: "stand_sit",
+      title: "Same or Different: True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer and read the explanation before moving on.",
+      statements: [
+        { text: "A circle and a circle are the same shape.", isTrue: true, explanation: "Yes! Two circles match — that's the same shape.", emoji: "⭕" },
+        { text: "A star and a triangle are the same shape.", isTrue: false, explanation: "No — a star has points all around, a triangle has just three sides. They're different!", emoji: "⭐" },
+        { text: "Red and red are the same color.", isTrue: true, explanation: "Yes! Matching colors are the same.", emoji: "🔴" },
+        {
+          text: "A pattern has to repeat more than once to really be a pattern.",
+          isTrue: true,
+          explanation: "Yes — one time isn't a pattern yet; it needs to repeat so you can predict what comes next.",
+          emoji: "🔁",
+          minTrack: "explorers",
+        },
+        { text: "A square and a circle are the same shape.", isTrue: false, explanation: "No — a square has corners, a circle is round. They're different!", emoji: "🟦" },
+      ],
     },
     {
       type: "chant",
@@ -200,6 +331,49 @@ export const w3d3_fan_or_pan: Lesson = {
         "Unlike the l/r lesson, this contrast is genuinely absent from Korean (not just non-phonemic), so a quick mouth-shape demo here earns its keep before the listening activity.",
     },
     {
+      type: "story",
+      title: "Vora Watches a Mouth Shape",
+      teacherNote:
+        "Model biting your bottom lip for 'f' vs. pressing lips together for 'p' as you read panels 2-4, so kids see the mouth-shape difference Vora is describing.",
+      panels: [
+        {
+          text: "Vora heard two words that sound almost the same: \"fan\" and \"pan.\"",
+          textSimple: "Vora heard \"fan\" and \"pan.\"",
+          emoji: "🪭",
+        },
+        {
+          text: "\"Hmm, how can I tell them apart?\" wondered Vora. \"They both start with a puff of air.\"",
+          textSimple: "\"How can I tell them apart?\" wondered Vora.",
+          emoji: "🤔",
+        },
+        {
+          text: "Vora watched closely and noticed something: for \"fan,\" the top teeth gently touch the bottom lip. For \"pan,\" the lips press together first, then pop open.",
+          textSimple: "Vora noticed: 'fan' uses teeth on the lip. 'Pan' uses closed lips.",
+          emoji: "👄",
+        },
+        {
+          text: "\"Now I can tell!\" said Vora. \"Fan — teeth touch the lip. Pan — lips press together!\"",
+          textSimple: "\"Now I can tell!\" said Vora.",
+          emoji: "✅",
+        },
+        {
+          text: "Vora wasn't magic — it just watched closely for a small difference in how each sound is made, exactly what YOU are about to practice.",
+          textSimple: "No magic! Vora just watched closely.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What tiny difference did Vora notice between how 'fan' and 'pan' are made?",
+          discussionNote: "For 'fan,' the top teeth touch the bottom lip; for 'pan,' the lips press together first — a small mouth-shape difference, not a guess.",
+        },
+        {
+          question: "Try making the 'f' sound and the 'p' sound yourself — what does your mouth do differently?",
+          discussionNote: "Open, hands-on discussion — have kids feel their own lips and teeth as they say each sound, reinforcing the story's observation.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Fan or Pan Actions!",
       instructions:
@@ -228,6 +402,19 @@ export const w3d3_fan_or_pan: Lesson = {
           { wordA: { text: "full", emoji: "🈵" }, wordB: { text: "pull", emoji: "🚪" } },
         ],
       },
+    },
+    {
+      type: "team_relay",
+      title: "F or P Word Relay",
+      instructions:
+        "Split the class into teams. Read each prompt aloud and have the next team try it together before moving to the next team. Model the mouth shape for f or p as a class after each answer.",
+      prompts: [
+        { text: "Say a word that starts with the F sound, like 'fan'!", emoji: "🪭" },
+        { text: "Say a word that starts with the P sound, like 'pan'!", emoji: "🍳" },
+        { text: "Give a big thumbs up and say 'fine'!", emoji: "👍" },
+        { text: "Pretend to eat with a fork and say 'fork'!", emoji: "🍴" },
+        { text: "Rub your tummy and say 'pork'!", emoji: "🥓", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",

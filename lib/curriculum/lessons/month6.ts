@@ -49,6 +49,24 @@ export const m6_week1: Lesson = {
         "Adjective-before-noun order (\"a big lion\") matches Korean word order exactly — call this out as an easy win, not everything in English is a hard shift. The wildlife-camera example makes \"perception\" concrete: recognizing an animal from a blurry night photo is a genuinely hard version of the same sorting game Vora's been playing all year.",
     },
     {
+      type: "story",
+      title: "Vora and the Nighttime Photo",
+      teacherNote:
+        "Read each panel aloud, pointing to the animal's features Vora notices each time. Pause after panel 3 to ask \"What do YOU think it really is?\" before revealing panel 4.",
+      panels: [
+        { text: "Deep in a forest, a hidden camera clicked in the dark — and sent the blurry photo straight to Vora.", textSimple: "A hidden camera took a blurry night photo.", emoji: "📸" },
+        { text: "\"A big shadowy shape... maybe a big lion?\" Vora guessed, squinting at the fuzzy picture.", textSimple: "\"Maybe a big lion?\" Vora guessed.", emoji: "🦁" },
+        { text: "But Vora looked closer: the tail was short and round, the ears were small and round too — not quite lion-shaped.", textSimple: "Vora looked closer. Short tail, round ears...", emoji: "🔎" },
+        { text: "\"It's not a big lion at all,\" said Vora. \"It's a small monkey, hiding in the shadows!\"", textSimple: "\"It's a small monkey!\" said Vora.", emoji: "🐵" },
+        { text: "The next morning, a clear daytime photo proved Vora right — it really was a monkey all along.", textSimple: "A clear photo the next day proved Vora right!", emoji: "☀️" },
+        { text: "Vora wasn't magic — it compared shapes and sizes carefully, and sometimes needed a second look to be sure.", textSimple: "No magic! Vora looked carefully, and checked again.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why did Vora need to look at the photo more than once before deciding what animal it was?", discussionNote: "The first blurry photo wasn't enough to be sure — looking closely at details like the tail and ears (perception) helped Vora correct its first guess." },
+        { question: "Has looking closely ever helped you tell two similar things apart, like two friends' backpacks?", discussionNote: "Open discussion — connects the story's perception idea to kids' own experience with telling similar-looking things apart." },
+      ],
+    },
+    {
       type: "movement",
       title: "Wild Animal Actions!",
       instructions:
@@ -88,6 +106,19 @@ export const m6_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[5],
+    },
+    {
+      type: "team_relay",
+      title: "Big or Small Animal Relay!",
+      instructions:
+        "Split the class into two (or more) teams. Read each prompt aloud and have the next player from each team call out an animal that fits — award a point for every reasonable answer, then move to the next prompt.",
+      prompts: [
+        { text: "Name a BIG animal!", emoji: "🐘" },
+        { text: "Name a SMALL animal!", emoji: "🐵" },
+        { text: "Name an animal that lives in the jungle!", emoji: "🌴" },
+        { text: "Name an animal with stripes!", emoji: "🐯" },
+        { text: "Name an animal that could hide in tall grass!", emoji: "🌾", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -146,6 +177,24 @@ export const m6_week2: Lesson = {
         "Quick callback to Week 1's wildlife-camera example — no new teaching, just a bridge into today's pattern-prediction game.",
     },
     {
+      type: "story",
+      title: "Vora Follows the Footprints",
+      teacherNote:
+        "Read each panel aloud, pointing to the footprint pattern each time. Pause after panel 3 to have the whole class guess out loud what footprint comes next before revealing panel 4 — this is the same skill as the pattern_predictor game below.",
+      panels: [
+        { text: "Vora followed a muddy trail through the forest and spotted footprints — big and round, then long and wrinkly, again and again.", textSimple: "Vora saw footprints: big, then long, again and again.", emoji: "👣" },
+        { text: "\"Big and round is a lion's paw. Long and wrinkly is an elephant's foot,\" said Vora, naming each one.", textSimple: "\"Lion! Elephant!\" said Vora, naming each print.", emoji: "🦁" },
+        { text: "Lion, elephant, lion, elephant... the pattern kept repeating all down the trail.", textSimple: "Lion, elephant, lion, elephant... the pattern kept going!", emoji: "🔁" },
+        { text: "\"If the pattern keeps going,\" said Vora, \"the very next print should be... a lion!\"", textSimple: "\"Next should be a lion!\" said Vora.", emoji: "🦁" },
+        { text: "Vora turned the corner — and there it was, a perfect lion footprint, exactly where predicted!", textSimple: "And there it was — a lion footprint!", emoji: "✅" },
+        { text: "Vora wasn't magic — it just noticed what kept repeating and guessed what would come next, the same game we play with pictures.", textSimple: "No magic! Vora just found the pattern.", emoji: "🧠" },
+      ],
+      comprehensionQuestions: [
+        { question: "How did Vora guess which footprint would come next, before turning the corner?", discussionNote: "It noticed the repeating lion-elephant-lion-elephant pattern and predicted the next one would continue it — the same skill as the pattern game." },
+        { question: "Can you think of a pattern you see every day, like the order of the days of the week?", discussionNote: "Open discussion — connects pattern-based prediction to everyday routines and repetition kids already notice." },
+      ],
+    },
+    {
       type: "movement",
       title: "Animal Actions!",
       instructions:
@@ -198,6 +247,19 @@ export const m6_week2: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[5],
+    },
+    {
+      type: "class_vote",
+      title: "Pick Your Wild Animal!",
+      instructions:
+        "Ask the question aloud. Kids vote by raising their hand for their favorite option, or simply discuss as a class — there's no single right answer.",
+      question: "If you could be any wild animal for a day, which one would you pick?",
+      options: [
+        { text: "Lion", emoji: "🦁" },
+        { text: "Elephant", emoji: "🐘" },
+        { text: "Monkey", emoji: "🐵" },
+        { text: "Penguin", emoji: "🐧" },
+      ],
     },
     {
       type: "chant",
@@ -255,6 +317,23 @@ export const m6_week3: Lesson = {
         "Short bridge connecting today's memory game to the idea that repetition builds recognition — no new AI content, just framing.",
     },
     {
+      type: "story",
+      title: "Vora Practices and Practices",
+      teacherNote:
+        "Read each panel aloud, emphasizing how much faster Vora gets each time. Pause after panel 3 to ask the class if THEY have ever gotten faster at a game with practice before revealing the moral in panel 5.",
+      panels: [
+        { text: "Vora sat down to play a matching game with animal cards: lion, zebra, tiger, monkey.", textSimple: "Vora played a matching game with animal cards.", emoji: "🎴" },
+        { text: "In the very first round, Vora flipped a zebra card by mistake, thinking it was a tiger — the stripes looked so similar!", textSimple: "Round 1: Vora mixed up zebra and tiger stripes!", emoji: "🦓" },
+        { text: "Vora kept playing, round after round, seeing the very same cards again and again.", textSimple: "Vora played again and again with the same cards.", emoji: "🔁" },
+        { text: "By the tenth round, Vora flipped the zebra card immediately, with no mistake at all!", textSimple: "Round 10: no mistakes at all!", emoji: "⚡" },
+        { text: "Vora didn't get magic zebra-vision — it just practiced over and over, the same way you get faster at a game the more you play it.", textSimple: "No magic — just lots and lots of practice!", emoji: "🌟" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why did Vora get faster at the matching game the more times it played?", discussionNote: "Repeated practice with the same cards is what learning looks like — Vora didn't get a sudden new power, it just saw the words many times." },
+        { question: "What's something YOU have gotten better at just from practicing it again and again?", discussionNote: "Open discussion — connects the learning big idea to the child's own experience of improving through repetition." },
+      ],
+    },
+    {
       type: "movement",
       title: "Wild Animal Actions!",
       instructions:
@@ -307,6 +386,18 @@ export const m6_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[0],
+    },
+    {
+      type: "stand_sit",
+      title: "Animal & Learning True or False!",
+      instructions:
+        "Read each statement aloud. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then share the short explanation before moving on.",
+      statements: [
+        { text: "A giraffe is a small animal.", isTrue: false, explanation: "No — a giraffe is one of the biggest animals around!", emoji: "🦒" },
+        { text: "Playing a game just one time is enough to become really good at it.", isTrue: false, explanation: "No — you get better with lots of practice, just like Vora did!", emoji: "🔁" },
+        { text: "A zebra has black and white stripes.", isTrue: true, explanation: "Yes! That's how you can spot a zebra.", emoji: "🦓" },
+        { text: "The more times you practice something, the better you usually get at it.", isTrue: true, explanation: "Yes — that's learning!", emoji: "🧠", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -372,6 +463,23 @@ export const m6_week4: Lesson = {
         "Second quarter-checkpoint review — Korean has no /f/ phoneme, so this contrast is genuinely new rather than just underused, and benefits from repeated exposure across the year. If your class completed the foundations unit, this is a direct callback to Week 3 Day 3; if not, simply treat it as a first introduction.",
     },
     {
+      type: "story",
+      title: "Vora Listens Very Closely",
+      teacherNote:
+        "Read each panel aloud, exaggerating the /f/ blowing sound and the /p/ popping sound with your mouth so kids can see the difference, not just hear it. Pause after panel 2 to let the class guess before revealing panel 3.",
+      panels: [
+        { text: "Vora got a message through a crackly, fuzzy phone speaker: \"Please bring the... ___!\" But the word was too fuzzy to catch!", textSimple: "A fuzzy phone message! Vora couldn't hear the word.", emoji: "📞" },
+        { text: "\"Was that 'fan'? Or was that 'pan'?\" wondered Vora. \"They sound so close together!\"", textSimple: "\"Fan? Or pan?\" wondered Vora.", emoji: "🤔" },
+        { text: "Vora listened again, super closely, to the very first tiny sound of the word — a soft blow of air, not a little pop.", textSimple: "Vora listened again, very closely, to the first sound.", emoji: "👂" },
+        { text: "\"A soft blowing sound means 'f' — it must be 'fan'!\" said Vora, and grabbed the right one.", textSimple: "\"It's 'fan'!\" said Vora, and got it right.", emoji: "🪭" },
+        { text: "Computers that listen to speech — and people too — have to catch tiny sound differences like that. It's a kind of noticing, just with ears instead of eyes.", textSimple: "Listening for tiny sounds is noticing too — just with ears!", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "What tiny sound clue helped Vora tell 'fan' apart from 'pan'?", discussionNote: "The soft blowing /f/ sound versus the popping /p/ sound at the very start of the word — noticing small sound differences is a kind of perception too." },
+        { question: "Do you know any two English words that sound almost the same, but not quite?", discussionNote: "Open discussion — reinforces phonemic awareness, connecting to today's minimal-pairs listening game." },
+      ],
+    },
+    {
       type: "movement",
       title: "Sound Actions: F or P!",
       instructions:
@@ -411,6 +519,18 @@ export const m6_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[0],
+    },
+    {
+      type: "team_relay",
+      title: "Sound Relay: F or P!",
+      instructions:
+        "Split the class into two (or more) teams. Read each prompt aloud and have the next player from each team call out a word that fits — award a point for every correct answer, then move to the next prompt.",
+      prompts: [
+        { text: "Say a word that starts with the soft 'f' sound, like fan!", emoji: "🪭" },
+        { text: "Say a word that starts with the popping 'p' sound, like pan!", emoji: "🍳" },
+        { text: "Say a word that rhymes with 'fine'!", emoji: "👍" },
+        { text: "Say a word that rhymes with 'fork'!", emoji: "🍴", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",

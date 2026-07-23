@@ -216,3 +216,34 @@ export function MusicNoteIcon(props: IconProps) {
     </Base>
   );
 }
+
+export function TeamIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <circle cx="8" cy="7" r="3" />
+      <circle cx="17" cy="8.5" r="2.3" />
+      <path d="M2.5 20v-1c0-3 2.5-5 5.5-5s5.5 2 5.5 5v1" />
+      <path d="M14.5 20v-.8c0-2-1.2-3.6-3-4.5" />
+    </Base>
+  );
+}
+
+export function HandRaiseIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M9 21h6a2 2 0 0 0 2-2v-5.5l2-3a1.4 1.4 0 0 0-2.4-1.4L15 11V4a1.4 1.4 0 0 0-2.8 0v6" />
+      <path d="M12.2 10V3.4a1.4 1.4 0 0 0-2.8 0V10" />
+      <path d="M9.4 10.2V5.4a1.4 1.4 0 0 0-2.8 0V15l-1.6-1.8a1.4 1.4 0 0 0-2.1 1.8L6 19c1 1.3 1.8 2 3 2" />
+    </Base>
+  );
+}
+
+export function OpenBookIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M12 6.5c-1.3-1.4-3.4-2-6.5-2C4.7 4.5 4 5.2 4 6v11.5c0 .8.7 1.2 1.5 1.1 2.7-.4 4.6.2 6.5 1.9" />
+      <path d="M12 6.5c1.3-1.4 3.4-2 6.5-2 .8 0 1.5.7 1.5 1.5v11.5c0 .8-.7 1.2-1.5 1.1-2.7-.4-4.6.2-6.5 1.9" />
+      <path d="M12 6.5v13" />
+    </Base>
+  );
+}

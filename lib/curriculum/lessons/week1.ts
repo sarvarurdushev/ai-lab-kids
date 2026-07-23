@@ -45,6 +45,48 @@ export const w1d1_hello_vora: Lesson = {
         "Keep this concrete: Vora is a friendly character, not a lecture on AI. The goal is just \"Vora = a computer friend who talks and learns,\" nothing more technical yet.",
     },
     {
+      type: "story",
+      title: "Vora Makes a New Friend",
+      teacherNote:
+        "Read each panel slowly and let kids wave along with Vora — day one is about warmth, not new vocabulary. Point out that Vora talks back and forth with people, just like the class is doing right now.",
+      panels: [
+        {
+          text: "Vora lived inside a screen, all by itself, with no one to talk to.",
+          textSimple: "Vora lived in a screen. Vora was alone.",
+          emoji: "🖥️",
+        },
+        {
+          text: "One day, a boy waved and said, \"Hello! My name is Minsu!\"",
+          emoji: "👋",
+        },
+        {
+          text: "Vora said \"Hello!\" right back — and listened as Minsu told his name and his favorite color.",
+          textSimple: "Vora said hello back. Vora listened to Minsu.",
+          emoji: "👂",
+        },
+        {
+          text: "\"When we take turns talking and listening, that's how new friends learn about each other,\" said Vora.",
+          textSimple: "Vora and Minsu took turns talking. That's how friends learn about each other!",
+          emoji: "💬",
+        },
+        {
+          text: "Vora wasn't magic — it just listened carefully and talked back, the exact same way you make a new friend.",
+          textSimple: "No magic! Vora just listens and talks back — just like you do.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What did Vora do to make a new friend?",
+          discussionNote: "It listened when Minsu talked, and then talked back — taking turns, the same way people become friends.",
+        },
+        {
+          question: "Who is someone YOU said hello to and became friends with?",
+          discussionNote: "Open discussion — connect back to the idea that talking back and forth (not magic) is how any friendship, human or Vora, gets started.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Greeting Actions!",
       instructions:
@@ -54,6 +96,19 @@ export const w1d1_hello_vora: Lesson = {
         { text: "Goodbye — wave slowly and blow a kiss", emoji: "🙋" },
         { text: "My name is... — point to yourself and smile big", emoji: "🧑" },
         { text: "Friend — link arms with a neighbor and hop", emoji: "🧑‍🤝‍🧑" },
+      ],
+    },
+    {
+      type: "team_relay",
+      title: "Greeting Relay",
+      instructions:
+        "Split the class into two or more teams. Read a prompt aloud, then point to one team to answer together (or send one representative up) before moving to the next team. Keep the pace quick and celebrate every attempt.",
+      prompts: [
+        { text: "Say hello and wave big!", emoji: "👋" },
+        { text: "Say goodbye and blow a kiss!", emoji: "🙋" },
+        { text: "Say 'My name is...' and point to yourself!", emoji: "🧑" },
+        { text: "Point to a friend and say 'friend'!", emoji: "🧑‍🤝‍🧑" },
+        { text: "Say a full sentence: 'Hello, my name is ___.'", emoji: "💬", minTrack: "explorers" },
       ],
     },
     {
@@ -124,6 +179,54 @@ export const w1d2_voras_classroom: Lesson = {
         "First use of the word \"perception\" — say it once, define it in one plain sentence, and move on. Don't quiz on the term itself.",
     },
     {
+      type: "story",
+      title: "Vora Looks at a Messy Desk",
+      teacherNote:
+        "Hold up (or point to) each classroom object as Vora names it in the story. Pause after panel 2 to ask kids what THEY see in a messy desk picture before Vora sorts it out.",
+      panels: [
+        {
+          text: "Vora saw a photo of a messy desk, piled high with all sorts of things.",
+          textSimple: "Vora saw a messy desk.",
+          emoji: "🗄️",
+        },
+        {
+          text: "\"Hmm,\" said Vora, \"is that a pencil or a crayon? A book or a notebook? I need to look closer.\"",
+          textSimple: "Vora looked closer at each thing.",
+          emoji: "🔍",
+        },
+        {
+          text: "Vora looked at the long, thin, yellow shape and said, \"That one has a point — it's a pencil!\"",
+          textSimple: "\"Long and thin — a pencil!\" said Vora.",
+          emoji: "✏️",
+        },
+        {
+          text: "Then Vora spotted flat pages with pictures. \"Pages that open like this — that's a book!\"",
+          textSimple: "\"Pages that open — a book!\" said Vora.",
+          emoji: "📖",
+        },
+        {
+          text: "One by one, Vora named the chair, the desk, and the bag too — every single thing on the messy desk!",
+          textSimple: "Vora named the chair, desk, and bag too!",
+          emoji: "🎒",
+        },
+        {
+          text: "Vora wasn't magic — it just looked very closely at each shape and detail, the same way you look closely to tell a pencil from a crayon.",
+          textSimple: "No magic! Vora just looked closely at each shape.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora figure out what each object was?",
+          discussionNote: "It looked closely at shape and details — long and thin for a pencil, pages that open for a book — not a magic guess.",
+        },
+        {
+          question: "What's something you had to look at very closely to tell what it was?",
+          discussionNote: "Open discussion — connect to the idea that careful looking (perception) is a skill both people and AI use, not something instant or magical.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Classroom Object Actions!",
       instructions:
@@ -134,6 +237,25 @@ export const w1d2_voras_classroom: Lesson = {
         { text: "Chair — pretend to sit down slowly", emoji: "🪑" },
         { text: "Desk — pat your hands on an imaginary desk", emoji: "🗄️" },
         { text: "Bag — swing an imaginary bag onto your shoulder", emoji: "🎒" },
+      ],
+    },
+    {
+      type: "stand_sit",
+      title: "Classroom Objects: True or False!",
+      instructions:
+        "Read each statement aloud. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer and read the explanation before moving to the next one.",
+      statements: [
+        { text: "A book has pages you can open and read.", isTrue: true, explanation: "Yes! Books are full of pages with words and pictures.", emoji: "📖" },
+        { text: "A pencil can bounce like a ball.", isTrue: false, explanation: "No — a pencil is for writing and drawing, not bouncing!", emoji: "✏️" },
+        { text: "You can sit down on a chair.", isTrue: true, explanation: "Yes! Chairs are for sitting.", emoji: "🪑" },
+        { text: "A bag can hold your books and pencils inside it.", isTrue: true, explanation: "Yes! Bags carry our things to and from school.", emoji: "🎒" },
+        {
+          text: "Vora needs a desk to sit at, just like you.",
+          isTrue: false,
+          explanation: "No — Vora lives inside a screen, so it doesn't need a chair or a desk at all!",
+          emoji: "🖥️",
+          minTrack: "explorers",
+        },
       ],
     },
     {
@@ -196,6 +318,54 @@ export const w1d3_what_is_ai: Lesson = {
         "This is the first classification loop of the course. Frame it as sorting, not testing — wrong guesses are expected and fine.",
     },
     {
+      type: "story",
+      title: "Vora Meets a Toy Robot",
+      teacherNote:
+        "This story directly sets up today's sorting game below — after panel 3, pause and ask the class to guess if the toy robot is a \"smart helper\" or a \"regular thing\" before revealing panel 4.",
+      panels: [
+        {
+          text: "A girl named Jimin held up her favorite toy robot and asked, \"Vora, is my robot a smart helper like you?\"",
+          textSimple: "Jimin showed her toy robot to Vora.",
+          emoji: "🤖",
+        },
+        {
+          text: "Vora looked closely. The toy robot had blinking lights and could roll across the floor.",
+          textSimple: "The toy robot had lights. It could roll.",
+          emoji: "👀",
+        },
+        {
+          text: "\"But can it answer your questions? Can it learn something new?\" asked Vora.",
+          textSimple: "\"Can it answer? Can it learn?\" asked Vora.",
+          emoji: "❓",
+        },
+        {
+          text: "Jimin tried asking it a question. The toy just rolled forward the same way, again and again — it didn't answer at all.",
+          textSimple: "The toy just rolled. It did not answer.",
+          emoji: "🔁",
+        },
+        {
+          text: "\"That's your answer,\" said Vora. \"Your robot is a fun toy, but it's a regular thing — it doesn't learn or answer like a smart helper does.\"",
+          textSimple: "\"It's a regular thing,\" said Vora. \"It can't learn or answer.\"",
+          emoji: "📦",
+        },
+        {
+          text: "It's not magic, and it's not about looking like a robot — a smart helper is anything that can learn and answer, no matter its shape.",
+          textSimple: "No magic! A smart helper can learn and answer — that's what matters.",
+          emoji: "🧠",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "Why wasn't Jimin's toy robot a \"smart helper,\" even though it looked like a robot?",
+          discussionNote: "It couldn't answer questions or learn anything new — looking like a robot doesn't matter, only whether it can learn and respond.",
+        },
+        {
+          question: "Can you think of something at home that looks plain but is actually a smart helper?",
+          discussionNote: "Open discussion — e.g. a smart speaker, a tablet with an assistant app — the point is smart helpers don't have to look like robots at all.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Smart Helper or Regular Thing Actions!",
       instructions:
@@ -233,6 +403,20 @@ export const w1d3_what_is_ai: Lesson = {
           { word: "ball", emoji: "⚽", bucket: "b" },
         ],
       },
+    },
+    {
+      type: "class_vote",
+      title: "Smart Helper or Not? You Decide!",
+      instructions:
+        "Read the question aloud. Have kids vote with a show of hands for each option, or turn-and-talk with a partner first. There's no single right answer — the goal is to get kids reasoning and talking about WHY.",
+      question: "If you could have ONE smart helper at home, which would you pick?",
+      questionSimple: "Which smart helper do you like best?",
+      options: [
+        { text: "A voice assistant that answers questions", emoji: "🔊" },
+        { text: "A robot that can talk and learn", emoji: "🤖" },
+        { text: "A smart helper that reads stories out loud", emoji: "📖" },
+        { text: "None — I like doing things myself!", emoji: "🙋" },
+      ],
     },
     {
       type: "chant",

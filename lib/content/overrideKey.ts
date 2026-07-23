@@ -128,3 +128,38 @@ export function wrapupSummarySimpleKey(lessonKey: string, segmentIndex: number):
 export function wrapupHomeworkKey(lessonKey: string, segmentIndex: number): string {
   return contentItemKey("wrapup_homework", lessonKey, segmentIndex);
 }
+
+export function teamRelayPromptKey(lessonKey: string, segmentIndex: number, promptIndex: number): string {
+  return contentItemKey("team_relay_prompt", lessonKey, segmentIndex, promptIndex);
+}
+
+export function standSitStatementKey(lessonKey: string, segmentIndex: number, statementIndex: number): string {
+  return contentItemKey("stand_sit_statement", lessonKey, segmentIndex, statementIndex);
+}
+
+export function classVoteQuestionKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("class_vote_question", lessonKey, segmentIndex);
+}
+
+/** The Little Sparks (4-5)-only wording override for a class vote question — see warmupPromptSimpleKey. */
+export function classVoteQuestionSimpleKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("class_vote_question_simple", lessonKey, segmentIndex);
+}
+
+export function classVoteOptionKey(lessonKey: string, segmentIndex: number, optionIndex: number): string {
+  return contentItemKey("class_vote_option", lessonKey, segmentIndex, optionIndex);
+}
+
+export function storyPanelKey(lessonKey: string, segmentIndex: number, panelIndex: number): string {
+  return contentItemKey("story_panel", lessonKey, segmentIndex, panelIndex);
+}
+
+/** The Little Sparks (4-5)-only wording override for a story panel — see warmupPromptSimpleKey. */
+export function storyPanelSimpleKey(lessonKey: string, segmentIndex: number, panelIndex: number): string {
+  return contentItemKey("story_panel_simple", lessonKey, segmentIndex, panelIndex);
+}
+
+/** Narration audio for the whole story, uploaded the same way as a chant song — see chantSongKey. */
+export function storyAudioKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("story_audio", lessonKey, segmentIndex);
+}

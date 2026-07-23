@@ -46,6 +46,21 @@ function filterSegment(segment: LessonSegment, track: AgeTrack): LessonSegment {
       return track === "little_sparks" && segment.summarySimple
         ? { ...segment, summary: segment.summarySimple }
         : segment;
+    case "team_relay":
+      return { ...segment, prompts: keep(segment.prompts, track) };
+    case "stand_sit":
+      return { ...segment, statements: keep(segment.statements, track) };
+    case "class_vote":
+      return track === "little_sparks" && segment.questionSimple
+        ? { ...segment, question: segment.questionSimple }
+        : segment;
+    case "story":
+      return {
+        ...segment,
+        panels: segment.panels.map((panel) =>
+          track === "little_sparks" && panel.textSimple ? { ...panel, text: panel.textSimple } : panel
+        ),
+      };
   }
 }
 

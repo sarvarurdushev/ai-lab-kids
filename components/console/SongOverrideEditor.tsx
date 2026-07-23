@@ -4,8 +4,18 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { MusicNoteIcon } from "@/components/icons";
 
-/** Attaches one audio recording to a whole Chant Time segment — a teacher can sing/hum the tune once and every class hears it. */
-export function SongOverrideEditor({ contentKey, initialAudioUrl }: { contentKey: string; initialAudioUrl: string | null }) {
+/** Attaches one audio recording to a whole segment (a chant or a story) — a teacher can sing/hum or narrate once and every class hears it. */
+export function SongOverrideEditor({
+  contentKey,
+  initialAudioUrl,
+  label = "Chant song (optional)",
+  uploadLabel = "song",
+}: {
+  contentKey: string;
+  initialAudioUrl: string | null;
+  label?: string;
+  uploadLabel?: string;
+}) {
   const [audioUrl, setAudioUrl] = useState<string | null>(initialAudioUrl);
   const [status, setStatus] = useState<"idle" | "uploading" | "saving" | "saved" | "error">("idle");
   const fileInput = useRef<HTMLInputElement>(null);
@@ -48,7 +58,7 @@ export function SongOverrideEditor({ contentKey, initialAudioUrl }: { contentKey
   return (
     <div className="flex flex-col gap-2 rounded-xl bg-cream p-3">
       <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-ink/50">
-        <MusicNoteIcon size={12} /> Chant song (optional)
+        <MusicNoteIcon size={12} /> {label}
       </p>
       {audioUrl && <audio controls src={audioUrl} className="h-9 w-full" />}
       <input
@@ -76,7 +86,7 @@ export function SongOverrideEditor({ contentKey, initialAudioUrl }: { contentKey
           onClick={() => fileInput.current?.click()}
           disabled={status === "uploading" || status === "saving"}
         >
-          {status === "uploading" ? "Uploading..." : audioUrl ? "Replace song" : "Upload song"}
+          {status === "uploading" ? "Uploading..." : audioUrl ? `Replace ${uploadLabel}` : `Upload ${uploadLabel}`}
         </Button>
       </div>
     </div>

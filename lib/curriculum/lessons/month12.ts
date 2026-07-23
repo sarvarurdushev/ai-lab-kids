@@ -48,6 +48,24 @@ export const m12_week1: Lesson = {
         "\"I want ___ for Christmas\" is a fixed chunk kids will hear everywhere this season — teach it whole rather than breaking down \"want.\" After the third line, pause for open discussion: ask a few kids to name ANY AI helper from this year, not just this month's. Translator apps (Month 2), wildlife cameras (Month 6), and weather forecasts (Month 7) are given as examples here, but recycling data (Month 4), map apps (Month 8), and face recognition (Month 5) are equally good answers. This is a light recall, not a quiz — any honest connection back to an earlier month counts.",
     },
     {
+      type: "story",
+      title: "Vora's Christmas Wish List",
+      teacherNote:
+        "Read each panel aloud, letting kids call out other AI helpers they remember from the year as you go — this story is meant to be interactive, not just read straight through. Pause before the final line to let the meaning land.",
+      panels: [
+        { text: "It was almost Christmas, and Vora was making a wish list — but not for toys. Vora wanted to remember all the AI helpers from this year!", textSimple: "Vora made a wish list of AI helpers from this year!", emoji: "🎄" },
+        { text: "\"I want to remember the translator app,\" Vora wrote, \"that helped Grandma and her pen pal talk, even in different languages.\"", textSimple: "\"The translator app helped people talk in different languages!\"", emoji: "🌐" },
+        { text: "\"And the wildlife camera that spotted a fox in the dark forest, using its night-vision sensor!\"", textSimple: "\"And the camera that spotted a fox in the dark!\"", emoji: "🦊" },
+        { text: "\"And the weather forecast that guessed rain was coming, just by finding a pattern in cloudy days!\"", textSimple: "\"And the forecast that guessed rain was coming!\"", emoji: "🌧️" },
+        { text: "\"Wait,\" Vora said, \"none of these helpers were magic. Each one just did ONE careful job really well.\"", textSimple: "\"None of these were magic — each did one job well!\"", emoji: "💡" },
+        { text: "\"That's the best gift of all,\" said Vora, \"understanding how these helpers really work — not magic, just clever tools people built.\"", textSimple: "\"Understanding how they work is the best gift!\"", emoji: "🎁" },
+      ],
+      comprehensionQuestions: [
+        { question: "Name one AI helper Vora remembered from this year. What job did it do?", discussionNote: "Any of: translator app (languages), wildlife camera (spotting animals), weather forecast (predicting weather), map app (finding routes), face recognition, or recycling sorting — the point is recall plus explaining its one job." },
+        { question: "Why did Vora say understanding these helpers is \"the best gift\"?", discussionNote: "Open discussion — knowing how something works (rather than thinking it's magic) helps us use it wisely and not be afraid of it." },
+      ],
+    },
+    {
       type: "movement",
       title: "Winter Wonderland Actions!",
       instructions:
@@ -80,6 +98,18 @@ export const m12_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[5],
+    },
+    {
+      type: "stand_sit",
+      title: "AI Helpers True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on — this is a fun review of AI helpers from all year!",
+      statements: [
+        { text: "Santa can guess every gift you want without ever asking you.", isTrue: false, explanation: "No — even in our stories, Santa needs to know what you want; AI helpers work the same way, needing real information, not magic guessing.", emoji: "🎅" },
+        { text: "A translator app can help two people who speak different languages talk to each other.", isTrue: true, explanation: "Yes! We learned about this back in Month 2.", emoji: "🌐" },
+        { text: "A weather forecast is a magic trick.", isTrue: false, explanation: "No — it's a careful guess based on patterns in past weather, like we learned in Month 7.", emoji: "🌦️" },
+        { text: "A wildlife camera can use a sensor to spot an animal, even in the dark.", isTrue: true, explanation: "Yes! We learned this in Month 6.", emoji: "🦊", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -137,6 +167,24 @@ export const m12_week2: Lesson = {
       ],
       teacherNote:
         "Quick, celebratory bridge into the cumulative review sort below — no new teaching, just a reminder that this is the same classification idea used all year (Months 1, 5, 6, 7, and 8's sorting games).",
+    },
+    {
+      type: "story",
+      title: "Vora's Big Box of Sorting Games",
+      teacherNote:
+        "Read each panel aloud, and if you have time, let kids call out other sorting games they remember (Halloween spooky/not-spooky, hot/cold clothes) as you go. Pause before the final line to let the big idea land.",
+      panels: [
+        { text: "Vora found an old box full of picture cards — rockets, animals, weather, feelings — everything from the whole year!", textSimple: "Vora found an old box of pictures from the whole year!", emoji: "📦" },
+        { text: "\"I remember sorting space things from Month 1,\" said Vora, \"and hot weather clothes from cold ones in Month 7!\"", textSimple: "\"I remember sorting space things, and hot and cold clothes!\"", emoji: "🚀" },
+        { text: "Vora spread all the cards out and noticed something: every single sorting game worked the exact same way.", textSimple: "Vora noticed every sorting game worked the same way.", emoji: "🗂️" },
+        { text: "\"Look at examples. Find what's similar. Put them in groups. That's it — that's ALL of sorting, no matter what the pictures show!\"", textSimple: "\"Look at examples. Find what's similar. Group them!\"", emoji: "💡" },
+        { text: "Vora sorted the whole box in record time, humming happily. \"One trick, so many games!\"", textSimple: "Vora sorted the whole box fast! \"One trick, so many games!\"", emoji: "🎉" },
+        { text: "It's not magic — the same simple idea (look, compare, group) works for rockets, weather, feelings, or anything else you want to sort.", textSimple: "No magic! Look, compare, and group — that's sorting.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "What one big idea did Vora notice connects ALL the sorting games from this year?", discussionNote: "Look at examples, notice what's similar, and put them into groups — the same basic process no matter the topic." },
+        { question: "Which sorting game from this year was YOUR favorite — space things, animals, weather, feelings, or something else?", discussionNote: "Open discussion/recall — celebrate the range of the year's content." },
+      ],
     },
     {
       type: "movement",
@@ -199,6 +247,19 @@ export const m12_week2: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[5],
     },
     {
+      type: "class_vote",
+      title: "Favorite Game of the Year?",
+      instructions:
+        "Read the question aloud. Kids vote by raising hands for their favorite — a fun, reflective way to celebrate the whole year's games.",
+      question: "Which game did you enjoy most this year: sorting into groups, finding patterns, or building sentences?",
+      questionSimple: "Which game did you like best this year?",
+      options: [
+        { text: "Sorting", emoji: "🗂️" },
+        { text: "Patterns", emoji: "🔮" },
+        { text: "Sentences", emoji: "🧩" },
+      ],
+    },
+    {
       type: "chant",
       title: "Sky or Ground Chant",
       instructions:
@@ -253,6 +314,24 @@ export const m12_week3: Lesson = {
       ],
       teacherNote:
         "Celebratory callback to the pattern-prediction thread used in Months 1, 4, 6, and 10 — no new teaching, just framing before the cumulative game.",
+    },
+    {
+      type: "story",
+      title: "Vora's Last Pattern of the Year",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 2 to let kids study the three-part pattern themselves before Vora confirms it. A celebratory closer to the year's whole pattern-prediction thread.",
+      panels: [
+        { text: "On the last day of Pattern Club, Vora put up one final, extra-long pattern: star, pumpkin, gift, star, pumpkin, gift...", textSimple: "Vora made a long pattern: star, pumpkin, gift, star, pumpkin, gift...", emoji: "⭐" },
+        { text: "The whole class leaned in. \"That's a pattern of THREE things repeating, not just two!\" someone noticed.", textSimple: "\"That's THREE things repeating, not two!\"", emoji: "🧩" },
+        { text: "Vora smiled. \"You're right — patterns can repeat in twos, or threes, or even more!\"", textSimple: "Vora smiled. \"Patterns can repeat in twos or threes!\"", emoji: "😊" },
+        { text: "\"Whether it's two things or three things repeating, the trick is always the same: look for what repeats, then guess what's next.\"", textSimple: "\"The trick is always the same: find what repeats!\"", emoji: "💡" },
+        { text: "\"Star!\" the whole class shouted together for the missing piece — and they were exactly right.", textSimple: "\"Star!\" everyone shouted — and they were right!", emoji: "🌟" },
+        { text: "It's not magic — from Month 1's shapes to today's carnival, finding what repeats and guessing what comes next is the same reasoning skill, every time.", textSimple: "No magic! Finding what repeats is the same skill, every time.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "How was today's final pattern different from earlier ones this year?", discussionNote: "It repeated in a group of THREE things (star, pumpkin, gift) instead of just two — but the same \"find what repeats\" trick still works." },
+        { question: "Can YOU make up your own pattern with three things instead of two?", discussionNote: "Open, hands-on — invite a few kids to try a three-part pattern out loud." },
+      ],
     },
     {
       type: "movement",
@@ -312,6 +391,19 @@ export const m12_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[0],
+    },
+    {
+      type: "team_relay",
+      title: "Year-Long Memory Relay!",
+      instructions:
+        "Split into two teams. Read each prompt aloud and let team members take turns calling out an answer from anywhere in the whole year — celebrate every correct memory!",
+      prompts: [
+        { text: "Name a word we learned about space!", emoji: "🚀" },
+        { text: "Name an animal word from this year!", emoji: "🦁" },
+        { text: "Name a weather word from this year!", emoji: "☀️" },
+        { text: "Name a feeling word from this year!", emoji: "😊", minTrack: "explorers" },
+        { text: "Name any AI helper we learned about this year!", emoji: "🤖", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -378,6 +470,24 @@ export const m12_week4: Lesson = {
         "A genuinely new contrast, not a review — unlike Month 3's l/r, Month 6's f/p, and Month 9's th/s, this is the year's only brand-new sound gap, saved for the final checkpoint. Korean has no /v/ phoneme and regularly approximates it with /b/ — expect kids to hear these as identical at first, same as with /f/ in Month 6.",
     },
     {
+      type: "story",
+      title: "Vora's Last New Sound",
+      teacherNote:
+        "Read each panel aloud, having the class buzz \"vvv\" along with Vora in panel 3. Since this is the very last lesson of the year, take a moment on panel 5 to let kids reminisce about the earlier sounds too.",
+      panels: [
+        { text: "On the very last day of the year, Vora heard a brand new sound rumble by: \"vvvvan!\" A moving van drove past the window.", textSimple: "Vora heard \"vvvvan!\" A van drove past!", emoji: "🚐" },
+        { text: "\"Wait,\" said Vora, \"is that a van, or did someone say ban? My ears — I mean, my microphone sensor — need to listen extra carefully.\"", textSimple: "\"Van, or ban? I need to listen carefully!\"", emoji: "👂" },
+        { text: "Vora buzzed its lip like the class practiced: \"vvv...\" and compared it to the sound outside.", textSimple: "Vora buzzed its lip: \"vvv...\" and listened.", emoji: "💨" },
+        { text: "\"Yes! That buzzy /v/ sound only happens with a van, not a ban. My sound-sensor caught the tiny difference!\"", textSimple: "\"Yes! It's van! I caught the tiny difference!\"", emoji: "💡" },
+        { text: "Looking back, Vora remembered every sound this year — light and right, fan and pan, think and sink, and now van and ban.", textSimple: "Vora remembered every sound from the whole year!", emoji: "📚" },
+        { text: "It's not magic — careful listening, one sound at a time, all year long, is how ears (and microphones) become better sensors, step by step.", textSimple: "No magic! Careful listening all year made better ears.", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "What tiny difference helped Vora tell \"van\" from \"ban\"?", discussionNote: "The buzzy /v/ sound (biting the bottom lip) versus the /b/ sound — a small mouth-shape difference that careful listening can catch." },
+        { question: "Looking back at the WHOLE year, which sound (l/r, f/p, th/s, or v/b) was trickiest for you? Why do you think that is?", discussionNote: "Open, reflective discussion — celebrate progress across the whole year's listening-discrimination thread; there's no wrong answer." },
+      ],
+    },
+    {
       type: "movement",
       title: "Van or Ban Actions!",
       instructions:
@@ -416,6 +526,18 @@ export const m12_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[0],
+    },
+    {
+      type: "stand_sit",
+      title: "A Year of Listening: True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on — a fun final review of the year's listening journey!",
+      statements: [
+        { text: "Korean has the exact same /v/ sound as English.", isTrue: false, explanation: "No — Korean doesn't have this exact sound, so it's brand new and takes practice, just like today!", emoji: "🚫" },
+        { text: "Your ears are a kind of sensor.", isTrue: true, explanation: "Yes! Ears sense sound, just like other sensors sense movement or touch.", emoji: "👂" },
+        { text: "Listening carefully gets easier with lots of practice.", isTrue: true, explanation: "Yes! That's why we practiced light/right, fan/pan, think/sink, and now van/ban all year.", emoji: "🎧" },
+        { text: "Every sound in English also exists in Korean.", isTrue: false, explanation: "No — some English sounds, like /v/, don't have an exact match in Korean, so they take extra practice.", emoji: "🤔", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",

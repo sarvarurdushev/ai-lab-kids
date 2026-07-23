@@ -49,6 +49,23 @@ export const m5_week1: Lesson = {
         "Korean family terms encode relative age and the speaker's gender in a way English \"brother/sister\" doesn't — some kids will want to specify more than English allows. Validate that impulse (\"Yes, in Korean we'd say more — in English we just say brother or sister!\") instead of correcting it away. Keep the face-recognition point reassuring, not scary: apps can be wrong, kids never are about their own family.",
     },
     {
+      type: "story",
+      title: "Vora Tries to Guess Who's Who",
+      teacherNote:
+        "Read each panel aloud, pausing on panel 3 to ask the class \"Do YOU ever mix up two people who look alike?\" before revealing panel 4 — the story's point is that recognizing family is instant and certain for a kid, even when a picture-matching helper like Vora can still get confused.",
+      panels: [
+        { text: "Vora loved looking through a big pile of family photos, trying to learn every face.", textSimple: "Vora looked at lots of family photos.", emoji: "📷" },
+        { text: "\"This one is a mom, and this one is a grandma,\" said Vora, pointing carefully at each picture.", textSimple: "\"Mom! Grandma!\" said Vora, pointing.", emoji: "👵" },
+        { text: "But two photos looked so alike — two sisters with matching smiles — that Vora froze. \"Wait... which one is which?\"", textSimple: "Two photos looked the same! Vora got confused.", emoji: "👧" },
+        { text: "A kid in the class just laughed. \"That's easy — that's MY sister! I could never mix her up!\"", textSimple: "A kid said, \"That's my sister! Easy!\"", emoji: "😄" },
+        { text: "Vora nodded slowly. \"You're right — looking at pictures is something I can do, but knowing your OWN family... that's something only you can do.\"", textSimple: "Vora said, \"Only YOU really know your family!\"", emoji: "🤖" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why did Vora get confused by the two photos, but the kid in the story didn't?", discussionNote: "Vora only compares how pictures look; the kid actually knows and loves their own sister, so there's no mixing her up — a computer's picture-matching isn't the same as truly knowing someone." },
+        { question: "Has a photo of two people who look alike ever confused you, even for a second?", discussionNote: "Open discussion — the point is that even people can be tricked by look-alike photos sometimes, but never about the people closest to them." },
+      ],
+    },
+    {
       type: "movement",
       title: "Family Actions!",
       instructions:
@@ -84,6 +101,19 @@ export const m5_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
+      type: "team_relay",
+      title: "Family Relay!",
+      instructions:
+        "Split the class into two (or more) teams. Read each prompt aloud and have the next player from each team call out a family word — award a point for every correct answer, then move to the next prompt.",
+      prompts: [
+        { text: "Name someone who gives you a big hug at home!", emoji: "🤗" },
+        { text: "Name someone who is older than your mom or dad!", emoji: "👵" },
+        { text: "Name someone who might read you a bedtime story!", emoji: "📖" },
+        { text: "Name someone who might play a game with you!", emoji: "🎲" },
+        { text: "Name someone in your family who is a kid, just like you!", emoji: "🧒", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -142,6 +172,23 @@ export const m5_week2: Lesson = {
         "Quick callback to Week 1's face-recognition point — no new teaching here, just a bridge into today's sentence-building game.",
     },
     {
+      type: "story",
+      title: "Vora Sorts a Messy Room",
+      teacherNote:
+        "Read each panel aloud, pointing to each item as Vora considers it. Pause after panel 3 to ask the class where THEY would put a backpack before revealing Vora's answer — the point is that sorting takes a real look at each thing, not a quick guess.",
+      panels: [
+        { text: "Vora looked at a room with things from home and things from school, all mixed together in one big pile.", textSimple: "Home things and school things were all mixed up!", emoji: "🧺" },
+        { text: "\"A mom, a dad — those go with family,\" said Vora, sorting them into one pile.", textSimple: "\"Mom, dad — family pile!\" said Vora.", emoji: "👨‍👩‍👧" },
+        { text: "\"A teacher, a desk — those go with school,\" said Vora, sorting them into another pile.", textSimple: "\"Teacher, desk — school pile!\" said Vora.", emoji: "🏫" },
+        { text: "Then Vora found a backpack. Family, or school? Vora looked closely: it's carried TO school, but packed with love AT home.", textSimple: "A backpack! Family or school? Vora looked closely.", emoji: "🎒" },
+        { text: "\"This one belongs a little to both,\" said Vora. \"Sorting isn't always one quick guess — sometimes you have to really think about it.\"", textSimple: "\"It's a little of both!\" said Vora. \"Sorting takes thinking!\"", emoji: "🤔" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why couldn't Vora sort the backpack into just one pile right away?", discussionNote: "Some things genuinely connect to more than one category — sorting sometimes means thinking carefully instead of guessing instantly." },
+        { question: "Can you think of something at home that could belong to more than one group?", discussionNote: "Open discussion — reinforces that careful sorting/categorizing is a real skill, not just a quick reflex." },
+      ],
+    },
+    {
       type: "movement",
       title: "Family & School Actions!",
       instructions:
@@ -191,6 +238,18 @@ export const m5_week2: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[4],
+    },
+    {
+      type: "stand_sit",
+      title: "Family or School: True or False!",
+      instructions:
+        "Read each statement aloud. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then share the short explanation before moving on.",
+      statements: [
+        { text: "A teacher is someone in your family.", isTrue: false, explanation: "No — a teacher works at school, not at home!", emoji: "🧑‍🏫" },
+        { text: "Your mom and dad are part of your family.", isTrue: true, explanation: "Yes! Moms and dads are family.", emoji: "👨‍👩‍👧" },
+        { text: "A desk belongs at school, not at home with your family.", isTrue: true, explanation: "Yes — a desk is a school word!", emoji: "🗄️" },
+        { text: "You can only have one brother or one sister, never more.", isTrue: false, explanation: "No — families can have lots of brothers and sisters, or none at all!", emoji: "👧", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",
@@ -248,6 +307,23 @@ export const m5_week3: Lesson = {
         "Brief callback to Week 1's perception idea before the sorting game — no new content, just framing today's game as the same skill.",
     },
     {
+      type: "story",
+      title: "Vora Helps Sort the Photo Album",
+      teacherNote:
+        "Read each panel aloud. Pause after panel 3 to ask the class what THEY would look for to tell the cousins apart before revealing panel 4 — the point is that sorting look-alikes takes slowing down and looking for small details.",
+      panels: [
+        { text: "A friend asked Vora to help sort a big photo album into family and school pictures.", textSimple: "Vora helped sort a photo album.", emoji: "📔" },
+        { text: "Most photos were easy — a mom baking, a teacher at a whiteboard. Quick sorts, one after another!", textSimple: "Most photos were easy to sort!", emoji: "✅" },
+        { text: "But two cousins in matching shirts looked SO alike, Vora couldn't tell them apart at a glance.", textSimple: "Two cousins looked exactly alike!", emoji: "👦" },
+        { text: "Vora slowed down and looked for small clues — one cousin's cap, one cousin's missing tooth — and sorted them correctly at last.", textSimple: "Vora looked for small clues and got it right!", emoji: "🔍" },
+        { text: "\"Sorting fast is nice,\" said Vora, \"but sorting carefully is what really matters.\"", textSimple: "\"Careful sorting matters most!\" said Vora.", emoji: "🌟" },
+      ],
+      comprehensionQuestions: [
+        { question: "What did Vora do when the two cousins looked too alike to sort quickly?", discussionNote: "It slowed down and looked for small details (like a cap or a missing tooth) instead of guessing — careful looking beats a fast guess." },
+        { question: "Is it better to sort things quickly, or carefully? Why?", discussionNote: "Open discussion — the story's point is that careful sorting is more important than fast sorting, especially for tricky cases." },
+      ],
+    },
+    {
       type: "movement",
       title: "Family or School Actions!",
       instructions:
@@ -297,6 +373,19 @@ export const m5_week3: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[5],
+    },
+    {
+      type: "class_vote",
+      title: "What's Your Favorite Family Time?",
+      instructions:
+        "Ask the question aloud. Kids vote by raising their hand for their favorite option, or simply discuss as a class — there's no single right answer.",
+      question: "What's your favorite thing to do with your family?",
+      options: [
+        { text: "Eating a meal together", emoji: "🍽️" },
+        { text: "Playing a game", emoji: "🎲" },
+        { text: "Watching a movie", emoji: "🎬" },
+        { text: "Going outside together", emoji: "🌳" },
+      ],
     },
     {
       type: "chant",
@@ -355,6 +444,23 @@ export const m5_week4: Lesson = {
         "Kids may want to name a cousin, grandparent, or even a pet — welcome any real family member, the sentence frame is what matters, not the exact word \"sister.\" Encourage a real, true answer rather than the first option on the screen.",
     },
     {
+      type: "story",
+      title: "Vora Meets the Whole Family",
+      teacherNote:
+        "This is a capstone story for the month — read it as a celebration of how much practice has paid off. Pause after panel 4 to ask the class if THEY noticed Vora getting better and better across the panels before revealing the final moral.",
+      panels: [
+        { text: "After a whole month of looking at family photos, Vora got to meet a brand new family for the very first time.", textSimple: "Vora met a brand new family!", emoji: "👋" },
+        { text: "\"This is the mom, this is the dad,\" said Vora, pointing correctly right away.", textSimple: "\"Mom! Dad!\" Vora got it right away.", emoji: "👩" },
+        { text: "\"This is the sister, this is the grandma, and... is that a puppy sitting with them too?\" asked Vora.", textSimple: "\"Sister! Grandma! And a puppy too?\" asked Vora.", emoji: "🐶" },
+        { text: "\"Yes!\" said the family. \"Our dog is part of our family too!\" Vora smiled and added the puppy to the family photo.", textSimple: "\"Yes! Our dog is family too!\" they said.", emoji: "😊" },
+        { text: "Vora got every single face right this time — not by magic, but because it had practiced looking closely, over and over, all month long.", textSimple: "Vora got it all right! Lots of practice helped.", emoji: "🎉" },
+      ],
+      comprehensionQuestions: [
+        { question: "Why was Vora able to get every family member right this time?", discussionNote: "A whole month of practice looking closely at faces (perception) made Vora faster and more accurate — not magic, just lots of practice." },
+        { question: "Do you think a pet can be part of a family? Why or why not?", discussionNote: "Open discussion — families come in many forms, and pets often count as family too." },
+      ],
+    },
+    {
       type: "movement",
       title: "Family Actions!",
       instructions:
@@ -386,6 +492,18 @@ export const m5_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[5],
+    },
+    {
+      type: "stand_sit",
+      title: "Family True or False!",
+      instructions:
+        "Read each statement aloud. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then share the short explanation before moving on.",
+      statements: [
+        { text: "A pet can be part of your family.", isTrue: true, explanation: "Yes! Lots of families love a pet like their own.", emoji: "🐶" },
+        { text: "Everyone's family looks exactly the same.", isTrue: false, explanation: "No — families come in all shapes and sizes, and that's wonderful!", emoji: "👪" },
+        { text: "You can say \"This is my ___\" about a grandma or a grandpa.", isTrue: true, explanation: "Yes! The sentence works for any family member.", emoji: "👵" },
+        { text: "A robot can be part of your family the same way a person can.", isTrue: false, explanation: "Not quite — Vora is a helpful friend, but your family are the people (and pets!) who love and take care of you.", emoji: "🤖", minTrack: "explorers" },
+      ],
     },
     {
       type: "chant",

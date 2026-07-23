@@ -66,6 +66,49 @@ export const m1_week1: Lesson = {
         "This sets up the pattern_predictor activity below — keep \"pattern\" concrete: it just means \"what repeats.\" Big Idea: Representation & Reasoning (finding and extending a pattern), with a light Learning thread since Vora still needs lots of examples first, echoing Week 1 Day 3/Week 2 Day 2.",
     },
     {
+      type: "story",
+      title: "Vora and the Blinking Star",
+      teacherNote:
+        "Read each panel aloud, pausing after panel 3 to let kids guess bright or dim before revealing panel 4 — like the concept segment, the point is prediction from a pattern.",
+      panels: [
+        {
+          text: "One night, Vora looked up and saw one twinkly star: bright, dim, bright, dim.",
+          textSimple: "Bright, dim, bright, dim. Vora watched the star.",
+          emoji: "⭐",
+        },
+        {
+          text: "Vora watched it blink again and again, counting every bright and every dim.",
+          textSimple: "Vora counted: bright, dim, bright...",
+          emoji: "🔭",
+        },
+        {
+          text: "\"What comes next,\" Vora wondered, \"bright, or dim?\"",
+          textSimple: "\"Bright or dim next?\" wondered Vora.",
+          emoji: "🤔",
+        },
+        {
+          text: "\"Bright!\" said Vora — and the star blinked bright, just like Vora guessed!",
+          textSimple: "\"Bright!\" said Vora. And it was!",
+          emoji: "✨",
+        },
+        {
+          text: "Vora wasn't magic — it just watched the pattern very closely, the same way we found patterns in the sky today.",
+          textSimple: "No magic! Vora just found the pattern.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora guess the star would blink bright next?",
+          discussionNote: "It watched the blinking pattern closely and noticed it repeated — bright, dim, bright, dim — not magic, just careful watching.",
+        },
+        {
+          question: "Can you think of something else that blinks in a pattern, like a traffic light?",
+          discussionNote: "Open discussion — the point is that finding a repeating pattern to predict what's next happens all around us, not just with stars.",
+        },
+      ],
+    },
+    {
       type: "activity",
       instructions: "Say each emoji in the sequence out loud together before guessing what comes next. Let the whole class predict before anyone taps an answer.",
       config: {
@@ -91,6 +134,19 @@ export const m1_week1: Lesson = {
     },
     {
       ...INSTRUCT_VORA_SCENARIOS[0],
+    },
+    {
+      type: "team_relay",
+      title: "Name a Space Thing!",
+      instructions:
+        "Split the class into two teams. Read each prompt aloud, then point to one team to shout out an answer before switching to the other team for the next prompt. Any reasonable answer counts!",
+      prompts: [
+        { text: "Name something you can see in the night sky!", emoji: "🌌" },
+        { text: "Name something that blasts off into space!", emoji: "🚀" },
+        { text: "Name something round and glowing up above!", emoji: "🌙" },
+        { text: "Name something an astronaut wears or uses!", emoji: "👨‍🚀", minTrack: "explorers" },
+        { text: "Name something that is very, very far away!", emoji: "🔭" },
+      ],
     },
     {
       type: "chant",
@@ -143,6 +199,49 @@ export const m1_week2: Lesson = {
       ],
       teacherNote:
         "Quick reminder before the sort — noticing a picture and guessing its category is Perception, the same skill behind Week 1's pattern-finding. Keep this to a few seconds; the real teaching happens in the game.",
+    },
+    {
+      type: "story",
+      title: "Vora Sorts a Surprise",
+      teacherNote:
+        "Read each panel aloud. Pause after panel 3 to let kids guess before Vora answers in panel 4 — the point is that looking closely, not guessing randomly, is how Vora sorts.",
+      panels: [
+        {
+          text: "Vora looked at a picture: something round, gray, and covered in bumpy circles.",
+          textSimple: "Round, gray, bumpy. What is it?",
+          emoji: "🪨",
+        },
+        {
+          text: "\"Is it a rock from the playground, or something from space?\" Vora looked very closely.",
+          textSimple: "A playground rock? Or space? Vora looked closely.",
+          emoji: "🔍",
+        },
+        {
+          text: "Vora noticed craters, and no grass or dirt anywhere nearby — just black sky all around it.",
+          textSimple: "Craters! Black sky! Not a playground.",
+          emoji: "🌑",
+        },
+        {
+          text: "\"It's the moon!\" said Vora. \"A space thing, not an earth thing.\"",
+          textSimple: "\"It's the moon!\" said Vora.",
+          emoji: "🌙",
+        },
+        {
+          text: "Vora didn't guess randomly — it looked closely at the clues first, the same way we sorted space things from earth things today.",
+          textSimple: "No random guess! Vora looked at clues first.",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "What clues helped Vora decide the picture was the moon, not a rock?",
+          discussionNote: "The craters and the black sky — Vora looked closely at details before deciding, which is the perception skill from today's sorting game.",
+        },
+        {
+          question: "What's one clue that would tell you something is an earth thing instead?",
+          discussionNote: "Open discussion — look for things like grass, sky color, weather, or animals that only show up on earth.",
+        },
+      ],
     },
     {
       type: "movement",
@@ -200,6 +299,24 @@ export const m1_week2: Lesson = {
       ...INSTRUCT_VORA_SCENARIOS[0],
     },
     {
+      type: "stand_sit",
+      title: "Space or Earth — True or False!",
+      instructions:
+        "Read each statement. Kids STAND UP if they think it's true, and crouch down low if they think it's false. Reveal the answer, then give the short explanation before moving on.",
+      statements: [
+        { text: "A rocket is a space thing.", isTrue: true, explanation: "Yes! Rockets fly up into space.", emoji: "🚀" },
+        { text: "A dog is a space thing.", isTrue: false, explanation: "No — dogs live here on earth!", emoji: "🐶" },
+        { text: "You can see stars from earth at night.", isTrue: true, explanation: "Yes! We look up from earth to see them.", emoji: "⭐" },
+        {
+          text: "Every round object in the sky is a planet.",
+          isTrue: false,
+          explanation: "No — the moon and sun are round too, but they're not planets.",
+          emoji: "🌕",
+          minTrack: "explorers",
+        },
+      ],
+    },
+    {
       type: "chant",
       title: "Space or Earth Chant!",
       instructions:
@@ -249,6 +366,49 @@ export const m1_week3: Lesson = {
       ],
       teacherNote:
         "Brief reminder before the game — repeated exposure is how both Vora and kids get better at recognizing something, the Learning big idea from Week 1. Keep it to a couple of lines; the matching game is the real practice.",
+    },
+    {
+      type: "story",
+      title: "Vora Practices and Practices",
+      teacherNote:
+        "Read each panel aloud, emphasizing how many times Vora looks before it remembers — the repetition is the point, not a quick trick.",
+      panels: [
+        {
+          text: "The first time Vora saw a rocket picture, it wasn't sure what to call it.",
+          textSimple: "First time: Vora wasn't sure.",
+          emoji: "🚀",
+        },
+        {
+          text: "Vora looked at rocket pictures again... and again... and again.",
+          textSimple: "Again, and again, and again!",
+          emoji: "🔁",
+        },
+        {
+          text: "By the tenth time, Vora didn't even have to think — \"Rocket!\" it said right away.",
+          textSimple: "Tenth time: \"Rocket!\" right away!",
+          emoji: "💡",
+        },
+        {
+          text: "The more Vora practiced, the faster and surer it got — just like the memory game we play in class.",
+          textSimple: "More practice, faster and surer!",
+          emoji: "🎯",
+        },
+        {
+          text: "Vora didn't wake up knowing space words — it learned them one practice at a time, the same way we do.",
+          textSimple: "No magic — just lots of practice!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "Why did Vora get faster at naming the rocket picture over time?",
+          discussionNote: "It practiced looking at the same picture many times — repeated practice is how both Vora and people get better at remembering something.",
+        },
+        {
+          question: "What's something YOU got better at just by practicing it a lot?",
+          discussionNote: "Open discussion — connect to riding a bike, tying shoes, or reading — the point is practice, not talent, builds skill.",
+        },
+      ],
     },
     {
       type: "movement",
@@ -305,6 +465,20 @@ export const m1_week3: Lesson = {
       ...AI_OR_NOT_SETS[1],
     },
     {
+      type: "class_vote",
+      title: "Which Space Word Was Trickiest?",
+      instructions:
+        "Read the question aloud. Let kids vote by raising their hands for the word they found hardest to remember today, or discuss as a class.",
+      question: "Which space word was the hardest for you to remember today?",
+      questionSimple: "Which space word was tricky today?",
+      options: [
+        { text: "Planet", emoji: "🪐" },
+        { text: "Astronaut", emoji: "👨‍🚀" },
+        { text: "Rocket", emoji: "🚀" },
+        { text: "Star", emoji: "⭐" },
+      ],
+    },
+    {
       type: "chant",
       title: "Memory Match Chant!",
       instructions:
@@ -354,6 +528,49 @@ export const m1_week4: Lesson = {
         "Builds directly to the sentence_builder activity below — say the full sentence \"I see a rocket\" naturally once before asking kids to build it tile by tile.",
     },
     {
+      type: "story",
+      title: "Vora Says What It Sees",
+      teacherNote:
+        "Read each panel aloud, then invite the class to say \"I see a ___\" about something in the room, just like Vora does at the end of the story.",
+      panels: [
+        {
+          text: "Vora pointed its camera-eye up at the sky and said, \"I see a rocket!\"",
+          textSimple: "\"I see a rocket!\" said Vora.",
+          emoji: "🚀",
+        },
+        {
+          text: "Then Vora turned and said, \"I see a star!\" and a moment later, \"I see the moon!\"",
+          textSimple: "\"I see a star! I see the moon!\"",
+          emoji: "🌙",
+        },
+        {
+          text: "A friend asked, \"How do you know what you're looking at?\"",
+          textSimple: "\"How do you know?\" asked a friend.",
+          emoji: "❓",
+        },
+        {
+          text: "\"I look very closely at the shape and the color,\" said Vora, \"then I say what I see, out loud.\"",
+          textSimple: "\"I look closely, then I say it!\"",
+          emoji: "🔍",
+        },
+        {
+          text: "That's exactly what we do too — look closely at something, then say \"I see a ___\" so everyone knows what we're looking at.",
+          textSimple: "We do that too — look, then say \"I see a ___\"!",
+          emoji: "🤖",
+        },
+      ],
+      comprehensionQuestions: [
+        {
+          question: "How did Vora know what to call each thing it saw?",
+          discussionNote: "It looked closely at shapes and colors first, then named what it saw out loud — the same noticing-then-naming idea behind the \"I see a ___\" sentence.",
+        },
+        {
+          question: "Look around the room right now — what do YOU see?",
+          discussionNote: "Open discussion — invite several kids to say \"I see a ___\" about a real object nearby.",
+        },
+      ],
+    },
+    {
       type: "movement",
       title: "Space Spotting Actions!",
       instructions:
@@ -385,6 +602,19 @@ export const m1_week4: Lesson = {
     },
     {
       ...AI_OR_NOT_SETS[1],
+    },
+    {
+      type: "team_relay",
+      title: "I See a Space Thing!",
+      instructions:
+        "Split the class into two teams. Read each prompt aloud, then point to one team to say the full sentence together before switching to the other team for the next prompt.",
+      prompts: [
+        { text: "Point to the sky and say: I see a rocket!", emoji: "🚀" },
+        { text: "Point to the sky and say: I see a star!", emoji: "⭐" },
+        { text: "Point to the sky and say: I see the moon!", emoji: "🌙" },
+        { text: "Point to the sky and say: I see an astronaut!", emoji: "👨‍🚀", minTrack: "explorers" },
+        { text: "Point to the sky and say: I see the sun!", emoji: "☀️" },
+      ],
     },
     {
       type: "chant",
