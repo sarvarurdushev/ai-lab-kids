@@ -64,7 +64,8 @@ export type ActivityEngine =
   | "memory_match"
   | "pattern_predictor"
   | "ai_or_not"
-  | "instruct_vora";
+  | "instruct_vora"
+  | "blending";
 
 export interface SortBucketItem {
   word: string;
@@ -180,6 +181,28 @@ export interface InstructVoraConfig {
   successText: string;
 }
 
+/**
+ * "Sound It Out" — the core synthetic-phonics mechanic: tap each letter (or
+ * digraph/blend) tile left to right to reveal it, then blend the revealed
+ * parts into the whole word. Deliberately never speaks an individual part
+ * through text-to-speech — see components/engines/BlendingEngine.tsx for
+ * why (TTS says letter names, not clipped phonemes) — the teacher voices
+ * each sound live and the class echoes it; only the finished real word is
+ * safe for speak(). `parts` is always the correct left-to-right spelling,
+ * never shuffled: revealing is a rehearsal, not a reordering puzzle.
+ */
+export interface BlendingConfig {
+  engine: "blending";
+  title: string;
+  teacherNote: string;
+  words: {
+    parts: string[];
+    word: string;
+    emoji: string;
+    minTrack?: AgeTrack;
+  }[];
+}
+
 export type ActivityConfig =
   | TrainTheRobotConfig
   | SequenceBuilderConfig
@@ -188,7 +211,8 @@ export type ActivityConfig =
   | MemoryMatchConfig
   | PatternPredictorConfig
   | AIOrNotConfig
-  | InstructVoraConfig;
+  | InstructVoraConfig
+  | BlendingConfig;
 
 export interface ActivitySegment {
   type: "activity";
@@ -308,6 +332,25 @@ export interface StorySegment {
   comprehensionQuestions: { question: string; discussionNote: string }[];
 }
 
+/**
+ * One letter-sound (or digraph) taught with a keyword picture and a
+ * physical action the whole class does together while saying the sound —
+ * the one technique shared by every well-regarded phonics program (an
+ * action per sound). Content-only, like Movement/Chant: the teacher voices
+ * the sound live and the class echoes/acts it out. An optional uploaded
+ * song reinforces it further (see phonicsSoundAudioKey in overrideKey.ts) —
+ * nothing here is synthesized speech.
+ */
+export interface PhonicsSoundSegment {
+  type: "phonics_sound";
+  /** The letter(s) this segment teaches — a digraph like "sh" is one unit, same convention as BlendingConfig's `parts`. */
+  letters: string;
+  keyword: string;
+  keywordEmoji: string;
+  actionCue: string;
+  teacherNote: string;
+}
+
 export type LessonSegment =
   | WarmupSegment
   | VocabSegment
@@ -320,7 +363,8 @@ export type LessonSegment =
   | TeamRelaySegment
   | StandSitSegment
   | ClassVoteSegment
-  | StorySegment;
+  | StorySegment
+  | PhonicsSoundSegment;
 
 /**
  * Which of the month's four weekly class sessions a lesson is — one

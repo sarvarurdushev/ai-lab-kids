@@ -3,6 +3,7 @@ import { requireTeacher } from "@/lib/auth/requireTeacher";
 import { classForTeacher } from "@/lib/console/authz";
 import { startOrResumeLessonSession } from "@/lib/console/lessonSessions";
 import { getLesson } from "@/lib/curriculum";
+import { getPhonicsLesson } from "@/lib/phonics";
 import { filterLessonForTrack } from "@/lib/trackContent";
 import { allContentOverrides } from "@/lib/content/overrides";
 import { PresentationPlayer } from "@/components/presenter/PresentationPlayer";
@@ -20,7 +21,7 @@ export default async function LessonPage({
   const klass = await classForTeacher(teacher, classId);
   if (!klass) notFound();
 
-  const rawLesson = getLesson(lessonKey);
+  const rawLesson = getLesson(lessonKey) ?? getPhonicsLesson(lessonKey);
   if (!rawLesson) notFound();
   const lesson = filterLessonForTrack(rawLesson, klass.ageTrack);
 

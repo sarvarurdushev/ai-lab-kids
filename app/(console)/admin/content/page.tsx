@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { requireOrgAdmin } from "@/lib/auth/requireTeacher";
 import { AUTHORED_LESSONS, getUnit, getMonth } from "@/lib/curriculum";
+import { PHONICS_LESSONS } from "@/lib/phonics";
 import { Card } from "@/components/ui/Card";
 
 function unitTitle(unitKey: string): string {
@@ -32,6 +33,22 @@ export default async function AdminContentIndexPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <Card className="flex flex-col gap-2 border-l-4 border-indigo">
+          <p className="font-display font-bold text-ink">
+            Phonics <span className="font-normal text-ink/40">— new program, reference week</span>
+          </p>
+          <div className="flex flex-col gap-1">
+            {PHONICS_LESSONS.map((lesson) => (
+              <Link
+                key={lesson.key}
+                href={`/admin/content/${lesson.key}`}
+                className="rounded-lg px-2 py-1.5 text-sm font-semibold text-ink/70 hover:bg-indigo/5 hover:text-indigo-dark"
+              >
+                {lesson.title}
+              </Link>
+            ))}
+          </div>
+        </Card>
         {[...groups.entries()].map(([unitKey, lessons]) => (
           <Card key={unitKey} className="flex flex-col gap-2">
             <p className="font-display font-bold text-ink">{unitTitle(unitKey)}</p>

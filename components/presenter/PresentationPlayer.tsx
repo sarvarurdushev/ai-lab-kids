@@ -41,6 +41,9 @@ import {
   storyPanelKey,
   storyPanelSimpleKey,
   storyAudioKey,
+  phonicsSoundKeywordKey,
+  phonicsSoundActionKey,
+  phonicsSoundAudioKey,
   type ContentOverride,
 } from "@/lib/content/overrideKey";
 import {
@@ -57,6 +60,7 @@ import {
   HandRaiseIcon,
   ChatIcon,
   OpenBookIcon,
+  SpeakerIcon,
 } from "@/components/icons";
 
 const SEGMENT_LABEL: Record<
@@ -75,6 +79,7 @@ const SEGMENT_LABEL: Record<
   stand_sit: { icon: HandRaiseIcon, text: "Stand Up, Sit Down", className: "text-mint" },
   class_vote: { icon: ChatIcon, text: "Class Vote", className: "text-sky" },
   story: { icon: OpenBookIcon, text: "Story Time", className: "text-indigo-dark" },
+  phonics_sound: { icon: SpeakerIcon, text: "Sound of the Day", className: "text-indigo-dark" },
 };
 
 /** Icon + title + "is this a real AI-literacy activity" for the segment strip and agenda chips. */
@@ -121,6 +126,9 @@ const InstructVoraEngine = dynamic(
   () => import("@/components/engines/InstructVoraEngine").then((m) => m.InstructVoraEngine),
   { ssr: false }
 );
+const BlendingEngine = dynamic(() => import("@/components/engines/BlendingEngine").then((m) => m.BlendingEngine), {
+  ssr: false,
+});
 
 /**
  * One Story Time panel at a time, big picture first — a real photo (or a
@@ -487,6 +495,46 @@ export function PresentationPlayer({
                   contentOverrides={contentOverrides}
                 />
               )}
+              {segment.config.engine === "blending" && (
+                <BlendingEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
+            </div>
+          )}
+
+          {segment.type === "phonics_sound" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.phonics_sound.className}`}>
+                <SEGMENT_LABEL.phonics_sound.icon size={12} /> {SEGMENT_LABEL.phonics_sound.text}
+              </p>
+              <div className="flex flex-col items-center gap-3 rounded-2xl bg-indigo/5 py-7">
+                <p className="font-display text-7xl font-bold text-indigo-dark">{segment.letters}</p>
+                {(() => {
+                  const override = contentOverrides[phonicsSoundKeywordKey(lesson.key, index)];
+                  return override?.imageUrl ? (
+                    <div className="relative h-40 w-40 overflow-hidden rounded-2xl">
+                      <Image src={override.imageUrl} alt="" fill sizes="160px" className="object-cover" />
+                    </div>
+                  ) : (
+                    <span className="text-8xl">{segment.keywordEmoji}</span>
+                  );
+                })()}
+                <EnglishText
+                  text={contentOverrides[phonicsSoundKeywordKey(lesson.key, index)]?.textOverride || segment.keyword}
+                  size="lg"
+                />
+              </div>
+              <p className="rounded-xl bg-amber/10 p-3 text-sm text-ink/70">
+                <span className="font-bold">Do together: </span>
+                {contentOverrides[phonicsSoundActionKey(lesson.key, index)]?.textOverride || segment.actionCue}
+              </p>
+              {(() => {
+                const audioOverride = contentOverrides[phonicsSoundAudioKey(lesson.key, index)];
+                return audioOverride?.audioUrl && <audio controls src={audioOverride.audioUrl} className="h-9 w-full" />;
+              })()}
+              <p className="rounded-xl bg-cream p-2 text-xs text-ink/50">
+                <span className="font-bold">Teacher note: </span>
+                {segment.teacherNote}
+              </p>
             </div>
           )}
 

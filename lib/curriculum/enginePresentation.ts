@@ -89,6 +89,13 @@ export const ENGINE_PRESENTATION: Record<ActivityEngine, EnginePresentation> = {
     skillLine: "Listen and pick which of two similar-sounding words was said.",
     chipClass: ENGLISH_CHIP,
   },
+  blending: {
+    label: "Sound It Out",
+    discipline: "english",
+    icon: SpeakerIcon,
+    skillLine: "Tap each letter-sound in order, then blend them into a real word.",
+    chipClass: ENGLISH_CHIP,
+  },
 };
 
 export function isAiLabEngine(engine: ActivityEngine): boolean {

@@ -61,6 +61,9 @@ function filterSegment(segment: LessonSegment, track: AgeTrack): LessonSegment {
           track === "little_sparks" && panel.textSimple ? { ...panel, text: panel.textSimple } : panel
         ),
       };
+    case "phonics_sound":
+      // A single letter/digraph with one keyword and action, shown to every track — nothing to filter.
+      return segment;
   }
 }
 
@@ -84,5 +87,7 @@ function filterActivityConfig(config: ActivityConfig, track: AgeTrack): Activity
     case "instruct_vora":
       // A fixed short instruction sequence — no minTrack-tagged steps to filter.
       return config;
+    case "blending":
+      return { ...config, words: keep(config.words, track) };
   }
 }

@@ -18,6 +18,7 @@ import {
   weekRoleLabel,
   type LessonMeta,
 } from "@/lib/curriculum";
+import { PHONICS_LESSONS } from "@/lib/phonics";
 import { Card } from "@/components/ui/Card";
 import { Vora } from "@/components/mascot/Vora";
 import { AICurriculumPanel } from "@/components/curriculum/AICurriculumPanel";
@@ -117,6 +118,42 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
       </Card>
 
       <AICurriculumPanel />
+
+      <Card className="flex flex-col gap-3 border-l-4 border-indigo bg-gradient-to-r from-indigo/5 via-transparent to-transparent">
+        <div className="flex items-center gap-2">
+          <BookIcon size={16} className="text-indigo-dark" />
+          <p className="font-display font-bold text-ink">Phonics</p>
+          <span className="rounded-full bg-indigo/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-indigo-dark">
+            New — reference week
+          </span>
+        </div>
+        <p className="text-xs text-ink/50">
+          A new, separate program from the AI+English curriculum above. Only one week is built so far, to prove the
+          format before the rest of the sequence is written.
+        </p>
+        {PHONICS_LESSONS.map((lesson) => (
+          <div key={lesson.key} className="flex flex-col gap-2 rounded-xl bg-cream px-3 py-2">
+            <div className="flex items-center justify-between gap-2">
+              <div>
+                <p className="text-sm font-semibold text-ink">{lesson.title}</p>
+                <p className="text-xs text-ink/50">{lesson.englishFocus}</p>
+              </div>
+              <Link
+                href={`/classes/${classId}/lesson/${lesson.key}`}
+                className="shrink-0 rounded-full bg-indigo px-3 py-1.5 text-xs font-bold text-white transition-transform hover:scale-105"
+              >
+                Start →
+              </Link>
+            </div>
+            <details className="pl-1">
+              <summary className="cursor-pointer text-[11px] font-bold text-indigo-dark">Lesson plan (objectives, standards, Korean-L1 note)</summary>
+              <div className="mt-1.5">
+                <LessonPlanFacts lesson={lesson} />
+              </div>
+            </details>
+          </div>
+        ))}
+      </Card>
 
       <div className="flex flex-col gap-6">
         <div className="flex items-end justify-between gap-2">

@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { requireOrgAdmin } from "@/lib/auth/requireTeacher";
 import { getLesson, ENGINE_PRESENTATION, type AgeTrack } from "@/lib/curriculum";
+import { getPhonicsLesson } from "@/lib/phonics";
 import { allContentOverrides } from "@/lib/content/overrides";
 import {
   vocabOverrideKey,
@@ -34,6 +35,10 @@ import {
   storyPanelKey,
   storyPanelSimpleKey,
   storyAudioKey,
+  phonicsSoundKeywordKey,
+  phonicsSoundActionKey,
+  phonicsSoundAudioKey,
+  blendingWordKey,
 } from "@/lib/content/overrideKey";
 import { Card } from "@/components/ui/Card";
 import { OverrideItemEditor } from "@/components/console/OverrideItemEditor";
@@ -82,7 +87,7 @@ export default async function AdminLessonContentPage({
   const { track: trackParam } = await searchParams;
   const track: "all" | AgeTrack = trackParam === "little_sparks" || trackParam === "explorers" ? trackParam : "all";
 
-  const lesson = getLesson(lessonKey);
+  const lesson = getLesson(lessonKey) ?? getPhonicsLesson(lessonKey);
   if (!lesson) notFound();
 
   const overrides = await allContentOverrides();
@@ -247,6 +252,26 @@ export default async function AdminLessonContentPage({
         });
         return { segIndex, title: segment.title, kind: "Story Time", items };
       }
+      if (segment.type === "phonics_sound") {
+        return {
+          segIndex,
+          title: `Sound: ${segment.letters}`,
+          kind: "Sound of the Day",
+          items: [
+            {
+              key: phonicsSoundKeywordKey(lesson.key, segIndex),
+              originalText: segment.keyword,
+              emoji: segment.keywordEmoji,
+            },
+            {
+              key: phonicsSoundActionKey(lesson.key, segIndex),
+              originalText: segment.actionCue,
+              emoji: "🙌",
+              noImage: true,
+            },
+          ],
+        };
+      }
       if (segment.type === "wrapup") {
         const items: EditableItem[] = [];
         if (track === "all" || track === "explorers") {
@@ -376,6 +401,20 @@ export default async function AdminLessonContentPage({
           ),
         };
       }
+      if (config.engine === "blending") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.words.map((w, i) => ({
+            key: blendingWordKey(lesson.key, segIndex, i),
+            originalText: w.word,
+            emoji: w.emoji,
+            textEditable: false,
+            minTrack: w.minTrack,
+          })),
+        };
+      }
       // sentence_builder shows plain grammar-role text tiles with no emoji/image slot by design.
       return null;
     })
@@ -392,6 +431,10 @@ export default async function AdminLessonContentPage({
 
   const storySegmentIndexes = lesson.segments
     .map((s, i) => (s.type === "story" ? i : -1))
+    .filter((i) => i !== -1);
+
+  const phonicsSoundSegmentIndexes = lesson.segments
+    .map((s, i) => (s.type === "phonics_sound" ? i : -1))
     .filter((i) => i !== -1);
 
   return (
@@ -436,6 +479,16 @@ export default async function AdminLessonContentPage({
           initialAudioUrl={overrides[storyAudioKey(lesson.key, segIndex)]?.audioUrl ?? null}
           label="Story narration (optional)"
           uploadLabel="narration"
+        />
+      ))}
+
+      {phonicsSoundSegmentIndexes.map((segIndex) => (
+        <SongOverrideEditor
+          key={segIndex}
+          contentKey={phonicsSoundAudioKey(lesson.key, segIndex)}
+          initialAudioUrl={overrides[phonicsSoundAudioKey(lesson.key, segIndex)]?.audioUrl ?? null}
+          label="Sound song (optional)"
+          uploadLabel="song"
         />
       ))}
 

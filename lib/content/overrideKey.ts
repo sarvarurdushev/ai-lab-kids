@@ -163,3 +163,26 @@ export function storyPanelSimpleKey(lessonKey: string, segmentIndex: number, pan
 export function storyAudioKey(lessonKey: string, segmentIndex: number): string {
   return contentItemKey("story_audio", lessonKey, segmentIndex);
 }
+
+export function phonicsSoundKeywordKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("phonics_keyword", lessonKey, segmentIndex);
+}
+
+export function phonicsSoundActionKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("phonics_action", lessonKey, segmentIndex);
+}
+
+/** A short song reinforcing this one letter-sound, uploaded the same way as a chant song — see chantSongKey. */
+export function phonicsSoundAudioKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("phonics_song", lessonKey, segmentIndex);
+}
+
+/**
+ * A Blending word's picture only — never its text. The word's spelling is
+ * reconstructed live from the tiles a child taps (see BlendingConfig), so
+ * an overridden label here would silently mismatch what was just blended;
+ * same reasoning as patternPredictorGlyphs' textEditable: false.
+ */
+export function blendingWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("blending_word", lessonKey, segmentIndex, wordIndex);
+}
