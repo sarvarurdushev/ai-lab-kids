@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { playPop } from "@/lib/sound";
+import { speak } from "@/lib/speech";
 import { SpeakerIcon } from "@/components/icons";
 import type { SoundDrillConfig } from "@/lib/curriculum";
 import { soundDrillCardKey, type ContentOverride } from "@/lib/content/overrideKey";
@@ -16,6 +17,12 @@ import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 // room rather than racing it. Nothing is scored — this is warm-up recall.
 // The keyword picture stays hidden until tapped, so kids retrieve the sound
 // from the letter first and only use the picture as a prompt if stuck.
+//
+// Audio note: tapping the card speaks the KEYWORD ("Sun"), never the grapheme
+// itself. Browser TTS reads "s" as the letter NAME "ess" and bolts a schwa
+// onto stop consonants ("puh" for p) — both of which actively break blending
+// later on. The keyword is a real dictionary word, so it's the only thing
+// speak() is ever handed here. Same rule as BlendingEngine and HeartWordEngine.
 
 export function SoundDrillEngine({
   config,
@@ -39,6 +46,9 @@ export function SoundDrillEngine({
   const card = config.cards[index];
   const isLast = index === config.cards.length - 1;
   const override = contentOverrides[soundDrillCardKey(lessonKey, segmentIndex, index)];
+  // A CMS-swapped keyword has to be what's spoken too, or the audio and the
+  // picture stop agreeing with each other.
+  const keyword = override?.textOverride || card?.keyword || "";
 
   if (!card) return null;
 
@@ -79,18 +89,28 @@ export function SoundDrillEngine({
       </div>
 
       <div className="flex flex-col items-center gap-4 rounded-3xl bg-white/80 px-5 py-8">
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={index}
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 340, damping: 18 }}
-            className="font-display text-8xl font-bold text-indigo-dark"
-          >
-            {card.letters}
-          </motion.p>
-        </AnimatePresence>
+        <button
+          type="button"
+          onClick={() => {
+            playPop();
+            speak(keyword, "en-US");
+          }}
+          aria-label={`Hear the keyword for ${card.letters}`}
+          className="rounded-3xl px-6 transition-transform hover:scale-105 active:scale-95"
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={index}
+              initial={{ scale: 0.6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 340, damping: 18 }}
+              className="block font-display text-8xl font-bold text-indigo-dark"
+            >
+              {card.letters}
+            </motion.span>
+          </AnimatePresence>
+        </button>
 
         <p className="text-sm font-semibold text-ink/50">Everybody — what sound?</p>
 
@@ -101,17 +121,30 @@ export function SoundDrillEngine({
             className="flex flex-col items-center gap-1"
           >
             <OverridableGlyph override={override} emoji={card.emoji} emojiClassName="text-6xl" boxSize={88} />
-            <p className="font-display text-lg font-bold text-ink">{override?.textOverride || card.keyword}</p>
+            <button
+              type="button"
+              onClick={() => speak(keyword, "en-US")}
+              className="flex items-center gap-1.5 font-display text-lg font-bold text-ink transition-opacity hover:opacity-70"
+            >
+              <SpeakerIcon size={16} className="text-indigo" /> {keyword}
+            </button>
           </motion.div>
         ) : (
           <button
             type="button"
-            onClick={() => setHintShown(true)}
+            onClick={() => {
+              setHintShown(true);
+              speak(keyword, "en-US");
+            }}
             className="rounded-full bg-cream px-4 py-1.5 text-xs font-bold text-ink/50 transition-colors hover:text-ink"
           >
             Need a hint?
           </button>
         )}
+
+        <p className="text-[11px] font-semibold text-ink/35">
+          Tap the letter to hear its keyword — never its bare sound
+        </p>
 
         <Button onClick={next} variant="secondary" className="!px-6 !py-2 !text-base">
           {isLast ? "Round again →" : "Next sound →"}
