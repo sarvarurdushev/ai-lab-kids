@@ -10,6 +10,12 @@ export const updateLessonSessionSchema = z.object({
   completed: z.boolean().optional(),
 });
 
+export const soundCheckSchema = z.object({
+  lessonKey: z.string().min(1).max(120),
+  grapheme: z.string().min(1).max(12),
+  neededHint: z.boolean(),
+});
+
 export const teacherApprovalSchema = z.object({
   action: z.enum(["approve", "reject"]),
 });

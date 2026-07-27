@@ -128,6 +128,12 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
           <span className="rounded-full bg-indigo/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-indigo-dark">
             New — {visiblePhonicsLessons.length} weeks
           </span>
+          <Link
+            href={`/classes/${classId}/sounds`}
+            className="ml-auto shrink-0 text-xs font-bold text-indigo-dark underline-offset-2 hover:underline"
+          >
+            Sound Check →
+          </Link>
         </div>
         <p className="text-xs text-ink/50">
           A new, separate program from the AI+English curriculum above. Unit 1 covers every letter sound, ch/sh/th/wh/ng,

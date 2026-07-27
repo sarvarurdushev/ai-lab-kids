@@ -541,7 +541,13 @@ export function PresentationPlayer({
                 <SoundBoxEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
               )}
               {segment.config.engine === "sound_drill" && (
-                <SoundDrillEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+                <SoundDrillEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  classId={classId}
+                  contentOverrides={contentOverrides}
+                />
               )}
               {segment.config.engine === "heart_word" && (
                 <HeartWordEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />

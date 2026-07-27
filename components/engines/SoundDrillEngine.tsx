@@ -21,12 +21,15 @@ export function SoundDrillEngine({
   config,
   lessonKey,
   segmentIndex,
+  classId,
   contentOverrides = {},
   onFinished,
 }: {
   config: SoundDrillConfig;
   lessonKey: string;
   segmentIndex: number;
+  /** Omitted outside a real class session (e.g. the admin preview), which disables mastery recording. */
+  classId?: string;
   contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
@@ -39,8 +42,22 @@ export function SoundDrillEngine({
 
   if (!card) return null;
 
+  // Whether the class needed the hint is the one honest mastery signal this
+  // whole-class format can produce — see lib/db/schema/progress.ts. Recorded
+  // on advance (not on hint press) so each card contributes exactly one row.
+  // Deliberately fire-and-forget: a failed write must never interrupt a lesson.
+  function recordCheck(grapheme: string, neededHint: boolean) {
+    if (!classId) return;
+    void fetch(`/api/classes/${classId}/sound-checks`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lessonKey, grapheme, neededHint }),
+    }).catch(() => {});
+  }
+
   function next() {
     playPop();
+    recordCheck(card.letters, hintShown);
     if (isLast) {
       setIndex(0);
       onFinished?.();
