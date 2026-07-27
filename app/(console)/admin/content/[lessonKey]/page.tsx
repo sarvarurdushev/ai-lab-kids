@@ -39,6 +39,14 @@ import {
   phonicsSoundActionKey,
   phonicsSoundAudioKey,
   blendingWordKey,
+  letterFormationKey,
+  soundDrillCardKey,
+  phonemeSwapStartKey,
+  phonemeSwapAnswerKey,
+  wordChainLinkKey,
+  soundBoxWordKey,
+  heartWordKey,
+  decodableLineKey,
 } from "@/lib/content/overrideKey";
 import { Card } from "@/components/ui/Card";
 import { OverrideItemEditor } from "@/components/console/OverrideItemEditor";
@@ -272,6 +280,21 @@ export default async function AdminLessonContentPage({
           ],
         };
       }
+      if (segment.type === "letter_formation") {
+        return {
+          segIndex,
+          title: `Write it: ${segment.letters}`,
+          kind: "Write It Big",
+          items: [
+            {
+              key: letterFormationKey(lesson.key, segIndex),
+              originalText: `Letter shown: ${segment.letters}`,
+              emoji: "✏️",
+              textEditable: false,
+            },
+          ],
+        };
+      }
       if (segment.type === "wrapup") {
         const items: EditableItem[] = [];
         if (track === "all" || track === "explorers") {
@@ -415,6 +438,100 @@ export default async function AdminLessonContentPage({
           })),
         };
       }
+      if (config.engine === "sound_drill") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.cards.map((c, i) => ({
+            key: soundDrillCardKey(lesson.key, segIndex, i),
+            originalText: c.keyword,
+            emoji: c.emoji,
+            minTrack: c.minTrack,
+          })),
+        };
+      }
+      if (config.engine === "phoneme_swap") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.rounds.flatMap((r, i) => [
+            {
+              key: phonemeSwapStartKey(lesson.key, segIndex, i),
+              originalText: `Start: ${r.startWord}`,
+              emoji: r.startEmoji,
+              textEditable: false,
+              minTrack: r.minTrack,
+            },
+            {
+              key: phonemeSwapAnswerKey(lesson.key, segIndex, i),
+              originalText: `Answer: ${r.answerWord}`,
+              emoji: r.answerEmoji,
+              textEditable: false,
+              minTrack: r.minTrack,
+            },
+          ]),
+        };
+      }
+      if (config.engine === "word_chain") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.links.map((l, i) => ({
+            key: wordChainLinkKey(lesson.key, segIndex, i),
+            originalText: l.word,
+            emoji: l.emoji,
+            textEditable: false,
+            minTrack: l.minTrack,
+          })),
+        };
+      }
+      if (config.engine === "sound_box") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.words.map((w, i) => ({
+            key: soundBoxWordKey(lesson.key, segIndex, i),
+            originalText: w.word,
+            emoji: w.emoji,
+            textEditable: false,
+            minTrack: w.minTrack,
+          })),
+        };
+      }
+      if (config.engine === "heart_word") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.words.map((w, i) => ({
+            key: heartWordKey(lesson.key, segIndex, i),
+            originalText: w.word,
+            emoji: "❤️",
+            textEditable: false,
+            noImage: true,
+            minTrack: w.minTrack,
+          })),
+        };
+      }
+      if (config.engine === "decodable_text") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.lines.map((l, i) => ({
+            key: decodableLineKey(lesson.key, segIndex, i),
+            originalText: l.text,
+            emoji: l.emoji,
+            large: true,
+          })),
+        };
+      }
+      // dictation and fluency_race are pure text lists with no image slot — the words are
+      // read aloud and written by hand, never illustrated, so there's nothing to override.
       // sentence_builder shows plain grammar-role text tiles with no emoji/image slot by design.
       return null;
     })

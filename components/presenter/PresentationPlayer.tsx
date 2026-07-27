@@ -44,6 +44,7 @@ import {
   phonicsSoundKeywordKey,
   phonicsSoundActionKey,
   phonicsSoundAudioKey,
+  letterFormationKey,
   type ContentOverride,
 } from "@/lib/content/overrideKey";
 import {
@@ -80,6 +81,7 @@ const SEGMENT_LABEL: Record<
   class_vote: { icon: ChatIcon, text: "Class Vote", className: "text-sky" },
   story: { icon: OpenBookIcon, text: "Story Time", className: "text-indigo-dark" },
   phonics_sound: { icon: SpeakerIcon, text: "Sound of the Day", className: "text-indigo-dark" },
+  letter_formation: { icon: BookIcon, text: "Write It Big", className: "text-mint" },
 };
 
 /** Icon + title + "is this a real AI-literacy activity" for the segment strip and agenda chips. */
@@ -129,6 +131,33 @@ const InstructVoraEngine = dynamic(
 const BlendingEngine = dynamic(() => import("@/components/engines/BlendingEngine").then((m) => m.BlendingEngine), {
   ssr: false,
 });
+const WordChainEngine = dynamic(() => import("@/components/engines/WordChainEngine").then((m) => m.WordChainEngine), {
+  ssr: false,
+});
+const DictationEngine = dynamic(() => import("@/components/engines/DictationEngine").then((m) => m.DictationEngine), {
+  ssr: false,
+});
+const DecodableTextEngine = dynamic(
+  () => import("@/components/engines/DecodableTextEngine").then((m) => m.DecodableTextEngine),
+  { ssr: false }
+);
+const PhonemeSwapEngine = dynamic(
+  () => import("@/components/engines/PhonemeSwapEngine").then((m) => m.PhonemeSwapEngine),
+  { ssr: false }
+);
+const SoundBoxEngine = dynamic(() => import("@/components/engines/SoundBoxEngine").then((m) => m.SoundBoxEngine), {
+  ssr: false,
+});
+const SoundDrillEngine = dynamic(() => import("@/components/engines/SoundDrillEngine").then((m) => m.SoundDrillEngine), {
+  ssr: false,
+});
+const HeartWordEngine = dynamic(() => import("@/components/engines/HeartWordEngine").then((m) => m.HeartWordEngine), {
+  ssr: false,
+});
+const FluencyRaceEngine = dynamic(
+  () => import("@/components/engines/FluencyRaceEngine").then((m) => m.FluencyRaceEngine),
+  { ssr: false }
+);
 
 /**
  * One Story Time panel at a time, big picture first — a real photo (or a
@@ -498,6 +527,26 @@ export function PresentationPlayer({
               {segment.config.engine === "blending" && (
                 <BlendingEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
               )}
+              {segment.config.engine === "word_chain" && (
+                <WordChainEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
+              {segment.config.engine === "dictation" && <DictationEngine config={segment.config} />}
+              {segment.config.engine === "decodable_text" && (
+                <DecodableTextEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
+              {segment.config.engine === "phoneme_swap" && (
+                <PhonemeSwapEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
+              {segment.config.engine === "sound_box" && (
+                <SoundBoxEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
+              {segment.config.engine === "sound_drill" && (
+                <SoundDrillEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
+              {segment.config.engine === "heart_word" && (
+                <HeartWordEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
+              )}
+              {segment.config.engine === "fluency_race" && <FluencyRaceEngine config={segment.config} />}
             </div>
           )}
 
@@ -531,6 +580,44 @@ export function PresentationPlayer({
                 const audioOverride = contentOverrides[phonicsSoundAudioKey(lesson.key, index)];
                 return audioOverride?.audioUrl && <audio controls src={audioOverride.audioUrl} className="h-9 w-full" />;
               })()}
+              <p className="rounded-xl bg-cream p-2 text-xs text-ink/50">
+                <span className="font-bold">Teacher note: </span>
+                {segment.teacherNote}
+              </p>
+            </div>
+          )}
+
+          {segment.type === "letter_formation" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.letter_formation.className}`}>
+                <SEGMENT_LABEL.letter_formation.icon size={12} /> {SEGMENT_LABEL.letter_formation.text}
+              </p>
+              <div className="flex flex-col items-center gap-3 rounded-2xl bg-mint/5 py-7">
+                {(() => {
+                  const override = contentOverrides[letterFormationKey(lesson.key, index)];
+                  return override?.imageUrl ? (
+                    <div className="relative h-56 w-56 overflow-hidden rounded-2xl">
+                      <Image src={override.imageUrl} alt="" fill sizes="224px" className="object-contain" />
+                    </div>
+                  ) : (
+                    <p className="font-display text-9xl font-bold leading-none text-mint">{segment.letters}</p>
+                  );
+                })()}
+                <div className="flex w-full max-w-sm flex-col gap-1.5 px-4">
+                  {segment.strokes.map((stroke, i) => (
+                    <p key={i} className="flex items-start gap-2 rounded-xl bg-white px-3 py-2 text-sm font-semibold text-ink shadow-sm">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mint/15 text-[11px] font-bold text-mint">
+                        {i + 1}
+                      </span>
+                      {stroke}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <p className="rounded-xl bg-amber/10 p-3 text-sm text-ink/70">
+                <span className="font-bold">Sky-write together: </span>
+                {segment.skyWriteCue}
+              </p>
               <p className="rounded-xl bg-cream p-2 text-xs text-ink/50">
                 <span className="font-bold">Teacher note: </span>
                 {segment.teacherNote}

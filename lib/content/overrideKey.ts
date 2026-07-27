@@ -186,3 +186,36 @@ export function phonicsSoundAudioKey(lessonKey: string, segmentIndex: number): s
 export function blendingWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
   return contentItemKey("blending_word", lessonKey, segmentIndex, wordIndex);
 }
+
+export function letterFormationKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("letter_formation", lessonKey, segmentIndex);
+}
+
+export function soundDrillCardKey(lessonKey: string, segmentIndex: number, cardIndex: number): string {
+  return contentItemKey("sound_drill_card", lessonKey, segmentIndex, cardIndex);
+}
+
+export function phonemeSwapStartKey(lessonKey: string, segmentIndex: number, roundIndex: number): string {
+  return contentItemKey("phoneme_swap_start", lessonKey, segmentIndex, roundIndex);
+}
+
+export function phonemeSwapAnswerKey(lessonKey: string, segmentIndex: number, roundIndex: number): string {
+  return contentItemKey("phoneme_swap_answer", lessonKey, segmentIndex, roundIndex);
+}
+
+/** Photo only — the chain's words are reconstructed from tiles, so an edited label would desync from what was just built. Same reasoning as blendingWordKey. */
+export function wordChainLinkKey(lessonKey: string, segmentIndex: number, linkIndex: number): string {
+  return contentItemKey("word_chain_link", lessonKey, segmentIndex, linkIndex);
+}
+
+export function soundBoxWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("sound_box_word", lessonKey, segmentIndex, wordIndex);
+}
+
+export function heartWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("heart_word", lessonKey, segmentIndex, wordIndex);
+}
+
+export function decodableLineKey(lessonKey: string, segmentIndex: number, lineIndex: number): string {
+  return contentItemKey("decodable_line", lessonKey, segmentIndex, lineIndex);
+}

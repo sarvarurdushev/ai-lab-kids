@@ -96,6 +96,62 @@ export const ENGINE_PRESENTATION: Record<ActivityEngine, EnginePresentation> = {
     skillLine: "Tap each letter-sound in order, then blend them into a real word.",
     chipClass: ENGLISH_CHIP,
   },
+  sound_drill: {
+    label: "Sound Drill",
+    discipline: "english",
+    icon: SpeakerIcon,
+    skillLine: "Rapid review of every sound taught so far — see it, say it.",
+    chipClass: ENGLISH_CHIP,
+  },
+  phoneme_swap: {
+    label: "Phoneme Play",
+    discipline: "english",
+    icon: SpeakerIcon,
+    skillLine: "Add, take away, or swap one sound to turn a word into a new word.",
+    chipClass: ENGLISH_CHIP,
+  },
+  word_chain: {
+    label: "Word Chain",
+    discipline: "english",
+    icon: PatternGridIcon,
+    skillLine: "cat, cot, cop, chop — one sound changes at a time.",
+    chipClass: ENGLISH_CHIP,
+  },
+  sound_box: {
+    label: "Sound Boxes",
+    discipline: "english",
+    icon: PatternGridIcon,
+    skillLine: "One box per sound — count the sounds, then spell them.",
+    chipClass: ENGLISH_CHIP,
+  },
+  heart_word: {
+    label: "Heart Words",
+    discipline: "english",
+    icon: BookIcon,
+    skillLine: "Sound out the regular part; remember only the tricky letter by heart.",
+    chipClass: ENGLISH_CHIP,
+  },
+  dictation: {
+    label: "Write What You Hear",
+    discipline: "english",
+    icon: BookIcon,
+    skillLine: "Hear a word or sentence, write it down, then check it against the reveal.",
+    chipClass: ENGLISH_CHIP,
+  },
+  decodable_text: {
+    label: "Read It Together",
+    discipline: "english",
+    icon: BookIcon,
+    skillLine: "Read a short passage built only from sounds already taught.",
+    chipClass: ENGLISH_CHIP,
+  },
+  fluency_race: {
+    label: "Word Race",
+    discipline: "english",
+    icon: GamepadIcon,
+    skillLine: "Read as many words as you can before the timer runs out.",
+    chipClass: ENGLISH_CHIP,
+  },
 };
 
 export function isAiLabEngine(engine: ActivityEngine): boolean {

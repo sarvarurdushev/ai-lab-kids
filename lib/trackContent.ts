@@ -64,6 +64,9 @@ function filterSegment(segment: LessonSegment, track: AgeTrack): LessonSegment {
     case "phonics_sound":
       // A single letter/digraph with one keyword and action, shown to every track — nothing to filter.
       return segment;
+    case "letter_formation":
+      // Stroke-by-stroke handwriting for one letter — every track forms it the same way.
+      return segment;
   }
 }
 
@@ -88,6 +91,25 @@ function filterActivityConfig(config: ActivityConfig, track: AgeTrack): Activity
       // A fixed short instruction sequence — no minTrack-tagged steps to filter.
       return config;
     case "blending":
+      return { ...config, words: keep(config.words, track) };
+    case "sound_drill":
+      return { ...config, cards: keep(config.cards, track) };
+    case "phoneme_swap":
+      return { ...config, rounds: keep(config.rounds, track) };
+    case "word_chain":
+      // The chain is a single connected sequence — dropping a middle link would break
+      // the "exactly one sound changes" invariant, so only trailing links are gated.
+      return { ...config, links: keep(config.links, track) };
+    case "sound_box":
+      return { ...config, words: keep(config.words, track) };
+    case "heart_word":
+      return { ...config, words: keep(config.words, track) };
+    case "dictation":
+      return { ...config, words: keep(config.words, track), sentences: keep(config.sentences, track) };
+    case "decodable_text":
+      // A passage only reads correctly whole — both tracks get every line.
+      return config;
+    case "fluency_race":
       return { ...config, words: keep(config.words, track) };
   }
 }

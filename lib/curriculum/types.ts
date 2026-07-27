@@ -65,7 +65,15 @@ export type ActivityEngine =
   | "pattern_predictor"
   | "ai_or_not"
   | "instruct_vora"
-  | "blending";
+  | "blending"
+  | "sound_drill"
+  | "phoneme_swap"
+  | "word_chain"
+  | "sound_box"
+  | "heart_word"
+  | "dictation"
+  | "decodable_text"
+  | "fluency_race";
 
 export interface SortBucketItem {
   word: string;
@@ -203,6 +211,140 @@ export interface BlendingConfig {
   }[];
 }
 
+/**
+ * Rapid cumulative review of every sound taught so far — UFLI Foundations'
+ * steps 2-3 ("visual drill" / "auditory drill"), the structural piece the
+ * first phonics build skipped entirely. Teacher-paced: one card at a time,
+ * class says the sound chorally, teacher advances. Deliberately not timed
+ * or scored — this is warm-up recall, not assessment.
+ */
+export interface SoundDrillConfig {
+  engine: "sound_drill";
+  title: string;
+  teacherNote: string;
+  cards: { letters: string; keyword: string; emoji: string; minTrack?: AgeTrack }[];
+}
+
+/**
+ * "Say cat. Now change /k/ to /b/." Phoneme addition, deletion, and
+ * substitution — the highest-value phonemic-awareness skill and the
+ * strongest single predictor of later reading. The class answers ALOUD
+ * before the answer is revealed, so the reveal is a check, not the
+ * activity itself.
+ */
+export interface PhonemeSwapConfig {
+  engine: "phoneme_swap";
+  title: string;
+  teacherNote: string;
+  rounds: {
+    startWord: string;
+    startEmoji: string;
+    /** Kid-facing instruction, e.g. "Take away the /s/" or "Change /k/ to /b/". */
+    instruction: string;
+    answerWord: string;
+    answerEmoji: string;
+    minTrack?: AgeTrack;
+  }[];
+}
+
+/**
+ * cat -> cot -> cop -> chop. Each link changes exactly ONE tile, so kids
+ * must attend to every position in a word instead of guessing from the
+ * first letter — the reason word chaining is the single highest-value
+ * phonics activity in the literature. `changeIndex` is validated against
+ * the running tile array at authoring time, not runtime.
+ */
+export interface WordChainConfig {
+  engine: "word_chain";
+  title: string;
+  teacherNote: string;
+  start: { parts: string[]; word: string; emoji: string };
+  links: {
+    /** Which tile position changes (0-based) to make this new word. */
+    changeIndex: number;
+    newPart: string;
+    word: string;
+    emoji: string;
+    minTrack?: AgeTrack;
+  }[];
+}
+
+/**
+ * Elkonin boxes: one box per SOUND, not per letter — so "ship" is three
+ * boxes for four letters. The classic bridge from hearing sounds to
+ * spelling them, and the cleanest way to show kids that sounds and
+ * letters aren't the same thing.
+ */
+export interface SoundBoxConfig {
+  engine: "sound_box";
+  title: string;
+  teacherNote: string;
+  words: { word: string; emoji: string; parts: string[]; minTrack?: AgeTrack }[];
+}
+
+/**
+ * High-frequency words with one irregular part. Kids sound out everything
+ * that behaves normally and memorize ("heart") only the letter(s) that
+ * don't — evidence-based practice that beats whole-word memorization.
+ * `heartIndexes` are positions into `word`, so the renderer can mark
+ * exactly the irregular letters.
+ */
+export interface HeartWordConfig {
+  engine: "heart_word";
+  title: string;
+  teacherNote: string;
+  words: {
+    word: string;
+    heartIndexes: number[];
+    sentence: string;
+    minTrack?: AgeTrack;
+  }[];
+}
+
+/**
+ * Encoding — the half of phonics the first build shipped without. Teacher
+ * says a word or sentence, kids write it on paper, then the screen reveals
+ * the correct spelling to check against. The reveal is deliberately a
+ * separate teacher action: revealing early turns writing practice into
+ * copying practice.
+ */
+export interface DictationConfig {
+  engine: "dictation";
+  title: string;
+  teacherNote: string;
+  words: { text: string; minTrack?: AgeTrack }[];
+  sentences: { text: string; minTrack?: AgeTrack }[];
+}
+
+/**
+ * Connected text — UFLI's step 8, which every lesson is supposed to end
+ * with. A short passage built only from sounds already taught, read
+ * chorally; tapping any word enlarges and speaks it for a kid who gets
+ * stuck. Distinct from StorySegment (a narrative told to the class) —
+ * this is text the children read themselves.
+ */
+export interface DecodableTextConfig {
+  engine: "decodable_text";
+  title: string;
+  teacherNote: string;
+  lines: { text: string; emoji: string }[];
+  comprehensionQuestions: { question: string; discussionNote: string }[];
+}
+
+/**
+ * Timed automaticity round — the class reads as many already-taught words
+ * as it can before the timer runs out, then tries to beat its own record.
+ * Optional overflow block for fast classes and review weeks, not part of
+ * the core 50 minutes.
+ */
+export interface FluencyRaceConfig {
+  engine: "fluency_race";
+  title: string;
+  teacherNote: string;
+  seconds: number;
+  words: { text: string; minTrack?: AgeTrack }[];
+}
+
 export type ActivityConfig =
   | TrainTheRobotConfig
   | SequenceBuilderConfig
@@ -212,7 +354,15 @@ export type ActivityConfig =
   | PatternPredictorConfig
   | AIOrNotConfig
   | InstructVoraConfig
-  | BlendingConfig;
+  | BlendingConfig
+  | SoundDrillConfig
+  | PhonemeSwapConfig
+  | WordChainConfig
+  | SoundBoxConfig
+  | HeartWordConfig
+  | DictationConfig
+  | DecodableTextConfig
+  | FluencyRaceConfig;
 
 export interface ActivitySegment {
   type: "activity";
@@ -351,6 +501,21 @@ export interface PhonicsSoundSegment {
   teacherNote: string;
 }
 
+/**
+ * Handwriting: how the letter is physically formed, one stroke at a time,
+ * with the class sky-writing it together before anyone writes on paper.
+ * Content-only like Movement/Chant — the projector shows the letter huge
+ * and lists the strokes; the teacher models and the class copies.
+ */
+export interface LetterFormationSegment {
+  type: "letter_formation";
+  letters: string;
+  /** One short instruction per stroke, in order — "Start at the top. Pull straight down." */
+  strokes: string[];
+  skyWriteCue: string;
+  teacherNote: string;
+}
+
 export type LessonSegment =
   | WarmupSegment
   | VocabSegment
@@ -364,7 +529,8 @@ export type LessonSegment =
   | StandSitSegment
   | ClassVoteSegment
   | StorySegment
-  | PhonicsSoundSegment;
+  | PhonicsSoundSegment
+  | LetterFormationSegment;
 
 /**
  * Which of the month's four weekly class sessions a lesson is — one
