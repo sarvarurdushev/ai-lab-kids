@@ -15,7 +15,33 @@ export default async function ClassSoundsPage({ params }: { params: Promise<{ cl
   const klass = await classForTeacher(teacher, classId);
   if (!klass) notFound();
 
-  const rows = await soundMasteryForClass(classId);
+  const result = await soundMasteryForClass(classId);
+
+  if (result.status === "needs_migration") {
+    return (
+      <div className="flex flex-col gap-5">
+        <div>
+          <Link href={`/classes/${classId}`} className="text-sm font-semibold text-ink/50">
+            ← {klass.name}
+          </Link>
+          <h1 className="font-display text-2xl font-bold text-indigo-dark">Sound Check</h1>
+        </div>
+        <Card className="flex flex-col gap-3 border-l-4 border-amber">
+          <p className="font-display font-bold text-ink">One setup step left</p>
+          <p className="max-w-2xl text-sm text-ink/70">
+            Sound Check stores its data in a new database table that isn&apos;t in your database yet. Run this once in
+            the project folder, then reload this page:
+          </p>
+          <pre className="overflow-x-auto rounded-xl bg-ink px-4 py-3 text-sm text-cream">npm run db:migrate</pre>
+          <p className="max-w-2xl text-xs text-ink/50">
+            Until then, lessons still run normally — the Sound Drill just won&apos;t record which sounds needed a hint.
+          </p>
+        </Card>
+      </div>
+    );
+  }
+
+  const rows = result.rows;
   // Two clean practice rounds with no hint is a reasonable bar for "they've got it";
   // anything the class still reached for a hint on is worth another look.
   const solid = rows.filter((r) => r.timesShown >= 2 && r.timesNeededHint === 0);

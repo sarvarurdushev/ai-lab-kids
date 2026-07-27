@@ -39,20 +39,47 @@ function graphemeOrigins(): Map<string, { week: number; lessonKey: string }> {
   return origins;
 }
 
-export async function soundMasteryForClass(classId: string): Promise<SoundMasteryRow[]> {
-  const rows = await db
-    .select({
-      grapheme: soundChecks.grapheme,
-      timesShown: sql<number>`count(*)::int`,
-      timesNeededHint: sql<number>`count(*) filter (where ${soundChecks.neededHint})::int`,
-    })
-    .from(soundChecks)
-    .where(eq(soundChecks.classId, classId))
-    .groupBy(soundChecks.grapheme);
+/**
+ * Postgres "undefined_table". The sound_checks table arrived in a later
+ * migration than the code that reads it, so a checkout that has pulled the
+ * code but not yet run `npm run db:migrate` would otherwise crash the whole
+ * page with a stack trace in a teacher's face. Detected and reported as a
+ * state the UI can explain instead.
+ */
+const UNDEFINED_TABLE = "42P01";
+
+function isMissingTable(err: unknown): boolean {
+  // drizzle wraps the driver error, so check the cause chain as well as the top level.
+  const codes = [err, (err as { cause?: unknown })?.cause].map(
+    (e) => (e as { code?: string } | undefined)?.code
+  );
+  return codes.includes(UNDEFINED_TABLE);
+}
+
+export type SoundMasteryResult =
+  | { status: "ok"; rows: SoundMasteryRow[] }
+  | { status: "needs_migration" };
+
+export async function soundMasteryForClass(classId: string): Promise<SoundMasteryResult> {
+  let rows: { grapheme: string; timesShown: number; timesNeededHint: number }[];
+  try {
+    rows = await db
+      .select({
+        grapheme: soundChecks.grapheme,
+        timesShown: sql<number>`count(*)::int`,
+        timesNeededHint: sql<number>`count(*) filter (where ${soundChecks.neededHint})::int`,
+      })
+      .from(soundChecks)
+      .where(eq(soundChecks.classId, classId))
+      .groupBy(soundChecks.grapheme);
+  } catch (err) {
+    if (isMissingTable(err)) return { status: "needs_migration" };
+    throw err;
+  }
 
   const origins = graphemeOrigins();
 
-  return rows
+  const mapped = rows
     .map((r) => {
       const origin = origins.get(r.grapheme);
       return {
@@ -66,16 +93,28 @@ export async function soundMasteryForClass(classId: string): Promise<SoundMaster
     })
     // Shakiest first — that's the whole point of the list.
     .sort((a, b) => b.hintRate - a.hintRate || b.timesNeededHint - a.timesNeededHint);
+
+  return { status: "ok", rows: mapped };
 }
 
-/** Records one Sound Drill card view. Called from the client when a card is advanced. */
+/**
+ * Records one Sound Drill card view. Returns false (rather than throwing) if
+ * the table hasn't been migrated yet — a lesson in progress must never break
+ * because progress logging isn't set up.
+ */
 export async function recordSoundCheck(input: {
   classId: string;
   lessonKey: string;
   grapheme: string;
   neededHint: boolean;
-}): Promise<void> {
-  await db.insert(soundChecks).values(input);
+}): Promise<boolean> {
+  try {
+    await db.insert(soundChecks).values(input);
+    return true;
+  } catch (err) {
+    if (isMissingTable(err)) return false;
+    throw err;
+  }
 }
 
 /** Most recent raw checks, for a teacher who wants to see the actual history rather than the rollup. */
