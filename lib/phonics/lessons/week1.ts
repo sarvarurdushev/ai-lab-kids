@@ -224,7 +224,9 @@ export const ph_week1: Lesson = {
           { text: "pat" },
           { text: "sap", minTrack: "explorers" },
         ],
-        sentences: [{ text: "A cat sat." }],
+        // "Pat" doubles as a name here so the sentence stays spellable from
+        // s/a/t/p alone — week 1 has no other consonants to build one from.
+        sentences: [{ text: "Pat sat." }],
       },
     },
     {
@@ -236,12 +238,12 @@ export const ph_week1: Lesson = {
         teacherNote:
           "Read each line chorally as a class, then ask one child to read it alone if they'd like to. Every word uses only s/a/t/p plus the heart words 'the' and 'a'. Tap any word the class gets stuck on.",
         lines: [
-          { text: "A cat sat.", emoji: "🐱" },
-          { text: "The cat sat on a mat.", emoji: "🧶" },
-          { text: "Pat the cat!", emoji: "🤚" },
+          { text: "Pat sat.", emoji: "🪑" },
+          { text: "Pat sat at a tap.", emoji: "🚰" },
+          { text: "Tap, tap, tap!", emoji: "👆" },
         ],
         comprehensionQuestions: [
-          { question: "Where did the cat sit?", discussionNote: "On a mat — point back to the second line together." },
+          { question: "Where did Pat sit?", discussionNote: "At a tap — point back to the second line together." },
           { question: "What sound does 'sat' start with?", discussionNote: "/s/ — have them find the letter s on the screen." },
         ],
       },
