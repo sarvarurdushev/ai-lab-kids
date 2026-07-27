@@ -18,7 +18,7 @@ import {
   weekRoleLabel,
   type LessonMeta,
 } from "@/lib/curriculum";
-import { PHONICS_LESSONS } from "@/lib/phonics";
+import { phonicsLessonsForTrack } from "@/lib/phonics";
 import { Card } from "@/components/ui/Card";
 import { Vora } from "@/components/mascot/Vora";
 import { AICurriculumPanel } from "@/components/curriculum/AICurriculumPanel";
@@ -98,6 +98,8 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
   const klass = await classForTeacher(teacher, classId);
   if (!klass) notFound();
 
+  const visiblePhonicsLessons = phonicsLessonsForTrack(klass.ageTrack);
+
   return (
     <div className="flex flex-col gap-6">
       <div>
@@ -124,17 +126,18 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
           <BookIcon size={16} className="text-indigo-dark" />
           <p className="font-display font-bold text-ink">Phonics</p>
           <span className="rounded-full bg-indigo/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-indigo-dark">
-            New — Unit 1, {PHONICS_LESSONS.length} weeks
+            New — {visiblePhonicsLessons.length} weeks
           </span>
         </div>
         <p className="text-xs text-ink/50">
           A new, separate program from the AI+English curriculum above. Unit 1 covers every letter sound, ch/sh/th/wh/ng,
-          and every blend family — strictly in order, so each week only uses sounds already taught.
+          and every blend family. Unit 2 (long vowels and vowel teams) is built for AI Explorers (6+) only — Little Sparks
+          (4-5) keeps reviewing Unit 1 instead, since long vowels aren&apos;t developmentally there yet.
         </p>
         <details>
-          <summary className="cursor-pointer text-xs font-bold text-indigo-dark">Show all {PHONICS_LESSONS.length} weeks</summary>
+          <summary className="cursor-pointer text-xs font-bold text-indigo-dark">Show all {visiblePhonicsLessons.length} weeks</summary>
           <div className="mt-2 flex flex-col gap-2">
-            {PHONICS_LESSONS.map((lesson) => (
+            {visiblePhonicsLessons.map((lesson) => (
               <div key={lesson.key} className="flex flex-col gap-2 rounded-xl bg-cream px-3 py-2">
                 <div className="flex items-center justify-between gap-2">
                   <div>
