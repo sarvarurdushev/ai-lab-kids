@@ -67,6 +67,31 @@ function filterSegment(segment: LessonSegment, track: AgeTrack): LessonSegment {
     case "letter_formation":
       // Stroke-by-stroke handwriting for one letter — every track forms it the same way.
       return segment;
+    case "partner_talk":
+      return {
+        ...segment,
+        cards: keep(segment.cards, track),
+        ...(track === "little_sparks" && segment.frameSimple ? { frame: segment.frameSimple } : {}),
+      };
+    case "vocab_review":
+      return { ...segment, words: keep(segment.words, track) };
+    case "draw_and_label":
+      return {
+        ...segment,
+        wordBank: keep(segment.wordBank, track),
+        ...(track === "little_sparks" && segment.instructionsSimple
+          ? { instructions: segment.instructionsSimple }
+          : {}),
+      };
+    case "role_play":
+      return {
+        ...segment,
+        exchanges: segment.exchanges.map((exchange) =>
+          track === "little_sparks" && exchange.lineSimple ? { ...exchange, line: exchange.lineSimple } : exchange
+        ),
+      };
+    case "listen_and_do":
+      return { ...segment, commands: keep(segment.commands, track) };
   }
 }
 

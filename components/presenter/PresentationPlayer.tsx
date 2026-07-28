@@ -10,6 +10,13 @@ import { Button } from "@/components/ui/Button";
 import { EnglishText } from "@/components/curriculum/EnglishText";
 import { BigIdeaBanner } from "@/components/curriculum/BigIdeaBanner";
 import {
+  PartnerTalkSlide,
+  VocabReviewSlide,
+  DrawAndLabelSlide,
+  RolePlaySlide,
+  ListenAndDoSlide,
+} from "@/components/presenter/ProductionSegments";
+import {
   BIG_IDEA_LABELS,
   resolveBigIdea,
   ENGINE_PRESENTATION,
@@ -62,10 +69,20 @@ import {
   ChatIcon,
   OpenBookIcon,
   SpeakerIcon,
+  EyeIcon,
+  SproutIcon,
 } from "@/components/icons";
 
+/**
+ * Keyed by LessonSegment["type"] rather than `string` on purpose: this file
+ * renders segments through a chain of `segment.type === "..."` blocks, which
+ * silently draws a blank slide for a type nobody wrote a branch for. Making
+ * this map exhaustive means adding a segment type to lib/curriculum/types.ts
+ * fails the build here until it's dealt with, instead of shipping an empty
+ * slide into a classroom.
+ */
 const SEGMENT_LABEL: Record<
-  string,
+  LessonSegment["type"],
   { icon: (props: { size?: number; className?: string }) => React.JSX.Element; text: string; className: string }
 > = {
   warmup: { icon: SunIcon, text: "Warm-up", className: "text-amber-dark" },
@@ -82,6 +99,11 @@ const SEGMENT_LABEL: Record<
   story: { icon: OpenBookIcon, text: "Story Time", className: "text-indigo-dark" },
   phonics_sound: { icon: SpeakerIcon, text: "Sound of the Day", className: "text-indigo-dark" },
   letter_formation: { icon: BookIcon, text: "Write It Big", className: "text-mint" },
+  partner_talk: { icon: ChatIcon, text: "Partner Talk", className: "text-coral" },
+  vocab_review: { icon: EyeIcon, text: "Words We Know", className: "text-sky" },
+  draw_and_label: { icon: SproutIcon, text: "Draw and Label", className: "text-mint" },
+  role_play: { icon: TeamIcon, text: "Act It Out", className: "text-indigo-dark" },
+  listen_and_do: { icon: HandRaiseIcon, text: "Listen and Do", className: "text-amber-dark" },
 };
 
 /** Icon + title + "is this a real AI-literacy activity" for the segment strip and agenda chips. */
@@ -628,6 +650,79 @@ export function PresentationPlayer({
                 <span className="font-bold">Teacher note: </span>
                 {segment.teacherNote}
               </p>
+            </div>
+          )}
+
+          {segment.type === "partner_talk" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.partner_talk.className}`}>
+                <SEGMENT_LABEL.partner_talk.icon size={12} /> {SEGMENT_LABEL.partner_talk.text}
+              </p>
+              <PartnerTalkSlide
+                segment={segment}
+                lessonKey={lesson.key}
+                segmentIndex={index}
+                contentOverrides={contentOverrides}
+                track={track}
+              />
+            </div>
+          )}
+
+          {segment.type === "vocab_review" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.vocab_review.className}`}>
+                <SEGMENT_LABEL.vocab_review.icon size={12} /> {SEGMENT_LABEL.vocab_review.text}
+              </p>
+              <VocabReviewSlide
+                segment={segment}
+                lessonKey={lesson.key}
+                segmentIndex={index}
+                contentOverrides={contentOverrides}
+              />
+            </div>
+          )}
+
+          {segment.type === "listen_and_do" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.listen_and_do.className}`}>
+                <SEGMENT_LABEL.listen_and_do.icon size={12} /> {SEGMENT_LABEL.listen_and_do.text}
+              </p>
+              <ListenAndDoSlide
+                segment={segment}
+                lessonKey={lesson.key}
+                segmentIndex={index}
+                contentOverrides={contentOverrides}
+              />
+            </div>
+          )}
+
+          {segment.type === "role_play" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.role_play.className}`}>
+                <SEGMENT_LABEL.role_play.icon size={12} /> {SEGMENT_LABEL.role_play.text}
+              </p>
+              <RolePlaySlide
+                segment={segment}
+                lessonKey={lesson.key}
+                segmentIndex={index}
+                contentOverrides={contentOverrides}
+                track={track}
+              />
+            </div>
+          )}
+
+          {segment.type === "draw_and_label" && (
+            <div className="flex flex-col gap-3">
+              <p className={`flex items-center gap-1.5 text-xs font-bold tracking-wide uppercase ${SEGMENT_LABEL.draw_and_label.className}`}>
+                <SEGMENT_LABEL.draw_and_label.icon size={12} /> {SEGMENT_LABEL.draw_and_label.text}
+              </p>
+              <DrawAndLabelSlide
+                segment={segment}
+                lessonKey={lesson.key}
+                segmentIndex={index}
+                contentOverrides={contentOverrides}
+                track={track}
+              />
             </div>
           )}
 

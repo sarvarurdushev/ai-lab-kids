@@ -219,3 +219,54 @@ export function heartWordKey(lessonKey: string, segmentIndex: number, wordIndex:
 export function decodableLineKey(lessonKey: string, segmentIndex: number, lineIndex: number): string {
   return contentItemKey("decodable_line", lessonKey, segmentIndex, lineIndex);
 }
+
+/*
+ * Productive-language segments (AI+English 50-minute rebuild). Each prompt or
+ * word a child sees on the projector gets a key, so a teacher can swap the
+ * clip-art emoji for a real photo of their own classroom the same way they
+ * already can for vocab and movement cards.
+ */
+
+export function partnerTalkCardKey(lessonKey: string, segmentIndex: number, cardIndex: number): string {
+  return contentItemKey("partner_talk_card", lessonKey, segmentIndex, cardIndex);
+}
+
+/** The sentence frame itself — text-only in practice, but photos are allowed for a visual frame. */
+export function partnerTalkFrameKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("partner_talk_frame", lessonKey, segmentIndex);
+}
+
+/** The Little Sparks (4-5)-only wording override for the sentence frame — see warmupPromptSimpleKey. */
+export function partnerTalkFrameSimpleKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("partner_talk_frame_simple", lessonKey, segmentIndex);
+}
+
+export function vocabReviewWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("vocab_review_word", lessonKey, segmentIndex, wordIndex);
+}
+
+export function drawAndLabelWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("draw_and_label_word", lessonKey, segmentIndex, wordIndex);
+}
+
+export function drawAndLabelInstructionsKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("draw_and_label_instructions", lessonKey, segmentIndex);
+}
+
+/** The Little Sparks (4-5)-only wording override for Draw and Label's instructions — see warmupPromptSimpleKey. */
+export function drawAndLabelInstructionsSimpleKey(lessonKey: string, segmentIndex: number): string {
+  return contentItemKey("draw_and_label_instructions_simple", lessonKey, segmentIndex);
+}
+
+export function rolePlayExchangeKey(lessonKey: string, segmentIndex: number, exchangeIndex: number): string {
+  return contentItemKey("role_play_exchange", lessonKey, segmentIndex, exchangeIndex);
+}
+
+/** The Little Sparks (4-5)-only wording override for one role-play line — see warmupPromptSimpleKey. */
+export function rolePlayExchangeSimpleKey(lessonKey: string, segmentIndex: number, exchangeIndex: number): string {
+  return contentItemKey("role_play_exchange_simple", lessonKey, segmentIndex, exchangeIndex);
+}
+
+export function listenAndDoCommandKey(lessonKey: string, segmentIndex: number, commandIndex: number): string {
+  return contentItemKey("listen_and_do_command", lessonKey, segmentIndex, commandIndex);
+}

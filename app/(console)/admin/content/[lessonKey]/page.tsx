@@ -47,6 +47,16 @@ import {
   soundBoxWordKey,
   heartWordKey,
   decodableLineKey,
+  partnerTalkCardKey,
+  partnerTalkFrameKey,
+  partnerTalkFrameSimpleKey,
+  vocabReviewWordKey,
+  drawAndLabelWordKey,
+  drawAndLabelInstructionsKey,
+  drawAndLabelInstructionsSimpleKey,
+  rolePlayExchangeKey,
+  rolePlayExchangeSimpleKey,
+  listenAndDoCommandKey,
 } from "@/lib/content/overrideKey";
 import { Card } from "@/components/ui/Card";
 import { OverrideItemEditor } from "@/components/console/OverrideItemEditor";
@@ -293,6 +303,115 @@ export default async function AdminLessonContentPage({
               textEditable: false,
             },
           ],
+        };
+      }
+      if (segment.type === "partner_talk") {
+        const items: EditableItem[] = [];
+        if (track === "all" || track === "explorers") {
+          items.push({
+            key: partnerTalkFrameKey(lesson.key, segIndex),
+            originalText: segment.frame,
+            emoji: "🗣️",
+            noImage: true,
+            variantLabel: "AI Explorers (6+) wording",
+          });
+        }
+        if (track === "all" || track === "little_sparks") {
+          items.push({
+            key: partnerTalkFrameSimpleKey(lesson.key, segIndex),
+            originalText: segment.frameSimple ?? segment.frame,
+            emoji: "🗣️",
+            noImage: true,
+            variantLabel: "Little Sparks (4-5) wording",
+          });
+        }
+        segment.cards.forEach((c, i) => {
+          items.push({
+            key: partnerTalkCardKey(lesson.key, segIndex, i),
+            originalText: c.prompt,
+            emoji: c.emoji,
+            minTrack: c.minTrack,
+          });
+        });
+        return { segIndex, title: segment.title, kind: "Partner Talk", items };
+      }
+      if (segment.type === "vocab_review") {
+        return {
+          segIndex,
+          title: segment.title,
+          kind: "Words We Know",
+          items: segment.words.map((w, i) => ({
+            key: vocabReviewWordKey(lesson.key, segIndex, i),
+            originalText: w.word,
+            emoji: w.emoji,
+            minTrack: w.minTrack,
+          })),
+        };
+      }
+      if (segment.type === "draw_and_label") {
+        const items: EditableItem[] = [];
+        if (track === "all" || track === "explorers") {
+          items.push({
+            key: drawAndLabelInstructionsKey(lesson.key, segIndex),
+            originalText: segment.instructions,
+            emoji: "🎨",
+            noImage: true,
+            variantLabel: "AI Explorers (6+) wording",
+          });
+        }
+        if (track === "all" || track === "little_sparks") {
+          items.push({
+            key: drawAndLabelInstructionsSimpleKey(lesson.key, segIndex),
+            originalText: segment.instructionsSimple ?? segment.instructions,
+            emoji: "🎨",
+            noImage: true,
+            variantLabel: "Little Sparks (4-5) wording",
+          });
+        }
+        segment.wordBank.forEach((w, i) => {
+          items.push({
+            key: drawAndLabelWordKey(lesson.key, segIndex, i),
+            originalText: w.word,
+            emoji: w.emoji,
+            minTrack: w.minTrack,
+          });
+        });
+        return { segIndex, title: segment.title, kind: "Draw and Label", items };
+      }
+      if (segment.type === "role_play") {
+        const items: EditableItem[] = segment.exchanges.flatMap((ex, i) => {
+          const exchangeItems: EditableItem[] = [];
+          if (track === "all" || track === "explorers") {
+            exchangeItems.push({
+              key: rolePlayExchangeKey(lesson.key, segIndex, i),
+              originalText: ex.line,
+              emoji: ex.emoji,
+              variantLabel: "AI Explorers (6+) wording",
+            });
+          }
+          if (track === "all" || track === "little_sparks") {
+            exchangeItems.push({
+              key: rolePlayExchangeSimpleKey(lesson.key, segIndex, i),
+              originalText: ex.lineSimple ?? ex.line,
+              emoji: ex.emoji,
+              variantLabel: "Little Sparks (4-5) wording",
+            });
+          }
+          return exchangeItems;
+        });
+        return { segIndex, title: segment.title, kind: "Act It Out", items };
+      }
+      if (segment.type === "listen_and_do") {
+        return {
+          segIndex,
+          title: segment.title,
+          kind: "Listen and Do",
+          items: segment.commands.map((c, i) => ({
+            key: listenAndDoCommandKey(lesson.key, segIndex, i),
+            originalText: c.text,
+            emoji: c.emoji,
+            minTrack: c.minTrack,
+          })),
         };
       }
       if (segment.type === "wrapup") {

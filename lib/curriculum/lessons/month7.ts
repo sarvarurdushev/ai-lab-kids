@@ -8,6 +8,35 @@ function meta(key: string) {
   return m;
 }
 
+/**
+ * REFERENCE LESSON for the 50-minute AI+English shape — every other lesson
+ * mirrors this block order. See the block comment above PartnerTalkSegment in
+ * lib/curriculum/types.ts for why the four productive blocks were added.
+ *
+ *   1  Warm-up            3 min
+ *   2  Words We Know      4 min  cumulative review of EARLIER months
+ *   3  Vocabulary         5 min  this month's new words
+ *   4  Listen and Do      4 min  TPR — comprehension before production
+ *   5  Movement           2 min
+ *   6  Vora Explains      4 min  the AI big idea
+ *   7  Story              5 min
+ *   8  Game               5 min  the month's engine activity
+ *   9  AI or Not          3 min  trimmable if the class runs long
+ *  10  Instruct Vora      4 min  trimmable if the class runs long
+ *  11  Stand Up/Sit Down  3 min
+ *  12  Partner Talk       5 min  EVERY child speaks
+ *  13  Draw and Label     4 min  paper and pencil
+ *  14  Chant              2 min
+ *  15  Check              2 min
+ *  16  Wrap-up            2 min
+ *
+ * Blocks 9 and 10 come from the shared AI-lab bank and are the two designed to
+ * be dropped when a class runs long — everything else is load-bearing.
+ *
+ * Week 1 of a month introduces vocabulary, so it gets Draw and Label. Weeks 2-4
+ * swap that for Role Play once the words are known and there's something to
+ * act out — see m7_week2.
+ */
 export const m7_week1: Lesson = {
   ...meta("m7_week1"),
   segments: [
@@ -16,6 +45,20 @@ export const m7_week1: Lesson = {
       teacherScript: "Look out the classroom window (or show a photo of the sky) and ask \"What's the weather today?\" Let a few kids answer in Korean before introducing the English words.",
       prompt: "What's the weather today? 🌤️",
       promptSimple: "Look outside! Sunny or rainy? 🌤️",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each month so far, so nothing taught this year goes six months without being retrieved. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 3 },
+        { word: "water", emoji: "💧", fromMonth: 4 },
+        { word: "grandma", emoji: "👵", fromMonth: 5 },
+        { word: "penguin", emoji: "🐧", fromMonth: 6, minTrack: "explorers" },
+      ],
     },
     {
       type: "vocab",
@@ -29,6 +72,25 @@ export const m7_week1: Lesson = {
         { word: "hot", emoji: "🥵" },
         { word: "cold", emoji: "🥶" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to the sun.", steps: 1, emoji: "☀️" },
+        { text: "Touch your head, then shiver like you're cold.", steps: 2, emoji: "🥶" },
+        { text: "Stand up, wiggle your fingers like rain, then sit back down.", steps: 3, emoji: "🌧️" },
+        {
+          text: "Spin around once, float your arms like a cloud, then freeze.",
+          steps: 3,
+          emoji: "☁️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails a 1-step command instantly, skip straight to the 3-step ones instead of running all four in order.",
     },
     {
       type: "movement",
@@ -156,6 +218,40 @@ export const m7_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What's the Weather?",
+      frame: "It's ___ today.",
+      frameSimple: "It's ___.",
+      cards: [
+        { prompt: "sunny", emoji: "☀️", sampleAnswer: "It's sunny today." },
+        { prompt: "rainy", emoji: "🌧️", sampleAnswer: "It's rainy today." },
+        { prompt: "cloudy", emoji: "☁️", sampleAnswer: "It's cloudy today." },
+        { prompt: "cold", emoji: "🥶", sampleAnswer: "It's cold today.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A looks at the card and asks 'What's the weather?' — Partner B answers with the full frame, then they swap who's asking. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; the point is that every child produces the sentence multiple times, not that you hear each one.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw the Weather",
+      instructions: "Draw a picture of your favorite kind of weather, then label it using a word from the word bank.",
+      instructionsSimple: "Draw the weather! Write the word.",
+      wordBank: [
+        { word: "sunny", emoji: "☀️" },
+        { word: "rainy", emoji: "🌧️" },
+        { word: "cloudy", emoji: "☁️" },
+        { word: "snowy", emoji: "❄️" },
+        { word: "hot", emoji: "🥵" },
+        { word: "cold", emoji: "🥶", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big sun in the corner with the word 'sunny' underneath it in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Weather Chant",
       instructions:
@@ -178,8 +274,9 @@ export const m7_week1: Lesson = {
     },
     {
       type: "wrapup",
-      summary: "Today we learned seven weather words, acted them out, saw how Vora finds a pattern in past weather (the same way a real forecast is made), practiced spotting real AI in everyday life, helped Vora follow clear instructions, and chanted about the weather together.",
-      summarySimple: "Today we learned weather words, moved our bodies, and sang a weather chant with Vora!",
+      summary:
+        "Today we learned seven weather words, followed weather instructions by listening alone, acted them out, saw how Vora finds a pattern in past weather (the same way a real forecast is made), practiced spotting real AI in everyday life, helped Vora follow clear instructions, asked and answered 'What's the weather?' with a partner, drew and labeled our own weather picture, and chanted about the weather together.",
+      summarySimple: "Today we learned weather words, moved our bodies, talked with a partner, drew a picture, and sang a weather chant with Vora!",
       homework: "Ask a family member \"What's the weather?\" in Korean tonight, then answer them in English: \"It's ___ today.\"",
     },
   ],

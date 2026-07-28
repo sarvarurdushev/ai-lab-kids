@@ -348,7 +348,8 @@ export const MONTHLY_SCOPE_AND_SEQUENCE: LessonMeta[] = [
     title: "What's the Weather?",
     bigIdeas: ["reasoning"],
     englishFocus: "Weather adjectives + \"It's ___ today.\"",
-    koreanL1Note: "\"It's ___\" reuses the copula pattern a third time this year (Month 1 objects, Month 6 animals) — by now expect faster, more confident production.",
+    koreanL1Note:
+      "\"It's ___\" reuses the copula pattern a third time this year (Month 1 objects, Month 6 animals) — by now expect faster, more confident production. Kids will need paper and a pencil for the Draw and Label block near the end.",
     objectives: [
       "I can name four kinds of weather and say \"It's ___ today.\"",
       "I can explain that a weather forecast is really a careful guess, made by finding patterns in a lot of past weather.",

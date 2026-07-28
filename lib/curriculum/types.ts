@@ -516,6 +516,113 @@ export interface LetterFormationSegment {
   teacherNote: string;
 }
 
+/*
+ * ---------------------------------------------------------------------------
+ * Productive-language segments (the AI+English 50-minute rebuild)
+ * ---------------------------------------------------------------------------
+ * The lessons above this point are strong on comprehensible INPUT — listening,
+ * watching, echoing, tapping an answer. A count across all 72 lessons found
+ * every one of them ends in a single `check`: 40 use `cold_call` (one child
+ * speaks) and 32 use `whole_class_thumbs` (no child speaks). So a given child
+ * produced English aloud roughly once per 50-minute class and never wrote
+ * anything down.
+ *
+ * That's the same shape of gap phonics had between decoding and encoding, and
+ * the fix is the same: build the missing half rather than padding the half
+ * that already works. These five segments are all OUTPUT — every child speaks,
+ * performs, or writes. Like Movement/Chant/StandSit they're content-only, with
+ * no interactive engine: the projector shows the frame and the prompts, and
+ * the talking happens in the room.
+ */
+
+/**
+ * Structured pair speaking on a fixed sentence frame — the single highest-value
+ * addition, because it converts "one child speaks" into "every child speaks"
+ * without costing extra clock time. Partners work simultaneously; the teacher
+ * circulates rather than leading. Standard EFL practice and the main reason a
+ * communicative classroom outperforms a lecture-style one at this age.
+ */
+export interface PartnerTalkSegment {
+  type: "partner_talk";
+  title: string;
+  /** The sentence frame both partners use, shown huge on the projector — e.g. "It's ___ today." */
+  frame: string;
+  /** A shorter frame for Little Sparks (4-5), who need fewer slots to fill — see lib/trackContent.ts. */
+  frameSimple?: string;
+  /** One prompt card per turn; partners swap after each. A card tagged minTrack: "explorers" is skipped for little_sparks. */
+  cards: { prompt: string; emoji: string; sampleAnswer?: string; minTrack?: AgeTrack }[];
+  /** Projector countdown per turn, so pairs swap without the teacher policing it. */
+  secondsPerTurn: number;
+  teacherNote: string;
+}
+
+/**
+ * Cumulative spaced review of vocabulary from EARLIER months — the direct
+ * analogue of the phonics Sound Drill, and added for the same reason: `vocab`
+ * appears only 24 times across 72 lessons (week 1 of each month), so words were
+ * introduced once and then never systematically retrieved again. The picture
+ * stays hidden until tapped so kids retrieve from the word first.
+ */
+export interface VocabReviewSegment {
+  type: "vocab_review";
+  title: string;
+  /** Drawn from months already taught — spacing is the entire point, so same-month words don't belong here. */
+  words: { word: string; emoji: string; fromMonth: number; minTrack?: AgeTrack }[];
+  teacherNote: string;
+}
+
+/**
+ * Paper-and-pencil production: kids draw the lesson's content and label it
+ * from a projected word bank. The written half of the language, which nothing
+ * in the AI+English course previously touched, and the one segment that needs
+ * physical materials — say so in the lesson's `koreanL1Note` the way the
+ * phonics dictation blocks do.
+ */
+export interface DrawAndLabelSegment {
+  type: "draw_and_label";
+  title: string;
+  instructions: string;
+  /** Simpler wording for Little Sparks (4-5) — see lib/trackContent.ts. */
+  instructionsSimple?: string;
+  /** Projected while they draw, so spelling is copied rather than guessed. */
+  wordBank: { word: string; emoji: string; minTrack?: AgeTrack }[];
+  /** What a finished page looks like — for the teacher to describe, shown after they draw rather than before, so it doesn't become a template to copy. */
+  exampleNote: string;
+  minutes: number;
+  teacherNote: string;
+}
+
+/**
+ * A short two-part dialogue the class performs. Gives the sentence frame a
+ * social shape — who says what, to whom, and why — which a drill can't. Pairs
+ * naturally after PartnerTalk: rehearse in pairs, then a volunteer pair performs.
+ */
+export interface RolePlaySegment {
+  type: "role_play";
+  title: string;
+  setting: string;
+  /** The two parts, e.g. ["Shopkeeper", "Customer"]. */
+  roles: [string, string];
+  /** `role` indexes into `roles`. A line's lineSimple, when present, replaces line for little_sparks. */
+  exchanges: { role: 0 | 1; line: string; lineSimple?: string; emoji: string }[];
+  teacherNote: string;
+}
+
+/**
+ * Total Physical Response listening comprehension — the teacher says an
+ * instruction and kids perform it. Proves comprehension without demanding
+ * production, so it belongs BEFORE the speaking blocks as the bridge into
+ * them. Commands are graded by how many steps they chain together.
+ */
+export interface ListenAndDoSegment {
+  type: "listen_and_do";
+  title: string;
+  instructions: string;
+  /** Graded: start at one step and build up. `steps` is how many actions the command chains. */
+  commands: { text: string; steps: number; emoji: string; minTrack?: AgeTrack }[];
+  teacherNote: string;
+}
+
 export type LessonSegment =
   | WarmupSegment
   | VocabSegment
@@ -530,7 +637,12 @@ export type LessonSegment =
   | ClassVoteSegment
   | StorySegment
   | PhonicsSoundSegment
-  | LetterFormationSegment;
+  | LetterFormationSegment
+  | PartnerTalkSegment
+  | VocabReviewSegment
+  | DrawAndLabelSegment
+  | RolePlaySegment
+  | ListenAndDoSegment;
 
 /**
  * Which of the month's four weekly class sessions a lesson is — one
