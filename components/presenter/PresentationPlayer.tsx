@@ -552,7 +552,14 @@ export function PresentationPlayer({
               {segment.config.engine === "word_chain" && (
                 <WordChainEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
               )}
-              {segment.config.engine === "dictation" && <DictationEngine config={segment.config} />}
+              {segment.config.engine === "dictation" && (
+                <DictationEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  contentOverrides={contentOverrides}
+                />
+              )}
               {segment.config.engine === "decodable_text" && (
                 <DecodableTextEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
               )}
@@ -574,7 +581,14 @@ export function PresentationPlayer({
               {segment.config.engine === "heart_word" && (
                 <HeartWordEngine config={segment.config} lessonKey={lesson.key} segmentIndex={index} contentOverrides={contentOverrides} />
               )}
-              {segment.config.engine === "fluency_race" && <FluencyRaceEngine config={segment.config} />}
+              {segment.config.engine === "fluency_race" && (
+                <FluencyRaceEngine
+                  config={segment.config}
+                  lessonKey={lesson.key}
+                  segmentIndex={index}
+                  contentOverrides={contentOverrides}
+                />
+              )}
             </div>
           )}
 

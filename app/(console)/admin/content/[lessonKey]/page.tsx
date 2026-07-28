@@ -47,6 +47,10 @@ import {
   soundBoxWordKey,
   heartWordKey,
   decodableLineKey,
+  sentenceBuilderWordKey,
+  dictationWordKey,
+  dictationSentenceKey,
+  fluencyRaceWordKey,
   partnerTalkCardKey,
   partnerTalkFrameKey,
   partnerTalkFrameSimpleKey,
@@ -649,9 +653,52 @@ export default async function AdminLessonContentPage({
           })),
         };
       }
-      // dictation and fluency_race are pure text lists with no image slot — the words are
-      // read aloud and written by hand, never illustrated, so there's nothing to override.
-      // sentence_builder shows plain grammar-role text tiles with no emoji/image slot by design.
+      if (config.engine === "sentence_builder") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.words.map((w, i) => ({
+            key: sentenceBuilderWordKey(lesson.key, segIndex, i),
+            originalText: w.text,
+            emoji: "🔤",
+            noImage: true,
+          })),
+        };
+      }
+      if (config.engine === "dictation") {
+        const items: EditableItem[] = [
+          ...config.words.map((w, i) => ({
+            key: dictationWordKey(lesson.key, segIndex, i),
+            originalText: w.text,
+            emoji: "✏️",
+            noImage: true,
+            minTrack: w.minTrack,
+          })),
+          ...config.sentences.map((s, i) => ({
+            key: dictationSentenceKey(lesson.key, segIndex, i),
+            originalText: s.text,
+            emoji: "✏️",
+            noImage: true,
+            minTrack: s.minTrack,
+          })),
+        ];
+        return { segIndex, title: config.title, kind, items };
+      }
+      if (config.engine === "fluency_race") {
+        return {
+          segIndex,
+          title: config.title,
+          kind,
+          items: config.words.map((w, i) => ({
+            key: fluencyRaceWordKey(lesson.key, segIndex, i),
+            originalText: w.text,
+            emoji: "🔤",
+            noImage: true,
+            minTrack: w.minTrack,
+          })),
+        };
+      }
       return null;
     })
     .filter((s): s is EditableSection => s !== null && s.items.length > 0)

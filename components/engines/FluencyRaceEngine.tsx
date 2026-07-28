@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { playPop, playCorrect, playTick, playGameOver } from "@/lib/sound";
 import { GamepadIcon, SparkleIcon } from "@/components/icons";
 import type { FluencyRaceConfig } from "@/lib/curriculum";
+import { fluencyRaceWordKey, type ContentOverride } from "@/lib/content/overrideKey";
 
 // Timed automaticity round: the class reads words aloud together and the
 // teacher taps through as they go, racing a countdown. The record is the
@@ -17,9 +18,15 @@ import type { FluencyRaceConfig } from "@/lib/curriculum";
 
 export function FluencyRaceEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: FluencyRaceConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
   const [phase, setPhase] = useState<"ready" | "running" | "done">("ready");
@@ -84,7 +91,9 @@ export function FluencyRaceEngine({
     }
   }
 
-  const word = config.words[index];
+  const rawWord = config.words[index];
+  const wordOverride = rawWord ? contentOverrides[fluencyRaceWordKey(lessonKey, segmentIndex, index)] : undefined;
+  const word = rawWord ? { ...rawWord, text: wordOverride?.textOverride || rawWord.text } : undefined;
   const beatRecord = phase === "done" && index > 0 && index >= best;
 
   return (

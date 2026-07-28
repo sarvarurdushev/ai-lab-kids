@@ -40,6 +40,10 @@ export function sequenceStepKey(lessonKey: string, segmentIndex: number, stepInd
   return contentItemKey("sequence_step", lessonKey, segmentIndex, stepIndex);
 }
 
+export function sentenceBuilderWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("sentence_builder_word", lessonKey, segmentIndex, wordIndex);
+}
+
 export function memoryPairKey(lessonKey: string, segmentIndex: number, pairIndex: number): string {
   return contentItemKey("memory_pair", lessonKey, segmentIndex, pairIndex);
 }
@@ -269,4 +273,22 @@ export function rolePlayExchangeSimpleKey(lessonKey: string, segmentIndex: numbe
 
 export function listenAndDoCommandKey(lessonKey: string, segmentIndex: number, commandIndex: number): string {
   return contentItemKey("listen_and_do_command", lessonKey, segmentIndex, commandIndex);
+}
+
+/*
+ * dictation and fluency_race are pure text lists read aloud and written by
+ * hand — no picture ever accompanies them, so these are text-only overrides
+ * (noImage), same as chant lines and wrap-up text.
+ */
+
+export function dictationWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("dictation_word", lessonKey, segmentIndex, wordIndex);
+}
+
+export function dictationSentenceKey(lessonKey: string, segmentIndex: number, sentenceIndex: number): string {
+  return contentItemKey("dictation_sentence", lessonKey, segmentIndex, sentenceIndex);
+}
+
+export function fluencyRaceWordKey(lessonKey: string, segmentIndex: number, wordIndex: number): string {
+  return contentItemKey("fluency_race_word", lessonKey, segmentIndex, wordIndex);
 }

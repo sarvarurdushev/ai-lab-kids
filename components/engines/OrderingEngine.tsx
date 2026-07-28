@@ -10,7 +10,7 @@ import { connectorFor } from "@/lib/ordering";
 import { speak } from "@/lib/speech";
 import { SpeakerIcon, UndoIcon } from "@/components/icons";
 import type { SequenceBuilderConfig, SentenceBuilderConfig } from "@/lib/curriculum";
-import { sequenceStepKey, type ContentOverride } from "@/lib/content/overrideKey";
+import { sequenceStepKey, sentenceBuilderWordKey, type ContentOverride } from "@/lib/content/overrideKey";
 import { OverridableGlyph } from "@/components/curriculum/OverridableGlyph";
 
 // Classroom version of the ordering mechanic — reused for two different
@@ -77,12 +77,18 @@ function tilesFromConfig(
   }
   return {
     title: config.title,
-    tiles: config.words.map((w, i) => ({
-      id: `w-${i}`,
-      order: i,
-      primary: w.text,
-      label: ROLE_LABELS[w.role] ?? "",
-    })),
+    // Tiles are positioned by array index, not by matching w.text, so an
+    // override can safely relabel a tile without touching what "correct
+    // order" means — same reasoning as sequence_builder's step override above.
+    tiles: config.words.map((w, i) => {
+      const override = contentOverrides[sentenceBuilderWordKey(lessonKey, segmentIndex, i)];
+      return {
+        id: `w-${i}`,
+        order: i,
+        primary: override?.textOverride || w.text,
+        label: ROLE_LABELS[w.role] ?? "",
+      };
+    }),
     readAloud: config.words.map((w) => w.text).join(" ") + ".",
   };
 }

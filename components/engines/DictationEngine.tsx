@@ -8,6 +8,7 @@ import { playPop, playCorrect } from "@/lib/sound";
 import { speak } from "@/lib/speech";
 import { SpeakerIcon, CheckCircleIcon } from "@/components/icons";
 import type { DictationConfig } from "@/lib/curriculum";
+import { dictationWordKey, dictationSentenceKey, type ContentOverride } from "@/lib/content/overrideKey";
 
 // Encoding — hear it, write it on paper, THEN check. The reveal is
 // deliberately a separate teacher action rather than showing alongside the
@@ -20,14 +21,26 @@ type Item = { text: string; kind: "word" | "sentence" };
 
 export function DictationEngine({
   config,
+  lessonKey,
+  segmentIndex,
+  contentOverrides = {},
   onFinished,
 }: {
   config: DictationConfig;
+  lessonKey: string;
+  segmentIndex: number;
+  contentOverrides?: Record<string, ContentOverride>;
   onFinished?: () => void;
 }) {
   const items: Item[] = [
-    ...config.words.map((w) => ({ text: w.text, kind: "word" as const })),
-    ...config.sentences.map((s) => ({ text: s.text, kind: "sentence" as const })),
+    ...config.words.map((w, i) => ({
+      text: contentOverrides[dictationWordKey(lessonKey, segmentIndex, i)]?.textOverride || w.text,
+      kind: "word" as const,
+    })),
+    ...config.sentences.map((s, i) => ({
+      text: contentOverrides[dictationSentenceKey(lessonKey, segmentIndex, i)]?.textOverride || s.text,
+      kind: "sentence" as const,
+    })),
   ];
 
   const [index, setIndex] = useState(0);
