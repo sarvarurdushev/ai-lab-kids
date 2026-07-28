@@ -374,6 +374,34 @@ export const w3d2_vora_finds_pattern: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Same or Different?",
+      frame: "They are ___.",
+      cards: [
+        { prompt: "red, red", emoji: "🔴🔴", sampleAnswer: "They are the same." },
+        { prompt: "circle, square", emoji: "⭕🟦", sampleAnswer: "They are different." },
+        { prompt: "star, star", emoji: "⭐⭐", sampleAnswer: "They are the same." },
+        { prompt: "triangle, circle", emoji: "🔺⭕", sampleAnswer: "They are different.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up a card and asks 'Same or different?' — Partner B answers with the full frame 'They are ___,' then they swap who's asking. Every pair talks at once, so circulate and listen for 'same' and 'different' landing clearly rather than running this as a whole-class drill; the point is every child saying the sentence several times, not you hearing each one.",
+    },
+    {
+      type: "role_play",
+      title: "Fixing the Bracelet",
+      setting: "Making a bead bracelet together and fixing the gap where a bead fell out.",
+      roles: ["Vora", "Friend"],
+      exchanges: [
+        { role: 0, line: "Look — circle, square, circle, square...", emoji: "⭕" },
+        { role: 1, line: "Circle and circle — they are the same!", emoji: "🟰" },
+        { role: 0, line: "Now look at this gap. What comes next?", emoji: "🕳️" },
+        { role: 1, line: "A square! It's different from the circle before it.", emoji: "🟦" },
+      ],
+      teacherNote:
+        "Rehearse in pairs after Partner Talk, then invite one pair to perform for the class. This replays today's story with kids taking Vora's role — if a pair freezes on 'same' or 'different,' point back at the Same or Different game's pictures rather than translating.",
+    },
+    {
       type: "chant",
       title: "Same or Different Chant",
       instructions:
@@ -409,6 +437,38 @@ export const w3d3_fan_or_pan: Lesson = {
       type: "warmup",
       teacherScript: "Say \"fan\" and \"pan\" slowly, back to back, a few times, without explaining yet.",
       prompt: "fan... pan... fan... pan...",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A few words from Week 1 and Week 2 of Foundations, so nothing from the first two weeks goes quiet while today's attention is on the brand-new f sound. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these five, revisit those weeks before starting today's listening game. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 1 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 1 },
+        { word: "desk", emoji: "🗄️", fromMonth: 1 },
+        { word: "fish", emoji: "🐟", fromMonth: 2 },
+        { word: "rabbit", emoji: "🐰", fromMonth: 2, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word list hidden until after each round.",
+      commands: [
+        { text: "Wave your hand like a fan.", steps: 1, emoji: "🪭" },
+        { text: "Pretend to flip food in a pan, then give a big thumbs up.", steps: 2, emoji: "🍳" },
+        { text: "Stand up, pretend to eat with a fork, then sit back down.", steps: 3, emoji: "🍴" },
+        {
+          text: "Rub your tummy like it's pork, pretend to pull open a heavy door, then wave your hand like a fan.",
+          steps: 3,
+          emoji: "🥓",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response using today's own minimal-pair words — fan/pan, fine/pine, fork/pork, full/pull — chained into full commands, so the point is proving the class can tell each pair apart in action before anyone has to say the words aloud. Resist translating into Korean even if a child hesitates; model the action bigger yourself instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the harder ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -513,6 +573,34 @@ export const w3d3_fan_or_pan: Lesson = {
         { text: "Pretend to eat with a fork and say 'fork'!", emoji: "🍴" },
         { text: "Rub your tummy and say 'pork'!", emoji: "🥓", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "I Hear...!",
+      frame: "I hear ___!",
+      cards: [
+        { prompt: "fan", emoji: "🪭", sampleAnswer: "I hear fan!" },
+        { prompt: "fine", emoji: "👍", sampleAnswer: "I hear fine!" },
+        { prompt: "pork", emoji: "🥓", sampleAnswer: "I hear pork!" },
+        { prompt: "pull", emoji: "🚪", sampleAnswer: "I hear pull!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to a card and says 'I hear ___!' — biting the bottom lip and blowing air for fan and fine, or pressing the lips together first for pork and pull — and Partner B echoes the exact same word back, then they swap. Since Korean has no /f/ phoneme and commonly approximates it with /p/, circulate and listen for Listeners echoing the wrong twin by mistake (saying 'pan' back for 'fan'); that mix-up is expected on this first checkpoint, so have them try again rather than moving on.",
+    },
+    {
+      type: "role_play",
+      title: "The Sound-Check Station",
+      setting: "At the sound-check station, where one friend says a tricky word and the other listens closely to repeat it back correctly.",
+      roles: ["Speaker", "Listener"],
+      exchanges: [
+        { role: 0, line: "Listen closely: fine!", emoji: "👍" },
+        { role: 1, line: "I heard fine!", emoji: "👂" },
+        { role: 0, line: "Listen closely: pull, not full!", lineSimple: "Listen closely: pull!", emoji: "🚪" },
+        { role: 1, line: "I heard pull!", emoji: "👂" },
+      ],
+      teacherNote:
+        "One partner (the Speaker) says an f or p word slowly, exaggerating the mouth shape from today's concept — teeth on the lip for f, lips pressed together for p — and the other (the Listener) repeats back exactly what they heard, then swap. Expect Listeners to sometimes echo the wrong twin by mistake at first, since Korean has no /f/ phoneme; that's the whole point of this first checkpoint, so have them try again rather than correcting and moving on.",
     },
     {
       type: "chant",

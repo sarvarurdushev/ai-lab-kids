@@ -352,6 +352,35 @@ export const m11_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Freeze and Guess!",
+      frame: "I feel ___.",
+      frameSimple: "I feel ___.",
+      cards: [
+        { prompt: "angry", emoji: "😠", sampleAnswer: "I feel angry." },
+        { prompt: "scared", emoji: "😨", sampleAnswer: "I feel scared." },
+        { prompt: "tired", emoji: "😴", sampleAnswer: "I feel tired." },
+        { prompt: "surprised", emoji: "😲", sampleAnswer: "I feel surprised.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A picks a card and freezes in that feeling pose like a photo — Partner B looks and guesses out loud with \"I feel ___,\" then they swap who's freezing. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; this is today's freeze-frame idea from the Vora's Guessing Game story, so remind pairs that any careful guess is a good guess, even a wrong one — the point is attempting the full sentence.",
+    },
+    {
+      type: "role_play",
+      title: "Guess My Feeling!",
+      setting: "Two friends take turns freezing in a feeling pose like a photo while the other guesses using \"I feel ___.\"",
+      roles: ["Poser", "Guesser"],
+      exchanges: [
+        { role: 0, line: "Look at my face! How do I feel?", emoji: "🎭" },
+        { role: 1, line: "I feel happy!", emoji: "😊" },
+        { role: 0, line: "Yes! Now you freeze — how do you feel?", emoji: "🤗" },
+        { role: 1, line: "I feel sad.", lineSimple: "Sad.", emoji: "😢" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles once each, then invite one or two volunteer pairs to perform for the class before the chant. This is Vora's guessing game acted out for real — listen for the Guesser attempting the full \"I feel ___\" sentence rather than a one-word answer, and remind pairs that guessing wrong is totally fine, same as it was for Vora.",
+    },
+    {
       type: "chant",
       title: "Feel It Chant",
       instructions:
@@ -392,6 +421,39 @@ export const m11_week3: Lesson = {
       type: "warmup",
       teacherScript: "Ask the class to make three different feeling faces in a row — happy, sad, surprised — as fast as they can. Then tell them today we'll match feeling words to pictures.",
       prompt: "Happy, sad, surprised — go! 🎭",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A wider net this time — Months 1, 3, 5, 7, 9, and 10 — since spacing only works if it keeps touching new ground instead of the same six words every week. Read each word chorally before tapping; the tap rescues a stuck class, it isn't the activity. If more than two need the picture, that's the pair to circle back to before the year wraps up.",
+      words: [
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 3 },
+        { word: "brother", emoji: "👦", fromMonth: 5 },
+        { word: "hot", emoji: "🥵", fromMonth: 7 },
+        { word: "eyes", emoji: "👀", fromMonth: 9 },
+        { word: "pumpkin", emoji: "🎃", fromMonth: 10, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for every face to change before revealing which feeling it matched. This checks listening only, ahead of today's matching game.",
+      commands: [
+        { text: "Make an angry face.", steps: 1, emoji: "😠" },
+        { text: "Make a surprised face, then a tired face.", steps: 2, emoji: "😴" },
+        { text: "Jump like you're scared, hug yourself like you're sad, then freeze.", steps: 3, emoji: "😢" },
+        {
+          text: "Stomp like you're angry, gasp like you're surprised, then make your happiest face.",
+          steps: 3,
+          emoji: "😊",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: proving the class can still produce each feeling face from memory before today's matching game, so resist translating into Korean even if a child hesitates — exaggerate your own expression instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the harder ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -485,6 +547,35 @@ export const m11_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Flip and Feel!",
+      frame: "I feel ___.",
+      frameSimple: "I feel ___.",
+      cards: [
+        { prompt: "happy", emoji: "😊", sampleAnswer: "I feel happy." },
+        { prompt: "scared", emoji: "😨", sampleAnswer: "I feel scared." },
+        { prompt: "tired", emoji: "😴", sampleAnswer: "I feel tired." },
+        { prompt: "surprised", emoji: "😲", sampleAnswer: "I feel surprised.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A flips the card face-up like today's memory game and says the frame, acting out the feeling with their face — Partner B echoes it back, then they swap who's flipping. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; this is the exact word set from today's matching game, just spoken out loud instead of tapped.",
+    },
+    {
+      type: "role_play",
+      title: "Ask a Friend!",
+      setting: "One friend notices the other looks a certain way and checks in by asking how they feel, instead of just guessing.",
+      roles: ["Friend A", "Friend B"],
+      exchanges: [
+        { role: 0, line: "You look quiet today. How do you feel?", emoji: "🤔" },
+        { role: 1, line: "I feel tired.", emoji: "😴" },
+        { role: 0, line: "I'm sorry you feel tired. Want to rest?", emoji: "🤗" },
+        { role: 1, line: "Yes, thank you!", emoji: "😊" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles once each, then invite one or two volunteer pairs to perform for the class before the chant. This is today's 'ask instead of guess' idea acted out for real — encourage the asking partner to actually wait for a real answer, not assume one from a look.",
+    },
+    {
       type: "chant",
       title: "How Do You Feel Chant",
       instructions:
@@ -525,6 +616,39 @@ export const m11_week4: Lesson = {
       type: "warmup",
       teacherScript: "Ask a few kids: \"How do you feel right now — really?\" Quick, honest answers in any language before today's sentence.",
       prompt: "How do you feel today?",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Closing out Month 11 with words from 2, 4, 6, 8, 9, and 10 — read each one together before anyone taps for the picture, since tapping is a rescue, not the activity. This is the last vocab review before December, so if a word still needs the picture every single time, it's worth flagging to whoever teaches Month 12's Winter Holidays unit.",
+      words: [
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "earth", emoji: "🌎", fromMonth: 4 },
+        { word: "lion", emoji: "🦁", fromMonth: 6 },
+        { word: "suitcase", emoji: "🧳", fromMonth: 8 },
+        { word: "shoulders", emoji: "🙆", fromMonth: 9 },
+        { word: "ghost", emoji: "👻", fromMonth: 10, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for every face to change before revealing which feeling it matched. This checks listening one more time before every child names their own true feeling later in the lesson.",
+      commands: [
+        { text: "Make a tired face.", steps: 1, emoji: "😴" },
+        { text: "Make a scared face, then a happy face.", steps: 2, emoji: "😊" },
+        { text: "Stomp like you're angry, sniffle like you're sad, then freeze.", steps: 3, emoji: "😢" },
+        {
+          text: "Gasp like you're surprised, hug yourself like you're tired, then show the class your real feeling right now.",
+          steps: 3,
+          emoji: "💛",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response, one last time before every child names their own true feeling later in the lesson — the point is warming up the feeling faces, not testing them. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the harder ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -608,6 +732,35 @@ export const m11_week4: Lesson = {
         { text: "Surprised", emoji: "😲" },
         { text: "Nervous", emoji: "😬" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "My Real Feeling!",
+      frame: "I feel ___.",
+      frameSimple: "I feel ___.",
+      cards: [
+        { prompt: "happy", emoji: "😊", sampleAnswer: "I feel happy." },
+        { prompt: "sad", emoji: "😢", sampleAnswer: "I feel sad." },
+        { prompt: "tired", emoji: "😴", sampleAnswer: "I feel tired." },
+        { prompt: "surprised", emoji: "😲", sampleAnswer: "I feel surprised.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A asks \"How do you feel?\" and Partner B answers with their OWN true feeling using the frame — the card is just a backup if a partner gets stuck, not the required answer — then they swap who's asking. Every pair talks at once, so circulate and listen for genuine answers rather than running this as a whole-class drill; this is today's most personal sentence of the year, so accept any honest feeling word a child offers, even one not on the card.",
+    },
+    {
+      type: "role_play",
+      title: "How Do You Really Feel?",
+      setting: "One friend asks how the other truly feels today, and listens to their real answer — no guessing allowed.",
+      roles: ["Asker", "Answerer"],
+      exchanges: [
+        { role: 0, line: "How do you feel today — really?", emoji: "❓" },
+        { role: 1, line: "I feel happy today!", emoji: "😊" },
+        { role: 0, line: "That's great! Thanks for telling me.", emoji: "🤗" },
+        { role: 1, line: "You're welcome! How do you feel?", emoji: "💛" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles once each, then invite one or two volunteer pairs to perform for the class before the chant. Encourage both partners to swap in their OWN real feeling rather than reading the line exactly as written — this is the same honest, personal exchange as today's closing check, just rehearsed in pairs first.",
     },
     {
       type: "chant",

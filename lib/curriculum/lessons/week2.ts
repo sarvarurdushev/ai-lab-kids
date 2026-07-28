@@ -217,6 +217,38 @@ export const w2d2_how_does_vora_see: Lesson = {
       prompt: "Animal or vehicle?",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Words carried over from Week 1's greetings and classroom objects lessons, so nothing fades before today's animal-and-vehicle sorting takes over. Read each word together BEFORE tapping — the tap is a rescue, not the activity. About thirty seconds a word; if the class needs the picture on more than one, revisit Week 1's chants before moving on.",
+      words: [
+        { word: "goodbye", emoji: "🙋", fromMonth: 1 },
+        { word: "book", emoji: "📖", fromMonth: 1 },
+        { word: "chair", emoji: "🪑", fromMonth: 1 },
+        { word: "bag", emoji: "🎒", fromMonth: 1 },
+        { word: "desk", emoji: "🗄️", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing whether it was an animal or a vehicle action. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Meow like a cat.", steps: 1, emoji: "🐱" },
+        { text: "Steer a pretend wheel like a car, then vroom.", steps: 2, emoji: "🚗" },
+        { text: "Flap your arms like a bird, then land and freeze.", steps: 2, emoji: "🐦" },
+        {
+          text: "Roar like a lion, hop like a rabbit, then chug your arms like a train.",
+          steps: 3,
+          emoji: "🦁",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class can tell an animal action from a vehicle action BEFORE anyone has to sort a single picture, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step chain instead of running all four in order.",
+    },
+    {
       type: "concept",
       title: "How Does Vora See?",
       bigIdeas: ["perception", "learning"],
@@ -343,6 +375,35 @@ export const w2d2_how_does_vora_see: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Animal or Vehicle?",
+      frame: "It's a ___.",
+      frameSimple: "It's a ___!",
+      cards: [
+        { prompt: "cat", emoji: "🐱", sampleAnswer: "It's a cat." },
+        { prompt: "car", emoji: "🚗", sampleAnswer: "It's a car." },
+        { prompt: "bird", emoji: "🐦", sampleAnswer: "It's a bird." },
+        { prompt: "bus", emoji: "🚌", sampleAnswer: "It's a bus.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and names it with the frame, Partner B repeats it back — then they swap who's holding the card. Every pair talks at once, so circulate rather than running this as a whole-class drill; save the animal-or-vehicle labeling for the role-play right after this, once naming itself feels automatic.",
+    },
+    {
+      type: "role_play",
+      title: "What Do You See?",
+      setting: "Two friends flip through a photo album together, taking turns naming what they see and deciding if it's an animal or a vehicle.",
+      roles: ["Vora", "Friend"],
+      exchanges: [
+        { role: 0, line: "Look at this one — it's a cat. I think... it's an animal!", lineSimple: "It's a cat! An animal!", emoji: "🐱" },
+        { role: 1, line: "You're right! Cats are animals.", emoji: "✅" },
+        { role: 0, line: "Now this one — it's a bus. Hmm, is it an animal?", lineSimple: "It's a bus. An animal?", emoji: "🚌" },
+        { role: 1, line: "No, that's a vehicle — it doesn't eat or breathe!", emoji: "🚗" },
+      ],
+      teacherNote:
+        "Rehearse both lines together as a class first, then let pairs decide who plays Vora and who plays Friend before performing — invite one or two volunteer pairs to perform for everyone afterward. The 'I think it's a(n) ___... you're right/no, that's a ___!' shape mirrors exactly what the class just did with Vora in the train-the-robot activity, just spoken instead of tapped.",
+    },
+    {
       type: "chant",
       title: "Animal or Vehicle Chant",
       instructions:
@@ -378,6 +439,37 @@ export const w2d3_light_or_right: Lesson = {
       type: "warmup",
       teacherScript: "Say \"light\" and \"right\" slowly, back to back, a few times. Don't explain yet — just let the class notice the sounds are close but different.",
       prompt: "light... right... light... right...",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Words carried over from Week 1's greetings and classroom objects lessons, so nothing fades before today's listening work on l and r begins. Read each word together BEFORE tapping — the tap is a rescue, not the activity. About thirty seconds a word; if the class needs the picture on more than one, revisit Week 1's chants before moving on.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 1 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 1 },
+        { word: "pencil", emoji: "✏️", fromMonth: 1 },
+        { word: "chair", emoji: "🪑", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before saying the word again. This checks listening, not saying the sounds back, so don't ask anyone to repeat the command themselves yet.",
+      commands: [
+        { text: "Flick a pretend light switch.", steps: 1, emoji: "💡" },
+        { text: "Point to your right side, then freeze like a rock.", steps: 2, emoji: "👉" },
+        { text: "Open a pretend book and read, then crouch down low.", steps: 2, emoji: "📖" },
+        {
+          text: "Pretend to row a boat, point to your right side, then freeze like a rock.",
+          steps: 3,
+          emoji: "🚣",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the whole point is proving the class can tell l-words from r-words apart by listening alone, before today's minimal-pairs work ever asks them to produce the sounds themselves — so resist translating into Korean even if a child hesitates, and instead say the command again a little slower and bigger. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step chain instead of running all four in order.",
     },
     {
       type: "concept",
@@ -480,6 +572,35 @@ export const w2d3_light_or_right: Lesson = {
         { text: "Freeze like a rock, then say 'rock'!", emoji: "🪨" },
         { text: "Pretend to row a boat, then say 'row'!", emoji: "🚣", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Which Word Did You Hear?",
+      frame: "I hear ___.",
+      frameSimple: "I hear ___!",
+      cards: [
+        { prompt: "light", emoji: "💡", sampleAnswer: "I hear light." },
+        { prompt: "right", emoji: "👉", sampleAnswer: "I hear right." },
+        { prompt: "rock", emoji: "🪨", sampleAnswer: "I hear rock." },
+        { prompt: "row", emoji: "🚣", sampleAnswer: "I hear row.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and says the frame slowly, exaggerating the l or r sound the way the story modeled — Partner B echoes the same word back to show they heard it — then they swap who's holding the card. Every pair talks at once, so circulate and listen for whether the sound comes through clearly rather than running this as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Listen Closely!",
+      setting: "Two friends play a listening game, taking turns saying an l or r word super clearly and guessing which word their partner said.",
+      roles: ["Speaker", "Listener"],
+      exchanges: [
+        { role: 0, line: "Listen closely... light!", emoji: "💡" },
+        { role: 1, line: "I heard it — light, not right!", lineSimple: "I heard light!", emoji: "✅" },
+        { role: 0, line: "Now try this one... row!", emoji: "🚣" },
+        { role: 1, line: "That's tricky, but I heard row, not low!", lineSimple: "I heard row!", emoji: "👂" },
+      ],
+      teacherNote:
+        "Rehearse both roles together as a class first, exaggerating the l or r sound the same way you did in the story — then let pairs decide who's the Speaker and who's the Listener before performing, and swap roles partway through so everyone practices both listening and saying the sound. Invite one or two pairs to perform for the class.",
     },
     {
       type: "chant",

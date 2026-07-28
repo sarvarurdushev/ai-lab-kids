@@ -16,6 +16,20 @@ export const w7d1_what_can_robots_do: Lesson = {
       prompt: "What can a robot do?",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each of the six Foundations weeks so far, since today starts a brand new unit (Robot Helpers) and nothing taught this year should go quiet just because the topic changed. Read each word together BEFORE tapping — the tap rescues a stuck class, it isn't the activity. If more than two need the picture, that week deserves a full review before piling on today's new action verbs.",
+      words: [
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 1 },
+        { word: "dog", emoji: "🐶", fromMonth: 2 },
+        { word: "green", emoji: "🟢", fromMonth: 3 },
+        { word: "mom", emoji: "👩", fromMonth: 4 },
+        { word: "milk", emoji: "🥛", fromMonth: 5 },
+        { word: "brush teeth", emoji: "🪥", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Action Verbs",
       words: [
@@ -26,6 +40,25 @@ export const w7d1_what_can_robots_do: Lesson = {
         { word: "swim", emoji: "🏊" },
         { word: "talk", emoji: "💬" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Clean like a robot!", steps: 1, emoji: "🧹" },
+        { text: "Cook like a robot, then talk like a robot.", steps: 2, emoji: "🍳" },
+        { text: "Stand up, drive like a robot, then swim like a robot.", steps: 3, emoji: "🚗" },
+        {
+          text: "Fly like a robot, clean like a robot, then cook like a robot.",
+          steps: 3,
+          emoji: "✈️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response using today's own six action verbs (clean, cook, drive, fly, swim, talk), so kids prove they understand \"can\" in action before building any sentence with it — mime each verb big and don't translate into Korean even if a child hesitates. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step chains instead of running all four in order.",
     },
     {
       type: "movement",
@@ -110,6 +143,40 @@ export const w7d1_what_can_robots_do: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Robots Can...!",
+      frame: "Robots can ___.",
+      frameSimple: "Robots can ___.",
+      cards: [
+        { prompt: "clean", emoji: "🧹", sampleAnswer: "Robots can clean." },
+        { prompt: "cook", emoji: "🍳", sampleAnswer: "Robots can cook." },
+        { prompt: "swim", emoji: "🏊", sampleAnswer: "Robots can swim." },
+        { prompt: "fly", emoji: "✈️", sampleAnswer: "Robots can fly.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A shows the card, Partner B completes \"Robots can ___\" with that verb, then they swap who's holding the card. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; the point is every child producing today's \"can\" sentence several times, not that you hear each one.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw a Robot Helper",
+      instructions: "Draw a robot doing one of today's actions, then label it using a word from the word bank.",
+      instructionsSimple: "Draw a robot! Write the word.",
+      wordBank: [
+        { word: "clean", emoji: "🧹" },
+        { word: "cook", emoji: "🍳" },
+        { word: "drive", emoji: "🚗" },
+        { word: "swim", emoji: "🏊" },
+        { word: "talk", emoji: "💬" },
+        { word: "fly", emoji: "✈️", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A round, wheeled robot sweeping the floor with straight broom-like lines, with the word 'clean' copied underneath in large letters straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawn action (a flying robot labeled 'swim'), point back at the word bank and the drawing rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Robot Can Chant!",
       instructions:
@@ -149,6 +216,38 @@ export const w7d2_robots_at_home_and_school: Lesson = {
       type: "warmup",
       teacherScript: "Ask: \"Is a calculator an AI helper?\" Let the class debate briefly — there's no shame in disagreeing today.",
       prompt: "AI helper, or not AI?",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words pulled from five of the six weeks so far — today's own sort (AI helper vs. not AI) is the hardest classification in the unit, so keep this review brisk and confidence-building rather than stretching it past thirty seconds a word. Read each word together BEFORE tapping — the tap is a rescue, not the activity.",
+      words: [
+        { word: "book", emoji: "📖", fromMonth: 1 },
+        { word: "fish", emoji: "🐟", fromMonth: 2 },
+        { word: "square", emoji: "🟦", fromMonth: 3 },
+        { word: "egg", emoji: "🥚", fromMonth: 5 },
+        { word: "wake up", emoji: "🌞", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Talk like a robot!", steps: 1, emoji: "💬" },
+        { text: "Clean like a robot, then cook like a robot.", steps: 2, emoji: "🧹" },
+        { text: "Stand up, drive like a robot, then swim like a robot.", steps: 3, emoji: "🚗" },
+        {
+          text: "Fly like a robot, talk like a robot, then clean like a robot.",
+          steps: 3,
+          emoji: "✈️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Same six action verbs as Monday, run again as a quick listening warm-up before today's much harder AI-or-not sort — this isn't new vocabulary, so move briskly and don't over-explain any single verb. If the class hesitates on the 3-step chains, that's a signal the verbs need another pass, not that today's AI concept is the problem.",
     },
     {
       type: "concept",
@@ -269,6 +368,35 @@ export const w7d2_robots_at_home_and_school: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "AI or Not?",
+      frame: "It's ___!",
+      frameSimple: "AI, or not?",
+      cards: [
+        { prompt: "voice assistant", emoji: "🔊", sampleAnswer: "It's AI!" },
+        { prompt: "robot vacuum", emoji: "🤖", sampleAnswer: "It's AI!" },
+        { prompt: "calculator", emoji: "🧮", sampleAnswer: "It's not AI!" },
+        { prompt: "flashlight", emoji: "🔦", sampleAnswer: "It's not AI!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'Is it AI or not?' — Partner B answers with the full frame, \"It's AI!\" or \"It's not AI!,\" then they swap who's asking. These are the exact same four items from today's sort and chant, not new vocabulary, so the point is producing the classification out loud instead of just tapping a bucket. Circulate for calculator — expect the most hesitation there, exactly as flagged in today's concept note.",
+    },
+    {
+      type: "role_play",
+      title: "Ask the Helper",
+      setting: "A kid at home, asking two different helpers whether they're AI before deciding who to ask for help.",
+      roles: ["Kid", "Helper"],
+      exchanges: [
+        { role: 0, line: "Voice assistant, are you AI?", lineSimple: "Are you AI?", emoji: "🔊" },
+        { role: 1, line: "Yes, I'm AI — I learn how you talk!", lineSimple: "Yes, I'm AI!", emoji: "🤖" },
+        { role: 0, line: "Calculator, are you AI too?", lineSimple: "Are you AI?", emoji: "🧮" },
+        { role: 1, line: "No, I'm not AI — I just do the same math every time.", lineSimple: "No, not AI!", emoji: "🔧" },
+      ],
+      teacherNote:
+        "Rehearse in pairs after Partner Talk, then invite one pair to perform for the class. Swap who plays 'Kid' and who plays 'Helper' halfway through if there's time. If a pair blurs 'AI' and 'not AI,' point back at today's train_the_robot buckets rather than translating.",
+    },
+    {
       type: "chant",
       title: "AI or Not Chant!",
       instructions:
@@ -308,6 +436,38 @@ export const w7d3_vora_makes_a_mistake: Lesson = {
       type: "warmup",
       teacherScript: "Ask: \"Can Vora see a picture? Can Vora feel hungry?\" Let kids guess before the activity.",
       prompt: "Can Vora do it?",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words from five earlier weeks, reaching back to Week 2 instead of Week 1 this time so the mix keeps shifting. Read each word together before tapping — the picture is a rescue, not the activity. This is also the last vocab_review before next week's new unit, so flag any week that needed the picture on more than two words for a fuller review.",
+      words: [
+        { word: "rabbit", emoji: "🐰", fromMonth: 2 },
+        { word: "star", emoji: "⭐", fromMonth: 3 },
+        { word: "grandpa", emoji: "👴", fromMonth: 4 },
+        { word: "bread", emoji: "🍞", fromMonth: 5 },
+        { word: "get dressed", emoji: "👕", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Clean like a robot!", steps: 1, emoji: "🧹" },
+        { text: "Cook like a robot, then swim like a robot.", steps: 2, emoji: "🍳" },
+        { text: "Stand up, fly like a robot, then talk like a robot.", steps: 3, emoji: "✈️" },
+        {
+          text: "Drive like a robot, clean like a robot, then swim like a robot.",
+          steps: 3,
+          emoji: "🚗",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Final listening pass on this week's six action verbs before kids build their own \"Vora can / can't\" sentences below — say each command once at normal speed and wait for the whole class to move before repeating it. If the whole class nails the 1-step command instantly, skip straight to the graded 3-step chains.",
     },
     {
       type: "concept",
@@ -411,6 +571,35 @@ export const w7d3_vora_makes_a_mistake: Lesson = {
         { text: "Brand new words it's never heard", emoji: "❓" },
         { text: "Something else", emoji: "💭" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Vora Can, Vora Can't!",
+      frame: "Vora ___.",
+      frameSimple: "Vora ___.",
+      cards: [
+        { prompt: "can fly", emoji: "✈️", sampleAnswer: "Vora can fly." },
+        { prompt: "can talk", emoji: "💬", sampleAnswer: "Vora can talk." },
+        { prompt: "can't feel hungry", emoji: "🍽️", sampleAnswer: "Vora can't feel hungry." },
+        { prompt: "can't really see", emoji: "👀", sampleAnswer: "Vora can't really see.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A picks up a card and says \"Vora...\" — Partner B completes it with the full 'can' or 'can't' phrase, then they swap who's holding the card. Every pair talks at once, so circulate and listen for whether 'can't' comes out clearly rather than getting swallowed into 'can' — that mix-up is the whole reason this grammar gets its own lesson.",
+    },
+    {
+      type: "role_play",
+      title: "Vora Makes a Mistake",
+      setting: "Vora looks at a blurry animal picture, gets it wrong, and a student helps fix the mistake.",
+      roles: ["Vora", "Student"],
+      exchanges: [
+        { role: 0, line: "That blurry picture... it's a bunny rabbit!", lineSimple: "It's a bunny!", emoji: "🐰" },
+        { role: 1, line: "Look again, Vora — I think that's a cat!", lineSimple: "That's a cat!", emoji: "🐱" },
+        { role: 0, line: "You're right, I was wrong. Thank you for checking!", lineSimple: "I was wrong. Thank you!", emoji: "🔍" },
+        { role: 1, line: "That's okay, Vora — everyone can be wrong sometimes.", lineSimple: "Everyone can be wrong!", emoji: "🤝" },
+      ],
+      teacherNote:
+        "Rehearse in pairs after Partner Talk, then invite one pair to perform for the class — this lets kids physically play both halves of today's story: making a mistake, and catching one. If a pair rushes past Vora's 'thank you,' pause and ask what they'd say if a friend admitted a mistake like this.",
     },
     {
       type: "chant",

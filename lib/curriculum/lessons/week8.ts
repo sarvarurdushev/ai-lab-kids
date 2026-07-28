@@ -17,6 +17,39 @@ export const w8d1_talking_to_ai_safely: Lesson = {
       promptSimple: "AI is not a real person.",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from six of this unit's seven weeks — bookended by Week 1's very first greeting and Week 7's action verbs — so nothing from across the whole foundations unit goes quiet before today's safety rules take over. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of six, that's real information for what to loop back to during tomorrow's Review Carnival, not a reason to slow down today. About thirty seconds a word.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 1 },
+        { word: "lion", emoji: "🦁", fromMonth: 2 },
+        { word: "star", emoji: "⭐", fromMonth: 3, minTrack: "explorers" },
+        { word: "baby", emoji: "👶", fromMonth: 4 },
+        { word: "bibimbap", emoji: "🍲", fromMonth: 5 },
+        { word: "swim", emoji: "🏊", fromMonth: 7 },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This is a cumulative review of the WHOLE unit, not just today's safety rules, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Wave hello.", steps: 1, emoji: "👋" },
+        { text: "Point to something red, then pretend to swim.", steps: 2, emoji: "🔴" },
+        { text: "Meow like a cat, hop like a rabbit, then wave goodbye.", steps: 3, emoji: "🐱" },
+        {
+          text: "Point to something blue, pretend to cook, then curl up like you're going to sleep.",
+          steps: 3,
+          emoji: "🔵",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response, but this time the commands pull vocabulary and actions from across the ENTIRE unit rather than just today's lesson — the point is proving the class still holds onto Week 1's greetings and Week 3's colors, not just the newest words. Resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
+    },
+    {
       type: "concept",
       title: "Talking to AI Safely",
       bigIdeas: ["natural_interaction", "societal_impact"],
@@ -111,6 +144,46 @@ export const w8d1_talking_to_ai_safely: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "I Should...",
+      frame: "I should ___.",
+      frameSimple: "I should ___.",
+      cards: [
+        { prompt: "An AI asks for your address", emoji: "📍", sampleAnswer: "I should tell a grown-up." },
+        { prompt: "An AI says something scary", emoji: "😨", sampleAnswer: "I should tell a grown-up." },
+        { prompt: "An AI might be wrong", emoji: "🤔", sampleAnswer: "I should double-check." },
+        {
+          prompt: "An AI asks for a photo",
+          emoji: "📸",
+          sampleAnswer: "I should ask a grown-up first.",
+          minTrack: "explorers",
+        },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the situation on the card aloud, Partner B completes 'I should ___' with the rule that fits, then they swap who's reading. Every pair talks at once, so circulate and listen for whether 'tell a grown-up' and 'double-check' land as two DIFFERENT rules for two different situations, not one interchangeable answer — that distinction is the whole point of today's four safety rules.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw Who You'd Tell",
+      instructions:
+        "Draw a grown-up or friend you would tell if an AI ever asked for personal information or said something confusing, then label your drawing using a word from the word bank.",
+      instructionsSimple: "Draw who you'd tell! Write the word.",
+      wordBank: [
+        { word: "mom", emoji: "👩" },
+        { word: "dad", emoji: "👨" },
+        { word: "grandma", emoji: "👵" },
+        { word: "grandpa", emoji: "👴" },
+        { word: "friend", emoji: "🧑‍🤝‍🧑" },
+        { word: "sister", emoji: "👧", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A grown-up (like mom or grandma) drawn big in the middle of the page with a speech bubble, labeled 'mom' or 'grandma' underneath in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying of a family word this class has known since Week 4, not a spelling test. Circulate and, if a child isn't sure who to draw, prompt with 'Who do you tell first at home?' rather than assigning one.",
+    },
+    {
       type: "chant",
       title: "AI Safety Chant!",
       instructions:
@@ -151,6 +224,39 @@ export const w8d2_review_carnival: Lesson = {
       type: "warmup",
       teacherScript: "Tell the class today is a carnival — one quick round of every game they've learned this unit, mixing old favorites.",
       prompt: "Welcome to the Review Carnival! 🎉",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A different slice of the same seven weeks from yesterday's safety lesson — the point of a review carnival is retrieving everything taught this unit, not just its newest words. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of six, treat that as a live signal for which carnival round below to slow down on, not a reason to rush ahead. About thirty seconds a word.",
+      words: [
+        { word: "goodbye", emoji: "🙋", fromMonth: 1 },
+        { word: "fish", emoji: "🐟", fromMonth: 2 },
+        { word: "blue", emoji: "🔵", fromMonth: 3 },
+        { word: "mom", emoji: "👩", fromMonth: 4 },
+        { word: "wake up", emoji: "🌞", fromMonth: 6 },
+        { word: "clean", emoji: "🧹", fromMonth: 7, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This is a cumulative review of the WHOLE unit, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Wave goodbye.", steps: 1, emoji: "🙋" },
+        { text: "Point to something blue, then flap your arms like a bird.", steps: 2, emoji: "🔵" },
+        { text: "Meow like a cat, hop like a rabbit, then wave hello.", steps: 3, emoji: "🐱" },
+        {
+          text: "Stretch and yawn like waking up, brush your teeth, then pretend to swim.",
+          steps: 3,
+          emoji: "🌞",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response, cumulative across the whole unit — since this is Carnival Day, a shaky response here is useful data for which round to slow down on later, not a problem to fix right now. Resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: skip straight to the 3-step chains if the class nails the 1-step command instantly.",
     },
     {
       type: "movement",
@@ -290,6 +396,60 @@ export const w8d2_review_carnival: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "My Favorite Round",
+      frame: "My favorite round was ___.",
+      frameSimple: "I liked ___ best!",
+      cards: [
+        { prompt: "Animal or Vehicle", emoji: "🐾", sampleAnswer: "My favorite round was Animal or Vehicle." },
+        { prompt: "My Morning", emoji: "🔁", sampleAnswer: "My favorite round was My Morning." },
+        {
+          prompt: "Mixed Listening",
+          emoji: "👂",
+          sampleAnswer: "My favorite round was Mixed Listening.",
+          minTrack: "explorers",
+        },
+        { prompt: "I Have Two Dogs", emoji: "🐶", sampleAnswer: "My favorite round was I Have Two Dogs." },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A asks 'What was your favorite round?' — Partner B answers with the full frame and the round's name, then they swap. Every pair talks at once, so circulate rather than running this as a whole-class drill; since there's no single right answer, this is also a good moment to listen for kids explaining WHY in a mix of English and Korean, not just naming the round.",
+    },
+    {
+      type: "role_play",
+      title: "Reminding Vora",
+      setting: "At the carnival games, a kid reminds Vora of something it seems to have forgotten, right before they play that round together.",
+      roles: ["Carnival Guide", "Vora"],
+      exchanges: [
+        {
+          role: 0,
+          line: "Welcome to the carnival, Vora! Let's play Animal or Vehicle together.",
+          lineSimple: "Welcome, Vora! Let's play a game!",
+          emoji: "🎉",
+        },
+        {
+          role: 1,
+          line: "I remember — dogs and birds are animals!",
+          lineSimple: "Dogs and birds are animals!",
+          emoji: "🐶",
+        },
+        {
+          role: 1,
+          line: "But is a bus an animal or a vehicle? I forget!",
+          lineSimple: "Is a bus an animal? Hmm.",
+          emoji: "🚌",
+        },
+        {
+          role: 0,
+          line: "A bus is a vehicle — it has wheels, not fur!",
+          lineSimple: "A bus is a vehicle!",
+          emoji: "🚗",
+        },
+      ],
+      teacherNote:
+        "Pairs rehearse both roles, then a volunteer pair performs for the class. This puts today's carnival rounds into the exact same shape as tomorrow's capstone — a kid reminding Vora of something it 'forgot' — so it doubles as rehearsal for Teach Vora Day. Let pairs swap in whichever carnival round they had the most fun with instead of Animal or Vehicle, as long as they keep the same four-line shape.",
+    },
+    {
       type: "chant",
       title: "Carnival Review Chant!",
       instructions:
@@ -329,6 +489,39 @@ export const w8d3_teach_vora_day: Lesson = {
       type: "warmup",
       teacherScript: "Tell the class: today, they get to be the teacher. They'll invent a category and teach it to Vora, just like Vora has been learning from them all unit.",
       prompt: "Today, YOU teach Vora!",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Last vocabulary retrieval of the whole Foundations unit — one more word from six of the seven weeks, from Week 1's very first nouns to Week 7's action verbs, before the class spends the rest of today teaching Vora something brand new. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. However this goes, it's the last checkpoint on this cohort's vocabulary before the year-long curriculum begins.",
+      words: [
+        { word: "book", emoji: "📖", fromMonth: 1 },
+        { word: "cat", emoji: "🐱", fromMonth: 2 },
+        { word: "circle", emoji: "⭕", fromMonth: 3 },
+        { word: "dad", emoji: "👨", fromMonth: 4 },
+        { word: "rice", emoji: "🍚", fromMonth: 5 },
+        { word: "cook", emoji: "🍳", fromMonth: 7, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This is the last cumulative listening check of the unit, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to a book.", steps: 1, emoji: "📖" },
+        { text: "Meow like a cat, then draw a circle in the air.", steps: 2, emoji: "🐱" },
+        { text: "Give a thumbs up like dad, stir a pretend pot, then meow like a cat.", steps: 3, emoji: "👨" },
+        {
+          text: "Draw a circle in the air, pretend to cook some rice, then open a book.",
+          steps: 3,
+          emoji: "⭕",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response, cumulative one final time — before groups head off to invent their own category, use this to confirm the words and actions from across the whole unit are still solid. Resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: skip straight to the 3-step chains if the class nails the 1-step command instantly.",
     },
     {
       type: "concept",
@@ -445,6 +638,55 @@ export const w8d3_teach_vora_day: Lesson = {
         { text: "Yummy vs. not yummy", emoji: "🍬" },
         { text: "Something your group invents", emoji: "💡" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Is It a Toy?",
+      frame: "A ___ is a toy.",
+      frameSimple: "A ___ is a toy!",
+      cards: [
+        { prompt: "ball", emoji: "⚽", sampleAnswer: "A ball is a toy." },
+        { prompt: "kite", emoji: "🪁", sampleAnswer: "A kite is a toy." },
+        { prompt: "book", emoji: "📖", sampleAnswer: "A book is not a toy." },
+        { prompt: "pencil", emoji: "✏️", sampleAnswer: "A pencil is not a toy.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'Is a ___ a toy?' — Partner B answers 'Yes, a ___ is a toy' or 'No, a ___ is not a toy,' then they swap. This is the exact sentence pattern each small group needs in a few minutes to describe their OWN invented category, so listen for confident 'is' / 'is not' rather than just yes or no — that's the frame groups will reuse live.",
+    },
+    {
+      type: "role_play",
+      title: "Teaching Vora",
+      setting: "A small group teaches Vora their invented category, the same way Somi taught 'musical instrument or not' in today's story.",
+      roles: ["Teacher", "Vora"],
+      exchanges: [
+        {
+          role: 0,
+          line: "Vora, we invented a new category: yummy or not yummy!",
+          lineSimple: "Vora, here's a new category!",
+          emoji: "🍬",
+        },
+        {
+          role: 1,
+          line: "Ooh, teach me! Show me some examples.",
+          lineSimple: "Teach me! Show examples.",
+          emoji: "🤖",
+        },
+        {
+          role: 0,
+          line: "Candy is yummy. A rock is not yummy.",
+          lineSimple: "Candy: yummy. Rock: not yummy.",
+          emoji: "🍭",
+        },
+        {
+          role: 1,
+          line: "I think I've got it now — thank you for teaching me!",
+          lineSimple: "I've got it! Thank you!",
+          emoji: "✅",
+        },
+      ],
+      teacherNote:
+        "This is the live rehearsal for each group's own invented category — have pairs perform this exact shape (announce the category, give two or three clear examples, Vora 'gets it') before groups swap in their real invented category and real objects. Watch for groups that skip straight to guessing without giving Vora any examples first — that's the one part of the pattern worth stopping to fix before they present.",
     },
     {
       type: "chant",

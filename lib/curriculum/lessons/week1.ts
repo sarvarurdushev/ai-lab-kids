@@ -131,6 +131,37 @@ export const w1d1_hello_vora: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Hello, My Name Is...",
+      frame: "Hello, my name is ___.",
+      frameSimple: "Hello! My name is ___.",
+      cards: [
+        { prompt: "Vora", emoji: "🤖", sampleAnswer: "Hello, my name is Vora." },
+        { prompt: "Minsu", emoji: "👦", sampleAnswer: "Hello, my name is Minsu." },
+        { prompt: "you!", emoji: "🙋", sampleAnswer: "Hello, my name is Amy." },
+        { prompt: "your partner", emoji: "🧑‍🤝‍🧑", sampleAnswer: "Hello, my name is Jinho.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card, Partner B says the frame using the name shown — practicing with Vora's and Minsu's names first takes the pressure off, then the last two cards have kids say it with their OWN real name (and, for explorers, guess and use their partner's name instead). Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; this is the very first sentence any child produces this whole course, so celebrate any attempt even if the name comes out mumbled.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw and Wave Hello",
+      instructions: "Draw yourself waving hello to a new friend, then label your picture using a word from the word bank.",
+      instructionsSimple: "Draw hello! Write the word.",
+      wordBank: [
+        { word: "hello", emoji: "👋" },
+        { word: "goodbye", emoji: "🙋" },
+        { word: "friend", emoji: "🧑‍🤝‍🧑" },
+      ],
+      exampleNote:
+        "A big smiling face waving both hands, with the word 'hello' underneath in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out — the very first time this course uses them. Keep the word bank on screen the whole time; the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Hello and Goodbye Chant",
       instructions:
@@ -178,6 +209,25 @@ export const w1d2_voras_classroom: Lesson = {
         { word: "desk", emoji: "🗄️" },
         { word: "bag", emoji: "🎒" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the word. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to a book.", steps: 1, emoji: "📖" },
+        { text: "Touch a chair, then sit down.", steps: 2, emoji: "🪑" },
+        { text: "Pat your desk, then pretend to write with a pencil.", steps: 2, emoji: "✏️" },
+        {
+          text: "Point to a book, swing an imaginary bag onto your shoulder, then sit down in your chair.",
+          steps: 3,
+          emoji: "🎒",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood each classroom word BEFORE anyone has to say it, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step chain instead of running all four in order.",
     },
     {
       type: "concept",
@@ -276,6 +326,35 @@ export const w1d2_voras_classroom: Lesson = {
           minTrack: "explorers",
         },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "What Is This?",
+      frame: "It's a ___.",
+      frameSimple: "It's a ___.",
+      cards: [
+        { prompt: "book", emoji: "📖", sampleAnswer: "It's a book." },
+        { prompt: "pencil", emoji: "✏️", sampleAnswer: "It's a pencil." },
+        { prompt: "chair", emoji: "🪑", sampleAnswer: "It's a chair." },
+        { prompt: "bag", emoji: "🎒", sampleAnswer: "It's a bag.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'What is this?', Partner B answers with the full frame, then they swap who's asking. Every pair talks at once, so circulate and listen in rather than running this as a whole-class drill — this is the first time this course the class produces a full 'It's a ___' sentence with a partner, so listen for the article ('a') as much as the sentence itself.",
+    },
+    {
+      type: "role_play",
+      title: "Tidy the Desk Together!",
+      setting: "Two classmates find a messy pile of school things on the floor and take turns naming each item before putting it away.",
+      roles: ["Student One", "Student Two"],
+      exchanges: [
+        { role: 0, line: "What is this?", emoji: "🔍" },
+        { role: 1, line: "It's a pencil! I'll put it in my bag.", emoji: "✏️" },
+        { role: 0, line: "What is this?", emoji: "🔍" },
+        { role: 1, line: "It's a book! I'll put it on the desk.", lineSimple: "It's a book!", emoji: "📖" },
+      ],
+      teacherNote:
+        "Rehearse both lines together as a class first, then let pairs decide who's Student One and who's Student Two before performing — invite one volunteer pair to perform for everyone afterward. The 'What is this? / It's a ___!' shape is exactly today's partner talk, just spoken as a little back-and-forth story instead.",
     },
     {
       type: "chant",
@@ -403,6 +482,25 @@ export const w1d3_what_is_ai: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the word. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Hold a pretend phone to your ear.", steps: 1, emoji: "📱" },
+        { text: "Walk stiffly like a robot, then freeze.", steps: 2, emoji: "🤖" },
+        { text: "Open your hands like a book, then pretend to write with a pencil.", steps: 2, emoji: "✏️" },
+        {
+          text: "Cup your hand to your ear and say hello, walk stiffly like a robot, then pretend to bounce a ball.",
+          steps: 3,
+          emoji: "🔊",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understands each smart-helper or regular-thing word BEFORE today's sorting game asks them to reason about it, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step chain instead of running all four in order.",
+    },
+    {
       type: "activity",
       instructions: "As a class, decide together where each picture goes before anyone taps — this is a shared sort, not an individual quiz.",
       config: {
@@ -436,6 +534,34 @@ export const w1d3_what_is_ai: Lesson = {
         { text: "A smart helper that reads stories out loud", emoji: "📖" },
         { text: "None — I like doing things myself!", emoji: "🙋" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Smart Helpers!",
+      frame: "A ___ is a smart helper!",
+      frameSimple: "A ___ is smart!",
+      cards: [
+        { prompt: "robot", emoji: "🤖", sampleAnswer: "A robot is a smart helper!" },
+        { prompt: "phone", emoji: "📱", sampleAnswer: "A phone is a smart helper!" },
+        { prompt: "voice assistant", emoji: "🔊", sampleAnswer: "A voice assistant is a smart helper!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card, Partner B answers with the full frame, then they swap who's holding the card. Every pair talks at once, so circulate and listen in rather than running this as a whole-class drill — this is the same 'smart helper' bucket from today's sorting game, just spoken instead of tapped.",
+    },
+    {
+      type: "role_play",
+      title: "Is It a Smart Helper?",
+      setting: "Two friends look at a gadget together and decide whether it's a smart helper or a regular thing.",
+      roles: ["Friend One", "Friend Two"],
+      exchanges: [
+        { role: 0, line: "Look! Is this a smart helper?", emoji: "🔍" },
+        { role: 1, line: "Let's ask it a question and see!", emoji: "❓" },
+        { role: 0, line: "It answered me! It's a smart helper!", emoji: "🤖" },
+        { role: 1, line: "A smart helper can learn and answer — just like Vora!", lineSimple: "A smart helper can learn!", emoji: "🧠" },
+      ],
+      teacherNote:
+        "Rehearse both lines together as a class first, then let pairs decide who's Friend One and who's Friend Two before performing — invite one volunteer pair to perform for everyone afterward. This mirrors today's story, where Jimin and Vora test whether the toy robot can answer and learn before calling it a smart helper.",
     },
     {
       type: "chant",

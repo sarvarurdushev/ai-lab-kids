@@ -16,6 +16,19 @@ export const w6d1_my_morning: Lesson = {
       prompt: "Good morning! 🌞",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each week of the unit so far, so nothing taught since September goes untouched for a month. Read each word together BEFORE tapping — the tap confirms it, it isn't the activity. If 'grandpa' needs the picture, Week 4's family words are worth a quick refresh before today's brand-new morning routine takes over the lesson. Keep the whole review under two minutes.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 1 },
+        { word: "cat", emoji: "🐱", fromMonth: 2 },
+        { word: "red", emoji: "🔴", fromMonth: 3 },
+        { word: "grandpa", emoji: "👴", fromMonth: 4, minTrack: "explorers" },
+        { word: "apple", emoji: "🍎", fromMonth: 5 },
+      ],
+    },
+    {
       type: "vocab",
       title: "Morning Actions",
       words: [
@@ -24,6 +37,25 @@ export const w6d1_my_morning: Lesson = {
         { word: "eat breakfast", emoji: "🥣" },
         { word: "brush teeth", emoji: "🪥" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Wake up.", steps: 1, emoji: "🌞" },
+        { text: "Get dressed, then eat breakfast.", steps: 2, emoji: "👕" },
+        { text: "Wake up, get dressed, then eat breakfast.", steps: 3, emoji: "🥣" },
+        {
+          text: "Get dressed, eat breakfast, then brush your teeth.",
+          steps: 3,
+          emoji: "🪥",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response — give each command once at normal speed, no repeats, and let miming prove comprehension before anyone has to say the words aloud. Every command uses the SAME order a real morning actually goes in, never scrambled — today's job is just recognizing the four actions; Day 2 is where the order itself gets tested. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
     },
     {
       type: "story",
@@ -94,6 +126,38 @@ export const w6d1_my_morning: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "My Morning!",
+      frame: "I ___ in the morning.",
+      frameSimple: "I ___.",
+      cards: [
+        { prompt: "wake up", emoji: "🌞", sampleAnswer: "I wake up in the morning." },
+        { prompt: "get dressed", emoji: "👕", sampleAnswer: "I get dressed in the morning." },
+        { prompt: "eat breakfast", emoji: "🥣", sampleAnswer: "I eat breakfast in the morning." },
+        { prompt: "brush teeth", emoji: "🪥", sampleAnswer: "I brush my teeth in the morning.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to a card, Partner B answers with the full frame, then they swap who's pointing. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill — the point is that every child produces the sentence multiple times before today's check. 'Brush teeth' needs an extra 'my' slipped in ('I brush my teeth'), so listen for that specific card while circulating.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw My Morning",
+      instructions: "Draw four small pictures in a row showing your own morning, in order, then label each one using a word from the word bank.",
+      instructionsSimple: "Draw your morning! Write the words.",
+      wordBank: [
+        { word: "wake up", emoji: "🌞" },
+        { word: "get dressed", emoji: "👕" },
+        { word: "eat breakfast", emoji: "🥣" },
+        { word: "brush teeth", emoji: "🪥" },
+      ],
+      exampleNote:
+        "A four-panel comic strip, left to right: a bed with a sun labeled 'wake up,' a shirt labeled 'get dressed,' a bowl labeled 'eat breakfast,' and a toothbrush labeled 'brush teeth' — copied straight from the word bank, in the same order the class will turn into Vora's first algorithm tomorrow.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the picture, point back at the word bank rather than telling them the right word. Save these pages — tomorrow's lesson revisits this exact order as an algorithm.",
+    },
+    {
       type: "chant",
       title: "My Morning Chant",
       instructions:
@@ -135,6 +199,19 @@ export const w6d3_bedtime_routine: Lesson = {
       prompt: "Good night! 😴",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each week of the unit so far — a fitting quick warm-up before tonight's brand-new routine. Read each word together before tapping; the tap confirms it, it isn't the activity. Keep it under two minutes so most of the period stays on bedtime's four new steps.",
+      words: [
+        { word: "goodbye", emoji: "🙋", fromMonth: 1 },
+        { word: "bird", emoji: "🐦", fromMonth: 2 },
+        { word: "purple", emoji: "🟣", fromMonth: 3 },
+        { word: "sister", emoji: "👧", fromMonth: 4, minTrack: "explorers" },
+        { word: "milk", emoji: "🥛", fromMonth: 5 },
+      ],
+    },
+    {
       type: "vocab",
       title: "Bedtime Actions",
       words: [
@@ -143,6 +220,25 @@ export const w6d3_bedtime_routine: Lesson = {
         { word: "read a story", emoji: "📖" },
         { word: "go to sleep", emoji: "😴" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Put on your pajamas.", steps: 1, emoji: "🩱" },
+        { text: "Brush your teeth, then read a story.", steps: 2, emoji: "🪥" },
+        { text: "Put on your pajamas, brush your teeth, then read a story.", steps: 3, emoji: "📖" },
+        {
+          text: "Put on your pajamas, read a story, then go to sleep.",
+          steps: 3,
+          emoji: "😴",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response — give each command once at normal speed, no repeats, and let miming prove comprehension before today's sequence_builder game asks the class to reconstruct bedtime's order themselves. Keep the word list hidden until after each round. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
     },
     {
       type: "story",
@@ -232,6 +328,45 @@ export const w6d3_bedtime_routine: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "My Bedtime Steps!",
+      frame: "Tonight, ___!",
+      frameSimple: "Tonight, ___!",
+      cards: [
+        { prompt: "first, put on pajamas", emoji: "🩱", sampleAnswer: "Tonight, first, put on pajamas!" },
+        { prompt: "next, brush your teeth", emoji: "🪥", sampleAnswer: "Tonight, next, brush your teeth!" },
+        { prompt: "then, read a story", emoji: "📖", sampleAnswer: "Tonight, then, read a story!" },
+        {
+          prompt: "last, go to sleep",
+          emoji: "😴",
+          sampleAnswer: "Tonight, last, go to sleep!",
+          minTrack: "explorers",
+        },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the card as one full instruction ('Tonight, first, put on pajamas!'), Partner B repeats it back, then they swap. This is the exact bedtime order from today's sequence_builder game, just spoken aloud instead of tapped — circulate and listen for the sequencing word staying at the very FRONT of the sentence, the same slip flagged back in Day 2.",
+    },
+    {
+      type: "role_play",
+      title: "Bedtime with a Grown-Up",
+      setting: "Getting ready for bed at home, right before lights out.",
+      roles: ["Parent", "Kid"],
+      exchanges: [
+        { role: 0, line: "Time for bed! What do we do first?", emoji: "🌙" },
+        { role: 1, line: "First, I put on my pajamas!", emoji: "🩱" },
+        { role: 0, line: "Great! What comes next?", emoji: "🪥" },
+        {
+          role: 1,
+          line: "Next, I brush my teeth. Then, I read a story!",
+          lineSimple: "Next, teeth. Then, story!",
+          emoji: "📖",
+        },
+      ],
+      teacherNote:
+        "Pairs rehearse both parts, then a volunteer pair performs for the class. This is the exact bedtime order from today's sequence_builder game, now spoken as a real conversation between a kid and a parent instead of a robot following steps — encourage a big yawn on 'time for bed' and a sleepy voice by the last line.",
+    },
+    {
       type: "chant",
       title: "Bedtime Routine Chant",
       instructions:
@@ -273,6 +408,20 @@ export const w6d2_give_vora_the_steps: Lesson = {
       prompt: "What comes first?",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each week of the unit so far, read together before tapping — the tap confirms it, it isn't the activity. This is also the lesson where 'exact steps matter' becomes explicit, so model that same care here: say each word fully before revealing the picture, rather than skipping straight to the tap.",
+      words: [
+        { word: "book", emoji: "📖", fromMonth: 1 },
+        { word: "lion", emoji: "🦁", fromMonth: 2 },
+        { word: "green", emoji: "🟢", fromMonth: 3 },
+        { word: "square", emoji: "🟦", fromMonth: 3, minTrack: "explorers" },
+        { word: "baby", emoji: "👶", fromMonth: 4 },
+        { word: "rice", emoji: "🍚", fromMonth: 5 },
+      ],
+    },
+    {
       type: "vocab",
       title: "Sequencing Words",
       words: [
@@ -281,6 +430,25 @@ export const w6d2_give_vora_the_steps: Lesson = {
         { word: "then", emoji: "➡️" },
         { word: "last", emoji: "🏁" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "First, wake up!", steps: 1, emoji: "🌞" },
+        { text: "Next, get dressed, then eat breakfast.", steps: 2, emoji: "👕" },
+        { text: "First, wake up. Next, get dressed. Then, brush your teeth.", steps: 3, emoji: "🪥" },
+        {
+          text: "First, wake up. Then, eat breakfast. Last, brush your teeth.",
+          steps: 3,
+          emoji: "🏁",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response — give each command once at normal speed, no repeats, and let miming prove the sequencing words landed before anyone has to produce 'first/next/then/last' out loud themselves. This is the first time this unit those words appear woven INTO real commands rather than named in isolation, so listen for whether kids wait for the whole command before moving, instead of acting on the first verb they hear. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
     },
     {
       type: "concept",
@@ -384,6 +552,45 @@ export const w6d2_give_vora_the_steps: Lesson = {
         { text: "Brushing your teeth", emoji: "🪥" },
         { text: "Doing a dance move", emoji: "💃" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Give Vora the Step!",
+      frame: "Vora, ___!",
+      frameSimple: "Vora, ___!",
+      cards: [
+        { prompt: "first, wake up", emoji: "🌞", sampleAnswer: "Vora, first, wake up!" },
+        { prompt: "next, get dressed", emoji: "👕", sampleAnswer: "Vora, next, get dressed!" },
+        { prompt: "then, eat breakfast", emoji: "🥣", sampleAnswer: "Vora, then, eat breakfast!" },
+        {
+          prompt: "last, brush your teeth",
+          emoji: "🪥",
+          sampleAnswer: "Vora, last, brush your teeth!",
+          minTrack: "explorers",
+        },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the card as one full instruction to Vora ('Vora, first, wake up!'), Partner B repeats it back like a robot following the order, then they swap who's giving the command. Every pair talks at once, so circulate and listen for the sequencing word landing at the very FRONT of the sentence, not tacked on at the end — that's the exact slip today's concept block warned about.",
+    },
+    {
+      type: "role_play",
+      title: "Teaching Vora the Morning",
+      setting: "Vora is learning today's morning routine, one instruction at a time.",
+      roles: ["Kid", "Vora"],
+      exchanges: [
+        { role: 0, line: "Vora, first, wake up!", emoji: "🌞" },
+        { role: 1, line: "Okay! I wake up first.", emoji: "🤖" },
+        { role: 0, line: "Next, get dressed!", emoji: "👕" },
+        {
+          role: 1,
+          line: "Okay! I get dressed next. What comes after that?",
+          lineSimple: "Okay! Next. What's after?",
+          emoji: "🤔",
+        },
+      ],
+      teacherNote:
+        "Pairs rehearse both parts, then a volunteer pair performs for the class. This is the flip side of today's story — instead of tricking Vora with a silly order like the class did earlier, the Kid gives the REAL steps in the right order, and Vora repeats each one back before asking what's next. Encourage a big, literal robot voice for Vora's lines.",
     },
     {
       type: "chant",

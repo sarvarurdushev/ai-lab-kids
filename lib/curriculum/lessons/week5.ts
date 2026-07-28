@@ -16,6 +16,19 @@ export const w5d1_yummy_food: Lesson = {
       prompt: "Do you like kimchi? 🥬",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each of the last four weeks, so nothing from the start of Foundations goes stale before today's brand-new food words arrive. Read each word together BEFORE tapping — the tap should confirm a guess, not replace one. If more than two need the picture to land, that's worth a quick revisit before pushing ahead into today's vocab.",
+      words: [
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 1 },
+        { word: "cat", emoji: "🐱", fromMonth: 2 },
+        { word: "red", emoji: "🔴", fromMonth: 3 },
+        { word: "circle", emoji: "⭕", fromMonth: 3 },
+        { word: "five", emoji: "5️⃣", fromMonth: 4, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Food",
       words: [
@@ -27,6 +40,25 @@ export const w5d1_yummy_food: Lesson = {
         { word: "kimchi", emoji: "🥬" },
         { word: "bibimbap", emoji: "🍲" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words on screen. This checks listening to today's brand-new food words, not reading, so keep the vocab hidden until after each round.",
+      commands: [
+        { text: "Point to the rice.", steps: 1, emoji: "🍚" },
+        { text: "Pretend to eat an apple, then rub your tummy.", steps: 2, emoji: "🍎" },
+        { text: "Crack an imaginary egg, stir it in a bowl, then pretend to eat it.", steps: 3, emoji: "🥚" },
+        {
+          text: "Pretend to eat bibimbap, fan your mouth like it's spicy, then give a big thumbs up.",
+          steps: 3,
+          emoji: "🍲",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: this proves the class understood rice, apple, egg, and bibimbap before anyone has to say a full sentence about them, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the class nails the 1-step command instantly, skip ahead to the 3-step ones rather than running all four in order.",
     },
     {
       type: "concept",
@@ -108,6 +140,41 @@ export const w5d1_yummy_food: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "I Like...!",
+      frame: "I like ___.",
+      frameSimple: "I like ___.",
+      cards: [
+        { prompt: "apples", emoji: "🍎", sampleAnswer: "I like apples." },
+        { prompt: "rice", emoji: "🍚", sampleAnswer: "I like rice." },
+        { prompt: "kimchi", emoji: "🥬", sampleAnswer: "I like kimchi." },
+        { prompt: "bibimbap", emoji: "🍲", sampleAnswer: "I like bibimbap.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A shows the card, Partner B completes \"I like ___\" using that food, then they swap so Partner A gets the next card. This is the first time today's words other than kimchi and bibimbap get said in a full sentence — listen for whether kids substitute apples, rice, and bread confidently rather than defaulting back to the two foods from the concept block.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw Your Favorite Food",
+      instructions: "Draw a picture of a food you like to eat, then label it using a word from the word bank.",
+      instructionsSimple: "Draw food you like! Write the word.",
+      wordBank: [
+        { word: "apple", emoji: "🍎" },
+        { word: "rice", emoji: "🍚" },
+        { word: "bread", emoji: "🍞" },
+        { word: "milk", emoji: "🥛" },
+        { word: "egg", emoji: "🥚" },
+        { word: "kimchi", emoji: "🥬" },
+        { word: "bibimbap", emoji: "🍲", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A round bowl of bibimbap with little swirls drawn in for rice and vegetables, labeled \"bibimbap\" underneath in large letters copied straight from the word bank.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out — this is the first time this week's food words get written down instead of only spoken. Keep the word bank on screen the whole four minutes so kids copy confidently rather than guess-spell from memory. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than supplying the correct word yourself.",
+    },
+    {
       type: "chant",
       title: "I Like Food Chant",
       instructions:
@@ -147,6 +214,39 @@ export const w5d2_fruit_or_vegetable: Lesson = {
       type: "warmup",
       teacherScript: "Ask: \"Is an apple a fruit or a vegetable?\" Kids should answer easily — this warms up the category words before the sort.",
       prompt: "Fruit or vegetable?",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Bird and lion carry over Week 2's animal-sorting practice — the exact skill today's fruit-or-vegetable sort reuses, so say so out loud if a kid asks why animals are back. Read each word together before tapping; if more than two need the picture, spend thirty extra seconds on that word rather than rushing into today's sort.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 1 },
+        { word: "lion", emoji: "🦁", fromMonth: 2 },
+        { word: "bird", emoji: "🐦", fromMonth: 2 },
+        { word: "square", emoji: "🟦", fromMonth: 3 },
+        { word: "dad", emoji: "👨", fromMonth: 4 },
+        { word: "two", emoji: "2️⃣", fromMonth: 4, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed. Wait for the whole class to act it out before showing the words. These reuse yesterday's food words as listening practice, before today's sort asks kids to talk about fruits and vegetables instead of just eating them.",
+      commands: [
+        { text: "Point to the bread.", steps: 1, emoji: "🍞" },
+        { text: "Pretend to drink milk, then wipe your mouth.", steps: 2, emoji: "🥛" },
+        { text: "Pretend to eat kimchi, fan your mouth like it's spicy, then give a thumbs up.", steps: 3, emoji: "🥬" },
+        {
+          text: "Pretend to scoop rice with a spoon, pretend to eat an apple, then rub your tummy.",
+          steps: 3,
+          emoji: "🍚",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This is a quick comprehension check on yesterday's food words before today's fruit-or-vegetable sort asks kids to talk, not just listen. If more than a couple of kids freeze on \"kimchi\" or \"rice,\" pause and revisit yesterday's movement actions before continuing — the sorting game below assumes these words are already solid.",
     },
     {
       type: "concept",
@@ -265,6 +365,40 @@ export const w5d2_fruit_or_vegetable: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Fruit or Vegetable?",
+      frame: "That's a ___!",
+      frameSimple: "Fruit or vegetable?",
+      cards: [
+        { prompt: "banana", emoji: "🍌", sampleAnswer: "That's a fruit!" },
+        { prompt: "broccoli", emoji: "🥦", sampleAnswer: "That's a vegetable!" },
+        { prompt: "strawberry", emoji: "🍓", sampleAnswer: "That's a fruit!" },
+        { prompt: "potato", emoji: "🥔", sampleAnswer: "That's a vegetable!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A shows the card, Partner B calls out \"That's a fruit!\" or \"That's a vegetable!\" before they swap — the point is producing the full sentence, not just tapping a bucket like in the train_the_robot game they just played, so hold both partners to it rather than a one-word answer. Circulate for pairs who slow down on broccoli or potato, the trickier vegetable words from today's sort.",
+    },
+    {
+      type: "role_play",
+      title: "At the Fruit and Vegetable Stand",
+      setting: "A fruit and vegetable stand at an outdoor market.",
+      roles: ["Vendor", "Customer"],
+      exchanges: [
+        { role: 0, line: "Welcome! Are you looking for a fruit or a vegetable today?", lineSimple: "Fruit or vegetable?", emoji: "🧺" },
+        { role: 1, line: "Hmm, is a tomato a fruit or a vegetable?", lineSimple: "Tomato — fruit or vegetable?", emoji: "🍅" },
+        {
+          role: 0,
+          line: "Great question! It grows from seeds like a fruit, but people cook it like a vegetable.",
+          lineSimple: "Tricky! It's a bit of both.",
+          emoji: "🤔",
+        },
+        { role: 1, line: "I'll just take a carrot then — that's easy, it's a vegetable!", lineSimple: "I'll take a carrot. Vegetable!", emoji: "🥕" },
+      ],
+      teacherNote:
+        "Rehearse both parts in pairs first, then invite one pair to perform for the class. The Vendor's tomato line is deliberately today's tricky case from the story — if a pair improvises a different tricky food (pumpkin, avocado), let them; the goal is applying \"sometimes sorting is genuinely hard\" to a new example, not memorizing this exact exchange.",
+    },
+    {
       type: "chant",
       title: "Fruit or Vegetable Chant",
       instructions:
@@ -304,6 +438,38 @@ export const w5d3_do_you_like: Lesson = {
       type: "warmup",
       teacherScript: "Ask two or three kids \"Do you like pizza?\" and model a quick \"Yes, I do\" / \"No, I don't\" before the activity.",
       prompt: "Do you like pizza? 🍕",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "This closes out the week, so treat it as a quick check that Weeks 1-4 are still solid before the unit moves on. Read each word together before tapping — the picture is a rescue, not the activity. If more than two need the picture, flag that week for a fuller review before Week 6 starts.",
+      words: [
+        { word: "pencil", emoji: "✏️", fromMonth: 1 },
+        { word: "rabbit", emoji: "🐰", fromMonth: 2 },
+        { word: "purple", emoji: "🟣", fromMonth: 3 },
+        { word: "star", emoji: "⭐", fromMonth: 3, minTrack: "explorers" },
+        { word: "sister", emoji: "👧", fromMonth: 4 },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed, and wait for everyone to move before revealing the words. The last two commands end in a head-nod or a head-shake — a physical preview of the \"Yes, I do\" / \"No, I don't\" answers coming later in today's chant and check.",
+      commands: [
+        { text: "Point to the milk.", steps: 1, emoji: "🥛" },
+        { text: "Pretend to tear off a piece of bread, then pretend to eat it.", steps: 2, emoji: "🍞" },
+        { text: "Pretend to eat kimchi, fan your mouth, then shake your head no like you don't like it.", steps: 3, emoji: "🥬" },
+        {
+          text: "Pretend to eat bibimbap, nod your head yes like you love it, then give a big thumbs up.",
+          steps: 3,
+          emoji: "🍲",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "The kimchi and bibimbap commands are staged on purpose — a head shake for \"don't like\" and a nod plus thumbs up for \"like\" — so lean on the gesture if a child hesitates between \"Yes, I do\" and \"No, I don't\" later on. Grade it live: skip straight to the 3-step commands if the class breezes through the 1-step one.",
     },
     {
       type: "concept",
@@ -406,6 +572,35 @@ export const w5d3_do_you_like: Lesson = {
         { text: "Pizza", emoji: "🍕" },
         { text: "Apples", emoji: "🍎" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Do You Like It?",
+      frame: "Do you like ___?",
+      frameSimple: "Like it?",
+      cards: [
+        { prompt: "apples", emoji: "🍎", sampleAnswer: "Yes, I do! / No, I don't!" },
+        { prompt: "pizza", emoji: "🍕", sampleAnswer: "Yes, I do! / No, I don't!" },
+        { prompt: "kimchi", emoji: "🥬", sampleAnswer: "Yes, I do! / No, I don't!" },
+        { prompt: "bibimbap", emoji: "🍲", sampleAnswer: "Yes, I do! / No, I don't!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A asks the full question — \"Do you like apples?\" — using the same tiles from today's sentence-builder game, and Partner B gives a genuine answer, \"Yes, I do!\" or \"No, I don't!,\" before they swap who's asking. Unlike other Partner Talks this week, there's no single correct sampleAnswer here — the point is a real question about a real opinion, so listen for whether kids produce the full \"Do\" question rather than dropping back to just naming the food.",
+    },
+    {
+      type: "role_play",
+      title: "Trading Lunch",
+      setting: "A lunchroom table where two friends are trading snacks.",
+      roles: ["Friend A", "Friend B"],
+      exchanges: [
+        { role: 0, line: "Do you like kimchi? I have extra!", lineSimple: "Do you like kimchi?", emoji: "🥬" },
+        { role: 1, line: "Yes, I do! Thank you! Do you like pizza?", lineSimple: "Yes, I do! Do you like pizza?", emoji: "🍕" },
+        { role: 0, line: "No, I don't — but I like bibimbap a lot!", lineSimple: "No, I don't. I like bibimbap!", emoji: "🍲" },
+        { role: 1, line: "Me too! Let's trade — bibimbap for kimchi!", lineSimple: "Let's trade!", emoji: "🤝" },
+      ],
+      teacherNote:
+        "This performs the exact \"Do you like ___?\" question the class just built with tiles, now inside a real reason to ask — trading lunch. Rehearse both parts in pairs, then have a volunteer pair perform; listen for whether Friend B answers with the full \"Yes, I do\" / \"No, I don't\" rather than just \"yes\" or \"no.\"",
     },
     {
       type: "chant",

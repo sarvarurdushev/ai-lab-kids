@@ -229,6 +229,39 @@ export const m6_week2: Lesson = {
       prompt: "Lion, elephant, lion, elephant... what comes next? 🦁🐘",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A different mix from Week 1, so by the end of the month the class has circled back through most of the year's words at least once. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these words, that month is worth a fuller review before moving on. About thirty seconds per word is plenty.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "tree", emoji: "🌳", fromMonth: 4 },
+        { word: "dad", emoji: "👨", fromMonth: 5 },
+        { word: "rocket", emoji: "🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for the whole class to perform the action before calling the next command. This checks listening, not reading, so keep the animal words off screen until after each round.",
+      commands: [
+        { text: "Point to the zebra.", steps: 1, emoji: "🦓" },
+        { text: "Scratch your sides like a monkey, then roar like a lion.", steps: 2, emoji: "🐵" },
+        { text: "Waddle like a penguin, swing your arm like an elephant, then stomp like a lion.", steps: 3, emoji: "🐧" },
+        {
+          text: "Crouch low like a tiger, gallop like a zebra, then stretch up tall like a giraffe.",
+          steps: 3,
+          emoji: "🦒",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. These are the same animal words from Week 1 in new combinations, which doubles nicely as a check that the vocabulary actually stuck. Grade it live: skip ahead to the 3-step commands if the class nails the 1-step one instantly.",
+    },
+    {
       type: "concept",
       title: "Patterns Help Me See",
       bigIdeas: ["perception"],
@@ -328,6 +361,34 @@ export const m6_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Big or Small?",
+      frame: "It's a ___.",
+      cards: [
+        { prompt: "big lion", emoji: "🦁", sampleAnswer: "It's a big lion." },
+        { prompt: "small penguin", emoji: "🐧", sampleAnswer: "It's a small penguin." },
+        { prompt: "big tiger", emoji: "🐯", sampleAnswer: "It's a big tiger." },
+        { prompt: "big giraffe", emoji: "🦒", sampleAnswer: "It's a big giraffe.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the prompt card and Partner B answers with the full sentence, then they swap who's reading. Every pair talks at once, so circulate row by row and listen for the article 'a' and for 'big'/'small' getting swapped, rather than running this as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Guess the Animal!",
+      setting: "At the zoo, a visitor points to each animal and asks a zookeeper what it is.",
+      roles: ["Visitor", "Zookeeper"],
+      exchanges: [
+        { role: 0, line: "What animal is this?", emoji: "❓" },
+        { role: 1, line: "It's a big lion!", emoji: "🦁" },
+        { role: 0, line: "And what about this one?", lineSimple: "And this one?", emoji: "🤔" },
+        { role: 1, line: "It's a small monkey!", emoji: "🐵" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, then invite one or two volunteer pairs to perform it for the class. Swap in any of today's animals if a pair wants more variety — the frame matters more than which specific animal gets named.",
+    },
+    {
       type: "chant",
       title: "Big and Small Animal Chant",
       instructions:
@@ -367,6 +428,39 @@ export const m6_week3: Lesson = {
       type: "warmup",
       teacherScript: "Flash an animal emoji quickly and have kids call out the English word before today's matching game starts.",
       prompt: "Name that animal, fast! 🐯",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A different mix again from Weeks 1-2, so by the end of the month the class has circled back through most of the year's words at least once. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these words, that month is worth a fuller review before moving on.",
+      words: [
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "clothes", emoji: "👘", fromMonth: 2 },
+        { word: "kind", emoji: "❤️", fromMonth: 3 },
+        { word: "recycle", emoji: "♻️", fromMonth: 4 },
+        { word: "brother", emoji: "👦", fromMonth: 5 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for the whole class to perform the action before calling the next command. This checks listening, not reading, so keep the animal words off screen until after each round.",
+      commands: [
+        { text: "Point to the tiger.", steps: 1, emoji: "🐯" },
+        { text: "Waddle like a penguin, then freeze like a statue.", steps: 2, emoji: "🐧" },
+        { text: "Scratch your sides like a monkey, gallop like a zebra, then roar like a lion.", steps: 3, emoji: "🐵" },
+        {
+          text: "Swing your arm like an elephant, crouch low like a tiger, then stretch up tall like a giraffe.",
+          steps: 3,
+          emoji: "🐘",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Since today's concept is all about practice building memory, notice if the class responds faster to these commands than it did in Weeks 1-2 — that quicker recognition IS the point of spaced practice.",
     },
     {
       type: "concept",
@@ -466,6 +560,34 @@ export const m6_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Big or Small?",
+      frame: "It's a ___.",
+      cards: [
+        { prompt: "big zebra", emoji: "🦓", sampleAnswer: "It's a big zebra." },
+        { prompt: "small monkey", emoji: "🐵", sampleAnswer: "It's a small monkey." },
+        { prompt: "big lion", emoji: "🦁", sampleAnswer: "It's a big lion." },
+        { prompt: "big giraffe", emoji: "🦒", sampleAnswer: "It's a big giraffe.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the prompt card and Partner B answers with the full sentence, then they swap who's reading. Every pair talks at once, so circulate row by row and listen for the article 'a' and for 'big'/'small' getting swapped, rather than running this as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Two Friends Play Memory",
+      setting: "Two friends flip matching cards and quiz each other on what they remember.",
+      roles: ["Quiz Friend", "Memory Friend"],
+      exchanges: [
+        { role: 0, line: "What animal is under this card?", lineSimple: "What animal is this?", emoji: "❓" },
+        { role: 1, line: "It's a big lion! I remember!", lineSimple: "It's a big lion!", emoji: "🦁" },
+        { role: 0, line: "Good memory! And this one?", emoji: "🤔" },
+        { role: 1, line: "It's a small monkey!", emoji: "🐵" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, then invite one or two volunteer pairs to perform it for the class. This ties directly to today's memory-match game and Vora's practice-makes-better story — the Memory Friend should answer a little faster each round, just like Vora did.",
+    },
+    {
       type: "chant",
       title: "What's This Animal? Chant",
       instructions:
@@ -505,6 +627,39 @@ export const m6_week4: Lesson = {
       type: "warmup",
       teacherScript: "Say \"fan\" and \"pan\" slowly, back to back, a few times, without explaining yet.",
       prompt: "fan... pan... fan... pan...",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One more mix of earlier words before this quarter's sound checkpoint, so vocabulary review keeps happening even in a lesson focused on listening. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these words, that month is worth a fuller review before next month starts.",
+      words: [
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "dance", emoji: "💃", fromMonth: 2 },
+        { word: "sorry", emoji: "😔", fromMonth: 3 },
+        { word: "plant", emoji: "🌱", fromMonth: 4 },
+        { word: "grandpa", emoji: "👴", fromMonth: 5 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Fan your face with your hand.", steps: 1, emoji: "🪭" },
+        { text: "Mime flipping a pancake, then give a big thumbs-up.", steps: 2, emoji: "🍳" },
+        { text: "Reach up tall like a pine tree, mime eating with a fork, then rub your tummy like it's yummy.", steps: 3, emoji: "🌲" },
+        {
+          text: "Fan your face, mime flipping a pancake, then reach up tall like a pine tree.",
+          steps: 3,
+          emoji: "🥓",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response using today's exact minimal-pair words in full commands — this proves the class can tell fan/pan, fine/pine, and fork/pork apart when the words show up chained together, not just when the two words are shown side by side. Resist repeating a command even if a child hesitates; model the action bigger instead.",
     },
     {
       type: "concept",
@@ -597,6 +752,34 @@ export const m6_week4: Lesson = {
         { text: "Say a word that rhymes with 'fine'!", emoji: "👍" },
         { text: "Say a word that rhymes with 'fork'!", emoji: "🍴", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "I Hear...!",
+      frame: "I hear ___!",
+      cards: [
+        { prompt: "fan", emoji: "🪭", sampleAnswer: "I hear fan!" },
+        { prompt: "pan", emoji: "🍳", sampleAnswer: "I hear pan!" },
+        { prompt: "fork", emoji: "🍴", sampleAnswer: "I hear fork!" },
+        { prompt: "pork", emoji: "🥓", sampleAnswer: "I hear pork!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to a card and says 'I hear ___!' — blowing a soft breath of air for fan and fork, or popping the lips for pan and pork — and Partner B echoes the exact same word back, then they swap. Since Korean has no /f/ phoneme and commonly approximates it with /p/, circulate and listen for Listeners echoing the /p/ twin by mistake (saying 'pan' back for 'fan'); that mix-up is expected at this checkpoint, so have them try again rather than moving on.",
+    },
+    {
+      type: "role_play",
+      title: "The Sound-Check Station",
+      setting: "At the sound-check station, where one friend says a tricky word and the other listens closely to repeat it back correctly.",
+      roles: ["Speaker", "Listener"],
+      exchanges: [
+        { role: 0, line: "Listen closely: fan!", emoji: "🪭" },
+        { role: 1, line: "I heard fan!", emoji: "👂" },
+        { role: 0, line: "Listen closely: fork, not pork!", lineSimple: "Listen closely: fork!", emoji: "🍴" },
+        { role: 1, line: "I heard fork!", emoji: "👂" },
+      ],
+      teacherNote:
+        "One partner (the Speaker) says an /f/ word slowly, blowing a soft breath of air, and the other (the Listener) repeats back exactly what they heard — then swap. Expect Listeners to sometimes echo the /p/ twin by mistake at first, since Korean has no /f/ phoneme; that's the whole point of this checkpoint, so have them try again rather than correcting and moving on.",
     },
     {
       type: "chant",

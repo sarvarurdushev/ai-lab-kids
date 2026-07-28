@@ -155,6 +155,42 @@ export const w4d1_my_family: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "This Is My Family!",
+      frame: "This is my ___.",
+      frameSimple: "My ___.",
+      cards: [
+        { prompt: "mom", emoji: "👩", sampleAnswer: "This is my mom." },
+        { prompt: "dad", emoji: "👨", sampleAnswer: "This is my dad." },
+        { prompt: "sister", emoji: "👧", sampleAnswer: "This is my sister." },
+        { prompt: "brother", emoji: "👦", sampleAnswer: "This is my brother." },
+        { prompt: "grandma", emoji: "👵", sampleAnswer: "This is my grandma.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up (or points to) the card and says the frame, Partner B repeats the sentence back with the same word, then they swap who's holding the card. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; the point is that every child produces \"This is my ___\" multiple times, not that you hear each one.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw My Family",
+      instructions: "Draw a picture of your family, then label each person using a word from the word bank.",
+      instructionsSimple: "Draw your family! Write the words.",
+      wordBank: [
+        { word: "mom", emoji: "👩" },
+        { word: "dad", emoji: "👨" },
+        { word: "sister", emoji: "👧" },
+        { word: "brother", emoji: "👦" },
+        { word: "grandma", emoji: "👵" },
+        { word: "grandpa", emoji: "👴" },
+        { word: "baby", emoji: "👶" },
+      ],
+      exampleNote:
+        "A simple stick-figure family lined up in a row, with a word from the word bank written underneath each person — 'mom' under the tallest figure, 'baby' under the smallest — copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the person drawn, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "My Family Chant",
       instructions:
@@ -191,6 +227,43 @@ export const w4d3_think_or_sink: Lesson = {
       type: "warmup",
       teacherScript: "Say \"think\" and \"sink\" slowly, back to back, a few times, without explaining yet.",
       prompt: "think... sink... think... sink...",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Two words from each of the first three weeks, so greetings, animals, and colors don't fade before the unit's final review day. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. If more than half the class needs the picture, revisit that week's chant before today's tricky new sound.",
+      words: [
+        { word: "pencil", emoji: "✏️", fromMonth: 1 },
+        { word: "chair", emoji: "🪑", fromMonth: 1 },
+        { word: "rabbit", emoji: "🐰", fromMonth: 2 },
+        { word: "fish", emoji: "🐟", fromMonth: 2 },
+        { word: "yellow", emoji: "🟡", fromMonth: 3 },
+        { word: "circle", emoji: "⭕", fromMonth: 3, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing which word matched. This checks listening, not reading, so keep the words hidden until after each round.",
+      commands: [
+        { text: "Point to your mouth.", steps: 1, emoji: "👄" },
+        { text: "Tap your finger on your head like thinking, then cup your hands like washing in a sink.", steps: 2, emoji: "🤔" },
+        {
+          text: "Wiggle your nose like a mouse, scrub your arms like a bath, then march in place like a path.",
+          steps: 3,
+          emoji: "🐭",
+        },
+        {
+          text: "Cup your hands like a sink, tap your head like thinking, then point to your mouth.",
+          steps: 3,
+          emoji: "🚰",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class connects each word to its action from the Th and S Sound Actions movement game BEFORE anyone has to say the word aloud, so don't translate into Korean even if a child hesitates — repeat the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
     },
     {
       type: "concept",
@@ -296,6 +369,35 @@ export const w4d3_think_or_sink: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Say It Clearly!",
+      frame: "The word is ___.",
+      frameSimple: "Say it: ___.",
+      cards: [
+        { prompt: "think", emoji: "🤔", sampleAnswer: "The word is think." },
+        { prompt: "sink", emoji: "🚰", sampleAnswer: "The word is sink." },
+        { prompt: "mouth", emoji: "👄", sampleAnswer: "The word is mouth." },
+        { prompt: "path", emoji: "🛤️", sampleAnswer: "The word is path.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to the card and says the frame, Partner B watches Partner A's tongue position and repeats the word back, then they swap. Every pair talks at once, so circulate and listen for tongue-between-the-teeth on the th words rather than running this as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Think or Sink?",
+      setting: "Two friends checking each other's tricky words.",
+      roles: ["Friend A", "Friend B"],
+      exchanges: [
+        { role: 0, line: "Did you say 'think' or 'sink'?", lineSimple: "Think or sink?", emoji: "🤔" },
+        { role: 1, line: "I said 'think' — watch my tongue peek out!", lineSimple: "Think! Watch my tongue!", emoji: "👅" },
+        { role: 0, line: "Now say 'mouth' and 'mouse' for me.", lineSimple: "Say mouth and mouse!", emoji: "👄" },
+        { role: 1, line: "Mouth! Mouse! Can you hear the difference?", lineSimple: "Mouth! Mouse!", emoji: "✅" },
+      ],
+      teacherNote:
+        "Pairs rehearse both roles, then invite a volunteer pair to perform it for the class, exaggerating the tongue position for 'think' and 'mouth' so the rest of the class can see the difference — the same tongue-watching trick Vora used in today's story.",
+    },
+    {
       type: "chant",
       title: "Think or Sink Chant",
       instructions:
@@ -333,6 +435,20 @@ export const w4d2_count_with_vora: Lesson = {
       prompt: "1, 2, 3, 4, 5...",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Two words from each of the first three weeks, so greetings, animals, and colors don't fade before the unit's final review days. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. If more than half the class needs the picture, revisit that week's chant before today's counting practice.",
+      words: [
+        { word: "goodbye", emoji: "🙋", fromMonth: 1 },
+        { word: "book", emoji: "📖", fromMonth: 1 },
+        { word: "dog", emoji: "🐶", fromMonth: 2 },
+        { word: "bird", emoji: "🐦", fromMonth: 2 },
+        { word: "green", emoji: "🟢", fromMonth: 3 },
+        { word: "triangle", emoji: "🔺", fromMonth: 3, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Numbers 1-10",
       words: [
@@ -342,6 +458,25 @@ export const w4d2_count_with_vora: Lesson = {
         { word: "four", emoji: "4️⃣" },
         { word: "five", emoji: "5️⃣" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the number. This checks listening, not reading, so keep the numbers hidden until after each round.",
+      commands: [
+        { text: "Hold up one finger.", steps: 1, emoji: "1️⃣" },
+        { text: "Hold up two fingers, then clap two times.", steps: 2, emoji: "2️⃣" },
+        { text: "Hold up three fingers, stomp three times, then sit down.", steps: 3, emoji: "3️⃣" },
+        {
+          text: "Hold up four fingers, spin around once, then hold up five fingers and freeze.",
+          steps: 3,
+          emoji: "5️⃣",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class connects each number word to a quantity BEFORE anyone has to say the number aloud, so don't translate into Korean even if a child hesitates — hold up your own fingers bigger and slower instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
     },
     {
       type: "concept",
@@ -448,6 +583,40 @@ export const w4d2_count_with_vora: Lesson = {
           minTrack: "explorers",
         },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "How Many Dogs?",
+      frame: "I have ___ dogs.",
+      frameSimple: "___ dogs.",
+      cards: [
+        { prompt: "two", emoji: "2️⃣", sampleAnswer: "I have two dogs." },
+        { prompt: "three", emoji: "3️⃣", sampleAnswer: "I have three dogs." },
+        { prompt: "four", emoji: "4️⃣", sampleAnswer: "I have four dogs." },
+        { prompt: "five", emoji: "5️⃣", sampleAnswer: "I have five dogs.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A looks at the card and asks 'How many dogs?' — Partner B answers with the full frame, then they swap who's asking. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; the point is that every child produces the sentence multiple times, not that you hear each one.",
+    },
+    {
+      type: "role_play",
+      title: "Counting Our Dogs",
+      setting: "Two friends comparing how many pet dogs they have.",
+      roles: ["Friend A", "Friend B"],
+      exchanges: [
+        { role: 0, line: "How many dogs do you have?", lineSimple: "How many dogs?", emoji: "🐶" },
+        { role: 1, line: "I have three dogs! How many dogs do you have?", lineSimple: "Three dogs!", emoji: "3️⃣" },
+        { role: 0, line: "I have two dogs!", lineSimple: "Two dogs!", emoji: "2️⃣" },
+        {
+          role: 1,
+          line: "Let's count all our dogs together: one, two, three, four, five!",
+          lineSimple: "Let's count together!",
+          emoji: "🔢",
+        },
+      ],
+      teacherNote:
+        "Pairs rehearse both roles, then invite a volunteer pair to perform it for the class. If a pair's real dog count is zero, they can swap in a pretend number for the scene — the point is practicing the question-and-answer exchange, not a true count.",
     },
     {
       type: "chant",

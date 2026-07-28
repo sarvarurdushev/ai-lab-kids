@@ -291,6 +291,42 @@ export const m7_week2: Lesson = {
       prompt: "Hot or cold? 🥵🥶",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words from earlier months, so nothing taught this year goes untouched for six months. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the five, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "tree", emoji: "🌳", fromMonth: 4 },
+        { word: "dad", emoji: "👨", fromMonth: 5, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Wiggle your toes like you're wearing sandals.", steps: 1, emoji: "👡" },
+        { text: "Wrap your hands around your neck like a scarf, then shiver like you're cold.", steps: 2, emoji: "🧣" },
+        {
+          text: "Hug yourself and zip up an imaginary coat, stomp your feet like big boots, then shiver like you're cold.",
+          steps: 3,
+          emoji: "🧥",
+        },
+        {
+          text: "Pat your legs like putting on shorts, wiggle your toes like sandals, then put on imaginary sunglasses.",
+          steps: 3,
+          emoji: "🕶️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. This is the first time clothes words get tested outside the warm-up mime, so if the whole class stalls on any one item, run that command again before moving on.",
+    },
+    {
       type: "concept",
       title: "Vora Looks Closely",
       bigIdeas: ["perception"],
@@ -388,6 +424,35 @@ export const m7_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Hot or Cold Today?",
+      frame: "It's ___ today.",
+      frameSimple: "It's ___.",
+      cards: [
+        { prompt: "hot", emoji: "🥵", sampleAnswer: "It's hot today." },
+        { prompt: "cold", emoji: "🥶", sampleAnswer: "It's cold today." },
+        { prompt: "sunny", emoji: "☀️", sampleAnswer: "It's sunny today." },
+        { prompt: "snowy", emoji: "❄️", sampleAnswer: "It's snowy today.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "This reuses Week 1's exact sentence frame, so listen for whether kids now connect it back to today's hot/cold clothes talk. Partner A looks at the card and asks 'What's the weather?' — Partner B answers with the full frame, then they swap. Every pair talks at once, so circulate rather than running it as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "What Should I Wear?",
+      setting: "A kid checks the weather before getting dressed for school.",
+      roles: ["Parent", "Kid"],
+      exchanges: [
+        { role: 0, line: "What's the weather today?", emoji: "🌤️" },
+        { role: 1, line: "It's hot today!", emoji: "🥵" },
+        { role: 0, line: "Then what should you wear?", emoji: "🤔" },
+        { role: 1, line: "I'll wear shorts and sandals!", lineSimple: "Shorts and sandals!", emoji: "🩳" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, then invite one or two volunteer pairs to perform it for the class. For a second round, swap in 'cold' and 'a coat and boots' so both hot-weather and cold-weather clothes get practiced.",
+    },
+    {
       type: "chant",
       title: "It's Sunny Today Chant",
       instructions:
@@ -424,6 +489,43 @@ export const m7_week3: Lesson = {
       type: "warmup",
       teacherScript: "Draw a big sun on the board (or hold up a sunny-weather photo) and ask \"What's the weather?\" Let kids call out \"sunny!\" before building today's sentence.",
       prompt: "What's the weather? ☀️",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Six words from earlier months, so nothing taught this year goes untouched for six months. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "play", emoji: "🧩", fromMonth: 3 },
+        { word: "trash", emoji: "🗑️", fromMonth: 4 },
+        { word: "sister", emoji: "👧", fromMonth: 5 },
+        { word: "elephant", emoji: "🐘", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Stomp your feet like big boots.", steps: 1, emoji: "👢" },
+        { text: "Pull an imaginary t-shirt over your head, then fan your face like it's hot.", steps: 2, emoji: "👕" },
+        {
+          text: "Hug yourself and zip up an imaginary coat, wrap a scarf around your neck, then shiver like you're cold.",
+          steps: 3,
+          emoji: "🧣",
+        },
+        {
+          text: "Put on imaginary sunglasses, pat your legs like putting on shorts, then stretch your arms up high like it's sunny.",
+          steps: 3,
+          emoji: "🕶️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. These are the same clothes words from last week, so grade it live: if the class nails the 1-step command instantly, skip straight to the 3-step ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -522,6 +624,35 @@ export const m7_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Sunny or Rainy?",
+      frame: "It's ___ today.",
+      frameSimple: "It's ___.",
+      cards: [
+        { prompt: "rainy", emoji: "🌧️", sampleAnswer: "It's rainy today." },
+        { prompt: "cloudy", emoji: "☁️", sampleAnswer: "It's cloudy today." },
+        { prompt: "sunny", emoji: "☀️", sampleAnswer: "It's sunny today." },
+        { prompt: "windy", emoji: "💨", sampleAnswer: "It's windy today.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "This reuses the exact sentence the class just built tile-by-tile in the game above, so listen for whether kids now produce it in one breath instead of word by word. Partner A looks at the card and asks 'What's the weather?' — Partner B answers with the full frame, then they swap. Every pair talks at once, so circulate rather than running it as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Packing for a Sunny Day",
+      setting: "Two friends are packing a bag for a trip to the pool.",
+      roles: ["Friend A", "Friend B"],
+      exchanges: [
+        { role: 0, line: "It's sunny today! What should we pack?", lineSimple: "It's sunny! What should we pack?", emoji: "☀️" },
+        { role: 1, line: "Let's pack sunglasses and a t-shirt!", emoji: "🕶️" },
+        { role: 0, line: "Good idea! What about shoes?", emoji: "🤔" },
+        { role: 1, line: "Sandals — it's too hot for boots!", emoji: "👡" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, then invite one or two volunteer pairs to perform it for the class. This is a fun, concrete callback to today's story about the little robot learning hot-weather examples — welcome any hot-weather item a pair wants to add.",
+    },
+    {
       type: "chant",
       title: "Sunny or Rainy Chant",
       instructions:
@@ -559,6 +690,43 @@ export const m7_week4: Lesson = {
       teacherScript: "Open the blinds or point to a window and ask \"What's it like outside right now?\" Let a few kids answer in Korean before starting today's English sentence.",
       prompt: "What's it like outside? 🪟",
       promptSimple: "Look outside! Sunny? Rainy? 🪟",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Six words from earlier months, so nothing taught this year goes untouched for six months. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1 },
+        { word: "music", emoji: "🎵", fromMonth: 2 },
+        { word: "happy", emoji: "😊", fromMonth: 3 },
+        { word: "plant", emoji: "🌱", fromMonth: 4 },
+        { word: "grandpa", emoji: "👴", fromMonth: 5 },
+        { word: "tiger", emoji: "🐯", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Stretch your arms up high like it's sunny.", steps: 1, emoji: "☀️" },
+        { text: "Wiggle your fingers down like rain, then shiver like you're cold.", steps: 2, emoji: "🌧️" },
+        {
+          text: "Float your arms slowly like a cloud, fan your face like it's hot, then freeze.",
+          steps: 3,
+          emoji: "☁️",
+        },
+        {
+          text: "Shiver and hug yourself like it's snowy, sway your whole body like a windy tree, then stretch your arms up high like it's sunny.",
+          steps: 3,
+          emoji: "💨",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. This is the whole month's weather vocabulary one more time before the capstone check, so if any single word gets blank stares, slow down and re-run just that command.",
     },
     {
       type: "concept",
@@ -641,6 +809,35 @@ export const m7_week4: Lesson = {
         { text: "Name a clue that tells you rain might be coming!", emoji: "☁️" },
         { text: "Say today's real weather in one English word!", emoji: "🪟", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Check the Weather!",
+      frame: "It's ___ today.",
+      frameSimple: "It's ___.",
+      cards: [
+        { prompt: "snowy", emoji: "❄️", sampleAnswer: "It's snowy today." },
+        { prompt: "hot", emoji: "🥵", sampleAnswer: "It's hot today." },
+        { prompt: "cold", emoji: "🥶", sampleAnswer: "It's cold today." },
+        { prompt: "cloudy", emoji: "☁️", sampleAnswer: "It's cloudy today.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "This is the capstone speaking moment for the month, so let every pair get through all four cards rather than rushing — circulate and listen for confident, complete sentences. Partner A looks at the card and asks 'What's the weather?' — Partner B answers with the full frame, then they swap.",
+    },
+    {
+      type: "role_play",
+      title: "Check the Real Sky!",
+      setting: "Two kids look out the classroom window together to check today's real weather.",
+      roles: ["Kid 1", "Kid 2"],
+      exchanges: [
+        { role: 0, line: "I think it's cloudy today.", emoji: "☁️" },
+        { role: 1, line: "Let's check the window to be sure!", emoji: "🪟" },
+        { role: 0, line: "Look — it's actually sunny!", emoji: "☀️" },
+        { role: 1, line: "Good thing we checked!", emoji: "😊" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, then invite one or two volunteer pairs to perform it for the class. This is a direct callback to today's story — swap in whatever the real weather is outside for an even better fit.",
     },
     {
       type: "chant",
