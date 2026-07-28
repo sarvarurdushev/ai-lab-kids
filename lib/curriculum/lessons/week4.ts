@@ -16,6 +16,19 @@ export const w4d1_my_family: Lesson = {
       prompt: "This is my family.",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each of the first three weeks, so greetings, animals, and colors don't fade before the class moves past Week 8 into the year-long curriculum. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. If more than two of the five need the picture, spend two extra minutes on that week's chant before today's new family words.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 1 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 1 },
+        { word: "cat", emoji: "🐱", fromMonth: 2 },
+        { word: "blue", emoji: "🔵", fromMonth: 3 },
+        { word: "star", emoji: "⭐", fromMonth: 3, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Family",
       words: [
@@ -27,6 +40,25 @@ export const w4d1_my_family: Lesson = {
         { word: "grandpa", emoji: "👴" },
         { word: "baby", emoji: "👶" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing which family word matched. This checks listening, not reading, so keep the word list hidden until after each round.",
+      commands: [
+        { text: "Blow a big kiss, like saying hi to mom.", steps: 1, emoji: "👩" },
+        { text: "Give a thumbs up like dad, then fist bump the air like brother.", steps: 2, emoji: "👨" },
+        { text: "Wave both hands high like sister, then pat both knees like grandpa.", steps: 3, emoji: "👧" },
+        {
+          text: "Rock your arms like holding a baby, wave slowly like grandma, then blow a kiss like mom.",
+          steps: 3,
+          emoji: "👶",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class connects each family word to its action from the Family Actions movement game BEFORE anyone has to say the word aloud, so don't translate into Korean even if a child hesitates — repeat the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
     },
     {
       type: "concept",

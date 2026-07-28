@@ -17,6 +17,20 @@ export const m12_week1: Lesson = {
       prompt: "Brrr, it's cold outside! ❄️",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "This is the last month of the year, so pull words from the whole span — early months and late months both — rather than just what's fresh. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, flag that month for a fuller review next term. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "plant", emoji: "🌱", fromMonth: 4 },
+        { word: "nose", emoji: "👃", fromMonth: 9 },
+        { word: "ghost", emoji: "👻", fromMonth: 10, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Winter & Christmas",
       words: [
@@ -27,6 +41,25 @@ export const m12_week1: Lesson = {
         { word: "Santa", emoji: "🎅", minTrack: "explorers" },
         { word: "cookie", emoji: "🍪" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to the snowman.", steps: 1, emoji: "⛄" },
+        { text: "Touch the Christmas tree, then take a big bite of a pretend cookie.", steps: 2, emoji: "🎄" },
+        { text: "Stand up, shake a pretend gift by your ear, then sit back down.", steps: 3, emoji: "🎁" },
+        {
+          text: "Pat your belly like Santa, laugh \"ho ho ho,\" then freeze like a snowman.",
+          steps: 3,
+          emoji: "🎅",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip ahead to the 3-step ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -112,6 +145,45 @@ export const m12_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What Do You Want for Christmas?",
+      frame: "I want ___ for Christmas.",
+      frameSimple: "I want ___.",
+      cards: [
+        { prompt: "gift", emoji: "🎁", sampleAnswer: "I want a gift for Christmas." },
+        { prompt: "cookie", emoji: "🍪", sampleAnswer: "I want a cookie for Christmas." },
+        { prompt: "snowman", emoji: "⛄", sampleAnswer: "I want a snowman for Christmas." },
+        {
+          prompt: "Christmas tree",
+          emoji: "🎄",
+          sampleAnswer: "I want a Christmas tree for Christmas.",
+          minTrack: "explorers",
+        },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A picks a card, points to it, and says 'I want ___ for Christmas' — Partner B says the same frame with their OWN idea (any winter word, not just the card), then they swap who's asking. Every pair talks at once, so circulate and listen for the fixed chunk 'I want' staying whole rather than breaking into single words.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw Your Christmas Wish",
+      instructions: "Draw a picture of something you want for Christmas, then label it using a word from the word bank.",
+      instructionsSimple: "Draw your wish! Write the word.",
+      wordBank: [
+        { word: "snow", emoji: "❄️" },
+        { word: "snowman", emoji: "⛄" },
+        { word: "gift", emoji: "🎁" },
+        { word: "Christmas tree", emoji: "🎄" },
+        { word: "cookie", emoji: "🍪" },
+        { word: "Santa", emoji: "🎅", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big wrapped present in the middle of the page with the word 'gift' underneath it in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word. Most kids will draw a gift or cookie, which nicely sets up saying 'I want ___ for Christmas' about their own picture during wrap-up.",
+    },
+    {
       type: "chant",
       title: "I Want ___ Chant",
       instructions:
@@ -153,6 +225,39 @@ export const m12_week2: Lesson = {
       teacherScript: "Tell the class this is Round 1 of the Year-End Vora Carnival — a sorting game mixing words all the way back from Month 1. Ask: \"Do you remember any of our old words?\"",
       prompt: "Welcome back to the Vora Carnival — Round 1! 🎉",
       promptSimple: "Round 1! Let's play! 🎉",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A different six words from the ones in today's carnival games, so the class covers even more ground this last month. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, flag that month for a fuller review next term.",
+      words: [
+        { word: "planet", emoji: "🪐", fromMonth: 1 },
+        { word: "dance", emoji: "💃", fromMonth: 2 },
+        { word: "tree", emoji: "🌳", fromMonth: 4 },
+        { word: "brother", emoji: "👦", fromMonth: 5 },
+        { word: "monkey", emoji: "🐵", fromMonth: 6 },
+        { word: "angry", emoji: "😠", fromMonth: 11, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to the lion.", steps: 1, emoji: "🦁" },
+        { text: "Crouch down low, then blast off like a rocket.", steps: 2, emoji: "🚀" },
+        { text: "Swing your arm like an elephant's trunk, then stomp and roar like a lion.", steps: 3, emoji: "🐘" },
+        {
+          text: "Stretch your arms out wide like an airplane, chug your arms like a train, then freeze.",
+          steps: 3,
+          emoji: "✈️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. These commands reuse today's own review-sort words, so it doubles as a warm-up for the sorting game right after it.",
     },
     {
       type: "concept",
@@ -260,6 +365,34 @@ export const m12_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "I Remember!",
+      frame: "I remember ___!",
+      cards: [
+        { prompt: "rocket", emoji: "🚀", sampleAnswer: "I remember rocket!" },
+        { prompt: "lion", emoji: "🦁", sampleAnswer: "I remember lion!" },
+        { prompt: "airplane", emoji: "✈️", sampleAnswer: "I remember airplane!" },
+        { prompt: "elephant", emoji: "🐘", sampleAnswer: "I remember elephant!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points at a card and says 'I remember ___!' — Partner B answers back with a DIFFERENT word they remember from ANY month this year, not just today's cards, then they swap. This is pure celebratory recall, so don't correct grammar here — the goal is retrieving as many of this year's words out loud as possible. Circulate and notice which words come easily vs. which need the picture, since that should shape next term's review.",
+    },
+    {
+      type: "role_play",
+      title: "The Memory Booth",
+      setting: "At the Vora Carnival memory booth, where Vora tests what you remember from the whole year!",
+      roles: ["Vora", "Player"],
+      exchanges: [
+        { role: 0, line: "Welcome to the memory booth! Can you remember an animal from this year?", lineSimple: "Remember an animal!", emoji: "🎪" },
+        { role: 1, line: "I remember lion!", emoji: "🦁" },
+        { role: 0, line: "Great memory! Now, can you remember something that flies in the sky?", lineSimple: "Remember something in the sky!", emoji: "🎪" },
+        { role: 1, line: "I remember rocket!", emoji: "🚀" },
+      ],
+      teacherNote:
+        "Pair up — one partner plays Vora and asks the question, the other plays Player and answers, then swap roles halfway through. Encourage kids to answer with ANY real word from this year, not just the two shown here — the whole point is open recall, so accept any honest English word said with confidence.",
+    },
+    {
       type: "chant",
       title: "Sky or Ground Chant",
       instructions:
@@ -300,6 +433,39 @@ export const m12_week3: Lesson = {
       type: "warmup",
       teacherScript: "Tell the class this is Round 2 of the Year-End Vora Carnival — patterns mixing pictures from all through the year. Chant a quick pattern like \"star, pumpkin, star, pumpkin\" and ask what comes next.",
       prompt: "Round 2: A Year of Patterns! 🎉",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "This lesson's games already reuse space and animal words, so this review leans on the LATER months instead, plus one early one, to keep the coverage of the whole year balanced. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, flag that month for a fuller review next term.",
+      words: [
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "play", emoji: "🧩", fromMonth: 3 },
+        { word: "earth", emoji: "🌎", fromMonth: 4 },
+        { word: "mouth", emoji: "👄", fromMonth: 9 },
+        { word: "witch", emoji: "🧙", fromMonth: 10 },
+        { word: "sad", emoji: "😢", fromMonth: 11, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to the moon.", steps: 1, emoji: "🌙" },
+        { text: "Reach up and twinkle your fingers like a star, then make a big round pumpkin shape.", steps: 2, emoji: "⭐" },
+        { text: "Stomp and roar like a lion, then mime shaking a gift by your ear.", steps: 3, emoji: "🦁" },
+        {
+          text: "Stretch your arms up high like the sun, curl up small and sleepy like the moon, then freeze.",
+          steps: 3,
+          emoji: "☀️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. These commands reuse today's own pattern-picture words, so it doubles as a warm-up for the pattern game right after it.",
     },
     {
       type: "concept",
@@ -406,6 +572,40 @@ export const m12_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Next Comes...?",
+      frame: "Next comes ___!",
+      frameSimple: "Next: ___!",
+      cards: [
+        { prompt: "star, pumpkin, star, pumpkin", emoji: "⭐", sampleAnswer: "Next comes star!" },
+        { prompt: "lion, gift, lion, gift", emoji: "🦁", sampleAnswer: "Next comes lion!" },
+        { prompt: "sun, moon, sun, moon", emoji: "☀️", sampleAnswer: "Next comes sun!" },
+        {
+          prompt: "sun, sun, moon, moon, sun, sun",
+          emoji: "🌙",
+          sampleAnswer: "Next comes moon!",
+          minTrack: "explorers",
+        },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the pattern out loud from the card (e.g. 'star, pumpkin, star, pumpkin') and Partner B says 'Next comes ___!' with the missing picture, then they swap who's reading. This is today's pattern-prediction skill turned into speech instead of tapping — circulate and listen for the whole frame, not just the bare picture name.",
+    },
+    {
+      type: "role_play",
+      title: "Pattern Club",
+      setting: "At Pattern Club, where one friend makes a pattern and the other guesses what comes next.",
+      roles: ["Pattern Leader", "Guesser"],
+      exchanges: [
+        { role: 0, line: "Star, pumpkin, star, pumpkin... what comes next?", lineSimple: "Star, pumpkin, star, pumpkin... next?", emoji: "⭐" },
+        { role: 1, line: "Next comes star!", emoji: "🎉" },
+        { role: 0, line: "You got it! Now try this one: lion, gift, lion, gift... what comes next?", lineSimple: "Lion, gift, lion, gift... next?", emoji: "🦁" },
+        { role: 1, line: "Next comes lion!", emoji: "🎉" },
+      ],
+      teacherNote:
+        "One partner is the Pattern Leader who says a repeating pattern out loud, the other is the Guesser who calls out what comes next — then swap roles and challenge them to invent a brand-new pattern of their own using any pictures from this year. Listen for kids branching out into their own patterns rather than only repeating the two given here.",
+    },
+    {
       type: "chant",
       title: "What Comes Next Chant",
       instructions:
@@ -446,6 +646,39 @@ export const m12_week4: Lesson = {
       type: "warmup",
       teacherScript: "Say \"van\" and \"ban\" slowly, back to back, a few times, without explaining yet.",
       prompt: "van... ban... van... ban...",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "The very last vocab review of the year, so it samples across the whole span one more time — early months and late months both. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, note that month for a fuller review next term.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "clothes", emoji: "👘", fromMonth: 2 },
+        { word: "happy", emoji: "😊", fromMonth: 3 },
+        { word: "air", emoji: "💨", fromMonth: 4 },
+        { word: "zebra", emoji: "🦓", fromMonth: 6 },
+        { word: "costume", emoji: "🎭", fromMonth: 10, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to the vest.", steps: 1, emoji: "🦺" },
+        { text: "Pretend to drive a van, then cross your arms and shake your head no.", steps: 2, emoji: "🚐" },
+        { text: "Pat your chest like zipping up a vest, then throw your arms up like a champion.", steps: 3, emoji: "🥇" },
+        {
+          text: "Pretend to gently pet an animal like a vet, shrug and roll invisible dice, then freeze.",
+          steps: 3,
+          emoji: "👩‍⚕️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Since /v/ is brand new, watch for kids reacting to the /b/ words (ban, best, bet) instead — that confusion is exactly what today's lesson is about, not a sign to slow down.",
     },
     {
       type: "concept",
@@ -538,6 +771,34 @@ export const m12_week4: Lesson = {
         { text: "Listening carefully gets easier with lots of practice.", isTrue: true, explanation: "Yes! That's why we practiced light/right, fan/pan, think/sink, and now van/ban all year.", emoji: "🎧" },
         { text: "Every sound in English also exists in Korean.", isTrue: false, explanation: "No — some English sounds, like /v/, don't have an exact match in Korean, so they take extra practice.", emoji: "🤔", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "I Hear...!",
+      frame: "I hear ___!",
+      cards: [
+        { prompt: "van", emoji: "🚐", sampleAnswer: "I hear van!" },
+        { prompt: "vest", emoji: "🦺", sampleAnswer: "I hear vest!" },
+        { prompt: "best", emoji: "🥇", sampleAnswer: "I hear best!" },
+        { prompt: "vet", emoji: "👩‍⚕️", sampleAnswer: "I hear vet!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to a card and says 'I hear ___!' — biting their bottom lip for the /v/ words but saying 'best' with a normal /b/ — and Partner B echoes the exact same word back, then they swap. Since Korean has no /v/ phoneme, circulate and listen for Listeners echoing the /b/ twin by mistake (saying 'ban' back for 'van'); that mix-up is expected on the year's final sound checkpoint, so have them try again rather than moving on.",
+    },
+    {
+      type: "role_play",
+      title: "The Sound-Check Station",
+      setting: "At the sound-check station, where one friend says a tricky word and the other listens closely to repeat it back correctly.",
+      roles: ["Speaker", "Listener"],
+      exchanges: [
+        { role: 0, line: "Listen closely: van!", lineSimple: "Van!", emoji: "🚐" },
+        { role: 1, line: "I heard van!", emoji: "👂" },
+        { role: 0, line: "Listen closely: vest, not best!", lineSimple: "Vest!", emoji: "🦺" },
+        { role: 1, line: "I heard vest!", emoji: "👂" },
+      ],
+      teacherNote:
+        "One partner (the Speaker) says a /v/ word slowly, buzzing the bottom lip, and the other (the Listener) repeats back exactly what they heard — then swap. Expect Listeners to sometimes echo the /b/ twin by mistake at first, since Korean has no /v/ phoneme; that's the whole point of this final checkpoint, so have them try again rather than correcting and moving on.",
     },
     {
       type: "chant",

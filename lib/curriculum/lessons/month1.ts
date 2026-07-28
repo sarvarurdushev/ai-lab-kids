@@ -30,6 +30,25 @@ export const m1_week1: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Point to the moon.", steps: 1, emoji: "🌙" },
+        { text: "Twinkle your fingers like a star, then freeze.", steps: 2, emoji: "⭐" },
+        { text: "Blast off like a rocket, then walk in slow, bouncy moon steps like an astronaut.", steps: 3, emoji: "🚀" },
+        {
+          text: "Spin around like a planet, stretch up tall like the sun, then blast off like a rocket.",
+          steps: 3,
+          emoji: "🪐",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: proves the class understands these six space words before anyone has to say them aloud, which is exactly what the partner talk near the end of class needs. Resist translating into Korean even if a child hesitates — model the action bigger instead. If the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
+    },
+    {
       type: "movement",
       title: "Space Actions!",
       instructions:
@@ -149,6 +168,39 @@ export const m1_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What's Up There?",
+      frame: "It's a ___.",
+      cards: [
+        { prompt: "star", emoji: "⭐", sampleAnswer: "It's a star." },
+        { prompt: "rocket", emoji: "🚀", sampleAnswer: "It's a rocket." },
+        { prompt: "astronaut", emoji: "👨‍🚀", sampleAnswer: "It's an astronaut." },
+        { prompt: "planet", emoji: "🪐", sampleAnswer: "It's a planet.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card, Partner B answers with the full frame, then they swap for the next card. Every pair is talking at once, so circulate and listen in rather than running this as a whole-class drill — this is the first time this year the class produces 'It's a ___' with brand-new vocabulary rather than words carried over from the foundations unit, so listen for the article ('a' vs 'an') as much as the sentence itself.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw the Space Sky",
+      instructions: "Draw your own night sky with the space things you like best, then label each one using a word from the word bank.",
+      instructionsSimple: "Draw the sky! Write the words.",
+      wordBank: [
+        { word: "star", emoji: "⭐" },
+        { word: "moon", emoji: "🌙" },
+        { word: "planet", emoji: "🪐", minTrack: "explorers" },
+        { word: "rocket", emoji: "🚀" },
+        { word: "sun", emoji: "☀️" },
+        { word: "astronaut", emoji: "👨‍🚀" },
+      ],
+      exampleNote:
+        "A dark sky with a big yellow sun in the corner labeled 'sun,' a curved shape labeled 'moon,' and a rocket blasting up the side labeled 'rocket' — copied straight from the word bank, not spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Space Chant!",
       instructions:
@@ -259,6 +311,25 @@ export const m1_week2: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away, and keep the word bank hidden until everyone has moved. These are all Week 1's words, so this is a quick check for whether they really stuck before today's sorting game.",
+      commands: [
+        { text: "Point to the moon.", steps: 1, emoji: "🌙" },
+        { text: "Twinkle like a star, then blast off like a rocket.", steps: 2, emoji: "🚀" },
+        { text: "Stretch up wide like the sun, then walk in slow, bouncy moon steps like an astronaut.", steps: 2, emoji: "👨‍🚀" },
+        {
+          text: "Spin around like a planet, twinkle like a star, then curl up like the moon.",
+          steps: 3,
+          emoji: "🪐",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This is pure review — every action here was taught in Week 1, so the challenge is speed and no repeats, not new content. If the class hesitates on the 1-step command, that's useful information: Week 1's words may need a full re-teach before today's space-or-earth sort.",
+    },
+    {
       type: "activity",
       instructions: "As a class, decide together where each picture goes before anyone taps — this is a shared sort, not an individual quiz. Then play a second game to reinforce it.",
       config: {
@@ -315,6 +386,34 @@ export const m1_week2: Lesson = {
           minTrack: "explorers",
         },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Space or Earth?",
+      frame: "It's a ___.",
+      cards: [
+        { prompt: "astronaut", emoji: "👨‍🚀", sampleAnswer: "It's an astronaut." },
+        { prompt: "rocket", emoji: "🚀", sampleAnswer: "It's a rocket." },
+        { prompt: "star", emoji: "⭐", sampleAnswer: "It's a star." },
+        { prompt: "planet", emoji: "🪐", sampleAnswer: "It's a planet.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Same frame as Week 1, same words — the point this time is fluency, not new content. Partner A holds up the card, Partner B answers with the full frame, then they swap. Every pair is talking at once, so circulate rather than running this as a whole-class drill; listen for whether 'It's a/an' comes out automatically now, without a pause to think.",
+    },
+    {
+      type: "role_play",
+      title: "Astronaut Calling Earth!",
+      setting: "An astronaut on the space station video-calls a friend back on Earth, and they take turns guessing what the other one is looking at.",
+      roles: ["Astronaut", "Friend"],
+      exchanges: [
+        { role: 0, line: "Guess what I see up here! It's a planet.", lineSimple: "It's a planet!", emoji: "🪐" },
+        { role: 1, line: "A planet — that's a space thing!", emoji: "🚀" },
+        { role: 0, line: "Now it's your turn — tell me what you see!", lineSimple: "Your turn!", emoji: "🔭" },
+        { role: 1, line: "It's a tree — that's an earth thing!", emoji: "🌳" },
+      ],
+      teacherNote:
+        "Rehearse both lines together as a class first, then let pairs decide who's the Astronaut and who's the Friend before performing — invite one volunteer pair to perform for everyone afterward. The 'It's a ___... that's a space/earth thing!' shape is exactly today's sorting game, just spoken instead of tapped.",
     },
     {
       type: "chant",
@@ -425,6 +524,25 @@ export const m1_week3: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it. Third time meeting these action words, so push for speed: see if the whole class reacts within a second or two, with the word bank still hidden.",
+      commands: [
+        { text: "Point to the sun.", steps: 1, emoji: "☀️" },
+        { text: "Blast off like a rocket, then freeze like a star.", steps: 2, emoji: "🚀" },
+        { text: "Walk in slow, bouncy moon steps like an astronaut, then stretch up wide like the sun.", steps: 2, emoji: "👨‍🚀" },
+        {
+          text: "Spin around like a planet, curl up like the moon, then twinkle like a star.",
+          steps: 3,
+          emoji: "🪐",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This kind of fast, no-repeat listening is the real payoff of the practice from Weeks 1 and 2 — if the class is still slow on the 1-step command by week 3, spend an extra minute here rather than rushing into the matching game.",
+    },
+    {
       type: "activity",
       instructions: "Kids take turns flipping two cards. Say the English word out loud together whenever a word card flips. Then play a second game to reinforce it.",
       config: {
@@ -477,6 +595,34 @@ export const m1_week3: Lesson = {
         { text: "Rocket", emoji: "🚀" },
         { text: "Star", emoji: "⭐" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Match and Say It!",
+      frame: "It's a ___.",
+      cards: [
+        { prompt: "astronaut", emoji: "👨‍🚀", sampleAnswer: "It's an astronaut." },
+        { prompt: "rocket", emoji: "🚀", sampleAnswer: "It's a rocket." },
+        { prompt: "star", emoji: "⭐", sampleAnswer: "It's a star." },
+        { prompt: "planet", emoji: "🪐", sampleAnswer: "It's a planet.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "The same four words from today's memory match, just spoken instead of matched — Partner A holds up the card, Partner B says the full sentence, then they swap. Every pair talks at once, so circulate rather than running it as a whole-class drill; listen for whether 'It's a/an' comes automatically now, three weeks in.",
+    },
+    {
+      type: "role_play",
+      title: "Flip and Find!",
+      setting: "Two players take turns flipping cards in a space memory match game.",
+      roles: ["Player One", "Player Two"],
+      exchanges: [
+        { role: 0, line: "I flip a card... it's a star!", emoji: "⭐" },
+        { role: 1, line: "I flip a card too... it's a moon! No match yet.", emoji: "🌙" },
+        { role: 0, line: "I try again — it's a rocket!", emoji: "🚀" },
+        { role: 1, line: "I found it — it's a rocket! That's a match!", emoji: "🚀" },
+      ],
+      teacherNote:
+        "Rehearse as a class first, then let pairs perform with real flipped cards if you have them. The 'no match yet... try again... that's a match!' arc mirrors today's story about Vora needing several tries before it remembered the rocket picture instantly.",
     },
     {
       type: "chant",
@@ -585,6 +731,25 @@ export const m1_week4: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away, and keep the word bank hidden until everyone has moved. Fourth week with these action words, so the whole class should react almost instantly now.",
+      commands: [
+        { text: "Point to the sun.", steps: 1, emoji: "☀️" },
+        { text: "Twinkle like a star, then point up at the sky.", steps: 2, emoji: "⭐" },
+        { text: "Blast off like a rocket, then walk in slow, bouncy moon steps like an astronaut.", steps: 2, emoji: "🚀" },
+        {
+          text: "Spin around like a planet, curl up like the moon, then stretch up wide like the sun.",
+          steps: 3,
+          emoji: "🪐",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This is the last comprehension check before every child has to produce a full \"I see a ___\" sentence in the activities ahead — if the class is still hesitant here, slow down the sentence-building game rather than rushing to the partner talk.",
+    },
+    {
       type: "activity",
       instructions: "Build the sentence one tile at a time, left to right. Then invite a few kids to point at a different space picture and say their own \"I see a ___\" sentence out loud.",
       config: {
@@ -615,6 +780,34 @@ export const m1_week4: Lesson = {
         { text: "Point to the sky and say: I see an astronaut!", emoji: "👨‍🚀", minTrack: "explorers" },
         { text: "Point to the sky and say: I see the sun!", emoji: "☀️" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "What Do You See?",
+      frame: "I see a ___.",
+      cards: [
+        { prompt: "rocket", emoji: "🚀", sampleAnswer: "I see a rocket." },
+        { prompt: "moon", emoji: "🌙", sampleAnswer: "I see the moon." },
+        { prompt: "astronaut", emoji: "👨‍🚀", sampleAnswer: "I see an astronaut." },
+        { prompt: "planet", emoji: "🪐", sampleAnswer: "I see a planet.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card, Partner B says the full sentence, then they swap for the next card. Every pair talks at once, so circulate and listen in rather than running this as a whole-class drill — this is the first time this month the class produces a full three-word sentence rather than just a noun, so listen for whether 'I see' comes before the object, not after.",
+    },
+    {
+      type: "role_play",
+      title: "Look Up Together!",
+      setting: "Two friends lie on a blanket outside at night, looking up and taking turns saying what they see.",
+      roles: ["Stargazer", "Friend"],
+      exchanges: [
+        { role: 0, line: "Look up! I see a star.", emoji: "⭐" },
+        { role: 1, line: "I see it too! Now I see the moon.", emoji: "🌙" },
+        { role: 0, line: "Wow — I see a rocket, blasting off!", emoji: "🚀" },
+        { role: 1, line: "I see it! I see an astronaut waving from the window!", lineSimple: "I see an astronaut!", emoji: "👨‍🚀" },
+      ],
+      teacherNote:
+        "Rehearse the lines together first, then let pairs perform lying-down-and-pointing style if there's floor space. Every line reuses today's target sentence, 'I see a/the ___,' so this is the last rehearsal before the check.",
     },
     {
       type: "chant",

@@ -17,6 +17,19 @@ export const m4_week1: Lesson = {
       prompt: "Recycle or trash? ♻️",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words pulled from Space, Culture, and Friends, so nothing taught earlier in the year goes quiet while the class is deep in Environment vocabulary. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. If more than two need the picture, that month is worth a full review lesson before moving on. About thirty seconds a word.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 3 },
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Earth Words",
       words: [
@@ -28,6 +41,25 @@ export const m4_week1: Lesson = {
         { word: "air", emoji: "💨", minTrack: "explorers" },
         { word: "plant", emoji: "🌱" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocabulary hidden until after each round.",
+      commands: [
+        { text: "Point to a tree.", steps: 1, emoji: "🌳" },
+        { text: "Pretend to turn off the water, then hug yourself like the whole earth.", steps: 2, emoji: "💧" },
+        { text: "Stand up, pretend to toss trash in a bin, then sit back down.", steps: 3, emoji: "🗑️" },
+        {
+          text: "Crouch down like a tiny plant, grow up tall, then blow out a big breath of air.",
+          steps: 3,
+          emoji: "🌱",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understands \"tree,\" \"water,\" \"trash,\" and \"plant\" BEFORE anyone has to produce \"We should ___,\" so resist translating into Korean even if a child hesitates — model the action bigger instead. If the whole class nails the 1-step command instantly, skip straight to the 3-step one.",
     },
     {
       type: "concept",
@@ -150,6 +182,46 @@ export const m4_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "We Should...",
+      frame: "We should ___.",
+      frameSimple: "We should ___.",
+      cards: [
+        { prompt: "turn off the water", emoji: "💧", sampleAnswer: "We should turn off the water." },
+        { prompt: "recycle the bottle", emoji: "♻️", sampleAnswer: "We should recycle the bottle." },
+        { prompt: "plant a tree", emoji: "🌳", sampleAnswer: "We should plant a tree." },
+        {
+          prompt: "take care of the earth",
+          emoji: "🌎",
+          sampleAnswer: "We should take care of the earth.",
+          minTrack: "explorers",
+        },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the picture card and asks 'What should we do?' — Partner B answers with the full frame, then they swap. Every pair talks at once, so circulate and listen for \"should\" landing in the right spot rather than running this as a whole-class drill — it's the same modal chunk from today's concept, now produced by every child instead of just heard.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw the Earth",
+      instructions: "Draw one thing you should do to help the earth, then label your drawing using a word from the word bank.",
+      instructionsSimple: "Draw one earth-helper thing! Write the word.",
+      wordBank: [
+        { word: "tree", emoji: "🌳" },
+        { word: "recycle", emoji: "♻️" },
+        { word: "trash", emoji: "🗑️" },
+        { word: "earth", emoji: "🌎" },
+        { word: "water", emoji: "💧" },
+        { word: "plant", emoji: "🌱" },
+        { word: "air", emoji: "💨", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A recycling bin with a bottle going into it, labeled 'recycle' underneath in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "We Should Chant",
       instructions:
@@ -187,6 +259,19 @@ export const m4_week2: Lesson = {
       teacherScript: "Hold up a picture of a messy, used bottle. Ask \"What do we do first?\" and take a few guesses before revealing today's recycling steps game.",
       prompt: "What do we do first? ♻️",
       promptSimple: "Bottle's dirty! What now? ♻️",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five more words from Space, Culture, and Friends, different from last week's set, so the cumulative review actually rotates instead of drilling the same five words all year. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. About thirty seconds a word.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "happy", emoji: "😊", fromMonth: 3 },
+        { word: "planet", emoji: "🪐", fromMonth: 1, minTrack: "explorers" },
+      ],
     },
     {
       type: "concept",
@@ -263,6 +348,25 @@ export const m4_week2: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the step words hidden until after each round.",
+      commands: [
+        { text: "Pretend to rinse a dirty bottle.", steps: 1, emoji: "🚿" },
+        { text: "Sort your hands left, then right, like sorting recycling.", steps: 2, emoji: "♻️" },
+        { text: "Pretend to toss a bottle in the bin, then drive an imaginary truck away.", steps: 2, emoji: "🚛" },
+        {
+          text: "Rinse a bottle, sort it, then pretend to put it in the bin.",
+          steps: 3,
+          emoji: "🗑️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response for the recycling steps: give each command ONCE and let the class prove the rinse/sort/bin/truck order with their bodies before any tile gets tapped in today's sequencing game. If the whole class breezes through the 1-step command, jump straight to the 3-step chain.",
+    },
+    {
       type: "activity",
       instructions: "Kids take turns tapping the next step of recycling a bottle. Read each step aloud together as it's placed. Then play a second game to reinforce it.",
       config: {
@@ -312,6 +416,35 @@ export const m4_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What's Next?",
+      frame: "Next, we ___ it!",
+      frameSimple: "Next: ___ it!",
+      cards: [
+        { prompt: "rinse", emoji: "🚿", sampleAnswer: "Next, we rinse it!" },
+        { prompt: "sort", emoji: "♻️", sampleAnswer: "Next, we sort it!" },
+        { prompt: "toss", emoji: "🗑️", sampleAnswer: "Next, we toss it!" },
+        { prompt: "recycle", emoji: "🧴", sampleAnswer: "Next, we recycle it!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A says the picture's action word — rinse, sort, toss, recycle — and Partner B answers with the full frame, then they swap. Every pair talks at once, so circulate and listen for the connector \"next\" landing at the front rather than running this as a whole-class drill; it's the same step-order language from today's chant, now produced by every child instead of just echoed.",
+    },
+    {
+      type: "role_play",
+      title: "Rinse It, Sort It!",
+      setting: "At the recycling bin",
+      roles: ["Kid 1", "Kid 2"],
+      exchanges: [
+        { role: 0, line: "Look, a dirty bottle! What should we do first?", lineSimple: "A dirty bottle! First?", emoji: "🧴" },
+        { role: 1, line: "First, we rinse it.", lineSimple: "First, rinse it.", emoji: "🚿" },
+        { role: 0, line: "What comes next?", lineSimple: "Next?", emoji: "🤔" },
+        { role: 1, line: "Next, we sort it, then put it in the bin!", lineSimple: "Next, sort it. Then, bin!", emoji: "🗑️" },
+      ],
+      teacherNote:
+        "Rehearse in pairs first — Partner A is the child who spots the bottle, Partner B walks through rinse/sort/bin from today's sequencing game. Then invite one or two pairs to perform for the class. Swap roles and run it again if time allows, so both children get to say the ordered steps.",
+    },
+    {
       type: "chant",
       title: "Recycling Steps Chant",
       instructions:
@@ -347,6 +480,19 @@ export const m4_week3: Lesson = {
       type: "warmup",
       teacherScript: "Show three emoji in a row — 🌱🌿🌱 — and ask \"What comes next?\" before revealing today's pattern game.",
       prompt: "What comes next? 🌱🌿🌱...",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five more words from Space, Culture, and Friends — a fresh mix from the last two weeks' reviews, so the whole cumulative bank keeps rotating instead of settling on a favorite five. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. About thirty seconds a word.",
+      words: [
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "clothes", emoji: "👘", fromMonth: 2 },
+        { word: "kind", emoji: "❤️", fromMonth: 3 },
+        { word: "dance", emoji: "💃", fromMonth: 2 },
+        { word: "rocket", emoji: "🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
     },
     {
       type: "concept",
@@ -423,6 +569,25 @@ export const m4_week3: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocabulary hidden until after each round.",
+      commands: [
+        { text: "Point to something green, like a leaf or a plant.", steps: 1, emoji: "🌿" },
+        { text: "Crouch like a tiny plant, then grow up tall like a leaf reaching for the sun.", steps: 2, emoji: "🌱" },
+        { text: "Pretend to toss a can in recycling, then pretend to toss a tissue in the trash.", steps: 2, emoji: "♻️" },
+        {
+          text: "Crouch small like a plant, grow tall like a leaf, then crouch small again — freeze on the pattern!",
+          steps: 3,
+          emoji: "🌱",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response built from the same plant/leaf and recycle/trash pattern the class predicts today — give each command ONCE and let bodies prove the pattern before any tile gets tapped. If the class nails the 1-step command instantly, jump to the 3-step chain instead of running all four.",
+    },
+    {
       type: "activity",
       instructions: "Show the sequence one item at a time and ask kids to guess what comes next before revealing the answer. Encourage them to explain the pattern in their own words. Then play a second game to reinforce it.",
       config: {
@@ -468,6 +633,35 @@ export const m4_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Next, a...!",
+      frame: "Next, a ___!",
+      frameSimple: "Next: ___!",
+      cards: [
+        { prompt: "🌱 🌿 🌱 🌿 ...?", emoji: "🌱", sampleAnswer: "Next, a plant!" },
+        { prompt: "♻️ 🗑️ ♻️ 🗑️ ...?", emoji: "♻️", sampleAnswer: "Next, recycle!" },
+        { prompt: "🗑️ ♻️ 🗑️ ♻️ ...?", emoji: "🗑️", sampleAnswer: "Next, trash!" },
+        { prompt: "🌳 🌱 🌳 🌱 ...?", emoji: "🌳", sampleAnswer: "Next, a tree!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the repeating pattern out loud — plant, leaf, plant, leaf... — and Partner B calls out what comes next using the frame, then they swap. Every pair predicts at once, so circulate rather than running it as one big class guess; the first two patterns are the exact sequences from today's pattern-predictor game, just spoken instead of tapped.",
+    },
+    {
+      type: "role_play",
+      title: "What Comes Next?",
+      setting: "In the garden, watching for patterns",
+      roles: ["Kid 1", "Kid 2"],
+      exchanges: [
+        { role: 0, line: "Look — a plant, a leaf, a plant, a leaf. What comes next?", lineSimple: "Plant, leaf, plant, leaf. Next?", emoji: "🌱" },
+        { role: 1, line: "I think... a plant! The pattern repeats.", lineSimple: "A plant! It repeats.", emoji: "🌿" },
+        { role: 0, line: "You're right! Now look at the bins — recycle, trash, recycle, trash.", lineSimple: "Now look: recycle, trash, recycle...", emoji: "♻️" },
+        { role: 1, line: "Next comes recycle — I found the pattern too!", lineSimple: "Next: recycle! I found it!", emoji: "🗑️" },
+      ],
+      teacherNote:
+        "Rehearse in pairs, then invite a pair to perform for the class — Partner A points out a real pattern (plants or bins), Partner B predicts what comes next, echoing today's pattern-predictor game in a real conversation instead of a tap. Swap who predicts and run it again if time allows.",
+    },
+    {
       type: "chant",
       title: "What Comes Next? Chant",
       instructions:
@@ -503,6 +697,19 @@ export const m4_week4: Lesson = {
       type: "warmup",
       teacherScript: "Ask: \"What is one thing we should do for the earth?\" Take a few quick answers before revealing today's sentence.",
       prompt: "We should ___.",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "This month's last cumulative review — five words from Space, Culture, and Friends, mixing in a couple of repeats from earlier weeks on purpose, since spaced repetition means seeing a word again after a gap, not just once. Read each word chorally BEFORE tapping — the tap is a rescue, not the activity. About thirty seconds a word.",
+      words: [
+        { word: "planet", emoji: "🪐", fromMonth: 1 },
+        { word: "music", emoji: "🎵", fromMonth: 2 },
+        { word: "play", emoji: "🧩", fromMonth: 3 },
+        { word: "sorry", emoji: "😔", fromMonth: 3 },
+        { word: "world", emoji: "🌍", fromMonth: 2, minTrack: "explorers" },
+      ],
     },
     {
       type: "concept",
@@ -582,6 +789,25 @@ export const m4_week4: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocabulary hidden until after each round.",
+      commands: [
+        { text: "Link arms with a partner.", steps: 1, emoji: "🧑‍🤝‍🧑" },
+        { text: "Give a thumbs up, then pretend to toss a bottle in the recycling bin.", steps: 2, emoji: "♻️" },
+        { text: "Hold hands in a circle, then hug yourself like the whole earth.", steps: 2, emoji: "🌎" },
+        {
+          text: "Link arms, give a thumbs up, then pretend to recycle a bottle together.",
+          steps: 3,
+          emoji: "🤝",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response built from today's \"We should recycle\" actions — give each command ONCE and let the whole class prove they understand \"we,\" \"together,\" and \"recycle\" with their bodies before anyone has to say the sentence aloud. If the class nails the 1-step command instantly, jump straight to the 3-step chain.",
+    },
+    {
       type: "activity",
       instructions: "Build the sentence one tile at a time, left to right. Then have the whole class say it together like a chant, a few times.",
       config: {
@@ -612,6 +838,35 @@ export const m4_week4: Lesson = {
         { text: "We should ___ trash on the ground! (never throw)", emoji: "🚯", minTrack: "explorers" },
         { text: "We should ___ the earth! (care for)", emoji: "🌎" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "We Should...",
+      frame: "We should ___.",
+      frameSimple: "We should ___.",
+      cards: [
+        { prompt: "recycle the bottle", emoji: "♻️", sampleAnswer: "We should recycle the bottle." },
+        { prompt: "save the water", emoji: "💧", sampleAnswer: "We should save the water." },
+        { prompt: "plant a tree", emoji: "🌳", sampleAnswer: "We should plant a tree." },
+        { prompt: "care for the earth", emoji: "🌎", sampleAnswer: "We should care for the earth.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the picture card and asks 'What should we do?' — Partner B answers with the full sentence, then they swap. Every pair says \"We should ___\" at once, so circulate and listen for the group subject \"we\" rather than running this as a whole-class drill — this is today's whole point: every child produces the sentence, not just the one child called on at the end.",
+    },
+    {
+      type: "role_play",
+      title: "Cleaning Up Together",
+      setting: "Cleaning up the classroom together",
+      roles: ["Kid 1", "Kid 2"],
+      exchanges: [
+        { role: 0, line: "Look at all this trash! What should we do?", lineSimple: "So much trash! What now?", emoji: "🗑️" },
+        { role: 1, line: "We should recycle the bottles and cans.", lineSimple: "We should recycle it.", emoji: "♻️" },
+        { role: 0, line: "Good idea! And we should turn off the water too.", lineSimple: "And turn off the water!", emoji: "💧" },
+        { role: 1, line: "Yes — we should care for the earth together!", lineSimple: "We should care for earth together!", emoji: "🧑‍🤝‍🧑" },
+      ],
+      teacherNote:
+        "Rehearse in pairs, then invite a pair to perform for the whole class — this closes the month by putting \"We should ___\" into a real two-person conversation instead of a solo sentence. Swap roles and run it again if time allows, so both children get to propose an earth-friendly action.",
     },
     {
       type: "chant",

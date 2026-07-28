@@ -17,6 +17,19 @@ export const m6_week1: Lesson = {
       prompt: "Big animal, or small animal? 🦁",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each month taught so far this year, so nothing goes half a year without being retrieved. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If more than two need the picture revealed, that month deserves a full review before moving on. About thirty seconds per word is plenty.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 3 },
+        { word: "water", emoji: "💧", fromMonth: 4 },
+        { word: "grandma", emoji: "👵", fromMonth: 5, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Wild Animals",
       words: [
@@ -28,6 +41,25 @@ export const m6_week1: Lesson = {
         { word: "giraffe", emoji: "🦒", minTrack: "explorers" },
         { word: "tiger", emoji: "🐯" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for the whole class to perform the action before calling the next command. This checks listening, not reading, so keep the animal words off screen until after each round.",
+      commands: [
+        { text: "Point to the elephant.", steps: 1, emoji: "🐘" },
+        { text: "Stomp like a lion, then roar loudly.", steps: 2, emoji: "🦁" },
+        { text: "Gallop like a zebra, waddle like a penguin, then freeze.", steps: 3, emoji: "🦓" },
+        {
+          text: "Crouch low like a tiger, swipe your paws, then roar like a lion.",
+          steps: 3,
+          emoji: "🐯",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip ahead to the 3-step ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -119,6 +151,40 @@ export const m6_week1: Lesson = {
         { text: "Name an animal with stripes!", emoji: "🐯" },
         { text: "Name an animal that could hide in tall grass!", emoji: "🌾", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Big or Small?",
+      frame: "It's a ___.",
+      cards: [
+        { prompt: "big elephant", emoji: "🐘", sampleAnswer: "It's a big elephant." },
+        { prompt: "small monkey", emoji: "🐵", sampleAnswer: "It's a small monkey." },
+        { prompt: "big zebra", emoji: "🦓", sampleAnswer: "It's a big zebra." },
+        { prompt: "small penguin", emoji: "🐧", sampleAnswer: "It's a small penguin.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A reads the prompt card ('big elephant,' 'small monkey'...) and Partner B answers with the full sentence, then they swap who's reading. Every pair talks at once, so circulate row by row and listen for the article 'a' and for 'big'/'small' getting swapped, rather than running this as a whole-class drill.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw a Wild Animal",
+      instructions: "Draw your favorite wild animal from today's lesson, then label it using a word from the word bank.",
+      instructionsSimple: "Draw an animal! Write the word.",
+      wordBank: [
+        { word: "lion", emoji: "🦁" },
+        { word: "elephant", emoji: "🐘" },
+        { word: "monkey", emoji: "🐵" },
+        { word: "zebra", emoji: "🦓" },
+        { word: "penguin", emoji: "🐧" },
+        { word: "giraffe", emoji: "🦒", minTrack: "explorers" },
+        { word: "tiger", emoji: "🐯" },
+      ],
+      exampleNote:
+        "A big elephant filling most of the page with the word 'elephant' copied underneath in large letters — or a small monkey tucked in the corner labeled 'monkey' — copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
     },
     {
       type: "chant",

@@ -17,6 +17,19 @@ export const m5_week1: Lesson = {
       prompt: "Who is this? 👨‍👩‍👧‍👦",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words from earlier months, so nothing taught this year goes untouched for six months. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the five, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 3 },
+        { word: "tree", emoji: "🌳", fromMonth: 4 },
+        { word: "sorry", emoji: "😔", fromMonth: 3, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Family",
       words: [
@@ -28,6 +41,29 @@ export const m5_week1: Lesson = {
         { word: "grandpa", emoji: "👴" },
         { word: "baby", emoji: "👶", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocabulary hidden until after each round.",
+      commands: [
+        { text: "Blow a big kiss like you're saying hi to mom.", steps: 1, emoji: "👩" },
+        { text: "Give a thumbs-up for dad, then a high-five for your brother.", steps: 2, emoji: "👨" },
+        {
+          text: "Link arms and sway like a sister, rock gently like grandma, then pat your belly and laugh like grandpa.",
+          steps: 3,
+          emoji: "👴",
+        },
+        {
+          text: "Blow a kiss for mom, give a thumbs-up for dad, then rock a pretend baby gently in your arms.",
+          steps: 3,
+          emoji: "👶",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -116,6 +152,39 @@ export const m5_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "This Is My Family!",
+      frame: "This is my ___.",
+      cards: [
+        { prompt: "mom", emoji: "👩", sampleAnswer: "This is my mom." },
+        { prompt: "dad", emoji: "👨", sampleAnswer: "This is my dad." },
+        { prompt: "sister", emoji: "👧", sampleAnswer: "This is my sister." },
+        { prompt: "grandpa", emoji: "👴", sampleAnswer: "This is my grandpa.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to the card and asks 'Who is this?' — Partner B answers with the full frame, then they swap who's asking and pick a new card. Every pair talks at once, so circulate row by row rather than waiting for volunteers, and listen for the full sentence rather than just the family word alone — model 'This is my ___' again for any pair that answers with one word.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw My Family",
+      instructions: "Draw a picture of one person in your family, then label it using a word from the word bank.",
+      instructionsSimple: "Draw your family! Write the word.",
+      wordBank: [
+        { word: "mom", emoji: "👩" },
+        { word: "dad", emoji: "👨" },
+        { word: "sister", emoji: "👧" },
+        { word: "brother", emoji: "👦" },
+        { word: "grandma", emoji: "👵" },
+        { word: "grandpa", emoji: "👴", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big smiling figure with the word 'mom' underneath it in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing (a mom drawn but 'dad' written underneath), point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Family Chant",
       instructions:
@@ -156,6 +225,42 @@ export const m5_week2: Lesson = {
       type: "warmup",
       teacherScript: "Ask a few kids: \"Do you have a brother?\" Then say: \"Today, let's build a sentence about our families, one word at a time!\"",
       prompt: "Let's build a family sentence! 🧩",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words from earlier months, so nothing taught this year goes untouched for six months. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the five, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "dance", emoji: "💃", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "recycle", emoji: "♻️", fromMonth: 4 },
+        { word: "rocket", emoji: "🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocabulary hidden until after each round.",
+      commands: [
+        { text: "Give a high-five for brother.", steps: 1, emoji: "👦" },
+        { text: "Blow a kiss for mom, then give a thumbs-up for dad.", steps: 2, emoji: "👩" },
+        {
+          text: "Give a thumbs-up for dad, link arms and sway like a sister, then give a high-five for brother.",
+          steps: 3,
+          emoji: "👧",
+        },
+        {
+          text: "Blow a kiss for mom, give a thumbs-up for dad, then rock gently like grandma.",
+          steps: 3,
+          emoji: "👵",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grandma hasn't come up yet this week, so the last command doubles as a quick check that Week 1's vocabulary stuck — pause there if hands go up empty.",
     },
     {
       type: "concept",
@@ -252,6 +357,34 @@ export const m5_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Meet My Family!",
+      frame: "This is my ___.",
+      cards: [
+        { prompt: "dad", emoji: "👨", sampleAnswer: "This is my dad." },
+        { prompt: "sister", emoji: "👧", sampleAnswer: "This is my sister." },
+        { prompt: "brother", emoji: "👦", sampleAnswer: "This is my brother." },
+        { prompt: "grandma", emoji: "👵", sampleAnswer: "This is my grandma.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "This reuses the exact sentence the class just built tile-by-tile in the game above, so listen for whether kids now produce it in one breath instead of word by word. Partner A points to the card and asks 'Who is this?' — Partner B answers with the full frame, then they swap. Every pair talks at once, so circulate rather than running it as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Who's in the Photo?",
+      setting: "A friend visits and looks at a family photo on the wall.",
+      roles: ["Friend", "Kid"],
+      exchanges: [
+        { role: 0, line: "Who is this?", emoji: "🖼️" },
+        { role: 1, line: "This is my mom.", emoji: "👩" },
+        { role: 0, line: "And who is this?", emoji: "🤔" },
+        { role: 1, line: "This is my brother!", emoji: "👦" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, pointing at an imaginary photo on the wall, then invite one or two volunteer pairs to perform it for the class. Swap the family word for the friend's own if a child wants to use a real photo — the frame matters more than which family member is named.",
+    },
+    {
       type: "chant",
       title: "This Is My Family Chant",
       instructions:
@@ -291,6 +424,43 @@ export const m5_week3: Lesson = {
       type: "warmup",
       teacherScript: "Call out a word — \"mom\" or \"desk\" — and have kids shout \"Family!\" or \"School!\" as fast as they can before today's sorting game.",
       prompt: "Family or school? Shout it out! 👪🏫",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Six words from earlier months, so nothing taught this year goes untouched for six months. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two or three of the six, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "play", emoji: "🧩", fromMonth: 3 },
+        { word: "earth", emoji: "🌎", fromMonth: 4 },
+        { word: "music", emoji: "🎵", fromMonth: 2 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocabulary hidden until after each round.",
+      commands: [
+        { text: "Give a thumbs-up for dad.", steps: 1, emoji: "👨" },
+        { text: "Give a high-five for brother, then blow a kiss for mom.", steps: 2, emoji: "👦" },
+        {
+          text: "Link arms and sway like a sister, give a thumbs-up for dad, then give a high-five for brother.",
+          steps: 3,
+          emoji: "👧",
+        },
+        {
+          text: "Rock gently like grandma, blow a kiss for mom, then give a thumbs-up for dad.",
+          steps: 3,
+          emoji: "👵",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -388,6 +558,34 @@ export const m5_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Point and Say!",
+      frame: "This is my ___.",
+      cards: [
+        { prompt: "sister", emoji: "👧", sampleAnswer: "This is my sister." },
+        { prompt: "mom", emoji: "👩", sampleAnswer: "This is my mom." },
+        { prompt: "brother", emoji: "👦", sampleAnswer: "This is my brother." },
+        { prompt: "grandpa", emoji: "👴", sampleAnswer: "This is my grandpa.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to the card and asks 'Who is this?' — Partner B answers with the full frame, then they swap who's asking and pick a new card. Every pair talks at once, so circulate row by row and listen for the full sentence — after two rounds of sorting family vs. school words, check that 'family' words still come out as complete sentences, not single nouns.",
+    },
+    {
+      type: "role_play",
+      title: "Family Photo or School Photo?",
+      setting: "Grandma visits and looks through a backpack, curious about a school photo mixed in with the family photos.",
+      roles: ["Grandma", "Kid"],
+      exchanges: [
+        { role: 0, line: "Who is this?", emoji: "🖼️" },
+        { role: 1, line: "This is my mom!", emoji: "👩" },
+        { role: 0, line: "And who is this?", emoji: "🤔" },
+        { role: 1, line: "This is my teacher!", emoji: "🧑‍🏫" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, then invite one or two volunteer pairs to perform it. The last line is the fun twist — a teacher isn't family, but the same 'This is my ___' sentence still works, which is a gentle callback to today's family-vs-school sorting game.",
+    },
+    {
       type: "chant",
       title: "This Is My Family Chant",
       instructions:
@@ -427,6 +625,41 @@ export const m5_week4: Lesson = {
       type: "warmup",
       teacherScript: "Ask a few kids: \"Do you have a sister? Do you have a brother?\" Quick yes/no answers to warm up before today's sentence.",
       prompt: "Do you have a sister or a brother?",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Four words from earlier months, so nothing taught this year goes untouched for six months. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than one or two of the four, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "planet", emoji: "🪐", fromMonth: 1 },
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "kind", emoji: "❤️", fromMonth: 3 },
+        { word: "air", emoji: "💨", fromMonth: 4, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocabulary hidden until after each round.",
+      commands: [
+        { text: "Rock gently like grandma.", steps: 1, emoji: "👵" },
+        { text: "Give a thumbs-up for dad, then pat your belly and laugh like grandpa.", steps: 2, emoji: "👴" },
+        {
+          text: "Blow a kiss for mom, link arms and sway like a sister, then give a high-five for brother.",
+          steps: 3,
+          emoji: "👧",
+        },
+        {
+          text: "Give a thumbs-up for dad, rock gently like grandma, then pat your belly and laugh like grandpa.",
+          steps: 3,
+          emoji: "👴",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. This is the whole family's full cast one more time before the capstone check, so if any single word gets blank stares, slow down and re-run just that command.",
     },
     {
       type: "concept",
@@ -504,6 +737,34 @@ export const m5_week4: Lesson = {
         { text: "You can say \"This is my ___\" about a grandma or a grandpa.", isTrue: true, explanation: "Yes! The sentence works for any family member.", emoji: "👵" },
         { text: "A robot can be part of your family the same way a person can.", isTrue: false, explanation: "Not quite — Vora is a helpful friend, but your family are the people (and pets!) who love and take care of you.", emoji: "🤖", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Introduce Everyone!",
+      frame: "This is my ___.",
+      cards: [
+        { prompt: "grandma", emoji: "👵", sampleAnswer: "This is my grandma." },
+        { prompt: "grandpa", emoji: "👴", sampleAnswer: "This is my grandpa." },
+        { prompt: "sister", emoji: "👧", sampleAnswer: "This is my sister." },
+        { prompt: "dog", emoji: "🐶", sampleAnswer: "This is my dog.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "This is the capstone speaking moment for the month, so let every pair get through all four cards rather than rushing — circulate and listen for confident, complete sentences. The dog card is a fun stretch tied to today's story: if a pair questions whether a pet counts, that's exactly the point being reinforced.",
+    },
+    {
+      type: "role_play",
+      title: "Meet My Whole Family",
+      setting: "A new friend visits and meets the kid's family, one photo at a time.",
+      roles: ["New Friend", "Kid"],
+      exchanges: [
+        { role: 0, line: "Who is this?", emoji: "👋" },
+        { role: 1, line: "This is my sister.", emoji: "👧" },
+        { role: 0, line: "Wow, and who is this?", emoji: "😲" },
+        { role: 1, line: "This is my dog! He's part of my family too.", lineSimple: "This is my dog! He's family too.", emoji: "🐶" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles quietly first, then invite one or two volunteer pairs to perform it for the class. The pet reveal at the end is a direct callback to today's story — if a child doesn't have a pet, they can swap in any real family member instead; the surprised reaction from 'New Friend' is what makes it fun.",
     },
     {
       type: "chant",

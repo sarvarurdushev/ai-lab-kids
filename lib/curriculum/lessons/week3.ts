@@ -17,6 +17,19 @@ export const w3d1_rainbow_colors: Lesson = {
       promptSimple: "Look! What color is it? 🔴",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A few words from Week 1 and Week 2 of Foundations, so nothing from the first two weeks goes quiet before today's new colors take over. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than one or two of these five, revisit those weeks before piling on today's six new color words. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 1 },
+        { word: "book", emoji: "📖", fromMonth: 1 },
+        { word: "bag", emoji: "🎒", fromMonth: 1 },
+        { word: "cat", emoji: "🐱", fromMonth: 2 },
+        { word: "lion", emoji: "🦁", fromMonth: 2, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Colors",
       words: [
@@ -27,6 +40,25 @@ export const w3d1_rainbow_colors: Lesson = {
         { word: "purple", emoji: "🟣" },
         { word: "orange", emoji: "🟠" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word list hidden until after each round.",
+      commands: [
+        { text: "Point to something red.", steps: 1, emoji: "🔴" },
+        { text: "Touch something blue, then clap two times.", steps: 2, emoji: "🔵" },
+        { text: "Stand up, point to something yellow, then sit back down.", steps: 3, emoji: "🟡" },
+        {
+          text: "Touch something green, spin around once, then point to something purple.",
+          steps: 3,
+          emoji: "🟢",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood the color word BEFORE anyone has to say it, so resist translating into Korean even if a child hesitates — point at an object of that color yourself instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the harder ones instead of running all four in order.",
     },
     {
       type: "story",
@@ -107,6 +139,39 @@ export const w3d1_rainbow_colors: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What Color Is It?",
+      frame: "It is ___.",
+      cards: [
+        { prompt: "red", emoji: "🔴", sampleAnswer: "It is red." },
+        { prompt: "blue", emoji: "🔵", sampleAnswer: "It is blue." },
+        { prompt: "yellow", emoji: "🟡", sampleAnswer: "It is yellow." },
+        { prompt: "purple", emoji: "🟣", sampleAnswer: "It is purple.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'What color is it?' — Partner B answers with the full frame 'It is ___,' then they swap who's asking. Every pair talks at once, so circulate and listen for the color word landing clearly rather than running this as a whole-class drill; the point is every child saying the sentence several times, not you hearing each one.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw Your Favorite Color",
+      instructions: "Draw a shape or a picture using your favorite color, then label it using a word from the word bank.",
+      instructionsSimple: "Draw a color! Write the word.",
+      wordBank: [
+        { word: "red", emoji: "🔴" },
+        { word: "blue", emoji: "🔵" },
+        { word: "yellow", emoji: "🟡" },
+        { word: "green", emoji: "🟢" },
+        { word: "purple", emoji: "🟣" },
+        { word: "orange", emoji: "🟠", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big star or circle colored in with a bright crayon, with the word 'purple' copied underneath it in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the color actually used, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Rainbow Colors Chant",
       instructions:
@@ -145,6 +210,20 @@ export const w3d2_vora_finds_pattern: Lesson = {
       prompt: "Red, blue, red, blue... what comes next?",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A few words from Week 1 and Week 2 of Foundations, so nothing from the first two weeks goes quiet while today's attention is on shapes and patterns. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these six, revisit those weeks before starting today's pattern game. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "goodbye", emoji: "🙋", fromMonth: 1 },
+        { word: "pencil", emoji: "✏️", fromMonth: 1 },
+        { word: "chair", emoji: "🪑", fromMonth: 1 },
+        { word: "dog", emoji: "🐶", fromMonth: 2 },
+        { word: "rabbit", emoji: "🐰", fromMonth: 2 },
+        { word: "bird", emoji: "🐦", fromMonth: 2, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Shapes",
       words: [
@@ -153,6 +232,25 @@ export const w3d2_vora_finds_pattern: Lesson = {
         { word: "triangle", emoji: "🔺" },
         { word: "star", emoji: "⭐" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the word list hidden until after each round.",
+      commands: [
+        { text: "Draw a circle in the air.", steps: 1, emoji: "⭕" },
+        { text: "Point to a square, then clap once.", steps: 2, emoji: "🟦" },
+        { text: "Stand up, make a triangle shape with your arms, then sit back down.", steps: 3, emoji: "🔺" },
+        {
+          text: "Spin around once, stretch out your arms and legs like a star, then freeze.",
+          steps: 3,
+          emoji: "⭐",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood the shape word BEFORE anyone has to say it, so resist translating into Korean even if a child hesitates — draw the shape bigger in the air yourself instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the harder ones instead of running all four in order.",
     },
     {
       type: "concept",

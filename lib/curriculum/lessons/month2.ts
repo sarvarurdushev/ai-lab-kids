@@ -17,6 +17,20 @@ export const m2_week1: Lesson = {
       prompt: "Hello, world! 🌍",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Month 1 (Space) is the only earlier month so far, so review all six of its words today. Read each one together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, it's worth a full review lesson before we move much further into Month 2.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "planet", emoji: "🪐", fromMonth: 1 },
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "World Words",
       words: [
@@ -27,6 +41,25 @@ export const m2_week1: Lesson = {
         { word: "music", emoji: "🎵" },
         { word: "clothes", emoji: "👘", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing which word it matched. These are brand-new words from today, so this checks whether the class understood them at all, not just whether they can say them back.",
+      commands: [
+        { text: "Point to a flag.", steps: 1, emoji: "🚩" },
+        { text: "Wave your arm like a flag, then pretend to eat some food.", steps: 2, emoji: "🍲" },
+        { text: "Stand up, dance in a circle, then freeze like the whole world spinning still.", steps: 3, emoji: "🌍" },
+        {
+          text: "Clap along to the music, spin around once, then pretend to put on new clothes.",
+          steps: 3,
+          emoji: "👘",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood the brand-new world words BEFORE anyone has to produce a sentence with them, so don't translate into Korean even if a child hesitates — model the action bigger instead. If the whole class nails the 1-step command instantly, skip ahead to the 3-step ones.",
     },
     {
       type: "concept",
@@ -149,6 +182,40 @@ export const m2_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Where Are You From?",
+      frame: "I'm from ___.",
+      frameSimple: "I'm from ___.",
+      cards: [
+        { prompt: "Korea", emoji: "🇰🇷", sampleAnswer: "I'm from Korea." },
+        { prompt: "Japan", emoji: "🇯🇵", sampleAnswer: "I'm from Japan." },
+        { prompt: "the USA", emoji: "🇺🇸", sampleAnswer: "I'm from the USA." },
+        { prompt: "another country", emoji: "🌍", sampleAnswer: "I'm from another country!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A flips a card and pretends to be from that country, saying 'I'm from ___' — Partner B listens, then they swap who's talking. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; this is the same 'I'm from ___' sentence Mina's new friends needed help with in today's story, just now every child gets to say it themselves.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw a World Word",
+      instructions: "Draw a picture of one of today's world words, then label it using a word from the word bank.",
+      instructionsSimple: "Draw it! Write the word.",
+      wordBank: [
+        { word: "world", emoji: "🌍" },
+        { word: "flag", emoji: "🚩" },
+        { word: "food", emoji: "🍲" },
+        { word: "dance", emoji: "💃" },
+        { word: "music", emoji: "🎵" },
+        { word: "clothes", emoji: "👘", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big red flag drawn tall in the middle of the page, with the word 'flag' copied underneath it in large letters straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "World Words Chant",
       instructions:
@@ -185,6 +252,37 @@ export const m2_week2: Lesson = {
       type: "warmup",
       teacherScript: "Mime zipping up a suitcase and ask: \"What do we do first when we go on a trip?\" Take a few quick guesses before today's game.",
       prompt: "Let's go on a trip! ✈️",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Same six Space words from Month 1, still needing retrieval — today drill four of them. Read each word chorally BEFORE tapping; the tap only rescues a stuck answer, it isn't the activity. If more than one word needs the picture, spend the extra minute here before moving on to today's trip sequence.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to finish moving before saying it again. This checks whether the class understands today's trip steps as listeners, before they have to put the steps in order themselves.",
+      commands: [
+        { text: "Pretend to pack your bag.", steps: 1, emoji: "🧳" },
+        { text: "March in place to the airport, then wave hello.", steps: 2, emoji: "🛫" },
+        { text: "Stretch your arms out like a plane, fly around your seat, then sit back down.", steps: 3, emoji: "✈️" },
+        {
+          text: "Stand up, pretend to try new food, then give a big thumbs up.",
+          steps: 3,
+          emoji: "🍜",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response, and a preview of today's sequencing game — proving the class can follow the trip steps by listening alone, before they have to order the steps themselves. If the whole class nails the 1-step command instantly, skip ahead to the 3-step ones.",
     },
     {
       type: "concept",
@@ -305,6 +403,34 @@ export const m2_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Let's Go!",
+      frame: "Let's ___!",
+      cards: [
+        { prompt: "pack our bag", emoji: "🧳", sampleAnswer: "Let's pack our bag!" },
+        { prompt: "go to the airport", emoji: "🛫", sampleAnswer: "Let's go to the airport!" },
+        { prompt: "fly on a plane", emoji: "✈️", sampleAnswer: "Let's fly on a plane!" },
+        { prompt: "try new food", emoji: "🍜", sampleAnswer: "Let's try new food!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A flips a card and says 'Let's ___!' about the trip step — Partner B mimes doing it, then they swap who's talking. Circulate to make sure both partners get a turn as the speaker, not just as the mimer — this reuses the exact phrase from today's warmup, 'Let's go on a trip!'",
+    },
+    {
+      type: "role_play",
+      title: "Off to the Airport",
+      setting: "At the airport, right before a big trip!",
+      roles: ["Traveler", "Helper"],
+      exchanges: [
+        { role: 0, line: "I packed my bag!", emoji: "🧳" },
+        { role: 1, line: "Great! Let's go to the airport!", emoji: "🛫" },
+        { role: 0, line: "I'm on the plane!", emoji: "✈️" },
+        { role: 1, line: "Say hello to your new friends!", emoji: "👋" },
+      ],
+      teacherNote:
+        "Pairs rehearse both parts, then a volunteer pair performs for the class. This is the same trip sequence from today's sequence_builder game, now acted out with real lines instead of tapped in order — encourage big gestures for the suitcase pack and the plane wings.",
+    },
+    {
       type: "chant",
       title: "Pretend Trip Chant",
       instructions:
@@ -340,6 +466,38 @@ export const m2_week3: Lesson = {
       type: "warmup",
       teacherScript: "Hold up an imaginary card and flip it dramatically. Ask: \"Ready to find matching pairs?\" Take a quick cheer from the class before starting.",
       prompt: "Let's find a match! 🃏",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five more Space words from Month 1 for quick recall — say each one chorally before anyone taps. The tap is only for words the class truly can't retrieve; resist translating into Korean even if a child hesitates, and model the word bigger instead.",
+      words: [
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "planet", emoji: "🪐", fromMonth: 1 },
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "rocket", emoji: "🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing which word matched. These are the same world words from the matching game, now checked by listening alone instead of tapping a card.",
+      commands: [
+        { text: "Point to the music.", steps: 1, emoji: "🎵" },
+        { text: "Clap to the music, then wave your arm like a flag.", steps: 2, emoji: "🚩" },
+        { text: "Spin around like the whole world, dance twice, then freeze.", steps: 3, emoji: "🌍" },
+        {
+          text: "Pretend to eat some food, put on new clothes, then dance in a circle.",
+          steps: 3,
+          emoji: "👘",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: this is the class's third exposure to these world words (production in Week 1, sequencing in Week 2, now listening), so expect faster, more confident movement than Week 1's listen_and_do. If the whole class nails the 1-step command instantly, skip ahead to the 3-step ones.",
     },
     {
       type: "concept",
@@ -460,6 +618,35 @@ export const m2_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What's This?",
+      frame: "That's the ___!",
+      frameSimple: "The ___!",
+      cards: [
+        { prompt: "world", emoji: "🌍", sampleAnswer: "That's the world!" },
+        { prompt: "flag", emoji: "🚩", sampleAnswer: "That's the flag!" },
+        { prompt: "food", emoji: "🍲", sampleAnswer: "That's the food!" },
+        { prompt: "music", emoji: "🎵", sampleAnswer: "That's the music!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A points to a card and asks 'What's this?' — Partner B answers 'That's the ___!' from the word bank, then they swap. Same words as today's memory match, just spoken out loud instead of tapped — circulate and listen for confident production rather than perfect pronunciation.",
+    },
+    {
+      type: "role_play",
+      title: "At the World Festival",
+      setting: "At a fun world festival with flags, food, and music everywhere!",
+      roles: ["Friend A", "Friend B"],
+      exchanges: [
+        { role: 0, line: "Look, a flag!", emoji: "🚩" },
+        { role: 1, line: "I like the music!", emoji: "🎵" },
+        { role: 0, line: "Let's dance!", emoji: "💃" },
+        { role: 1, line: "This food is yummy!", emoji: "🍲" },
+      ],
+      teacherNote:
+        "Pairs rehearse both parts, then a volunteer pair performs for the class. These are the exact words from today's matching game and relay, now spoken in a real exchange instead of just recalled — encourage big pointing and dancing gestures to match the lines.",
+    },
+    {
       type: "chant",
       title: "Off We Go Chant!",
       instructions:
@@ -496,6 +683,37 @@ export const m2_week4: Lesson = {
       teacherScript: "Point to yourself and say \"I'm from Korea!\" with a big proud smile. Ask kids to point to themselves too.",
       prompt: "Where are you from? 🇰🇷",
       promptSimple: "Point to yourself! Say Korea! 🇰🇷",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Last quick pass at the Space words before we move into Month 3 — read each one together, and only tap to rescue a stuck answer. If 'astronaut' still needs the picture every single time, it's worth a short full review before Month 3 starts.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "planet", emoji: "🪐", fromMonth: 1 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before saying it again. This checks that the class understands today's proud, standing-tall actions before everyone says the sentence out loud themselves.",
+      commands: [
+        { text: "Point to yourself.", steps: 1, emoji: "👉" },
+        { text: "Stand up tall, then give a big thumbs up.", steps: 2, emoji: "🇰🇷" },
+        { text: "Point to yourself, stretch your arms out wide, then stand tall and proud.", steps: 3, emoji: "🦸" },
+        {
+          text: "Stand up, wave hello to a friend, then take a proud bow.",
+          steps: 3,
+          emoji: "👋",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understands the actions BEFORE anyone has to say 'I'm from Korea' out loud, so keep it playful and big rather than translating into Korean if a child hesitates. If the whole class nails the 1-step command instantly, skip ahead to the 3-step ones.",
     },
     {
       type: "concept",
@@ -604,6 +822,35 @@ export const m2_week4: Lesson = {
           minTrack: "explorers",
         },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Where Are You From?",
+      frame: "I'm from ___.",
+      frameSimple: "I'm from ___.",
+      cards: [
+        { prompt: "Korea", emoji: "🇰🇷", sampleAnswer: "I'm from Korea." },
+        { prompt: "Japan", emoji: "🇯🇵", sampleAnswer: "I'm from Japan." },
+        { prompt: "Brazil", emoji: "🇧🇷", sampleAnswer: "I'm from Brazil." },
+        { prompt: "Kenya", emoji: "🇰🇪", sampleAnswer: "I'm from Kenya.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A flips a card and says 'I'm from ___' as that country, standing tall and proud like Vora did in today's story — Partner B listens, then they swap. Every pair talks at once, so circulate rather than running this whole-class; the goal is every child producing 'I'm from ___' with confidence, whether it's true (Korea) or pretend (Japan, Brazil, Kenya).",
+    },
+    {
+      type: "role_play",
+      title: "A Video Call with a New Friend",
+      setting: "A video call with a new friend from another country!",
+      roles: ["Vora", "New Friend"],
+      exchanges: [
+        { role: 0, line: "Hi! I'm from Korea!", emoji: "🇰🇷" },
+        { role: 1, line: "Hi! I'm from Japan!", emoji: "🇯🇵" },
+        { role: 0, line: "Nice to meet you!", emoji: "👋" },
+        { role: 1, line: "Nice to meet you too!", emoji: "😊" },
+      ],
+      teacherNote:
+        "Pairs rehearse both parts, then a volunteer pair performs for the class — this is the exact video-call scene from today's story, acted out live. Encourage a big proud voice for 'I'm from Korea,' the same pride Vora showed on the call.",
     },
     {
       type: "chant",

@@ -17,6 +17,20 @@ export const m8_week1: Lesson = {
       prompt: "Where should we go? 🧳",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from six earlier months, so nothing taught this year goes half a year without being retrieved. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, that month is worth a full review lesson before moving on. Keep it to about thirty seconds a word so there's time left for today's new travel words.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 3 },
+        { word: "recycle", emoji: "♻️", fromMonth: 4 },
+        { word: "grandpa", emoji: "👴", fromMonth: 5 },
+        { word: "giraffe", emoji: "🦒", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Travel Words",
       words: [
@@ -27,6 +41,25 @@ export const m8_week1: Lesson = {
         { word: "map", emoji: "🗺️", minTrack: "explorers" },
         { word: "ticket", emoji: "🎫" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the picture. This checks listening, not reading, so keep today's word list hidden until after each round.",
+      commands: [
+        { text: "Point to the ship.", steps: 1, emoji: "🚢" },
+        { text: "Hold up a ticket, then chug forward like a train.", steps: 2, emoji: "🎫" },
+        { text: "Zip your suitcase, wave goodbye, then stretch your arms out and fly like an airplane.", steps: 3, emoji: "✈️" },
+        {
+          text: "Unfold your map, point to a spot, spin around once, then sail like a ship.",
+          steps: 3,
+          emoji: "🗺️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -115,6 +148,39 @@ export const m8_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Let's Go!",
+      frame: "Let's go by ___!",
+      frameSimple: "Go by ___!",
+      cards: [
+        { prompt: "airplane", emoji: "✈️", sampleAnswer: "Let's go by airplane!" },
+        { prompt: "train", emoji: "🚂", sampleAnswer: "Let's go by train!" },
+        { prompt: "ship", emoji: "🚢", sampleAnswer: "Let's go by ship!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'Where should we go?' — Partner B answers with the full frame 'Let's go by ___!', then they swap who's asking. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; the point is that every child produces the sentence multiple times, not that you hear each one.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw Your Trip",
+      instructions: "Draw a picture of how you'd like to travel, then label it using a word from the word bank.",
+      instructionsSimple: "Draw your trip! Write the word.",
+      wordBank: [
+        { word: "airplane", emoji: "✈️" },
+        { word: "train", emoji: "🚂" },
+        { word: "ship", emoji: "🚢" },
+        { word: "suitcase", emoji: "🧳" },
+        { word: "ticket", emoji: "🎫" },
+        { word: "map", emoji: "🗺️", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big airplane in the sky with a small suitcase underneath, and the word 'airplane' copied in large letters straight from the word bank.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Let's Go! Chant",
       instructions:
@@ -155,6 +221,38 @@ export const m8_week2: Lesson = {
       type: "warmup",
       teacherScript: "Hold up two items — one to pack (like a toothbrush) and one to leave behind (like a sofa cushion) — and ask \"Pack it, or leave it?\" before today's sorting game.",
       prompt: "Pack it, or leave it? 🧳",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words pulled from months we haven't circled back to in a while — read each one aloud together before tapping for the picture; the tap is a rescue, not the activity. If the class needs the picture on more than one or two, flag that month for a fuller review. About thirty seconds a word, then straight into today's sorting game.",
+      words: [
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+        { word: "dance", emoji: "💃", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "trash", emoji: "🗑️", fromMonth: 4 },
+        { word: "windy", emoji: "💨", fromMonth: 7 },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the word. This checks listening, not reading, so keep today's items hidden until after each round.",
+      commands: [
+        { text: "Touch your toothbrush.", steps: 1, emoji: "🪥" },
+        { text: "Fold a t-shirt, then pack it in your suitcase.", steps: 2, emoji: "👕" },
+        { text: "Pull on your socks, zip your suitcase, then wave your ticket.", steps: 3, emoji: "🧦" },
+        {
+          text: "Show your passport, hug your teddy bear, then hop on the airplane.",
+          steps: 3,
+          emoji: "🛂",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This checks comprehension of today's packing words before anyone has to sort them out loud, so resist translating into Korean if a child freezes — model the action bigger instead. If the whole class nails the 1-step command instantly, skip ahead to the 3-step ones rather than running all four in order.",
     },
     {
       type: "concept",
@@ -258,6 +356,35 @@ export const m8_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What Goes In?",
+      frame: "I'll pack my ___.",
+      frameSimple: "Pack the ___!",
+      cards: [
+        { prompt: "t-shirt", emoji: "👕", sampleAnswer: "I'll pack my t-shirt." },
+        { prompt: "toothbrush", emoji: "🪥", sampleAnswer: "I'll pack my toothbrush." },
+        { prompt: "socks", emoji: "🧦", sampleAnswer: "I'll pack my socks." },
+        { prompt: "passport", emoji: "🛂", sampleAnswer: "I'll pack my passport.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A shows the card and asks 'What goes in the suitcase?' — Partner B answers with the full frame 'I'll pack my ___,' then they swap. Every pair talks at once, so circulate rather than lead; listen especially for the initial sound in 'pack,' which gets swallowed easily — model it big rather than correcting mid-sentence.",
+    },
+    {
+      type: "role_play",
+      title: "Packing for the Trip",
+      setting: "At home, packing a suitcase together before a big trip.",
+      roles: ["Grown-up", "Traveler"],
+      exchanges: [
+        { role: 0, line: "What do you need for the trip?", emoji: "🧳" },
+        { role: 1, line: "I'll pack my t-shirt!", emoji: "👕" },
+        { role: 0, line: "Don't forget your toothbrush!", emoji: "🪥" },
+        { role: 1, line: "I'll pack it too — let's go!", emoji: "🎉" },
+      ],
+      teacherNote:
+        "Rehearse in pairs after Partner Talk, then invite one pair to perform for the class. The Grown-up's line is a natural cue for 'I'll pack my ___' — if a pair freezes, prompt with the packing words from today's Pack It or Leave It game rather than translating.",
+    },
+    {
       type: "chant",
       title: "Pack It or Leave It Chant",
       instructions:
@@ -298,6 +425,39 @@ export const m8_week3: Lesson = {
       type: "warmup",
       teacherScript: "Flip an imaginary card in the air and ask \"Airplane or train?\" — let kids guess before today's matching game.",
       prompt: "Airplane or train? ✈️🚂",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Six words pulled from five earlier months — read each one together before tapping for the picture; the tap is a rescue, not the activity. If the class needs the picture on more than two of the six, that month is worth a dedicated review lesson. Keep it to about thirty seconds a word so there's time left for today's matching game.",
+      words: [
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "clothes", emoji: "👘", fromMonth: 2 },
+        { word: "kind", emoji: "❤️", fromMonth: 3 },
+        { word: "brother", emoji: "👦", fromMonth: 5 },
+        { word: "lion", emoji: "🦁", fromMonth: 6 },
+        { word: "snowy", emoji: "❄️", fromMonth: 7, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the word. By week three these words should land fast; if a command doesn't, that's useful information for which pair to watch during today's matching game.",
+      commands: [
+        { text: "Point to the train.", steps: 1, emoji: "🚂" },
+        { text: "Wave your ticket, then hop on the ship.", steps: 2, emoji: "🎫" },
+        { text: "Zip your suitcase, spin around once, then fly like an airplane.", steps: 3, emoji: "✈️" },
+        {
+          text: "Unfold your map, point to a spot, then sail like a ship.",
+          steps: 3,
+          emoji: "🗺️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This is the third time this month's travel words have come up, so expect quicker, more confident movement than Week 1 — resist translating into Korean even if one child hesitates; model the action bigger instead. If the whole class nails the 1-step command instantly, skip straight to the 3-step ones.",
     },
     {
       type: "concept",
@@ -398,6 +558,34 @@ export const m8_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Let's Go!",
+      frame: "Let's go by ___!",
+      frameSimple: "Go by ___!",
+      cards: [
+        { prompt: "airplane", emoji: "✈️", sampleAnswer: "Let's go by airplane!" },
+        { prompt: "ship", emoji: "🚢", sampleAnswer: "Let's go by ship!" },
+        { prompt: "train", emoji: "🚂", sampleAnswer: "Let's go by train!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'Where should we go?' — Partner B answers with the full frame 'Let's go by ___!', then they swap. This is the same frame from Week 1's check, so listen for confidence rather than accuracy this time — most pairs should need zero support producing it.",
+    },
+    {
+      type: "role_play",
+      title: "At the Ticket Counter",
+      setting: "At the travel counter, picking a dream trip and a way to get there.",
+      roles: ["Travel Agent", "Customer"],
+      exchanges: [
+        { role: 0, line: "Where would you like to go?", emoji: "🗺️" },
+        { role: 1, line: "Let's go by airplane!", emoji: "✈️" },
+        { role: 0, line: "Here is your ticket!", emoji: "🎫" },
+        { role: 1, line: "Thank you! Let's go!", emoji: "🧳" },
+      ],
+      teacherNote:
+        "Rehearse in pairs after Partner Talk, then invite one pair to perform for the class. The Customer's line reuses this month's 'Let's go by ___' frame, so a pair that hesitates can be prompted with the transportation cards from today's matching game rather than a translation.",
+    },
+    {
       type: "chant",
       title: "Ways to Travel Chant",
       instructions:
@@ -438,6 +626,38 @@ export const m8_week4: Lesson = {
       type: "warmup",
       teacherScript: "Ask the class \"If we could go anywhere today, where would you go?\" and let a few kids answer in Korean before today's English sentence.",
       prompt: "Where should we go today? 🗺️",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Five words from months we haven't circled back to in a while — read each one together before tapping for the picture; the tap is a rescue, not the activity. If the class needs the picture on more than one or two, that month is worth a full review lesson. About thirty seconds a word, then into today's final travel sentence.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "music", emoji: "🎵", fromMonth: 2 },
+        { word: "sorry", emoji: "😔", fromMonth: 3, minTrack: "explorers" },
+        { word: "plant", emoji: "🌱", fromMonth: 4 },
+        { word: "tiger", emoji: "🐯", fromMonth: 6 },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the word. This is the last week of the unit, so these should be nearly automatic by now.",
+      commands: [
+        { text: "Point to the ship.", steps: 1, emoji: "🚢" },
+        { text: "Show your ticket, then chug forward like a train.", steps: 2, emoji: "🎫" },
+        { text: "Zip your suitcase, wave goodbye, then fly like an airplane.", steps: 3, emoji: "✈️" },
+        {
+          text: "Unfold your map, point to a faraway spot, spin around, then sail like a ship.",
+          steps: 3,
+          emoji: "🗺️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "By this last week of the unit these commands should be nearly automatic — the real check is whether the class moves the instant you finish speaking, without a beat of translation. If someone freezes, model the action bigger rather than repeating the command in Korean.",
     },
     {
       type: "concept",
@@ -520,6 +740,34 @@ export const m8_week4: Lesson = {
         { text: "\"Let's go by ___\" only works with one kind of transportation.", isTrue: false, explanation: "No — you can finish it with airplane, train, ship, or more!", emoji: "🗣️" },
         { text: "Thinking about which way is fastest before choosing is called reasoning.", isTrue: true, explanation: "Yes — comparing choices and picking the best one is reasoning!", emoji: "🧠", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Let's Go!",
+      frame: "Let's go by ___!",
+      frameSimple: "Go by ___!",
+      cards: [
+        { prompt: "airplane", emoji: "✈️", sampleAnswer: "Let's go by airplane!" },
+        { prompt: "train", emoji: "🚂", sampleAnswer: "Let's go by train!" },
+        { prompt: "ship", emoji: "🚢", sampleAnswer: "Let's go by ship!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "This is the month's target sentence, so let every child produce it as many times as the clock allows — Partner A asks 'Where should we go?', Partner B answers with the full frame, then they swap. Circulate and listen for a couple of the free choices you'll hear again in today's check, rather than running this as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Ready to Go",
+      setting: "At the ticket counter, deciding the fastest way to reach a faraway place.",
+      roles: ["Ticket Agent", "Traveler"],
+      exchanges: [
+        { role: 0, line: "How would you like to travel today?", emoji: "🎫" },
+        { role: 1, line: "Let's go by ship!", emoji: "🚢" },
+        { role: 0, line: "A ship takes a long time to cross the ocean!", emoji: "🌊" },
+        { role: 1, line: "Then let's go by airplane instead!", emoji: "✈️" },
+      ],
+      teacherNote:
+        "Rehearse in pairs after Partner Talk, then invite one pair to perform for the class. The Ticket Agent's pushback echoes today's story — reasoning means comparing options, not picking the first one — so encourage the Traveler to change their answer mid-scene rather than scripting it in advance.",
     },
     {
       type: "chant",

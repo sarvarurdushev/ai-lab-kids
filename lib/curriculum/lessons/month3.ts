@@ -17,6 +17,20 @@ export const m3_week1: Lesson = {
       prompt: "Can I play? 🧩",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Words from Space and Culture month, so nothing taught earlier this year goes untouched all the way to Friends month. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these words, spend an extra minute on them now rather than pushing straight into today's new friendship words. Keep it to about thirty seconds a word.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1, minTrack: "explorers" },
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "dance", emoji: "💃", fromMonth: 2 },
+      ],
+    },
+    {
       type: "vocab",
       title: "Friendship Words",
       words: [
@@ -27,6 +41,25 @@ export const m3_week1: Lesson = {
         { word: "sorry", emoji: "😔" },
         { word: "happy", emoji: "😊" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before explaining anything further. This checks listening, not reading, so keep it playful and quick.",
+      commands: [
+        { text: "Point to a friend.", steps: 1, emoji: "🧑‍🤝‍🧑" },
+        { text: "Hold out your hands like you're sharing, then smile.", steps: 2, emoji: "🤝" },
+        { text: "Stand up, pretend to build a puzzle with a friend, then say sorry if you bump them.", steps: 3, emoji: "🧩" },
+        {
+          text: "Give yourself a kind hug, jump up happy, then hold out your hands to share.",
+          steps: 3,
+          emoji: "❤️",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: this proves the class understood friend/share/play/kind/sorry/happy BEFORE anyone has to produce a sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. If the whole class nails the 1-step command instantly, skip ahead to the 3-step ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -142,6 +175,39 @@ export const m3_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Can I Play? Partner Practice",
+      frame: "Can I play with the ___?",
+      frameSimple: "Can I play?",
+      cards: [
+        { prompt: "blocks", emoji: "🧩", sampleAnswer: "Can I play with the blocks?" },
+        { prompt: "ball", emoji: "⚽", sampleAnswer: "Can I play with the ball?" },
+        { prompt: "crayons", emoji: "🖍️", sampleAnswer: "Can I play with the crayons?" },
+        { prompt: "swing", emoji: "🛝", sampleAnswer: "Can I play with the swing?", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks the full frame — 'Can I play with the blocks?' — Partner B answers 'Yes, let's share!' from today's concept, then they swap who's asking for the next card. Every pair talks at once, so circulate and listen for the 'Can I' word order rather than running this as a whole-class drill; the point is every child produces the question multiple times, not that you hear each one.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw a New Friend",
+      instructions: "Draw a picture of yourself playing with a new friend, then label your drawing using a word from the word bank.",
+      instructionsSimple: "Draw a friend! Write the word.",
+      wordBank: [
+        { word: "friend", emoji: "🧑‍🤝‍🧑" },
+        { word: "share", emoji: "🤝" },
+        { word: "play", emoji: "🧩" },
+        { word: "kind", emoji: "❤️", minTrack: "explorers" },
+        { word: "happy", emoji: "😊" },
+      ],
+      exampleNote:
+        "Two smiling stick figures holding hands over a puzzle, with the word 'friend' copied underneath in large letters from the word bank, and 'happy' near the smiling faces.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Can I Play? Chant",
       instructions:
@@ -178,6 +244,38 @@ export const m3_week2: Lesson = {
       type: "warmup",
       teacherScript: "Say \"Can I play?\" one word at a time, pausing between each word like you're placing a puzzle piece: \"Can... I... play?\" Have the class echo it the same broken-up way, then all together fast.",
       prompt: "Can... I... play? 🧩",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Words from Space and Culture month, mixed differently than Week 1's set so the whole month keeps circling back to earlier vocabulary instead of the same six words every time. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these words, that's worth a minute of extra review before moving on.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "music", emoji: "🎵", fromMonth: 2 },
+        { word: "clothes", emoji: "👘", fromMonth: 2, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before explaining anything further. This checks listening, not reading, so keep it playful and quick.",
+      commands: [
+        { text: "Point to a friend and smile.", steps: 2, emoji: "😊" },
+        { text: "Hold out your hands like sharing, then say sorry.", steps: 2, emoji: "🤝" },
+        { text: "Cup your hands like asking a question, then pretend to play with blocks.", steps: 2, emoji: "🙋" },
+        {
+          text: "Wiggle and clap fast like you're excited, hug yourself kindly, then jump up happy.",
+          steps: 3,
+          emoji: "🤩",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response before today's word-order game: this proves the class can act on friend/share/play/kind/sorry/happy without yet needing to say a full sentence, so resist translating into Korean even if a child hesitates — model the action bigger instead. If the whole class nails the first command instantly, skip ahead to the 3-step one instead of running all four in order.",
     },
     {
       type: "concept",
@@ -297,6 +395,35 @@ export const m3_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Let's Share Partner Practice",
+      frame: "Let's share the ___!",
+      frameSimple: "Let's share!",
+      cards: [
+        { prompt: "crayons", emoji: "🖍️", sampleAnswer: "Let's share the crayons!" },
+        { prompt: "blocks", emoji: "🧩", sampleAnswer: "Let's share the blocks!" },
+        { prompt: "book", emoji: "📖", sampleAnswer: "Let's share the book!" },
+        { prompt: "snack", emoji: "🍪", sampleAnswer: "Let's share the snack!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A asks 'Can I play?' (this month's fixed question, no card needed for it) — Partner B holds up the card and answers with the full frame, then they swap who's asking for the next card. Every pair talks at once, so circulate and listen for the word order in both the question and the answer rather than running this as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Can I Play? at Recess",
+      setting: "Two friends at recess, one already playing with a ball.",
+      roles: ["New Friend", "Playing Friend"],
+      exchanges: [
+        { role: 0, line: "Can I play?", emoji: "🙋" },
+        { role: 1, line: "Yes! Let's share.", emoji: "🤝" },
+        { role: 0, line: "Thank you! I feel happy.", lineSimple: "Thank you! Happy!", emoji: "😊" },
+        { role: 1, line: "Me too — let's play together!", emoji: "🧩" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both parts, then have one or two volunteer pairs perform for the class. This is the same 'Can I play?' / 'Let's share' pair the class just built tile-by-tile — the performance is what turns the drilled sentence into something they'd actually say to a friend.",
+    },
+    {
       type: "chant",
       title: "Feelings & Friends Chant",
       instructions:
@@ -332,6 +459,37 @@ export const m3_week3: Lesson = {
       type: "warmup",
       teacherScript: "Make a big happy face, then a sad face, then a kind, gentle face. Ask the class to call out the feeling word for each one before you explain today's game.",
       prompt: "How do I feel? 😊😢❤️",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A different mix from Weeks 1 and 2, so the review keeps circling through Space and Culture month rather than drilling the same four words on repeat. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these words, spend an extra minute on them before moving into today's feelings matching.",
+      words: [
+        { word: "planet", emoji: "🪐", fromMonth: 1, minTrack: "explorers" },
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "music", emoji: "🎵", fromMonth: 2 },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before explaining anything further. This checks listening, not reading, so keep it playful and quick.",
+      commands: [
+        { text: "Make a sad face, then a happy face.", steps: 2, emoji: "😢" },
+        { text: "Point to a friend, then cup your hands and ask 'Can I play?'", steps: 2, emoji: "🙋" },
+        { text: "Give yourself a kind hug, then wiggle and clap like you're excited.", steps: 2, emoji: "❤️" },
+        {
+          text: "Make a sad face, give yourself a kind hug, then jump up with a happy smile.",
+          steps: 3,
+          emoji: "🤗",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response before today's matching game: this proves the class can act out happy/sad/kind/excited and 'Can I play?' before anyone has to name a feeling out loud, so resist translating into Korean even if a child hesitates — model the face and action bigger instead. If the whole class nails the first two commands instantly, jump straight to the 3-step one.",
     },
     {
       type: "concept",
@@ -456,6 +614,34 @@ export const m3_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "I Feel... Partner Practice",
+      frame: "I feel ___!",
+      cards: [
+        { prompt: "happy", emoji: "😊", sampleAnswer: "I feel happy!" },
+        { prompt: "sad", emoji: "😢", sampleAnswer: "I feel sad!" },
+        { prompt: "kind", emoji: "❤️", sampleAnswer: "I feel kind!" },
+        { prompt: "excited", emoji: "🤩", sampleAnswer: "I feel excited!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A makes the face on the card, Partner B names it with the full frame — 'I feel happy!' — matching the same face back, then they swap who's making the face for the next card. Every pair talks at once, so circulate and check that the face and the word actually match rather than running this as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Noticing a Sad Friend",
+      setting: "Recess — one friend is sitting alone, looking sad.",
+      roles: ["Noticing Friend", "Sad Friend"],
+      exchanges: [
+        { role: 0, line: "Are you okay?", emoji: "🤔" },
+        { role: 1, line: "I feel sad.", emoji: "😢" },
+        { role: 0, line: "Can I sit with you?", emoji: "🤗" },
+        { role: 1, line: "Yes! I feel happy now.", lineSimple: "Yes! Happy now.", emoji: "😊" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both parts, then have one or two volunteer pairs perform for the class. This acts out exactly what Vora did in today's story — noticing the clues, then choosing to be kind — so pause after the performance to ask what clues told the Noticing Friend that something was wrong.",
+    },
+    {
       type: "chant",
       title: "How Do You Feel? Chant",
       instructions:
@@ -491,6 +677,38 @@ export const m3_week4: Lesson = {
       type: "warmup",
       teacherScript: "Say \"light\" and \"right\" slowly, back to back, a few times. Don't explain yet — just let the class notice the sounds are close but different, the same way they did back in Week 2.",
       prompt: "light... right... light... right...",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A different mix again from Weeks 1-3, so by the end of the month the class has circled back through most of Space and Culture month's words at least once. Read each word together BEFORE tapping — the tap is a rescue, not the activity. If the class needs the picture on more than two of these words, that month is worth a fuller review before next month starts.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "planet", emoji: "🪐", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "dance", emoji: "💃", fromMonth: 2, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before explaining anything further. Notice that some of today's commands use words from the SAME minimal pair (light/right, lead/read, rock/row) — that's on purpose, so listening carefully here matters just as much as in the minimal-pairs game.",
+      commands: [
+        { text: "Point to the right.", steps: 1, emoji: "👉" },
+        { text: "Flick on a pretend light, then freeze like a rock.", steps: 2, emoji: "💡" },
+        { text: "March forward like you're leading the line, then pretend to read a book.", steps: 2, emoji: "🚶" },
+        {
+          text: "Point to the right, freeze like a rock, then pretend to row a boat.",
+          steps: 3,
+          emoji: "🚣",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response using the exact words from today's minimal-pairs game — this proves the class can tell light/right and lead/read/rock/row apart in a full command, not just when the two words are shown side by side. Resist repeating a command even if a child hesitates; model the action bigger instead. If the whole class nails the 1-step command instantly, jump straight to the 3-step one.",
     },
     {
       type: "concept",
@@ -604,6 +822,34 @@ export const m3_week4: Lesson = {
         { text: "Both are equally tricky", emoji: "🤔" },
         { text: "Neither — they're easy now!", emoji: "🎉" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "I Hear... Partner Practice",
+      frame: "I hear ___!",
+      cards: [
+        { prompt: "light", emoji: "💡", sampleAnswer: "I hear light!" },
+        { prompt: "right", emoji: "👉", sampleAnswer: "I hear right!" },
+        { prompt: "read", emoji: "📖", sampleAnswer: "I hear read!" },
+        { prompt: "row", emoji: "🚣", sampleAnswer: "I hear row!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A says ONE word out loud from a pair on the card (not shown to Partner B) — Partner B listens and answers with the full frame, then they swap who's speaking for the next card. Every pair talks at once, so circulate and check that Partner B's answer actually matches what Partner A said, not just that they said an English word confidently.",
+    },
+    {
+      type: "role_play",
+      title: "Two Friends Test Their Listening",
+      setting: "Two friends taking turns quizzing each other's careful listening.",
+      roles: ["Quiz Friend", "Listening Friend"],
+      exchanges: [
+        { role: 0, line: "Did I say 'light' or 'right'?", emoji: "❓" },
+        { role: 1, line: "You said... right!", emoji: "👉" },
+        { role: 0, line: "Yes! Good listening. Did I say 'lead' or 'read'?", lineSimple: "Yes! Good job! Lead or read?", emoji: "👂" },
+        { role: 1, line: "You said... read!", emoji: "📖" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both parts, then have one or two volunteer pairs perform for the class — the Quiz Friend can genuinely say either word each time, since the whole point is that the Listening Friend has to listen for real, not guess from memory.",
     },
     {
       type: "chant",

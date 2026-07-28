@@ -17,6 +17,19 @@ export const w2d1_animal_safari: Lesson = {
       promptSimple: "Guess the animal! 🦁",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each of Week 1's three lessons — greetings and classroom objects — so nothing from last week fades before today's animal words take over. Read each word together BEFORE tapping — the tap is a rescue, not the activity. About thirty seconds a word; if the class needs the picture on more than one, revisit Week 1's chants before moving on.",
+      words: [
+        { word: "hello", emoji: "👋", fromMonth: 0 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 0 },
+        { word: "book", emoji: "📖", fromMonth: 0 },
+        { word: "pencil", emoji: "✏️", fromMonth: 0 },
+        { word: "bag", emoji: "🎒", fromMonth: 0, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Animals",
       words: [
@@ -27,6 +40,25 @@ export const w2d1_animal_safari: Lesson = {
         { word: "bird", emoji: "🐦" },
         { word: "fish", emoji: "🐟" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the animal word. This checks listening, not reading, so keep the word bank hidden until after each round.",
+      commands: [
+        { text: "Meow like a cat.", steps: 1, emoji: "🐱" },
+        { text: "Hop like a rabbit, then freeze.", steps: 2, emoji: "🐰" },
+        { text: "Flap your arms like a bird, then land and tweet.", steps: 2, emoji: "🐦" },
+        {
+          text: "Roar like a lion, wiggle like a fish, then bark like a dog.",
+          steps: 3,
+          emoji: "🦁",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class understood the animal word BEFORE anyone has to say it, so resist translating into Korean even if a child hesitates — model the action bigger instead. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the 3-step chain instead of running all four in order.",
     },
     {
       type: "concept",
@@ -111,6 +143,40 @@ export const w2d1_animal_safari: Lesson = {
         { text: "Hop like a rabbit — say 'one rabbit' or 'three rabbits'!", emoji: "🐰" },
         { text: "Flap like a bird — how many birds are flying?", emoji: "🐦", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "One or Two?",
+      frame: "One ___, two ___s!",
+      frameSimple: "One ___! Two ___s!",
+      cards: [
+        { prompt: "cat", emoji: "🐱", sampleAnswer: "One cat, two cats!" },
+        { prompt: "dog", emoji: "🐶", sampleAnswer: "One dog, two dogs!" },
+        { prompt: "rabbit", emoji: "🐰", sampleAnswer: "One rabbit, two rabbits!" },
+        { prompt: "bird", emoji: "🐦", sampleAnswer: "One bird, two birds!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and says 'One ___,' Partner B completes it with 'two ___s!' — then they swap who's holding the card. Every pair talks at once, so circulate and listen specifically for the plural -s ending (today's concept segment flagged this as the part Korean speakers need the most repetition on) rather than running this as a whole-class drill.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw an Animal",
+      instructions: "Draw your favorite animal from today, then label it using a word from the word bank.",
+      instructionsSimple: "Draw an animal! Write the word.",
+      wordBank: [
+        { word: "cat", emoji: "🐱" },
+        { word: "dog", emoji: "🐶" },
+        { word: "lion", emoji: "🦁" },
+        { word: "rabbit", emoji: "🐰" },
+        { word: "bird", emoji: "🐦" },
+        { word: "fish", emoji: "🐟", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big roaring lion with a mane, labeled 'lion' underneath in large letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a child draws a cat but labels it 'dog,' point back at the word bank rather than telling them the right word.",
     },
     {
       type: "chant",

@@ -17,6 +17,20 @@ export const m11_week1: Lesson = {
       prompt: "How do I feel?",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from six of the ten earlier months, so nothing taught this year goes half the program without being retrieved. Read each word chorally BEFORE tapping — the tap rescues a stuck answer, it isn't the activity. With ten months to draw from now, don't try to cover them all in one sitting; if the class stalls on more than two of the six, that's the pair to bring back next week instead of pushing through all six today.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "water", emoji: "💧", fromMonth: 4 },
+        { word: "grandpa", emoji: "👴", fromMonth: 5 },
+        { word: "tiger", emoji: "🐯", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Feelings",
       words: [
@@ -27,6 +41,25 @@ export const m11_week1: Lesson = {
         { word: "surprised", emoji: "😲", minTrack: "explorers" },
         { word: "tired", emoji: "😴" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for every face to change before revealing which feeling it matched. This checks listening, not reading, so keep today's feeling words for the sentence-building later in the lesson.",
+      commands: [
+        { text: "Make a happy face.", steps: 1, emoji: "😊" },
+        { text: "Make a sad face, then rub your eyes like you're tired.", steps: 2, emoji: "😴" },
+        { text: "Stomp your feet like you're angry, cover your eyes like you're scared, then freeze.", steps: 3, emoji: "😨" },
+        {
+          text: "Gasp like you're surprised, spin around once, then make your happiest face.",
+          steps: 3,
+          emoji: "😲",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: the point is proving the class can recognize each feeling word on their own face BEFORE anyone has to produce \"I feel ___\" as a sentence, so resist translating into Korean even if a child hesitates — exaggerate your own expression instead. Grade it live: if the whole class nails a 1-step command instantly, skip straight to the harder ones instead of running all four in order.",
     },
     {
       type: "concept",
@@ -119,6 +152,40 @@ export const m11_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "How Do You Feel?",
+      frame: "I feel ___.",
+      frameSimple: "I feel ___.",
+      cards: [
+        { prompt: "happy", emoji: "😊", sampleAnswer: "I feel happy." },
+        { prompt: "sad", emoji: "😢", sampleAnswer: "I feel sad." },
+        { prompt: "tired", emoji: "😴", sampleAnswer: "I feel tired." },
+        { prompt: "surprised", emoji: "😲", sampleAnswer: "I feel surprised.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A picks up a card and makes that face — Partner B looks and guesses out loud with \"I feel ___,\" then they swap who's making the face. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill; today's concept note flagged \"I'm feel happy\" as a likely slip, so listen for it and simply say the correct frame back rather than correcting mid-turn.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw a Feeling",
+      instructions: "Draw a face showing one of today's feelings, then label it using a word from the word bank.",
+      instructionsSimple: "Draw a face! Write the word.",
+      wordBank: [
+        { word: "happy", emoji: "😊" },
+        { word: "sad", emoji: "😢" },
+        { word: "angry", emoji: "😠" },
+        { word: "scared", emoji: "😨" },
+        { word: "surprised", emoji: "😲", minTrack: "explorers" },
+        { word: "tired", emoji: "😴" },
+      ],
+      exampleNote:
+        "A big round face with a huge smile and rosy cheeks, with the word 'happy' copied underneath in large letters straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawn expression (a frown labeled 'happy'), point back at the word bank and the face itself rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "I Feel Chant",
       instructions:
@@ -159,6 +226,39 @@ export const m11_week2: Lesson = {
       type: "warmup",
       teacherScript: "Act out a huge happy smile and freeze like a photo — ask the class: \"How do I feel?\" Tell them today we're going to build that sentence together, one word at a time.",
       prompt: "Freeze! How do I feel? 📸",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Six more words from earlier months, mixed differently from last week's set so review keeps expanding instead of repeating. Read each word chorally BEFORE tapping — the tap rescues a stuck answer, it isn't the activity. If the class stalls on more than two of the six, note which ones for a quicker re-check rather than lingering here.",
+      words: [
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "kind", emoji: "❤️", fromMonth: 3 },
+        { word: "tree", emoji: "🌳", fromMonth: 4 },
+        { word: "sister", emoji: "👧", fromMonth: 5 },
+        { word: "zebra", emoji: "🦓", fromMonth: 6 },
+        { word: "windy", emoji: "💨", fromMonth: 7, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for every face to freeze before revealing which feeling it matched. This checks listening only — save \"I feel ___\" as a full sentence for the sentence-building game later.",
+      commands: [
+        { text: "Freeze with a scared face.", steps: 1, emoji: "😨" },
+        { text: "Make an angry face, then a tired face.", steps: 2, emoji: "😴" },
+        { text: "Jump like you're surprised, then hug yourself like you're sad, then freeze.", steps: 3, emoji: "😢" },
+        {
+          text: "Stomp like you're angry, cover your eyes like you're scared, then finish with your happiest face.",
+          steps: 3,
+          emoji: "😊",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response, and a nice warm-up for today's freeze-frame movement — proving the class recognizes each feeling word on their own face before they build \"I feel happy\" as a full sentence. Grade it live: if the whole class nails the 1-step command instantly, skip straight to the harder ones.",
     },
     {
       type: "concept",

@@ -17,6 +17,20 @@ export const m10_week1: Lesson = {
       prompt: "Trick or treat! 🎃",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A quick lap through Months 1-8 before this month's spooky words take over — read each word together BEFORE tapping, since the tap is a rescue for a stuck class, not the activity itself. If more than two of these six need the picture, flag that month for a fuller review later. About thirty seconds a word keeps this from eating into the Halloween fun.",
+      words: [
+        { word: "star", emoji: "⭐", fromMonth: 1 },
+        { word: "friend", emoji: "🧑‍🤝‍🧑", fromMonth: 3 },
+        { word: "mom", emoji: "👩", fromMonth: 5 },
+        { word: "sunny", emoji: "☀️", fromMonth: 7 },
+        { word: "suitcase", emoji: "🧳", fromMonth: 8 },
+        { word: "penguin", emoji: "🐧", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "Halloween Words",
       words: [
@@ -27,6 +41,25 @@ export const m10_week1: Lesson = {
         { word: "candy", emoji: "🍬" },
         { word: "costume", emoji: "🎭" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before showing the matching Halloween picture. This checks listening, not reading, so keep the pictures hidden until after each round.",
+      commands: [
+        { text: "Point to the pumpkin.", steps: 1, emoji: "🎃" },
+        { text: "Touch your head, then flap your arms like a bat.", steps: 2, emoji: "🦇" },
+        { text: "Stand up, float your arms like a ghost, then sit back down.", steps: 3, emoji: "👻" },
+        {
+          text: "Spin around, stir an invisible pot like a witch, then freeze like a statue.",
+          steps: 3,
+          emoji: "🧙",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This is the first time this month's brand-new words get tested by listening alone, before any speaking — resist translating into Korean even if a child hesitates, model the action bigger instead. Grade it live: if the class nails 'point to the pumpkin' instantly, skip ahead to the 3-step commands rather than running all four in order.",
     },
     {
       type: "concept",
@@ -122,6 +155,40 @@ export const m10_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "What's Your Costume?",
+      frame: "I'm a ___!",
+      frameSimple: "I'm a ___.",
+      cards: [
+        { prompt: "pumpkin", emoji: "🎃", sampleAnswer: "I'm a pumpkin!" },
+        { prompt: "ghost", emoji: "👻", sampleAnswer: "I'm a ghost!" },
+        { prompt: "bat", emoji: "🦇", sampleAnswer: "I'm a bat!" },
+        { prompt: "witch", emoji: "🧙", sampleAnswer: "I'm a witch!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'What's your costume?' — Partner B answers with the full sentence, then they swap who's asking. Every pair talks at once, so circulate and listen rather than running this as a whole-class drill — listen especially for the article 'a,' since Korean doesn't require one before a noun.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw Your Halloween Costume",
+      instructions: "Draw yourself in a Halloween costume, then label it with a word from the word bank.",
+      instructionsSimple: "Draw your costume! Write the word.",
+      wordBank: [
+        { word: "pumpkin", emoji: "🎃" },
+        { word: "ghost", emoji: "👻" },
+        { word: "witch", emoji: "🧙", minTrack: "explorers" },
+        { word: "bat", emoji: "🦇" },
+        { word: "candy", emoji: "🍬" },
+        { word: "costume", emoji: "🎭" },
+      ],
+      exampleNote:
+        "A stick figure wearing a round, orange pumpkin body with the word 'pumpkin' underneath it in big letters, copied straight from the word bank rather than spelled from memory.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying, not a spelling test. Circulate and, if a label doesn't match the drawing, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "I'm a ___ Chant",
       instructions:
@@ -163,6 +230,39 @@ export const m10_week2: Lesson = {
       teacherScript: "Whisper \"boo!\" behind your hands, then reveal a big smile — a tiny, friendly scare to get everyone giggling before the games start.",
       prompt: "Boo! 👻 Just kidding — let's play!",
       promptSimple: "Boo! Let's play! 👻",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "A different six words this time — Months 2, 4, 5, 6, 8, and 9 — since spacing only works if it keeps touching new ground instead of the same word every week. Same rule as always: read the word aloud together first, and only tap for the picture if the class stalls. Keep it brisk so there's plenty of time left for the matching game.",
+      words: [
+        { word: "world", emoji: "🌍", fromMonth: 2 },
+        { word: "water", emoji: "💧", fromMonth: 4 },
+        { word: "dad", emoji: "👨", fromMonth: 5 },
+        { word: "eyes", emoji: "👀", fromMonth: 9 },
+        { word: "airplane", emoji: "✈️", fromMonth: 8 },
+        { word: "giraffe", emoji: "🦒", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing which Halloween word it was. Same six words as today's memory-match game, so this checks whether listening keeps pace with the matching skill.",
+      commands: [
+        { text: "Point to the candy.", steps: 1, emoji: "🍬" },
+        { text: "Touch your toes, then make a big round pumpkin shape with your arms.", steps: 2, emoji: "🎃" },
+        { text: "Stand up, flap your arms like a bat, then sit back down.", steps: 3, emoji: "🦇" },
+        {
+          text: "Twirl around like you're showing off a costume, cackle like a witch, then freeze.",
+          steps: 3,
+          emoji: "🧙",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "By week two these words should be familiar from Week 1's vocabulary and movement, so watch for speed rather than comprehension — a class that hesitates on 'point to the candy' needs more matching-game reps before the harder 3-step commands. Say each command once and keep the next one moving.",
     },
     {
       type: "concept",
@@ -256,6 +356,35 @@ export const m10_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Match My Costume!",
+      frame: "I'm a ___!",
+      frameSimple: "I'm a ___.",
+      cards: [
+        { prompt: "ghost", emoji: "👻", sampleAnswer: "I'm a ghost!" },
+        { prompt: "bat", emoji: "🦇", sampleAnswer: "I'm a bat!" },
+        { prompt: "pumpkin", emoji: "🎃", sampleAnswer: "I'm a pumpkin!" },
+        { prompt: "witch", emoji: "🧙", sampleAnswer: "I'm a witch!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'What's your costume?' — Partner B answers with the full sentence, then they swap. These are the same six words from today's memory-match game, so expect fast, confident production rather than new vocabulary — circulate and listen rather than running it as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Trick-or-Treat at the Door",
+      setting: "A neighbor's front door on Halloween night",
+      roles: ["Neighbor", "Trick-or-Treater"],
+      exchanges: [
+        { role: 0, line: "Knock, knock! Who's there?", lineSimple: "Who's there?", emoji: "🚪" },
+        { role: 1, line: "Trick or treat!", emoji: "🎃" },
+        { role: 0, line: "What a great costume — what are you?", lineSimple: "What are you?", emoji: "🤔" },
+        { role: 1, line: "I'm a ghost! Can I have some candy?", lineSimple: "I'm a ghost! Candy, please?", emoji: "👻" },
+      ],
+      teacherNote:
+        "Pairs rehearse both roles, then swap so everyone plays the Trick-or-Treater at least once — that line reuses the exact 'I'm a ___' frame from today's partner talk, so it should already feel familiar. Pick one or two volunteer pairs to perform for the class before moving on.",
+    },
+    {
       type: "chant",
       title: "Halloween Chant",
       instructions:
@@ -296,6 +425,39 @@ export const m10_week3: Lesson = {
       type: "warmup",
       teacherScript: "Draw a simple pumpkin, ghost, pumpkin shape on the board and ask kids to guess what comes next before you reveal it.",
       prompt: "🎃 👻 🎃 ... what comes next?",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Six more words, this time reaching back to Month 1 and pulling from 3, 5, 6, 7, and 9 — the wider the spread, the better the retrieval workout. Read together before tapping; the tap rescues a stuck class, it isn't the point of the activity. Watch for Month 1's 'moon' specifically — it's the oldest word in today's set.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "grandma", emoji: "👵", fromMonth: 5 },
+        { word: "rainy", emoji: "🌧️", fromMonth: 7 },
+        { word: "mouth", emoji: "👄", fromMonth: 9 },
+        { word: "zebra", emoji: "🦓", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the word. This is comprehension warm-up before the pattern-guessing game, so keep it brisk.",
+      commands: [
+        { text: "Point to the ghost.", steps: 1, emoji: "👻" },
+        { text: "Touch your shoulders, then make a big round pumpkin shape with your arms.", steps: 2, emoji: "🎃" },
+        { text: "Stand up, flap your arms like a bat, then sit back down.", steps: 3, emoji: "🦇" },
+        {
+          text: "Spin around, stir an invisible pot like a witch, then freeze like a statue.",
+          steps: 3,
+          emoji: "🧙",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "By now the six Halloween words are familiar, so use this round to build toward the multi-step commands quickly rather than lingering on 'point to the ghost.' If the whole class freezes correctly on the 3-step commands, they're ready for the harder pattern-prediction game that follows.",
     },
     {
       type: "concept",
@@ -391,6 +553,35 @@ export const m10_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Guess My Costume!",
+      frame: "I'm a ___!",
+      frameSimple: "I'm a ___.",
+      cards: [
+        { prompt: "bat", emoji: "🦇", sampleAnswer: "I'm a bat!" },
+        { prompt: "pumpkin", emoji: "🎃", sampleAnswer: "I'm a pumpkin!" },
+        { prompt: "ghost", emoji: "👻", sampleAnswer: "I'm a ghost!" },
+        { prompt: "witch", emoji: "🧙", sampleAnswer: "I'm a witch!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'What's your costume?' — Partner B answers with the full sentence, then they swap. For extra fun, have Partner A hide the card and let B guess the costume before it's revealed — a small nod to today's pattern-guessing theme. Circulate and listen rather than running it as a whole-class drill.",
+    },
+    {
+      type: "role_play",
+      title: "Guess Who's Next!",
+      setting: "Vora watching costumes take turns knocking on the door",
+      roles: ["Vora", "Trick-or-Treater"],
+      exchanges: [
+        { role: 1, line: "Knock, knock!", emoji: "🚪" },
+        { role: 0, line: "Ghost, pumpkin, ghost... I predict a pumpkin next!", lineSimple: "I predict... a pumpkin!", emoji: "🤔" },
+        { role: 1, line: "You guessed it! I'm a pumpkin!", lineSimple: "I'm a pumpkin!", emoji: "🎃" },
+        { role: 0, line: "The pattern worked! Trick or treat!", emoji: "🎉" },
+      ],
+      teacherNote:
+        "This mirrors today's story exactly, so let the 'Trick-or-Treater' partner pick ANY costume word to fill in — 'Vora' just has to react, not guess correctly every time. Rehearse in pairs, then bring one or two pairs up to perform for the class.",
+    },
+    {
       type: "chant",
       title: "Spooky Chant",
       instructions:
@@ -431,6 +622,39 @@ export const m10_week4: Lesson = {
       type: "warmup",
       teacherScript: "Drape a hand towel or scarf over your head like a silly ghost and say \"I'm a ghost!\" in a wobbly voice. Ham it up — this whole lesson is meant to be goofy.",
       prompt: "I'm a ghost! Boo! 👻",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "Closing out the month with words from 4, 5, 6, 7, 8, and 9 — read each one together before anyone taps for the picture, since tapping is a rescue, not the activity. This is the last vocab review before November, so if a word still needs the picture every single time, it's worth a mention to whoever teaches next month.",
+      words: [
+        { word: "recycle", emoji: "♻️", fromMonth: 4 },
+        { word: "sister", emoji: "👧", fromMonth: 5 },
+        { word: "cloudy", emoji: "☁️", fromMonth: 7 },
+        { word: "ears", emoji: "👂", fromMonth: 9 },
+        { word: "ticket", emoji: "🎫", fromMonth: 8 },
+        { word: "tiger", emoji: "🐯", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the word. This is the last listening check of the month, so let it move fast.",
+      commands: [
+        { text: "Point to the costume you'd love to wear.", steps: 1, emoji: "🎭" },
+        { text: "Touch your head, then flap your arms like a bat.", steps: 2, emoji: "🦇" },
+        { text: "Stand up, float your arms like a ghost, then sit back down.", steps: 3, emoji: "👻" },
+        {
+          text: "Spin around, cackle like a witch stirring a pot, then freeze like a statue.",
+          steps: 3,
+          emoji: "🧙",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "A full month with these six words means this round should be fast and confident — if anyone still hesitates on 'point to the costume,' pair them with a partner during today's silly speaking activities. Keep the energy playful; this whole lesson is meant to be goofy.",
     },
     {
       type: "concept",
@@ -510,6 +734,35 @@ export const m10_week4: Lesson = {
         { text: "Name a costume using two words, like \"a scary witch\"!", emoji: "🧙", minTrack: "explorers" },
         { text: "Name a costume that isn't spooky at all!", emoji: "🌈", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "Any Costume Goes!",
+      frame: "I'm a ___!",
+      frameSimple: "I'm a ___.",
+      cards: [
+        { prompt: "ghost", emoji: "👻", sampleAnswer: "I'm a ghost!" },
+        { prompt: "pumpkin", emoji: "🎃", sampleAnswer: "I'm a pumpkin!" },
+        { prompt: "bat", emoji: "🦇", sampleAnswer: "I'm a bat!" },
+        { prompt: "anything silly!", emoji: "✨", sampleAnswer: "I'm a lamp!", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A holds up the card and asks 'What's your costume?' — Partner B answers with the full sentence, then they swap. On the last card there's no picture to copy, so any invented costume is correct as long as the frame 'I'm a ___' is right — circulate and listen for the sentence shape, not for a 'correct' word.",
+    },
+    {
+      type: "role_play",
+      title: "Silliest Costume Ever!",
+      setting: "Vora and a friend comparing made-up Halloween costumes",
+      roles: ["Vora", "Friend"],
+      exchanges: [
+        { role: 0, line: "I'm a lamp! What are you?", lineSimple: "I'm a lamp! You?", emoji: "💡" },
+        { role: 1, line: "I'm a dinosaur wearing sunglasses!", lineSimple: "I'm a dinosaur!", emoji: "🦖" },
+        { role: 0, line: "That's so silly — I love it!", emoji: "😂" },
+        { role: 1, line: "Your turn — I'm a ___! You finish it!", lineSimple: "Now you: I'm a ___!", emoji: "✨" },
+      ],
+      teacherNote:
+        "The whole point this week is that ANY costume answer is correct, so let the 'Friend' role invent the silliest thing they can think of — a toaster, a cloud, anything. Rehearse in pairs, then invite one or two pairs to perform their silliest costume for the class.",
     },
     {
       type: "chant",

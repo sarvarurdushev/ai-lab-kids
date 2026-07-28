@@ -17,6 +17,20 @@ export const m9_week1: Lesson = {
       prompt: "Point to your eyes! 👀",
     },
     {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word pulled from each of six earlier months, so nothing taught this year goes without being retrieved again. Read each word aloud together BEFORE tapping — tapping is a rescue for a stuck class, not the default move. If more than two need the picture, flag that month for a fuller review later. Keep this to about thirty seconds a word so it doesn't eat into today's body-part vocabulary.",
+      words: [
+        { word: "sun", emoji: "☀️", fromMonth: 1 },
+        { word: "music", emoji: "🎵", fromMonth: 2 },
+        { word: "share", emoji: "🤝", fromMonth: 3 },
+        { word: "earth", emoji: "🌎", fromMonth: 4 },
+        { word: "sister", emoji: "👧", fromMonth: 5 },
+        { word: "tiger", emoji: "🐯", fromMonth: 6, minTrack: "explorers" },
+      ],
+    },
+    {
       type: "vocab",
       title: "My Body",
       words: [
@@ -28,6 +42,25 @@ export const m9_week1: Lesson = {
         { word: "feet", emoji: "🦶" },
         { word: "shoulders", emoji: "🙆", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This checks listening, not reading, so keep the vocab list hidden until after each round.",
+      commands: [
+        { text: "Touch your nose.", steps: 1, emoji: "👃" },
+        { text: "Touch your ears, then clap your hands.", steps: 2, emoji: "👂" },
+        { text: "Stomp your feet, touch your shoulders, then touch your mouth.", steps: 3, emoji: "🦶" },
+        {
+          text: "Touch your eyes, touch your nose, then touch your mouth.",
+          steps: 3,
+          emoji: "👀",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: this is the first time today's new nouns get used in combination rather than called out one at a time, so resist repeating the command or switching to Korean if the class hesitates — model it bigger and slower instead. If the room nails the one-step command instantly, skip ahead to the harder ones.",
     },
     {
       type: "concept",
@@ -120,6 +153,40 @@ export const m9_week1: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "I Have...!",
+      frame: "I have ___.",
+      cards: [
+        { prompt: "eyes", emoji: "👀", sampleAnswer: "I have eyes." },
+        { prompt: "hands", emoji: "🙌", sampleAnswer: "I have hands." },
+        { prompt: "ears", emoji: "👂", sampleAnswer: "I have ears." },
+        { prompt: "feet", emoji: "🦶", sampleAnswer: "I have feet.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A looks at the card and says the frame, pointing to their own body part as they say it — Partner B echoes it back, then they swap who's speaking. This directly echoes Vora's line from today's concept, \"I don't have real eyes, or real hands, or real feet like you do!\" Every pair talks at once, so circulate and listen for confident pointing rather than running this as a whole-class drill.",
+    },
+    {
+      type: "draw_and_label",
+      title: "Draw My Body",
+      instructions: "Draw a face or a whole body, then label each part using a word from the word bank.",
+      instructionsSimple: "Draw your body! Write the words.",
+      wordBank: [
+        { word: "eyes", emoji: "👀" },
+        { word: "nose", emoji: "👃" },
+        { word: "mouth", emoji: "👄" },
+        { word: "ears", emoji: "👂" },
+        { word: "hands", emoji: "🙌" },
+        { word: "feet", emoji: "🦶" },
+        { word: "shoulders", emoji: "🙆", minTrack: "explorers" },
+      ],
+      exampleNote:
+        "A big round face with two eyes, a nose, and a mouth drawn in, each labeled underneath in large letters copied straight from the word bank, plus stick-figure arms ending in hands and legs ending in feet.",
+      minutes: 4,
+      teacherNote:
+        "Papers and pencils out. Keep the word bank on screen the whole time — the point is confident copying of today's brand-new nouns, not a spelling test. Circulate and, if a label doesn't match the body part it's next to, point back at the word bank rather than telling them the right word.",
+    },
+    {
       type: "chant",
       title: "Body Parts Chant",
       instructions:
@@ -160,6 +227,39 @@ export const m9_week2: Lesson = {
       type: "warmup",
       teacherScript: "Play a quick round of \"Vora Says\" instead of \"Simon Says\" — give one or two commands yourself (\"Vora says clap your hands!\") before today's game.",
       prompt: "Vora says... clap your hands! 👏",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each of six earlier months, so nothing taught this year goes without being retrieved again. Read each word aloud together BEFORE tapping — tapping is a rescue for a stuck class, not the default move. If more than two need the picture, flag that month for a fuller review later. This is the second time this format has run, so it should move a little faster than Week 1's.",
+      words: [
+        { word: "moon", emoji: "🌙", fromMonth: 1 },
+        { word: "flag", emoji: "🚩", fromMonth: 2 },
+        { word: "happy", emoji: "😊", fromMonth: 3 },
+        { word: "plant", emoji: "🌱", fromMonth: 4 },
+        { word: "grandpa", emoji: "👴", fromMonth: 5 },
+        { word: "sunny", emoji: "☀️", fromMonth: 7, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This is harder than today's \"Vora Says\" routine because the order changes every time, so keep the word list hidden until after each round.",
+      commands: [
+        { text: "Touch your nose.", steps: 1, emoji: "👃" },
+        { text: "Clap your hands, then touch your nose.", steps: 2, emoji: "👏" },
+        { text: "Stand up, touch your nose, then clap your hands.", steps: 3, emoji: "🧍" },
+        {
+          text: "Touch your nose, clap your hands, then sit down.",
+          steps: 3,
+          emoji: "🪑",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: give each command once and watch bodies, not faces. If the class stalls on a three-step command, break it into two shorter commands instead of switching to Korean — the point is proving they understood the order, not producing a sentence yet.",
     },
     {
       type: "concept",
@@ -251,6 +351,34 @@ export const m9_week2: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Touch Your...!",
+      frame: "Touch your ___.",
+      cards: [
+        { prompt: "nose", emoji: "👃", sampleAnswer: "Touch your nose." },
+        { prompt: "ears", emoji: "👂", sampleAnswer: "Touch your ears." },
+        { prompt: "hands", emoji: "🙌", sampleAnswer: "Touch your hands." },
+        { prompt: "shoulders", emoji: "🙆", sampleAnswer: "Touch your shoulders.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A says the frame from the card, Partner B actually performs the touch and says the frame back with a new card, then they swap again. It's the exact command from today's sentence-building game, just driven by a partner instead of the screen — circulate for confident delivery of the command, not perfect pronunciation.",
+    },
+    {
+      type: "role_play",
+      title: "Play Vora Says!",
+      setting: "Two friends take turns being the leader of \"Vora Says,\" giving and following body commands.",
+      roles: ["Leader", "Follower"],
+      exchanges: [
+        { role: 0, line: "Vora says: touch your nose!", emoji: "👃" },
+        { role: 1, line: "Okay! I touch my nose.", lineSimple: "Okay! My nose.", emoji: "😊" },
+        { role: 0, line: "Vora says: clap your hands!", emoji: "👏" },
+        { role: 1, line: "Okay! I clap my hands.", lineSimple: "Okay! My hands.", emoji: "🙌" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles once each, then invite one or two volunteer pairs to perform for the class before the chant. Encourage the Leader to actually pause and watch the Follower move, not just read the line — that pause is the whole point of the game.",
+    },
+    {
       type: "chant",
       title: "Touch Your Nose Chant",
       instructions:
@@ -291,6 +419,39 @@ export const m9_week3: Lesson = {
       type: "warmup",
       teacherScript: "Touch your own nose and say \"nose\" slowly, then wait for the class to touch theirs too. Do it two or three times, a little faster each time.",
       prompt: "Touch your nose! 👃",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each of six earlier months, so nothing taught this year goes without being retrieved again. Read each word aloud together BEFORE tapping — tapping is a rescue for a stuck class, not the default move. If more than two need the picture, flag that month for a fuller review later. This is the third time this format has run this month, so it should be quick.",
+      words: [
+        { word: "rocket", emoji: "🚀", fromMonth: 1 },
+        { word: "food", emoji: "🍲", fromMonth: 2 },
+        { word: "sorry", emoji: "😔", fromMonth: 3 },
+        { word: "water", emoji: "💧", fromMonth: 4 },
+        { word: "penguin", emoji: "🐧", fromMonth: 6 },
+        { word: "ticket", emoji: "🎫", fromMonth: 8, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This is the same \"Touch your ___\" command the class just built with tiles, just delivered by voice instead of text on screen.",
+      commands: [
+        { text: "Touch your ears.", steps: 1, emoji: "👂" },
+        { text: "Touch your mouth, then touch your eyes.", steps: 2, emoji: "👄" },
+        { text: "Clap your hands, touch your feet, then touch your shoulders.", steps: 3, emoji: "🙌" },
+        {
+          text: "Touch your nose, touch your ears, then stomp your feet.",
+          steps: 3,
+          emoji: "👃",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response: say it once, without repeating, and wait for bodies to move before confirming. If the three-step chain trips up the room, isolate it into two shorter two-step commands rather than switching to Korean.",
     },
     {
       type: "concept",
@@ -381,6 +542,34 @@ export const m9_week3: Lesson = {
       ],
     },
     {
+      type: "partner_talk",
+      title: "Touch Your...!",
+      frame: "Touch your ___.",
+      cards: [
+        { prompt: "ears", emoji: "👂", sampleAnswer: "Touch your ears." },
+        { prompt: "mouth", emoji: "👄", sampleAnswer: "Touch your mouth." },
+        { prompt: "feet", emoji: "🦶", sampleAnswer: "Touch your feet." },
+        { prompt: "shoulders", emoji: "🙆", sampleAnswer: "Touch your shoulders.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "This is the exact sentence the class just tile-built on screen, now spoken partner-to-partner instead. Partner A says the frame from the card, Partner B performs the touch and echoes it back, then they swap — circulate for confident delivery, not perfect pronunciation.",
+    },
+    {
+      type: "role_play",
+      title: "Doctor Checkup!",
+      setting: "A doctor's checkup, where the doctor asks the patient to touch different body parts.",
+      roles: ["Doctor", "Patient"],
+      exchanges: [
+        { role: 0, line: "Please touch your nose.", emoji: "🩺" },
+        { role: 1, line: "Okay, I touch my nose.", lineSimple: "Okay, my nose.", emoji: "👃" },
+        { role: 0, line: "Now touch your ears.", emoji: "🩺" },
+        { role: 1, line: "Okay, I touch my ears.", lineSimple: "Okay, my ears.", emoji: "👂" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles once each, then invite one or two volunteer pairs to perform for the class before the chant. The Doctor should wait for the Patient to actually touch the body part before moving on — that pause is what makes it a real exchange instead of a recited script.",
+    },
+    {
       type: "chant",
       title: "Vora Says Chant",
       instructions:
@@ -421,6 +610,39 @@ export const m9_week4: Lesson = {
       type: "warmup",
       teacherScript: "Say \"think\" and \"sink\" slowly, back to back, a few times — see if anyone remembers this pair from Week 4!",
       prompt: "think... sink... Do you remember?",
+    },
+    {
+      type: "vocab_review",
+      title: "Words We Know",
+      teacherNote:
+        "One word from each of six earlier months, so nothing taught this year goes without being retrieved again. Read each word aloud together BEFORE tapping — tapping is a rescue for a stuck class, not the default move. If more than two need the picture, flag that month for a fuller review later. This is the fourth time this format has run this month, so it should be the fastest yet.",
+      words: [
+        { word: "astronaut", emoji: "👨‍🚀", fromMonth: 1 },
+        { word: "clothes", emoji: "👘", fromMonth: 2 },
+        { word: "kind", emoji: "❤️", fromMonth: 3 },
+        { word: "recycle", emoji: "♻️", fromMonth: 4 },
+        { word: "baby", emoji: "👶", fromMonth: 5 },
+        { word: "windy", emoji: "💨", fromMonth: 7, minTrack: "explorers" },
+      ],
+    },
+    {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. The point today is proving the ear caught the difference between a \"th\" word and an \"s\" word action, not memorizing a routine.",
+      commands: [
+        { text: "Touch your mouth.", steps: 1, emoji: "👄" },
+        { text: "Tap your temple, then mime turning on a faucet.", steps: 2, emoji: "🤔" },
+        { text: "Point to your mouth, wiggle your fingers like a mouse, then flap your hands like a fish.", steps: 3, emoji: "🐭" },
+        {
+          text: "Mime scrubbing in the bath, tap your temple, then flap your hands like a bass.",
+          steps: 3,
+          emoji: "🛁",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "Total Physical Response, tuned to today's listening review: if a child does the \"sink\" action for \"think,\" that's useful diagnostic information, not a mistake to correct on the spot — just repeat the command once more, still without translating or slowing down artificially.",
     },
     {
       type: "concept",
@@ -511,6 +733,34 @@ export const m9_week4: Lesson = {
         { text: "Say \"mouth\" and \"mouse\" — can your team hear the difference?", emoji: "👄", minTrack: "explorers" },
         { text: "Name a sound a sensor could \"hear\" instead of see!", emoji: "🎙️", minTrack: "explorers" },
       ],
+    },
+    {
+      type: "partner_talk",
+      title: "I Hear...!",
+      frame: "I hear ___.",
+      cards: [
+        { prompt: "think", emoji: "🤔", sampleAnswer: "I hear think." },
+        { prompt: "sink", emoji: "🚰", sampleAnswer: "I hear sink." },
+        { prompt: "mouth", emoji: "👄", sampleAnswer: "I hear mouth." },
+        { prompt: "mouse", emoji: "🐭", sampleAnswer: "I hear mouse.", minTrack: "explorers" },
+      ],
+      secondsPerTurn: 20,
+      teacherNote:
+        "Partner A looks at the card and says the frame, exaggerating the tricky sound — Partner B repeats it back, then they swap who's speaking. Every pair produces both the \"th\" and \"s\" sounds many times at once, so circulate and listen for kids attempting the tongue-between-teeth \"th,\" not for a perfect result — that's still building over multiple months.",
+    },
+    {
+      type: "role_play",
+      title: "Say It Back!",
+      setting: "A quick listening game: one friend calls out a tricky word and the other repeats it back, doing the matching action from today's chant.",
+      roles: ["Caller", "Listener"],
+      exchanges: [
+        { role: 0, line: "Say it back: think!", emoji: "🤔" },
+        { role: 1, line: "Think! I tap my temple.", lineSimple: "Think!", emoji: "🤔" },
+        { role: 0, line: "Say it back: mouth!", emoji: "👄" },
+        { role: 1, line: "Mouth! I point to my mouth.", lineSimple: "Mouth!", emoji: "👄" },
+      ],
+      teacherNote:
+        "Let pairs rehearse both roles once each, then invite one or two volunteer pairs to perform for the class before the chant. Listen for the Caller actually saying the target sound clearly, not just reading the word — a mumbled call makes the game too easy.",
     },
     {
       type: "chant",

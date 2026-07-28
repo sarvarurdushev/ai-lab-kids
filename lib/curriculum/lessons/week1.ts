@@ -26,6 +26,25 @@ export const w1d1_hello_vora: Lesson = {
       ],
     },
     {
+      type: "listen_and_do",
+      title: "Listen and Do!",
+      instructions:
+        "Give each command ONCE, at normal speed — don't repeat it right away. Wait for everyone to move before revealing the words. This is a listening check, not a speaking one, so no English needs to come out of anyone's mouth yet.",
+      commands: [
+        { text: "Wave hello!", steps: 1, emoji: "👋" },
+        { text: "Point to yourself, then wave goodbye.", steps: 2, emoji: "🙋" },
+        { text: "Stand up, link arms with a friend, then wave hello together.", steps: 3, emoji: "🧑‍🤝‍🧑" },
+        {
+          text: "Wave hello, point to yourself and smile, then link arms with a friend.",
+          steps: 3,
+          emoji: "🧑",
+          minTrack: "explorers",
+        },
+      ],
+      teacherNote:
+        "This is the very first English task of the whole course, so a correct action is already a full win — nobody needs to say a word yet. Say each command once and wait for the whole class to move before repeating it; if the class nails command 1 instantly, skip ahead to the explorers-level chain rather than running all four in order.",
+    },
+    {
       type: "concept",
       title: "Meet Vora",
       bigIdeas: ["natural_interaction"],
