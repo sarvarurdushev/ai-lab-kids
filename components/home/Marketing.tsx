@@ -9,6 +9,7 @@ import type { MotionValue } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { HERO_IMAGES, BIG_IDEA_IMAGE, SEGMENT_IMAGE, MONTH_IMAGE, MONTHS, curriculumStats } from "@/lib/curriculum";
 import { RobotHeadIcon, GamepadIcon, GlobeIcon, SparkleIcon, RunIcon } from "@/components/icons";
+import { MatrixRain } from "@/components/home/MatrixRain";
 
 const SATELLITES = [
   { image: BIG_IDEA_IMAGE.reasoning, label: "Real AI concepts", pos: { left: "10%", top: "12%" } },
@@ -255,27 +256,46 @@ function SystemStatusCard() {
     `[OK] ${stats.activities} activities across ${stats.engineCount} engine types`,
     `[OK] ${stats.aiLabActivities} real AI-literacy activities`,
     "[OK] 0 live AI calls — fully scripted, always safe",
+    "$ _",
   ];
   return (
     <div className="mx-auto max-w-xl px-6">
       <p className="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">Peek under the hood</p>
-      <div
-        className="al-scanlines relative overflow-hidden rounded-2xl border border-[#1f521f] bg-black p-5 font-mono text-[13px] leading-relaxed text-[#33ff00] sm:text-sm"
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+        className="al-scanlines relative overflow-hidden rounded-2xl border border-[#1f521f] bg-black p-5 font-mono text-[13px] leading-relaxed text-[#33ff00] shadow-[0_0_50px_rgba(51,255,0,0.08)] sm:text-sm"
         style={{ textShadow: "0 0 5px rgba(51,255,0,0.5)" }}
       >
+        {/* A fake window titlebar sells "this is a terminal," not just green text on black. */}
+        <div className="mb-3 -mt-1 flex items-center gap-1.5 border-b border-[#1f521f] pb-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]/70" />
+          <span className="ml-2 text-[10px] font-bold uppercase tracking-wider text-[#33ff00]/40">vora@ai-lab-kids</span>
+        </div>
         {lines.map((line, i) => (
           <motion.p
             key={line}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.3 }}
+            transition={{ delay: i * 0.35 }}
+            className={i === lines.length - 1 ? "flex items-center gap-1" : undefined}
           >
-            {line}
+            {i === lines.length - 1 ? (
+              <>
+                {line}
+                <span className="al-animate-blink inline-block h-3.5 w-2 translate-y-0.5 bg-[#33ff00]" />
+              </>
+            ) : (
+              line
+            )}
           </motion.p>
         ))}
-        <span className="al-animate-blink inline-block h-3.5 w-2 translate-y-0.5 bg-[#33ff00]" />
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -354,28 +374,39 @@ export function Marketing() {
     <div className="relative min-h-screen overflow-x-hidden bg-[#07070d] text-white">
       <div className="al-bg-dots al-animate-drift pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
 
-      <header className="relative z-20 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="font-display text-lg font-bold text-white">
-          AI Lab <span className="text-white/40">for Kids</span>
-        </Link>
-        <nav className="flex items-center gap-4 text-sm">
-          <Link href="/curriculum" className="font-semibold text-white/60 hover:text-white">
-            Program Guide
-          </Link>
-          <Link href="/login" className="font-semibold text-white/60 hover:text-white">
-            Log in
-          </Link>
-          <Link href="/signup">
-            <Button variant="secondary" className="!px-4 !py-2 !text-sm">
-              Sign up
-            </Button>
-          </Link>
-        </nav>
-      </header>
+      {/* The rain lives behind the hero + terminal card only — it fades out
+          before the FEATURES section, which needs to stay bright and legible
+          rather than compete with a full-page animated backdrop. */}
+      <div className="relative">
+        <MatrixRain />
 
-      <Hero />
+        <header className="relative z-20 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
+          <Link href="/" className="font-display flex items-center gap-2 text-lg font-bold text-white">
+            <span className="relative flex h-2 w-2">
+              <span className="al-animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-[#33ff00] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#33ff00]" />
+            </span>
+            AI Lab <span className="text-white/40">for Kids</span>
+          </Link>
+          <nav className="flex items-center gap-4 text-sm">
+            <Link href="/curriculum" className="font-semibold text-white/60 hover:text-white">
+              Program Guide
+            </Link>
+            <Link href="/login" className="font-semibold text-white/60 hover:text-white">
+              Log in
+            </Link>
+            <Link href="/signup">
+              <Button variant="secondary" className="!px-4 !py-2 !text-sm">
+                Sign up
+              </Button>
+            </Link>
+          </nav>
+        </header>
 
-      <SystemStatusCard />
+        <Hero />
+
+        <SystemStatusCard />
+      </div>
 
       {/* Features */}
       <section className="relative z-10 mx-auto max-w-5xl px-6 py-16 sm:py-24">
@@ -397,7 +428,7 @@ export function Marketing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="al-glass flex flex-col gap-3 rounded-3xl p-6"
+              className="al-glass al-hover-glow flex flex-col gap-3 rounded-3xl p-6"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo/20 text-indigo-light">
                 <f.icon size={22} />
@@ -434,7 +465,7 @@ export function Marketing() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="al-glass overflow-hidden rounded-2xl"
+                  className="al-glass al-hover-glow overflow-hidden rounded-2xl"
                 >
                   <div className="relative aspect-square w-full">
                     <Image src={MONTH_IMAGE[key]} alt="" fill sizes="200px" className="object-cover" />
@@ -454,7 +485,7 @@ export function Marketing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
-          className="al-glass mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl p-10 text-center"
+          className="al-glass al-hover-glow mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl p-10 text-center"
         >
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber/20 text-amber">
             <SparkleIcon size={24} />

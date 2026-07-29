@@ -9,6 +9,16 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         ← Back to home
       </Link>
       <div className="w-full max-w-sm overflow-hidden rounded-3xl shadow-lg shadow-ink/5">
+        {/* A one-line nod to the homepage's terminal identity, kept tiny and
+            above the fold photo rather than reskinning this form page dark —
+            these are functional inputs, so legibility wins over theme. */}
+        <div className="flex items-center gap-1.5 bg-ink px-3 py-1.5 font-mono text-[10px] text-mint">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="al-animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-mint opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-mint" />
+          </span>
+          system ready
+        </div>
         <Image
           src={HERO_IMAGES.classroom}
           alt="A teacher presenting a lesson with Vora on a classroom screen"

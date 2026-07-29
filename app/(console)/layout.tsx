@@ -13,7 +13,11 @@ export default async function ConsoleLayout({ children }: { children: React.Reac
   return (
     <div className="flex min-h-full flex-1 flex-col bg-gradient-to-b from-indigo/10 via-cream to-cream">
       <header className="flex items-center justify-between border-b border-ink/10 bg-white/70 px-6 py-3">
-        <Link href="/dashboard" className="font-display text-lg font-bold text-indigo-dark">
+        <Link href="/dashboard" className="font-display flex items-center gap-2 text-lg font-bold text-indigo-dark">
+          <span className="relative flex h-2 w-2">
+            <span className="al-animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-mint opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
+          </span>
           AI Lab <span className="text-ink/40">Console</span>
         </Link>
         <div className="flex items-center gap-3 text-sm">

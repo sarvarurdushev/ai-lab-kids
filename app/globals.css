@@ -198,6 +198,37 @@ body {
   animation: al-typewriter 1.8s steps(40, end) forwards;
 }
 
+/* A slow, soft "system online" ping next to the homepage logo — see header in Marketing.tsx. */
+@keyframes al-ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  75%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.al-animate-ping-slow {
+  animation: al-ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/*
+ * Hover-glow ring for marketing cards (feature tiles, gallery thumbnails) —
+ * a green accent instead of the page's usual indigo, so hovering something
+ * feels like it "powers on." Kept to a ring + soft glow, no color shift on
+ * the content itself, so it reads as an accent rather than a full reskin.
+ */
+.al-hover-glow {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.al-hover-glow:hover {
+  border-color: rgba(51, 255, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(51, 255, 0, 0.2), 0 0 32px rgba(51, 255, 0, 0.15);
+  transform: translateY(-2px);
+}
+
 /*
  * Program Guide print stylesheet (app/curriculum/page.tsx and
  * app/curriculum/[monthKey]/page.tsx) — this page printed/saved-as-PDF
