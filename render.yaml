@@ -1,38 +1,36 @@
-databases:
-  - name: ai-lab-kids-db
-    databaseName: ai_lab_kids
-    plan: basic-256mb
-    postgresMajorVersion: "16"
-
 services:
   - type: web
     name: ai-lab-kids
     runtime: node
-    plan: starter
+    plan: free
     region: oregon
-    buildCommand: npm ci && npm run build
-    preDeployCommand: npm run db:migrate
+    # Free web services can't use preDeployCommand (paid-plan only), so
+    # migrations run at the end of the build step instead — same effect,
+    # applied before the new instance ever serves traffic.
+    buildCommand: npm ci && npm run build && npm run db:migrate
     startCommand: npm run start
     healthCheckPath: /
     envVars:
       - key: NODE_ENV
         value: production
+      # Paste a free Neon (neon.com) Postgres connection string here when
+      # Render prompts for it during blueprint setup — see docs/DEPLOYMENT.md.
+      # Render's own managed Postgres has no permanent free plan (its "Free"
+      # tier is a 30-day trial that then deletes the database), so this
+      # blueprint doesn't provision one.
       - key: DATABASE_URL
-        fromDatabase:
-          name: ai-lab-kids-db
-          property: connectionString
+        sync: false
       - key: DIRECT_DATABASE_URL
-        fromDatabase:
-          name: ai-lab-kids-db
-          property: connectionString
+        sync: false
       - key: SESSION_SECRET
         generateValue: true
       - key: ADMIN_EMAIL
         value: sarvarurdushev@gmail.com
     # Uploaded lesson images/audio (public/uploads) live on local disk — without
-    # a persistent disk they're wiped on every redeploy/restart. Uncomment once
-    # on a plan that supports disks (single instance only; disks don't work
-    # alongside autoscaling). See docs/DEPLOYMENT.md for the tradeoffs.
+    # a persistent disk they're wiped on every redeploy/restart, and free web
+    # services can't attach a disk at all. Uncomment once upgraded to a plan
+    # that supports disks (single instance only; disks don't work alongside
+    # autoscaling). See docs/DEPLOYMENT.md for the tradeoffs.
     # disk:
     #   name: uploads
     #   mountPath: /opt/render/project/src/public/uploads
