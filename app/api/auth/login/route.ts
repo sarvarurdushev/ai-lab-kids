@@ -8,6 +8,7 @@ import { verifyPassword } from "@/lib/auth/password";
 import { isEmailRateLimited, isIpRateLimited, recordLoginAttempt } from "@/lib/auth/rateLimit";
 import { loginSchema } from "@/lib/validation/auth";
 import { getClientIp } from "@/lib/api/http";
+import { DESIGNATED_ADMIN_EMAIL } from "@/lib/auth/designatedAdmin";
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
@@ -33,7 +34,16 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Incorrect email or password" }, { status: 401 });
   }
 
+  // The designated admin always has full access, no matter what role their
+  // account happens to hold — this heals any account created before this
+  // email was designated, or one an org_admin accidentally demoted.
+  let { role } = teacher;
+  if (teacher.email === DESIGNATED_ADMIN_EMAIL && role !== "org_admin") {
+    role = "org_admin";
+    await db.update(teacherAccounts).set({ role }).where(eq(teacherAccounts.id, teacher.id));
+  }
+
   await createSession(teacher.id, teacher.tokenVersion);
 
-  return NextResponse.json({ id: teacher.id, name: teacher.name, role: teacher.role });
+  return NextResponse.json({ id: teacher.id, name: teacher.name, role });
 }

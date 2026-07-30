@@ -1,13 +1,15 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { asc, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db } from "@/lib/db/client";
-import { teacherAccounts, organizations } from "@/lib/db/schema";
+import { teacherAccounts } from "@/lib/db/schema";
 import { createSession } from "@/lib/auth/session";
 import { hashPassword } from "@/lib/auth/password";
 import { isIpRateLimited, recordLoginAttempt } from "@/lib/auth/rateLimit";
 import { signupSchema } from "@/lib/validation/auth";
 import { getClientIp } from "@/lib/api/http";
+import { getOrCreateOrganization } from "@/lib/db/getOrCreateOrganization";
+import { DESIGNATED_ADMIN_EMAIL } from "@/lib/auth/designatedAdmin";
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
@@ -30,16 +32,21 @@ export async function POST(request: NextRequest) {
 
   // Every organization on this deployment shares the same curriculum — there
   // is no org-picker in the product, so a new signup joins the first (and in
-  // practice only) organization on record.
-  const [org] = await db.select().from(organizations).orderBy(asc(organizations.createdAt)).limit(1);
-  if (!org) {
-    return NextResponse.json({ error: "No organization is set up yet. Contact an administrator." }, { status: 500 });
-  }
+  // practice only) organization on record, created on the fly if this is the
+  // very first account anyone has ever signed up on this deployment.
+  const org = await getOrCreateOrganization();
+
+  // Everyone can sign up, but only an approved teacher/org-admin can reach
+  // the console — see app/(console)/layout.tsx's pending-role redirect. The
+  // one exception: the designated admin email always lands with full access
+  // immediately, so there's no chicken-and-egg problem of needing an
+  // already-approved admin to approve the first admin.
+  const role = email === DESIGNATED_ADMIN_EMAIL ? "org_admin" : "pending";
 
   const passwordHash = await hashPassword(password);
   const [account] = await db
     .insert(teacherAccounts)
-    .values({ organizationId: org.id, email, passwordHash, name, role: "pending" })
+    .values({ organizationId: org.id, email, passwordHash, name, role })
     .returning();
 
   await recordLoginAttempt(email, ip, true);

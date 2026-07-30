@@ -1,10 +1,12 @@
 import "./_env";
-import { asc, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db } from "@/lib/db/client";
-import { organizations, teacherAccounts } from "@/lib/db/schema";
+import { teacherAccounts } from "@/lib/db/schema";
 import { hashPassword } from "@/lib/auth/password";
+import { getOrCreateOrganization } from "@/lib/db/getOrCreateOrganization";
+import { DESIGNATED_ADMIN_EMAIL } from "@/lib/auth/designatedAdmin";
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "sarvarurdushev@gmail.com";
+const ADMIN_EMAIL = DESIGNATED_ADMIN_EMAIL;
 const ADMIN_NAME = process.env.ADMIN_NAME ?? "Sarvar Urdushev";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
@@ -30,10 +32,7 @@ async function main() {
     return;
   }
 
-  const [org] = await db.select().from(organizations).orderBy(asc(organizations.createdAt)).limit(1);
-  if (!org) {
-    throw new Error("No organization exists yet — run `npm run seed` first.");
-  }
+  const org = await getOrCreateOrganization();
 
   await db.insert(teacherAccounts).values({
     organizationId: org.id,
