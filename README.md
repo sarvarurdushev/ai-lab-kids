@@ -75,3 +75,10 @@ npm run lint           # eslint
 npm run db:generate    # generate a new migration after editing lib/db/schema/
 npm run db:studio      # Drizzle Studio, browse the schema/data
 ```
+
+## Deploying
+
+See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — `render.yaml` deploys this
+as a shareable public URL on Render (web service + managed Postgres,
+migrations run automatically). No seed script needed in production: sign up
+with the designated admin email and you're an org_admin immediately.
