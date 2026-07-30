@@ -7,7 +7,10 @@ services:
     # Free web services can't use preDeployCommand (paid-plan only), so
     # migrations run at the end of the build step instead — same effect,
     # applied before the new instance ever serves traffic.
-    buildCommand: npm ci && npm run build && npm run db:migrate
+    # --include=dev is required because NODE_ENV=production (below) is present
+    # during the build too, which makes plain `npm ci` skip devDependencies —
+    # including @tailwindcss/postcss, which next build needs to compile CSS.
+    buildCommand: npm ci --include=dev && npm run build && npm run db:migrate
     startCommand: npm run start
     healthCheckPath: /
     envVars:
