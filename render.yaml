@@ -13,11 +13,11 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      # Paste a free Neon (neon.com) Postgres connection string here when
-      # Render prompts for it during blueprint setup — see docs/DEPLOYMENT.md.
-      # Render's own managed Postgres has no permanent free plan (its "Free"
-      # tier is a 30-day trial that then deletes the database), so this
-      # blueprint doesn't provision one.
+      # Paste your free Supabase (supabase.com) session-pooler Postgres
+      # connection string here when Render prompts for it during blueprint
+      # setup — see docs/DEPLOYMENT.md. Render's own managed Postgres has no
+      # permanent free plan (its "Free" tier is a 30-day trial that then
+      # deletes the database), so this blueprint doesn't provision one.
       - key: DATABASE_URL
         sync: false
       - key: DIRECT_DATABASE_URL

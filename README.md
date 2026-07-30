@@ -80,7 +80,7 @@ npm run db:studio      # Drizzle Studio, browse the schema/data
 
 See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — `render.yaml` deploys this
 as a shareable public URL on Render's free web service plan, paired with a
-free Neon Postgres database (no credit card needed anywhere), with
+free Supabase Postgres database (no credit card needed anywhere), with
 migrations run automatically on every deploy. No seed script needed in
 production: sign up with the designated admin email and you're an
 org_admin immediately.
