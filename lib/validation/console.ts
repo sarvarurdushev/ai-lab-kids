@@ -27,6 +27,10 @@ export const contentOverrideSchema = z.object({
   audioUrl: z.string().trim().max(500).nullable().optional(),
 });
 
+export const createSchoolSchema = z.object({
+  name: z.string().trim().min(1).max(120),
+});
+
 export const createClassSchema = z.object({
   schoolId: z.string().uuid(),
   name: z.string().trim().min(1).max(120),

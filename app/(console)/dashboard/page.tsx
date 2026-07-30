@@ -5,6 +5,7 @@ import { classesVisibleToTeacher, schoolsForOrg } from "@/lib/console/queries";
 import { Card } from "@/components/ui/Card";
 import { Vora } from "@/components/mascot/Vora";
 import { CreateClassForm } from "@/components/console/CreateClassForm";
+import { CreateSchoolForm } from "@/components/console/CreateSchoolForm";
 import { SparkleIcon, RocketIcon } from "@/components/icons";
 
 const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks 4-5", explorers: "AI Explorers 6+" };
@@ -81,6 +82,8 @@ export default async function DashboardPage() {
 
       {schools.length > 0 ? (
         <CreateClassForm schools={schools} />
+      ) : teacher.role === "org_admin" ? (
+        <CreateSchoolForm />
       ) : (
         <p className="text-sm text-ink/50">Ask your organization admin to set up a school before creating a class.</p>
       )}
