@@ -31,10 +31,6 @@ export const createSchoolSchema = z.object({
   name: z.string().trim().min(1).max(120),
 });
 
-export const createClassSchema = z.object({
-  schoolId: z.string().uuid(),
-  name: z.string().trim().min(1).max(120),
-  gradeLabel: z.string().trim().min(1).max(60),
-  koreanSupportLevel: z.enum(["full", "light", "minimal"]).default("full"),
-  ageTrack: z.enum(["little_sparks", "explorers"]).default("explorers"),
+export const startClassSchema = z.object({
+  ageTrack: z.enum(["little_sparks", "explorers"]),
 });

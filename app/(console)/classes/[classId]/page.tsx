@@ -27,7 +27,7 @@ import { ActivityChips } from "@/components/curriculum/ActivityChips";
 import { LessonPlanFacts } from "@/components/curriculum/LessonPlanFacts";
 import { BookIcon, GamepadIcon, ChatIcon, RobotHeadIcon } from "@/components/icons";
 
-const TRACK_LABEL: Record<string, string> = { little_sparks: "Little Sparks — ages 4-5", explorers: "AI Explorers — ages 6+" };
+const TRACK_LABEL: Record<string, string> = { little_sparks: "4-5 year olds", explorers: "6+ year olds" };
 const SLOT_ICON: Record<string, (props: { size?: number; className?: string }) => React.JSX.Element> = {
   week1: BookIcon,
   week2: GamepadIcon,
@@ -137,8 +137,8 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ cl
         </div>
         <p className="text-xs text-ink/50">
           A new, separate program from the AI+English curriculum above. Unit 1 covers every letter sound, ch/sh/th/wh/ng,
-          and every blend family. Unit 2 (long vowels and vowel teams) is built for AI Explorers (6+) only — Little Sparks
-          (4-5) keeps reviewing Unit 1 instead, since long vowels aren&apos;t developmentally there yet.
+          and every blend family. Unit 2 (long vowels and vowel teams) is built for 6+ year olds only — 4-5 year olds
+          keep reviewing Unit 1 instead, since long vowels aren&apos;t developmentally there yet.
         </p>
         <details>
           <summary className="cursor-pointer text-xs font-bold text-indigo-dark">Show all {visiblePhonicsLessons.length} weeks</summary>

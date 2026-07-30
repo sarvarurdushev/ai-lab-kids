@@ -91,8 +91,8 @@ interface EditableSection {
 
 const TRACK_LABEL: Record<"all" | AgeTrack, string> = {
   all: "All items",
-  little_sparks: "Little Sparks (4-5)",
-  explorers: "AI Explorers (6+)",
+  little_sparks: "4-5 year olds",
+  explorers: "6+ year olds",
 };
 
 export default async function AdminLessonContentPage({
@@ -123,7 +123,7 @@ export default async function AdminLessonContentPage({
             key: warmupPromptKey(lesson.key, segIndex),
             originalText: segment.prompt,
             emoji: "💭",
-            variantLabel: "AI Explorers (6+) wording",
+            variantLabel: "6+ year olds wording",
           });
         }
         if (track === "all" || track === "little_sparks") {
@@ -131,7 +131,7 @@ export default async function AdminLessonContentPage({
             key: warmupPromptSimpleKey(lesson.key, segIndex),
             originalText: segment.promptSimple ?? segment.prompt,
             emoji: "💭",
-            variantLabel: "Little Sparks (4-5) wording",
+            variantLabel: "4-5 year olds wording",
           });
         }
         return { segIndex, title: "Warm-up prompt", kind: "Warm-up", items };
@@ -161,7 +161,7 @@ export default async function AdminLessonContentPage({
               key: conceptLineKey(lesson.key, segIndex, i),
               originalText: l.text,
               emoji: "🤖",
-              variantLabel: "AI Explorers (6+) wording",
+              variantLabel: "6+ year olds wording",
             });
           }
           if (track === "all" || track === "little_sparks") {
@@ -169,7 +169,7 @@ export default async function AdminLessonContentPage({
               key: conceptLineSimpleKey(lesson.key, segIndex, i),
               originalText: l.textSimple ?? l.text,
               emoji: "🤖",
-              variantLabel: "Little Sparks (4-5) wording",
+              variantLabel: "4-5 year olds wording",
             });
           }
           return lineItems;
@@ -233,7 +233,7 @@ export default async function AdminLessonContentPage({
             key: classVoteQuestionKey(lesson.key, segIndex),
             originalText: segment.question,
             emoji: "🗳️",
-            variantLabel: "AI Explorers (6+) wording",
+            variantLabel: "6+ year olds wording",
           });
         }
         if (track === "all" || track === "little_sparks") {
@@ -241,7 +241,7 @@ export default async function AdminLessonContentPage({
             key: classVoteQuestionSimpleKey(lesson.key, segIndex),
             originalText: segment.questionSimple ?? segment.question,
             emoji: "🗳️",
-            variantLabel: "Little Sparks (4-5) wording",
+            variantLabel: "4-5 year olds wording",
           });
         }
         segment.options.forEach((o, i) => {
@@ -257,7 +257,7 @@ export default async function AdminLessonContentPage({
               key: storyPanelKey(lesson.key, segIndex, i),
               originalText: p.text,
               emoji: p.emoji,
-              variantLabel: "AI Explorers (6+) wording",
+              variantLabel: "6+ year olds wording",
               large: true,
             });
           }
@@ -266,7 +266,7 @@ export default async function AdminLessonContentPage({
               key: storyPanelSimpleKey(lesson.key, segIndex, i),
               originalText: p.textSimple ?? p.text,
               emoji: p.emoji,
-              variantLabel: "Little Sparks (4-5) wording",
+              variantLabel: "4-5 year olds wording",
               large: true,
             });
           }
@@ -317,7 +317,7 @@ export default async function AdminLessonContentPage({
             originalText: segment.frame,
             emoji: "🗣️",
             noImage: true,
-            variantLabel: "AI Explorers (6+) wording",
+            variantLabel: "6+ year olds wording",
           });
         }
         if (track === "all" || track === "little_sparks") {
@@ -326,7 +326,7 @@ export default async function AdminLessonContentPage({
             originalText: segment.frameSimple ?? segment.frame,
             emoji: "🗣️",
             noImage: true,
-            variantLabel: "Little Sparks (4-5) wording",
+            variantLabel: "4-5 year olds wording",
           });
         }
         segment.cards.forEach((c, i) => {
@@ -360,7 +360,7 @@ export default async function AdminLessonContentPage({
             originalText: segment.instructions,
             emoji: "🎨",
             noImage: true,
-            variantLabel: "AI Explorers (6+) wording",
+            variantLabel: "6+ year olds wording",
           });
         }
         if (track === "all" || track === "little_sparks") {
@@ -369,7 +369,7 @@ export default async function AdminLessonContentPage({
             originalText: segment.instructionsSimple ?? segment.instructions,
             emoji: "🎨",
             noImage: true,
-            variantLabel: "Little Sparks (4-5) wording",
+            variantLabel: "4-5 year olds wording",
           });
         }
         segment.wordBank.forEach((w, i) => {
@@ -390,7 +390,7 @@ export default async function AdminLessonContentPage({
               key: rolePlayExchangeKey(lesson.key, segIndex, i),
               originalText: ex.line,
               emoji: ex.emoji,
-              variantLabel: "AI Explorers (6+) wording",
+              variantLabel: "6+ year olds wording",
             });
           }
           if (track === "all" || track === "little_sparks") {
@@ -398,7 +398,7 @@ export default async function AdminLessonContentPage({
               key: rolePlayExchangeSimpleKey(lesson.key, segIndex, i),
               originalText: ex.lineSimple ?? ex.line,
               emoji: ex.emoji,
-              variantLabel: "Little Sparks (4-5) wording",
+              variantLabel: "4-5 year olds wording",
             });
           }
           return exchangeItems;
@@ -426,7 +426,7 @@ export default async function AdminLessonContentPage({
             originalText: segment.summary,
             emoji: "🎁",
             noImage: true,
-            variantLabel: "AI Explorers (6+) wording",
+            variantLabel: "6+ year olds wording",
           });
         }
         if (track === "all" || track === "little_sparks") {
@@ -435,7 +435,7 @@ export default async function AdminLessonContentPage({
             originalText: segment.summarySimple ?? segment.summary,
             emoji: "🎁",
             noImage: true,
-            variantLabel: "Little Sparks (4-5) wording",
+            variantLabel: "4-5 year olds wording",
           });
         }
         if (segment.homework) {

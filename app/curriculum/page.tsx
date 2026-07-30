@@ -49,8 +49,8 @@ function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) 
 }
 
 const TRACK_COPY = [
-  { label: "Little Sparks — ages 4-5", blurb: "Big pictures, read-aloud everything, no clock ticking. Bonus words/lines are skipped." },
-  { label: "AI Explorers — ages 6+", blurb: "The same 48-lesson curriculum plus bonus vocabulary and a fuller AI-vocabulary layer, for early readers." },
+  { label: "4-5 year olds", blurb: "Big pictures, read-aloud everything, no clock ticking. Bonus words/lines are skipped." },
+  { label: "6+ year olds", blurb: "The same 48-lesson curriculum plus bonus vocabulary and a fuller AI-vocabulary layer, for early readers." },
 ];
 
 export default function CurriculumPage() {

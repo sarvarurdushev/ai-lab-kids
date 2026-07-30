@@ -12,17 +12,15 @@ export function shuffle<T>(items: T[]): T[] {
   return arr;
 }
 
-export const AGE_TRACKS: { key: AgeTrack; label: string; ageRange: string; blurb: string }[] = [
+export const AGE_TRACKS: { key: AgeTrack; label: string; blurb: string }[] = [
   {
     key: "little_sparks",
-    label: "Little Sparks",
-    ageRange: "Ages 4-5",
+    label: "4-5 year olds",
     blurb: "Big pictures, read-aloud everything, no clock ticking.",
   },
   {
     key: "explorers",
-    label: "AI Explorers",
-    ageRange: "Ages 6+",
+    label: "6+ year olds",
     blurb: "More words, a gentle timer, and the real AI vocabulary.",
   },
 ];

@@ -66,7 +66,6 @@ export function HomeContent() {
               }`}
             >
               <span className="font-display font-bold text-ink">{t.label}</span>
-              <span className="text-xs font-semibold text-ink/50">{t.ageRange}</span>
               <span className="text-xs text-ink/60">{t.blurb}</span>
             </button>
           ))}
