@@ -10,7 +10,14 @@ import { useEffect, useRef } from "react";
  * readable text (z-0, page content is z-10+). Skips entirely for
  * prefers-reduced-motion — this is 100% decorative, never load-bearing.
  */
-export function MatrixRain() {
+export function MatrixRain({
+  className = "pointer-events-none absolute inset-0 h-full w-full opacity-90 [mask-image:linear-gradient(to_bottom,black,black_70%,transparent_92%)]",
+  bgRgba = "rgba(7, 7, 13, 0.13)",
+}: {
+  className?: string;
+  /** The trail-fade fill — must match the panel this canvas sits inside, or old frames show through as a color mismatch. Mirrors --color-al-terminal-bg; kept as a literal since canvas 2D can't read CSS custom properties per-frame without a getComputedStyle cost. */
+  bgRgba?: string;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -52,7 +59,7 @@ export function MatrixRain() {
       const w = canvas.width / dpr;
       const h = canvas.height / dpr;
 
-      ctx.fillStyle = "rgba(7, 7, 13, 0.13)";
+      ctx.fillStyle = bgRgba;
       ctx.fillRect(0, 0, w, h);
 
       ctx.font = `${FONT_SIZE}px monospace`;
@@ -79,13 +86,11 @@ export function MatrixRain() {
       cancelAnimationFrame(raf);
       ro.disconnect();
     };
+    // bgRgba intentionally excluded: it's read once into the rAF closure at
+    // mount, same as every other draw constant here (FONT_SIZE, CHARS). None
+    // of this component's callers ever change the prop after mount.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-90 [mask-image:linear-gradient(to_bottom,black,black_70%,transparent_92%)]"
-    />
-  );
+  return <canvas ref={canvasRef} aria-hidden="true" className={className} />;
 }

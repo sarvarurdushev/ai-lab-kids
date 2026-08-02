@@ -15,6 +15,39 @@
   --color-al-cream: #fbf8ff;
   --color-al-ink: #241f33;
   --color-al-sky: #2b9fe8;
+
+  /*
+   * Editorial surface (components/editorial/**, the public marketing pages
+   * only) — a separate palette layered on top of the kid-facing app tokens
+   * above, never replacing them. amber/coral/mint/sky above are reused as-is
+   * for the brief's "warm yellow / coral / soft blue" accents; only the
+   * white-paper/navy/slate scaffolding below is new.
+   */
+  --color-al-paper: #ffffff;
+  --color-al-navy: #0f1c3f;
+  --color-al-slate: #55607d;
+  --color-al-rule: #e4e4e9;
+
+  /* Text-weight (AA-on-white) variants of the fill-only accents — see the
+     contrast rule in components/editorial/tokens.ts: amber/coral/sky above
+     are ~1.7-2.9:1 on white and must never carry text, only fills. */
+  --color-al-amber-ink: #8a5b00;
+  --color-al-coral-ink: #c2352f;
+  --color-al-sky-ink: #106094;
+  --color-al-amber-tint: #fff1cc;
+  --color-al-sky-tint: #e8f4fd;
+
+  /* The hacker-terminal green, formalized — was a hardcoded hex in
+     SystemStatusCard/MatrixRain, now shared so components/editorial/TerminalCard.tsx
+     and MatrixRain.tsx read the same value. Canvas 2D still needs the literal
+     rgba() (see MatrixRain.tsx comment) — keep those in sync with these by hand. */
+  --color-al-terminal: #33ff00;
+  --color-al-terminal-dim: #1f521f;
+  --color-al-terminal-bg: #07070d;
+
+  --shadow-al-lift: 0 18px 50px -24px rgba(15, 28, 63, 0.28);
+  --shadow-al-paper: 0 2px 0 rgba(15, 28, 63, 0.06), 0 12px 28px -20px rgba(15, 28, 63, 0.35);
+  --shadow-al-terminal: 0 0 60px rgba(51, 255, 0, 0.1);
 }
 
 @theme inline {
@@ -33,6 +66,26 @@
   --color-cream: var(--color-al-cream);
   --color-ink: var(--color-al-ink);
   --color-sky: var(--color-al-sky);
+
+  --font-editorial: var(--font-bricolage);
+  --font-hand: var(--font-caveat);
+
+  --color-paper: var(--color-al-paper);
+  --color-navy: var(--color-al-navy);
+  --color-slate: var(--color-al-slate);
+  --color-rule: var(--color-al-rule);
+  --color-amber-ink: var(--color-al-amber-ink);
+  --color-coral-ink: var(--color-al-coral-ink);
+  --color-sky-ink: var(--color-al-sky-ink);
+  --color-amber-tint: var(--color-al-amber-tint);
+  --color-sky-tint: var(--color-al-sky-tint);
+  --color-terminal: var(--color-al-terminal);
+  --color-terminal-dim: var(--color-al-terminal-dim);
+  --color-terminal-bg: var(--color-al-terminal-bg);
+
+  --shadow-lift: var(--shadow-al-lift);
+  --shadow-paper: var(--shadow-al-paper);
+  --shadow-terminal: var(--shadow-al-terminal);
 }
 
 /*
@@ -227,6 +280,45 @@ body {
   border-color: rgba(51, 255, 0, 0.35);
   box-shadow: 0 0 0 1px rgba(51, 255, 0, 0.2), 0 0 32px rgba(51, 255, 0, 0.15);
   transform: translateY(-2px);
+}
+
+/*
+ * Editorial surface utilities (components/editorial/**) — see the design
+ * tokens above. CSS-gradient halftone for backgrounds/washes; SVG <pattern>
+ * (components/editorial/decor/HalftoneDefs.tsx) only when the dots must be
+ * clipped to an organic shape.
+ */
+.al-halftone {
+  background-image: radial-gradient(circle at 50% 50%, currentColor 1.4px, transparent 1.5px);
+  background-size: 6px 6px;
+}
+
+/*
+ * Bricolage Grotesque's variable font defaults to its opsz=14 (small-text)
+ * optical master — without this, a 100px headline renders soft/loose
+ * instead of the confident display-weight cut the brief calls for.
+ */
+.al-optical-display {
+  font-variation-settings: "opsz" 84;
+}
+.al-optical-mid {
+  font-variation-settings: "opsz" 36;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .al-animate-float,
+  .al-animate-pulse-glow,
+  .al-animate-drift,
+  .al-animate-ping-slow,
+  .al-animate-blink {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /*
