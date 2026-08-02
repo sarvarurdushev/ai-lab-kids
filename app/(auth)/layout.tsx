@@ -1,34 +1,38 @@
 import Link from "next/link";
-import Image from "next/image";
-import { HERO_IMAGES } from "@/lib/curriculum";
+import { CollageFigure } from "@/components/editorial/CollageFigure";
+import { SunDisc } from "@/components/editorial/decor/SunDisc";
+import { CloudShape } from "@/components/editorial/decor/CloudShape";
+import { TerminalCard } from "@/components/editorial/TerminalCard";
+import { HalftoneDefs } from "@/components/editorial/decor/HalftoneDefs";
+import { Vora } from "@/components/mascot/Vora";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-full flex-1 flex-col items-center justify-center gap-6 bg-gradient-to-b from-indigo/10 via-cream to-cream px-4 py-10">
-      <Link href="/" className="w-full max-w-sm text-sm font-semibold text-ink/50 hover:text-ink">
-        ← Back to home
-      </Link>
-      <div className="w-full max-w-sm overflow-hidden rounded-3xl shadow-lg shadow-ink/5">
-        {/* A one-line nod to the homepage's terminal identity, kept tiny and
-            above the fold photo rather than reskinning this form page dark —
-            these are functional inputs, so legibility wins over theme. */}
-        <div className="flex items-center gap-1.5 bg-ink px-3 py-1.5 font-mono text-[10px] text-mint">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="al-animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-mint opacity-75" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-mint" />
-          </span>
-          system ready
-        </div>
-        <Image
-          src={HERO_IMAGES.classroom}
-          alt="A teacher presenting a lesson with Vora on a classroom screen"
-          width={1536}
-          height={1024}
-          priority
-          className="h-40 w-full object-cover"
+    <div className="flex min-h-full flex-1 flex-col overflow-x-hidden bg-white text-navy lg:flex-row">
+      <HalftoneDefs />
+
+      {/* Brand panel — collapses to a short band above the form on mobile, a full left column at lg+. */}
+      <div className="relative flex flex-col justify-center overflow-hidden bg-amber-tint px-6 py-10 sm:px-10 lg:w-5/12 lg:px-14 lg:py-16">
+        <Link href="/" className="text-sm font-semibold text-navy/60 hover:text-navy">
+          ← Back to home
+        </Link>
+        <h2 className="font-editorial al-optical-mid mt-6 max-w-sm text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] font-extrabold text-navy">
+          Teach the machine. Teach the class.
+        </h2>
+
+        <CollageFigure
+          className="relative mt-8 h-40 w-full sm:h-56 lg:h-64"
+          layers={[
+            { key: "sun", node: <SunDisc variant="half-top" accent="amber" size={180} ring />, top: "78%", left: "22%", z: 0 },
+            { key: "cloud", node: <CloudShape accent="sky" size={70} />, top: "10%", left: "78%", z: 2, float: true },
+            { key: "vora", node: <Vora size={130} mood="happy" bob />, top: "55%", left: "22%", z: 3 },
+          ]}
         />
+
+        <TerminalCard size="inline" className="mt-8 max-w-sm" />
       </div>
-      {children}
+
+      <div className="flex flex-1 items-center justify-center px-4 py-10 sm:px-6">{children}</div>
     </div>
   );
 }

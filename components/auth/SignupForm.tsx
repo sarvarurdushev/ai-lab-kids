@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
+import { EditorialButton } from "@/components/editorial/EditorialButton";
+import { FormField } from "@/components/editorial/FormField";
 
 export function SignupForm() {
   const router = useRouter();
@@ -37,57 +37,54 @@ export function SignupForm() {
   }
 
   return (
-    <Card className="w-full max-w-sm">
-      <h1 className="font-display mb-1 text-center text-2xl font-bold text-indigo-dark">Create Your Account</h1>
-      <p className="mb-6 text-center text-sm text-ink/60">
+    <div className="w-full max-w-sm">
+      <h1 className="font-editorial al-optical-mid text-[2rem] leading-[1.05] font-extrabold text-navy sm:text-[2.5rem]">
+        Create your account
+      </h1>
+      <p className="mt-2 text-sm text-slate">
         AI Lab for Kids — a school admin approves new teacher accounts before you can start a class.
       </p>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <label className="flex flex-col gap-1 text-sm font-semibold text-ink/70">
-          Name
-          <input
-            type="text"
-            required
-            autoComplete="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="rounded-2xl border-2 border-ink/10 bg-white px-4 py-3 text-base focus:border-indigo focus:outline-none"
-          />
-        </label>
-        <label className="flex flex-col gap-1 text-sm font-semibold text-ink/70">
-          Email
-          <input
-            type="email"
-            required
-            autoComplete="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="rounded-2xl border-2 border-ink/10 bg-white px-4 py-3 text-base focus:border-indigo focus:outline-none"
-          />
-        </label>
-        <label className="flex flex-col gap-1 text-sm font-semibold text-ink/70">
-          Password
-          <input
-            type="password"
-            required
-            minLength={8}
-            autoComplete="new-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="rounded-2xl border-2 border-ink/10 bg-white px-4 py-3 text-base focus:border-indigo focus:outline-none"
-          />
-        </label>
-        {error && <p className="text-center text-sm font-semibold text-coral">{error}</p>}
-        <Button type="submit" variant="secondary" disabled={submitting}>
-          {submitting ? "Creating account..." : "Create Account"}
-        </Button>
+      <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
+        <FormField
+          label="Name"
+          type="text"
+          required
+          autoComplete="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <FormField
+          label="Email"
+          type="email"
+          required
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <FormField
+          label="Password"
+          type="password"
+          required
+          minLength={8}
+          autoComplete="new-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {error && (
+          <p role="alert" aria-live="polite" className="text-sm font-semibold text-coral-ink">
+            {error}
+          </p>
+        )}
+        <EditorialButton type="submit" disabled={submitting} className="mt-2 w-full">
+          {submitting ? "Creating account..." : "Create account"}
+        </EditorialButton>
       </form>
-      <p className="mt-4 text-center text-sm text-ink/50">
+      <p className="mt-6 text-sm text-slate">
         Already have an account?{" "}
-        <Link href="/login" className="font-semibold text-indigo-dark underline">
+        <Link href="/login" className="font-semibold text-navy underline decoration-navy/30 underline-offset-2 hover:decoration-navy">
           Sign in
         </Link>
       </p>
-    </Card>
+    </div>
   );
 }
