@@ -44,8 +44,14 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="text-sm font-semibold text-slate transition-colors hover:text-navy">
+    <Link href={href} className="group inline-flex items-center gap-1.5 text-sm font-semibold text-slate transition-colors hover:text-navy">
       {children}
+      <span
+        aria-hidden="true"
+        className="-translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+      >
+        →
+      </span>
     </Link>
   );
 }

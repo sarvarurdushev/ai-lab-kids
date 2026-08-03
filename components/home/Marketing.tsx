@@ -24,6 +24,7 @@ import { HandArrow } from "@/components/editorial/decor/HandArrow";
 import { Annotation } from "@/components/editorial/decor/Annotation";
 import { ScrollCue } from "@/components/editorial/decor/ScrollCue";
 import { ConnectorLine } from "@/components/editorial/decor/ConnectorLine";
+import { Magnetic } from "@/components/editorial/decor/Magnetic";
 import { OFFSET_Y } from "@/components/editorial/tokens";
 import { fadeUp, stagger, VIEWPORT_SECTION } from "@/components/editorial/motion";
 
@@ -86,9 +87,11 @@ function Hero() {
             screen, one class, with Vora leading the way.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-3">
-            <EditorialLinkButton href="/signup" size="lg">
-              Get started
-            </EditorialLinkButton>
+            <Magnetic>
+              <EditorialLinkButton href="/signup" size="lg">
+                Get started
+              </EditorialLinkButton>
+            </Magnetic>
             <EditorialLinkButton href="/login" variant="outline" size="lg">
               Teacher log in
             </EditorialLinkButton>
@@ -210,16 +213,23 @@ function Features() {
               whileInView="show"
               viewport={VIEWPORT_SECTION}
               transition={{ ...fadeUp.show.transition, delay: (i % 2) * 0.1 }}
-              className="relative flex gap-5 border-t border-rule py-8"
+              className="group relative flex gap-5 border-t border-rule py-8"
             >
-              <p className="font-editorial text-2xl leading-none font-extrabold text-navy/15">{`0${i + 1}`}</p>
-              <div>
+              <span className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-navy transition-transform duration-500 ease-out group-hover:scale-x-100" />
+              <p className="font-editorial text-2xl leading-none font-extrabold text-navy/15 transition-colors duration-300 group-hover:text-amber-ink">{`0${i + 1}`}</p>
+              <div className="flex-1">
                 <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-navy/[0.06] text-navy">
                   <f.icon size={22} />
                 </span>
                 <p className="font-editorial text-lg font-bold text-navy">{f.title}</p>
                 <p className="mt-2 max-w-[42ch] text-sm leading-relaxed text-slate">{f.body}</p>
               </div>
+              <span
+                aria-hidden="true"
+                className="ml-auto hidden shrink-0 -translate-x-2 self-center text-xl text-navy opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:block"
+              >
+                →
+              </span>
             </motion.div>
           </GridItem>
         );
@@ -325,9 +335,11 @@ function FinalCta() {
             Create your teacher account — a school admin approves it, then it&apos;s straight into the console.
           </p>
           <div>
-            <EditorialLinkButton href="/signup" size="lg">
-              Create your account
-            </EditorialLinkButton>
+            <Magnetic>
+              <EditorialLinkButton href="/signup" size="lg">
+                Create your account
+              </EditorialLinkButton>
+            </Magnetic>
           </div>
         </motion.div>
       </GridItem>
