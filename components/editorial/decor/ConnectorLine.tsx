@@ -64,6 +64,7 @@ export function ConnectorLine({
   delay = 0,
   seed = 1,
   className = "hidden lg:block",
+  viewport = VIEWPORT_ITEM,
 }: {
   points: ConnectorPoint[];
   viewBox: { w: number; h: number };
@@ -72,6 +73,8 @@ export function ConnectorLine({
   delay?: number;
   seed?: number;
   className?: string;
+  /** Defaults to VIEWPORT_ITEM's 50%-visible threshold — override for a target much wider than the viewport (e.g. a horizontally-scrolling track), where 50% of the element's own bounds can never be on-screen at once. */
+  viewport?: { once?: boolean; amount?: number | "some" | "all" };
 }) {
   const reduce = useReducedMotion();
   const d = smoothPath(wobble(points, seed));
@@ -98,7 +101,7 @@ export function ConnectorLine({
             variants={drawPath}
             initial="hidden"
             whileInView="show"
-            viewport={VIEWPORT_ITEM}
+            viewport={viewport}
             transition={{ ...drawPath.show.transition, delay }}
           />
         )}

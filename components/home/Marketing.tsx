@@ -26,6 +26,7 @@ import { ScrollCue } from "@/components/editorial/decor/ScrollCue";
 import { ConnectorLine } from "@/components/editorial/decor/ConnectorLine";
 import { Magnetic } from "@/components/editorial/decor/Magnetic";
 import { usePointerParallax, ParallaxLayer } from "@/components/editorial/decor/usePointerParallax";
+import { usePinnedTrack } from "@/components/editorial/decor/usePinnedTrack";
 import { OFFSET_Y } from "@/components/editorial/tokens";
 import { fadeUp, stagger, VIEWPORT_SECTION } from "@/components/editorial/motion";
 
@@ -250,6 +251,104 @@ function Features() {
   );
 }
 
+// Uniform per-item coordinate cell for the ribbon's connector line: since
+// every item in the single row has the same width, each point is exactly
+// analytic (index * GALLERY_RIBBON_UNIT + half), no DOM measurement needed —
+// unlike the ribbon's scroll-distance math, which does need one (see
+// usePinnedTrack).
+const GALLERY_RIBBON_UNIT = 100;
+
+function GalleryStaticGrid() {
+  return (
+    <motion.div
+      variants={stagger(0.05)}
+      initial="hidden"
+      whileInView="show"
+      viewport={VIEWPORT_SECTION}
+      className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-y-16"
+    >
+      {MONTHS.map((month, i) => (
+        <motion.div key={month.key} variants={fadeUp} className={OFFSET_Y[GALLERY_DRIFT[i % GALLERY_DRIFT.length]]}>
+          <Link href={`/curriculum/${month.key}`} className="group block">
+            <HalftonePhoto
+              src={MONTH_IMAGE[month.key]}
+              alt=""
+              shape="arch"
+              treatment="duotone"
+              revealOnHover
+              sizes="(min-width: 1024px) 16vw, (min-width: 640px) 30vw, 45vw"
+              className="aspect-square w-full transition-transform duration-300 group-hover:-translate-y-1.5"
+            />
+            <p className="mt-3 text-center text-xs font-semibold text-navy">{month.title}</p>
+          </Link>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+}
+
+/**
+ * The scroll-pinned single-row alternative to GalleryStaticGrid: pins the
+ * section for 300svh of scroll while the row translates horizontally, so
+ * all 12 months read as one continuous filmstrip instead of a wrapping
+ * grid. Only shown at lg+ with motion-safe (see the lg:motion-safe:block /
+ * lg:motion-safe:hidden pair in Gallery()) — that CSS-only gate, not a JS
+ * branch, is what keeps this from ever needing to reconcile against a
+ * different server-rendered structure.
+ */
+function GalleryRibbon() {
+  const { outerRef, trackRef, x, scrollToItem } = usePinnedTrack();
+  const points = MONTHS.map((_, i) => ({ x: i * GALLERY_RIBBON_UNIT + GALLERY_RIBBON_UNIT / 2, y: GALLERY_RIBBON_UNIT / 2 }));
+
+  return (
+    <div ref={outerRef} className="relative left-1/2 right-1/2 -mx-[50vw] h-[300svh] w-screen">
+      <div className="sticky top-0 h-svh overflow-hidden">
+        <motion.div
+          ref={trackRef}
+          style={{ x }}
+          className="relative isolate flex h-full w-max items-center gap-12 pl-[8vw]"
+          variants={stagger(0.05)}
+          initial="hidden"
+          whileInView="show"
+          viewport={VIEWPORT_SECTION}
+        >
+          <ConnectorLine
+            viewBox={{ w: MONTHS.length * GALLERY_RIBBON_UNIT, h: GALLERY_RIBBON_UNIT }}
+            points={points}
+            accent="sky"
+            className="-z-10 block"
+            viewport={{ once: true, amount: "some" }}
+          />
+          {MONTHS.map((month, i) => (
+            <motion.div
+              key={month.key}
+              variants={fadeUp}
+              className={`relative w-[300px] shrink-0 ${OFFSET_Y[GALLERY_DRIFT[i % GALLERY_DRIFT.length]]}`}
+            >
+              <Link
+                href={`/curriculum/${month.key}`}
+                className="group block"
+                onFocus={(e) => scrollToItem(e.currentTarget)}
+              >
+                <HalftonePhoto
+                  src={MONTH_IMAGE[month.key]}
+                  alt=""
+                  shape="arch"
+                  treatment="duotone"
+                  revealOnHover
+                  sizes="300px"
+                  className="aspect-square w-full transition-transform duration-300 group-hover:-translate-y-1.5"
+                />
+                <p className="mt-3 text-center text-sm font-semibold text-navy">{month.title}</p>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 function Gallery() {
   return (
     <Section variant="full" size="major" tone="paper">
@@ -261,32 +360,12 @@ function Gallery() {
           </h2>
         </motion.div>
       </GridItem>
-      <GridItem span={12}>
-        <motion.div
-          variants={stagger(0.05)}
-          initial="hidden"
-          whileInView="show"
-          viewport={VIEWPORT_SECTION}
-          className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-y-16"
-        >
-          {MONTHS.map((month, i) => (
-            <motion.div key={month.key} variants={fadeUp} className={OFFSET_Y[GALLERY_DRIFT[i % GALLERY_DRIFT.length]]}>
-              <Link href={`/curriculum/${month.key}`} className="group block">
-                <HalftonePhoto
-                  src={MONTH_IMAGE[month.key]}
-                  alt=""
-                  shape="arch"
-                  treatment="duotone"
-                  revealOnHover
-                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 30vw, 45vw"
-                  className="aspect-square w-full transition-transform duration-300 group-hover:-translate-y-1.5"
-                />
-                <p className="mt-3 text-center text-xs font-semibold text-navy">{month.title}</p>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+      <GridItem span={12} className="lg:motion-safe:hidden">
+        <GalleryStaticGrid />
       </GridItem>
+      <div className="col-span-full hidden lg:motion-safe:block">
+        <GalleryRibbon />
+      </div>
       <div className="col-span-full mt-12 flex justify-center">
         <EditorialLinkButton href="/curriculum" variant="outline">
           See the full Program Guide
