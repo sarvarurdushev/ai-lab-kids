@@ -91,6 +91,17 @@ export const COL_SPAN: Record<number, string> = {
   12: "lg:col-span-12",
 };
 
+// Purely visual vertical drift for a grid tile — a `transform`, not a
+// margin, so it never perturbs the grid track's own height/gap math (the
+// exact class of bug that broke the old Gallery: a margin-based offset on
+// items whose span math didn't sum correctly). Safe to apply to any
+// uniform-span grid.
+export const OFFSET_Y: Record<-1 | 0 | 1, string> = {
+  "-1": "lg:-translate-y-6",
+  "0": "",
+  "1": "lg:translate-y-6",
+};
+
 export const COL_START: Record<number, string> = {
   1: "lg:col-start-1",
   2: "lg:col-start-2",

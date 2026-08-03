@@ -32,6 +32,7 @@ export function HalftonePhoto({
   treatment = "duotone",
   sizes = "400px",
   priority = false,
+  revealOnHover = false,
   className = "",
 }: {
   src: StaticImageData | string;
@@ -40,15 +41,25 @@ export function HalftonePhoto({
   treatment?: Treatment;
   sizes?: string;
   priority?: boolean;
+  /** On hover of an ancestor `.group`, fades the treatment overlays and lifts the filter, revealing the photo full-color. */
+  revealOnHover?: boolean;
   className?: string;
 }) {
+  const fade = revealOnHover ? "transition-opacity duration-300 group-hover:opacity-0" : "";
   return (
     <div className={`relative overflow-hidden ${SHAPE_CLIP[shape]} ${className}`}>
-      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className={`object-cover ${TREATMENT_FILTER[treatment]}`} />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className={`object-cover ${revealOnHover ? "transition-[filter] duration-300 group-hover:grayscale-0 group-hover:contrast-100" : ""} ${TREATMENT_FILTER[treatment]}`}
+      />
       {treatment !== "full-color" && (
-        <div aria-hidden="true" className="al-halftone absolute inset-0 text-navy mix-blend-multiply opacity-25" />
+        <div aria-hidden="true" className={`al-halftone absolute inset-0 text-navy mix-blend-multiply opacity-25 ${fade}`} />
       )}
-      {treatment === "duotone" && <div aria-hidden="true" className="absolute inset-0 mix-blend-color bg-navy opacity-30" />}
+      {treatment === "duotone" && <div aria-hidden="true" className={`absolute inset-0 mix-blend-color bg-navy opacity-30 ${fade}`} />}
     </div>
   );
 }

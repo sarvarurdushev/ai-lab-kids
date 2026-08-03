@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { MONTH_IMAGE, MONTHS, curriculumStats } from "@/lib/curriculum";
-import { BIG_IDEA_PRESENTATION } from "@/lib/curriculum/bigIdeaPresentation";
 import { RobotHeadIcon, GamepadIcon, GlobeIcon, SparkleIcon, RunIcon } from "@/components/icons";
 import { Vora } from "@/components/mascot/Vora";
 import { EditorialShell } from "@/components/editorial/EditorialShell";
@@ -25,7 +24,7 @@ import { HandArrow } from "@/components/editorial/decor/HandArrow";
 import { Annotation } from "@/components/editorial/decor/Annotation";
 import { ScrollCue } from "@/components/editorial/decor/ScrollCue";
 import { ConnectorLine } from "@/components/editorial/decor/ConnectorLine";
-import { COL_SPAN } from "@/components/editorial/tokens";
+import { OFFSET_Y } from "@/components/editorial/tokens";
 import { fadeUp, stagger, VIEWPORT_SECTION } from "@/components/editorial/motion";
 
 const FEATURES = [
@@ -58,9 +57,10 @@ const FEATURE_LAYOUT: { start: number; span: number }[] = [
   { start: 7, span: 6 },
 ];
 
-const GALLERY_MONTHS = ["m1_space", "m6_animals", "m9_body", "m10_halloween", "m12_winter", "m3_friends"];
-const GALLERY_SPANS = [3, 4, 2, 3, 4, 2];
-const GALLERY_OFFSET = [false, true, false, true, false, true];
+// Repeating drift pattern applied per tile index — purely decorative, and
+// since every tile shares the same grid span, no combination of indices can
+// ever reproduce the old dead-gap bug (see Gallery()).
+const GALLERY_DRIFT: (-1 | 0 | 1)[] = [0, 1, -1, 0, -1, 1];
 
 function Hero() {
   return (
@@ -224,68 +224,42 @@ function Features() {
 
 function Gallery() {
   return (
-    <Section variant="wide-bleed" size="major" tone="paper">
-      <div className="mx-auto mb-12 max-w-2xl">
+    <Section variant="full" size="major" tone="paper">
+      <GridItem span={12} className="mx-auto mb-12 max-w-2xl text-center">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION}>
           <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">A whole year with Vora</p>
           <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
             12 themed units, one big idea each
           </h2>
         </motion.div>
-      </div>
-      <div className="relative">
-        <ConnectorLine
-          className="hidden lg:block"
-          viewBox={{ w: 1200, h: 260 }}
-          points={GALLERY_MONTHS.map((_, i) => ({
-            x: ((i + 0.5) / GALLERY_MONTHS.length) * 1200,
-            y: GALLERY_OFFSET[i] ? 70 : 190,
-          }))}
-          accent="navy"
-          labels={GALLERY_MONTHS.slice(0, 3).map((key, i) => {
-            const month = MONTHS.find((m) => m.key === key);
-            const idea = month ? BIG_IDEA_PRESENTATION[month.bigIdeaFocus] : undefined;
-            return {
-              x: ((i + 0.5) / GALLERY_MONTHS.length) * 1200,
-              y: (GALLERY_OFFSET[i] ? 70 : 190) - 34,
-              text: idea?.label ?? "AI Idea",
-              accent: i === 0 ? "sky" : i === 1 ? "amber" : "mint",
-            };
-          })}
-        />
+      </GridItem>
+      <GridItem span={12}>
         <motion.div
-          variants={stagger(0.06)}
+          variants={stagger(0.05)}
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT_SECTION}
-          className="grid grid-cols-2 gap-4 sm:grid-cols-6"
+          className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-y-16"
         >
-          {GALLERY_MONTHS.map((key, i) => {
-            const month = MONTHS.find((m) => m.key === key);
-            if (!month) return null;
-            return (
-              <motion.div
-                key={key}
-                variants={fadeUp}
-                className={`${COL_SPAN[GALLERY_SPANS[i]] ?? ""} col-span-1 ${GALLERY_OFFSET[i] ? "lg:mt-14" : ""}`}
-              >
-                <Link href={`/curriculum/${key}`} className="group block">
-                  <HalftonePhoto
-                    src={MONTH_IMAGE[key]}
-                    alt=""
-                    shape="arch"
-                    treatment="duotone"
-                    sizes="(min-width: 1024px) 20vw, 40vw"
-                    className="aspect-square w-full transition-all duration-300 group-hover:-translate-y-1.5 group-hover:[filter:none]"
-                  />
-                  <p className="mt-3 text-center text-xs font-semibold text-navy">{month.title}</p>
-                </Link>
-              </motion.div>
-            );
-          })}
+          {MONTHS.map((month, i) => (
+            <motion.div key={month.key} variants={fadeUp} className={OFFSET_Y[GALLERY_DRIFT[i % GALLERY_DRIFT.length]]}>
+              <Link href={`/curriculum/${month.key}`} className="group block">
+                <HalftonePhoto
+                  src={MONTH_IMAGE[month.key]}
+                  alt=""
+                  shape="arch"
+                  treatment="duotone"
+                  revealOnHover
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 30vw, 45vw"
+                  className="aspect-square w-full transition-transform duration-300 group-hover:-translate-y-1.5"
+                />
+                <p className="mt-3 text-center text-xs font-semibold text-navy">{month.title}</p>
+              </Link>
+            </motion.div>
+          ))}
         </motion.div>
-      </div>
-      <div className="mt-12 flex justify-center">
+      </GridItem>
+      <div className="col-span-full mt-12 flex justify-center">
         <EditorialLinkButton href="/curriculum" variant="outline">
           See the full Program Guide
         </EditorialLinkButton>
