@@ -182,8 +182,17 @@ function NavyPolygon() {
 
 function Features() {
   return (
-    <Section variant="full" size="major" rule="both">
-      <GridItem span={12} className="mb-14">
+    <Section variant="full" size="major" rule="both" className="overflow-hidden">
+      <HalftoneBlob
+        shape="splat"
+        accent="amber"
+        size={620}
+        role="field"
+        texture="fine"
+        opacity={0.14}
+        className="pointer-events-none absolute top-1/2 -right-52 z-0 hidden -translate-y-1/2 lg:block"
+      />
+      <GridItem span={12} className="relative z-10 mb-14">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION}>
           <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">Why it&apos;s different</p>
           <h2 className="font-editorial al-optical-mid mt-3 max-w-2xl text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
@@ -194,7 +203,7 @@ function Features() {
       {FEATURES.map((f, i) => {
         const layout = FEATURE_LAYOUT[i];
         return (
-          <GridItem key={f.title} span={layout.span} start={layout.start} className="relative">
+          <GridItem key={f.title} span={layout.span} start={layout.start} className="relative z-10">
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -203,11 +212,8 @@ function Features() {
               transition={{ ...fadeUp.show.transition, delay: (i % 2) * 0.1 }}
               className="relative flex gap-5 border-t border-rule py-8"
             >
-              {i % 2 === 0 && (
-                <HalftoneBlob shape={i === 0 ? "pebble" : "splat"} accent="amber" size={140} opacity={0.5} className="pointer-events-none absolute -top-6 -left-16 hidden xl:block" />
-              )}
-              <p className="relative z-10 font-editorial text-2xl leading-none font-extrabold text-navy/15">{`0${i + 1}`}</p>
-              <div className="relative z-10">
+              <p className="font-editorial text-2xl leading-none font-extrabold text-navy/15">{`0${i + 1}`}</p>
+              <div>
                 <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-navy/[0.06] text-navy">
                   <f.icon size={22} />
                 </span>
@@ -291,7 +297,15 @@ function UnderTheHood() {
 function FinalCta() {
   return (
     <Section variant="offset-left" size="major" edge="curve-bottom" className="relative overflow-hidden">
-      <HalftoneBlob shape="cloud" accent="sky" size={220} opacity={0.4} className="pointer-events-none absolute top-4 -left-16 hidden lg:block" />
+      <HalftoneBlob
+        shape="cloud"
+        accent="sky"
+        size={480}
+        role="field"
+        texture="fine"
+        opacity={0.5}
+        className="pointer-events-none absolute -top-24 -left-40 hidden lg:block"
+      />
       <SunDisc
         variant="half-bottom"
         accent="amber"

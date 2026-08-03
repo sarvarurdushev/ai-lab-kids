@@ -13,6 +13,9 @@ export function HalftoneDefs() {
         <pattern id="al-halftone-dense" width="5" height="5" patternUnits="userSpaceOnUse">
           <circle cx="2.5" cy="2.5" r="2.4" fill="currentColor" />
         </pattern>
+        <pattern id="al-halftone-fine" width="3" height="3" patternUnits="userSpaceOnUse">
+          <circle cx="1.5" cy="1.5" r="0.8" fill="currentColor" />
+        </pattern>
         <clipPath id="al-blob-clip" clipPathUnits="objectBoundingBox">
           <path d="M0.82,0.31c0.07,0.12,0.04,0.29-0.06,0.39s-0.28,0.15-0.41,0.09S0.14,0.56,0.18,0.42S0.36,0.15,0.5,0.13S0.75,0.19,0.82,0.31Z" />
         </clipPath>

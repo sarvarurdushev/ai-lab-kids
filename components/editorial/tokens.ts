@@ -63,6 +63,17 @@ export const ACCENT_STROKE: Record<Accent, string> = {
   navy: "stroke-navy",
 };
 
+// Halftone dot pitch for HalftoneBlob's "field" vs "accent" scale — a
+// literal url(#id) per option since Tailwind can't see a template-built
+// fill value any more than it can a template-built class name.
+export type HalftoneTexture = "dot" | "dense" | "fine";
+
+export const TEXTURE: Record<HalftoneTexture, string> = {
+  dot: "url(#al-halftone-dot)",
+  dense: "url(#al-halftone-dense)",
+  fine: "url(#al-halftone-fine)",
+};
+
 export type Tilt = -2 | -1 | 0 | 1 | 2;
 
 export const TILT: Record<Tilt, string> = {
