@@ -115,16 +115,24 @@ export function EditorialNav({
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/login"
-              onClick={() => setOpen(false)}
-              className="font-editorial border-b border-rule py-4 text-4xl font-bold text-navy"
-            >
-              Teacher log in
-            </Link>
-            <EditorialLinkButton href="/signup" size="lg" className="mt-6 w-full" onClick={() => setOpen(false)}>
-              Get started
-            </EditorialLinkButton>
+            {rightSlot ? (
+              <div className="mt-6 flex flex-col items-start gap-4" onClick={() => setOpen(false)}>
+                {rightSlot}
+              </div>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  onClick={() => setOpen(false)}
+                  className="font-editorial border-b border-rule py-4 text-4xl font-bold text-navy"
+                >
+                  Teacher log in
+                </Link>
+                <EditorialLinkButton href="/signup" size="lg" className="mt-6 w-full" onClick={() => setOpen(false)}>
+                  Get started
+                </EditorialLinkButton>
+              </>
+            )}
           </nav>
         </div>
       )}
