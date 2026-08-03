@@ -7,6 +7,7 @@ import type { Tilt } from "./tokens";
 import { TILT } from "./tokens";
 import { FloatLayer } from "./decor/FloatLayer";
 import { ParallaxLayer } from "./decor/usePointerParallax";
+import { ScrollExitLayer } from "./decor/useScrollExitDrift";
 import { scaleIn } from "./motion";
 
 export interface CollageLayer {
@@ -20,6 +21,8 @@ export interface CollageLayer {
   float?: boolean;
   floatIndex?: number;
   delay?: number;
+  /** Pixel drift at full scroll-exit (see useScrollExitDrift) — omit to keep this layer moving with the page like normal. */
+  exit?: { x: number; y: number };
 }
 
 // z=0 (background, e.g. the sun) barely drifts toward the cursor; z=5
@@ -41,36 +44,60 @@ export function CollageFigure({
   layers,
   pointerX,
   pointerY,
+  exitProgress,
   className = "",
 }: {
   layers: CollageLayer[];
   /** Normalized (-1..1) cursor position from usePointerParallax — when both are provided, each layer drifts toward the cursor scaled by its own z (deeper layers travel less). Omit for a static (or scroll/float-only) collage. */
   pointerX?: MotionValue<number>;
   pointerY?: MotionValue<number>;
+  /** From useScrollExitDrift — when provided, layers with their own `exit` vector drift apart as the composition scrolls past, instead of exiting the viewport as one block. */
+  exitProgress?: MotionValue<number>;
   className?: string;
 }) {
   return (
     <div className={`relative ${className}`}>
       {layers.map((layer, i) => {
-        const node = layer.float ? <FloatLayer index={layer.floatIndex ?? i}>{layer.node}</FloatLayer> : layer.node;
+        const node = layer.float ? (
+          <FloatLayer index={layer.floatIndex ?? i}>{layer.node}</FloatLayer>
+        ) : (
+          layer.node
+        );
         const depth = PARALLAX_BASE + (layer.z ?? i) * PARALLAX_PER_Z;
+        const withParallax =
+          pointerX && pointerY ? (
+            <ParallaxLayer x={pointerX} y={pointerY} depth={depth}>
+              {node}
+            </ParallaxLayer>
+          ) : (
+            node
+          );
+        const withExit =
+          exitProgress && layer.exit ? (
+            <ScrollExitLayer
+              progress={exitProgress}
+              dx={layer.exit.x}
+              dy={layer.exit.y}
+            >
+              {withParallax}
+            </ScrollExitLayer>
+          ) : (
+            withParallax
+          );
         return (
           <motion.div
             key={layer.key}
             variants={scaleIn}
             initial="hidden"
             animate="show"
-            transition={{ ...scaleIn.show.transition, delay: layer.delay ?? i * 0.09 }}
+            transition={{
+              ...scaleIn.show.transition,
+              delay: layer.delay ?? i * 0.09,
+            }}
             className={`absolute -translate-x-1/2 -translate-y-1/2 ${TILT[layer.tilt ?? 0]}`}
             style={{ top: layer.top, left: layer.left, zIndex: layer.z ?? i }}
           >
-            {pointerX && pointerY ? (
-              <ParallaxLayer x={pointerX} y={pointerY} depth={depth}>
-                {node}
-              </ParallaxLayer>
-            ) : (
-              node
-            )}
+            {withExit}
           </motion.div>
         );
       })}
