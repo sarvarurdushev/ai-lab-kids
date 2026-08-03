@@ -25,6 +25,7 @@ import { Annotation } from "@/components/editorial/decor/Annotation";
 import { ScrollCue } from "@/components/editorial/decor/ScrollCue";
 import { ConnectorLine } from "@/components/editorial/decor/ConnectorLine";
 import { Magnetic } from "@/components/editorial/decor/Magnetic";
+import { usePointerParallax, ParallaxLayer } from "@/components/editorial/decor/usePointerParallax";
 import { OFFSET_Y } from "@/components/editorial/tokens";
 import { fadeUp, stagger, VIEWPORT_SECTION } from "@/components/editorial/motion";
 
@@ -64,6 +65,7 @@ const FEATURE_LAYOUT: { start: number; span: number }[] = [
 const GALLERY_DRIFT: (-1 | 0 | 1)[] = [0, 1, -1, 0, -1, 1];
 
 function Hero() {
+  const { ref: heroParallaxRef, mx: heroMx, my: heroMy } = usePointerParallax<HTMLDivElement>();
   return (
     <Section variant="split" size="major" rule="none" className="pt-4 sm:pt-8">
       <GridItem span={7} className="relative z-10">
@@ -108,64 +110,74 @@ function Hero() {
       </GridItem>
 
       <GridItem span={5} start={8} className="relative mt-14 hidden min-h-[420px] lg:block">
-        <ConnectorLine
-          className="hidden lg:block"
-          viewBox={{ w: 500, h: 420 }}
-          points={[
-            { x: 0, y: 40 },
-            { x: 140, y: 120 },
-            { x: 260, y: 90 },
-          ]}
-          accent="sky"
-          labels={[{ x: 40, y: 20, text: "Perception", accent: "sky" }]}
-        />
-        <ConnectorLine
-          className="hidden lg:block"
-          viewBox={{ w: 500, h: 420 }}
-          points={[
-            { x: 500, y: 60 },
-            { x: 380, y: 140 },
-            { x: 300, y: 100 },
-          ]}
-          accent="amber"
-          labels={[{ x: 470, y: 30, text: "Reasoning", accent: "amber" }]}
-          seed={2}
-        />
-        <ConnectorLine
-          className="hidden lg:block"
-          viewBox={{ w: 500, h: 420 }}
-          points={[
-            { x: 280, y: 400 },
-            { x: 300, y: 300 },
-            { x: 290, y: 220 },
-          ]}
-          accent="mint"
-          labels={[{ x: 260, y: 400, text: "Learning", accent: "mint" }]}
-          seed={3}
-        />
+        <div ref={heroParallaxRef} className="relative h-full w-full">
+          <ParallaxLayer x={heroMx} y={heroMy} depth={4} className="absolute inset-0">
+            <ConnectorLine
+              className="hidden lg:block"
+              viewBox={{ w: 500, h: 420 }}
+              points={[
+                { x: 0, y: 40 },
+                { x: 140, y: 120 },
+                { x: 260, y: 90 },
+              ]}
+              accent="sky"
+              labels={[{ x: 40, y: 20, text: "Perception", accent: "sky" }]}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer x={heroMx} y={heroMy} depth={4} className="absolute inset-0">
+            <ConnectorLine
+              className="hidden lg:block"
+              viewBox={{ w: 500, h: 420 }}
+              points={[
+                { x: 500, y: 60 },
+                { x: 380, y: 140 },
+                { x: 300, y: 100 },
+              ]}
+              accent="amber"
+              labels={[{ x: 470, y: 30, text: "Reasoning", accent: "amber" }]}
+              seed={2}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer x={heroMx} y={heroMy} depth={4} className="absolute inset-0">
+            <ConnectorLine
+              className="hidden lg:block"
+              viewBox={{ w: 500, h: 420 }}
+              points={[
+                { x: 280, y: 400 },
+                { x: 300, y: 300 },
+                { x: 290, y: 220 },
+              ]}
+              accent="mint"
+              labels={[{ x: 260, y: 400, text: "Learning", accent: "mint" }]}
+              seed={3}
+            />
+          </ParallaxLayer>
 
-        <CollageFigure
-          className="h-full w-full"
-          layers={[
-            { key: "sun", node: <SunDisc variant="half-top" accent="amber" size={340} ring />, top: "62%", left: "58%", z: 0 },
-            { key: "polygon", node: <NavyPolygon />, top: "68%", left: "42%", z: 1 },
-            { key: "cloud1", node: <CloudShape accent="sky" size={80} />, top: "10%", left: "18%", z: 2, float: true },
-            { key: "cloud2", node: <CloudShape accent="mint" size={60} />, top: "22%", left: "80%", z: 2, float: true, floatIndex: 2 },
-            { key: "vora", node: <Vora size={220} mood="happy" bob />, top: "70%", left: "58%", z: 4 },
-            {
-              key: "terminal",
-              node: (
-                <div className="w-[300px]">
-                  <TerminalCard size="hero" rain tilt={-1} />
-                </div>
-              ),
-              top: "94%",
-              left: "82%",
-              z: 5,
-              delay: 0.5,
-            },
-          ]}
-        />
+          <CollageFigure
+            className="h-full w-full"
+            pointerX={heroMx}
+            pointerY={heroMy}
+            layers={[
+              { key: "sun", node: <SunDisc variant="half-top" accent="amber" size={340} ring />, top: "62%", left: "58%", z: 0 },
+              { key: "polygon", node: <NavyPolygon />, top: "68%", left: "42%", z: 1 },
+              { key: "cloud1", node: <CloudShape accent="sky" size={80} />, top: "10%", left: "18%", z: 2, float: true },
+              { key: "cloud2", node: <CloudShape accent="mint" size={60} />, top: "22%", left: "80%", z: 2, float: true, floatIndex: 2 },
+              { key: "vora", node: <Vora size={220} mood="happy" bob />, top: "70%", left: "58%", z: 4 },
+              {
+                key: "terminal",
+                node: (
+                  <div className="w-[300px]">
+                    <TerminalCard size="hero" rain tilt={-1} />
+                  </div>
+                ),
+                top: "94%",
+                left: "82%",
+                z: 5,
+                delay: 0.5,
+              },
+            ]}
+          />
+        </div>
       </GridItem>
 
       <div className="col-span-full mt-10 flex justify-end lg:mt-0">
@@ -305,45 +317,49 @@ function UnderTheHood() {
 }
 
 function FinalCta() {
+  const { ref: ctaParallaxRef, mx: ctaMx, my: ctaMy } = usePointerParallax<HTMLDivElement>();
   return (
-    <Section variant="offset-left" size="major" edge="curve-bottom" className="relative overflow-hidden">
-      <HalftoneBlob
-        shape="cloud"
-        accent="sky"
-        size={480}
-        role="field"
-        texture="fine"
-        opacity={0.5}
-        className="pointer-events-none absolute -top-24 -left-40 hidden lg:block"
-      />
-      <SunDisc
-        variant="half-bottom"
-        accent="amber"
-        size={420}
-        ring
-        className="pointer-events-none absolute right-0 bottom-0 hidden translate-x-1/4 sm:block"
-      />
-      <GridItem span={8} className="relative">
-        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION} className="flex flex-col gap-6">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber text-navy">
-            <SparkleIcon size={24} />
-          </span>
-          <h2 className="font-editorial al-optical-mid text-[clamp(2.5rem,6vw,4.5rem)] leading-[1] font-extrabold text-navy">
-            Ready to bring Vora into your classroom?
-          </h2>
-          <p className="max-w-md text-lg text-slate">
-            Create your teacher account — a school admin approves it, then it&apos;s straight into the console.
-          </p>
-          <div>
-            <Magnetic>
-              <EditorialLinkButton href="/signup" size="lg">
-                Create your account
-              </EditorialLinkButton>
-            </Magnetic>
-          </div>
-        </motion.div>
-      </GridItem>
-    </Section>
+    <div ref={ctaParallaxRef} className="relative">
+      <Section variant="offset-left" size="major" edge="curve-bottom" className="relative overflow-hidden">
+        <HalftoneBlob
+          shape="cloud"
+          accent="sky"
+          size={480}
+          role="field"
+          texture="fine"
+          opacity={0.5}
+          className="pointer-events-none absolute -top-24 -left-40 hidden lg:block"
+        />
+        <ParallaxLayer
+          x={ctaMx}
+          y={ctaMy}
+          depth={10}
+          className="pointer-events-none absolute right-0 bottom-0 hidden translate-x-1/4 sm:block"
+        >
+          <SunDisc variant="half-bottom" accent="amber" size={420} ring />
+        </ParallaxLayer>
+        <GridItem span={8} className="relative">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION} className="flex flex-col gap-6">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber text-navy">
+              <SparkleIcon size={24} />
+            </span>
+            <h2 className="font-editorial al-optical-mid text-[clamp(2.5rem,6vw,4.5rem)] leading-[1] font-extrabold text-navy">
+              Ready to bring Vora into your classroom?
+            </h2>
+            <p className="max-w-md text-lg text-slate">
+              Create your teacher account — a school admin approves it, then it&apos;s straight into the console.
+            </p>
+            <div>
+              <Magnetic>
+                <EditorialLinkButton href="/signup" size="lg">
+                  Create your account
+                </EditorialLinkButton>
+              </Magnetic>
+            </div>
+          </motion.div>
+        </GridItem>
+      </Section>
+    </div>
   );
 }
 
