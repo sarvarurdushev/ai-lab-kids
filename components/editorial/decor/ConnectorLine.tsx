@@ -30,13 +30,15 @@ export function smoothPath(points: ConnectorPoint[]): string {
 
 /**
  * Deterministic per-point jitter (not Math.random — SSR and client must
- * agree) so a curve reads hand-drawn rather than CAD-smooth.
+ * agree) so a curve reads hand-drawn rather than CAD-smooth. Rounded to 2
+ * decimals: Math.sin isn't guaranteed bit-identical across JS engines
+ * (Node SSR vs. browser), and unrounded output caused hydration mismatches.
  */
 export function wobble(points: ConnectorPoint[], seed = 1): ConnectorPoint[] {
   return points.map((p, i) => {
     const n = Math.sin((i + 1) * seed * 12.9898) * 43758.5453;
     const jitter = (n - Math.floor(n)) * 4 - 2; // deterministic pseudo-random in [-2, 2]
-    return { x: p.x, y: p.y + jitter };
+    return { x: p.x, y: Math.round((p.y + jitter) * 100) / 100 };
   });
 }
 
@@ -103,7 +105,7 @@ export function ConnectorLine({
       </svg>
       {labels.map((label, i) => (
         <motion.div
-          key={label.text}
+          key={i}
           className="absolute -translate-x-1/2 -translate-y-1/2"
           style={{ left: `${(label.x / viewBox.w) * 100}%`, top: `${(label.y / viewBox.h) * 100}%` }}
           variants={reduce ? undefined : scaleIn}

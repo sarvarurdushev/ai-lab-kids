@@ -1,21 +1,32 @@
 "use client";
 
-import { useRef, useState } from "react";
-import type { PointerEvent as ReactPointerEvent } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion, useMotionValue, useSpring } from "motion/react";
-import type { MotionValue } from "motion/react";
-import { Button } from "@/components/ui/Button";
-import { HERO_IMAGES, BIG_IDEA_IMAGE, SEGMENT_IMAGE, MONTH_IMAGE, MONTHS, curriculumStats } from "@/lib/curriculum";
+import { motion } from "motion/react";
+import { MONTH_IMAGE, MONTHS, curriculumStats } from "@/lib/curriculum";
+import { BIG_IDEA_PRESENTATION } from "@/lib/curriculum/bigIdeaPresentation";
 import { RobotHeadIcon, GamepadIcon, GlobeIcon, SparkleIcon, RunIcon } from "@/components/icons";
-import { MatrixRain } from "@/components/home/MatrixRain";
-
-const SATELLITES = [
-  { image: BIG_IDEA_IMAGE.reasoning, label: "Real AI concepts", pos: { left: "10%", top: "12%" } },
-  { image: SEGMENT_IMAGE.chant, label: "Movement & song", pos: { left: "90%", top: "14%" } },
-  { image: HERO_IMAGES.celebrate, label: "A moment to celebrate", pos: { left: "50%", top: "92%" } },
-];
+import { Vora } from "@/components/mascot/Vora";
+import { EditorialShell } from "@/components/editorial/EditorialShell";
+import { EditorialNav } from "@/components/editorial/EditorialNav";
+import { EditorialFooter } from "@/components/editorial/EditorialFooter";
+import { EditorialLinkButton } from "@/components/editorial/EditorialButton";
+import { Section } from "@/components/editorial/Section";
+import { GridItem } from "@/components/editorial/Grid";
+import { Rule } from "@/components/editorial/Rule";
+import { StatFigures } from "@/components/editorial/StatFigures";
+import { CollageFigure } from "@/components/editorial/CollageFigure";
+import { HalftonePhoto } from "@/components/editorial/HalftonePhoto";
+import { TerminalCard } from "@/components/editorial/TerminalCard";
+import { HalftoneBlob } from "@/components/editorial/decor/HalftoneBlob";
+import { CloudShape } from "@/components/editorial/decor/CloudShape";
+import { SunDisc } from "@/components/editorial/decor/SunDisc";
+import { HandUnderline } from "@/components/editorial/decor/HandUnderline";
+import { HandArrow } from "@/components/editorial/decor/HandArrow";
+import { Annotation } from "@/components/editorial/decor/Annotation";
+import { ScrollCue } from "@/components/editorial/decor/ScrollCue";
+import { ConnectorLine } from "@/components/editorial/decor/ConnectorLine";
+import { COL_SPAN } from "@/components/editorial/tokens";
+import { fadeUp, stagger, VIEWPORT_SECTION } from "@/components/editorial/motion";
 
 const FEATURES = [
   {
@@ -40,482 +51,326 @@ const FEATURES = [
   },
 ];
 
+const FEATURE_LAYOUT: { start: number; span: number }[] = [
+  { start: 1, span: 6 },
+  { start: 7, span: 6 },
+  { start: 2, span: 6 },
+  { start: 7, span: 6 },
+];
+
 const GALLERY_MONTHS = ["m1_space", "m6_animals", "m9_body", "m10_halloween", "m12_winter", "m3_friends"];
+const GALLERY_SPANS = [3, 4, 2, 3, 4, 2];
+const GALLERY_OFFSET = [false, true, false, true, false, true];
 
-function ConnectorLine({ d, delay }: { d: string; delay: number }) {
-  return (
-    <motion.path
-      d={d}
-      fill="none"
-      stroke="url(#al-connector-gradient)"
-      strokeWidth={2}
-      strokeLinecap="round"
-      initial={{ pathLength: 0, opacity: 0 }}
-      animate={{ pathLength: 1, opacity: 0.8 }}
-      transition={{ duration: 1.1, delay, ease: [0.16, 1, 0.3, 1] }}
-    />
-  );
-}
-
-function CursorTrail({
-  mouseX,
-  mouseY,
-  active,
-}: {
-  mouseX: MotionValue<number>;
-  mouseY: MotionValue<number>;
-  active: boolean;
-}) {
-  const x1 = useSpring(mouseX, { stiffness: 320, damping: 30 });
-  const y1 = useSpring(mouseY, { stiffness: 320, damping: 30 });
-  const x2 = useSpring(mouseX, { stiffness: 160, damping: 26 });
-  const y2 = useSpring(mouseY, { stiffness: 160, damping: 26 });
-  const x3 = useSpring(mouseX, { stiffness: 80, damping: 20 });
-  const y3 = useSpring(mouseY, { stiffness: 80, damping: 20 });
-
-  return (
-    <div
-      className={`pointer-events-none absolute inset-0 z-0 hidden transition-opacity duration-700 sm:block ${
-        active ? "opacity-100" : "opacity-0"
-      }`}
-      aria-hidden="true"
-    >
-      <motion.div style={{ x: x3, y: y3 }} className="absolute left-0 top-0">
-        <div className="h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo/25 blur-2xl" />
-      </motion.div>
-      <motion.div style={{ x: x2, y: y2 }} className="absolute left-0 top-0">
-        <div className="h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-light/70 blur-[3px]" />
-      </motion.div>
-      <motion.div style={{ x: x1, y: y1 }} className="absolute left-0 top-0">
-        <div className="h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber shadow-[0_0_24px_6px_rgba(255,176,0,0.55)]" />
-      </motion.div>
-    </div>
-  );
-}
-
-/**
- * Owns its own pointer tracking (rather than lifting mouseX/mouseY into
- * Marketing()) so a mouse move only re-renders the hero, not the whole page.
- */
 function Hero() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const [active, setActive] = useState(false);
-
-  function handlePointerMove(e: ReactPointerEvent<HTMLDivElement>) {
-    const rect = sectionRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    mouseX.set(e.clientX - rect.left);
-    mouseY.set(e.clientY - rect.top);
-    if (!active) setActive(true);
-  }
-
   return (
-    <section
-      ref={sectionRef}
-      onPointerMove={handlePointerMove}
-      className="relative px-6 pb-20 pt-10 sm:pb-28 sm:pt-16"
-    >
-      <div
-        className="al-animate-pulse-glow pointer-events-none absolute left-1/2 top-[22%] h-72 w-[40rem] max-w-[92vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo/25 blur-[110px]"
-        aria-hidden="true"
-      />
-      <CursorTrail mouseX={mouseX} mouseY={mouseY} active={active} />
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 mx-auto max-w-2xl text-center"
-      >
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-light">AI Literacy + English</p>
-        <h1 className="font-display mt-5 text-4xl font-bold tracking-tight sm:text-6xl">
-          Kids don&apos;t just play with <span className="text-indigo-light">AI</span> — they learn how it thinks.
-        </h1>
-        <p className="mt-5 text-lg text-white/60">
-          A full year of teacher-led lessons where English and real AI concepts are taught side by side, one
-          screen, one class, with Vora leading the way.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/signup">
-            <Button variant="primary" className="!rounded-full !px-8">
-              Get started
-            </Button>
-          </Link>
-          <Link href="/login">
-            <Button variant="ghost" className="!rounded-full !border !border-white/20 !bg-white/5 !px-8 !text-white hover:!bg-white/10">
-              Teacher log in
-            </Button>
-          </Link>
-        </div>
-      </motion.div>
-
-      <HeroConstellation />
-      <MobileHeroImages />
-    </section>
-  );
-}
-
-function HeroConstellation() {
-  const wrapRef = useRef<HTMLDivElement>(null);
-
-  function handlePointerMove(e: ReactPointerEvent<HTMLDivElement>) {
-    const el = wrapRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 14;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 14;
-    el.style.setProperty("--al-parallax-x", `${x}px`);
-    el.style.setProperty("--al-parallax-y", `${y}px`);
-  }
-
-  return (
-    <div
-      ref={wrapRef}
-      onPointerMove={handlePointerMove}
-      className="relative mx-auto mt-16 hidden aspect-[16/10] w-full max-w-3xl sm:block"
-      style={{ ["--al-parallax-x" as string]: "0px", ["--al-parallax-y" as string]: "0px" }}
-    >
-      <svg viewBox="0 0 1000 625" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <defs>
-          <linearGradient id="al-connector-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#8b7ff0" />
-            <stop offset="100%" stopColor="#6c5ce7" />
-          </linearGradient>
-        </defs>
-        <ConnectorLine d="M500,312 C 350,230 250,170 150,105" delay={0.2} />
-        <ConnectorLine d="M500,312 C 650,230 750,170 850,110" delay={0.5} />
-        <ConnectorLine d="M500,312 C 460,420 460,480 500,570" delay={0.8} />
-      </svg>
-
-      <motion.div
-        initial={{ opacity: 0, scale: 0.85, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 220, damping: 20 }}
-        className="al-glass absolute left-1/2 top-1/2 aspect-video w-[46%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-3xl shadow-[0_0_100px_rgba(108,92,231,0.25)]"
-        style={{
-          transform: "translate(calc(-50% + var(--al-parallax-x)), calc(-50% + var(--al-parallax-y)))",
-        }}
-      >
-        <Image src={HERO_IMAGES.classroom} alt="A teacher running a lesson with Vora on the classroom screen" fill sizes="480px" className="object-cover" />
-      </motion.div>
-
-      {SATELLITES.map((sat, i) => (
-        <motion.div
-          key={sat.label}
-          initial={{ opacity: 0, scale: 0.7, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 240, damping: 20, delay: 0.3 + i * 0.15 }}
-          className="al-animate-float absolute w-32 -translate-x-1/2 -translate-y-1/2 sm:w-36"
-          style={{ left: sat.pos.left, top: sat.pos.top, animationDelay: `${i * 0.7}s` }}
-        >
-          <div className="al-glass overflow-hidden rounded-2xl shadow-[0_0_60px_rgba(108,92,231,0.18)]">
-            <div className="relative aspect-square w-full overflow-hidden">
-              <Image src={sat.image} alt="" fill sizes="144px" className="object-cover" />
-            </div>
-            <p className="px-2.5 py-2 text-center text-[11px] font-semibold text-white/80">{sat.label}</p>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  );
-}
-
-function MobileHeroImages() {
-  return (
-    <div className="mt-10 grid grid-cols-2 gap-3 sm:hidden">
-      <div className="al-glass col-span-2 overflow-hidden rounded-2xl">
-        <div className="relative aspect-[4/3] w-full">
-          <Image src={HERO_IMAGES.classroom} alt="A teacher running a lesson with Vora on the classroom screen" fill sizes="100vw" className="object-cover" />
-        </div>
-      </div>
-      {SATELLITES.map((sat) => (
-        <div key={sat.label} className="al-glass overflow-hidden rounded-2xl">
-          <div className="relative aspect-square w-full">
-            <Image src={sat.image} alt="" fill sizes="50vw" className="object-cover" />
-          </div>
-          <p className="px-2 py-1.5 text-center text-[10px] font-semibold text-white/80">{sat.label}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/**
- * A single "terminal readout" card — a wink at the real engineering under
- * the friendly kid-facing surface, not a reskin of the page. Numbers come
- * straight from curriculumStats() so this can't drift into marketing
- * fiction as content changes, same principle as the Program Guide's trust
- * panel.
- */
-function SystemStatusCard() {
-  const stats = curriculumStats();
-  const lines = [
-    "$ vora --status",
-    `[OK] ${stats.lessons} lessons authored`,
-    `[OK] ${stats.activities} activities across ${stats.engineCount} engine types`,
-    `[OK] ${stats.aiLabActivities} real AI-literacy activities`,
-    "[OK] 0 live AI calls — fully scripted, always safe",
-    "$ _",
-  ];
-  return (
-    <div className="mx-auto max-w-xl px-6">
-      <p className="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">Peek under the hood</p>
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.5 }}
-        className="al-scanlines relative overflow-hidden rounded-2xl border border-[#1f521f] bg-black p-5 font-mono text-[13px] leading-relaxed text-[#33ff00] shadow-[0_0_50px_rgba(51,255,0,0.08)] sm:text-sm"
-        style={{ textShadow: "0 0 5px rgba(51,255,0,0.5)" }}
-      >
-        {/* A fake window titlebar sells "this is a terminal," not just green text on black. */}
-        <div className="mb-3 -mt-1 flex items-center gap-1.5 border-b border-[#1f521f] pb-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]/70" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/70" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]/70" />
-          <span className="ml-2 text-[10px] font-bold uppercase tracking-wider text-[#33ff00]/40">vora@ai-lab-kids</span>
-        </div>
-        {lines.map((line, i) => (
-          <motion.p
-            key={line}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.35 }}
-            className={i === lines.length - 1 ? "flex items-center gap-1" : undefined}
-          >
-            {i === lines.length - 1 ? (
-              <>
-                {line}
-                <span className="al-animate-blink inline-block h-3.5 w-2 translate-y-0.5 bg-[#33ff00]" />
-              </>
-            ) : (
-              line
-            )}
+    <Section variant="split" size="major" rule="none" className="pt-4 sm:pt-8">
+      <GridItem span={7} className="relative z-10">
+        <motion.div variants={stagger(0.08)} initial="hidden" animate="show">
+          <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">
+            AI literacy + English · Ages 4-8
           </motion.p>
-        ))}
-      </motion.div>
-    </div>
+          <motion.h1
+            variants={fadeUp}
+            className="font-editorial al-optical-display mt-5 text-[clamp(2.75rem,8.5vw,6.5rem)] leading-[0.95] font-extrabold tracking-[-0.03em] text-navy"
+          >
+            Kids don&apos;t just play with{" "}
+            <span className="relative inline-block">
+              AI
+              <HandUnderline />
+            </span>{" "}
+            — they learn how it thinks.
+          </motion.h1>
+          <motion.p variants={fadeUp} className="mt-6 max-w-[46ch] text-[17px] leading-[1.55] text-slate sm:text-lg">
+            A full year of teacher-led lessons where English and real AI concepts are taught side by side, one
+            screen, one class, with Vora leading the way.
+          </motion.p>
+          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-3">
+            <EditorialLinkButton href="/signup" size="lg">
+              Get started
+            </EditorialLinkButton>
+            <EditorialLinkButton href="/login" variant="outline" size="lg">
+              Teacher log in
+            </EditorialLinkButton>
+          </motion.div>
+          <motion.p variants={fadeUp} className="mt-6 font-mono text-xs text-terminal-dim">
+            <span className="text-terminal">$</span> 72 lessons · 0 live AI calls
+          </motion.p>
+        </motion.div>
+
+        <div className="mt-10 flex items-center gap-2 lg:mt-16">
+          <HandArrow direction="down-right" size={40} />
+          <Annotation tilt={-1}>one screen, one teacher</Annotation>
+        </div>
+      </GridItem>
+
+      <GridItem span={5} start={8} className="relative mt-14 hidden min-h-[420px] lg:block">
+        <ConnectorLine
+          className="hidden lg:block"
+          viewBox={{ w: 500, h: 420 }}
+          points={[
+            { x: 0, y: 40 },
+            { x: 140, y: 120 },
+            { x: 260, y: 90 },
+          ]}
+          accent="sky"
+          labels={[{ x: 40, y: 20, text: "Perception", accent: "sky" }]}
+        />
+        <ConnectorLine
+          className="hidden lg:block"
+          viewBox={{ w: 500, h: 420 }}
+          points={[
+            { x: 500, y: 60 },
+            { x: 380, y: 140 },
+            { x: 300, y: 100 },
+          ]}
+          accent="amber"
+          labels={[{ x: 470, y: 30, text: "Reasoning", accent: "amber" }]}
+          seed={2}
+        />
+        <ConnectorLine
+          className="hidden lg:block"
+          viewBox={{ w: 500, h: 420 }}
+          points={[
+            { x: 280, y: 400 },
+            { x: 300, y: 300 },
+            { x: 290, y: 220 },
+          ]}
+          accent="mint"
+          labels={[{ x: 260, y: 400, text: "Learning", accent: "mint" }]}
+          seed={3}
+        />
+
+        <CollageFigure
+          className="h-full w-full"
+          layers={[
+            { key: "sun", node: <SunDisc variant="half-top" accent="amber" size={340} ring />, top: "62%", left: "58%", z: 0 },
+            { key: "polygon", node: <NavyPolygon />, top: "68%", left: "42%", z: 1 },
+            { key: "cloud1", node: <CloudShape accent="sky" size={80} />, top: "10%", left: "18%", z: 2, float: true },
+            { key: "cloud2", node: <CloudShape accent="mint" size={60} />, top: "22%", left: "80%", z: 2, float: true, floatIndex: 2 },
+            { key: "vora", node: <Vora size={220} mood="happy" bob />, top: "70%", left: "58%", z: 4 },
+            {
+              key: "terminal",
+              node: (
+                <div className="w-[300px]">
+                  <TerminalCard size="hero" rain tilt={-1} />
+                </div>
+              ),
+              top: "94%",
+              left: "82%",
+              z: 5,
+              delay: 0.5,
+            },
+          ]}
+        />
+      </GridItem>
+
+      <div className="col-span-full mt-10 flex justify-end lg:mt-0">
+        <ScrollCue />
+      </div>
+    </Section>
   );
 }
 
-function smoothPath(points: { x: number; y: number }[]): string {
-  if (points.length === 0) return "";
-  let d = `M ${points[0].x} ${points[0].y}`;
-  for (let i = 0; i < points.length - 1; i++) {
-    const midX = (points[i].x + points[i + 1].x) / 2;
-    const midY = (points[i].y + points[i + 1].y) / 2;
-    d += ` Q ${points[i].x} ${points[i].y} ${midX} ${midY}`;
-  }
-  const last = points[points.length - 1];
-  d += ` T ${last.x} ${last.y}`;
-  return d;
-}
-
-// A nominal viewBox whose aspect ratio (~5.3:1) approximates the real
-// rendered aspect of the lg:grid-cols-6 gallery row across its realistic
-// width range, so preserveAspectRatio="none" doesn't visibly distort the
-// dashed trail or waypoint circles drawn on top of it.
-const JOURNEY_VIEW = { w: 1000, h: 190 };
-const JOURNEY_POINTS = GALLERY_MONTHS.map((_, i) => ({
-  x: ((i + 0.5) / GALLERY_MONTHS.length) * JOURNEY_VIEW.w,
-  y: i % 2 === 0 ? 58 : 104,
-}));
-
-/** A dashed trail drawn over the gallery thumbnails — "a whole year's journey" made literal. Only shown at lg+, where the 6 months sit in a single row and the waypoints land on each card. */
-function GalleryJourneyPath() {
+function NavyPolygon() {
   return (
-    <svg
-      viewBox={`0 0 ${JOURNEY_VIEW.w} ${JOURNEY_VIEW.h}`}
-      preserveAspectRatio="none"
-      className="pointer-events-none absolute inset-0 z-20 hidden lg:block"
-      aria-hidden="true"
-    >
-      <defs>
-        <linearGradient id="al-journey-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#ffb000" />
-          <stop offset="100%" stopColor="#8b7ff0" />
-        </linearGradient>
-      </defs>
-      <motion.path
-        d={smoothPath(JOURNEY_POINTS)}
-        fill="none"
-        stroke="url(#al-journey-gradient)"
-        strokeWidth={3}
-        strokeDasharray="10 10"
-        strokeLinecap="round"
-        initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 0.9 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-      />
-      {JOURNEY_POINTS.map((p, i) => (
-        <motion.circle
-          key={i}
-          cx={p.x}
-          cy={p.y}
-          r={10}
-          fill="#07070d"
-          stroke="#ffb000"
-          strokeWidth={3}
-          initial={{ scale: 0, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ delay: 0.4 + i * 0.15, type: "spring", stiffness: 280, damping: 18 }}
-        />
-      ))}
+    <svg width="180" height="160" viewBox="0 0 180 160" aria-hidden="true" className="text-navy">
+      <polygon points="10,160 60,30 95,80 130,10 170,160" fill="currentColor" opacity={0.85} />
     </svg>
   );
 }
 
-export function Marketing() {
+function Features() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#07070d] text-white">
-      <div className="al-bg-dots al-animate-drift pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
-
-      {/* The rain lives behind the hero + terminal card only — it fades out
-          before the FEATURES section, which needs to stay bright and legible
-          rather than compete with a full-page animated backdrop. */}
-      <div className="relative">
-        <MatrixRain />
-
-        <header className="relative z-20 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="font-display flex items-center gap-2 text-lg font-bold text-white">
-            <span className="relative flex h-2 w-2">
-              <span className="al-animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-[#33ff00] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#33ff00]" />
-            </span>
-            AI Lab <span className="text-white/40">for Kids</span>
-          </Link>
-          <nav className="flex items-center gap-4 text-sm">
-            <Link href="/curriculum" className="font-semibold text-white/60 hover:text-white">
-              Program Guide
-            </Link>
-            <Link href="/login" className="font-semibold text-white/60 hover:text-white">
-              Log in
-            </Link>
-            <Link href="/signup">
-              <Button variant="secondary" className="!px-4 !py-2 !text-sm">
-                Sign up
-              </Button>
-            </Link>
-          </nav>
-        </header>
-
-        <Hero />
-
-        <SystemStatusCard />
-      </div>
-
-      {/* Features */}
-      <section className="relative z-10 mx-auto max-w-5xl px-6 py-16 sm:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto mb-12 max-w-xl text-center"
-        >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-light">Why it&apos;s different</p>
-          <h2 className="font-display mt-3 text-3xl font-bold">Not an English app with an AI sticker on it</h2>
+    <Section variant="full" size="major" rule="both">
+      <GridItem span={12} className="mb-14">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION}>
+          <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">Why it&apos;s different</p>
+          <h2 className="font-editorial al-optical-mid mt-3 max-w-2xl text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
+            Not an English app with an AI sticker on it
+          </h2>
         </motion.div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {FEATURES.map((f, i) => (
+      </GridItem>
+      {FEATURES.map((f, i) => {
+        const layout = FEATURE_LAYOUT[i];
+        return (
+          <GridItem key={f.title} span={layout.span} start={layout.start} className="relative">
             <motion.div
-              key={f.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="al-glass al-hover-glow flex flex-col gap-3 rounded-3xl p-6"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={VIEWPORT_SECTION}
+              transition={{ ...fadeUp.show.transition, delay: (i % 2) * 0.1 }}
+              className="relative flex gap-5 border-t border-rule py-8"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo/20 text-indigo-light">
-                <f.icon size={22} />
-              </span>
-              <p className="font-display text-lg font-bold">{f.title}</p>
-              <p className="text-sm text-white/60">{f.body}</p>
+              {i % 2 === 0 && (
+                <HalftoneBlob shape={i === 0 ? "pebble" : "splat"} accent="amber" size={140} opacity={0.5} className="pointer-events-none absolute -top-6 -left-16 hidden xl:block" />
+              )}
+              <p className="relative z-10 font-editorial text-2xl leading-none font-extrabold text-navy/15">{`0${i + 1}`}</p>
+              <div className="relative z-10">
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-navy/[0.06] text-navy">
+                  <f.icon size={22} />
+                </span>
+                <p className="font-editorial text-lg font-bold text-navy">{f.title}</p>
+                <p className="mt-2 max-w-[42ch] text-sm leading-relaxed text-slate">{f.body}</p>
+              </div>
             </motion.div>
-          ))}
-        </div>
-      </section>
+          </GridItem>
+        );
+      })}
+    </Section>
+  );
+}
 
-      {/* Gallery */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 py-16 sm:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto mb-10 max-w-xl text-center"
-        >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-light">A whole year with Vora</p>
-          <h2 className="font-display mt-3 text-3xl font-bold">12 themed units, one big idea each</h2>
+function Gallery() {
+  return (
+    <Section variant="wide-bleed" size="major" tone="paper">
+      <div className="mx-auto mb-12 max-w-2xl">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION}>
+          <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">A whole year with Vora</p>
+          <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
+            12 themed units, one big idea each
+          </h2>
         </motion.div>
-        <div className="relative">
-          <GalleryJourneyPath />
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {GALLERY_MONTHS.map((key, i) => {
-              const month = MONTHS.find((m) => m.key === key);
-              if (!month) return null;
-              return (
-                <motion.div
-                  key={key}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="al-glass al-hover-glow overflow-hidden rounded-2xl"
-                >
-                  <div className="relative aspect-square w-full">
-                    <Image src={MONTH_IMAGE[key]} alt="" fill sizes="200px" className="object-cover" />
-                  </div>
-                  <p className="px-2 py-2 text-center text-xs font-semibold text-white/80">{month.title}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="relative z-10 px-6 pb-24 pt-4">
+      </div>
+      <div className="relative">
+        <ConnectorLine
+          className="hidden lg:block"
+          viewBox={{ w: 1200, h: 260 }}
+          points={GALLERY_MONTHS.map((_, i) => ({
+            x: ((i + 0.5) / GALLERY_MONTHS.length) * 1200,
+            y: GALLERY_OFFSET[i] ? 70 : 190,
+          }))}
+          accent="navy"
+          labels={GALLERY_MONTHS.slice(0, 3).map((key, i) => {
+            const month = MONTHS.find((m) => m.key === key);
+            const idea = month ? BIG_IDEA_PRESENTATION[month.bigIdeaFocus] : undefined;
+            return {
+              x: ((i + 0.5) / GALLERY_MONTHS.length) * 1200,
+              y: (GALLERY_OFFSET[i] ? 70 : 190) - 34,
+              text: idea?.label ?? "AI Idea",
+              accent: i === 0 ? "sky" : i === 1 ? "amber" : "mint",
+            };
+          })}
+        />
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6 }}
-          className="al-glass al-hover-glow mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl p-10 text-center"
+          variants={stagger(0.06)}
+          initial="hidden"
+          whileInView="show"
+          viewport={VIEWPORT_SECTION}
+          className="grid grid-cols-2 gap-4 sm:grid-cols-6"
         >
-          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber/20 text-amber">
+          {GALLERY_MONTHS.map((key, i) => {
+            const month = MONTHS.find((m) => m.key === key);
+            if (!month) return null;
+            return (
+              <motion.div
+                key={key}
+                variants={fadeUp}
+                className={`${COL_SPAN[GALLERY_SPANS[i]] ?? ""} col-span-1 ${GALLERY_OFFSET[i] ? "lg:mt-14" : ""}`}
+              >
+                <Link href={`/curriculum/${key}`} className="group block">
+                  <HalftonePhoto
+                    src={MONTH_IMAGE[key]}
+                    alt=""
+                    shape="arch"
+                    treatment="duotone"
+                    sizes="(min-width: 1024px) 20vw, 40vw"
+                    className="aspect-square w-full transition-all duration-300 group-hover:-translate-y-1.5 group-hover:[filter:none]"
+                  />
+                  <p className="mt-3 text-center text-xs font-semibold text-navy">{month.title}</p>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+      <div className="mt-12 flex justify-center">
+        <EditorialLinkButton href="/curriculum" variant="outline">
+          See the full Program Guide
+        </EditorialLinkButton>
+      </div>
+    </Section>
+  );
+}
+
+function UnderTheHood() {
+  return (
+    <Section variant="full" size="minor" tone="tint-amber" edge="torn-top" rule="none">
+      <GridItem span={5} className="flex flex-col justify-center">
+        <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">Peek under the hood</p>
+        <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] font-bold text-navy">
+          Every lesson is scripted. Nothing is a live model.
+        </h2>
+        <div className="mt-6 flex items-center gap-2">
+          <HandArrow direction="right" size={40} />
+          <Annotation tilt={1}>yes, really 72 lessons</Annotation>
+        </div>
+      </GridItem>
+      <GridItem span={6} start={7} className="mt-10 lg:mt-0">
+        <TerminalCard size="hero" rain tilt={-1} className="mx-auto max-w-md" />
+      </GridItem>
+    </Section>
+  );
+}
+
+function FinalCta() {
+  return (
+    <Section variant="offset-left" size="major" edge="curve-bottom" className="relative overflow-hidden">
+      <HalftoneBlob shape="cloud" accent="sky" size={220} opacity={0.4} className="pointer-events-none absolute top-4 -left-16 hidden lg:block" />
+      <SunDisc
+        variant="half-bottom"
+        accent="amber"
+        size={420}
+        ring
+        className="pointer-events-none absolute right-0 bottom-0 hidden translate-x-1/4 sm:block"
+      />
+      <GridItem span={8} className="relative">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION} className="flex flex-col gap-6">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber text-navy">
             <SparkleIcon size={24} />
           </span>
-          <h2 className="font-display text-2xl font-bold sm:text-3xl">Ready to bring Vora into your classroom?</h2>
-          <p className="max-w-md text-sm text-white/60">
+          <h2 className="font-editorial al-optical-mid text-[clamp(2.5rem,6vw,4.5rem)] leading-[1] font-extrabold text-navy">
+            Ready to bring Vora into your classroom?
+          </h2>
+          <p className="max-w-md text-lg text-slate">
             Create your teacher account — a school admin approves it, then it&apos;s straight into the console.
           </p>
-          <Link href="/signup">
-            <Button variant="primary" className="!rounded-full !px-8">
+          <div>
+            <EditorialLinkButton href="/signup" size="lg">
               Create your account
-            </Button>
-          </Link>
+            </EditorialLinkButton>
+          </div>
         </motion.div>
-      </section>
+      </GridItem>
+    </Section>
+  );
+}
 
-      <footer className="relative z-10 flex flex-col items-center gap-3 border-t border-white/10 px-6 py-8 text-center text-xs text-white/40">
-        <p>AI Lab for Kids — teacher-led AI literacy &amp; English, for ages 4-8.</p>
-        <nav className="flex items-center gap-4">
-          <Link href="/contact" className="hover:text-white/70">
-            Contact
-          </Link>
-          <Link href="/privacy" className="hover:text-white/70">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="hover:text-white/70">
-            Terms
-          </Link>
-        </nav>
-      </footer>
-    </div>
+export function Marketing() {
+  const stats = curriculumStats();
+  return (
+    <EditorialShell noise>
+      <EditorialNav />
+      <Hero />
+      <Rule className="mx-auto max-w-[1240px] px-6 sm:px-8 lg:px-12 xl:px-16" />
+      <Section variant="full" size="minor" rule="none">
+        <GridItem span={12}>
+          <StatFigures
+            stats={[
+              { value: stats.lessons, label: "lessons authored", accent: "navy" },
+              { value: stats.activities, label: "activities", accent: "amber" },
+              { value: stats.engineCount, label: "engine types", accent: "sky" },
+              { value: stats.aiLabActivities, label: "AI-literacy activities", accent: "coral" },
+            ]}
+          />
+        </GridItem>
+      </Section>
+      <Features />
+      <Gallery />
+      <UnderTheHood />
+      <FinalCta />
+      <EditorialFooter />
+    </EditorialShell>
   );
 }
