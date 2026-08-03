@@ -48,7 +48,7 @@ function RuleInner({
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {align === "center" && <div className="flex-1">{line}</div>}
-      <p className="shrink-0 text-[11px] font-bold tracking-[0.18em] whitespace-nowrap text-navy/55 uppercase">{label}</p>
+      <p className="shrink-0 text-[11px] font-bold tracking-[0.18em] whitespace-nowrap text-navy/70 uppercase">{label}</p>
       <div className="flex-1">{line}</div>
     </div>
   );

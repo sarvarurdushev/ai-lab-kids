@@ -40,7 +40,7 @@ export default async function UnitPacingGuidePage({ params }: { params: Promise<
   return (
     <EditorialShell className="curriculum-print">
       <header className="no-print sticky top-0 z-10 flex items-center justify-between border-b border-rule bg-white/85 px-6 py-3 backdrop-blur">
-        <Link href="/curriculum" className="text-sm font-semibold text-navy/60 hover:text-navy">
+        <Link href="/curriculum" className="text-sm font-semibold text-navy/70 hover:text-navy">
           ← Full program guide
         </Link>
         <PrintButton label="🖨️ Print this unit" />
@@ -48,7 +48,7 @@ export default async function UnitPacingGuidePage({ params }: { params: Promise<
 
       <main className="mx-auto flex w-full max-w-[760px] flex-col gap-8 px-6 py-14 sm:px-8">
         <div className="flex flex-col gap-3 border-b border-rule pb-8">
-          <p className="flex items-center gap-1.5 text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">
+          <p className="flex items-center gap-1.5 text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">
             <RobotHeadIcon size={14} /> Teacher Pacing Guide
           </p>
           <h1 className="font-editorial al-optical-mid text-[clamp(2rem,5vw,3rem)] leading-[1.05] font-extrabold text-navy">
@@ -80,7 +80,7 @@ export default async function UnitPacingGuidePage({ params }: { params: Promise<
                 {authored && <ActivityChips lessonKey={lessonMeta.key} className="mt-2" />}
                 {vocabWords.length > 0 && (
                   <div className="mt-3">
-                    <p className="text-[10px] font-bold tracking-[0.1em] text-navy/40 uppercase">Vocabulary</p>
+                    <p className="text-[10px] font-bold tracking-[0.1em] text-navy/70 uppercase">Vocabulary</p>
                     <div className="mt-1.5 flex flex-wrap gap-2">
                       {vocabWords.map((w, i) => (
                         <span key={i} className="flex items-center gap-1 rounded-full bg-amber-tint px-2 py-1 text-xs font-semibold text-navy/80">
@@ -98,7 +98,7 @@ export default async function UnitPacingGuidePage({ params }: { params: Promise<
           })}
         </div>
 
-        <div className="no-print pb-4 text-center text-xs text-navy/40">
+        <div className="no-print pb-4 text-center text-xs text-navy/70">
           Press ⌘/Ctrl + P, or use the print button above, to save this unit as a PDF handout.
         </div>
       </main>

@@ -67,7 +67,7 @@ function Hero() {
     <Section variant="split" size="major" rule="none" className="pt-4 sm:pt-8">
       <GridItem span={7} className="relative z-10">
         <motion.div variants={stagger(0.08)} initial="hidden" animate="show">
-          <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">
+          <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">
             AI literacy + English · Ages 4-8
           </motion.p>
           <motion.h1
@@ -185,7 +185,7 @@ function Features() {
     <Section variant="full" size="major" rule="both">
       <GridItem span={12} className="mb-14">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION}>
-          <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">Why it&apos;s different</p>
+          <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">Why it&apos;s different</p>
           <h2 className="font-editorial al-optical-mid mt-3 max-w-2xl text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
             Not an English app with an AI sticker on it
           </h2>
@@ -227,7 +227,7 @@ function Gallery() {
     <Section variant="wide-bleed" size="major" tone="paper">
       <div className="mx-auto mb-12 max-w-2xl">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT_SECTION}>
-          <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">A whole year with Vora</p>
+          <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">A whole year with Vora</p>
           <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
             12 themed units, one big idea each
           </h2>
@@ -298,7 +298,7 @@ function UnderTheHood() {
   return (
     <Section variant="full" size="minor" tone="tint-amber" edge="torn-top" rule="none">
       <GridItem span={5} className="flex flex-col justify-center">
-        <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">Peek under the hood</p>
+        <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">Peek under the hood</p>
         <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] font-bold text-navy">
           Every lesson is scripted. Nothing is a live model.
         </h2>

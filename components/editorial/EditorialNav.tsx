@@ -51,7 +51,7 @@ export function EditorialNav({
             <span className="al-animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-terminal opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-terminal" />
           </span>
-          AI Lab <span className="text-navy/45">for Kids</span>
+          AI Lab <span className="text-navy/70">for Kids</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -91,7 +91,7 @@ export function EditorialNav({
         <div className="fixed inset-0 z-[60] flex flex-col bg-white md:hidden">
           <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4">
             <Link href="/" className="font-editorial text-lg font-bold text-navy" onClick={() => setOpen(false)}>
-              AI Lab <span className="text-navy/45">for Kids</span>
+              AI Lab <span className="text-navy/70">for Kids</span>
             </Link>
             <button
               type="button"

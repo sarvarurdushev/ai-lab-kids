@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import type { Tilt } from "./tokens";
 import { TILT } from "./tokens";
 import { curriculumStats } from "@/lib/curriculum";
@@ -35,13 +35,14 @@ export function TerminalCard({
     "$ _",
   ];
   const lines = size === "inline" ? [allLines[0], allLines[1], allLines[4], allLines[5]] : allLines;
+  const reduce = useReducedMotion();
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={reduce ? false : { opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: reduce ? 0 : 0.5 }}
       className={`al-scanlines relative overflow-hidden rounded-xl border border-terminal-dim bg-terminal-bg p-5 font-mono text-terminal shadow-terminal ${size === "inline" ? "text-[12px] leading-relaxed" : "text-[13px] leading-relaxed sm:text-sm"} ${TILT[tilt]} ${className}`}
       style={{ textShadow: "0 0 5px rgba(51,255,0,0.5)" }}
     >
@@ -62,10 +63,10 @@ export function TerminalCard({
         {lines.map((line, i) => (
           <motion.p
             key={line}
-            initial={{ opacity: 0 }}
+            initial={reduce ? false : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.35 }}
+            transition={{ delay: reduce ? 0 : i * 0.35 }}
             className={i === lines.length - 1 ? "flex items-center gap-1" : undefined}
           >
             {i === lines.length - 1 ? (

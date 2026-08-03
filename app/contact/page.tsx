@@ -23,7 +23,7 @@ export default function ContactPage() {
       <EditorialNav />
       <Section variant="split" size="major" className="flex-1">
         <GridItem span={7}>
-          <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">Get in touch</p>
+          <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">Get in touch</p>
           <h1 className="font-editorial al-optical-display mt-4 text-[clamp(2.5rem,6vw,4.5rem)] leading-[0.95] font-extrabold tracking-[-0.03em] text-navy">
             Say hello.
           </h1>

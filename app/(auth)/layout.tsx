@@ -13,7 +13,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
 
       {/* Brand panel — collapses to a short band above the form on mobile, a full left column at lg+. */}
       <div className="relative flex flex-col justify-center overflow-hidden bg-amber-tint px-6 py-10 sm:px-10 lg:w-5/12 lg:px-14 lg:py-16">
-        <Link href="/" className="text-sm font-semibold text-navy/60 hover:text-navy">
+        <Link href="/" className="text-sm font-semibold text-navy/70 hover:text-navy">
           ← Back to home
         </Link>
         <h2 className="font-editorial al-optical-mid mt-6 max-w-sm text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] font-extrabold text-navy">

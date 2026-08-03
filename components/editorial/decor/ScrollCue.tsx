@@ -19,7 +19,7 @@ export function ScrollCue({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none flex flex-col items-center gap-2 text-[11px] font-semibold tracking-wide text-navy/40 transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"} ${className}`}
+      className={`pointer-events-none flex flex-col items-center gap-2 text-[11px] font-semibold tracking-wide text-navy/70 transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"} ${className}`}
     >
       <span>Scroll</span>
       {reduce ? (

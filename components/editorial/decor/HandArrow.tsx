@@ -26,7 +26,7 @@ export function HandArrow({
       viewBox="0 0 44 26"
       fill="none"
       aria-hidden="true"
-      className={`text-navy/60 ${ROTATION[direction]} ${flip ? "-scale-x-100" : ""} ${className}`}
+      className={`text-navy/70 ${ROTATION[direction]} ${flip ? "-scale-x-100" : ""} ${className}`}
     >
       <path d="M2 20 C 14 23, 30 17, 40 6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
       <path d="M31 4 L41 6 L37 15" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <div className="max-w-2xl">
-      <p className="text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">{eyebrow}</p>
+      <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">{eyebrow}</p>
       <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] font-bold text-navy">
         {title}
       </h2>
@@ -64,7 +64,7 @@ export default function CurriculumPage() {
         printHidden
         rightSlot={
           <>
-            <Link href="/dashboard" className="text-sm font-semibold text-navy/60 hover:text-navy">
+            <Link href="/dashboard" className="text-sm font-semibold text-navy/70 hover:text-navy">
               Teacher console →
             </Link>
             <PrintButton />
@@ -75,7 +75,7 @@ export default function CurriculumPage() {
       <main className="mx-auto flex w-full max-w-[900px] flex-col gap-16 px-6 py-16 sm:px-8 sm:py-24">
         {/* 1. Header */}
         <section className="flex flex-col items-center gap-6 text-center">
-          <p className="flex items-center gap-1.5 text-xs font-bold tracking-[0.18em] text-navy/55 uppercase">
+          <p className="flex items-center gap-1.5 text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">
             <RobotHeadIcon size={14} /> Program Guide
           </p>
           <h1 className="font-editorial al-optical-display text-[clamp(2.5rem,7vw,4.5rem)] leading-[1] font-extrabold text-navy">
@@ -176,7 +176,7 @@ export default function CurriculumPage() {
           <div className="overflow-x-auto border-t border-rule">
             <table className="w-full min-w-[640px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-rule text-xs font-bold tracking-[0.1em] text-navy/45 uppercase">
+                <tr className="border-b border-rule text-xs font-bold tracking-[0.1em] text-navy/70 uppercase">
                   <th className="px-3 py-3">Unit</th>
                   <th className="px-3 py-3">Theme</th>
                   <th className="px-3 py-3">AI Big Idea</th>
@@ -224,7 +224,7 @@ export default function CurriculumPage() {
             {TERMS.map((term) => (
               <div key={term.termIndex} className="print-break-before flex flex-col gap-4">
                 <h3 className="font-editorial text-lg font-bold text-navy">
-                  Term {term.termIndex} <span className="text-navy/40">— Units {term.monthRange[0]}-{term.monthRange[1]}</span>
+                  Term {term.termIndex} <span className="text-navy/70">— Units {term.monthRange[0]}-{term.monthRange[1]}</span>
                 </h3>
                 <div className="flex flex-col divide-y divide-rule border-t border-b border-rule">
                   {MONTHS.filter((m) => m.monthIndex >= term.monthRange[0] && m.monthIndex <= term.monthRange[1]).map((month) => {
@@ -283,7 +283,7 @@ export default function CurriculumPage() {
                     );
                   })}
                 </div>
-                <p className="border-l-2 border-mint bg-mint/10 px-4 py-2.5 text-sm font-semibold text-mint">
+                <p className="border-l-2 border-mint bg-mint/10 px-4 py-2.5 text-sm font-semibold text-navy">
                   {term.checkpointLabel}
                 </p>
               </div>
@@ -303,7 +303,7 @@ export default function CurriculumPage() {
           <div className="overflow-x-auto border-t border-rule">
             <table className="w-full min-w-[640px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-rule text-xs font-bold tracking-[0.1em] text-navy/45 uppercase">
+                <tr className="border-b border-rule text-xs font-bold tracking-[0.1em] text-navy/70 uppercase">
                   <th className="px-3 py-3">Week</th>
                   <th className="px-3 py-3">Day</th>
                   <th className="px-3 py-3">Lesson</th>
@@ -445,15 +445,15 @@ export default function CurriculumPage() {
                   </span>
                 </li>
               </ul>
-              <p className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-mint">
-                <CheckCircleIcon size={14} /> Every claim on this page is generated from the same curriculum data the
-                app runs on — nothing here is written separately from the product.
+              <p className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-navy">
+                <CheckCircleIcon size={14} className="text-mint" /> Every claim on this page is generated from the same
+                curriculum data the app runs on — nothing here is written separately from the product.
               </p>
             </div>
           </div>
         </section>
 
-        <div className="no-print pb-2 text-center text-xs text-navy/40">
+        <div className="no-print pb-2 text-center text-xs text-navy/70">
           Press ⌘/Ctrl + P, or use the print button above, to save this guide as a PDF.
         </div>
       </main>

@@ -6,7 +6,7 @@ export function EditorialFooter({ printHidden = false }: { printHidden?: boolean
   return (
     <footer className={`border-t border-rule bg-white ${printHidden ? "no-print" : ""}`}>
       <div className="mx-auto max-w-[1240px] px-6 py-14 sm:px-8 sm:py-20 lg:px-12 xl:px-16">
-        <p className="font-editorial select-none text-[clamp(2rem,5vw,3.5rem)] leading-none font-extrabold text-navy/10">
+        <p aria-hidden="true" className="font-editorial select-none text-[clamp(2rem,5vw,3.5rem)] leading-none font-extrabold text-navy/10">
           AI Lab for Kids
         </p>
         <Rule className="my-10" />
@@ -36,7 +36,7 @@ export function EditorialFooter({ printHidden = false }: { printHidden?: boolean
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-3 border-t border-rule pt-4 sm:border-t-0 sm:pt-0">
-      <p className="text-[11px] font-bold tracking-[0.18em] text-navy/45 uppercase">{title}</p>
+      <p className="text-[11px] font-bold tracking-[0.18em] text-navy/70 uppercase">{title}</p>
       <div className="flex flex-col gap-2">{children}</div>
     </div>
   );
