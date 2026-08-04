@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Nunito, Baloo_2, Bricolage_Grotesque, Caveat } from "next/font/google";
+import { DEFAULT_LOCALE, LOCALE_COOKIE, isLocale } from "@/lib/i18n/locales";
+import { getDictionary } from "@/lib/i18n/getDictionary";
+import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -31,21 +35,35 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: "AI Lab for Kids",
-  description: "Learn how AI thinks while learning English — ages 4-8, no login needed.",
+  description:
+    "Learn how AI thinks while learning English — ages 4-8, no login needed.",
   other: { "color-scheme": "light" },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Reading the locale from a cookie (rather than localStorage) means the
+  // server always knows the client's locale before the first byte goes out
+  // — <html lang> and every translated string are correct on first paint,
+  // with no post-hydration flash and no SSR/CSR mismatch to guard against.
+  const store = await cookies();
+  const cookieLocale = store.get(LOCALE_COOKIE)?.value;
+  const locale = isLocale(cookieLocale) ? cookieLocale : DEFAULT_LOCALE;
+  const dict = getDictionary(locale);
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${nunito.variable} ${baloo.variable} ${bricolage.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink">{children}</body>
+      <body className="min-h-full flex flex-col bg-cream text-ink">
+        <LocaleProvider locale={locale} dict={dict}>
+          {children}
+        </LocaleProvider>
+      </body>
     </html>
   );
 }

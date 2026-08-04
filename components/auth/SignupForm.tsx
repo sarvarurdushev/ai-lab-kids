@@ -5,9 +5,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { EditorialButton } from "@/components/editorial/EditorialButton";
 import { FormField } from "@/components/editorial/FormField";
+import { useDictionary } from "@/components/i18n/LocaleProvider";
 
 export function SignupForm() {
   const router = useRouter();
+  const dict = useDictionary();
+  const t = dict.auth.signup;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,14 +42,12 @@ export function SignupForm() {
   return (
     <div className="w-full max-w-sm">
       <h1 className="font-editorial al-optical-mid text-[2rem] leading-[1.05] font-extrabold text-navy sm:text-[2.5rem]">
-        Create your account
+        {t.title}
       </h1>
-      <p className="mt-2 text-sm text-slate">
-        AI Lab for Kids — a school admin approves new teacher accounts before you can start a class.
-      </p>
+      <p className="mt-2 text-sm text-slate">{t.subtitle}</p>
       <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
         <FormField
-          label="Name"
+          label={dict.formField.name}
           type="text"
           required
           autoComplete="name"
@@ -54,7 +55,7 @@ export function SignupForm() {
           onChange={(e) => setName(e.target.value)}
         />
         <FormField
-          label="Email"
+          label={dict.formField.email}
           type="email"
           required
           autoComplete="email"
@@ -62,7 +63,7 @@ export function SignupForm() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <FormField
-          label="Password"
+          label={dict.formField.password}
           type="password"
           required
           minLength={8}
@@ -71,18 +72,29 @@ export function SignupForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
         {error && (
-          <p role="alert" aria-live="polite" className="text-sm font-semibold text-coral-ink">
+          <p
+            role="alert"
+            aria-live="polite"
+            className="text-sm font-semibold text-coral-ink"
+          >
             {error}
           </p>
         )}
-        <EditorialButton type="submit" disabled={submitting} className="mt-2 w-full">
-          {submitting ? "Creating account..." : "Create account"}
+        <EditorialButton
+          type="submit"
+          disabled={submitting}
+          className="mt-2 w-full"
+        >
+          {submitting ? t.submitting : t.submit}
         </EditorialButton>
       </form>
       <p className="mt-6 text-sm text-slate">
-        Already have an account?{" "}
-        <Link href="/login" className="font-semibold text-navy underline decoration-navy/30 underline-offset-2 hover:decoration-navy">
-          Sign in
+        {t.footerPrompt}
+        <Link
+          href="/login"
+          className="font-semibold text-navy underline decoration-navy/30 underline-offset-2 hover:decoration-navy"
+        >
+          {t.footerLink}
         </Link>
       </p>
     </div>

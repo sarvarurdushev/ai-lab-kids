@@ -5,11 +5,8 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { EditorialLinkButton } from "./EditorialButton";
-
-const LINKS = [
-  { href: "/curriculum", label: "Program Guide" },
-  { href: "/contact", label: "Contact" },
-];
+import { LocaleToggle } from "./LocaleToggle";
+import { useDictionary } from "@/components/i18n/LocaleProvider";
 
 /**
  * Sticky nav for the redesigned public surface. Scroll state is a plain
@@ -29,6 +26,11 @@ export function EditorialNav({
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const dict = useDictionary();
+  const LINKS = [
+    { href: "/curriculum", label: dict.common.programGuide },
+    { href: "/contact", label: dict.common.contact },
+  ];
 
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 24));
 
@@ -46,7 +48,10 @@ export function EditorialNav({
       className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled ? "border-b border-rule bg-white/85 backdrop-blur" : "border-b border-transparent bg-transparent"} ${printHidden ? "no-print" : ""}`}
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4 sm:px-8 lg:px-12 xl:px-16">
-        <Link href="/" className="font-editorial flex items-center gap-2 text-lg font-bold text-navy">
+        <Link
+          href="/"
+          className="font-editorial flex items-center gap-2 text-lg font-bold text-navy"
+        >
           <span className="relative flex h-2 w-2">
             <span className="al-animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-terminal opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-terminal" />
@@ -68,39 +73,58 @@ export function EditorialNav({
             {rightSlot ?? (
               <>
                 <EditorialLinkButton href="/login" variant="outline" size="sm">
-                  Teacher log in
+                  {dict.common.teacherLogin}
                 </EditorialLinkButton>
                 <EditorialLinkButton href="/signup" variant="solid" size="sm">
-                  Get started
+                  {dict.common.getStarted}
                 </EditorialLinkButton>
               </>
             )}
           </div>
+          <LocaleToggle className="ml-2" />
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="rounded-full bg-navy px-5 py-2 text-sm font-semibold text-white md:hidden"
-        >
-          Menu
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LocaleToggle />
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="rounded-full bg-navy px-5 py-2 text-sm font-semibold text-white"
+          >
+            {dict.nav.menu}
+          </button>
+        </div>
       </div>
 
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-white md:hidden">
           <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4">
-            <Link href="/" className="font-editorial text-lg font-bold text-navy" onClick={() => setOpen(false)}>
+            <Link
+              href="/"
+              className="font-editorial text-lg font-bold text-navy"
+              onClick={() => setOpen(false)}
+            >
               AI Lab <span className="text-navy/70">for Kids</span>
             </Link>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              aria-label="Close menu"
+              aria-label={dict.nav.closeMenu}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/[0.06] text-navy"
             >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <path d="M2 2 L16 16 M16 2 L2 16" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 2 L16 16 M16 2 L2 16"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                />
               </svg>
             </button>
           </div>
@@ -116,7 +140,10 @@ export function EditorialNav({
               </Link>
             ))}
             {rightSlot ? (
-              <div className="mt-6 flex flex-col items-start gap-4" onClick={() => setOpen(false)}>
+              <div
+                className="mt-6 flex flex-col items-start gap-4"
+                onClick={() => setOpen(false)}
+              >
                 {rightSlot}
               </div>
             ) : (
@@ -126,10 +153,15 @@ export function EditorialNav({
                   onClick={() => setOpen(false)}
                   className="font-editorial border-b border-rule py-4 text-4xl font-bold text-navy"
                 >
-                  Teacher log in
+                  {dict.common.teacherLogin}
                 </Link>
-                <EditorialLinkButton href="/signup" size="lg" className="mt-6 w-full" onClick={() => setOpen(false)}>
-                  Get started
+                <EditorialLinkButton
+                  href="/signup"
+                  size="lg"
+                  className="mt-6 w-full"
+                  onClick={() => setOpen(false)}
+                >
+                  {dict.common.getStarted}
                 </EditorialLinkButton>
               </>
             )}

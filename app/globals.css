@@ -46,7 +46,8 @@
   --color-al-terminal-bg: #07070d;
 
   --shadow-al-lift: 0 18px 50px -24px rgba(15, 28, 63, 0.28);
-  --shadow-al-paper: 0 2px 0 rgba(15, 28, 63, 0.06), 0 12px 28px -20px rgba(15, 28, 63, 0.35);
+  --shadow-al-paper:
+    0 2px 0 rgba(15, 28, 63, 0.06), 0 12px 28px -20px rgba(15, 28, 63, 0.35);
   --shadow-al-terminal: 0 0 60px rgba(51, 255, 0, 0.1);
 }
 
@@ -103,6 +104,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
+}
+
+/*
+ * Korean site-chrome i18n (lib/i18n/**). None of the bundled Google Fonts
+ * above (Nunito/Baloo 2/Bricolage Grotesque/Caveat) ship any Hangul glyphs,
+ * and next/font/google has no "korean" subset for any of them — the only
+ * bundling path is preload:false, which self-hosts every weight/slice of a
+ * Korean-capable font at *build* time (88-124 extra files). Given this repo
+ * already has one prior Render build failure on record, we instead lean on
+ * the high-quality Hangul fonts every target device already ships: zero
+ * extra bytes, zero build risk. Scoped to [lang="ko"] so the Latin fonts
+ * above are untouched for English.
+ */
+html[lang="ko"] {
+  --font-ko-hangul:
+    "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic",
+    "Noto Sans KR", "Nanum Gothic", sans-serif;
+}
+/*
+ * body covers the base cascade; .font-editorial/.font-hand are called out
+ * by name because they set their own explicit font-family (Bricolage
+ * Grotesque / Caveat, both Hangul-less) which would otherwise win over
+ * body's override for every heading and hand-drawn annotation on the
+ * translated site.
+ */
+html[lang="ko"] body,
+html[lang="ko"] .font-editorial,
+html[lang="ko"] .font-hand {
+  font-family: var(--font-ko-hangul);
+}
+
+/*
+ * Browsers default to allowing a line break between any two Hangul
+ * syllable blocks (the same CJK rule that lets Chinese/Japanese wrap
+ * without whitespace) — inside a narrow container like SpeechBubble that
+ * produces an ugly one-or-two-character-per-line column instead of
+ * breaking at actual word spaces. keep-all is the standard fix for
+ * Korean UI copy: only break at whitespace, same as English.
+ */
+html[lang="ko"] body {
+  word-break: keep-all;
 }
 
 @keyframes al-pop-in {
@@ -216,7 +258,11 @@ body {
  * clipped to an organic shape.
  */
 .al-halftone {
-  background-image: radial-gradient(circle at 50% 50%, currentColor 1.4px, transparent 1.5px);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    currentColor 1.4px,
+    transparent 1.5px
+  );
   background-size: 6px 6px;
 }
 

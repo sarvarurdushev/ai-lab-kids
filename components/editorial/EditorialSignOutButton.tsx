@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useDictionary } from "@/components/i18n/LocaleProvider";
 
 /**
  * Editorial-styled duplicate of components/console/SignOutButton.tsx — that
@@ -8,8 +9,13 @@ import { useRouter } from "next/navigation";
  * so duplicating it here is correct rather than importing across the
  * public/console boundary.
  */
-export function EditorialSignOutButton({ className = "" }: { className?: string }) {
+export function EditorialSignOutButton({
+  className = "",
+}: {
+  className?: string;
+}) {
   const router = useRouter();
+  const dict = useDictionary();
   return (
     <button
       type="button"
@@ -20,7 +26,7 @@ export function EditorialSignOutButton({ className = "" }: { className?: string 
       }}
       className={`text-sm font-semibold text-slate transition-colors hover:text-coral-ink ${className}`}
     >
-      Sign out
+      {dict.common.signOut}
     </button>
   );
 }

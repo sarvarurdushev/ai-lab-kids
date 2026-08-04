@@ -50,28 +50,23 @@ import {
   stagger,
   VIEWPORT_SECTION,
 } from "@/components/editorial/motion";
+import { useDictionary } from "@/components/i18n/LocaleProvider";
+import type { Dictionary } from "@/lib/i18n/getDictionary";
 
-const FEATURES = [
-  {
-    icon: RobotHeadIcon,
-    title: "Real AI ideas, not just an AI label",
-    body: "Every unit teaches one genuine AI4K12 big idea — perception, patterns, learning from examples — through play a 4-8 year-old can actually do.",
-  },
-  {
-    icon: GamepadIcon,
-    title: "One screen, one teacher",
-    body: "Built for a projector and a teacher running the room — not a tablet per kid. Every lesson is a full, scripted plan you can pick up and teach.",
-  },
-  {
-    icon: GlobeIcon,
-    title: "A whole year, mapped out",
-    body: "72 fully authored lessons across 12 themed units, standards-aligned from the first class to the last, with a printable guide for every one.",
-  },
-  {
-    icon: RunIcon,
-    title: "15+ minutes, genuinely fun",
-    body: "Movement breaks, chants, and games keep the room moving — this isn't a worksheet with a robot sticker on it.",
-  },
+const FEATURE_ICON = {
+  realAiIdeas: RobotHeadIcon,
+  oneScreen: GamepadIcon,
+  wholeYear: GlobeIcon,
+  genuinelyFun: RunIcon,
+} as const;
+
+type FeatureKey = keyof typeof FEATURE_ICON;
+
+const FEATURE_KEYS: FeatureKey[] = [
+  "realAiIdeas",
+  "oneScreen",
+  "wholeYear",
+  "genuinelyFun",
 ];
 
 const FEATURE_LAYOUT: { start: number; span: number }[] = [
@@ -87,6 +82,7 @@ const FEATURE_LAYOUT: { start: number; span: number }[] = [
 const GALLERY_DRIFT: (-1 | 0 | 1)[] = [0, 1, -1, 0, -1, 1];
 
 function Hero() {
+  const dict = useDictionary();
   const {
     ref: heroParallaxRef,
     mx: heroMx,
@@ -108,26 +104,24 @@ function Hero() {
               variants={fadeUp}
               className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase"
             >
-              AI literacy + English · Ages 4-8
+              {dict.hero.eyebrow}
             </motion.p>
             <motion.h1
               variants={fadeUp}
               className="font-editorial al-optical-display mt-5 text-[clamp(2.75rem,8.5vw,6.5rem)] leading-[0.95] font-extrabold tracking-[-0.03em] text-navy"
             >
-              Kids don&apos;t just play with{" "}
+              {dict.hero.titleBefore}
               <span className="relative inline-block">
-                AI
+                {dict.hero.titleUnderlined}
                 <HandUnderline />
-              </span>{" "}
-              — they learn how it thinks.
+              </span>
+              {dict.hero.titleAfter}
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="mt-6 max-w-[46ch] text-[17px] leading-[1.55] text-slate sm:text-lg"
             >
-              A full year of teacher-led lessons where English and real AI
-              concepts are taught side by side, one screen, one class, with Vora
-              leading the way.
+              {dict.hero.subtitle}
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -135,25 +129,24 @@ function Hero() {
             >
               <Magnetic>
                 <EditorialLinkButton href="/signup" size="lg">
-                  Get started
+                  {dict.common.getStarted}
                 </EditorialLinkButton>
               </Magnetic>
               <EditorialLinkButton href="/login" variant="outline" size="lg">
-                Teacher log in
+                {dict.common.teacherLogin}
               </EditorialLinkButton>
             </motion.div>
             <motion.p
               variants={fadeUp}
               className="mt-6 font-mono text-xs text-terminal-dim"
             >
-              <span className="text-terminal">$</span> 72 lessons · 0 live AI
-              calls
+              <span className="text-terminal">$</span> {dict.hero.terminalLine}
             </motion.p>
           </motion.div>
 
           <div className="mt-10 flex items-center gap-2 lg:mt-16">
             <HandArrow direction="down-right" size={40} />
-            <Annotation tilt={-1}>one screen, one teacher</Annotation>
+            <Annotation tilt={-1}>{dict.hero.annotation}</Annotation>
           </div>
         </GridItem>
 
@@ -184,7 +177,14 @@ function Hero() {
                     { x: 260, y: 90 },
                   ]}
                   accent="sky"
-                  labels={[{ x: 40, y: 20, text: "Perception", accent: "sky" }]}
+                  labels={[
+                    {
+                      x: 40,
+                      y: 20,
+                      text: dict.hero.perceptionLabel,
+                      accent: "sky",
+                    },
+                  ]}
                 />
               </ParallaxLayer>
             </ScrollExitLayer>
@@ -210,7 +210,12 @@ function Hero() {
                   ]}
                   accent="amber"
                   labels={[
-                    { x: 470, y: 30, text: "Reasoning", accent: "amber" },
+                    {
+                      x: 470,
+                      y: 30,
+                      text: dict.hero.reasoningLabel,
+                      accent: "amber",
+                    },
                   ]}
                   seed={2}
                 />
@@ -238,7 +243,12 @@ function Hero() {
                   ]}
                   accent="mint"
                   labels={[
-                    { x: 260, y: 400, text: "Learning", accent: "mint" },
+                    {
+                      x: 260,
+                      y: 400,
+                      text: dict.hero.learningLabel,
+                      accent: "mint",
+                    },
                   ]}
                   seed={3}
                 />
@@ -416,7 +426,7 @@ function Hero() {
                   key: "bubble",
                   node: (
                     <SpeechBubble accent="amber" tail="down-left">
-                      Hi! I&apos;m Vora.
+                      {dict.hero.bubble}
                     </SpeechBubble>
                   ),
                   top: "46%",
@@ -471,6 +481,7 @@ function NavyPolygon() {
 }
 
 function Features() {
+  const dict = useDictionary();
   return (
     <Section
       variant="full"
@@ -495,18 +506,20 @@ function Features() {
           viewport={VIEWPORT_SECTION}
         >
           <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">
-            Why it&apos;s different
+            {dict.features.eyebrow}
           </p>
           <h2 className="font-editorial al-optical-mid mt-3 max-w-2xl text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
-            Not an English app with an AI sticker on it
+            {dict.features.title}
           </h2>
         </motion.div>
       </GridItem>
-      {FEATURES.map((f, i) => {
+      {FEATURE_KEYS.map((key, i) => {
         const layout = FEATURE_LAYOUT[i];
+        const Icon = FEATURE_ICON[key];
+        const copy = dict.features.items[key];
         return (
           <GridItem
-            key={f.title}
+            key={key}
             span={layout.span}
             start={layout.start}
             className="relative z-10"
@@ -523,13 +536,13 @@ function Features() {
               <p className="font-editorial text-2xl leading-none font-extrabold text-navy/15 transition-colors duration-300 group-hover:text-amber-ink">{`0${i + 1}`}</p>
               <div className="flex-1">
                 <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-navy/[0.06] text-navy">
-                  <f.icon size={22} />
+                  <Icon size={22} />
                 </span>
                 <p className="font-editorial text-lg font-bold text-navy">
-                  {f.title}
+                  {copy.title}
                 </p>
                 <p className="mt-2 max-w-[42ch] text-sm leading-relaxed text-slate">
-                  {f.body}
+                  {copy.body}
                 </p>
               </div>
               <span
@@ -578,6 +591,7 @@ function GalleryStaticGrid() {
               sizes="(min-width: 1024px) 16vw, (min-width: 640px) 30vw, 45vw"
               className="aspect-square w-full transition-transform duration-300 group-hover:-translate-y-1.5"
             />
+            {/* Month titles stay in English by explicit product decision — they're curriculum data (lib/curriculum/months.ts), not site chrome. */}
             <p className="mt-3 text-center text-xs font-semibold text-navy">
               {month.title}
             </p>
@@ -662,6 +676,7 @@ function GalleryRibbon() {
 }
 
 function Gallery() {
+  const dict = useDictionary();
   return (
     <Section variant="full" size="major" tone="paper">
       <GridItem span={12} className="mx-auto mb-12 max-w-2xl text-center">
@@ -672,10 +687,10 @@ function Gallery() {
           viewport={VIEWPORT_SECTION}
         >
           <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">
-            A whole year with Vora
+            {dict.gallery.eyebrow}
           </p>
           <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-bold text-navy">
-            12 themed units, one big idea each
+            {dict.gallery.title}
           </h2>
         </motion.div>
       </GridItem>
@@ -687,7 +702,7 @@ function Gallery() {
       </div>
       <div className="col-span-full mt-12 flex justify-center">
         <EditorialLinkButton href="/curriculum" variant="outline">
-          See the full Program Guide
+          {dict.gallery.cta}
         </EditorialLinkButton>
       </div>
     </Section>
@@ -695,6 +710,7 @@ function Gallery() {
 }
 
 function UnderTheHood() {
+  const dict = useDictionary();
   return (
     <Section
       variant="full"
@@ -705,14 +721,14 @@ function UnderTheHood() {
     >
       <GridItem span={5} className="flex flex-col justify-center">
         <p className="text-xs font-bold tracking-[0.18em] text-navy/70 uppercase">
-          Peek under the hood
+          {dict.underTheHood.eyebrow}
         </p>
         <h2 className="font-editorial al-optical-mid mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] font-bold text-navy">
-          Every lesson is scripted. Nothing is a live model.
+          {dict.underTheHood.title}
         </h2>
         <div className="mt-6 flex items-center gap-2">
           <HandArrow direction="right" size={40} />
-          <Annotation tilt={1}>yes, really 72 lessons</Annotation>
+          <Annotation tilt={1}>{dict.underTheHood.annotation}</Annotation>
         </div>
       </GridItem>
       <GridItem span={6} start={7} className="mt-10 lg:mt-0">
@@ -723,6 +739,7 @@ function UnderTheHood() {
 }
 
 function FinalCta() {
+  const dict = useDictionary();
   const {
     ref: ctaParallaxRef,
     mx: ctaMx,
@@ -765,16 +782,13 @@ function FinalCta() {
               <SparkleIcon size={24} />
             </span>
             <h2 className="font-editorial al-optical-mid text-[clamp(2.5rem,6vw,4.5rem)] leading-[1] font-extrabold text-navy">
-              Ready to bring Vora into your classroom?
+              {dict.finalCta.title}
             </h2>
-            <p className="max-w-md text-lg text-slate">
-              Create your teacher account — a school admin approves it, then
-              it&apos;s straight into the console.
-            </p>
+            <p className="max-w-md text-lg text-slate">{dict.finalCta.body}</p>
             <div>
               <Magnetic>
                 <EditorialLinkButton href="/signup" size="lg">
-                  Create your account
+                  {dict.finalCta.cta}
                 </EditorialLinkButton>
               </Magnetic>
             </div>
@@ -785,7 +799,36 @@ function FinalCta() {
   );
 }
 
+function homeStats(
+  stats: ReturnType<typeof curriculumStats>,
+  dict: Dictionary,
+) {
+  return [
+    {
+      value: stats.lessons,
+      label: dict.homeStats.lessons,
+      accent: "navy" as const,
+    },
+    {
+      value: stats.activities,
+      label: dict.homeStats.activities,
+      accent: "amber" as const,
+    },
+    {
+      value: stats.engineCount,
+      label: dict.homeStats.engineTypes,
+      accent: "sky" as const,
+    },
+    {
+      value: stats.aiLabActivities,
+      label: dict.homeStats.aiLiteracyActivities,
+      accent: "coral" as const,
+    },
+  ];
+}
+
 export function Marketing() {
+  const dict = useDictionary();
   const stats = curriculumStats();
   return (
     <EditorialShell noise>
@@ -794,26 +837,7 @@ export function Marketing() {
       <Rule className="mx-auto max-w-[1240px] px-6 sm:px-8 lg:px-12 xl:px-16" />
       <Section variant="full" size="minor" rule="none">
         <GridItem span={12}>
-          <StatFigures
-            stats={[
-              {
-                value: stats.lessons,
-                label: "lessons authored",
-                accent: "navy",
-              },
-              { value: stats.activities, label: "activities", accent: "amber" },
-              {
-                value: stats.engineCount,
-                label: "engine types",
-                accent: "sky",
-              },
-              {
-                value: stats.aiLabActivities,
-                label: "AI-literacy activities",
-                accent: "coral",
-              },
-            ]}
-          />
+          <StatFigures stats={homeStats(stats, dict)} />
         </GridItem>
       </Section>
       <Features />

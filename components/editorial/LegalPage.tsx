@@ -7,6 +7,8 @@ import { EditorialFooter } from "./EditorialFooter";
 import { EditorialShell } from "./EditorialShell";
 import { CloudShape } from "./decor/CloudShape";
 import { fadeUpSmall, VIEWPORT_ITEM } from "./motion";
+import { useDictionary } from "@/components/i18n/LocaleProvider";
+import { interpolate } from "@/lib/i18n/format";
 
 export interface TocEntry {
   id: string;
@@ -30,16 +32,24 @@ export function LegalPage({
   toc?: TocEntry[];
   children: ReactNode;
 }) {
+  const dict = useDictionary();
   return (
     <EditorialShell>
       <EditorialNav />
       <div className="relative mx-auto w-full max-w-[1240px] flex-1 px-6 py-16 sm:px-8 sm:py-24 lg:px-12 xl:px-16">
-        <CloudShape accent="sky" size={120} opacity={0.35} className="pointer-events-none absolute top-6 right-6 hidden sm:block" />
+        <CloudShape
+          accent="sky"
+          size={120}
+          opacity={0.35}
+          className="pointer-events-none absolute top-6 right-6 hidden sm:block"
+        />
         <header className="relative max-w-[68ch]">
           <h1 className="font-editorial al-optical-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[1] font-extrabold tracking-[-0.025em] text-navy">
             {title}
           </h1>
-          <p className="mt-4 text-sm font-semibold text-slate">Last updated {updated} — plain-language summary below.</p>
+          <p className="mt-4 text-sm font-semibold text-slate">
+            {interpolate(dict.legal.updated, { year: updated })}
+          </p>
         </header>
 
         <div className="relative mt-16 flex gap-16">
@@ -64,7 +74,15 @@ export function LegalPage({
   );
 }
 
-export function LegalSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
+export function LegalSection({
+  id,
+  title,
+  children,
+}: {
+  id: string;
+  title: string;
+  children: ReactNode;
+}) {
   return (
     <motion.section
       id={id}
@@ -74,8 +92,12 @@ export function LegalSection({ id, title, children }: { id: string; title: strin
       viewport={VIEWPORT_ITEM}
       className="mt-16 scroll-mt-28 border-t border-rule pt-8 first:mt-0 first:border-t-0 first:pt-0"
     >
-      <h4 className="font-editorial text-lg font-bold text-navy sm:text-xl">{title}</h4>
-      <div className="mt-4 flex flex-col gap-4 text-[16px] leading-[1.75] text-slate sm:text-[17px]">{children}</div>
+      <h4 className="font-editorial text-lg font-bold text-navy sm:text-xl">
+        {title}
+      </h4>
+      <div className="mt-4 flex flex-col gap-4 text-[16px] leading-[1.75] text-slate sm:text-[17px]">
+        {children}
+      </div>
     </motion.section>
   );
 }

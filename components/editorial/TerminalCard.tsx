@@ -5,6 +5,8 @@ import type { Tilt } from "./tokens";
 import { TILT } from "./tokens";
 import { curriculumStats } from "@/lib/curriculum";
 import { MatrixRain } from "@/components/home/MatrixRain";
+import { useDictionary } from "@/components/i18n/LocaleProvider";
+import { interpolate } from "@/lib/i18n/format";
 
 /**
  * Extracted from components/home/Marketing.tsx's SystemStatusCard —
@@ -26,15 +28,19 @@ export function TerminalCard({
   className?: string;
 }) {
   const stats = curriculumStats();
+  const t = useDictionary().terminal;
   const allLines = [
     "$ vora --status",
-    `[OK] ${stats.lessons} lessons authored`,
-    `[OK] ${stats.activities} activities across ${stats.engineCount} engine types`,
-    `[OK] ${stats.aiLabActivities} real AI-literacy activities`,
-    "[OK] 0 live AI calls — fully scripted, always safe",
+    `[OK] ${interpolate(t.lessonsAuthored, { n: stats.lessons })}`,
+    `[OK] ${interpolate(t.activitiesAcrossEngines, { n: stats.activities, m: stats.engineCount })}`,
+    `[OK] ${interpolate(t.aiLiteracyActivities, { n: stats.aiLabActivities })}`,
+    `[OK] ${t.noLiveAiCalls}`,
     "$ _",
   ];
-  const lines = size === "inline" ? [allLines[0], allLines[1], allLines[4], allLines[5]] : allLines;
+  const lines =
+    size === "inline"
+      ? [allLines[0], allLines[1], allLines[4], allLines[5]]
+      : allLines;
   const reduce = useReducedMotion();
 
   return (
@@ -58,7 +64,9 @@ export function TerminalCard({
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]/70" />
-          <span className="ml-2 text-[10px] font-bold tracking-wider text-terminal/40 uppercase">vora@ai-lab-kids</span>
+          <span className="ml-2 text-[10px] font-bold tracking-wider text-terminal/40 uppercase">
+            vora@ai-lab-kids
+          </span>
         </div>
         {lines.map((line, i) => (
           <motion.p
@@ -67,7 +75,9 @@ export function TerminalCard({
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: reduce ? 0 : i * 0.35 }}
-            className={i === lines.length - 1 ? "flex items-center gap-1" : undefined}
+            className={
+              i === lines.length - 1 ? "flex items-center gap-1" : undefined
+            }
           >
             {i === lines.length - 1 ? (
               <>
