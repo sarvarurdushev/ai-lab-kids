@@ -45,6 +45,7 @@ export function CollageFigure({
   pointerX,
   pointerY,
   exitProgress,
+  staggerStep = 0.09,
   className = "",
 }: {
   layers: CollageLayer[];
@@ -53,6 +54,8 @@ export function CollageFigure({
   pointerY?: MotionValue<number>;
   /** From useScrollExitDrift — when provided, layers with their own `exit` vector drift apart as the composition scrolls past, instead of exiting the viewport as one block. */
   exitProgress?: MotionValue<number>;
+  /** Per-index entrance stagger for layers with no explicit `delay` — lower it for dense compositions (a 15-layer collage at the 0.09 default doesn't finish entering until 1.3s, which reads as a slow load rather than an assembly). */
+  staggerStep?: number;
   className?: string;
 }) {
   return (
@@ -92,7 +95,7 @@ export function CollageFigure({
             animate="show"
             transition={{
               ...scaleIn.show.transition,
-              delay: layer.delay ?? i * 0.09,
+              delay: layer.delay ?? i * staggerStep,
             }}
             className={`absolute -translate-x-1/2 -translate-y-1/2 ${TILT[layer.tilt ?? 0]}`}
             style={{ top: layer.top, left: layer.left, zIndex: layer.z ?? i }}

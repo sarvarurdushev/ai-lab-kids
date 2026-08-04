@@ -25,6 +25,10 @@ import { TerminalCard } from "@/components/editorial/TerminalCard";
 import { HalftoneBlob } from "@/components/editorial/decor/HalftoneBlob";
 import { CloudShape } from "@/components/editorial/decor/CloudShape";
 import { SunDisc } from "@/components/editorial/decor/SunDisc";
+import { StarBurst } from "@/components/editorial/decor/StarBurst";
+import { OrbitRing } from "@/components/editorial/decor/OrbitRing";
+import { LetterTile } from "@/components/editorial/decor/LetterTile";
+import { SpeechBubble } from "@/components/editorial/decor/SpeechBubble";
 import { HandUnderline } from "@/components/editorial/decor/HandUnderline";
 import { HandArrow } from "@/components/editorial/decor/HandArrow";
 import { Annotation } from "@/components/editorial/decor/Annotation";
@@ -161,7 +165,7 @@ function Hero() {
           <div ref={heroParallaxRef} className="relative h-full w-full">
             <ScrollExitLayer
               progress={exitProgress}
-              dx={-70}
+              dx={-130}
               dy={90}
               className="absolute inset-0"
             >
@@ -186,7 +190,7 @@ function Hero() {
             </ScrollExitLayer>
             <ScrollExitLayer
               progress={exitProgress}
-              dx={80}
+              dx={150}
               dy={110}
               className="absolute inset-0"
             >
@@ -214,8 +218,8 @@ function Hero() {
             </ScrollExitLayer>
             <ScrollExitLayer
               progress={exitProgress}
-              dx={-40}
-              dy={130}
+              dx={-45}
+              dy={215}
               className="absolute inset-0"
             >
               <ParallaxLayer
@@ -248,6 +252,25 @@ function Hero() {
               exitProgress={exitProgress}
               layers={[
                 {
+                  key: "scrapPebble",
+                  node: (
+                    <HalftoneBlob
+                      shape="pebble"
+                      accent="coral"
+                      size={200}
+                      role="field"
+                      texture="fine"
+                      opacity={0.45}
+                    />
+                  ),
+                  top: "28%",
+                  left: "72%",
+                  z: 0,
+                  tilt: 2,
+                  delay: 0.1,
+                  exit: { x: 140, y: 30 },
+                },
+                {
                   key: "sun",
                   node: (
                     <SunDisc
@@ -260,7 +283,7 @@ function Hero() {
                   top: "62%",
                   left: "58%",
                   z: 0,
-                  exit: { x: 50, y: 60 },
+                  exit: { x: 60, y: 55 },
                 },
                 {
                   key: "polygon",
@@ -268,7 +291,27 @@ function Hero() {
                   top: "68%",
                   left: "42%",
                   z: 1,
-                  exit: { x: -60, y: 80 },
+                  delay: 0.06,
+                  exit: { x: -85, y: 75 },
+                },
+                {
+                  key: "scrapSplat",
+                  node: (
+                    <HalftoneBlob
+                      shape="splat"
+                      accent="mint"
+                      size={120}
+                      role="accent"
+                      opacity={0.55}
+                      misregister={6}
+                    />
+                  ),
+                  top: "86%",
+                  left: "6%",
+                  z: 1,
+                  tilt: -2,
+                  delay: 0.14,
+                  exit: { x: -155, y: 45 },
                 },
                 {
                   key: "cloud1",
@@ -277,7 +320,8 @@ function Hero() {
                   left: "18%",
                   z: 2,
                   float: true,
-                  exit: { x: -70, y: 40 },
+                  delay: 0.18,
+                  exit: { x: -115, y: 35 },
                 },
                 {
                   key: "cloud2",
@@ -287,15 +331,100 @@ function Hero() {
                   z: 2,
                   float: true,
                   floatIndex: 2,
-                  exit: { x: 70, y: 40 },
+                  delay: 0.22,
+                  exit: { x: 125, y: 30 },
+                },
+                {
+                  key: "cloud3",
+                  node: <CloudShape accent="amber" size={44} opacity={0.6} />,
+                  top: "4%",
+                  left: "52%",
+                  z: 2,
+                  float: true,
+                  floatIndex: 4,
+                  delay: 0.26,
+                  exit: { x: 20, y: 20 },
+                },
+                {
+                  key: "starA",
+                  node: <StarBurst accent="amber" size={30} />,
+                  top: "16%",
+                  left: "38%",
+                  z: 3,
+                  tilt: 1,
+                  float: true,
+                  floatIndex: 1,
+                  delay: 0.3,
+                  exit: { x: -55, y: 185 },
+                },
+                {
+                  key: "starB",
+                  node: <StarBurst accent="coral" size={20} />,
+                  top: "44%",
+                  left: "90%",
+                  z: 3,
+                  float: true,
+                  floatIndex: 3,
+                  delay: 0.34,
+                  exit: { x: 150, y: 120 },
+                },
+                {
+                  key: "orbit",
+                  node: (
+                    <OrbitRing accent="navy" size={310} rings={2} dots={2} />
+                  ),
+                  top: "70%",
+                  left: "58%",
+                  z: 3,
+                  delay: 0.42,
+                  exit: { x: 15, y: 200 },
+                },
+                {
+                  key: "voraMini",
+                  node: <Vora size={84} mood="excited" />,
+                  top: "34%",
+                  left: "14%",
+                  z: 4,
+                  tilt: -1,
+                  float: true,
+                  floatIndex: 6,
+                  delay: 0.46,
+                  exit: { x: -135, y: 145 },
                 },
                 {
                   key: "vora",
-                  node: <Vora size={220} mood="happy" bob />,
+                  node: <Vora size={240} mood="happy" bob />,
                   top: "70%",
                   left: "58%",
-                  z: 4,
-                  exit: { x: 20, y: 150 },
+                  z: 5,
+                  delay: 0.3,
+                  exit: { x: 25, y: 210 },
+                },
+                {
+                  key: "letterA",
+                  node: <LetterTile letter="A" accent="sky" size={62} />,
+                  top: "88%",
+                  left: "22%",
+                  z: 5,
+                  tilt: -2,
+                  float: true,
+                  floatIndex: 7,
+                  delay: 0.5,
+                  exit: { x: -125, y: 175 },
+                },
+                {
+                  key: "bubble",
+                  node: (
+                    <SpeechBubble accent="amber" tail="down-left">
+                      Hi! I&apos;m Vora.
+                    </SpeechBubble>
+                  ),
+                  top: "46%",
+                  left: "86%",
+                  z: 6,
+                  tilt: 2,
+                  delay: 0.55,
+                  exit: { x: 115, y: 165 },
                 },
                 {
                   key: "terminal",
@@ -304,11 +433,11 @@ function Hero() {
                       <TerminalCard size="hero" rain tilt={-1} />
                     </div>
                   ),
-                  top: "94%",
-                  left: "82%",
-                  z: 5,
-                  delay: 0.5,
-                  exit: { x: 60, y: 120 },
+                  top: "96%",
+                  left: "84%",
+                  z: 7,
+                  delay: 0.62,
+                  exit: { x: 90, y: 145 },
                 },
               ]}
             />

@@ -1,10 +1,21 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useAnimationControls } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  useAnimationControls,
+  useReducedMotion,
+} from "motion/react";
 import { useSvgId } from "./useSvgId";
 
-export type VoraMood = "happy" | "sad" | "neutral" | "thinking" | "excited" | "surprised";
+export type VoraMood =
+  | "happy"
+  | "sad"
+  | "neutral"
+  | "thinking"
+  | "excited"
+  | "surprised";
 
 const EYES: Record<VoraMood, string> = {
   happy: "M 36 62 Q 42 56 48 62 M 64 62 Q 70 56 76 62",
@@ -12,7 +23,8 @@ const EYES: Record<VoraMood, string> = {
   neutral: "M 34 62 L 50 62 M 62 62 L 78 62",
   thinking: "M 34 62 L 50 62 M 62 58 Q 70 54 78 58",
   excited: "M 34 60 Q 42 51 50 60 M 62 60 Q 70 51 78 60",
-  surprised: "M 34 56 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0 M 72 56 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0",
+  surprised:
+    "M 34 56 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0 M 72 56 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0",
 };
 
 const MOUTH: Record<VoraMood, string> = {
@@ -44,7 +56,9 @@ const CHEEK_OPACITY: Record<VoraMood, number> = {
 };
 
 /** A short one-shot body reaction that plays whenever `mood` changes to one of these — layered on top of the antenna/eyes/mouth crossfade, purely via scale/rotate so it never fights the idle `bob` loop's `y`. */
-const MOOD_REACTION: Partial<Record<VoraMood, { keyframes: Record<string, number[]>; duration: number }>> = {
+const MOOD_REACTION: Partial<
+  Record<VoraMood, { keyframes: Record<string, number[]>; duration: number }>
+> = {
   happy: { keyframes: { scale: [1, 1.08, 1, 1.04, 1] }, duration: 0.5 },
   excited: { keyframes: { scale: [1, 1.16, 0.96, 1.08, 1] }, duration: 0.55 },
   sad: { keyframes: { rotate: [0, -5, 5, -3, 0] }, duration: 0.4 },
@@ -71,7 +85,13 @@ function Sparkles() {
           style={{ left: s.left, top: s.top }}
           initial={{ opacity: 0, scale: 0.4 }}
           animate={{ opacity: [0, 1, 0], scale: [0.4, 1, 0.5], y: [-2, -18] }}
-          transition={{ duration: 1.3, repeat: Infinity, repeatDelay: 1.1, delay: s.delay, ease: "easeOut" }}
+          transition={{
+            duration: 1.3,
+            repeat: Infinity,
+            repeatDelay: 1.1,
+            delay: s.delay,
+            ease: "easeOut",
+          }}
         >
           ✨
         </motion.span>
@@ -98,6 +118,7 @@ export function Vora({
   onTap?: () => void;
 }) {
   const id = useSvgId("vora");
+  const reduce = useReducedMotion();
   const [blink, setBlink] = useState(false);
   const reactionControls = useAnimationControls();
   const prevMoodRef = useRef(mood);
@@ -111,7 +132,10 @@ export function Vora({
     prevMoodRef.current = mood;
     const reaction = MOOD_REACTION[mood];
     if (reaction) {
-      reactionControls.start({ ...reaction.keyframes, transition: { duration: reaction.duration } });
+      reactionControls.start({
+        ...reaction.keyframes,
+        transition: { duration: reaction.duration },
+      });
     }
   }, [mood, reactionControls]);
 
@@ -119,12 +143,15 @@ export function Vora({
     let alive = true;
     let timer: ReturnType<typeof setTimeout>;
     (function scheduleBlink() {
-      timer = setTimeout(() => {
-        if (!alive) return;
-        setBlink(true);
-        setTimeout(() => alive && setBlink(false), 130);
-        scheduleBlink();
-      }, 2400 + Math.random() * 2600);
+      timer = setTimeout(
+        () => {
+          if (!alive) return;
+          setBlink(true);
+          setTimeout(() => alive && setBlink(false), 130);
+          scheduleBlink();
+        },
+        2400 + Math.random() * 2600,
+      );
     })();
     return () => {
       alive = false;
@@ -136,8 +163,12 @@ export function Vora({
     <motion.div
       className={`relative ${className}`}
       style={{ width: size, height: size }}
-      animate={bob ? { y: [0, -6, 0] } : { y: 0 }}
-      transition={bob ? { duration: 2.2, repeat: Infinity, ease: "easeInOut" } : { duration: 0.2 }}
+      animate={bob && !reduce ? { y: [0, -6, 0] } : { y: 0 }}
+      transition={
+        bob && !reduce
+          ? { duration: 2.2, repeat: Infinity, ease: "easeInOut" }
+          : { duration: 0.2 }
+      }
       whileTap={{ scale: 0.9, rotate: -6 }}
       onTap={onTap}
     >
@@ -164,7 +195,15 @@ export function Vora({
               animate={{ rotate: ANTENNA_ROTATION[mood] }}
               transition={{ type: "spring", stiffness: 220, damping: 14 }}
             >
-              <line x1={0} y1={0} x2={0} y2={-14} stroke="#241f33" strokeWidth={3} strokeLinecap="round" />
+              <line
+                x1={0}
+                y1={0}
+                x2={0}
+                y2={-14}
+                stroke="#241f33"
+                strokeWidth={3}
+                strokeLinecap="round"
+              />
               <motion.circle
                 cx={0}
                 cy={-16}
@@ -172,13 +211,29 @@ export function Vora({
                 fill="var(--color-amber)"
                 stroke="#241f33"
                 strokeWidth={1.5}
-                animate={{ scale: mood === "happy" || mood === "excited" ? [1, 1.3, 1] : 1 }}
-                transition={{ duration: 1.4, repeat: mood === "happy" || mood === "excited" ? Infinity : 0, repeatDelay: 0.8 }}
+                animate={{
+                  scale:
+                    mood === "happy" || mood === "excited" ? [1, 1.3, 1] : 1,
+                }}
+                transition={{
+                  duration: 1.4,
+                  repeat: mood === "happy" || mood === "excited" ? Infinity : 0,
+                  repeatDelay: 0.8,
+                }}
               />
             </motion.g>
           </g>
 
-          <rect x={18} y={26} width={76} height={64} rx={26} fill={`url(#${id})`} stroke="#241f33" strokeWidth={2.5} />
+          <rect
+            x={18}
+            y={26}
+            width={76}
+            height={64}
+            rx={26}
+            fill={`url(#${id})`}
+            stroke="#241f33"
+            strokeWidth={2.5}
+          />
 
           <motion.circle
             cx={30}
@@ -199,9 +254,22 @@ export function Vora({
             animate={{ opacity: CHEEK_OPACITY[mood] }}
           />
 
-          <rect x={26} y={42} width={60} height={46} rx={18} fill="#fbf8ff" stroke="#241f33" strokeWidth={2} />
+          <rect
+            x={26}
+            y={42}
+            width={60}
+            height={46}
+            rx={18}
+            fill="#fbf8ff"
+            stroke="#241f33"
+            strokeWidth={2}
+          />
 
-          <motion.g animate={{ scaleY: blink ? 0.08 : 1 }} style={{ originY: "62px" }} transition={{ duration: 0.09 }}>
+          <motion.g
+            animate={{ scaleY: blink ? 0.08 : 1 }}
+            style={{ originY: "62px" }}
+            transition={{ duration: 0.09 }}
+          >
             <AnimatePresence>
               <motion.path
                 key={mood}
@@ -233,8 +301,24 @@ export function Vora({
             />
           </AnimatePresence>
 
-          <rect x={30} y={94} width={52} height={30} rx={14} fill={`url(#${id})`} stroke="#241f33" strokeWidth={2.5} />
-          <circle cx={56} cy={109} r={6} fill="var(--color-amber)" stroke="#241f33" strokeWidth={1.5} />
+          <rect
+            x={30}
+            y={94}
+            width={52}
+            height={30}
+            rx={14}
+            fill={`url(#${id})`}
+            stroke="#241f33"
+            strokeWidth={2.5}
+          />
+          <circle
+            cx={56}
+            cy={109}
+            r={6}
+            fill="var(--color-amber)"
+            stroke="#241f33"
+            strokeWidth={1.5}
+          />
         </svg>
       </motion.div>
     </motion.div>
